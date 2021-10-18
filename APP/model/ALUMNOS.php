@@ -72,6 +72,22 @@ class ALUMNO{
     {
         $this->app = $app;
     }
+
+     /**
+     * @return mixed
+     */
+    public function getApm()
+    {
+        return $this->apm;
+    }
+
+    /**
+     * @param mixed $apm
+     */
+    public function setApm($apm): void
+    {
+        $this->apm = $apm;
+    }
     
 
     //GetData();            Obten Data         Retorna valor array      (SELECT);
