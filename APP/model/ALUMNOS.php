@@ -32,7 +32,6 @@ class ALUMNO{
     {
         return $this->numcuenta;
     }
-
     /**
      * @param mixed $numcuenta
      */
@@ -48,7 +47,6 @@ class ALUMNO{
     {
         return $this->nombre;
     }
-
     /**
      * @param mixed $nombre
      */
@@ -64,7 +62,6 @@ class ALUMNO{
     {
         return $this->app;
     }
-
     /**
      * @param mixed $app
      */
@@ -80,7 +77,6 @@ class ALUMNO{
     {
         return $this->apm;
     }
-
     /**
      * @param mixed $apm
      */
@@ -88,7 +84,81 @@ class ALUMNO{
     {
         $this->apm = $apm;
     }
-    
+
+     /**
+     * @return mixed
+     */
+    public function getFecha_nacimiento()
+    {
+        return $this->fecha_nacimiento;
+    }
+    /**
+     * @param mixed $fecha_nacimiento
+     */
+    public function setFecha_nacimiento($fecha_nacimiento): void
+    {
+        $this->fecha_nacimiento = $fecha_nacimiento;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCorreo()
+    {
+        return $this->correo;
+    }
+    /**
+     * @param mixed $correo
+     */
+    public function setCorreo($correo): void
+    {
+        $this->correo = $correo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPwd()
+    {
+        return $this->pwd;
+    }
+    /**
+     * @param mixed $pwd
+     */
+    public function setPwd($pwd): void
+    {
+        $this->pwd = $pwd;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPregunta()
+    {
+        return $this->pregunta;
+    }
+    /**
+     * @param mixed $pregunta
+     */
+    public function setPregunta($pregunta): void
+    {
+        $this->pregunta = $pregunta;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRespuesta()
+    {
+        return $this->respuesta;
+    }
+    /**
+     * @param mixed $respuesta
+     */
+    public function setRespuesta($respuesta): void
+    {
+        $this->respuesta = $respuesta;
+    }
 
     //GetData();            Obten Data         Retorna valor array      (SELECT);
     //ExecuteQuery();       Ejecuta la query  retorna valor 1/0 (INSERT,UPDATE DELETE)
