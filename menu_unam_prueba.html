@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Menú responsivo UNAM</title>
+	<link rel="stylesheet" type="text/css" href="style_menu_unam.css">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<meta charset="utf-8">
+</head>
+<body id="body">
+	<div class="sidebar">
+		<div class="logo_content">
+			<div class="logo">
+				<i class='bx bx-arch'></i>
+				<div class="logo_name">
+					UNAM - FESC
+				</div>
+			</div>
+			<i class='bx bx-menu' id="btn"></i>
+		</div>
+		<ul class="nav_list">
+			<li>
+				<a href="#">
+					<i class='bx bx-grid-alt'></i>
+					<span class="links_name">Inicio</span>
+				</a>
+				<span class="tooltip">Inicio</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-lock'></i>
+					<span class="links_name">Cambia tu clave de acceso</span>
+				</a>
+				<span class="tooltip">Clave de acceso</span>
+				<!-- 
+				<ul class="sub_menu">
+					<li>
+						<a href="#">Cambia tu clave de acceso</a>
+					</li>
+					<li>
+						<a href="#">Configuración de seguridad</a>
+					</li>
+				</ul>
+				-->
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-cctv'></i>
+					<span class="links_name">Configuración de seguridad</span>
+				</a>
+				<span class="tooltip">Seguridad</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-pencil'></i>
+					<span class="links_name">Inscripción</span>
+				</a>
+				<span class="tooltip">Inscripción</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-book-open'></i>
+					<span class="links_name">Consulta tu inscripción</span>
+				</a>
+				<span class="tooltip">Consulta inscripción</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-folder-open'></i>
+					<span class="links_name">Consulta tu historial académico</span>
+				</a>
+				<span class="tooltip">Historial académico</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-error'></i>
+					<span class="links_name">Consulta la saturación</span>
+				</a>
+				<span class="tooltip">Saturación</span>
+			</li>
+		</ul>
+		<div class="profile_content">
+			<div class="profile">
+				<div class="profile_details">
+					<div class="name_job">
+						<div class="name">
+						Emmanuel Martínez Hernández
+						</div>
+						<div class="job">
+							<div class="form-check">
+							  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+							  <label class="form-check-label" for="flexRadioDefault2">
+							    | 1119 | LICENCIADO EN INFORMÁTICA
+							  </label>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<i class='bx bx-log-out' id="log_out"></i>
+			</div>
+		</div>
+	</div>
+
+	<header>
+		<div class="icon_menu">
+			UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO
+			<br>
+			Facultad de Estudios Superiores Cuautitlán
+		</div>
+	</header>
+
+
+
+
+	<!--              AQUI VA EL CONTENIDO                -->
+	<div class="home_content">
+		<div class="text">AQUI VA EL CONTENIDO PRINCIPAL</div>
+	</div>
+
+
+	<script>
+		let btn = document.querySelector("#btn");
+		let sidebar = document.querySelector(".sidebar");
+
+		btn.onclick = function(){
+		sidebar.classList.toggle("active");
+		}
+
+	</script>
+
+</body>
+</html>

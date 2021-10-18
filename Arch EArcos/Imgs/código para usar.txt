@@ -1,0 +1,22 @@
+
+    height: 100%;
+
+max-width: 100%;
+    width: 100%;
+
+////////////////////////////////////////////
+  .menu{
+    margin: 0px;
+    width: 15%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #031681;
+    float: left;
+    text-align: center;
+  }
+  .Lista{
+    width: 80%;
+    margin: 10%;
+    padding: 10%;
+  }
