@@ -1,6 +1,6 @@
 <?php
-
-class ALUMNO{
+include_once "CONEXION.php";
+class ALUMNO extends CONEXION{
     //Tomamos los atributos de las entidades de la DB y los convertimos en variables
     // private, public, protected, ***** default *****
     private $numcuenta;
@@ -89,15 +89,95 @@ class ALUMNO{
         $this->apm = $apm;
     }
     
+     /**
+     * @return mixed
+     */
+    public function getFechaNacimiento()
+    {
+        return $this->fecha_nacimiento;
+    }
+
+    /**
+     * @param mixed $fecha_nacimiento
+     */
+    public function setFechaNacimiento($fecha_nacimiento): void
+    {
+        $this->fecha_nacimiento = $fecha_nacimiento;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getCorreo()
+    {
+        return $this->correo;
+    }
+
+    /**
+     * @param mixed $correo
+     */
+    public function setCorreo($correo): void
+    {
+        $this->correo = $correo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPwd()
+    {
+        return $this->pwd;
+    }
+
+    /**
+     * @param mixed $pwd
+     */
+    public function setPwd($pwd): void
+    {
+        $this->pwd = $pwd;
+    }
+     
+    /**
+     * @return mixed
+     */
+    public function getPregunta()
+    {
+        return $this->pregunta;
+    }
+
+    /**
+     * @param mixed $pregunta
+     */
+    public function setPregunta($pregunta): void
+    {
+        $this->pregunta = $pregunta;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getRespuesta()
+    {
+        return $this->respuesta;
+    }
+
+    /**
+     * @param mixed $respuesta
+     */
+    public function setRespuesta($respuesta): void
+    {
+        $this->respuesta = $respuesta;
+    }
+
 
     //GetData();            Obten Data         Retorna valor array      (SELECT);
     //ExecuteQuery();       Ejecuta la query  retorna valor 1/0 (INSERT,UPDATE DELETE)
     
     public function queryconsultaAlumnos(){
-$query="SELECT * FROM alumno";
-$this->connect();
-$this->getData($query);
-$this->close();
+        $query="SELECT * FROM alumno";
+        $this->connect();
+        $this->getData($query);
+        $this->close();
     }
 
 }
