@@ -163,10 +163,22 @@ class ALUMNO extends CONEXION{
     //ExecuteQuery();       Ejecuta la query  retorna valor 1/0 (INSERT,UPDATE DELETE)
     
     public function queryconsultaAlumnos(){
-        $query="SELECT * FROM alumno";
+        $query="SELECT `numcuenta`, `nombre`, `appaterno`, `apmaterno`, `fecha_nac`, `correo`, `contrasena`, 
+        `pregsecreta`, `resp_pregsecreta` FROM `alumno`";
         $this->connect();
-        $this->getData($query);
+        $resultado = $this->getData($query);
         $this->close();
+        return $resultado;
+    }
+
+    public function queryUpdateAlumno(){
+        $query="UPDATE `alumno` SET `nombre`=".$this->getNombre().",`appaterno`=".$this->getApp().",
+        `apmaterno`='[value-4]',`correo`='[value-6]', `pregsecreta`='[value-8]',`resp_pregsecreta`='[value-9]' 
+        WHERE numcuenta=".$this->getNumCuenta();
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
     }
 
 }
