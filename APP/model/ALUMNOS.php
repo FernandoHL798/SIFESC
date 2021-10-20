@@ -32,7 +32,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->numcuenta;
     }
-
     /**
      * @param mixed $numcuenta
      */
@@ -48,7 +47,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->nombre;
     }
-
     /**
      * @param mixed $nombre
      */
@@ -64,7 +62,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->app;
     }
-
     /**
      * @param mixed $app
      */
@@ -80,7 +77,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->apm;
     }
-
     /**
      * @param mixed $apm
      */
@@ -112,7 +108,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->correo;
     }
-
     /**
      * @param mixed $correo
      */
@@ -128,7 +123,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->pwd;
     }
-
     /**
      * @param mixed $pwd
      */
@@ -136,7 +130,6 @@ class ALUMNO extends CONEXION{
     {
         $this->pwd = $pwd;
     }
-     
     /**
      * @return mixed
      */
@@ -144,7 +137,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->pregunta;
     }
-
     /**
      * @param mixed $pregunta
      */
@@ -152,7 +144,6 @@ class ALUMNO extends CONEXION{
     {
         $this->pregunta = $pregunta;
     }
-    
     /**
      * @return mixed
      */
@@ -160,7 +151,6 @@ class ALUMNO extends CONEXION{
     {
         return $this->respuesta;
     }
-
     /**
      * @param mixed $respuesta
      */
@@ -168,7 +158,6 @@ class ALUMNO extends CONEXION{
     {
         $this->respuesta = $respuesta;
     }
-
 
     //GetData();            Obten Data         Retorna valor array      (SELECT);
     //ExecuteQuery();       Ejecuta la query  retorna valor 1/0 (INSERT,UPDATE DELETE)
