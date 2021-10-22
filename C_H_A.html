@@ -9,6 +9,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!--  Datatables  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
+
+        <!--  extension responsive  -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
         <title>Historial Academico</title>
     </head>
     <body>
@@ -24,24 +29,146 @@
                         </div>        
                     </div>
                         <div class="row">
-                            <div class="col-9 mx-auto border border-dark">
-                                <table class="table table-bordered">
+                            <div class="col mx-auto mt-3">
+                                <table class="table table-bordered" width="100%">
                                     <tbody>
                                         <tr>
-                                          <th style="width: 180px;">Número de cuenta:</th>
-                                          <th style="width: 300px;">Nombre:</th>
-                                          <th style="width: 170px;">Año de ingreso:</th>
-                                          <th style="width: 170px;">Carrera:</th>
+                                          <th style="width: 180px;">Número de cuenta: 439865562</th>
+                                          <th style="width: 300px;">Nombre: Martinez Hernandez Emmanuel</th>
+                                          <th style="width: 170px;">Año de ingreso: 2019</th>
+                                          <th style="width: 170px;">Carrera: 308</th>
                                         </tr>
-                                    
-                                    
                                         <tr>
-                                            <th colspan="2">Plantel:</th>
-                                            <th colspan="2">Plan de estudios:</th>
+                                            <th colspan="2">Plantel: 106 - F.E.S. Cuautitlan (Contaduria)</th>
+                                            <th colspan="2">Plan de estudios: 1119 Licenciado en Infotmática</th>
                                         </tr>
                                     </tbody>    
-                                    
                                 </table>
+                                <!-- Semestre 1 -->
+                                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th colspan="11"><h4>1er Semestre</h4></th>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <th>Clave</th>
+                                            <th>Créd.</th>
+                                            <th>Op/Ob</th>
+                                            <th>Asignatura</th>
+                                            <th>Calif.</th>
+                                            <th>Per.</th>
+                                            <th>Folio</th>
+                                            <th>Gpo.</th>
+                                            <th>T.Ex.</th>
+                                            <th>Ord.</th>
+                                            <th>Ext.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>0100</td>
+                                            <td>6</td>
+                                            <td>OB</td>
+                                            <td>Administracion I Proceso Admvo.</td>
+                                            <td>9</td>
+                                            <td>20191</td>
+                                            <td>1234567</td>
+                                            <td>1102</td>
+                                            <td>O</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>0100</td>
+                                            <td>6</td>
+                                            <td>OB</td>
+                                            <td>Comunicacion Oral y Escrita</td>
+                                            <td>9</td>
+                                            <td>20191</td>
+                                            <td>1234567</td>
+                                            <td>1102</td>
+                                            <td>O</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>0100</td>
+                                            <td>6</td>
+                                            <td>OB</td>
+                                            <td>Informatica I Introd a la Inform</td>
+                                            <td>9</td>
+                                            <td>20191</td>
+                                            <td>1234567</td>
+                                            <td>1102</td>
+                                            <td>O</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                                <!-- Semestre 2 -->
+                                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th colspan="11"><h4>2do Semestre</h4></th>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <th>Clave</th>
+                                            <th>Créd.</th>
+                                            <th>Op/Ob</th>
+                                            <th>Asignatura</th>
+                                            <th>Calif.</th>
+                                            <th>Per.</th>
+                                            <th>Folio</th>
+                                            <th>Gpo.</th>
+                                            <th>T.Ex.</th>
+                                            <th>Ord.</th>
+                                            <th>Ext.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr class="text-center">
+                                            <td>0100</td>
+                                            <td>6</td>
+                                            <td>OB</td>
+                                            <td>Contabilidad</td>
+                                            <td>9</td>
+                                            <td>20191</td>
+                                            <td>1234567</td>
+                                            <td>1102</td>
+                                            <td>O</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>0101</td>
+                                            <td>6</td>
+                                            <td>OB</td>
+                                            <td>Aministracion II Estruct Admvas</td>
+                                            <td>9</td>
+                                            <td>20191</td>
+                                            <td>1234567</td>
+                                            <td>1102</td>
+                                            <td>O</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>0102</td>
+                                            <td>6</td>
+                                            <td>OB</td>
+                                            <td>Informatica I Introd a la Inform</td>
+                                            <td>9</td>
+                                            <td>20191</td>
+                                            <td>1234567</td>
+                                            <td>1102</td>
+                                            <td>O</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                        </tbody>
+                                </table>    
                             </div>                    
                         </div>
                 </div>
@@ -58,6 +185,25 @@
 
 
 
-        
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+            
+    <!--   Datatables-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+      
+    <!-- extension responsive -->
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    
+
+      
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            responsive: true
+        });
+    } );  
+    
+    </script>
     </body>
 </html>
