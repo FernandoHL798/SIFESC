@@ -1,6 +1,6 @@
 <?php
-
-class COORDINACION{
+include_once "CONEXION.php";
+class COORDINACION extends CONEXION{
 	private $fk_carreraclave;
 	private $fk_profesorRFC;
 	private $nombre;
@@ -8,14 +8,14 @@ class COORDINACION{
 	/**
      * @return mixed
      */
-    public function getFk_carreraclave()
+    public function getFkCarreraclave()
     {
         return $this->fk_carreraclave;
     }
     /**
      * @param mixed $fk_carreraclave
      */
-    public function setFk_carreraclave($fk_carreraclave): void
+    public function setFkCarreraclave($fk_carreraclave): void
     {
         $this->fk_carreraclave = $fk_carreraclave;
     }
@@ -23,14 +23,14 @@ class COORDINACION{
     /**
      * @return mixed
      */
-    public function getFk_profesorRFC()
+    public function getFkProfesorRFC()
     {
         return $this->fk_profesorRFC;
     }
     /**
      * @param mixed $fk_profesorRFC
      */
-    public function setFk_profesorRFC($fk_profesorRFC): void
+    public function setFkProfesorRFC($fk_profesorRFC): void
     {
         $this->fk_profesorRFC = $fk_profesorRFC;
     }
@@ -49,4 +49,38 @@ class COORDINACION{
     {
         $this->nombre = $nombre;
     }
+
+    public function queryconsultaCoordinacion(){
+        $query="SELECT `fk_carreraclave`, `fk_profesorRFC`, `nombre` FROM `coordinacion`";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
+    /*public function queryUpdateCoordinacion(){
+        $query="UPDATE `coordinacion` SET `nombre`='".$this->getNombre()."'
+        WHERE `fk_carreraclave`='".$this->getFkCarreraclave()"' AND `fk_profesorRFC`='".$this->getFkProfesorRFC()."'";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryInsertCoordinacion(){
+        $query="INSERT into `coordinacion`(`fk_carreraclave`,`fk_profesorRFC`,`nombre`) 
+        VALUES (".$this->getFkCarreraclave().", ".$this->getFkProfesorRFC().",".$this->getNombre().")";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryDeleteAlumno(){
+        $query="DELETE FROM `dosificacion` WHERE `fk_carreraclave`='".$this->getFkCarreraclave()"' AND `fk_profesorRFC`='".$this->getFkProfesorRFC()."'";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }*/
 }

@@ -1,6 +1,6 @@
 <?php
-
-class GRUPO{
+include_once "CONEXION.php";
+class GRUPO extends CONEXION{
     private $id;
     private $fk_carreraclave;
     private $fk_asignaturaclave;
@@ -32,14 +32,14 @@ class GRUPO{
     /**
      * @return mixed
      */
-    public function getFk_carreraclave()
+    public function getFkCarreraclave()
     {
         return $this->fk_carreraclave;
     }
     /**
      * @param mixed $fk_carreraclave
      */
-    public function setFk_carreraclave($fk_carreraclave): void
+    public function setFkCarreraclave($fk_carreraclave): void
     {
         $this->fk_carreraclave = $fk_carreraclave;
     }
@@ -47,14 +47,14 @@ class GRUPO{
     /**
      * @return mixed
      */
-    public function getFk_asignaturaclave()
+    public function getFkAsignaturaclave()
     {
         return $this->fk_asignaturaclave;
     }
     /**
      * @param mixed $fk_asignaturaclave
      */
-    public function setFk_asignaturaclave($fk_asignaturaclave): void
+    public function setFkAsignaturaclave($fk_asignaturaclave): void
     {
         $this->fk_asignaturaclave = $fk_asignaturaclave;
     }
@@ -62,14 +62,14 @@ class GRUPO{
     /**
      * @return mixed
      */
-    public function getFk_grupoclave()
+    public function getFkGrupoclave()
     {
         return $this->fk_grupoclave;
     }
     /**
      * @param mixed $fk_grupoclave
      */
-    public function setFk_grupoclave($fk_grupoclave): void
+    public function setFkGrupoclave($fk_grupoclave): void
     {
         $this->fk_grupoclave = $fk_grupoclave;
     }
@@ -99,7 +99,7 @@ class GRUPO{
     /**
      * @param mixed $dialu
      */
-    public function setDia($dialu): void
+    public function setDialu($dialu): void
     {
         $this->dialu = $dialu;
     }
@@ -192,5 +192,46 @@ class GRUPO{
     public function setPeriodo($periodo): void
     {
         $this->periodo = $periodo;
+    }
+   
+    public function queryconsultaGrupo(){
+        $query="SELECT `id`, `fk_carreraclave`, `fk_asignaturaclave`, `fk_grupoclave`, `aula`, `dialu`, `diama`, 
+        `diami`, `diaju`, `diavi`, `diasa`, `periodo` FROM `grupo`";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryUpdateGrupo(){
+        $query="UPDATE `grupo` SET `fk_carreraclave`='".$this->getFkCarreraclave()."',`fk_asignaturaclave`='".$this->getFkAsignaturaclave()."',
+        `fk_grupoclave`='".$this->getFkGrupoclave()."',`aula`='".$this->getAula()."',`dialu`='".$this->getDialu()."',`diama`='".$this->getDiama()."',
+        `diami`='".$this->getDiami()."', `diaju`='".$this->getDiaju()."',`diavi`='".$this->getDiavi()."',`diasa`='".$this->getDiasa()."',
+        `periodo`='".$this->getPeriodo()."'
+        WHERE `id`='".$this->getId()"'";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryInsertGrupo(){
+        $query="INSERT into `Grupo`(`id`,`fk_carreraclave`,`fk_asignaturaclave`,`fk_grupoclave`,`aula`,`dialu`, `diama`, `diami`, `diaju`, `diavi`, 
+        `diasa`, `periodo`) 
+        VALUES ('".$this->getId()."', '".$this->getFkCarreraclave()."','".$this->getFkAsignaturaclave()."','".$this->getFkGrupoclave()."',
+        '".$this->getAula()."', '".$this->getDialu()."','".$this->getDiama()."','".$this->getDiami()."','".$this->getDiaju()."','".$this->getDiavi()."',
+        '".$this->getDiasa()."','".$this->getPeriodo()."')";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryDeleteGrupo(){
+        $query="DELETE FROM `grupo` WHERE `id`='".$this->getId()."'";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
     }
 }

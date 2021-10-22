@@ -171,14 +171,32 @@ class ALUMNO extends CONEXION{
         return $resultado;
     }
 
-    public function queryUpdateAlumno(){
-        $query="UPDATE `alumno` SET `nombre`=".$this->getNombre().",`appaterno`=".$this->getApp().",
-        `apmaterno`='[value-4]',`correo`='[value-6]', `pregsecreta`='[value-8]',`resp_pregsecreta`='[value-9]' 
-        WHERE numcuenta=".$this->getNumCuenta();
+    /*public function queryUpdateAlumno(){
+        $query="UPDATE `alumno` SET `nombre` = 'Arthu', `appaterno` = 'Zaval', `apmaterno` = 'Morale', `correo` = 'ejemplo112@hotmail.co', `pregsecreta` = 'Una pregunta', `resp_pregsecreta` = 'Una respuest' 
+        WHERE `alumno`.`numcuenta` = '123456649'
+        UPDATE `alumno` SET `nombre`='".$this->getNombre()."',`appaterno`='".$this->getApp()."', `apmaterno`='".$this->getApm()."',
+        `correo`='".$this->getCorreo()."',`pregsecreta`='".$this->getPregunta()."',`resp_pregsecreta`='".$this->getRespuesta()."'
+        WHERE `numcuenta`='".$this->getNumCuenta()"'";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }*/
+
+    public function queryInsertAlumno(){
+        $query="INSERT into `alumno`(`numcuenta`,`nombre`,`appaterno`,`apmaterno`,`fecha_nac`,`correo`,`contrasena`,`pregsecreta`,`resp_pregsecreta`) 
+        VALUES ('".$this->getNumCuenta()."', '".$this->getNombre()."','".$this->getApp()."','".$this->getApm()."','".$this->getFechaNacimiento()."','".$this->getCorreo()."','".$this->getPwd()."','".$this->getPregunta()."','".$this->getRespuesta()."')";
         $this->connect();
         $resultado= $this->ExecuteQuery($query);
         $this->close();
         return $resultado;
     }
 
+    /*public function queryDeleteAlumno(){
+        $query="DELETE FROM `alumno` WHERE `numcuenta`='".$this->getNumCuenta()."'";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }*/
 }

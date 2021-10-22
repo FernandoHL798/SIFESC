@@ -1,6 +1,6 @@
 <?php
-
-class FACULTAD{
+include_once "CONEXION.php";
+class FACULTAD extends CONEXION{
 	private $clave;
 	private $fk_plantelclave;
 	private $nombre;
@@ -25,14 +25,14 @@ class FACULTAD{
     /**
      * @return mixed
      */
-    public function getFk_plantelclave()
+    public function getFkPlantelclave()
     {
         return $this->fk_plantelclave;
     }
     /**
      * @param mixed $fk_plantelclave
      */
-    public function setFk_plantelclave($fk_plantelclave): void
+    public function setFkPlantelclave($fk_plantelclave): void
     {
         $this->fk_plantelclave = $fk_plantelclave;
     }
@@ -81,4 +81,39 @@ class FACULTAD{
     {
         $this->inscritos = $inscritos;
     }
+
+    public function queryconsultaFacultad(){
+        $query="SELECT `clave`, `fk_plantelclave`, `nombre`, `cupo`, `inscritos` FROM `facultad`";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
+    /*public function queryUpdateFacultad(){
+        $query="UPDATE `facultad` SET `fk_plantelclave`='".$this->getFkPlantelclave()."',`nombre`='".$this->getNombre()."',`cupo`='".$this->getCupo()."',
+        `inscritos`='".$this->getInscritos()."'
+        WHERE `clave`=".$this->getClave()"";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryInsertFacultad(){
+        $query="INSERT into `facultad`(`clave`,`fk_plantelclave`,`nombre`,`cupo`,`inscritos`) 
+        VALUES ('".$this->getClave()."', '".$this->getFkPlantelclave()."','".$this->getNombre()."','".$this->getCupo()."','".$this->getInscritos()."')";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryDeleteFacultad(){
+        $query="DELETE FROM `Facultad` WHERE `clave`='".$this->getClave()."'";
+        $this->connect();
+        $resultado= $this->ExecuteQuery($query);
+        $this->close();
+        return $resultado;
+    }*/
 }
