@@ -12,9 +12,10 @@ body{
 	overflow: hidden;
 }
 
+
 header{
-	width: 100%;
-	height: 78px;
+	width: 50%;
+	height: 60px;
 	background: #000066;
 	display: flex;
 	align-items: center;
@@ -264,4 +265,25 @@ header{
 	position: auto;
 	text-align: center;
 	color: white;
+}
+
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
+
+@media screen and (max-width: 760px){
+    .home_content{
+        margin-left: 0px;
+    }
+
+    .sidebar{
+        width: 80px;
+        left: -80px;
+    }
 }
