@@ -1,0 +1,121 @@
+body{
+	font-family: monospace;
+}
+
+footer{
+	background-color: red;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	bottom: 0;
+}
+
+
+.titulo{
+	margin: 30px;
+	margin-bottom: -30px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: ;
+	font-size: 30px;
+	text-align: center;
+	color: black;
+}
+
+.datos_personales{
+	color: rgba(195, 163, 16, 1);
+}
+
+.datos_escolares{
+	color: rgba(195, 163, 16, 1);
+}
+
+.datos_carrera{
+	color: rgba(195, 163, 16, 1);
+}
+
+.container{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	margin-top: 80px;
+}
+
+.table{
+	width: 100%;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+
+.table caption{
+	font-size: 28px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 8px;
+	color: black;
+}
+
+.table tr th{
+	background-color: #000066;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	color: white;
+	text-align: left;
+}
+
+
+.table tr td{
+	font-size: 13px;
+}
+
+.table thead{
+	text-transform: uppercase;
+}
+
+.table tbody tr:hover{
+	background-color: rgba(195, 163, 16, 1);
+}
+
+.table tbody td:hover{
+	background-color: #000066;
+	color: white;
+}
+
+@media screen and (max-width: 600px){
+	.table{
+		border: 0px;
+	}
+
+	.table thead{
+		display: none;
+	}
+
+	.table tr {
+		margin-bottom: 8px;
+		border-bottom: 4px solid #ddd;
+		display: block;
+	}
+
+	.table th, .table td{
+		font-size: 8px;
+	}
+
+	.table td{
+		display: block;
+		border-bottom: 1px solid #ddd;
+		text-align: right;
+	}
+
+	.table td:last-child{
+		border-bottom: 0px;
+	}
+
+	.table td::before{
+		content: attr(data-label);
+		font-weight: bold;
+		text-transform: uppercase;
+		float: left;
+	}
