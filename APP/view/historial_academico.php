@@ -11,19 +11,21 @@
 	<meta charset="utf-8">
 </head>
 <body id="body">
-	<?php 
+	<?php
 include "./includes/sidebar.php";
 	?>
 
 
 	<header>
 		<div class="icon_menu">
-			<i class='bx bx-menu' id="btn"></i>							
+			<i class='bx bx-menu' id="btn"></i>
 		</div>
-		<div class="titulo">
-			Universidad Nacional autonoma de México <br>
-			Fesc
-		</div>
+		<div class="UNAMFESC">
+
+			<title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
+			<title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
+
+			</div>
 	</header>
 
 
@@ -32,17 +34,17 @@ include "./includes/sidebar.php";
 	<!--              AQUI VA EL CONTENIDO                -->
 	<div class="home_content">
 		<div class="text">
-			<form>              
+			<form>
 			            <div class="container">
 			                <div class="row">
 			                    <div class="mt-3">
-			                        <a href="https://www.google.com"> 
+			                        <a href="https://www.google.com">
 			                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi    bi-arrow-left-circle" viewBox="0 0 16 16">
 			                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
 			                            </svg>
 			                        </a>
-			                    </div>        
-			                </div>                     
+			                    </div>
+			                </div>
 			                <div class="row">
 			                    <div class="col mx-auto mt-3">
 			                        <table class="table table-bordered table-responsive" width="100%">
@@ -57,7 +59,7 @@ include "./includes/sidebar.php";
 			                                <th colspan="2">Plantel: <div class="datos_carrera">106 - F.E.S. Cuautitlan (Contaduria)</div></th>
 			                                <th colspan="2">Plan de estudios: <div class="datos_carrera">1119 Licenciado en Infotmática</div></th>
 			                            </tr>
-			                        </tbody>    
+			                        </tbody>
 			                    </table>
 			                    <div class="row">
 			                        <div class="col mx-auto border border-white">
@@ -80,9 +82,9 @@ include "./includes/sidebar.php";
 			                                    <th colspan="2">Totales: <div class="datos_escolares">317 de 431 - 73.549883990719%</div></th>
 			                                    <th colspan="2">Total: <div class="datos_escolares">37</div></th>
 			                                </tr>
-			                            </tbody>    
+			                            </tbody>
 			                        </table>
-			                    </div>                    
+			                    </div>
 			                </div>
 			                <!-- Semestre 1 -->
 			                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
@@ -208,16 +210,16 @@ include "./includes/sidebar.php";
 			                            <td>0</td>
 			                        </tr>
 			                    </tbody>
-			                </table>    
-			            </div>                    
+			                </table>
+			            </div>
 			        </div>
 			    </div>
 			    <div class="mt-3 mb-2"></div>
 			    <div class="d-grid gap-2 col-3 mx-auto">
 			        <input class="btn btn-primary mt-2 " type="button" name="Imprimir" onclick="window.print()" value="Imprimir">
 			        <p class="mt-3 mb-2"></p>
-			    </div>    
-			</form>   
+			    </div>
+			</form>
 
 
 		</div>
@@ -238,7 +240,7 @@ include "./includes/sidebar.php";
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 			<!--   Datatables-->
-			<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+			<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
 
 			<!-- extension responsive -->
 			<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
@@ -250,8 +252,8 @@ include "./includes/sidebar.php";
 			        $('#example').DataTable({
 			            responsive: true
 			        });
-			    } );  
-			    
+			    } );
+
 			</script>
 
 </body>

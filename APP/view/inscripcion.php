@@ -12,19 +12,21 @@
 	<meta charset="utf-8">
 </head>
 <body id="body">
-	<?php 
+	<?php
 include "./includes/sidebar.php";
 	?>
 
 
 	<header>
 		<div class="icon_menu">
-			<i class='bx bx-menu' id="btn"></i>							
+			<i class='bx bx-menu' id="btn"></i>
 		</div>
-		<div class="titulo">
-			Universidad Nacional autonoma de México <br>
-			Fesc
-		</div>
+		<div class="UNAMFESC">
+
+			<title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
+			<title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
+
+			</div>
 	</header>
 
 
@@ -38,11 +40,11 @@ include "./includes/sidebar.php";
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12">	
+			<div class="col-lg-12">
 				<table id="example" class="table table-bordered">
 					<thead>
 						<tr class="informacion" id="informacion">
-							<th colspan="2">NÚMERO DE CUENTA: 
+							<th colspan="2">NÚMERO DE CUENTA:
 								<div class="datos_personales">314243919</div>
 							</th>
 							<th colspan="4">NOMBRE:
@@ -169,7 +171,7 @@ include "./includes/sidebar.php";
 							<td data-label="MOVIMIENTO"></td>
 							<td data-label="ACCIONES"></td>
 						</tr>
-						
+
 
 					</tbody>
 
@@ -195,7 +197,7 @@ include "./includes/sidebar.php";
 			<!-- Button trigger modal -->
 
 
-	<div class="col-lg-12 mt-4">	
+	<div class="col-lg-12 mt-4">
 		<div  class="d-grid gap-2 col-11 mx-auto">
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="boton">
 			  Agregar asignatura
@@ -205,7 +207,7 @@ include "./includes/sidebar.php";
 	</div>
 
 
-		
+
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  	<div class="modal-dialog">
@@ -215,7 +217,7 @@ include "./includes/sidebar.php";
 			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			      </div>
 			      <div class="modal-body">
-			        AQUI IRA LA INSCRUPCIÓN 
+			        AQUI IRA LA INSCRUPCIÓN
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
