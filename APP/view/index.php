@@ -11,7 +11,9 @@
 	<meta charset="utf-8">
 </head>
 <body id="body">
-	
+	<?php 
+include "./includes/sidebar.php";
+	?>
 
 
 	<header>
