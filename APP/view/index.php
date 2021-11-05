@@ -11,19 +11,21 @@
 	<meta charset="utf-8">
 </head>
 <body id="body">
-	<?php 
+	<?php
 include "./includes/sidebar.php";
 	?>
 
 
 	<header>
 		<div class="icon_menu">
-			<i class='bx bx-menu' id="btn"></i>							
+			<i class='bx bx-menu' id="btn"></i>
 		</div>
-		<div class="titulo">
-			Universidad Nacional autonoma de México <br>
-			Fesc
-		</div>
+		<div class="UNAMFESC">
+
+			<title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
+			<title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
+
+			</div>
 	</header>
 
 
