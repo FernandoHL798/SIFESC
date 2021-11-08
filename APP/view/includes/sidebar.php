@@ -34,7 +34,7 @@
 				-->
 			</li>
 			<li>
-				<a href="#">
+				<a href="./seguridad.php">
 					<i class='bx bx-cctv'></i>
 					<span class="links_name">Configuración de seguridad</span>
 				</a>
