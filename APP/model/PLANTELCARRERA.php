@@ -20,7 +20,7 @@ class FACULTAD extends CONEXION{
     /**
      * @param mixed $id_carrera_fk
      */
-    public function setIdCarreraFK($id_carrera_fk): void
+    public function setIdCarreraFk($id_carrera_fk): void
     {
         $this->id_carrera_fk = $id_carrera_fk;
     }
@@ -28,14 +28,14 @@ class FACULTAD extends CONEXION{
     /**
      * @return mixed
      */
-    public function getIdPlantelFK()
+    public function getIdPlantelFk()
     {
         return $this->id_plantel_fk;
     }
     /**
      * @param mixed $id_plantel_fk
      */
-    public function setIdPlantelFK($id_plantel_fk): void
+    public function setIdPlantelFk($id_plantel_fk): void
     {
         $this->id_plantel_fk = $id_plantel_fk;
     }
