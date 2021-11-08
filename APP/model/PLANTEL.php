@@ -18,7 +18,7 @@ class FACULTAD extends CONEXION{
     /**
      * @param mixed $id_Plantel
      */
-    public function setIdPlantel($id_Plantel): void
+    public function setIdPlantel($id_plantel): void
     {
         $this->id_plantel = $id_plantel;
     }
