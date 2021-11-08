@@ -1,8 +1,6 @@
 <?php
 include_once "CONEXION.php";
 class FACULTAD extends CONEXION{
-    //Tomamos los atributos de las entidades de la DB y los convertimos en variables
-    // private, public, protected, ***** default *****
     private $id_facultad;
     private $nombre_facultad;
     private $updated_at;
