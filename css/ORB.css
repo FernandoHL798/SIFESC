@@ -1,4 +1,4 @@
-body{
+.bodyseg{
 	margin: 0;
 	padding: 0;
 	font-family: serif;
@@ -6,7 +6,7 @@ body{
 form{
 	
 }
-h3{
+.head3{
 	color: rgb(0, 71, 127);
 	text-align: center;
 }

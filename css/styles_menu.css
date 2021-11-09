@@ -39,6 +39,17 @@ header{
 	color: white;
 }
 
+.bodyseg{
+	margin: 0;
+	padding: 0;
+	font-family: serif;
+}
+
+.head3{
+	color: rgb(0, 71, 127);
+	text-align: center;
+}
+
 
 .datos_escolares{
 	color: rgba(195, 163, 16, 1);
