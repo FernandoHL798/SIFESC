@@ -42,7 +42,7 @@ class INSCRIPCION extends CONEXION{
         $this->id_usuarioalumno_fk = $id_usuarioalumno_fk;
     }
 
-      /**
+    /**
      * @return mixed
      */
     public function getIdPeriodoFk()

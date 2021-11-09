@@ -1,6 +1,6 @@
 <?php
 include_once "CONEXION.php";
-class INSCRIPCION extends CONEXION{
+class MOVIMIENTO extends CONEXION{
     private $id_inscripcion_fk;
     private $id_asignacion_fk;
     private $updated_at;
