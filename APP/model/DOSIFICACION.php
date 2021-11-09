@@ -124,6 +124,7 @@ class FACULTAD extends CONEXION{
         return $resultado;
     }
 
+    
     public function queryDeleteDosificacion(){
         $query="DELETE FROM `dosificacion` WHERE `id_usuarioalumno_fk`='".$this->getIdUsuarioAlumnoFk()."' AND `id_perido_fk`='".$this->getIdPeriodoFk()."'";
         $this->connect();
