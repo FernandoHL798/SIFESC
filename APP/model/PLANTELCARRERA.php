@@ -117,7 +117,7 @@ class PLANTELCARRERA extends CONEXION{
 
     
     public function queryconsultaPlantelCarrera(){
-        $query="SELECT `id_plantel_fk`, `id_carrera_fk`, `aciertos_minimos`, `promedio_minimo`, `cupo`, `updated_at`, `created_at` FROM `plantelcarrera`";
+        $query="SELECT `id_plantel_fk`, `id_carrera_fk`, `aciertos_minimos`, `promedio_minimo`, `cupo`, `updated_at`, `created_at` FROM `plantel_carrera`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -125,7 +125,7 @@ class PLANTELCARRERA extends CONEXION{
     }
 
     public function queryUpdatePlantelCarrera(){
-        $query="UPDATE `plantelcarrera` SET `aciertos_minimos` = '".$this->getAciertosMinimos()."', `promedio_minimo` = '".$this->getPromedioMinimo()."', `cupo` = '".$this->getCupo()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `plantelcarrera`.`id_carrera_fk` = '".$this->getIdCarreraFK()."' AND `plantelcarrera`.`id_plantel_fk` = '".$this->getIdPlantelFK()."'";
+        $query="UPDATE `plantel_carrera` SET `aciertos_minimos` = '".$this->getAciertosMinimos()."', `promedio_minimo` = '".$this->getPromedioMinimo()."', `cupo` = '".$this->getCupo()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `plantel_carrera`.`id_carrera_fk` = '".$this->getIdCarreraFK()."' AND `plantel_carrera`.`id_plantel_fk` = '".$this->getIdPlantelFK()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -133,7 +133,7 @@ class PLANTELCARRERA extends CONEXION{
     }
 
     public function queryInsertPlantelCarrera(){
-        $query="INSERT into `plantelcarrera`(`id_carrera_fk`,`id_planTEL_FK`,`aciertos_minimos`,`promedio_minimo`,`cupo`,`updated_at`,`created_at`) 
+        $query="INSERT into `plantel_carrera`(`id_carrera_fk`,`id_planTEL_FK`,`aciertos_minimos`,`promedio_minimo`,`cupo`,`updated_at`,`created_at`) 
         VALUES ('".$this->getIdCarreraFk()."', '".$this->getIdPlantelFK()."', '".$this->getAciertosMinimos()."', '".$this->getPromedioMinimo()."', '".$this->getCupo()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -142,7 +142,7 @@ class PLANTELCARRERA extends CONEXION{
     }
 
     public function queryDeletePlantelCarrera(){
-        $query="DELETE FROM `plantelcarrera` WHERE `id_carrera_fk`='".$this->getIdCarreraFk()."' AND `id_plantel_fk`='".$this->getIdPlantelFK()."'";
+        $query="DELETE FROM `plantel_carrera` WHERE `id_carrera_fk`='".$this->getIdCarreraFk()."' AND `id_plantel_fk`='".$this->getIdPlantelFK()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
