@@ -59,7 +59,7 @@ class ASIGNATURA extends CONEXION{
         $this->codigo = $codigo;
     }
 
-     /**
+    /**
      * @return mixed
      */
     public function getNombre()
