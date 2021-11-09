@@ -172,7 +172,10 @@ class USUARIO extends CONEXION{
     }
 
     public function queryUpdateUsuario(){
-        $query="UPDATE `usuario` SET `cuenta_adm` = '".$this->getCuentaAdm()."', `cuenta_alumno` = '".$this->getCuentaAlumno()."', `cuenta_profesor` = '".$this->getCuentaProfesor()."', `nombre` = '".$this->getNombre()."', `app` = '".$this->getApp()."', `apm` = '".$this->getApm()."', `correo` = '".$this->getCorreo()."', `contrasenia` = '".$this->getContrasenia()."', `telefono` = '".$this->getTelefono()."' WHERE `usuario`.`id_usuario` = '".$this->getUsuario()."'";
+        $query="UPDATE `usuario` SET `cuenta_adm` = '".$this->getCuentaAdm()."', `cuenta_alumno` = '".$this->getCuentaAlumno()."',
+         `cuenta_profesor` = '".$this->getCuentaProfesor()."', `nombre` = '".$this->getNombre()."', 
+         `app` = '".$this->getApp()."', `apm` = '".$this->getApm()."', `correo` = '".$this->getCorreo()."', 
+         `telefono` = '".$this->getTelefono()."' WHERE `usuario`.`id_usuario` = '".$this->getIdUsuario()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
