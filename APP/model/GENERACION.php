@@ -48,7 +48,7 @@ class GENERACION extends CONEXION{
     /**
      * @param mixed $anio
      */
-    public function setIdGrupoFk($anio): void
+    public function setAnio($anio): void
     {
         $this->anio = $anio;
     }
