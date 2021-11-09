@@ -1,6 +1,6 @@
 <?php
 include_once "CONEXION.php";
-class FACULTAD extends CONEXION{
+class PLANTEL extends CONEXION{
     private $id_plantel;
     private $id_facultad_fk;
     private $nombre;
