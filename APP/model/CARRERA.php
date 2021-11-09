@@ -85,7 +85,7 @@ class CARRERA extends CONEXION{
 
     
     public function queryconsultaCarrera(){
-        $query="SELECT `id_carrera`, `clave`, `nombre`, `updated_at`, `created_at` FROM `plantel`";
+        $query="SELECT `id_carrera`, `clave`, `nombre`, `updated_at`, `created_at` FROM `carrera`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
