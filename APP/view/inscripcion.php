@@ -21,7 +21,7 @@ include "./includes/sidebar.php";
 		<div class="icon_menu">
 			<i class='bx bx-menu' id="btn"></i>
 		</div>
-		<div class="UNAMFESC">
+		<div class="titulo">
 
 			<title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
 			<title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
