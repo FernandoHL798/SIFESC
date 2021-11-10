@@ -138,7 +138,7 @@ class ASIGNATURA extends CONEXION{
     /**
      * @param mixed $semestre
      */
-    public function setSemestres($semestre): void
+    public function setSemestre($semestre): void
     {
         $this->semestre = $semestre;
     }
@@ -183,7 +183,7 @@ class ASIGNATURA extends CONEXION{
     }
 
     public function queryUpdateAsignaturas(){
-        $query="UPDATE `asignaturas` SET `id_plan_fk` = '".$this->getIdPlanFk()."', `codigo` = '".$this->getCodigo()."', `nombre` = '".$this->getNombre()."', `creditos` = '".$this->getCreditos()."', `antecesor` = '".$this->getAntecesor()."', `sucesor` = '".$this->getSucesor()."', `caracter` = '".$this->getCaracter()."', `semestre` = '".$this->getSemestre()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `asignaturas`.`id_asignatura` = '".$this->getIdAsignatura()."'";
+        $query="UPDATE `asignaturas` SET `codigo` = '".$this->getCodigo()."', `nombre` = '".$this->getNombre()."', `creditos` = '".$this->getCreditos()."', `antecesor` = '".$this->getAntecesor()."', `sucesor` = '".$this->getSucesor()."', `caracter` = '".$this->getCaracter()."', `semestre` = '".$this->getSemestre()."', `updated_at` = '".$this->getUpdatedAt()."' WHERE `asignaturas`.`id_asignatura` = '".$this->getIdAsignatura()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -200,7 +200,7 @@ class ASIGNATURA extends CONEXION{
     }
 
     public function queryDeleteAsignaturas(){
-        $query="DELETE FROM `asignaturas` WHERE `id_asignatura`='".$this->getIdAsignaturas()."'";
+        $query="DELETE FROM `asignaturas` WHERE `id_asignatura`='".$this->getIdAsignatura()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
