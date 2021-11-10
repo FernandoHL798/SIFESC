@@ -27,9 +27,10 @@ function insertAsigantura($idPlan,$codigo,$nombre,$creditos,$antecesor,$sucesor,
 }
 //funcion para actualizar asignaturas
 //PARAMETROS CON ESTILO $params, se hará cuando se cree el MS
-function updateAsignaturas($codigo,$nombre,$creditos,$antecesor,$sucesor,$caracter,$semestre){
+function updateAsignaturas($idAsignatura,$codigo,$nombre,$creditos,$antecesor,$sucesor,$caracter,$semestre){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
+    $ASIGNATURA->setIdAsignatura($idAsignatura);
     $ASIGNATURA->setCodigo($codigo);
     $ASIGNATURA->setNombre($nombre);
     $ASIGNATURA->setCreditos($creditos);
@@ -37,4 +38,15 @@ function updateAsignaturas($codigo,$nombre,$creditos,$antecesor,$sucesor,$caract
     $ASIGNATURA->setSucesor($sucesor);
     $ASIGNATURA->setCaracter($caracter);
     $ASIGNATURA->setSemestre($semestre);
+    $result = $ASIGNATURA->queryUpdateAsignaturas();
+    return $result;
+}
+//funcion para eliminar asignaturas
+
+function deleteAsignatura(){
+    include_once "../model/ASIGNATURAS.php";
+    $ASIGNATURA= new ASIGNATURA();
+    $ASIGNATURA->setIdAsignatura($idAsignatura);
+    $result= $ASIGNATURA->queryDeleteAsignaturas();
+    return $result;
 }
