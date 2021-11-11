@@ -2,7 +2,7 @@
 include_once "CONEXION.php";
 class USUARIO extends CONEXION{
     private $id_usuario;
-    private $cuenta_adm;
+    private $cuenta_admi;
     private $cuenta_alumno;
     private $cuenta_profesor;
     private $nombre;
@@ -37,7 +37,7 @@ class USUARIO extends CONEXION{
     /**
      * @param mixed $cuenta_admi
      */
-    public function setCuentaAdm($cuenta_admi): void
+    public function setCuentaAdmi($cuenta_admi): void
     {
         $this->cuenta_admi = $cuenta_admi;
     }
