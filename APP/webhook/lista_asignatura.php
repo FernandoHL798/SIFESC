@@ -1,3 +1,3 @@
 <?php 
-include_once"../control/controlAsignatura.php";
-var_dump(consultaAsignatura());
+include_once"../control/controlAsignaturas.php";
+var_dump(consultaAsinaturas());

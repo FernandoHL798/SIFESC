@@ -30,16 +30,16 @@ class USUARIO extends CONEXION{
     /**
      * @return mixed
      */
-    public function getCuentaAdm()
+    public function getCuentaAdmi()
     {
-        return $this->cuenta_adm;
+        return $this->cuenta_admi;
     }
     /**
-     * @param mixed $cuenta_adm
+     * @param mixed $cuenta_admi
      */
-    public function setCuentaAdm($cuenta_adm): void
+    public function setCuentaAdm($cuenta_admi): void
     {
-        $this->cuenta_adm = $cuenta_adm;
+        $this->cuenta_admi = $cuenta_admi;
     }
 
     /**
@@ -164,7 +164,7 @@ class USUARIO extends CONEXION{
 
     
     public function queryconsultaUsuario(){
-        $query="SELECT `id_usuario`, `cuenta_adm`, `cuenta_alumno`, `cuenta_profesor`, `nombre`, `app`, `apm`, `correo`, `contraseña`, `telefono` FROM `usuario`";
+        $query="SELECT `id_usuario`, `cuenta_admi`, `cuenta_alumno`, `cuenta_profesor`, `nombre`, `app`, `apm`, `correo`, `contrasenia`, `telefono` FROM `usuario`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -172,7 +172,7 @@ class USUARIO extends CONEXION{
     }
 
     public function queryUpdateUsuario(){
-        $query="UPDATE `usuario` SET `cuenta_adm` = '".$this->getCuentaAdm()."', `cuenta_alumno` = '".$this->getCuentaAlumno()."',
+        $query="UPDATE `usuario` SET `cuenta_admi` = '".$this->getCuentaAdmi()."', `cuenta_alumno` = '".$this->getCuentaAlumno()."',
          `cuenta_profesor` = '".$this->getCuentaProfesor()."', `nombre` = '".$this->getNombre()."', 
          `app` = '".$this->getApp()."', `apm` = '".$this->getApm()."', `correo` = '".$this->getCorreo()."', 
          `telefono` = '".$this->getTelefono()."' WHERE `usuario`.`id_usuario` = '".$this->getIdUsuario()."'";
@@ -183,8 +183,8 @@ class USUARIO extends CONEXION{
     }
 
     public function queryInsertUsuario(){
-        $query="INSERT into `usuario`(`id_usuario`,`cuenta_adm`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `app`, `apm`,`correo`,`contrasenia`,`telefono`) 
-        VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdm()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getApp()."', '".$this->getApm()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."')";
+        $query="INSERT into `usuario`(`id_usuario`,`cuenta_admi`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `app`, `apm`,`correo`,`contrasenia`,`telefono`) 
+        VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdmi()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getApp()."', '".$this->getApm()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

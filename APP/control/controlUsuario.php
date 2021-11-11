@@ -8,9 +8,9 @@ function consultaUsuarios(){
     return json_encode($result);
 }
 //Las variables que llegaran se cambiaran por una sola con el apartado $params
-function updateUsuario($cuentaAdm,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$correo,$telefono,$usuario) {
+function updateUsuario($cuentaAdmi,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$correo,$telefono,$usuario) {
     $USUARIOS= new USUARIO();
-    $USUARIOS->setCuentaAdm($cuentaAdm);
+    $USUARIOS->setCuentaAdmi($cuentaAdmi);
     $USUARIOS->setCuentaAlumno($cuentaAlumn);
     $USUARIOS->setCuentaProfesor($cuentaProf);
     $USUARIOS->setNombre($nombre);
@@ -22,11 +22,11 @@ function updateUsuario($cuentaAdm,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$co
     $result = $USUARIOS->queryUpdateUsuario();
     return $result;
 }
-function insertUsuario($cuentaAdm,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$correo,$pwd,$telefono){
+function insertUsuario($cuentaAdmi,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$correo,$pwd,$telefono){
     $USUARIOS= new USUARIO();
     //FUNCION GENERADORA DE ID
     $USUARIOS->setIdUsuario();
-    $USUARIOS->setCuentaAdm($cuentaAdm);
+    $USUARIOS->setCuentaAdmi($cuentaAdmi);
     $USUARIOS->setCuentaAlumno($cuentaAlumn);
     $USUARIOS->setCuentaProfesor($cuentaProf);
     $USUARIOS->setNombre($nombre);

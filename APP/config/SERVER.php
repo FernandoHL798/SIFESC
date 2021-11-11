@@ -3,6 +3,6 @@
 //constantes de parametros de la conexion a la base
 
 const SERVER="localhost";
-const DB="abc";//DB= data base name
+const DB="sifesc";//DB= data base name
 const USER="root";
 const PASS="";
