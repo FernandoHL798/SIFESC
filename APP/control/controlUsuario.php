@@ -22,19 +22,19 @@ function updateUsuario($cuentaAdmi,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$c
     $result = $USUARIOS->queryUpdateUsuario();
     return $result;
 }
-function insertUsuario($cuentaAdmi,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$correo,$pwd,$telefono){
+function insertUsuario($params){
     $USUARIOS= new USUARIO();
     //FUNCION GENERADORA DE ID
-    $USUARIOS->setIdUsuario();
-    $USUARIOS->setCuentaAdmi($cuentaAdmi);
-    $USUARIOS->setCuentaAlumno($cuentaAlumn);
-    $USUARIOS->setCuentaProfesor($cuentaProf);
-    $USUARIOS->setNombre($nombre);
-    $USUARIOS->setApp($app);
-    $USUARIOS->setApm($apm);
-    $USUARIOS->setCorreo($correo);
-    $USUARIOS->setContrasenia(md5($pwd));
-    $USUARIOS->setTelefono($telefono);
+    $USUARIOS->setIdUsuario($params['id_usuario']);
+    $USUARIOS->setCuentaAdmi($params['cuentaAdmi']);
+    $USUARIOS->setCuentaAlumno($params['cuentaAlumn']);
+    $USUARIOS->setCuentaProfesor($params['cuentaProf']);
+    $USUARIOS->setNombre($params['nombre']);
+    $USUARIOS->setApp($params['app']);
+    $USUARIOS->setApm($params['apm']);
+    $USUARIOS->setCorreo($params['correo']);
+    $USUARIOS->setContrasenia(md5($params['pwd']));
+    $USUARIOS->setTelefono($params['telefono']);
     $result= $USUARIOS->queryInsertUsuario();
     return $result;
 }

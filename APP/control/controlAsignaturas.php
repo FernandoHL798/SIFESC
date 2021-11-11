@@ -1,6 +1,6 @@
 <?php
 //FUncion para consulta de todas las asignaturas.
-function consultaAsinaturas(){
+function consultaAsignaturas(){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
     $result = $ASIGNATURA->queryConsultaAsignaturas();
@@ -9,7 +9,7 @@ function consultaAsinaturas(){
 
 //Funcion para agregar materia
 //PARAMETROS CON ESTILO $params, se hará cuando se cree el MS
-function insertAsigantura($idPlan,$codigo,$nombre,$creditos,$antecesor,$sucesor,$caracter,$semestre){
+function insertAsignatura($idPlan,$codigo,$nombre,$creditos,$antecesor,$sucesor,$caracter,$semestre){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
     //Se genera el ID con una función despues. 

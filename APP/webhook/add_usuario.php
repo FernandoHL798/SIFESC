@@ -1,12 +1,17 @@
 <?php 
 include_once"../control/controlUsuario.php";
-$cuentaAdmi="GFUNJNK1651351";
-$cuentaAlumn="315578885";
-$cuentaProf="GFUNJNK1651351";
-$nombre="manuel";
-$app="romero";
-$apm="martinez";
-$correo="manuelrm@gmail.com";
-$pwd="1234";
-$telefono="5548596215"
-var_dump(insertUsuario($cuentaAdmi,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$correo,$pwd,$telefono));
+$params=[
+"id_usuario"=>"3",
+"cuentaAdmi"=>"uhduhduhd",
+"cuentaAlumn"=>"321084654",
+"cuentaProf"=>"uhdudgas",
+"nombre"=>"paco",
+"app"=>"lopez",
+"apm"=>"ramirez",
+"correo"=>"pacolr@gmail.com",
+"pwd"=>"0000",
+"telefono"=>"5516516878"
+];
+
+$result=insertUsuario($params);
+echo $result;
