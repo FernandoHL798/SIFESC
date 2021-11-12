@@ -85,7 +85,8 @@ class FACULTAD extends CONEXION{
 
     public function queryInsertFacultad(){
         $query="INSERT into `facultad`(`id_facultad`,`nombre_facultad`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdFacultad()."', '".$this->getNombreFacultad()."','".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdFacultad()."', '".$this->getNombreFacultad()."',
+        current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
