@@ -4,8 +4,6 @@ class SALON extends CONEXION{
     private $id_salon;
     private $id_edificio_fk;
     private $clave;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -52,37 +50,6 @@ class SALON extends CONEXION{
     {
         $this->clave = $clave;
     }
-
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaSalon(){
         $query="SELECT `id_salon`, `id_edificio_fk`, `clave`, `updated_at`, `created_at` FROM `salon`";
@@ -93,7 +60,9 @@ class SALON extends CONEXION{
     }
 
     public function queryUpdateSalon(){
-        $query="UPDATE `salon` SET `id_edificio_fk` = '".$this->getIdEdificioFk()."', `clave` = '".$this->getClave()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `salon`.`id_salon` = '".$this->getIdSalon()."'";
+        $query="UPDATE `salon` SET `id_edificio_fk` = '".$this->getIdEdificioFk()."', 
+        `clave` = '".$this->getClave()."', `updated_at` = current_timestamp()
+         WHERE `salon`.`id_salon` = '".$this->getIdSalon()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -102,7 +71,8 @@ class SALON extends CONEXION{
 
     public function queryInsertSalon(){
         $query="INSERT into `salon`(`id_salon`,`id_edificio_fk`,`clave`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdSalon()."', '".$this->getIdEdificioFk()."', '".$this->getClave()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdSalon()."', '".$this->getIdEdificioFk()."', '".$this->getClave()."',
+         current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

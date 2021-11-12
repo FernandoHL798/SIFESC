@@ -8,8 +8,6 @@ class PLANDEESTUDIOS extends CONEXION{
     private $creditos_optativos;
     private $creditos_totales;
     private $semestres;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -116,37 +114,6 @@ class PLANDEESTUDIOS extends CONEXION{
     {
         $this->semestres = $semestres;
     }
-
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaPlan(){
         $query="SELECT `id_plan`, `id_carrera_fk`, `anio_plan`, `creditos_obligatorios`, `creditos_optativos`, `creditos_totales`, `semestres`,`updated_at`, `created_at` FROM `plandeestudios`";
@@ -157,7 +124,11 @@ class PLANDEESTUDIOS extends CONEXION{
     }
 
     public function queryUpdatePlan(){
-        $query="UPDATE `plandeestudios` SET `id_carrera_fk` = '".$this->getIdCarreraFk()."', `anio_plan` = '".$this->getAnioPlan()."', `creditos_obligatorios` = '".$this->getCreditosObligatorios()."', `creditos_optativos` = '".$this->getCreditosOptativos()."', `creditos_totales` = '".$this->getCreditosTotales()."', `semestres` = '".$this->getSemestres()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `plandeestudios`.`id_plan` = '".$this->getIdPlan()."'";
+        $query="UPDATE `plandeestudios` SET `id_carrera_fk` = '".$this->getIdCarreraFk()."',
+         `anio_plan` = '".$this->getAnioPlan()."', `creditos_obligatorios` = '".$this->getCreditosObligatorios()."',
+         `creditos_optativos` = '".$this->getCreditosOptativos()."', 
+         `creditos_totales` = '".$this->getCreditosTotales()."', `semestres` = '".$this->getSemestres()."', 
+         `updated_at` = current_timestamp() WHERE `plandeestudios`.`id_plan` = '".$this->getIdPlan()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -166,7 +137,9 @@ class PLANDEESTUDIOS extends CONEXION{
 
     public function queryInsertPlan(){
         $query="INSERT into `plandeestudios`(`id_plan`,`id_carrera_fk`,`anio_plan`,`creditos_obligatorios`,`creditos_optativos`,`creditos_totales`,`semestres`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdPlan()."', '".$this->getIdCarreraFk()."', '".$this->getAnioPlan()."', '".$this->getCreditosObligatorios()."', '".$this->getCreditosOptativos()."', '".$this->getCreditosTotales()."', '".$this->getSemestres()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdPlan()."', '".$this->getIdCarreraFk()."', '".$this->getAnioPlan()."', 
+        '".$this->getCreditosObligatorios()."', '".$this->getCreditosOptativos()."', 
+        '".$this->getCreditosTotales()."', '".$this->getSemestres()."', current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

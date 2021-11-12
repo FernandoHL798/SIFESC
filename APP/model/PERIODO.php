@@ -7,8 +7,6 @@ class PERIODO extends CONEXION{
     private $fecha_inscp_fin;
     private $fecha_altas_bajas_in;
     private $fecha_altas_bajas_fin;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -109,37 +107,6 @@ class PERIODO extends CONEXION{
         $this->fecha_altas_bajas_fin = $fecha_altas_bajas_fin;
     }
 
-     /**
-     * @return mixed
-     */
-
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaPeriodo(){
         $query="SELECT `id_periodo`, `id_asignacion_fk`, `fecha_inscp_inicio`, `fecha_inscp_fin`, `fecha_altas_bajas_in`, `fecha_altas_bajas_fin`, `updated_at`, `created_at` FROM `periodo`";
@@ -150,7 +117,12 @@ class PERIODO extends CONEXION{
     }
 
     public function queryUpdatePeriodo(){
-        $query="UPDATE `periodo` SET `id_asignacion_fk` = '".$this->getIdAsignacionFk()."', `fecha_inscp_inicio` = '".$this->getFechaInscpInicio()."', `fecha_inscp_fin` = '".$this->getFechaInscpFin()."', `fecha_altas_bajas_in` = '".$this->getFechaAltasBajasIn()."', `fecha_altas_bajas_fin` = '".$this->getFechaAltasBajasFin()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `periodo`.`id_periodo` = '".$this->getIdPeriodo()."'";
+        $query="UPDATE `periodo` SET `id_asignacion_fk` = '".$this->getIdAsignacionFk()."', 
+        `fecha_inscp_inicio` = '".$this->getFechaInscpInicio()."',
+         `fecha_inscp_fin` = '".$this->getFechaInscpFin()."', 
+         `fecha_altas_bajas_in` = '".$this->getFechaAltasBajasIn()."', 
+         `fecha_altas_bajas_fin` = '".$this->getFechaAltasBajasFin()."', `updated_at` = current_timestamp()
+          WHERE `periodo`.`id_periodo` = '".$this->getIdPeriodo()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -159,7 +131,9 @@ class PERIODO extends CONEXION{
 
     public function queryInsertPeriodo(){
         $query="INSERT into `periodo`(`id_periodo`,`id_asignacion_fk`,`fecha_inscp_inicio`,`fecha_inscp_fin`, `fecha_altas_bajas_in`, `fecha_altas_bajas_fin`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdPeriodo()."', '".$this->getIdAsignacionFk()."', '".$this->getFechaInscpInicio()."', '".$this->getFechaInscpFin()."', '".$this->getFechaAltasBajasIn()."', '".$this->getFechaAltasBajasFin()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdPeriodo()."', '".$this->getIdAsignacionFk()."', '".$this->getFechaInscpInicio()."',
+         '".$this->getFechaInscpFin()."', '".$this->getFechaAltasBajasIn()."', '".$this->getFechaAltasBajasFin()."',
+         current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

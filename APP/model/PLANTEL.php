@@ -4,8 +4,6 @@ class PLANTEL extends CONEXION{
     private $id_plantel;
     private $id_facultad_fk;
     private $nombre;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -53,36 +51,6 @@ class PLANTEL extends CONEXION{
         $this->nombre = $nombre;
     }
 
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaPlantel(){
         $query="SELECT `id_plantel`, `id_facultad_fk`, `nombre`, `updated_at`, `created_at` FROM `plantel`";
@@ -93,7 +61,9 @@ class PLANTEL extends CONEXION{
     }
 
     public function queryUpdatePlantel(){
-        $query="UPDATE `plantel` SET `id_facultad_fk` = '".$this->getIdFacultadFk()."', `nombre` = '".$this->getNombre()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `plantel`.`id_plantel` = '".$this->getIdPlantel()."'";
+        $query="UPDATE `plantel` SET `id_facultad_fk` = '".$this->getIdFacultadFk()."', 
+        `nombre` = '".$this->getNombre()."', `updated_at` = current_timestamp()
+         WHERE `plantel`.`id_plantel` = '".$this->getIdPlantel()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -102,7 +72,8 @@ class PLANTEL extends CONEXION{
 
     public function queryInsertPlantel(){
         $query="INSERT into `plantel`(`id_plantel`,`id_facultad_fk`,`nombre`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdPlantel()."', '".$this->getIdFacultadFk()."', '".$this->getNombre()."','".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdPlantel()."', '".$this->getIdFacultadFk()."', '".$this->getNombre()."',
+        current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

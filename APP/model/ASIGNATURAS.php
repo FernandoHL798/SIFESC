@@ -10,8 +10,6 @@ class ASIGNATURA extends CONEXION{
     private $sucesor;
     private $caracter;
     private $semestre;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -142,37 +140,6 @@ class ASIGNATURA extends CONEXION{
     {
         $this->semestre = $semestre;
     }
-
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaAsignaturas(){
         $query="SELECT `id_asignatura`, `id_plan_fk`, `codigo`, `nombre`, `creditos`, `antecesor`, `sucesor`, `caracter`, `semestre`,`updated_at`, `created_at` FROM `asignaturas`";
@@ -183,7 +150,10 @@ class ASIGNATURA extends CONEXION{
     }
 
     public function queryUpdateAsignaturas(){
-        $query="UPDATE `asignaturas` SET `codigo` = '".$this->getCodigo()."', `nombre` = '".$this->getNombre()."', `creditos` = '".$this->getCreditos()."', `antecesor` = '".$this->getAntecesor()."', `sucesor` = '".$this->getSucesor()."', `caracter` = '".$this->getCaracter()."', `semestre` = '".$this->getSemestre()."', `updated_at` = '".$this->getUpdatedAt()."' WHERE `asignaturas`.`id_asignatura` = '".$this->getIdAsignatura()."'";
+        $query="UPDATE `asignaturas` SET `codigo` = '".$this->getCodigo()."', `nombre` = '".$this->getNombre()."',
+         `creditos` = '".$this->getCreditos()."', `antecesor` = '".$this->getAntecesor()."', 
+         `sucesor` = '".$this->getSucesor()."', `caracter` = '".$this->getCaracter()."',
+          `semestre` = '".$this->getSemestre()."', `updated_at` = current_timestamp() WHERE `asignaturas`.`id_asignatura` = '".$this->getIdAsignatura()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -192,7 +162,10 @@ class ASIGNATURA extends CONEXION{
 
     public function queryInsertAsignaturas(){
         $query="INSERT into `asignaturas`(`id_asignatura`,`id_plan_fk`,`codigo`,`nombre`,`creditos`,`antecesor`,`sucesor`,`caracter`,`semestre`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdAsignatura()."', '".$this->getIdPlanFk()."', '".$this->getCodigo()."', '".$this->getNombre()."', '".$this->getCreditos()."', '".$this->getAntecesor()."', '".$this->getSucesor()."', '".$this->getCaracter()."', '".$this->getSemestre()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdAsignatura()."', '".$this->getIdPlanFk()."', '".$this->getCodigo()."', 
+        '".$this->getNombre()."', '".$this->getCreditos()."', '".$this->getAntecesor()."', 
+        '".$this->getSucesor()."', '".$this->getCaracter()."', '".$this->getSemestre()."', 
+        current_timestamp(), current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

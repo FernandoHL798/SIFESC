@@ -5,8 +5,6 @@ class EDIFICIO extends CONEXION{
     private $id_plantel_fk;
     private $clave;
     private $pisos;
-    private $updated_at;
-    private $created_at;
 
     /**
      * @return mixed
@@ -67,37 +65,6 @@ class EDIFICIO extends CONEXION{
     {
         $this->pisos = $pisos;
     }
-
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaEdificio(){
         $query="SELECT `id_edificio`, `id_plantel_fk`, `clave`, `pisos`, `updated_at`, `created_at` FROM `edificio`";
@@ -108,7 +75,8 @@ class EDIFICIO extends CONEXION{
     }
 
     public function queryUpdateEdificio(){
-        $query="UPDATE `edificio` SET `id_plantel_fk` = '".$this->getIdPlantelFK()."', `clave` = '".$this->getClave()."', `pisos` = '".$this->getPisos()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `edificio`.`id_edificio` = '".$this->getIdEdificio()."'";
+        $query="UPDATE `edificio` SET `id_plantel_fk` = '".$this->getIdPlantelFK()."', `clave` = '".$this->getClave()."',
+         `pisos` = '".$this->getPisos()."', `updated_at` = current_timestamp() WHERE `edificio`.`id_edificio` = '".$this->getIdEdificio()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -117,7 +85,8 @@ class EDIFICIO extends CONEXION{
 
     public function queryInsertEdificio(){
         $query="INSERT into `edificio`(`id_edificio`,`id_plantel_fk`,`clave`,`pisos`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdEdificio()."', '".$this->getIdPlantelFk()."', '".$this->getClave()."', '".$this->getPisos()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdEdificio()."', '".$this->getIdPlantelFk()."', '".$this->getClave()."',
+         '".$this->getPisos()."', current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

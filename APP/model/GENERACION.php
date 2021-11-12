@@ -4,8 +4,6 @@ class GENERACION extends CONEXION{
     private $id_generacion;
     private $id_plan_fk;
     private $anio;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -53,37 +51,6 @@ class GENERACION extends CONEXION{
         $this->anio = $anio;
     }
     
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
-    
     public function queryconsultaGeneracion(){
         $query="SELECT `id_generacion`, `id_plan_fk`, `anio`, `updated_at`, `created_at` FROM `generacion`";
         $this->connect();
@@ -93,7 +60,8 @@ class GENERACION extends CONEXION{
     }
 
     public function queryUpdateGeneracion(){
-        $query="UPDATE `generacion` SET `id_plan_fk` = '".$this->getIdPlanFk()."', `anio` = '".$this->getAnio()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `generacion`.`id_generacion` = '".$this->getIdGeneracion()."'";
+        $query="UPDATE `generacion` SET `id_plan_fk` = '".$this->getIdPlanFk()."', `anio` = '".$this->getAnio()."',
+         `updated_at` = current_timestamp() WHERE `generacion`.`id_generacion` = '".$this->getIdGeneracion()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -102,7 +70,8 @@ class GENERACION extends CONEXION{
 
     public function queryInsertGeneracion(){
         $query="INSERT into `generacion`(`id_generacion`,`id_plan_fk`,`anio`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdGeneracion()."', '".$this->getIdPlanFk()."', '".$this->getAnio()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdGeneracion()."', '".$this->getIdPlanFk()."', '".$this->getAnio()."', current_timestamp(),
+        current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

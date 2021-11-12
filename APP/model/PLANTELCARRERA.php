@@ -6,8 +6,6 @@ class PLANTELCARRERA extends CONEXION{
     private $aciertos_minimos;
     private $promedio_minimo;
     private $cupo;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -85,36 +83,6 @@ class PLANTELCARRERA extends CONEXION{
         $this->cupo = $cupo;
     }
 
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaPlantelCarrera(){
         $query="SELECT `id_plantel_fk`, `id_carrera_fk`, `aciertos_minimos`, `promedio_minimo`, `cupo`, `updated_at`, `created_at` FROM `plantel_carrera`";
@@ -125,7 +93,9 @@ class PLANTELCARRERA extends CONEXION{
     }
 
     public function queryUpdatePlantelCarrera(){
-        $query="UPDATE `plantel_carrera` SET `aciertos_minimos` = '".$this->getAciertosMinimos()."', `promedio_minimo` = '".$this->getPromedioMinimo()."', `cupo` = '".$this->getCupo()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `plantel_carrera`.`id_carrera_fk` = '".$this->getIdCarreraFK()."' AND `plantel_carrera`.`id_plantel_fk` = '".$this->getIdPlantelFK()."'";
+        $query="UPDATE `plantel_carrera` SET `aciertos_minimos` = '".$this->getAciertosMinimos()."', 
+        `promedio_minimo` = '".$this->getPromedioMinimo()."', `cupo` = '".$this->getCupo()."', 
+        `updated_at` = current_timestamp() WHERE `plantel_carrera`.`id_carrera_fk` = '".$this->getIdCarreraFK()."' AND `plantel_carrera`.`id_plantel_fk` = '".$this->getIdPlantelFK()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -134,7 +104,8 @@ class PLANTELCARRERA extends CONEXION{
 
     public function queryInsertPlantelCarrera(){
         $query="INSERT into `plantel_carrera`(`id_carrera_fk`,`id_planTEL_FK`,`aciertos_minimos`,`promedio_minimo`,`cupo`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdCarreraFk()."', '".$this->getIdPlantelFK()."', '".$this->getAciertosMinimos()."', '".$this->getPromedioMinimo()."', '".$this->getCupo()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdCarreraFk()."', '".$this->getIdPlantelFK()."', '".$this->getAciertosMinimos()."', 
+        '".$this->getPromedioMinimo()."', '".$this->getCupo()."', current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

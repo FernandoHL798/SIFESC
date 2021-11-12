@@ -5,8 +5,6 @@ class FACULTAD extends CONEXION{
     private $id_periodo_fk;
     private $fecha_inc;
     private $fecha_altabaja;
-    private $updated_at;
-    private $created_at;
 
     /**
      * @return mixed
@@ -68,36 +66,6 @@ class FACULTAD extends CONEXION{
         $this->fecha_altabaja = $fecha_altabaja;
     }
 
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaDosificacion(){
         $query="SELECT `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inc`, `fecha_altabaja`, `updated_at`, `created_at` FROM `dosificacion`";
@@ -108,7 +76,9 @@ class FACULTAD extends CONEXION{
     }
 
     public function queryUpdateDosificacion(){
-        $query="UPDATE `dosificacion` SET `fecha_inc` = '".$this->getFechaInc()."', `fecha_altabaja` = '".$this->getFechaAltaBaja()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `dosificacion`.`id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."' AND `dosificacion`.`id_periodo_fk` = '".$this->getIdPeriodoFk()."'";
+        $query="UPDATE `dosificacion` SET `fecha_inc` = '".$this->getFechaInc()."', 
+        `fecha_altabaja` = '".$this->getFechaAltaBaja()."', `updated_at` = current_timestamp()
+         WHERE `dosificacion`.`id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."' AND `dosificacion`.`id_periodo_fk` = '".$this->getIdPeriodoFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -117,7 +87,8 @@ class FACULTAD extends CONEXION{
 
     public function queryInsertDosificacion(){
         $query="INSERT into `dosificacion`(`id_usuarioalumno_fk`,`id_periodo_fk`,`fecha_inc`,`fecha_altabaja`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPeriodoFk()."', '".$this->getFechaInc()."', '".$this->getFechaAltaBaja()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPeriodoFk()."', '".$this->getFechaInc()."', 
+        '".$this->getFechaAltaBaja()."', current_timestamp(), current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

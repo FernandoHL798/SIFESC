@@ -8,8 +8,6 @@ class INSCRIPCION extends CONEXION{
     private $hora_inscp;
     private $fecha_altas_bajas;
     private $hora_altas_bajas;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -125,37 +123,6 @@ class INSCRIPCION extends CONEXION{
         $this->hora_altas_bajas = $hora_altas_bajas;
     }
 
-     /**
-     * @return mixed
-     */
-
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaInscripcion(){
         $query="SELECT `id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscp`, `hora_inscp`, `fecha_altas_bajas`, `hora_altas_bajas`, `updated_at`, `created_at` FROM `inscripcion`";
@@ -166,7 +133,10 @@ class INSCRIPCION extends CONEXION{
     }
 
     public function queryUpdateInscripcion(){
-        $query="UPDATE `inscripcion` SET `id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."', `id_periodo_fk` = '".$this->getIdPeriodoFk()."', `fecha_inscp` = '".$this->getFechaInscp()."', `hora_inscp` = '".$this->getHoraInscp()."', `fecha_altas_bajas` = '".$this->getFechaAltasBajas()."', `hora_altas_bajas` = '".$this->getHoraAltasBajas()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `inscripcion`.`id_inscripcion` = '".$this->getIdInscripcion()."'";
+        $query="UPDATE `inscripcion` SET `id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."', 
+        `id_periodo_fk` = '".$this->getIdPeriodoFk()."', `fecha_inscp` = '".$this->getFechaInscp()."', 
+        `hora_inscp` = '".$this->getHoraInscp()."', `fecha_altas_bajas` = '".$this->getFechaAltasBajas()."', 
+        `hora_altas_bajas` = '".$this->getHoraAltasBajas()."', `updated_at` = current_timestamp() WHERE `inscripcion`.`id_inscripcion` = '".$this->getIdInscripcion()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -175,7 +145,9 @@ class INSCRIPCION extends CONEXION{
 
     public function queryInsertInscripcion(){
         $query="INSERT into `inscripcion`(`id_inscripcion`,`id_usuarioalumno_fk`,`id_periodo_fk`,`fecha_inscp`,`hora_inscp`, `fecha_altas_bajas`, `hora_altas_bajas`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdInscripcion()."', '".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPeriodoFk()."', '".$this->getFechaInscp()."', '".$this->getHoraInscp()."', '".$this->getFechaAltasBajas()."', '".$this->getHoraAltasBajas()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdInscripcion()."', '".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPeriodoFk()."',
+         '".$this->getFechaInscp()."', '".$this->getHoraInscp()."', '".$this->getFechaAltasBajas()."',
+          '".$this->getHoraAltasBajas()."',current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

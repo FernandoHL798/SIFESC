@@ -5,8 +5,6 @@ class ASIGNACION extends CONEXION{
     private $id_usuarioprofesor_fk;
     private $id_grupo_fk;
     private $cupo;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -68,38 +66,7 @@ class ASIGNACION extends CONEXION{
     {
         $this->cupo = $cupo;
     }
-    
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
 
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
-    
     public function queryconsultaAsignacion(){
         $query="SELECT `id_asignacion`, `id_usuarioprofesor_fk`, `id_grupo_fk`, `cupo`, `updated_at`, `created_at` FROM `asignacion`";
         $this->connect();
@@ -109,7 +76,9 @@ class ASIGNACION extends CONEXION{
     }
 
     public function queryUpdateAsignacion(){
-        $query="UPDATE `asignacion` SET `id_usuarioprofesor_fk` = '".$this->getIdUsuarioProfesorFk()."', `id_grupo_fk` = '".$this->getIdGrupoFk()."', `cupo` = '".$this->getCupo()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `asignacion`.`id_asignacion` = '".$this->getIdAsignacion()."'";
+        $query="UPDATE `asignacion` SET `id_usuarioprofesor_fk` = '".$this->getIdUsuarioProfesorFk()."',
+         `id_grupo_fk` = '".$this->getIdGrupoFk()."', `cupo` = '".$this->getCupo()."', 
+         `updated_at` = current_timestamp() WHERE `asignacion`.`id_asignacion` = '".$this->getIdAsignacion()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -118,7 +87,8 @@ class ASIGNACION extends CONEXION{
 
     public function queryInsertAsignacion(){
         $query="INSERT into `asignacion`(`id_asignacion`,`id_usuarioprofesor_fk`,`id_grupo_fk`,`cupo`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdAsignacion()."', '".$this->getIdUsuarioProfesorFk()."', '".$this->getIdGrupoFk()."', '".$this->getCupo()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdAsignacion()."', '".$this->getIdUsuarioProfesorFk()."', '".$this->getIdGrupoFk()."',
+         '".$this->getCupo()."', current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

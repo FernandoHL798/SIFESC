@@ -8,8 +8,6 @@ class HORARIO extends CONEXION{
     private $fin;
     private $duracion;
     private $dia;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -124,38 +122,6 @@ class HORARIO extends CONEXION{
     {
         $this->dia = $dia;
     }
-
-     /**
-     * @return mixed
-     */
-
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaHorario(){
         $query="SELECT `id_horario`, `id_grupo_fk`, `id_salon_fk`, `inicio`, `fin`, `duracion`, `dia`, `updated_at`, `created_at` FROM `horario`";
@@ -166,7 +132,9 @@ class HORARIO extends CONEXION{
     }
 
     public function queryUpdateHorario(){
-        $query="UPDATE `horario` SET `id_grupo_fk` = '".$this->getIdGrupoFk()."', `id_salon_fk` = '".$this->getIdSalonFk()."', `inicio` = '".$this->getInicio()."', `fin` = '".$this->getFin()."', `duracion` = '".$this->getDuracion()."', `dia` = '".$this->getDia()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `horario`.`id_horario` = '".$this->getIdHorario()."'";
+        $query="UPDATE `horario` SET `id_grupo_fk` = '".$this->getIdGrupoFk()."', `id_salon_fk` = '".$this->getIdSalonFk()."',
+         `inicio` = '".$this->getInicio()."', `fin` = '".$this->getFin()."', `duracion` = '".$this->getDuracion()."',
+          `dia` = '".$this->getDia()."', `updated_at` = current_timestamp() WHERE `horario`.`id_horario` = '".$this->getIdHorario()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -175,7 +143,9 @@ class HORARIO extends CONEXION{
 
     public function queryInsertHorario(){
         $query="INSERT into `horario`(`id_horario`,`id_grupo_fk`,`id_salon_fk`,`inicio`,`fin`, `duracion`, `dia`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdHorario()."', '".$this->getIdGrupoFk()."', '".$this->getIdSalonFk()."', '".$this->getInicio()."', '".$this->getFin()."', '".$this->getDuracion()."', '".$this->getDia()."', '".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdHorario()."', '".$this->getIdGrupoFk()."', '".$this->getIdSalonFk()."', 
+        '".$this->getInicio()."', '".$this->getFin()."', '".$this->getDuracion()."', '".$this->getDia()."', 
+        current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

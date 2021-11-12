@@ -4,8 +4,6 @@ class CARRERA extends CONEXION{
     private $id_carrera;
     private $clave;
     private $nombre;
-    private $updated_at;
-    private $created_at;
 
   
     /**
@@ -53,36 +51,6 @@ class CARRERA extends CONEXION{
         $this->nombre = $nombre;
     }
 
-     /**
-     * @return mixed
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-    /**
-     * @param mixed $updated_at
-     */
-    public function setUpdatedAt($updated_at): void
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-    /**
-     * @param mixed $created_at
-     */
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
     
     public function queryconsultaCarrera(){
         $query="SELECT `id_carrera`, `clave`, `nombre`, `updated_at`, `created_at` FROM `carrera`";
@@ -93,7 +61,8 @@ class CARRERA extends CONEXION{
     }
 
     public function queryUpdateCarrera(){
-        $query="UPDATE `carrera` SET `clave` = '".$this->getClave()."', `nombre` = '".$this->getNombre()."', `updated_at` = '".$this->getUpdatedAt()."', `created_at` = '".$this->getCreatedAt()."' WHERE `carrera`.`id_carrera` = '".$this->getIdCarrera()."'";
+        $query="UPDATE `carrera` SET `clave` = '".$this->getClave()."', `nombre` = '".$this->getNombre()."',
+         `updated_at` = current_timestamp() WHERE `carrera`.`id_carrera` = '".$this->getIdCarrera()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -102,7 +71,8 @@ class CARRERA extends CONEXION{
 
     public function queryInsertCarrera(){
         $query="INSERT into `carrera`(`id_carrera`,`clave`,`nombre`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdCarrera()."', '".$this->getClave()."', '".$this->getNombre()."','".$this->getUpdatedAt()."','".$this->getCreatedAt()."')";
+        VALUES ('".$this->getIdCarrera()."', '".$this->getClave()."', '".$this->getNombre()."',
+        current_timestamp(), current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
