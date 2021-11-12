@@ -2,7 +2,6 @@
 include_once"../control/controlAsignaturas.php";
 $params[
 	"idasignatura"=>"1",
-	//"idPlan"=>"023",
 	"codigo"=>"7856",
 	"nombre"=>"Matematicas V",
 	"creditos"=>"12",

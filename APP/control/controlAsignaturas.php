@@ -27,11 +27,10 @@ function insertAsignatura($params){
 }
 //funcion para actualizar asignaturas
 //PARAMETROS CON ESTILO $params, se hará cuando se cree el MS
-function updateAsignaturas($idAsignatura,$codigo,$nombre,$creditos,$antecesor,$sucesor,$caracter,$semestre){
+function updateAsignaturas($params){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
     $ASIGNATURA->setIdAsignatura($params['idasignatura']);
-    //$ASIGNATURA->setIdPlanFk($params['idPlan']);
     $ASIGNATURA->setCodigo($params['codigo']);
     $ASIGNATURA->setNombre($params['nombre']);
     $ASIGNATURA->setCreditos($params['creditos']);
