@@ -8,17 +8,17 @@ function consultaUsuarios(){
     return json_encode($result);
 }
 //Las variables que llegaran se cambiaran por una sola con el apartado $params
-function updateUsuario($cuentaAdmi,$cuentaAlumn,$cuentaProf,$nombre,$app,$apm,$correo,$telefono,$usuario) {
+function updateUsuario($params) {
     $USUARIOS= new USUARIO();
-    $USUARIOS->setCuentaAdmi($cuentaAdmi);
-    $USUARIOS->setCuentaAlumno($cuentaAlumn);
-    $USUARIOS->setCuentaProfesor($cuentaProf);
-    $USUARIOS->setNombre($nombre);
-    $USUARIOS->setApp($app);
-    $USUARIOS->setApm($apm);
-    $USUARIOS->setCorreo($correo);
-    $USUARIOS->setTelefono($telefono);
-    $USUARIOS->setIdUsuario($usuario);
+    $USUARIOS->setCuentaAdmi($params['cuentaAdmi']);
+    $USUARIOS->setCuentaAlumno($params['cuentaAlumn']);
+    $USUARIOS->setCuentaProfesor($params['cuentaProf']);
+    $USUARIOS->setNombre($params['nombre']);
+    $USUARIOS->setApp($params['app']);
+    $USUARIOS->setApm($params['apm']);
+    $USUARIOS->setCorreo($params['correo']);
+    $USUARIOS->setTelefono($params['telefono']);
+    $USUARIOS->setIdUsuario($params['id_usuario']);
     $result = $USUARIOS->queryUpdateUsuario();
     return $result;
 }

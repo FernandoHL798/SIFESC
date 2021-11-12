@@ -9,19 +9,19 @@ function consultaAsignaturas(){
 
 //Funcion para agregar materia
 //PARAMETROS CON ESTILO $params, se hará cuando se cree el MS
-function insertAsignatura($idPlan,$codigo,$nombre,$creditos,$antecesor,$sucesor,$caracter,$semestre){
+function insertAsignatura($params){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
     //Se genera el ID con una función despues. 
-    $ASIGNATURA->setIdAsignatura();
-    $ASIGNATURA->setIdPlanFk($idPlan);
-    $ASIGNATURA->setCodigo($codigo);
-    $ASIGNATURA->setNombre($nombre);
-    $ASIGNATURA->setCreditos($creditos);
-    $ASIGNATURA->setAntecesor($antecesor);
-    $ASIGNATURA->setSucesor($sucesor);
-    $ASIGNATURA->setCaracter($caracter);
-    $ASIGNATURA->setSemestre($semestre);
+    $ASIGNATURA->setIdAsignatura($params['idasignatura']);
+    $ASIGNATURA->setIdPlanFk($params['idPlan']);
+    $ASIGNATURA->setCodigo($params['codigo']);
+    $ASIGNATURA->setNombre($params['nombre']);
+    $ASIGNATURA->setCreditos($params['creditos']);
+    $ASIGNATURA->setAntecesor($params['antecesor']);
+    $ASIGNATURA->setSucesor($params['sucesor']);
+    $ASIGNATURA->setCaracter($params['caracter']);
+    $ASIGNATURA->setSemestre($params['semestre']);
     $result = $ASIGNATURA->queryInsertAsignaturas();
     return $result;
 }
@@ -30,14 +30,15 @@ function insertAsignatura($idPlan,$codigo,$nombre,$creditos,$antecesor,$sucesor,
 function updateAsignaturas($idAsignatura,$codigo,$nombre,$creditos,$antecesor,$sucesor,$caracter,$semestre){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
-    $ASIGNATURA->setIdAsignatura($idAsignatura);
-    $ASIGNATURA->setCodigo($codigo);
-    $ASIGNATURA->setNombre($nombre);
-    $ASIGNATURA->setCreditos($creditos);
-    $ASIGNATURA->setAntecesor($antecesor);
-    $ASIGNATURA->setSucesor($sucesor);
-    $ASIGNATURA->setCaracter($caracter);
-    $ASIGNATURA->setSemestre($semestre);
+    $ASIGNATURA->setIdAsignatura($params['idasignatura']);
+    //$ASIGNATURA->setIdPlanFk($params['idPlan']);
+    $ASIGNATURA->setCodigo($params['codigo']);
+    $ASIGNATURA->setNombre($params['nombre']);
+    $ASIGNATURA->setCreditos($params['creditos']);
+    $ASIGNATURA->setAntecesor($params['antecesor']);
+    $ASIGNATURA->setSucesor($params['sucesor']);
+    $ASIGNATURA->setCaracter($params['caracter']);
+    $ASIGNATURA->setSemestre($params['semestre']);
     $result = $ASIGNATURA->queryUpdateAsignaturas();
     return $result;
 }
