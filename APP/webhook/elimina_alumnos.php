@@ -1,3 +1,4 @@
 <?php 
 include_once"../control/controlAlumno.php";
-var_dump(consultaAlumno());
+$id_alumno="1";
+var_dump(deleteAlumno($id_alumno));

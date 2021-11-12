@@ -7,9 +7,10 @@ function consultaAlumno(){
    return json_encode($result);
 }
 
-function updateRPwdAlumno($params){
+function updatePreguntaAlumno($params){
     include_once "../model/ALUMNO.php";
    $ALUMNO = new ALUMNO();
+   $ALUMNO->setUsuarioIdFk($params['id_Alumno']);
    $ALUMNO->setRequestPw($params['']);
    $ALUMNO->setAnsRequest($params['']);
    $result= $ALUMNO->queryUpdateRPwdAlumno();
@@ -19,11 +20,11 @@ function updateRPwdAlumno($params){
 function insertAlumno($params){
    include_once "../model/ALUMNO.php";
    $ALUMNO = new ALUMNO();
-   $ALUMNO->setUsuarioIdFk($params['']);
-   $ALUMNO->setIdGeneraciónFk($params['']);
-   $ALUMNO->setRequestPw($params['']);
-   $ALUMNO->setAnsRequest($params['']);
-   //Cuando un alumno se crea, el valor del estatus es 1 (Actuvo)
+   $ALUMNO->setUsuarioIdFk($params['id_usuarioalumno_fk']);
+   $ALUMNO->setIdGeneraciónFk($params['id_generacion_fk']);
+   $ALUMNO->setRequestPw($params['request_pw']);
+   $ALUMNO->setAnsRequest($params['ans_request']);
+   //Cuando un alumno se crea, el valor del estatus es 1 (Activo)
    $ALUMNO->setEstatus(1);
    //Cuando se crea un Alumno nuevo, el valor predefinido de bajas es 0
    $ALUMNO->setBaja(0);

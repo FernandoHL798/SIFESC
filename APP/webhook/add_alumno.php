@@ -1,12 +1,9 @@
 <?php 
 include_once"../control/controlAlumno.php";
-$numcuenta="165165154";
-$nombre="Paco";
-$app="Morales";
-$apm="Juarez";
-$fecha_nacimiento="2000-12-15";
-$correo="paquito@gmail.com";
-$pwd="paco123";
-$pregunta="??";
-$respuesta="1234";
-var_dump(insertarAlumno($numcuenta,$nombre,$app,$apm,$fecha_nacimiento,$correo,$pwd,$pregunta,$respuesta));
+$params[
+	"id_usuarioalumno_fk"=>"1",
+	"id_generacion_fk"=>"1",
+	"request_pw"=>"2",
+	"ans_request"=>"manchas"
+];
+var_dump(insertarAlumno($params));

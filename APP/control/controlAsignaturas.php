@@ -43,7 +43,7 @@ function updateAsignaturas($idAsignatura,$codigo,$nombre,$creditos,$antecesor,$s
 }
 //funcion para eliminar asignaturas
 
-function deleteAsignatura(){
+function deleteAsignatura($idAsignatura){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
     $ASIGNATURA->setIdAsignatura($idAsignatura);
