@@ -1,6 +1,6 @@
 <?php 
 include_once"../control/controlAsignaturas.php";
-$params[
+$params=[
 	"idasignatura"=>"1",
 	"codigo"=>"7856",
 	"nombre"=>"Matematicas V",

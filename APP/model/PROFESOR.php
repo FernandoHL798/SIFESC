@@ -34,7 +34,7 @@ class PROFESOR extends CONEXION{
     }
 
     public function queryconsultaProfesor(){
-        $query="SELECT `id_usuario_fk`, `updated_at`, `created_at`, `estatus` FROM `profesor`";
+        $query="SELECT `usuario_id_fk`, `updated_at`, `created_at`, `estatus` FROM `profesor`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -42,7 +42,7 @@ class PROFESOR extends CONEXION{
     }
 
     public function queryUpdateEstatusProfesor(){
-        $query="UPDATE `profesor` SET `updated_at` = current_timestamp(), `estatus` = '".$this->getEstatus()."' WHERE `profesor`.`id_usuario_fk` = '".$this->getIdUsuarioFk()."'";
+        $query="UPDATE `profesor` SET `updated_at` = current_timestamp(), `estatus` = '".$this->getEstatus()."' WHERE `profesor`.`usuario_id_fk` = '".$this->getIdUsuarioFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -50,7 +50,7 @@ class PROFESOR extends CONEXION{
     }
 
     public function queryInsertProfesor(){
-        $query="INSERT into `profesor`(`id_usuario_fk`,`updated_at`,`created_at`,`estatus`) 
+        $query="INSERT into `profesor`(`usuario_id_fk`,`updated_at`,`created_at`,`estatus`) 
         VALUES ('".$this->getIdUsuarioFk()."', current_timestamp(),current_timestamp(), '".$this->getEstatus()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -59,7 +59,7 @@ class PROFESOR extends CONEXION{
     }
 
     public function queryDeleteProfesor(){
-        $query="DELETE FROM `profesor` WHERE `id_usuario_fk`='".$this->getIdUsuarioFk()."'";
+        $query="DELETE FROM `profesor` WHERE `usuario_id_fk`='".$this->getIdUsuarioFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

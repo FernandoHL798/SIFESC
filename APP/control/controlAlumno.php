@@ -11,8 +11,8 @@ function updatePreguntaAlumno($params){
     include_once "../model/ALUMNO.php";
    $ALUMNO = new ALUMNO();
    $ALUMNO->setUsuarioIdFk($params['id_Alumno']);
-   $ALUMNO->setRequestPw($params['']);
-   $ALUMNO->setAnsRequest($params['']);
+   $ALUMNO->setRequestPw($params['RequestPwd']);
+   $ALUMNO->setAnsRequest($params['AnsRequest']);
    $result= $ALUMNO->queryUpdateRPwdAlumno();
    return $result;
 }
@@ -21,7 +21,7 @@ function insertAlumno($params){
    include_once "../model/ALUMNO.php";
    $ALUMNO = new ALUMNO();
    $ALUMNO->setUsuarioIdFk($params['id_usuarioalumno_fk']);
-   $ALUMNO->setIdGeneraciónFk($params['id_generacion_fk']);
+   $ALUMNO->setIdGeneracionFk($params['id_generacion_fk']);
    $ALUMNO->setRequestPw($params['request_pw']);
    $ALUMNO->setAnsRequest($params['ans_request']);
    //Cuando un alumno se crea, el valor del estatus es 1 (Activo)

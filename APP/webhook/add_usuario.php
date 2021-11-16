@@ -1,7 +1,7 @@
 <?php 
 include_once"../control/controlUsuario.php";
 $params=[
-"id_usuario"=>"3",
+"id_usuario"=>"4",
 "cuentaAdmi"=>"uhduhduhd",
 "cuentaAlumn"=>"321084654",
 "cuentaProf"=>"uhdudgas",

@@ -1,5 +1,5 @@
 <?php
-function contulsaProfesor(){
+function consultaProfesor(){
     include_once "../model/PROFESOR.php";
     $PROFESOR = new PROFESOR();
     return json_encode($PROFESOR->queryconsultaProfesor());
@@ -8,15 +8,15 @@ function contulsaProfesor(){
 function updateEstatusProfesor($params){
     include_once "../model/PROFESOR.php";
     $PROFESOR = new PROFESOR();
-    $PROFESOR->setIdUsuarioFk($params['']);
-    $PROFESOR->setEstatus($params['']);
+    $PROFESOR->setIdUsuarioFk($params['id_usuarioprofesor_fk']);
+    $PROFESOR->setEstatus($params['estatus']);
     return $PROFESOR->queryUpdateEstatusProfesor();
 }
 
 function insertProfesor($params){
     include_once "../model/PROFESOR.php";
     $PROFESOR = new PROFESOR();
-    $PROFESOR->seIdUsuarioFk($params['']);
+    $PROFESOR->setIdUsuarioFk($params['id_usuarioprofesor_fk']);
     $PROFESOR->setEstatus(1);
     return $PROFESOR->queryInsertProfesor();
 }

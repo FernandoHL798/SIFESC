@@ -1,14 +1,14 @@
 <?php 
 include_once"../control/controlAsignaturas.php";
-$params[
+$params=[
 	"idasignatura"=>"1",
-	"idPlan"=>"023",
+	"idPlan"=>"1",
 	"codigo"=>"5568",
 	"nombre"=>"Matematicas V",
 	"creditos"=>"12",
 	"antecesor"=>"Matematicas III",
 	"sucesor"=>"Matematicas VI",
 	"caracter"=>"ob",
-	"semestre"="5"
+	"semestre"=>"5"
 ];
-var_dump(insertAsigantura($params));
+var_dump(insertAsignatura($params));
