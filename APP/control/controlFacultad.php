@@ -12,3 +12,17 @@ function insertFacultad($params){
     $FACULTAD->setNombreFacultad($params['nombre_fac']);
     return $FACULTAD->queryInsertFacultad();
 }
+
+function updateFacultad($params){
+    include_once "../model/FACULTAD.php";
+    $FACULTAD = new FACULTAD();
+    $FACULTAD->setIdFacultad($params['']);
+    $FACULTAD->setNombreFacultad($params['']);
+    return $FACULTAD->queryUpdateFacultad();
+}
+function deleteFacultad($idFacultad){
+    include_once "../model/FACULTAD.php";
+    $FACULTAD = new FACULTAD();
+    $FACULTAD->setIdFacultad($idFacultad);
+    return $FACULTAD->queryDeleteFacultad();
+}

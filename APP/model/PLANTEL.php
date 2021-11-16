@@ -61,8 +61,7 @@ class PLANTEL extends CONEXION{
     }
 
     public function queryUpdatePlantel(){
-        $query="UPDATE `plantel` SET `id_facultad_fk` = '".$this->getIdFacultadFk()."', 
-        `nombre` = '".$this->getNombre()."', `updated_at` = current_timestamp()
+        $query="UPDATE `plantel` SET `nombre` = '".$this->getNombre()."', `updated_at` = current_timestamp()
          WHERE `plantel`.`id_plantel` = '".$this->getIdPlantel()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);

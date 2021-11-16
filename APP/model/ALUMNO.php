@@ -5,8 +5,6 @@ class ALUMNO extends CONEXION{
     private $id_generacion_fk;
     private $request_pw;
     private $ans_request;
-    private $updated_at;
-    private $created_at;
     private $estatus;
     private $baja;
   

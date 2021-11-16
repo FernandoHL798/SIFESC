@@ -41,7 +41,7 @@ class PROFESOR extends CONEXION{
         return $resultado;
     }
 
-    public function queryUpdateProfesor(){
+    public function queryUpdateEstatusProfesor(){
         $query="UPDATE `profesor` SET `updated_at` = current_timestamp(), `estatus` = '".$this->getEstatus()."' WHERE `profesor`.`id_usuario_fk` = '".$this->getIdUsuarioFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);

@@ -82,7 +82,7 @@ class GRUPOS extends CONEXION{
     public function queryDeleteGrupos(){
         $query="DELETE FROM `grupos` WHERE `id_grupo`='".$this->getIdGrupo()."'";
         $this->connect();
-        $resultado= $this->executeInstruction($query);xattr_get(filename, name)
+        $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
     }
