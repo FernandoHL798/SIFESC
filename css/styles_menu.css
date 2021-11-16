@@ -1,4 +1,26 @@
+.UNAM{
+  top: 0;
+  position: relative;
+  color: white;
+  font-size-adjust: auto;
+}
+.fesc{
+  top: 0;
+  position: relative;
+  color: white;
+  font-size-adjust: auto;
+}
+.UNAMFESC{
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  font-size-adjust: auto;
+}
+
 @@ -1,289 +1,667 @@
+
 *{
 	margin: 0;
 	padding: 0;
@@ -15,7 +37,7 @@ body{
 
 
 header{
-	width: 100%;
+	width: 50%;
 	height: 60px;
 	background: #000066;
 	display: flex;
@@ -28,26 +50,14 @@ header{
 
 
 .titulo{
-	margin-top: 0px;
-  margin-left: center;
+	margin: 30px;
+	margin-bottom: -30px;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-family: ;
-	font-size: 10px;
-  align-content: center;
+	font-size: 30px;
 	text-align: center;
-	color: white;
-}
-
-.bodyseg{
-	margin: 0;
-	padding: 0;
-	font-family: serif;
-}
-
-.head3{
-	color: rgb(0, 71, 127);
-	text-align: center;
+	color: black;
 }
 
 
@@ -180,6 +190,7 @@ header{
 
 .sidebar ul{
 	margin-top: 20px;
+	padding-left: 0;
 }
 
 .sidebar ul li{
@@ -193,7 +204,7 @@ header{
 
 .sidebar ul li .tooltip{
 	position: absolute;
-	left: 80px;
+	left: 50px;
 	top: 0;
 	transform: translateY(-50%);
 	border-radius: 6px;
@@ -218,7 +229,6 @@ header{
 	opacity: 1;
 	top: 50%;
 }
-
 
 .sidebar ul li input{
 	position: absolute;
@@ -335,6 +345,7 @@ header{
 	width: calc(100% - 78px);
 	left: 78px;
 	transition: all 0.5s ease;
+	overflow: scroll;
 }
 
 .home_content .text{

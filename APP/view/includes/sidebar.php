@@ -62,7 +62,7 @@
 				<span class="tooltip">Historial académico</span>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./saturacion.php">
 					<i class='bx bxs-error'></i>
 					<span class="links_name">Consulta la saturación</span>
 				</a>
