@@ -8,17 +8,17 @@ function consultaPlantel(){
 function updatePlantel($params){
     include_once "../model/PLANTEL.php";
     $PLANTEL = new PLANTEL();
-    $PLANTEL->setNombre($params['']);
-    $PLANTEL->setIdPlantel($params['']);
+    $PLANTEL->setNombre($params['nombre']);
+    $PLANTEL->setIdPlantel($params['id_plantel']);
     return $PLANTEL->queryUpdatePlantel();
 }
 
 function insertPlantel($params){
     include_once "../model/PLANTEL.php";
     $PLANTEL = new PLANTEL();
-    $PLANTEL->setIdPlantel($params['']);
-    $PLANTEL->setIdFacultadFk($params['']);
-    $PLANTEL->setNombre($params['']);
+    $PLANTEL->setIdPlantel($params['id_plantel']);
+    $PLANTEL->setIdFacultadFk($params['id_facultad_fk']);
+    $PLANTEL->setNombre($params['nombre']);
     return $PLANTEL->queryInsertPlantel();
 }
 
