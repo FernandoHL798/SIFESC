@@ -3,7 +3,7 @@ include_once"../control/controlAlumno.php";
 $params=[
 	"id_usuarioalumno_fk"=>"1",
 	"id_generacion_fk"=>"1",
-	"request_pw"=>"2",
-	"ans_request"=>"manchas"
+	"pregunta_secreta"=>"2",
+	"respuesta_secreta"=>"manchas"
 ];
 var_dump(insertAlumno($params));

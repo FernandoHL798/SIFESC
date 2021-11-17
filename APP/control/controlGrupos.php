@@ -9,18 +9,18 @@ function consultaGrupos(){
 function updateGrupos($params){
     include_once "../model/GRUPOS.php";
     $GRUPOS = new GRUPOS();
-    $GRUPOS->setIdGrupo($params['']);
-    $GRUPOS->setNombreGrupo($params['']);
-    $GRUPOS->setIdAsignaturaFk($params['']);
+    $GRUPOS->setIdGrupo($params['id_grupo']);
+    $GRUPOS->setNombreGrupo($params['nombre']);
+    $GRUPOS->setIdAsignaturaFk($params['id_asignatura_fk']);
     return $GRUPOS->queryUpdateGrupos();
 }
 
 function insertGrupos($params){
     include_once "../model/GRUPOS.php";
     $GRUPOS = new GRUPOS();
-    $GRUPOS->setIdGrupo($params['']);
-    $GRUPOS->setIdAsignaturaFk($params['']);
-    $GRUPOS->setNombreGrupo($params['']);
+    $GRUPOS->setIdGrupo($params['id_grupo']);
+    $GRUPOS->setIdAsignaturaFk($params['id_asignatura_fk']);
+    $GRUPOS->setNombreGrupo($params['nombre']);
     return $GRUPOS->queryInsertGrupos();
 }
 
