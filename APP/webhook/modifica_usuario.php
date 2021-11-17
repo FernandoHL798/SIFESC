@@ -2,12 +2,12 @@
 include_once"../control/controlUsuario.php";
 $params=[
 "id_usuario"=>"3",
-"cuentaAdmi"=>"uhduhduhd",
-"cuentaAlumn"=>"321084654",
+"cuentaAdministrador"=>"uhduhduhd",
+"cuentaAlumno"=>"321084654",
 "cuentaProf"=>"uhdudgas",
 "nombre"=>"paco",
-"app"=>"lopez",
-"apm"=>"ramirez",
+"primer_apellido"=>"lopez",
+"segundo_apellido"=>"ramirez",
 "correo"=>"pacolr@gmail.com",
 "telefono"=>"5516516878"
 ];
