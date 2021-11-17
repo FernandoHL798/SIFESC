@@ -9,6 +9,7 @@ function updateCarrera($params){
     include_once "../model/CARRERA.php";
     $CARRERA = new CARRERA();
     $CARRERA->setIdCarrera($params['id_carrera']);
+    $CARRERA->setIdAreaFk($params['id_area_fk']);
     $CARRERA->setClave($params['clave']);
     $CARRERA->setNombre($params['nombre']);
     return $CARRERA->queryUpdateCarrera();
@@ -17,9 +18,10 @@ function updateCarrera($params){
 function insertCarrera($params){
     include_once "../model/CARRERA.php";
     $CARRERA = new CARRERA();
-    $CARRERA->setIdCarrera($params['']);
-    $CARRERA->setClave($params['']);
-    $CARRERA->setNombre($params['']);
+    $CARRERA->setIdCarrera($params['id_carrera']);
+    $CARRERA->setIdAreaFk($params['id_area_fk']);
+    $CARRERA->setClave($params['clave']);
+    $CARRERA->setNombre($params['nombre']);
     return $CARRERA->queryInsertCarrera();
 }
 

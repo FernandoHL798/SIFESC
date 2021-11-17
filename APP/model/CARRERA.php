@@ -2,6 +2,7 @@
 include_once "CONEXION.php";
 class CARRERA extends CONEXION{
     private $id_carrera;
+    private $id_area_fk;
     private $clave;
     private $nombre;
 
@@ -19,6 +20,21 @@ class CARRERA extends CONEXION{
     public function setIdCarrera($id_carrera): void
     {
         $this->id_carrera = $id_carrera;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdAreaFk()
+    {
+        return $this->id_area_fk;
+    }
+    /**
+     * @param mixed $id_area_fk
+     */
+    public function setIdAreaFk($id_area_fk): void
+    {
+        $this->id_area_fk = $id_area_fk;
     }
 
       /**
@@ -53,7 +69,7 @@ class CARRERA extends CONEXION{
 
     
     public function queryconsultaCarrera(){
-        $query="SELECT `id_carrera`, `clave`, `nombre`, `updated_at`, `created_at` FROM `carrera`";
+        $query="SELECT `id_carrera`,`id_area_fk`, `clave`, `nombre`, `updated_at`, `created_at` FROM `carrera`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -61,7 +77,7 @@ class CARRERA extends CONEXION{
     }
 
     public function queryUpdateCarrera(){
-        $query="UPDATE `carrera` SET `clave` = '".$this->getClave()."', `nombre` = '".$this->getNombre()."',
+        $query="UPDATE `carrera` SET `id_area_fk` = '".$this->getIdAreaFk()."', `clave` = '".$this->getClave()."', `nombre` = '".$this->getNombre()."',
          `updated_at` = current_timestamp() WHERE `carrera`.`id_carrera` = '".$this->getIdCarrera()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -70,8 +86,8 @@ class CARRERA extends CONEXION{
     }
 
     public function queryInsertCarrera(){
-        $query="INSERT into `carrera`(`id_carrera`,`clave`,`nombre`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdCarrera()."', '".$this->getClave()."', '".$this->getNombre()."',
+        $query="INSERT into `carrera`(`id_carrera`,`id_area_fk`,`clave`,`nombre`,`updated_at`,`created_at`) 
+        VALUES ('".$this->getIdCarrera()."', '".$this->getIdAreaFk()."', '".$this->getClave()."', '".$this->getNombre()."',
         current_timestamp(), current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);

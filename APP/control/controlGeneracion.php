@@ -9,8 +9,8 @@ function consultaGeneracion(){
 function updateGeneracion($params){
     include_once "../model/GENERACION.php";
     $GENERACION = new GENERACION();
-    $GENERACION->setIdGeneracion($params['']);
-    $GENERACION->setIdPlanFk($params['']);
+    $GENERACION->setIdGeneracion($params['id_generacion']);
+    $GENERACION->setIdPlanFk($params['id_plantel_fk']);
     $GENERACION->setAnio($params['anio']);
     return $GENERACION->queryUpdateGeneracion();
 }
@@ -18,9 +18,9 @@ function updateGeneracion($params){
 function insertGeneracion($params){
     include_once "../model/GENERACION.php";
     $GENERACION = new GENERACION();
-    $GENERACION->setIdGeneracion($params['']);
-    $GENERACION->setIdPlanFk($params['']);
-    $GENERACION->setAnio($params['']);
+    $GENERACION->setIdGeneracion($params['id_generacion']);
+    $GENERACION->setIdPlanFk($params['id_plantel_fk']);
+    $GENERACION->setAnio($params['anio']);
     return $GENERACION->queryInsertGeneracion();
 }
 

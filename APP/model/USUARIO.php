@@ -2,12 +2,12 @@
 include_once "CONEXION.php";
 class USUARIO extends CONEXION{
     private $id_usuario;
-    private $cuenta_admi;
+    private $cuenta_administrador;
     private $cuenta_alumno;
     private $cuenta_profesor;
     private $nombre;
-    private $app;
-    private $apm;
+    private $primer_apellido;
+    private $segundo_apellido;
     private $correo;
     private $contrasenia;
     private $telefono;
@@ -30,16 +30,16 @@ class USUARIO extends CONEXION{
     /**
      * @return mixed
      */
-    public function getCuentaAdmi()
+    public function getCuentaAdministrador()
     {
-        return $this->cuenta_admi;
+        return $this->cuenta_administrador;
     }
     /**
-     * @param mixed $cuenta_admi
+     * @param mixed $cuenta_administrador
      */
-    public function setCuentaAdmi($cuenta_admi): void
+    public function setCuentaAdministrador($cuenta_administrador): void
     {
-        $this->cuenta_admi = $cuenta_admi;
+        $this->cuenta_administrador = $cuenta_administrador;
     }
 
     /**
@@ -90,31 +90,31 @@ class USUARIO extends CONEXION{
          /**
      * @return mixed
      */
-    public function getApp()
+    public function getPrimerApellido()
     {
-        return $this->app;
+        return $this->primer_apellido;
     }
     /**
-     * @param mixed $app
+     * @param mixed $primer_apellido
      */
-    public function setApp($app): void
+    public function setPrimerApellido($primer_apellido): void
     {
-        $this->app = $app;
+        $this->primer_apellido = $primer_apellido;
     }
 
      /**
      * @return mixed
      */
-    public function getApm()
+    public function getSegundoApellido()
     {
-        return $this->apm;
+        return $this->segundo_apellido;
     }
     /**
-     * @param mixed $apm
+     * @param mixed $segundo_apellido
      */
-    public function setApm($apm): void
+    public function setSegundoApellido($segundo_apellido): void
     {
-        $this->apm = $apm;
+        $this->segundo_apellido = $segundo_apellido;
     }
     
         /**
@@ -164,7 +164,7 @@ class USUARIO extends CONEXION{
 
     
     public function queryconsultaUsuario(){
-        $query="SELECT `id_usuario`, `cuenta_admi`, `cuenta_alumno`, `cuenta_profesor`, `nombre`, `app`, `apm`, `correo`, `contrasenia`, `telefono` FROM `usuario`";
+        $query="SELECT `id_usuario`, `cuenta_administrador`, `cuenta_alumno`, `cuenta_profesor`, `nombre`, `primer_apellido`, `segundo_apellido`, `correo`, `contrasenia`, `telefono` FROM `usuario`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -172,9 +172,9 @@ class USUARIO extends CONEXION{
     }
 
     public function queryUpdateUsuario(){
-        $query="UPDATE `usuario` SET `cuenta_admi` = '".$this->getCuentaAdmi()."', `cuenta_alumno` = '".$this->getCuentaAlumno()."',
+        $query="UPDATE `usuario` SET `cuenta_administrador` = '".$this->getCuentaAdministrador()."', `cuenta_alumno` = '".$this->getCuentaAlumno()."',
          `cuenta_profesor` = '".$this->getCuentaProfesor()."', `nombre` = '".$this->getNombre()."', 
-         `app` = '".$this->getApp()."', `apm` = '".$this->getApm()."', `correo` = '".$this->getCorreo()."', 
+         `primer_apellido` = '".$this->getPrimerApellido()."', `segundo_apellido` = '".$this->getSegundoApellido()."', `correo` = '".$this->getCorreo()."', 
          `telefono` = '".$this->getTelefono()."' WHERE `usuario`.`id_usuario` = '".$this->getIdUsuario()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -183,8 +183,8 @@ class USUARIO extends CONEXION{
     }
 
     public function queryInsertUsuario(){
-        $query="INSERT into `usuario`(`id_usuario`,`cuenta_admi`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `app`, `apm`,`correo`,`contrasenia`,`telefono`) 
-        VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdmi()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getApp()."', '".$this->getApm()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."')";
+        $query="INSERT into `usuario`(`id_usuario`,`cuenta_administrador`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `primer_apellido`, `segundo_apellido`,`correo`,`contrasenia`,`telefono`) 
+        VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdministrador()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getPrimerApellido()."', '".$this->getSegundoApellido()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

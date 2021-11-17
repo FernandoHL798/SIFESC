@@ -3,8 +3,8 @@ include_once "CONEXION.php";
 class ALUMNO extends CONEXION{
     private $usuario_id_fk;
     private $id_generacion_fk;
-    private $request_pw;
-    private $ans_request;
+    private $pregunta_secreta;
+    private $respuesta_secreta;
     private $estatus;
     private $baja;
   
@@ -41,31 +41,31 @@ class ALUMNO extends CONEXION{
     /**
      * @return mixed
      */
-    public function getRequestPw()
+    public function getPreguntaSecreta()
     {
-        return $this->request_pw;
+        return $this->pregunta_secreta;
     }
     /**
-     * @param mixed $request_pw
+     * @param mixed $pregunta_secreta
      */
-    public function setRequestPw($request_pw): void
+    public function setPreguntaSecreta($pregunta_secreta): void
     {
-        $this->request_pw = $request_pw;
+        $this->pregunta_secreta = $pregunta_secreta;
     }
 
      /**
      * @return mixed
      */
-    public function getAnsRequest()
+    public function getRespuestaSecreta()
     {
-        return $this->ans_request;
+        return $this->respuesta_secreta;
     }
     /**
-     * @param mixed $ans_request
+     * @param mixed $respuesta_secreta
      */
-    public function setAnsRequest($ans_request): void
+    public function setRespuestaSecreta($respuesta_secreta): void
     {
-        $this->ans_request = $ans_request;
+        $this->respuesta_secreta = $respuesta_secreta;
     }
      /**
      * @return mixed
@@ -107,7 +107,7 @@ class ALUMNO extends CONEXION{
     
     
     public function queryconsultaAlumno(){
-        $query="SELECT `usuario_id_fk`, `id_generacion_fk`, `request_pw`, `ans_request`, `updated_at`, `created_at`, `estatus`, `baja` FROM `alumno`";
+        $query="SELECT `usuario_id_fk`, `id_generacion_fk`, `pregunta_secreta`, `respuesta_secreta`, `updated_at`, `created_at`, `estatus`, `baja` FROM `alumno`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -115,7 +115,7 @@ class ALUMNO extends CONEXION{
     }
 
     public function queryUpdateRPwdAlumno(){
-        $query="UPDATE `alumno` SET `request_pw` = '".$this->getRequestPw()."', `ans_request` = '".$this->getAnsRequest()."',
+        $query="UPDATE `alumno` SET `pregunta_secreta` = '".$this->getPreguntaSecreta()."', `respuesta_secreta` = '".$this->getRespuestaSecreta()."',
          `updated_at` = current_timestamp() WHERE `alumno`.`usuario_id_fk` = '".$this->getUsuarioIdFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -124,9 +124,9 @@ class ALUMNO extends CONEXION{
     }
 
     public function queryInsertAlumno(){
-        $query="INSERT into `alumno`(`usuario_id_fk`,`id_generacion_fk`,`request_pw`,`ans_request`,`updated_at`,`created_at`,`estatus`,`baja`) 
-        VALUES ('".$this->getUsuarioIdFk()."', '".$this->getIdGeneracionFk()."', '".$this->getRequestPw()."',
-         '".$this->getAnsRequest()."', current_timestamp(),current_timestamp(),
+        $query="INSERT into `alumno`(`usuario_id_fk`,`id_generacion_fk`,`pregunta_secreta`,`respuesta_secreta`,`updated_at`,`created_at`,`estatus`,`baja`) 
+        VALUES ('".$this->getUsuarioIdFk()."', '".$this->getIdGeneracionFk()."', '".$this->getPreguntaSecreta()."',
+         '".$this->getRespuestaSecreta()."', current_timestamp(),current_timestamp(),
           '".$this->getEstatus()."','".$this->getBaja()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
