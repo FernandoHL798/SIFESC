@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `administrador` (
-  `usuario_id_fk` int(15) NOT NULL,
+  `usuario_id_fk` int(100) NOT NULL,
   PRIMARY KEY (`usuario_id_fk`),
   CONSTRAINT `fk_administrador_usuario` FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,10 +37,10 @@ DROP TABLE IF EXISTS `alumno`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumno` (
-  `usuario_id_fk` int(15) NOT NULL,
+  `usuario_id_fk` int(100) NOT NULL,
   `id_generacion_fk` int(5) NOT NULL,
-  `request_pw` int(2) NOT NULL,
-  `ans_request` varchar(40) NOT NULL,
+  `pregunta_secreta` int(2) NOT NULL,
+  `respuesta_secreta` varchar(40) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `estatus` int(1) NOT NULL,
@@ -61,7 +61,7 @@ DROP TABLE IF EXISTS `asignacion`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `asignacion` (
   `id_asignacion` int(10) NOT NULL,
-  `id_usuarioprofesor_fk` int(10) NOT NULL,
+  `id_usuarioprofesor_fk` int(100) NOT NULL,
   `id_grupo_fk` int(5) NOT NULL,
   `cupo` int(3) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -124,9 +124,10 @@ DROP TABLE IF EXISTS `dosificacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dosificacion` (
-  `id_usuarioalumno_fk` int(15) NOT NULL,
+  `id_usuarioalumno_fk` int(100) NOT NULL,
   `id_periodo_fk` varchar(6) NOT NULL,
-  `fecha_inc` datetime NOT NULL,
+  `fecha_inscripcion` date NOT NULL,
+  `hora_inscripcion` time NOT NULL,
   `fecha_alta_baja` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -247,8 +248,8 @@ CREATE TABLE `inscripcion` (
   `id_inscripcion` int(15) NOT NULL,
   `id_usuarioalumno_fk` int(11) NOT NULL,
   `id_periodo_fk` varchar(6) NOT NULL,
-  `fecha_inscp` date NOT NULL,
-  `hora_inscp` time NOT NULL,
+  `fecha_inscripcion` date NOT NULL,
+  `hora_inscripcion` time NOT NULL,
   `fecha_altas_bajas` date NOT NULL,
   `hora_altas_bajas` time NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -294,7 +295,7 @@ DROP TABLE IF EXISTS `periodo`;
 CREATE TABLE `periodo` (
   `id_periodo` varchar(6) NOT NULL,
   `id_asignacion_fk` int(5) NOT NULL,
-  `fecha_inscp` datetime NOT NULL,
+  `fecha_inscripcion` datetime NOT NULL,
   `fecha_altas_bajas` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -376,7 +377,7 @@ DROP TABLE IF EXISTS `profesor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profesor` (
-  `usuario_id_fk` int(15) NOT NULL,
+  `usuario_id_fk` int(100) NOT NULL,
   `estatus` int(1) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -412,14 +413,14 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `id` int(15) NOT NULL,
+  `id` int(100) NOT NULL,
   `cuenta_alumno` varchar(10) NOT NULL,
   `cuenta_profesor` varchar(13) NOT NULL,
-  `cuenta_admi` varchar(13) NOT NULL,
+  `cuenta_administrador` varchar(13) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `app` varchar(25) NOT NULL,
-  `apm` varchar(25) NOT NULL,
-  `correo` varchar(25) NOT NULL,
+  `primer_apellido` varchar(25) NOT NULL,
+  `segundo_apellido` varchar(25) NOT NULL,
+  `correo` varchar(70) NOT NULL,
   `contrasenia` varchar(20) NOT NULL,
   `telefono` varchar(12) NOT NULL,
   PRIMARY KEY (`id`)
@@ -435,4 +436,4 @@ CREATE TABLE `usuario` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-10  2:46:05
+-- Dump completed on 2021-11-17  4:36:19
