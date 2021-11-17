@@ -16,22 +16,6 @@
 include "./includes/sidebar.php";
 	?>
 
-
-	<header>
-		<div class="icon_menu">
-			<i class='bx bx-menu' id="btn"></i>
-		</div>
-		<div class="titulo">
-
-			<title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
-			<title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
-
-			</div>
-	</header>
-
-
-
-
 	<!--              AQUI VA EL CONTENIDO                -->
 	<div class="home_content">
 		<div class="text">

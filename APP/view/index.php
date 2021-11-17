@@ -21,9 +21,9 @@ include "./includes/sidebar.php";
 			<i class='bx bx-menu' id="btn"></i>
 		</div>
 		<div class="titulo">
-			<title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
-			<title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
-			</div>
+			<title1 class="UNAM"><center></center></title1>
+			<title2 class="fesc"><center><br></center></title2>
+		</div>
 	</header>
 		<div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center mb-4 mx-auto"> 
             <form>
