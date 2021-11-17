@@ -75,7 +75,7 @@ class EDIFICIO extends CONEXION{
     }
 
     public function queryUpdateEdificio(){
-        $query="UPDATE `edificio` SET `id_plantel_fk` = '".$this->getIdPlantelFK()."', `clave` = '".$this->getClave()."',
+        $query="UPDATE `edificio` SET `clave` = '".$this->getClave()."',
          `pisos` = '".$this->getPisos()."', `updated_at` = current_timestamp() WHERE `edificio`.`id_edificio` = '".$this->getIdEdificio()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
