@@ -341,6 +341,7 @@ header .titulo{
 	font-weight: 500;
 	color: #1d1b31;
 	margin: 12px;
+
 }
 
 .sidebar.active ~ .home_content{
