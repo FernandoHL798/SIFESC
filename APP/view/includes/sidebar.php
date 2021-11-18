@@ -10,7 +10,7 @@
 		</div>
 		<ul class="nav_list">
 			<li>
-				<a href="#">
+				<a href="./index.php">
 					<i class='bx bx-grid-alt'></i>
 					<span class="links_name">Inicio</span>
 				</a>

@@ -98,11 +98,8 @@ include "./includes/sidebar.php";
                                       </div>
                                       <div class="mt-3 mb-2"></div>
                                       
-                                      <div class="mt-3 mb-2"></div>
-                                      <div class="form-group" id="password-group">
-                                        <input type="password" placeholder="Confirma contraseña" class="form-control">
-                                      </div>
-                                      <div class="mt-3 mb-2"></div>
+                                      
+                                      
                                        </form>
                                     </div>
                                   <div class="modal-footer">
