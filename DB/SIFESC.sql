@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `administrador`;
 CREATE TABLE `administrador` (
   `usuario_id_fk` int(100) NOT NULL,
   PRIMARY KEY (`usuario_id_fk`),
-  CONSTRAINT `fk_administrador_usuario` FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_administrador_usuario` FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -48,8 +48,22 @@ CREATE TABLE `alumno` (
   PRIMARY KEY (`usuario_id_fk`),
   KEY `fk_alumno_generacion` (`id_generacion_fk`),
   CONSTRAINT `fk_alumno_generacion` FOREIGN KEY (`id_generacion_fk`) REFERENCES `generacion` (`id_generacion`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_alumno_usuario` FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_alumno_usuario` FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `area`
+--
+
+DROP TABLE IF EXISTS `area`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `area` (
+  `id_area` int(2) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_area`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +84,7 @@ CREATE TABLE `asignacion` (
   KEY `fk_asignacion_usuario` (`id_usuarioprofesor_fk`),
   KEY `fk_asignacion_grupos` (`id_grupo_fk`),
   CONSTRAINT `fk_asignacion_grupos` FOREIGN KEY (`id_grupo_fk`) REFERENCES `grupos` (`id_grupo`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_asignacion_usuario` FOREIGN KEY (`id_usuarioprofesor_fk`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_asignacion_usuario` FOREIGN KEY (`id_usuarioprofesor_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -112,7 +126,25 @@ CREATE TABLE `carrera` (
   `nombre` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `area_fk` int(2) NOT NULL,
   PRIMARY KEY (`id_carrera`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `departamentos`
+--
+
+DROP TABLE IF EXISTS `departamentos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `departamentos` (
+  `id_departamento` varchar(8) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `id_area_fk` int(2) NOT NULL,
+  PRIMARY KEY (`id_departamento`),
+  KEY `fk_departamentos_area` (`id_area_fk`),
+  CONSTRAINT `fk_departamentos_area` FOREIGN KEY (`id_area_fk`) REFERENCES `area` (`id_area`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -134,7 +166,7 @@ CREATE TABLE `dosificacion` (
   PRIMARY KEY (`id_usuarioalumno_fk`,`id_periodo_fk`),
   KEY `fk_dosificacion_periodo` (`id_periodo_fk`),
   CONSTRAINT `fk_dosificacion_periodo` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_dosificacion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_dosificacion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -258,7 +290,7 @@ CREATE TABLE `inscripcion` (
   KEY `fk_inscripcion_usuario` (`id_usuarioalumno_fk`),
   KEY `fk_inscripcion_periodo` (`id_periodo_fk`),
   CONSTRAINT `fk_inscripcion_periodo` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_inscripcion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_inscripcion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -381,8 +413,11 @@ CREATE TABLE `profesor` (
   `estatus` int(1) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_departamento_fk` varchar(8) NOT NULL,
   PRIMARY KEY (`usuario_id_fk`),
-  CONSTRAINT `fk_profesor_usuario` FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  KEY `fk_profesor_departamentos` (`id_departamento_fk`),
+  CONSTRAINT `fk_profesor_departamentos` FOREIGN KEY (`id_departamento_fk`) REFERENCES `departamentos` (`id_departamento`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `fk_profesor_usuario` FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -413,7 +448,7 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `id` int(100) NOT NULL,
+  `id_usuario` int(100) NOT NULL,
   `cuenta_alumno` varchar(10) NOT NULL,
   `cuenta_profesor` varchar(13) NOT NULL,
   `cuenta_administrador` varchar(13) NOT NULL,
@@ -423,7 +458,7 @@ CREATE TABLE `usuario` (
   `correo` varchar(70) NOT NULL,
   `contrasenia` varchar(20) NOT NULL,
   `telefono` varchar(12) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -436,4 +471,4 @@ CREATE TABLE `usuario` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-17  4:36:19
+-- Dump completed on 2021-11-18  3:59:10
