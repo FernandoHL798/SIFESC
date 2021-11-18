@@ -1,32 +1,10 @@
-.UNAM{
-  top: 0;
-  position: relative;
-  color: white;
-  font-size-adjust: auto;
-}
-.fesc{
-  top: 0;
-  position: relative;
-  color: white;
-  font-size-adjust: auto;
-}
-.UNAMFESC{
-  top: 0;
-  left: 0px;
-  width: 100%;
-  height: auto;
-  position: relative;
-  font-size-adjust: auto;
-}
-
-@@ -1,289 +1,667 @@
-
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
 }
+
 
 body{
 	position: relative;
@@ -37,7 +15,7 @@ body{
 
 
 header{
-	width: 50%;
+	width: 100%;
 	height: 60px;
 	background: #000066;
 	display: flex;
@@ -48,14 +26,13 @@ header{
 	z-index: 200;
 }
 
-
-.titulo{
+header .titulo{
 	margin: 30px;
 	margin-bottom: -30px;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-family: ;
-	font-size: 30px;
+	font-size: 15px;
 	text-align: center;
 	color: black;
 }
@@ -122,11 +99,21 @@ header{
 	color: white;
 }
 
-
-
 .sidebar.active .body_move{
 	transition: all 0.5s ease;
 }
+
+.sidebar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 78px;
+	background: #000066;
+	padding: 16px 14px;
+	transition: all 0.5s ease;
+}
+
 
 .sidebar{
 	position: fixed;
@@ -346,6 +333,7 @@ header{
 	left: 78px;
 	transition: all 0.5s ease;
 	overflow: scroll;
+	align-items: center;
 }
 
 .home_content .text{
@@ -353,6 +341,7 @@ header{
 	font-weight: 500;
 	color: #1d1b31;
 	margin: 12px;
+
 }
 
 .sidebar.active ~ .home_content{
@@ -374,6 +363,9 @@ header{
 .menu__side_move{
     width: 250px;
 }
+
+
+
 
 
 @media screen and (max-width: 760px){

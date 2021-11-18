@@ -22,7 +22,7 @@ include "./includes/sidebar.php";
 		</div>
 		<div class="titulo">
 
-			<title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
+			<title1 class="UNAM col-9"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
 			<title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
 
 			</div>
@@ -35,10 +35,10 @@ include "./includes/sidebar.php";
 	<div class="home_content">
 		<div class="text">
 			<form>
-			            <div class="container">
+			            <div class="">
 			                <div class="row">
-			                    <div class="mt-3">
-			                        <a href="https://www.google.com">
+			                    <div class="">
+			                        <a href="http://localhost/SIFESC/APP/view/index.php">
 			                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi    bi-arrow-left-circle" viewBox="0 0 16 16">
 			                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
 			                            </svg>
