@@ -28,14 +28,9 @@ include "./includes/sidebar.php";
 
 			</div>
 	</header>
-
-
-
-
 	<!--              AQUI VA EL CONTENIDO                -->
 	<div class="home_content">
 		<div class="text">
-
  <form>              
             <div class="">
                 <div class="row">

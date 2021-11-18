@@ -52,25 +52,19 @@ include "./includes/sidebar.php";
                             <div class="col-9 mx-auto">  
                                 <p class="mb-4"></p>
                                 <h3 id="head3">Añada su correo electrónico para la recuperación de su cuenta</h3>
-                                <p class="mt-3 mb-2"></p>
+                                <p class="mt-3 mb-4"></p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-4">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control mb-2" id="floatingInput" placeholder="Correo" required="" autofocus="">
-                                    <label for="floatingInput"><FONT SIZE=1>Introduzca su correo electronico:</font></label>
+                            <div class="col-5 mx-auto">
+                                <input type="email" class="form-control mb-3 mt-3" style="height: 55px;" id="floatingInput" placeholder="Introduzca su correo:" required="" autofocus=""> 
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-4">
-
-                                <div class="form-floating mx-auto">
-                                    <input type="text" class="form-control mb-2" id="cf_correo" placeholder="Confirmacion de correo" required="" autofocus="">
-                                    <label for="floatingPassword"><FONT SIZE=2>Confirme su correo:</font></label>
+                            
+                            <div class="col-5 mx-auto">
+                                    <input type="text" class="form-control" style="height: 55px;" id="cf_correo" placeholder="Confirme su correo:" required="" autofocus="">
                                 </div>
                             </div>
                         </div>
@@ -93,13 +87,7 @@ include "./includes/sidebar.php";
                                     </div>
                                     <div class="modal-body">
                                       <div class="mt-3 mb-2"></div>
-                                      <div class="form-group" id="actual-pass-group">
-                                        <input type="text" placeholder="Cantraseña actual" class="form-control">
-                                      </div>
-                                      <div class="mt-3 mb-2"></div>
-                                      
-                                      
-                                      
+                                      <label>Se ha enviado un correo de confirmación a la direccion: AQUI IRIA EL CORREO AGREGADO</label>
                                        </form>
                                     </div>
                                   <div class="modal-footer">
@@ -117,37 +105,68 @@ include "./includes/sidebar.php";
                                         <option hidden=""></option>
                                         <option value="1">¿Como se llama su mamá?</option>
                                         <option value="2">¿Cual es el nombre de su primer mascota?</option>
-                                        <option value="3">¿Le gusta el jamon?</option>
+                                        <option value="3">¿Cual es el nombre de su escuela primaria?</option>
                                     </select>
-                                        <label for="floatingSelect"><FONT SIZE=2>Seleccione una pregunta secreta</font></label>
+                                        <label for="floatingSelect"><FONT SIZE=3>Seleccione una pregunta secreta</font></label>
                                 </div>
 
                             </div>
                         </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="row">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-4">
-                                <div class="form-floating mx-auto">
-                                    <input type="text" class="form-control mb-2" id="res" placeholder="Correo" required="">
-                                    <label for="floatingPassword"><FONT SIZE=2>Agregue su respuesta:</font></label>
+                            <div class="col-5 mx-auto">
+                                <input type="email" class="form-control mt-2" style="height: 55px;" id="floatingInput" placeholder="Introduzca su respuesta:" required="" autofocus=""> 
                                 </div>
                             </div>
-                        </div>
+                            <div class="mt-3 mb-2"></div>
                         <div class="row">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-4">
-                                <div class="form-floating mx-auto">
-                                    <input type="text" class="form-control mb-2" id="cf_res" placeholder="Confirmacion de correo" required="">
-                                    <label for="floatingPassword"><FONT SIZE=2>Confirme su respuesta:</font></label>
+                            <div class="col-5 mx-auto">
+                                <input type="email" class="form-control" style="height: 55px;" id="floatingInput" placeholder="Confirme su respuesta:" required="" autofocus=""> 
                                 </div>
                             </div>
-                        </div>
                         <div class="mt-3 mb-2"></div>
-                            <div class="d-grid gap-2 col-3 mx-auto">
-                                <button class="btn btn-primary mt-2" type="button">Confirmar</button>
-                                <p class="mt-3 mb-2"></p>
+                        <div class="d-grid gap-2 col-3 mx-auto">
+
+
+
+                            <div class="modal-content">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RespModal">
+                                          Confirmar
+                                </button>
                             </div>
+                            <p class="mt-3 mb-2"></p>
+                                <div class="mb-4"></div>
+                               <!-- Modal -->
+                            <div class="modal fade" id="RespModal" tabindex="-1" aria-labelledby="RespModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="RespModalLabel">¡ATENCIÓN!</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="mt-3 mb-2"></div>
+                                      <label> Tus respuestas se han guardado satisfactoriamente</label>
+                                       </form>
+                                    </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    </div> 
+
+
+
+
+
+
+
+
+
+
                 </div>                
             </form>
         	</div>
