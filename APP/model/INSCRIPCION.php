@@ -125,7 +125,7 @@ class INSCRIPCION extends CONEXION{
 
     
     public function queryconsultaInscripcion(){
-        $query="SELECT `id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscp`, `hora_inscp`, `fecha_altas_bajas`, `hora_altas_bajas`, `updated_at`, `created_at` FROM `inscripcion`";
+        $query="SELECT `id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`, `updated_at`, `created_at` FROM `inscripcion`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

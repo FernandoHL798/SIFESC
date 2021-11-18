@@ -15,11 +15,11 @@ class DOSIFICACION extends CONEXION{
         return $this->id_usuarioalumno_fk;
     }
     /**
-     * @param mixed $id_usuarioalumno_fk;
+     * @param mixed $id_usuarioalumno_fk
      */
-    public function setIdUsuarioAlumnoFk;($id_usuarioalumno_fk;): void
+    public function setIdUsuarioAlumnoFk($id_usuarioalumno_fk): void
     {
-        $this->id_usuarioalumno_fk; = $id_usuarioalumno_fk;;
+        $this->id_usuarioalumno_fk = $id_usuarioalumno_fk;
     }
 
     /**
@@ -84,7 +84,7 @@ class DOSIFICACION extends CONEXION{
 
     
     public function queryconsultaDosificacion(){
-        $query="SELECT `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_altabaja`, `updated_at`, `created_at` FROM `dosificacion`";
+        $query="SELECT `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_alta_baja`, `updated_at`, `created_at` FROM `dosificacion`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -93,7 +93,7 @@ class DOSIFICACION extends CONEXION{
 
     public function queryUpdateDosificacion(){
         $query="UPDATE `dosificacion` SET `fecha_inscripcion` = '".$this->getFechaInscripcion()."', `hora_inscripcion` = '".$this->getHoraInscripcion()."', 
-        `fecha_altabaja` = '".$this->getFechaAltaBaja()."', `updated_at` = current_timestamp()
+        `fecha_alta_baja` = '".$this->getFechaAltaBaja()."', `updated_at` = current_timestamp()
          WHERE `dosificacion`.`id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."' AND `dosificacion`.`id_periodo_fk` = '".$this->getIdPeriodoFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -102,7 +102,7 @@ class DOSIFICACION extends CONEXION{
     }
 
     public function queryInsertDosificacion(){
-        $query="INSERT into `dosificacion`(`id_usuarioalumno_fk`,`id_periodo_fk`,`fecha_inscripcion`,`hora_inscripcion`,`fecha_altabaja`,`updated_at`,`created_at`) 
+        $query="INSERT into `dosificacion`(`id_usuarioalumno_fk`,`id_periodo_fk`,`fecha_inscripcion`,`hora_inscripcion`,`fecha_alta_baja`,`updated_at`,`created_at`) 
         VALUES ('".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPeriodoFk()."', '".$this->getFechaInscripcion()."', '".$this->getHoraInscripcion()."', 
         '".$this->getFechaAltaBaja()."', current_timestamp(), current_timestamp())";
         $this->connect();

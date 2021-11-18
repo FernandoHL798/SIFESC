@@ -9,31 +9,31 @@ function consultaMovimiento(){
 function updateMovimiento($params){
     include_once "../model/MOVIMIENTO.php";
     $MOVIMIENTO = new MOVIMIENTO();
-    $MOVIMIENTO->setEstatus($params['']);
-    $MOVIMIENTO->setCalificacion($params['']);
-    $MOVIMIENTO->setAprobado($params['']);
-    $MOVIMIENTO->setVecesCursado($params['']);
-    $MOVIMIENTO->setIdInscripcionFk($params['']);
-    $MOVIMIENTO->setIdAsignacionFk($params['']);
+    $MOVIMIENTO->setEstatus($params['estatus']);
+    $MOVIMIENTO->setCalificacion($params['calificacion']);
+    $MOVIMIENTO->setAprobado($params['aprobado']);
+    $MOVIMIENTO->setVecesCursado($params['veces_cursado']);
+    $MOVIMIENTO->setIdInscripcionFk($params['id_inscripcion_fk']);
+    $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
     return $MOVIMIENTO->queryUpdateMovimiento();
 }
 
 function insertMovimiento($params){
     include_once "../model/MOVIMIENTO.php";
     $MOVIMIENTO = new MOVIMIENTO();
-    $MOVIMIENTO->setIdInscripcionFk($params['']);
-    $MOVIMIENTO->setIdAsignacionFk($params['']);
-    $MOVIMIENTO->setEstatus($params['']);
-    $MOVIMIENTO->setCalificacion($params['']);
-    $MOVIMIENTO->setAprobado($params['']);
-    $MOVIMIENTO->setVecesCursado($params['']);
+    $MOVIMIENTO->setIdInscripcionFk($params['id_inscripcion_fk']);
+    $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
+    $MOVIMIENTO->setEstatus($params['estatus']);
+    $MOVIMIENTO->setCalificacion($params['calificacion']);
+    $MOVIMIENTO->setAprobado($params['aprobado']);
+    $MOVIMIENTO->setVecesCursado($params['veces_cursado']);
     return $MOVIMIENTO->queryInsertMovimiento();
 }
 
 function deleteMovimiento($params){
     include_once "../model/MOVIMIENTO.php";
     $MOVIMIENTO = new MOVIMIENTO();
-    $MOVIMIENTO->setIdInscripcionFk($params['']);
-    $MOVIMIENTO->setAsignacionFk($params['']);
+    $MOVIMIENTO->setIdInscripcionFk($params['id_inscripcion_fk']);
+    $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
     return $MOVIMIENTO->queryDeleteMovimiento();
 }

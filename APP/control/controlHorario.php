@@ -8,26 +8,26 @@ function consultaHorario(){
 function updateHorario($params){
     include_once "../model/HORARIO.php";
     $HORARIO = new HORARIO();
-    $HORARIO->setIdHorario($params['']);
-    $HORARIO->setIdGrupoFk($params['']);
-    $HORARIO->setIdSalonFk($params['']);
-    $HORARIO->setInicio($params['']);
-    $HORARIO->setFin($params['']);
-    $HORARIO->setDuracion($params['']);
-    $HORARIO->setDia($params['']);
+   $HORARIO->setIdHorario($params['id_horario']);
+    $HORARIO->setIdGrupoFk($params['id_grupo_fk']);
+    $HORARIO->setIdSalonFk($params['id_salon_fk']);
+    $HORARIO->setInicio($params['inicio']);
+    $HORARIO->setFin($params['fin']);
+    $HORARIO->setDuracion($params['duracion']);
+    $HORARIO->setDia($params['dia']);
     return $HORARIO->queryUpdateHorario();
 }
 
 function insertHorario($params){
     include_once "../model/HORARIO.php";
     $HORARIO = new HORARIO();
-    $HORARIO->setIdHorario($params['']);
-    $HORARIO->setIdGrupoFk($params['']);
-    $HORARIO->setIdSalonFk($params['']);
-    $HORARIO->setInicio($params['']);
-    $HORARIO->setFin($params['']);
-    $HORARIO->setDuracion($params['']);
-    $HORARIO->setDia($params['']);
+    $HORARIO->setIdHorario($params['id_horario']);
+    $HORARIO->setIdGrupoFk($params['id_grupo_fk']);
+    $HORARIO->setIdSalonFk($params['id_salon_fk']);
+    $HORARIO->setInicio($params['inicio']);
+    $HORARIO->setFin($params['fin']);
+    $HORARIO->setDuracion($params['duracion']);
+    $HORARIO->setDia($params['dia']);
     return $HORARIO->queryInsertHorario();
 }
 

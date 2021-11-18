@@ -9,21 +9,22 @@ function consultaDosificacion(){
 function updateDosificacion($params){
     include_once "../model/DOSIFICACION.php";
     $DOSIFIACION = new DOSIFICACION();
-    $DOSIFIACION->setIdUsuarioAlumnoFk($params['']);
-    $DOSIFIACION->setFechaInscripcion($params['']);
-    $DOSIFIACION->setHoraInscripcion($params['']);
-    $DOSIFIACION->setFechaAltaBaja($params['']);
+    $DOSIFIACION->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $DOSIFIACION->setIdPeriodoFk($params['id_periodo_fk']);
+    $DOSIFIACION->setFechaInscripcion($params['fecha_inscripcion']);
+    $DOSIFIACION->setHoraInscripcion($params['hora_inscripcion']);
+    $DOSIFIACION->setFechaAltaBaja($params['fecha_altabaja']);
     return $DOSIFIACION->queryUpdateDosificacion();
 }
 
 function insertDosificacion($params){
     include_once "../model/DOSIFICACION.php";
     $DOSIFIACION = new DOSIFICACION();
-    $DOSIFIACION->setIdUsuarioAlumnoFk($params['']);
-    $DOSIFIACION->setIdPeriodoFk($params['']);
-    $DOSIFIACION->setFechaInscripcion($params['']);
-    $DOSIFIACION->setHoraInscripcion($params['']);
-    $DOSIFIACION->setFechaAltaBaja($params['']);
+    $DOSIFIACION->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $DOSIFIACION->setIdPeriodoFk($params['id_periodo_fk']);
+    $DOSIFIACION->setFechaInscripcion($params['fecha_inscripcion']);
+    $DOSIFIACION->setHoraInscripcion($params['hora_inscripcion']);
+    $DOSIFIACION->setFechaAltaBaja($params['fecha_altabaja']);
     return $DOSIFIACION->queryInsertDosificacion();
 }
 
