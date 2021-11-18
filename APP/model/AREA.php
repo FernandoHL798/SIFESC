@@ -2,6 +2,7 @@
 include_once "CONEXION.php";
 class AREA extends CONEXION{
     private $id_area;
+    private $nombre;
   
     /**
      * @return mixed
@@ -17,18 +18,41 @@ class AREA extends CONEXION{
     {
         $this->id_area = $id_area;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+    /**
+     * @param mixed $nombre
+     */
+    public function setNombre($nombre): void
+    {
+        $this->nombre = $nombre;
+    }
     
     public function queryconsultaArea(){
-        $query="SELECT `id_area` FROM `area`";
+        $query="SELECT `id_area`, `nombre` FROM `area`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }
 
+    public function queryUpdateArea(){
+        $query="UPDATE `area` SET `nombre` = '".$this->getNombre()."' WHERE `area`.`id_area` = '".$this->getIdArea()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryInsertArea(){
-        $query="INSERT into `area`(`id_area`) 
-        VALUES ('".$this->getIdArea()."')";
+        $query="INSERT into `area`(`id_area`, `nombre`) 
+        VALUES ('".$this->getIdArea()."', '".$this->getNombre()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
