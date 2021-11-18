@@ -17,7 +17,7 @@
 				<span class="tooltip">Inicio</span>
 			</li>
 			<li>
-				<a href="menu_1.html">
+				<a href="./cambio_clave.php">
 					<i class='bx bx-lock'></i>
 					<span class="links_name">Cambia tu clave de acceso</span>
 				</a>
