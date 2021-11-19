@@ -8,16 +8,16 @@ function consultaAreas(){
 function updateArea($params){
     include_once "../model/AREA.php";
     $AREA = new AREA();
-    $AREA->setIdArea($params['']);
-    $AREA->setNombre($params[''])
+    $AREA->setIdArea($params['id_area']);
+    $AREA->setNombre($params['nombre'])
     return $AREA->queryUpdateArea();
 }
 
 function insertArea($params){
     include_once "../model/AREA.php";
     $AREA = new AREA();
-    $AREA->setIdArea($params['']);
-    $AREA->setNombre($params[''])
+    $AREA->setIdArea($params['id_area']);
+    $AREA->setNombre($params['nombre'])
     return $AREA->queryInsertArea();
 }
 
