@@ -12,14 +12,173 @@
 <body>
 	
 	<div class="sidebar">
-		<div class="logo-details_p">
+		<div class="logo-details">
 			<i class='bx bx-traffic-cone'></i>
-			<span class="logo_name_p">UNAM</span>
+			<span class="logo_name">UNAM</span>
 		</div>
+
+		<ul class="nav-links">
+			<li>
+				<a href="">
+					<i class='bx bx-grid-alt'></i>
+					<span class="link_name">Inicio</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Inicio</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<div class="icon-link">
+					<a href="">
+						<i class='bx bx-lock'></i>
+						<span class="link_name">Seguridad</span>
+					</a>
+					<i class='bx bx-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Seguridad</a></li>
+					<li><a href="#">Cambia tu clave de acceso</a></li>
+					<li><a href="#">Configuración de seguridad</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<div class="icon-link">
+					<a href="">
+						<i class='bx bx-pencil'></i>
+						<span class="link_name">Inscripción</span>
+					</a>
+					<i class='bx bx-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Inscripción</a></li>
+					<li><a href="#">Realiza tu Inscripción</a></li>
+					<li><a href="#">Consulta tu inscripción</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="">
+					<i class='bx bx-calendar'></i>
+					<span class="link_name">Dosificación</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Dosificación</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="">
+					<i class='bx bxs-error'></i>
+					<span class="link_name">Saturación</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Saturación</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<div class="icon-link">
+					<a href="">
+						<i class='bx bx-lock'></i>
+						<span class="link_name">Seguridad</span>
+					</a>
+					<i class='bx bx-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Seguridad</a></li>
+					<li><a href="#">Cambia tu clave de acceso</a></li>
+					<li><a href="#">Configuración de seguridad</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="">
+						<i class='bx bx-lock'></i>
+						<span class="link_name">Seguridad</span>
+					</a>
+					<i class='bx bx-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Seguridad</a></li>
+					<li><a href="#">Cambia tu clave de acceso</a></li>
+					<li><a href="#">Configuración de seguridad</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="">
+						<i class='bx bx-lock'></i>
+						<span class="link_name">Seguridad</span>
+					</a>
+					<i class='bx bx-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Seguridad</a></li>
+					<li><a href="#">Cambia tu clave de acceso</a></li>
+					<li><a href="#">Configuración de seguridad</a></li>
+				</ul>
+			</li>
+
+
+			<li>
+				<div class="profile_details">
+					<div class="profile-content">
+						<img src="../../img/logo_oro.png" alt="profile">
+					</div>
+					
+						<div class="name-job">
+							<div class="profile_name">
+								Emmanuel Martínez Hernández
+							</div>
+							<div class="job">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+									<label class="form-check-label" for="flexRadioDefault2">
+										    | 1119 | LICENCIADO EN INFORMÁTICA
+									</label>
+								</div>
+							</div>
+						</div>
+						<i class='bx bx-log-out' id="log_out"></i>
+				</div>
+			</li>
+		</ul>
 	</div>
 
+	<section class="home-section">
+		<div class="home-content">
+			<i class='bx bx-menu'></i>
+			<span class="text">
+				AUN LE FALTA (MINIMAS CORRECCIONES || PASARLO A PHP || ADAPTAR ESTILOS || AGREGAR OTRO HOME CONTENT)
+			</span>
+		</div>
+	</section>
+
+	<script>
+		
+		let arrow = document.querySelectorAll(".arrow");
+		console.log(arrow);
+		for (var i = 0; i < arrow.length; i++) {
+			arrow[i].addEventListener("click",(e)=>{
+				let arrowParent = e.target.parentElement.parentElement;
+				
+				arrowParent.classList.toggle("showMenu");
+
+			});
+		}
+
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".bx-menu");
+		console.log(sidebarBtn);
+
+		sidebarBtn.addEventListener("click", ()=>{
+			sidebar.classList.toggle("close");
+		});
 
 
+	</script>
 
 </body>
 </html>
