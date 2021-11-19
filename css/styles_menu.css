@@ -37,6 +37,17 @@ header .titulo{
 	color: black;
 }
 
+.modal-dialog{
+	border-color: transparent;
+}
+
+.modal-content{
+	border-color: transparent;
+	border-style: hidden;
+	opacity: .01;
+	padding: 0 20px;
+	box-shadow: none;
+}
 
 .datos_escolares{
 	color: rgba(195, 163, 16, 1);
