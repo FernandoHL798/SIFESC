@@ -1,23 +1,7 @@
 <?php
 include_once "CONEXION.php";
 class ADMINISTRADOR extends CONEXION{
-    private $id_usuario_fk;
-  
-    /**
-     * @return mixed
-     */
-    public function getIdUsuarioFk()
-    {
-        return $this->id_usuario_fk;
-    }
-    /**
-     * @param mixed $id_usuario_fk
-     */
-    public function setIdUsuarioFk($id_usuario_fk): void
-    {
-        $this->id_usuario_fk = $id_usuario_fk;
-    }
-    
+
     public function queryconsultaAdministrador(){
         $query="SELECT `id_usuario_fk` FROM `administrador`";
         $this->connect();
@@ -26,17 +10,17 @@ class ADMINISTRADOR extends CONEXION{
         return $resultado;
     }
 
-    public function queryInsertAdministrador(){
+    public function queryInsertAdministrador($idAdmin){
         $query="INSERT into `administrador`(`id_usuario_fk`) 
-        VALUES ('".$this->getIdUsuarioFk()."')";
+        VALUES ('".$idAdmin."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
     }
 
-    public function queryDeleteAdministrador(){
-        $query="DELETE FROM `administrador` WHERE `id_usuario_fk`='".$this->getIdUsuarioFk()."'";
+    public function queryDeleteAdministrador($idAdmin){
+        $query="DELETE FROM `administrador` WHERE `id_usuario_fk`='".$idAdmin."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
