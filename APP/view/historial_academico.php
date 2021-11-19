@@ -45,7 +45,7 @@ include "./includes/sidebar.php";
 			                        </a>
 			                    </div>
 			                </div>
-			                <div class="row">
+			                <div class="row" id="printTable">
 			                    <div class="col mx-auto mt-3">
 			                        <table class="table table-bordered table-responsive" width="100%">
 			                            <tbody>
@@ -213,10 +213,9 @@ include "./includes/sidebar.php";
 			                </table>
 			            </div>
 			        </div>
-			    </div>
 			    <div class="mt-3 mb-2"></div>
 			    <div class="d-grid gap-2 col-3 mx-auto">
-			        <input class="btn btn-primary mt-2 " type="button" name="Imprimir" onclick="window.print()" value="Imprimir">
+			        <input class="btn btn-primary mt-2 " type="button" name="Imprimir" onclick="printData()" value="Imprimir">
 			        <p class="mt-3 mb-2"></p>
 			    </div>
 			</form>
@@ -235,6 +234,36 @@ include "./includes/sidebar.php";
 		}
 
 	</script>
+
+
+	<!-- FUNCION PARA IMPRIMIR CON  ESTILOS A MEDIAS :U
+
+
+	ERROR: CUANDO CERRAMOS LA IMPRESIÓN Y VOLVEMOS A IMPRIMIR YA NO SE IMPRIMEN LOS ESTILOS
+	SOLO CUANDO LA PAGINA ESTA FRESCA SE IMPRIMEN
+
+	¿SOLUCIONES?
+	-->
+	<script>
+		
+		function printData()
+			{
+			   var divToPrint=document.getElementById("printTable");
+			   newWin= window.open("");
+			   newWin.document.write(divToPrint.outerHTML);
+			   newWin.document.write('<link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">');
+			   newWin.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">');
+			   newWin.print();
+			   newWin.close();
+			}
+
+			$('Imprimir').on('click',function(){
+			printData();
+			})
+
+	</script>
+
+
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

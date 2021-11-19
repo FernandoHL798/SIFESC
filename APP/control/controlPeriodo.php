@@ -9,25 +9,26 @@ function consultaPeriodos(){
 function updatePeriodo($params){
     include_once "../model/PERIODO.php";
     $PERIODO = new PERIODO();
-    $PERIODO->setIdPeriodo($params['']);
-    $PERIODO->setIdAsignacionFk($params['']);
-    $PERIODO->setFechaInscripcion($params['']);
-    $PERIODO->setFechaAltasBajas($params['']);
+    $PERIODO->setIdPeriodo($params['id_periodo']);
+    $PERIODO->setIdAsignacionFk($params['id_asignacion_fk']);
+    $PERIODO->setFechaInscripcion($params['fecha_inscripcion']);
+    $PERIODO->setFechaAltasBajas($params['fecha_altabaja']);
     return $PERIODO->queryUpdatePeriodo();
 }
 
 function insertPeriodo($params){
     include_once "../model/PERIODO.php";
     $PERIODO = new PERIODO();
-    $PERIODO->setIdPeriodo($params['']);
-    $PERIODO->setIdAsignacionFk($params['']);
-    $PERIODO->setFechaInscripcion($params['']);
-    $PERIODO->setFechaAltasBajas($params['']);
+    $PERIODO->setIdPeriodo($params['id_periodo']);
+    $PERIODO->setIdAsignacionFk($params['id_asignacion_fk']);
+    $PERIODO->setFechaInscripcion($params['fecha_inscripcion']);
+    $PERIODO->setFechaAltasBajas($params['fecha_altabaja']);
     return $PERIODO->queryInsertPeriodo();
 }
 
-function deletePeriodo($idPeriodo)
+function deletePeriodo($idPeriodo){
 include_once "../model/PERIODO.php";
     $PERIODO = new PERIODO();
     $PERIODO->setIdPeriodo($idPeriodo);
     return $PERIODO->queryDeletePeriodo();
+}

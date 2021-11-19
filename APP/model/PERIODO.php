@@ -68,7 +68,7 @@ class PERIODO extends CONEXION{
     }
     
     public function queryconsultaPeriodo(){
-        $query="SELECT `id_periodo`, `id_asignacion_fk`, `fecha_inscpripcion`, `fecha_altas_bajas`, `updated_at`, `created_at` FROM `periodo`";
+        $query="SELECT `id_periodo`, `id_asignacion_fk`, `fecha_inscripcion`, `fecha_altas_bajas`, `updated_at`, `created_at` FROM `periodo`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -86,7 +86,7 @@ class PERIODO extends CONEXION{
     }
 
     public function queryInsertPeriodo(){
-        $query="INSERT into `periodo`(`id_periodo`,`id_asignacion_fk`,`fecha_inscpripcion`,`fecha_altas_bajas`,`updated_at`,`created_at`) 
+        $query="INSERT into `periodo`(`id_periodo`,`id_asignacion_fk`,`fecha_inscripcion`,`fecha_altas_bajas`,`updated_at`,`created_at`) 
         VALUES ('".$this->getIdPeriodo()."', '".$this->getIdAsignacionFk()."', '".$this->getFechaInscripcion()."', '".$this->getFechaAltasBajas()."', current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);

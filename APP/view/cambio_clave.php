@@ -28,12 +28,14 @@
 				</a>
 			</div>        
 		</div>
-		<div class="titulo">
-			Cambio de contraseña
-		</div>
+		
 		<div class="modal-dialog text-center">
 
+
 			<div class="col-sm-8 main-section">
+				<div class="titulo">
+			<h3> Cambio de contraseña</h3> 
+		</div>
 				<div class="modal-content">
 					<div class="col-12">
 						<div class="container">

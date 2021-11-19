@@ -37,7 +37,6 @@ header .titulo{
 	color: black;
 }
 
-
 .datos_escolares{
 	color: rgba(195, 163, 16, 1);
 }
@@ -326,6 +325,10 @@ header .titulo{
 	background: none;
 }
 
+.pruebass .form-label{
+	font-size: 1rem;
+}
+
 .home_content{
 	position: absolute;
 	height: 100%;
@@ -362,6 +365,11 @@ header .titulo{
 
 .menu__side_move{
     width: 250px;
+}
+
+
+.modal-body{
+	font-size: 1rem;
 }
 
 
@@ -416,19 +424,6 @@ header .titulo{
 	}
 
 @media print{
-		body{
-			font-family: monospace;
-		}
-
-		footer{
-			background-color: red;
-			text-align: center;
-			position: absolute;
-			width: 100%;
-			height: 70px;
-			bottom: 0;
-		}
-
 
 		.titulo{
 			margin: 30px;
