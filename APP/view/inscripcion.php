@@ -19,7 +19,7 @@ include "./includes/sidebar.php";
 	<!--              AQUI VA EL CONTENIDO                -->
 	<div class="home_content">
 		<div class="text">
-			
+
 
 
 				<div class="row">
@@ -198,7 +198,7 @@ include "./includes/sidebar.php";
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="boton">
 			  Agregar asignatura
 			</button>
-			<button type="button" class="btn btn-outline-success mt-1">Solicitar</button>
+			<button type="button" class="btn btn-outline-success mt-1" onclick="window.location.href='file://APP/view/ConsultaInscrincion.php'">Solicitar</button>
 		</div>
 	</div>
 
