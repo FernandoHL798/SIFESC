@@ -215,7 +215,7 @@ include "./includes/sidebar.php";
 			        </div>
 			    <div class="mt-3 mb-2"></div>
 			    <div class="d-grid gap-2 col-3 mx-auto">
-			        <input class="btn btn-primary mt-2 " type="button" name="Imprimir" onclick="printData()" value="Imprimir">
+			        <input class="btn btn-primary mt-2 mb-2 " type="button" name="Imprimir" onclick="printData()" value="Imprimir">
 			        <p class="mt-3 mb-2"></p>
 			    </div>
 			</form>
