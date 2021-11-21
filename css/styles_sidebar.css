@@ -53,14 +53,20 @@
 }
 
 .sidebar .nav-links{
+	/*
 	height: 80%;
 	margin-top: 25;
 	padding-top: 30px 0 150px 0;
 	overflow: scroll;
+	*/
+	height: 100%;
+	padding: 30px 0 150px 0;
+	overflow: auto;
 }
 
 .sidebar.close .nav-links{
 	overflow: visible;
+	overflow: scroll;
 }
 
 .sidebar .nav-links::-webkit-scrollbar{
@@ -114,9 +120,10 @@
 }
 
 .sidebar .nav-links li a .link_name{
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 400;    
 	color: #fff;
+	transition: all 0.4s ease;
 }
 
 .sidebar.close .nav-links li a .link_name{
@@ -125,8 +132,8 @@
 }
 
 .sidebar .nav-links li .sub-menu{
-	padding: 6px 6px 14px 80px;
-	margin-top: -10px;
+	padding: 9px 6px 14px 40px;
+	margin-top: -5px;
 	background: #948622; /*color de fondo de los sub-menu, aun no me convence*/
 	display: none; 
 }
@@ -138,7 +145,7 @@
 
 .sidebar .nav-links li .sub-menu a{
 	color: #fff;
-	font-size: 15px;
+	font-size: 12px;
 	padding: 5px 0;
 	white-space: nowrap;
 	opacity: 0.6;
@@ -175,10 +182,7 @@
 	display: none;
 }
 
-.sidebar.close .nav-links li .sub-menu .link_name{
-
-	/*ESTA PARTE ES PARA LA PARTE DE LA INFORMACION DEL PERFIL*/
-}
+/*ESTA PARTE ES PARA LA PARTE DE LA INFORMACION DEL PERFIL*/
 
 .sidebar.close .nav-links li .sub-menu .link_name{
 	font-size: 18px;
@@ -199,16 +203,21 @@
 	transform: translateY(-50%);
 }
 
+
 .sidebar .profile_details{
 	position: fixed;
 	bottom: 0;
 	width: 260px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	background: #948622;
-	padding: 6px 0;
+	padding: 12px 0;
 	transition: all 0.4s ease;
+}
+
+.sidebar.close .profile_details{
+	background: none;
 }
 
 .sidebar.close .profile_details{
@@ -219,6 +228,7 @@
 .sidebar .profile_details .profile-content{
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .sidebar .profile_details img{
@@ -229,6 +239,7 @@
 	margin: 0 14px 0 12px;
 	background: #000066;
 	padding: 5px;
+	transition: all 0.5s ease;
 }
 
 .sidebar.close .profile_details img{
@@ -238,7 +249,7 @@
 .sidebar .profile_details .profile_name,
 .sidebar .profile_details .job{
 	color: #fff;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: 500;
 	white-space: nowrap;
 }
@@ -254,12 +265,14 @@
 }
 
 
-/* CIERRA CONTENIDO DE PERFIL*/
+/* CIERRA CONTENIDO DE PERFIL .......................................
+   ABRE CONTENIDO DE TITULO Y BOTON DE SIDEBAR 							*/
 
 .home-section{
 	position: relative;
 	background: white;
-	height: 100VH;     /*SI SE AJUSTA A 260PX*/
+	height: auto;     /*SI SE AJUSTA A 260PX*/
+	background: #000066;
 	left: 260px;
 	width: calc(100% - 260px);
 	transition: all 0.5s ease;
@@ -276,10 +289,15 @@
 	align-items: center;
 }
 
+.home-section .home-content .titulounam{
+	width: 15%;
+}
+
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
 	color: #948622;
 	font-size: 35px;
+
 }
 
 .home-section .home-content .bx-menu{
@@ -288,9 +306,46 @@
 }
 
 .home-section .home-content .text{
-	color: black;
-	font-size: 16px;
+	color: white;
+	font-size: 13px;
+	text-align: center;
 	font-weight: 600;
+	width: 750px;			/*Ajusta tamaño del span del titulo*/
 	/* padding: 50px;        AJUSTAR POSICION?*/
 
+}
+
+
+/* CONTENIDO PRINCIPAL DE LA PAGINA */
+
+.home_content2{
+	position: absolute;
+	height: auto;
+	width: calc(100% - 260px);
+	left: 260px;
+	overflow: scroll;
+	align-items: center;
+	transition: all 0.5s ease;
+}
+
+.home_content2 .texthome{
+	font-size: 25px;
+	font-weight: 500;
+	color: black;
+	margin: 12px;
+}
+
+.sidebar.close ~ .home_content2{
+	width: calc(100% - 78px);
+	left: 78px;
+}
+
+
+
+/* AQUI VAN LOS @MEDIA ......................................*/
+
+@media (max-width:  420px){
+	.sidebar.close .nav-links li .sub-menu{
+		display: none;
+	}
 }
