@@ -61,12 +61,11 @@
 	*/
 	height: 100%;
 	padding: 30px 0 150px 0;
-	overflow: auto;
+	overflow: scroll;
 }
 
 .sidebar.close .nav-links{
 	overflow: visible;
-	overflow: scroll;
 }
 
 .sidebar .nav-links::-webkit-scrollbar{
