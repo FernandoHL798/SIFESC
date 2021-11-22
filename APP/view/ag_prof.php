@@ -91,9 +91,9 @@ include "./includes/sidebar2.php";
                             <div class="form-floating">
                                     <select class="form-select" id="floatingSelect">
                                         <option hidden=""></option>
-                                        <option value="1">1102</option>
-                                        <option value="2">2102</option>
-                                        <option value="3">3102</option>
+                                        <option value="1">Informática</option>
+                                        <option value="2">Redes</option>
+                                        <option value="3">Informática Programación</option>
                                     </select>
                                         <label for="floatingSelect"><font SIZE=3>Departamento:</font></label>
                             </div>
@@ -165,9 +165,9 @@ include "./includes/sidebar2.php";
                             <div class="form-floating">
                                     <select class="form-select" id="floatingSelect">
                                         <option hidden=""></option>
-                                        <option value="1">1102</option>
-                                        <option value="2">2102</option>
-                                        <option value="3">3102</option>
+                                        <option value="1">Informática</option>
+                                        <option value="2">Redes</option>
+                                        <option value="3">Informática Programación</option>
                                     </select>
                                         <label for="floatingSelect"><font SIZE=3>Departamento:</font></label>
                             </div>
