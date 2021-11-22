@@ -12,23 +12,13 @@
 </head>
 <body id="body">
     <?php
-include "./includes/sidebar.php";
+include "./includes/sidebar2.php";
     ?>
-<div class="home_content">
-    <header>
-        <div class="icon_menu">
-            <i class='bx bx-menu' id="btn"></i>
-        </div>
-        <div class="UNAMFESC">
 
-            <title1 class="UNAM"><center>UNIVERSIDAD NACIONAL AUTONOMA DE MÉXICO</center></title1>
-            <title2 class="fesc"><center><br>Facultad de Estudios Superiores Cuautitlán</center></title2>
-
-            </div>
-    </header>
-    <!--              AQUI VA EL CONTENIDO                -->
     
-        <div class="text">
+    <!--              AQUI VA EL CONTENIDO                -->
+    <div class="home_content2">
+        <div class="texthome">
  <form class="mb-4">              
             <div class="mb-4">
                 <div class="row">
@@ -103,7 +93,7 @@ include "./includes/sidebar.php";
                                     <input type="text" placeholder="Cupo:" class="form-control" style="height: 60px">
                                   </div>
                         </div>
-                                </form>
+                                
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -417,12 +407,24 @@ include "./includes/sidebar.php";
     </div>
 </div>
     <script>
-        let btn = document.querySelector("#btn");
-        let sidebar = document.querySelector(".sidebar");
+        let arrow = document.querySelectorAll(".arrow");
+        console.log(arrow);
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click",(e)=>{
+                let arrowParent = e.target.parentElement.parentElement;
+                
+                arrowParent.classList.toggle("showMenu");
 
-        btn.onclick = function(){
-        sidebar.classList.toggle("active");
+            });
         }
+
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
 
     </script>
 

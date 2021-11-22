@@ -89,11 +89,11 @@
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Administrador</a></li>
-					<li><a href="#">Agrega profesor</a></li>
+					<li><a href="./ag_prof.php">Agrega profesor</a></li>
 					<li><a href="#">Agrega alumnos</a></li>
 					<li><a href="#">Asigna profesor</a></li>
-					<li><a href="#">Crea plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
-					<li><a href="#">Edita saturación</a></li>
+					<li><a href="./plan_de_estudios.php">Crea plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
+					<li><a href="./saturacion_prof.php">Edita saturación</a></li>
 				</ul>
 			</li>
 

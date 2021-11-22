@@ -7,19 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Seguridad</title>
 </head>
-
-
 <body id="body">
     <?php
     include "./includes/sidebar2.php";
     ?>
-    <div class="home_content2">
-
+    
 	<!--              AQUI VA EL CONTENIDO                -->
-	
+	<div class="home_content2">
 		<div class="texthome"> 
             <form>
                 <div class="">
@@ -92,8 +89,6 @@
                                         <option value="3">¿Cual es el nombre de su escuela primaria?</option>
                                     </select>
                                         <label for="floatingSelect"><font SIZE=3>Seleccione una pregunta secreta</font></label>
-                                
-
                             </div>
                         </div>
                         <div class="mt-3 mb-2"></div>
@@ -155,9 +150,8 @@
         	</div>
 		</div>
 	</div>
-    <script>
-        
-        let arrow = document.querySelectorAll(".arrow");
+	<script>
+		let arrow = document.querySelectorAll(".arrow");
         console.log(arrow);
         for (var i = 0; i < arrow.length; i++) {
             arrow[i].addEventListener("click",(e)=>{
@@ -176,8 +170,7 @@
             sidebar.classList.toggle("close");
         });
 
-
-    </script>
+	</script>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFY lzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
