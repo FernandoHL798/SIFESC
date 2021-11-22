@@ -66,14 +66,14 @@
                         <div class="mt-3 mb-2"></div>
                         <div class="d-grid gap-2 col-3 mx-auto">
                             <div class="modal-content">
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                           Confirmar
-                                        </button>
-                                    </div>
+                                </button>
+                            </div>
                             <p class="mt-3 mb-2"></p>
                         <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -91,6 +91,7 @@
                                 </div>
                               </div>
                             </div>
+                            
                     </div>
                         <div class="row">
                             
@@ -102,7 +103,7 @@
                                         <option value="2">¿Cual es el nombre de su primer mascota?</option>
                                         <option value="3">¿Cual es el nombre de su escuela primaria?</option>
                                     </select>
-                                        <label for="floatingSelect"><FONT SIZE=3>Seleccione una pregunta secreta</font></label>
+                                        <label for="floatingSelect"><font SIZE=3>Seleccione una pregunta secreta</font></label>
                                 
 
                             </div>
@@ -152,7 +153,6 @@
                               </div>
                             </div>
                     </div> 
-
 
 
 
