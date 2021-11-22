@@ -16,7 +16,7 @@
 
 	<!--EN ESTE DIV SE AGREGA TODO EL CONTENIDO -->
 	<div class="home_content2">
-		<div class="texthome">Home content
+		<div class="texthome">
 				<div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center mb-4 mx-auto"> 
 					<form>
 						<div class="row">

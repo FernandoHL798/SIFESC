@@ -75,8 +75,7 @@
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Profesor</a></li>
-					<li><a href="#">Agregar calificaciones</a></li>
-					<li><a href="#">Consulta grupos</a></li>
+					<li><a href="./grupos_profesores.php">Consulta grupos</a></li>
 				</ul>
 			</li>
 			<li>

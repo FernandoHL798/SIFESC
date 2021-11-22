@@ -91,7 +91,7 @@ include "./includes/sidebar2.php";
 							<td data-label="GRUPO">1701</td>
 							<td data-label="MOVIMIENTO">ALTA</td>
 							<td>
-								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto">
+								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_baja">
 									<i class='bx bx-trash'></i>
 								</button>
 							</td>
@@ -105,7 +105,7 @@ include "./includes/sidebar2.php";
 							<td data-label="GRUPO">1701</td>
 							<td data-label="MOVIMIENTO">ALTA</td>
 							<td>
-								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto">
+								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_baja">
 									<i class='bx bx-trash'></i>
 								</button>
 							</td>
@@ -119,7 +119,7 @@ include "./includes/sidebar2.php";
 							<td data-label="GRUPO">1701</td>
 							<td data-label="MOVIMIENTO">ALTA</td>
 							<td>
-								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto">
+								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_baja">
 									<i class='bx bx-trash'></i>
 								</button>
 							</td>
@@ -133,7 +133,7 @@ include "./includes/sidebar2.php";
 							<td data-label="GRUPO">1701</td>
 							<td data-label="MOVIMIENTO">ALTA</td>
 							<td>
-								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto">
+								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_baja">
 									<i class='bx bx-trash'></i>
 								</button>
 							</td>
@@ -147,41 +147,11 @@ include "./includes/sidebar2.php";
 							<td data-label="GRUPO">1701</td>
 							<td data-label="MOVIMIENTO">ALTA</td>
 							<td>
-								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto">
+								<button type="button" class="btn btn-danger btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_baja">
 									<i class='bx bx-trash'></i>
 								</button>
 							</td>
 						</tr>
-
-						<!--
-						<tr>
-							<td data-label="NÚMERO">6</td>
-							<td data-label="CLAVE"></td>
-							<td data-label="NOMBRE ASIGNATURA"></td>
-							<td data-label="CREDITOS"></td>
-							<td data-la data-label="SEMESTRE"></td>
-							<td data-label="GRUPO"></td>
-							<td data-label="MOVIMIENTO"></td>
-							<td data-label="ACCIONES"></td>
-						</tr>
-
-
-					</tbody>
-
-					<tfoot>
-						<tr>
-							<th>NO</th>
-							<th>CLAVE</th>
-							<th>NOMBRE DE LA ASIGNATURA</th>
-							<th>CRED.</th>
-							<th>SEM.</th>
-							<th>GPO.</th>
-							<th>MOV.</th>
-							<th>ACCION</th>
-						</tr>
-					</tfoot>
-
-					-->
 				</table>
 			</div>
 		</div>
@@ -199,50 +169,70 @@ include "./includes/sidebar2.php";
 		</div>
 	</div>
 
-
-
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  	<div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">Agregar materia</h5>
-			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			      </div>
-			      <div class="modal-body">
-			        AQUI IRA LA INSCRUPCIÓN
+			  	<div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Agregar materia</h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
 
-
-			        <!-- CONTENIDO DEL MODAL-->
-<form>
-  <div class="pruebass">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-			        <button type="button" class="btn btn-primary">Guardar cambios</button>
-			      </div>
-			    </div>
-		 	</div>
-		</div>
-	<!-- JavaScript Bundle with Popper -->
-
+				        <!-- CONTENIDO DEL MODAL-->
+								<form>
+								  <div class="pruebass">
+								    <label for="exampleInputEmail1" class="form-label">Nombre de materia</label>
+								    <select class="form-select" aria-label="Default select example">
+										  <option selected>Selecciona la materia</option>
+										  <option value="1">Matemáticas I</option>
+										  <option value="2">Programación I</option>
+										  <option value="3">Algoritmos II</option>
+										</select><br>
+										<label for="exampleInputEmail1" class="form-label">Selecciona grupo</label>
+									    <select class="form-select" aria-label="Default select example">
+											  <option selected>Selecciona grupo</option>
+											  <option value="1">1107</option>
+											  <option value="2">1105</option>
+											  <option value="3">1106</option>
+											  <option value="4">1151</option>
+											  <option value="5">1152</option>
+											  <option value="6">1153</option>
+											</select><br>
+								  </div> 
+								</form>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+				        <button type="button" class="btn btn-primary">Guardar cambios</button>
+				      </div>
+				    </div>
+			 	</div>
+			</div>
 		</div>
 	</div>
+
+
+<!-- MODAL DE BAJA DE ASIGNATURA -->
+	 <div class="modal fade" id="Modal_baja" tabindex="-1" aria-labelledby="Modal_baja" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="Modal_b">ADVERTENCIA</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="mt-3 mb-2"></div>
+            <div class="form-group" id="Edit_plan_grup">
+            		<H5>¿Esta seguro que desea dar de baja la materia?</H5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 <script>
