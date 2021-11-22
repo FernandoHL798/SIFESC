@@ -10,28 +10,17 @@
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Seguridad</title>
 </head>
+
+
 <body id="body">
     <?php
-    include "./includes/sidebar.php";
+    include "./includes/sidebar2.php";
     ?>
-    <div class="home_content">
-        <header>
-            <div class="icon_menu">
-                <i class='bx bx-menu' id="btn"></i>
-            </div>
-            <div class="titulo">
-                <title1 class="UNAM"><center></center></title1>
-                <title2 class="fesc"><center><br></center></title2>
-            </div>
-        </header>
-	
-
-
-
+    <div class="home_content2">
 
 	<!--              AQUI VA EL CONTENIDO                -->
 	
-		<div class="text"> 
+		<div class="texthome"> 
             <form>
                 <div class="">
                     <div class="row">
@@ -167,15 +156,29 @@
         	</div>
 		</div>
 	</div>
-	<script>
-		let btn = document.querySelector("#btn");
-		let sidebar = document.querySelector(".sidebar");
+    <script>
+        
+        let arrow = document.querySelectorAll(".arrow");
+        console.log(arrow);
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click",(e)=>{
+                let arrowParent = e.target.parentElement.parentElement;
+                
+                arrowParent.classList.toggle("showMenu");
 
-		btn.onclick = function(){
-		sidebar.classList.toggle("active");
-		}
+            });
+        }
 
-	</script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+
+
+    </script>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFY lzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

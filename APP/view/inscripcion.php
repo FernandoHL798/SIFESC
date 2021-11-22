@@ -13,13 +13,12 @@
 </head>
 <body id="body">
 	<?php
-include "./includes/sidebar.php";
+include "./includes/sidebar2.php";
 	?>
 
 	<!--              AQUI VA EL CONTENIDO                -->
-	<div class="home_content">
-		<div class="text">
-
+	<div class="home_content2">
+		<div class="texthome">
 
 
 				<div class="row">
@@ -248,13 +247,27 @@ include "./includes/sidebar.php";
 	</div>
 
 
-	<script>
-		let btn = document.querySelector("#btn");
-		let sidebar = document.querySelector(".sidebar");
+<script>
+		
+		let arrow = document.querySelectorAll(".arrow");
+		console.log(arrow);
+		for (var i = 0; i < arrow.length; i++) {
+			arrow[i].addEventListener("click",(e)=>{
+				let arrowParent = e.target.parentElement.parentElement;
+				
+				arrowParent.classList.toggle("showMenu");
 
-		btn.onclick = function(){
-		sidebar.classList.toggle("active");
+			});
 		}
+
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".bx-menu");
+		console.log(sidebarBtn);
+
+		sidebarBtn.addEventListener("click", ()=>{
+			sidebar.classList.toggle("close");
+		});
+
 
 	</script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
