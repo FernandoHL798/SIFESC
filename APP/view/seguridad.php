@@ -33,11 +33,11 @@
                         </div>        
                     </div>    
                         <div class="row">
-                            <div class="col-9 mx-auto">  
+                              
                                 <p class="mb-4"></p>
-                                <h3 id="head3">Añada su correo electrónico para la recuperación de su cuenta</h3>
+                                <h3 id="head3" class="text-center">Añada su correo electrónico para la recuperación de su cuenta</h3>
                                 <p class="mt-3 mb-4"></p>
-                            </div>
+                            
                         </div>
                         <div class="row">
                             <div class="col-5 mx-auto">
@@ -72,7 +72,6 @@
                                     <div class="modal-body">
                                       <div class="mt-3 mb-2"></div>
                                       <label>Se ha enviado un correo de confirmación a la direccion: AQUI IRIA EL CORREO AGREGADO</label>
-                                       </form>
                                     </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

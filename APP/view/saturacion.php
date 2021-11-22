@@ -32,7 +32,49 @@ include "./includes/sidebar2.php";
                         </a>
                     </div>        
                 </div>                   
-                    <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                    <table class="table table-bordered  display nowrap mt-3" cellspacing="0" width="100%">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 100px;">Clave Asig</th>
+                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 106px;">Gpo</th>
+                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Cr</th>
+                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 70px;">In</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0017</td>
+                            <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
+                            <td data-label="Gpo">1001</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">28</td>
+                            <td data-label="In">2</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0147</td>
+                            <td data-label="Nombre">ANALISIS. FINANC. MAT. SISTEM. ELECTRON.</td>
+                            <td data-label="Gpo">1001</td>
+                            <td data-label="Se">5</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">25</td>
+                            <td data-label="In">24</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0162</td>
+                            <td data-label="Nombre">INGLES II</td>
+                            <td data-label="Gpo">1001</td>
+                            <td data-label="Se">5</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">35</td>
+                            <td data-label="In">29</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -46,35 +88,26 @@ include "./includes/sidebar2.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0017</td>
-                            <td>SEM DE COMERCIO ELECTRONICO II</td>
-                            <td>1001</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>28</td>
-                            <td>2</td>
+                            <td data-label="Clave Asig">0064</td>
+                            <td data-label="Nombre">SEM DE ANALISIS. EXTRAC. CONOC. BASE DA.</td>
+                            <td data-label="Gpo">1002</td>
+                            <td data-label="Se">8</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">30</td>
+                            <td data-label="In">19</td>
                         </tr>
                         <tr class="text-center">
-                            <td>0147</td>
-                            <td>ANALISIS. FINANC. MAT. SISTEM. ELECTRON.</td>
-                            <td>1001</td>
-                            <td>5</td>
-                            <td>8</td>
-                            <td>25</td>
-                            <td>24</td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>0162</td>
-                            <td>INGLES II</td>
-                            <td>1001</td>
-                            <td>5</td>
-                            <td>8</td>
-                            <td>35</td>
-                            <td>29</td>
+                            <td data-label="Clave Asig">0139</td>
+                            <td data-label="Nombre">SEM DE SIST. INFORM. PARA INTEL. NEGO.</td>
+                            <td data-label="Gpo">1002</td>
+                            <td data-label="Se">8</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">27</td>
+                            <td data-label="In">25</td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
+                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -88,26 +121,27 @@ include "./includes/sidebar2.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0064</td>
-                            <td>SEM DE ANALISIS. EXTRAC. CONOC. BASE DA.</td>
-                            <td>1002</td>
-                            <td>8</td>
-                            <td>8</td>
-                            <td>30</td>
-                            <td>19</td>
+                            <td data-label="Clave Asig">0021</td>
+                            <td data-label="Nombre">SEM DE INTELIGENCIA ARTIFIAL II</td>
+                            <td data-label="Gpo">1003</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">25</td>
+                            <td data-label="In">13</td>
                         </tr>
                         <tr class="text-center">
-                            <td>0139</td>
-                            <td>SEM DE SIST. INFORM. PARA INTEL. NEGO</td>
-                            <td>1002</td>
-                            <td>8</td>
-                            <td>8</td>
-                            <td>27</td>
-                            <td>25</td>
+                            <td data-label="Clave Asig">0139</td>
+                            <td data-label="Nombre">SEGURIDAD INFORMATICA</td>
+                            <td data-label="Gpo">1003</td>
+                            <td data-label="Se">5</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">22</td>
+                            <td data-label="In">20</td>
+                            
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
+                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -121,26 +155,17 @@ include "./includes/sidebar2.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0021</td>
-                            <td>SEM DE INTELIGENCIA ARTIFICIAL II</td>
-                            <td>1003</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>25</td>
-                            <td>13</td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>0139</td>
-                            <td>SEM DE SIST. INFORM. PARA INTEL. NEGO</td>
-                            <td>1003</td>
-                            <td>8</td>
-                            <td>8</td>
-                            <td>27</td>
-                            <td>26</td>
+                            <td data-label="Clave Asig">0022</td>
+                            <td data-label="Nombre">SEM DE REDES DE COMPUTADRAS II</td>
+                            <td data-label="Gpo">1004</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">23</td>
+                            <td data-label="In">4</td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
+                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -154,58 +179,38 @@ include "./includes/sidebar2.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0022</td>
-                            <td>SEM DE REDES DE COMPUTADORAS II</td>
-                            <td>1004</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>23</td>
-                            <td>1</td>
+                            <td data-label="Clave Asig">0016</td>
+                            <td data-label="Nombre">SEM DE SISTEMAS OPERAT REDES II</td>
+                            <td data-label="Gpo">0016</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">23</td>
+                            <td data-label="In">2</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0019</td>
+                            <td data-label="Nombre">SEM DE ADMON RECURS HUMS INFO II</td>
+                            <td data-label="Gpo">1051</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">30</td>
+                            <td data-label="In">22</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0020</td>
+                            <td data-label="Nombre">SEM DE PROGRAMACION DE INTERNET II</td>
+                            <td data-label="Gpo">1051</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">23</td>
+                            <td data-label="In">14</td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
-                    <thead>
-                        <tr class="text-center">
-                            <th style="width: 100px;">Asig</th>
-                            <th style="width: 600px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
-                            <th style="width: 70px;">In</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="text-center">
-                            <td>0016</td>
-                            <td>SEM DE SISTEMAS OPERAT REDES II</td>
-                            <td>1051</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>23</td>
-                            <td>2</td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>0019</td>
-                            <td>SEM DE ADMON RECURS HUMS INFO II</td>
-                            <td>1051</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>30</td>
-                            <td>22</td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>0020</td>
-                            <td>SEM DE PROGRAMACION DE INTERNET II</td>
-                            <td>1051</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>23</td>
-                            <td>14</td>
-                        </tr>
-                    </tbody>
-                </table>
+                
+                <div class="d-grid gap-2 col-3 mx-auto">
+                    <p class="mt-3 mb-2"></p>
+                </div>
 
 
 

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Menú responsivo UNAM</title>
     <link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <meta charset="utf-8">
+    <title>Saturacion_Prof</title>
 </head>
 <body id="body">
     <?php
 include "./includes/sidebar.php";
     ?>
-
-
+<div class="home_content">
     <header>
         <div class="icon_menu">
             <i class='bx bx-menu' id="btn"></i>
@@ -29,7 +27,7 @@ include "./includes/sidebar.php";
             </div>
     </header>
     <!--              AQUI VA EL CONTENIDO                -->
-    <div class="home_content" class="mb-4">
+    
         <div class="text">
  <form class="mb-4">              
             <div class="mb-4">
@@ -41,14 +39,153 @@ include "./includes/sidebar.php";
                             </svg>
                         </a>
                     </div>        
-                </div>                   
+                </div> 
+                <div class="row">
+                    <p class="mb-2"></p>
+                    <h4 id="head3" class="text-center">Plan de estudios: "AQUI VA EL PLAN DE ESTUDIOS"</h4>
+                </div>
+                <div class="mt-3 mb-2"></div>
+                <div class="d-grid gap-2 col-3 mx-auto">
+                    <div class="modal-content">
+                    <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">
+                              Agregar Asignatura
+                        </button>
+                          </div>
+                          <!-- Modal -->
+                          <div class="modal fade" id="Asig_Modal" tabindex="-1" aria-labelledby="Modal_Asig" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="Modal_Asig">Agregar asignatura</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <div class="mt-3 mb-2"></div>
+                                <div class="form-group" id="actual-pass-group">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Clave de la asignatura:" class="form-control" style="height: 60px">
+                                </div>
+                                </div>
+                                  
+                                  <div class="mt-3 mb-2"></div>
+                                  <div class="form-group" id="password-group">
+                                    <input type="text" placeholder="Nombre de la asignatura" class="form-control" style="height: 60px">
+                                  </div>
+                                  <div class="mt-3 mb-2"></div>
+                                  <div class="form-group" id="password-group">
+                            <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect">
+                                        <option hidden=""></option>
+                                        <option value="1">1102</option>
+                                        <option value="2">2102</option>
+                                        <option value="3">3102</option>
+                                    </select>
+                                        <label for="floatingSelect"><font SIZE=3.5>Grupo:</font></label>
+                            </div>
+                            <div class="mt-3 mb-2"></div>
+                                  
+                            <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect">
+                                        <option hidden=""></option>
+                                        <option value="1">3</option>
+                                        <option value="2">5</option>
+                                        <option value="3">7</option>
+                                    </select>
+                                        <label for="floatingSelect"><font SIZE=3.5>Semestre:</font></label>
+                            </div>
+                            <div class="mt-3 mb-2"></div>
+                                  <div class="form-group">
+                                    <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 60px">
+                                  </div>
+                                  <div class="mt-3 mb-2"></div>
+                                  <div class="form-group">
+                                    <input type="text" placeholder="Cupo:" class="form-control" style="height: 60px">
+                                  </div>
+                        </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary">Agregar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <!-- Button trigger modal -->
+                        
+                          
+                          <!-- Modal Editar-->
+                          <div class="modal fade" id="Edit_Modal" tabindex="-1" aria-labelledby="Modal_Edit" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="Modal_Edit">Editar asignatura</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <div class="mt-3 mb-2"></div>
+                                <div class="form-group" id="actual-pass-group">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Clave de la asignatura:" class="form-control" style="height: 60px">
+                                </div>
+                                </div>
+                                  
+                                  <div class="mt-3 mb-2"></div>
+                                  <div class="form-group" id="password-group">
+                                    <input type="text" placeholder="Nombre de la asignatura" class="form-control" style="height: 60px">
+                                  </div>
+                                  <div class="mt-3 mb-2"></div>
+                                  <div class="form-group" id="password-group">
+                            <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect">
+                                        <option hidden=""></option>
+                                        <option value="1">1102</option>
+                                        <option value="2">2102</option>
+                                        <option value="3">3102</option>
+                                    </select>
+                                        <label for="floatingSelect"><font SIZE=3.5>Grupo:</font></label>
+                            </div>
+                            <div class="mt-3 mb-2"></div>
+                                  
+                            <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect">
+                                        <option hidden=""></option>
+                                        <option value="1">3</option>
+                                        <option value="2">5</option>
+                                        <option value="3">7</option>
+                                    </select>
+                                        <label for="floatingSelect"><font SIZE=3.5>Semestre:</font></label>
+                            </div>
+                            <div class="mt-3 mb-2"></div>
+                                  <div class="form-group">
+                                    <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 60px">
+                                  </div>
+                                  <div class="mt-3 mb-2"></div>
+                                  <div class="form-group">
+                                    <input type="text" placeholder="Cupo:" class="form-control" style="height: 60px">
+                                  </div>
+                        </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary">Guardar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
                     <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
                             <th style="width: 400px;">Nombre</th>
                             <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Sem</th>
                             <th style="width: 70px;">Cr</th>
                             <th style="width: 93px;">Cup</th>
                             <th style="width: 70px;">In</th>
@@ -57,43 +194,43 @@ include "./includes/sidebar.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0017</td>
-                            <td>SEM DE COMERCIO ELECTRONICO II</td>
-                            <td>1001</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>28</td>
-                            <td>2</td>
-                            <td>
+                            <td data-label="Asig">0017</td>
+                            <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
+                            <td data-label="Gpo">1001</td>
+                            <td data-label="Sem">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">28</td>
+                            <td data-label="In">2</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td>0147</td>
-                            <td>ANALISIS. FINANC. MAT. SISTEM. ELECTRON.</td>
-                            <td>1001</td>
-                            <td>5</td>
-                            <td>8</td>
-                            <td>25</td>
-                            <td>24</td>
-                            <td>
-                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button>
-                                </button> 
+                            <td data-label="Asig">0147</td>
+                            <td data-label="Nombre">ANALISIS FINANC. MAT. SISTEM. ELECTRON.</td>
+                            <td data-label="Gpo">1001</td>
+                            <td data-label="Sem">5</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">25</td>
+                            <td data-label="In">24</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
+                            
                         </tr>
                         <tr class="text-center">
-                            <td>0162</td>
-                            <td>INGLES II</td>
-                            <td>1001</td>
-                            <td>5</td>
-                            <td>8</td>
-                            <td>35</td>
-                            <td>29</td>
-                            <td>
+                             <td data-label="Clave Asig">0162</td>
+                            <td data-label="Nombre">INGLES II</td>
+                            <td data-label="Gpo">1001</td>
+                            <td data-label="Se">5</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">35</td>
+                            <td data-label="In">29</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                     </tbody>
@@ -113,71 +250,29 @@ include "./includes/sidebar.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0064</td>
-                            <td>SEM DE ANALISIS. EXTRAC. CONOC. BASE DA.</td>
-                            <td>1002</td>
-                            <td>8</td>
-                            <td>8</td>
-                            <td>30</td>
-                            <td>19</td>
-                            <td>
+                            <td data-label="Clave Asig">0064</td>
+                            <td data-label="Nombre">SEM DE ANALISIS. EXTRAC. CONOC. BASE DA.</td>
+                            <td data-label="Gpo">1002</td>
+                            <td data-label="Se">8</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">30</td>
+                            <td data-label="In">19</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td>0139</td>
-                            <td>SEM DE SIST. INFORM. PARA INTEL. NEGO</td>
-                            <td>1002</td>
-                            <td>8</td>
-                            <td>8</td>
-                            <td>27</td>
-                            <td>25</td>
-                            <td>
+                            <td data-label="Clave Asig">0139</td>
+                            <td data-label="Nombre">SEM DE SIST. INFORM. PARA INTEL. NEGO.</td>
+                            <td data-label="Gpo">1002</td>
+                            <td data-label="Se">8</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">27</td>
+                            <td data-label="In">25</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
-                    <thead>
-                        <tr class="text-center">
-                            <th style="width: 100px;">Asig</th>
-                            <th style="width: 400px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
-                            <th style="width: 70px;">In</th>
-                            <th style="width: 140px;">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="text-center">
-                            <td>0021</td>
-                            <td>SEM DE INTELIGENCIA ARTIFICIAL II</td>
-                            <td>1003</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>25</td>
-                            <td>13</td>
-                            <td>
-                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>0139</td>
-                            <td>SEM DE SIST. INFORM. PARA INTEL. NEGO</td>
-                            <td>1003</td>
-                            <td>8</td>
-                            <td>8</td>
-                            <td>27</td>
-                            <td>26</td>
-                            <td>
-                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                     </tbody>
@@ -197,16 +292,58 @@ include "./includes/sidebar.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0022</td>
-                            <td>SEM DE REDES DE COMPUTADORAS II</td>
-                            <td>1004</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>23</td>
-                            <td>1</td>
-                            <td>
+                            <td data-label="Clave Asig">0021</td>
+                            <td data-label="Nombre">SEM DE INTELIGENCIA ARTIFIAL II</td>
+                            <td data-label="Gpo">1003</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">25</td>
+                            <td data-label="In">13</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0139</td>
+                            <td data-label="Nombre">SEGURIDAD INFORMATICA</td>
+                            <td data-label="Gpo">1003</td>
+                            <td data-label="Se">5</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">22</td>
+                            <td data-label="In">20</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 100px;">Asig</th>
+                            <th style="width: 400px;">Nombre</th>
+                            <th style="width: 106px;">Gpo</th>
+                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Cr</th>
+                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 70px;">In</th>
+                            <th style="width: 140px;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0022</td>
+                            <td data-label="Nombre">SEM DE REDES DE COMPUTADRAS II</td>
+                            <td data-label="Gpo">1004</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">23</td>
+                            <td data-label="In">4</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                     </tbody>
@@ -226,42 +363,42 @@ include "./includes/sidebar.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>0016</td>
-                            <td>SEM DE SISTEMAS OPERAT REDES II</td>
-                            <td>1051</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>23</td>
-                            <td>2</td>
-                            <td>
+                            <td data-label="Clave Asig">0016</td>
+                            <td data-label="Nombre">SEM DE SISTEMAS OPERAT REDES II</td>
+                            <td data-label="Gpo">0016</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">23</td>
+                            <td data-label="In">2</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td>0019</td>
-                            <td>SEM DE ADMON RECURS HUMS INFO II</td>
-                            <td>1051</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>30</td>
-                            <td>22</td>
-                            <td>
+                            <td data-label="Clave Asig">0019</td>
+                            <td data-label="Nombre">SEM DE ADMON RECURS HUMS INFO II</td>
+                            <td data-label="Gpo">1051</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">30</td>
+                            <td data-label="In">22</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td>0020</td>
-                            <td>SEM DE PROGRAMACION DE INTERNET II</td>
-                            <td>1051</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>23</td>
-                            <td>14</td>
-                            <td>
+                            <td data-label="Clave Asig">0020</td>
+                            <td data-label="Nombre">SEM DE PROGRAMACION DE INTERNET II</td>
+                            <td data-label="Gpo">1051</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">23</td>
+                            <td data-label="In">14</td>
+                            <td data-label="Acciones">
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success"><i class='bx bx-refresh'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
 
                         </tr>
@@ -278,8 +415,7 @@ include "./includes/sidebar.php";
         </form>   
         </div>
     </div>
-
-
+</div>
     <script>
         let btn = document.querySelector("#btn");
         let sidebar = document.querySelector(".sidebar");
@@ -299,6 +435,9 @@ include "./includes/sidebar.php";
 
             <!-- extension responsive -->
             <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+            <!--Scrip para Modal-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
 

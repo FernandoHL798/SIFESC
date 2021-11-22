@@ -108,43 +108,43 @@ include "./includes/sidebar.php";
 			                    </thead>
 			                    <tbody>
 			                        <tr class="text-center">
-			                            <td>0100</td>
-			                            <td>6</td>
-			                            <td>OB</td>
-			                            <td>Administracion I Proceso Admvo.</td>
-			                            <td>9</td>
-			                            <td>20191</td>
-			                            <td>1234567</td>
-			                            <td>1102</td>
-			                            <td>O</td>
-			                            <td>1</td>
-			                            <td>0</td>
+			                            <td data-label="Clave">0100</td>
+			                            <td data-label="Cred">6</td>
+			                            <td data-label="Op/Ob">OB</td>
+			                            <td data-label="Asignatura">Administracion I Proceso Admvo.</td>
+			                            <td data-label="Calif">9</td>
+			                            <td data-label="Per">20191</td>
+			                            <td data-label="Folio">1234567</td>
+			                            <td data-label="Gpo">1102</td>
+			                            <td data-label="T. Ex">O</td>
+			                            <td data-label="Ord">1</td>
+			                            <td data-label="Ext">0</td>
 			                        </tr>
 			                        <tr class="text-center">
-			                            <td>0100</td>
-			                            <td>6</td>
-			                            <td>OB</td>
-			                            <td>Comunicacion Oral y Escrita</td>
-			                            <td>9</td>
-			                            <td>20191</td>
-			                            <td>1234567</td>
-			                            <td>1102</td>
-			                            <td>O</td>
-			                            <td>1</td>
-			                            <td>0</td>
+			                        	<td data-label="Clave">0100</td>
+			                            <td data-label="Cred">6</td>
+			                            <td data-label="Op/Ob">OB</td>
+			                            <td data-label="Asignatura">Comunicacion Oral y Escrita</td>
+			                            <td data-label="Calif">9</td>
+			                            <td data-label="Per">20191</td>
+			                            <td data-label="Folio">1234567</td>
+			                            <td data-label="Gpo">1102</td>
+			                            <td data-label="T. Ex">O</td>
+			                            <td data-label="Ord">1</td>
+			                            <td data-label="Ext">0</td>
 			                        </tr>
 			                        <tr class="text-center">
-			                            <td>0100</td>
-			                            <td>6</td>
-			                            <td>OB</td>
-			                            <td>Informatica I Introd a la Inform</td>
-			                            <td>9</td>
-			                            <td>20191</td>
-			                            <td>1234567</td>
-			                            <td>1102</td>
-			                            <td>O</td>
-			                            <td>1</td>
-			                            <td>0</td>
+			                        	<td data-label="Clave">0100</td>
+			                            <td data-label="Cred">6</td>
+			                            <td data-label="Op/Ob">OB</td>
+			                            <td data-label="Asignatura">Informatica I Introd a la Imform</td>
+			                            <td data-label="Calif">9</td>
+			                            <td data-label="Per">20191</td>
+			                            <td data-label="Folio">1234567</td>
+			                            <td data-label="Gpo">1102</td>
+			                            <td data-label="T. Ex">O</td>
+			                            <td data-label="Ord">1</td>
+			                            <td data-label="Ext">0</td>
 			                        </tr>
 			                    </tbody>
 			                </table>
@@ -171,43 +171,43 @@ include "./includes/sidebar.php";
 			                    <tbody>
 
 			                        <tr class="text-center">
-			                            <td>0100</td>
-			                            <td>6</td>
-			                            <td>OB</td>
-			                            <td>Contabilidad</td>
-			                            <td>9</td>
-			                            <td>20191</td>
-			                            <td>1234567</td>
-			                            <td>1102</td>
-			                            <td>O</td>
-			                            <td>1</td>
-			                            <td>0</td>
+			                        	<td data-label="Clave">0100</td>
+			                            <td data-label="Cred">6</td>
+			                            <td data-label="Op/Ob">OB</td>
+			                            <td data-label="Asignatura">Contabilidad</td>
+			                            <td data-label="Calif">9</td>
+			                            <td data-label="Per">20191</td>
+			                            <td data-label="Folio">1234567</td>
+			                            <td data-label="Gpo">1102</td>
+			                            <td data-label="T. Ex">O</td>
+			                            <td data-label="Ord">1</td>
+			                            <td data-label="Ext">0</td>
 			                        </tr>
 			                        <tr class="text-center">
-			                            <td>0101</td>
-			                            <td>6</td>
-			                            <td>OB</td>
-			                            <td>Aministracion II Estruct Admvas</td>
-			                            <td>9</td>
-			                            <td>20191</td>
-			                            <td>1234567</td>
-			                            <td>1102</td>
-			                            <td>O</td>
-			                            <td>1</td>
-			                            <td>0</td>
+			                        	<td data-label="Clave">0101</td>
+			                            <td data-label="Cred">6</td>
+			                            <td data-label="Op/Ob">OB</td>
+			                            <td data-label="Asignatura">Administracion II Estruct Admvas</td>
+			                            <td data-label="Calif">9</td>
+			                            <td data-label="Per">20191</td>
+			                            <td data-label="Folio">1234567</td>
+			                            <td data-label="Gpo">1102</td>
+			                            <td data-label="T. Ex">O</td>
+			                            <td data-label="Ord">1</td>
+			                            <td data-label="Ext">0</td>
 			                        </tr>
 			                        <tr class="text-center">
-			                            <td>0102</td>
-			                            <td>6</td>
-			                            <td>OB</td>
-			                            <td>Informatica I Introd a la Inform</td>
-			                            <td>9</td>
-			                            <td>20191</td>
-			                            <td>1234567</td>
-			                            <td>1102</td>
-			                            <td>O</td>
-			                            <td>1</td>
-			                            <td>0</td>
+			                        	<td data-label="Clave">0102</td>
+			                            <td data-label="Cred">6</td>
+			                            <td data-label="Op/Ob">OB</td>
+			                            <td data-label="Asignatura">Informatica I Introd a la Inform</td>
+			                            <td data-label="Calif">9</td>
+			                            <td data-label="Per">20191</td>
+			                            <td data-label="Folio">1234567</td>
+			                            <td data-label="Gpo">1102</td>
+			                            <td data-label="T. Ex">O</td>
+			                            <td data-label="Ord">1</td>
+			                            <td data-label="Ext">0</td>
 			                        </tr>
 			                    </tbody>
 			                </table>
