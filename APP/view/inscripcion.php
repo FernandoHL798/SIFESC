@@ -7,7 +7,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-	
+
 </head>
 <body id="body">
 	<?php
@@ -165,7 +165,7 @@ include "./includes/sidebar2.php";
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="boton">
 			  Agregar asignatura
 			</button>
-			<button type="button" class="btn btn-outline-success mt-1" onclick="window.location.href='file://APP/view/ConsultaInscrincion.php'">Solicitar</button>
+			<button type="button" class="btn btn-outline-success mt-1" onclick="window.location.href='./ConsultaInscripcion.php'">Solicitar</button>
 		</div>
 	</div>
 
@@ -199,7 +199,7 @@ include "./includes/sidebar2.php";
 											  <option value="5">1152</option>
 											  <option value="6">1153</option>
 											</select><br>
-								  </div> 
+								  </div>
 								</form>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -236,13 +236,13 @@ include "./includes/sidebar2.php";
 
 
 <script>
-		
+
 		let arrow = document.querySelectorAll(".arrow");
 		console.log(arrow);
 		for (var i = 0; i < arrow.length; i++) {
 			arrow[i].addEventListener("click",(e)=>{
 				let arrowParent = e.target.parentElement.parentElement;
-				
+
 				arrowParent.classList.toggle("showMenu");
 
 			});
