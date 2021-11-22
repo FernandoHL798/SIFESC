@@ -187,7 +187,7 @@ include "./includes/sidebar2.php";
                                 
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Agregar</button>
+                                <button type="button" class="btn btn-primary">Guardar</button>
                               </div>
                             </div>
                           </div>
