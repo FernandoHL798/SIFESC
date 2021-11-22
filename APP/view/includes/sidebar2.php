@@ -41,7 +41,7 @@
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Inscripción</a></li>
 					<li><a href="./inscripcion.php">Realiza tu Inscripción</a></li>
-					<li><a href="#">Consulta tu inscripción</a></li>
+					<li><a href="./ConsultaInscripcion.php">Consulta tu inscripción</a></li>
 				</ul>
 			</li>
 
@@ -111,7 +111,7 @@
 					<div class="profile-content">
 						<img src="../../img/logo_oro.png" alt="profile">
 					</div>
-					
+
 						<div class="name-job">
 							<div class="profile_name">
 								Emmanuel Martínez Hernández
@@ -140,4 +140,3 @@
 			<span class="titulounam"></span>
 		</div>
 	</section>
-
