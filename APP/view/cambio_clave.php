@@ -42,7 +42,7 @@
                 <p class="mt-3 mb-2"></p>
                 </div>
                 
-				<div class="modal-content">
+				<div class="modal-content border-0">
 					<div class="col-12">
 						<div class="container">
 						</div>
