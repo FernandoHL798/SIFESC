@@ -95,8 +95,8 @@ class ASIGNACION extends CONEXION{
         return $resultado;
     }
 
-    public function queryDeleteAsignacion(){
-        $query="DELETE FROM `asignacion` WHERE `id_asignacion`='".$this->getIdAsignacion()."'";
+    public function queryDeleteAsignacion($idAsignacion){
+        $query="DELETE FROM `asignacion` WHERE `id_asignacion`='".$idAsignacion;
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
