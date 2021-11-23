@@ -7,14 +7,11 @@
 	font-family: "Poppins", sans-serif;
 }
 
-
 body{
 	position: relative;
 	min-height: 100vh;
 	width: 100%;
-	overflow: scroll;
 }
-
 
 .datos_escolares{
 	color: rgba(195, 163, 16, 1);
