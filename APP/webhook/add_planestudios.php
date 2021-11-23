@@ -1,7 +1,7 @@
 <?php 
 include_once"../control/controlPlanEstudios.php";
 $params=[
-	"id_plan"=>"1",
+	"id_plan"=>"2",
 	"id_carrera_fk"=>"1",
 	"anio_plan"=>"2021",
 	"creditos_ob"=>"80",
