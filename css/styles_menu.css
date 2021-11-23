@@ -376,17 +376,17 @@ body{
 	font-size: 13px;
 	text-align: center;
 	font-weight: 600;
-	width: 750px;			/*Ajusta tamaño del span del titulo*/
+	width: 100%;			/*Ajusta tamaño del span del titulo*/
 	/* padding: 50px;        AJUSTAR POSICION?*/
-
 }
 
 
 /* CONTENIDO PRINCIPAL DE LA PAGINA */
 
 .home_content2{
-	position: absolute;
-	height: auto;
+	position: fixed;
+	height: 100%;
+	overflow-x: scroll;
 	width: calc(100% - 260px);
 	left: 260px;
 	align-items: center;
@@ -400,7 +400,7 @@ body{
 	margin: 12px;
 }
 
-.sidebar.close .home_content2 .texthome::-webkit-scrollbar{
+.sidebar.close .home_content2::-webkit-scrollbar{
 	overflow: visible;
 	overflow: scroll;
 }
@@ -418,7 +418,7 @@ body{
 
 
 .body_move{
-    margin-left: 250px;
+    margin-left: 260px;
 }
 
 .menu__side_move{
