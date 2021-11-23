@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Menú responsivo UNAM</title>
-	<link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Saturacion_Prof</title>
 </head>
 <body id="body">
-	<?php
+    <?php
 include "./includes/sidebar2.php";
-	?>
+    ?>
 
-
-	
-	<!--              AQUI VA EL CONTENIDO                -->
-	<div class="home_content2">
-		<div class="texthome">
-            <form>              
-            <div class="">
+    
+    <!--              AQUI VA EL CONTENIDO                -->
+    <div class="home_content2">
+        <div class="texthome">
+ <form class="mb-4">              
+            <div class="mb-4">
                 <div class="row">
                     <div class="">
                         <a href="http://localhost/SIFESC/APP/view/index.php"> 
@@ -29,59 +29,91 @@ include "./includes/sidebar2.php";
                             </svg>
                         </a>
                     </div>        
-                </div>                   
-                    <table class="table table-bordered  display nowrap mt-3" cellspacing="0" width="100%">
+                </div> 
+                <div class="row">
+                    <p class="mb-2"></p>
+                    <h4 id="head3" class="text-center">Plan de estudios: "AQUI VA EL PLAN DE ESTUDIOS"</h4>
+                </div>
+                <div class="mt-3 mb-2"></div>
+                <div class="d-grid gap-2 col-3 mx-auto">
+                    <div class="modal-content">
+                    <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">
+                              Agregar Asignatura
+                        </button>
+                          </div>
+
+                    </div>
+
+                    </div>
+
+                    <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
-                            <th style="width: 100px;">Clave Asig</th>
-                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 100px;">Asig</th>
+                            <th style="width: 400px;">Nombre</th>
                             <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Sem</th>
                             <th style="width: 70px;">Cr</th>
                             <th style="width: 93px;">Cup</th>
                             <th style="width: 70px;">In</th>
+                            <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td data-label="Clave Asig">0017</td>
+                            <td data-label="Asig">0017</td>
                             <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
                             <td data-label="Gpo">1001</td>
-                            <td data-label="Se">9</td>
+                            <td data-label="Sem">9</td>
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">28</td>
                             <td data-label="In">2</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                         <tr class="text-center">
-                            <td data-label="Clave Asig">0147</td>
-                            <td data-label="Nombre">ANALISIS. FINANC. MAT. SISTEM. ELECTRON.</td>
+                            <td data-label="Asig">0147</td>
+                            <td data-label="Nombre">ANALISIS FINANC. MAT. SISTEM. ELECTRON.</td>
                             <td data-label="Gpo">1001</td>
-                            <td data-label="Se">5</td>
+                            <td data-label="Sem">5</td>
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">25</td>
                             <td data-label="In">24</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
+                            
                         </tr>
                         <tr class="text-center">
-                            <td data-label="Clave Asig">0162</td>
+                             <td data-label="Clave Asig">0162</td>
                             <td data-label="Nombre">INGLES II</td>
                             <td data-label="Gpo">1001</td>
                             <td data-label="Se">5</td>
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">35</td>
                             <td data-label="In">29</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
-                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 400px;">Nombre</th>
                             <th style="width: 106px;">Gpo</th>
                             <th style="width: 70px;">Se</th>
                             <th style="width: 70px;">Cr</th>
                             <th style="width: 93px;">Cup</th>
                             <th style="width: 70px;">In</th>
+                            <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -93,6 +125,10 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">30</td>
                             <td data-label="In">19</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave Asig">0139</td>
@@ -102,19 +138,24 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">27</td>
                             <td data-label="In">25</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
-                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 400px;">Nombre</th>
                             <th style="width: 106px;">Gpo</th>
                             <th style="width: 70px;">Se</th>
                             <th style="width: 70px;">Cr</th>
                             <th style="width: 93px;">Cup</th>
                             <th style="width: 70px;">In</th>
+                            <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -126,6 +167,10 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">25</td>
                             <td data-label="In">13</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave Asig">0139</td>
@@ -135,20 +180,24 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">22</td>
                             <td data-label="In">20</td>
-                            
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
-                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 400px;">Nombre</th>
                             <th style="width: 106px;">Gpo</th>
                             <th style="width: 70px;">Se</th>
                             <th style="width: 70px;">Cr</th>
                             <th style="width: 93px;">Cup</th>
                             <th style="width: 70px;">In</th>
+                            <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -160,19 +209,24 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">23</td>
                             <td data-label="In">4</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap" cellspacing="0" width="100%">
+                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%" class="mb-4">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
-                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 400px;">Nombre</th>
                             <th style="width: 106px;">Gpo</th>
                             <th style="width: 70px;">Se</th>
                             <th style="width: 70px;">Cr</th>
                             <th style="width: 93px;">Cup</th>
                             <th style="width: 70px;">In</th>
+                            <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -184,6 +238,10 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">23</td>
                             <td data-label="In">2</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave Asig">0019</td>
@@ -193,6 +251,10 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">30</td>
                             <td data-label="In">22</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave Asig">0020</td>
@@ -202,36 +264,40 @@ include "./includes/sidebar2.php";
                             <td data-label="Cr">8</td>
                             <td data-label="Cup">23</td>
                             <td data-label="In">14</td>
+                            <td data-label="Acciones">
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                            </td>
+
                         </tr>
+
                     </tbody>
+
                 </table>
-                
+                <!-- Se utiliza para darle espacio al final de la tabla -->
+                <div class="mt-3 mb-2"></div>
                 <div class="d-grid gap-2 col-3 mx-auto">
-                    <p class="mt-3 mb-2"></p>
+                <p class="mt-3 mb-2"></p>
                 </div>
-
-
-
-
-
-
             </div>
         </form>   
-
-            
-		</div>
-	</div>
-
+        </div>
+    </div>
+</div>
 
     <script src="../tools/sidebar.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     <!--   Datatables-->
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+
     <!-- extension responsive -->
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
+    <!--Scrip para Modal-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable({
@@ -240,6 +306,9 @@ include "./includes/sidebar2.php";
         } );  
 
     </script>
+
+    <?php include "./modal/modal-agregar-saturacion.php"; ?>
+    <?php include "./modal/modal-edit-saturacion.php"; ?>
 
 </body>
 </html>

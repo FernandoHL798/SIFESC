@@ -182,6 +182,13 @@ class USUARIO extends CONEXION{
         return $resultado;
     }
 
+    public function queryUpdatePassword(){
+        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id`=".$this->getIdUsuario();
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
     public function queryInsertUsuario(){
         $query="INSERT into `usuario`(`id_usuario`,`cuenta_administrador`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `primer_apellido`, `segundo_apellido`,`correo`,`contrasenia`,`telefono`) 
         VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdministrador()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getPrimerApellido()."', '".$this->getSegundoApellido()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."')";

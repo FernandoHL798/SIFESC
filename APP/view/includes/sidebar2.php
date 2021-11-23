@@ -1,17 +1,4 @@
-<html lang="en" dir="ltr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sidebar mejorado</title>
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" type="text/css" href="../../css/styles_sidebar.css">
-</head>
-
-
-
-<body>
-	
-	<div class="sidebar">
+<div class="sidebar">
 		<div class="logo-details">
 			<i class='bx bxs-school'></i>
 			<span class="logo_name">Sistema de inscripción</span>
@@ -19,12 +6,12 @@
 
 		<ul class="nav-links">
 			<li>
-				<a href="">
+				<a href="./index.php">
 					<i class='bx bx-grid-alt'></i>
 					<span class="link_name">Inicio</span>
 				</a>
 				<ul class="sub-menu blank">
-					<li><a class="link_name" href="#">Inicio</a></li>
+					<li><a class="link_name" href="./index.php">Inicio</a></li>
 				</ul>
 			</li>
 
@@ -38,8 +25,8 @@
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Seguridad</a></li>
-					<li><a href="#">Cambia tu clave de acceso</a></li>
-					<li><a href="#">Configuración de seguridad</a></li>
+					<li><a href="./cambio_clave.php">Cambia tu clave de acceso</a></li>
+					<li><a href="./seguridad.php">Configuración de seguridad</a></li>
 				</ul>
 			</li>
 
@@ -53,8 +40,8 @@
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Inscripción</a></li>
-					<li><a href="#">Realiza tu Inscripción</a></li>
-					<li><a href="#">Consulta tu inscripción</a></li>
+					<li><a href="./inscripcion.php">Realiza tu Inscripción</a></li>
+					<li><a href="./ConsultaInscripcion.php">Consulta tu inscripción</a></li>
 				</ul>
 			</li>
 
@@ -69,12 +56,12 @@
 			</li>
 
 			<li>
-				<a href="">
+				<a href="./saturacion.php">
 					<i class='bx bxs-error'></i>
 					<span class="link_name">Saturación</span>
 				</a>
 				<ul class="sub-menu blank">
-					<li><a class="link_name" href="#">Saturación</a></li>
+					<li><a class="link_name" href="./saturacion.php">Saturación</a></li>
 				</ul>
 			</li>
 
@@ -88,8 +75,7 @@
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Profesor</a></li>
-					<li><a href="#">Agregar calificaciones</a></li>
-					<li><a href="#">Consulta grupos</a></li>
+					<li><a href="./grupos_profesores.php">Consulta grupos</a></li>
 				</ul>
 			</li>
 			<li>
@@ -102,11 +88,11 @@
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Administrador</a></li>
-					<li><a href="#">Agrega profesor</a></li>
-					<li><a href="#">Agrega alumnos</a></li>
-					<li><a href="#">Asigna profesor</a></li>
-					<li><a href="#">Crea plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
-					<li><a href="#">Edita saturación</a></li>
+					<li><a href="./ag_prof.php">Agrega profesor</a></li>
+					<li><a href="./ag_alumno.php">Agrega alumnos</a></li>
+					<li><a href="./AsignaProfesor.php">Asigna profesor</a></li>
+					<li><a href="./plan_de_estudios.php">Crea plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
+					<li><a href="./saturacion_prof.php">Edita saturación</a></li>
 				</ul>
 			</li>
 
@@ -125,7 +111,7 @@
 					<div class="profile-content">
 						<img src="../../img/logo_oro.png" alt="profile">
 					</div>
-					
+
 						<div class="name-job">
 							<div class="profile_name">
 								Emmanuel Martínez Hernández
@@ -147,44 +133,10 @@
 	<section class="home-section">
 		<div class="home-content">
 			<i class='bx bx-menu'></i>
-			<span class="titulounam"></span>
+			<span class="titulounam">prueba de porcentaje</span>
 				<span class="text">
 					Universidad Nacional Autónoma de México <br> SIFESC
 				</span>
 			<span class="titulounam"></span>
 		</div>
 	</section>
-
-	<div class="home_content2">
-		<div class="texthome">Home content</div>
-	</div>
-
-
-
-
-	<script>
-		
-		let arrow = document.querySelectorAll(".arrow");
-		console.log(arrow);
-		for (var i = 0; i < arrow.length; i++) {
-			arrow[i].addEventListener("click",(e)=>{
-				let arrowParent = e.target.parentElement.parentElement;
-				
-				arrowParent.classList.toggle("showMenu");
-
-			});
-		}
-
-		let sidebar = document.querySelector(".sidebar");
-		let sidebarBtn = document.querySelector(".bx-menu");
-		console.log(sidebarBtn);
-
-		sidebarBtn.addEventListener("click", ()=>{
-			sidebar.classList.toggle("close");
-		});
-
-
-	</script>
-
-</body>
-</html>

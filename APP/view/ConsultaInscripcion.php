@@ -14,40 +14,16 @@
 </head>
 <body id="body">
 	<?php
-include "./includes/sidebar.php";
+include "./includes/sidebar2.php";
 	?>
-	<header>
-		<div class="icon_menu">
-			<i class='bx bx-menu' id="btn"></i>
-		</div>
-		<div class="titulo">
-			<title1 class="UNAM"><center></center></title1>
-			<title2 class="fesc"><center><br></center></title2>
-		</div>
-	</header>
-		<div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center mb-4 mx-auto">
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Document</title>
-	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles_inscripcionVerificacion.css">
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-</head>
-
-
-
-<body>
+	<div class="home_content2">
+		<div class="texthome">
+	<div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center mb-4 mx-auto">
 	<div class="titulo">
-		SISTEMA DE INSCRIPCIÓN
+	<center>SISTEMA DE INSCRIPCIÓN</center>
 	</div>
-	<div class="container">
+	<div class="container" id="contenido">
 		<div class="row">
 			<div class="col-lg-12">
 				<table id="example" class="table table-bordered">
@@ -178,12 +154,13 @@ include "./includes/sidebar.php";
 
 	<div class="col-lg-12 mt-4">
 		<div  class="d-grid gap-2 col-11 mx-auto">
-			<button class="btn btn-secondary" type="button" onclick="javascript:print('container')">
-			  IMPRIMIR
-			</button>
+			<button class="btn btn-secondary" type="button" onclick="printData()">IMPRIMIR</button>
 
 			<button class="btn btn-secondary" type="button" class="btn btn-outline-success mt-1">SALIR</button>
 		</div>
+	</div>
+
+			</div>
 	</div>
 
 
@@ -191,24 +168,48 @@ include "./includes/sidebar.php";
 
 
 	<!-- JavaScript Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#example').DataTable({
-				responsive:true
+	<script>
 
-			})
-		});
-		</div>
-<script>
-let btn = document.querySelector("#btn");
-let sidebar = document.querySelector(".sidebar");
-btn.onclick = function(){
-sidebar.classList.toggle("active");
-}
-</script>
+			let arrow = document.querySelectorAll(".arrow");
+			console.log(arrow);
+			for (var i = 0; i < arrow.length; i++) {
+				arrow[i].addEventListener("click",(e)=>{
+					let arrowParent = e.target.parentElement.parentElement;
+
+					arrowParent.classList.toggle("showMenu");
+
+				});
+			}
+
+			let sidebar = document.querySelector(".sidebar");
+			let sidebarBtn = document.querySelector(".bx-menu");
+			console.log(sidebarBtn);
+
+			sidebarBtn.addEventListener("click", ()=>{
+				sidebar.classList.toggle("close");
+			});
+
+
+		</script>
+
+		<script>
+
+			function printData()
+				{
+				   var divToPrint=document.getElementById("contenido");
+				   newWin= window.open("");
+				   newWin.document.write(divToPrint.outerHTML);
+				   newWin.document.write('<link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">');
+				   newWin.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">');
+				   newWin.print();
+				   newWin.close();
+				}
+
+				$('Imprimir').on('click',function(){
+				printData();
+				})
+
+		</script>
 </body>
 </html>
 </body>
