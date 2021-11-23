@@ -29,27 +29,26 @@
                                 </a>
                         </div>        
                     </div>    
-                        <div class="row">
-                              
-                                <p class="mb-4"></p>
-                                <h3 id="head3" class="text-center">Añada su correo electrónico para la recuperación de su cuenta</h3>
-                                <p class="mt-3 mb-4"></p>
-                            
-                        </div>
-                        <div class="row">
-                            <div class="col-5 mx-auto">
-                                <input type="email" class="form-control mb-3 mt-3" style="height: 55px;" id="floatingInput" placeholder="Introduzca su correo:" required="" autofocus=""> 
-                                </div>
+                    <div class="row">
+                          
+                            <p class="mb-4"></p>
+                            <h3 id="head3" class="text-center">Añada su correo electrónico para la recuperación de su cuenta</h3>
+                            <p class="mt-3 mb-4"></p>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-5 mx-auto">
+                            <input type="email" class="form-control mb-3 mt-3" style="height: 55px;" id="floatingInput" placeholder="Introduzca su correo:" required="" autofocus=""> 
                             </div>
                         </div>
-                        <div class="row">
-                            
-                            <div class="col-5 mx-auto">
-                                    <input type="text" class="form-control" style="height: 55px;" id="cf_correo" placeholder="Confirme su correo:" required="" autofocus="">
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 mx-auto">
+                            <input type="text" class="form-control" style="height: 55px;" id="cf_correo" placeholder="Confirme su correo:" required="" autofocus="">
                         </div>
-                        <div class="mt-3 mb-2"></div>
+                    </div>
+                        
+                    <div class="mt-3 mb-2"></div>
                         <div class="d-grid gap-2 col-3 mx-auto">
                             <div class="modal-content">
                                 <!-- Button trigger modal -->
@@ -58,8 +57,11 @@
                                 </button>
                             </div>
                             <p class="mt-3 mb-2"></p>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+
+                        <!-- ESTE MODAL SE TENDRIA QUE ELIMINAR -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -75,11 +77,15 @@
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            
-                    </div>
+                            </div>   
+                        </div>
+
+
+
+
+
+
                         <div class="row">
-                            
                             <div class="col-6 mx-auto">
                                 <div class="form-floating">
                                     <select class="form-select" id="floatingSelect">
@@ -116,64 +122,25 @@
                             </div>
                             <p class="mt-3 mb-2"></p>
                                 <div class="mb-4"></div>
-                               <!-- Modal -->
-                            <div class="modal fade" id="RespModal" tabindex="-1" aria-labelledby="RespModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="RespModalLabel">¡ATENCIÓN!</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <div class="mt-3 mb-2"></div>
-                                      <label> Tus respuestas se han guardado satisfactoriamente</label>
-                                       </form>
-                                    </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                    </div> 
 
+                        </div> 
 
-
-</div>
-
-
-
-
+                        </div>
 
                 </div>                
             </form>
         	</div>
 		</div>
 	</div>
-	<script>
-		let arrow = document.querySelectorAll(".arrow");
-        console.log(arrow);
-        for (var i = 0; i < arrow.length; i++) {
-            arrow[i].addEventListener("click",(e)=>{
-                let arrowParent = e.target.parentElement.parentElement;
-                
-                arrowParent.classList.toggle("showMenu");
 
-            });
-        }
-
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        console.log(sidebarBtn);
-
-        sidebarBtn.addEventListener("click", ()=>{
-            sidebar.classList.toggle("close");
-        });
-
-	</script>
-	<!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- SCRIPTS -->
+        
+        <script src="../tools/sidebar.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFY lzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- PHP DE MODALES -->
+    <?php include "./modal/modal-avs-pregunta.php"; ?>
 
 </body>
 </html>
