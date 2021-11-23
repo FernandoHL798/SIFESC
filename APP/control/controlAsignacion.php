@@ -9,25 +9,26 @@ function consultaAsignacion($id_plan){
 function updateAsignacion($params){
     include_once "../model/ASIGNACION.php";
     $ASIGNACION = new ASIGNACION();
-    $ASIGNACION->setIdAsignacion($params['']);
-    $ASIGNACION->setIdUsuarioProfesorFk($params['']);
-    $ASIGNACION->setIdGrupoFk($params['']);
-    $ASIGNACION->setCupo($params['']);
+    $ASIGNACION->setIdAsignacion($params['id_asignacion']);
+    $ASIGNACION->setIdUsuarioProfesorFk($params['id_usuarioprofesor_fk']);
+    $ASIGNACION->setIdGrupoFk($params['id_grupo_fk']);
+    $ASIGNACION->setCupo($params['cupo']);
     return $ASIGNACION->queryUpdateAsignacion();
 }
 
 function insertAsignacion($params){
     include_once "../model/ASIGNACION.php";
     $ASIGNACION = new ASIGNACION();
-    $ASIGNACION->setIdAsignacion($params['']);
-    $ASIGNACION->setIdUsuarioProfesorFk($params['']);
-    $ASIGNACION->setIdGrupoFk($params['']);
-    $ASIGNACION->setCupo($params['']);
+    $ASIGNACION->setIdAsignacion($params['id_asignacion']);
+    $ASIGNACION->setIdUsuarioProfesorFk($params['id_usuarioprofesor_fk']);
+    $ASIGNACION->setIdGrupoFk($params['id_grupo_fk']);
+    $ASIGNACION->setCupo($params['cupo']);
     return $ASIGNACION->queryInsertAsignacion();
 }
 
 function deleteAsignacion($idAsignacion){
     include_once "../model/ASIGNACION.php";
     $ASIGNACION = new ASIGNACION();
-    return $ASIGNACION->queryDeleteAsignacion($idAsignacion);
+    $ASIGNACION->setIdAsignacion($idAsignacion);
+    return $ASIGNACION->queryDeleteAsignacion();
 }
