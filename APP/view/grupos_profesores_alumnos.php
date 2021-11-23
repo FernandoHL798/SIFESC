@@ -26,165 +26,120 @@ include "./includes/sidebar2.php";
                     </a>
                 </div>
             </div>
-        <div class="titulo">
-            Detalles de grupos
-        </div>
-        <div class="">
-            <div class="row">
-                <div class="col-lg-12">
-                    <table id="example" class="table table-bordered">
-                        <thead>
-                            <tr class="informacion" id="informacion">
-                                <th colspan="2">PLAN DE ESTUDIOS:
-                                    <div class="datos_personales">1119</div>
-                                </th>
-                                <th colspan="3">CARRERA:
-                                    <div class="datos_personales">
-                                        LIC. INFORMÁTICA
-                                    </div>
-                                </th>
-                                <th colspan="1">CLAVE ASIGNATURA:
-                                    <div class="datos_personales">
-                                        113
-                                    </div>
-                                </th>
-                                <th colspan="1">NOMBRE ASIGNATURA :
-                                    <div class="datos_personales">
-                                        SEGURIDAD INFORMÁTICA
-                                    </div>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th colspan="3">GRUPO:
-                                    <div class="datos_personales">
-                                        1702
-                                    </div>
-                                </th>
-                                <th colspan="4">SEMESTRE:
-                                    <div class="datos_personales">
-                                        7
-                                    </div>
-                                </th>
+            <div class="titulo">
+                Detalles de grupos
+            </div>
+            <div class="">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table id="example" class="table table-bordered">
+                            <thead>
+                                <tr class="informacion" id="informacion">
+                                    <th colspan="2">PLAN DE ESTUDIOS:
+                                        <div class="datos_personales">1119</div>
+                                    </th>
+                                    <th colspan="3">CARRERA:
+                                        <div class="datos_personales">
+                                            LIC. INFORMÁTICA
+                                        </div>
+                                    </th>
+                                    <th colspan="1">CLAVE ASIGNATURA:
+                                        <div class="datos_personales">
+                                            113
+                                        </div>
+                                    </th>
+                                    <th colspan="1">NOMBRE ASIGNATURA :
+                                        <div class="datos_personales">
+                                            SEGURIDAD INFORMÁTICA
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th colspan="3">GRUPO:
+                                        <div class="datos_personales">
+                                            1702
+                                        </div>
+                                    </th>
+                                    <th colspan="4">SEMESTRE:
+                                        <div class="datos_personales">
+                                            7
+                                        </div>
+                                    </th>
 
-                            </tr>
-                            <tr class="informacion" id="informacion">
-                                <th>NO. DE CUENTA</th>
-                                <th>NOM. ALUMNO</th>
-                                <th>CORREO</th>
-                                <th>TELEFONO</th>
-                                <th>ESTATUS???</th>
-                                <th>CALIFICACIÓN</th>
-                                <th>ACCION</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td data-label="NÚMERO">314243919</td>
-                                <td data-label="NOM ALUMNO">MARTÍNEZ HERNÁNDEZ EMMANUEL</td>
-                                <td data-label="CORREO">emmanuel_@gmail.com</td>
-                                <td data-label="TELEFONO">5458565251</td>
-                                <td data-la data-label="ESTATUS">EN CURSO</td>
-                                <td data-label="CALIFICACIÓN"></td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
-                                        
-                                            <i class='bx bxs-pencil'></i>
-                                        
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                               <td data-label="NÚMERO">314243919</td>
-                                <td data-label="NOM ALUMNO">MARTÍNEZ HERNÁNDEZ EMMANUEL</td>
-                                <td data-label="CORREO">emmanuel_@gmail.com</td>
-                                <td data-label="TELEFONO">5458565251</td>
-                                <td data-la data-label="ESTATUS">EN CURSO</td>
-                                <td data-label="CALIFICACIÓN"></td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
-                                        
-                                            <i class='bx bxs-pencil'></i>
-                                       
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="NÚMERO">314243919</td>
-                                <td data-label="NOM ALUMNO">MARTÍNEZ HERNÁNDEZ EMMANUEL</td>
-                                <td data-label="CORREO">emmanuel_@gmail.com</td>
-                                <td data-label="TELEFONO">5458565251</td>
-                                <td data-la data-label="ESTATUS">EN CURSO</td>
-                                <td data-label="CALIFICACIÓN"></td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
-                                        
-                                            <i class='bx bxs-pencil'></i>
-                                        
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                              <td data-label="NÚMERO">314243919</td>
-                                <td data-label="NOM ALUMNO">MARTÍNEZ HERNÁNDEZ EMMANUEL</td>
-                                <td data-label="CORREO">emmanuel_@gmail.com</td>
-                                <td data-label="TELEFONO">5458565251</td>
-                                <td data-la data-label="ESTATUS">EN CURSO</td>
-                                <td data-label="CALIFICACIÓN"></td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
-                                        
-                                            <i class='bx bxs-pencil'></i>
-                                       
-                                    </button>
-                                </td>
-                            </tr>
-                        
-                    </table>
+                                </tr>
+                                <tr class="informacion" id="informacion">
+                                    <th>NO. DE CUENTA</th>
+                                    <th>NOM. ALUMNO</th>
+                                    <th>CORREO</th>
+                                    <th>TELEFONO</th>
+                                    <th>ESTATUS???</th>
+                                    <th>CALIFICACIÓN</th>
+                                    <th>ACCION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="NÚMERO">314243919</td>
+                                    <td data-label="NOM ALUMNO">MARTÍNEZ HERNÁNDEZ EMMANUEL</td>
+                                    <td data-label="CORREO">emmanuel_@gmail.com</td>
+                                    <td data-label="TELEFONO">5458565251</td>
+                                    <td data-la data-label="ESTATUS">EN CURSO</td>
+                                    <td data-label="CALIFICACIÓN"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
+                                            
+                                                <i class='bx bxs-pencil'></i>
+                                            
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                   <td data-label="NÚMERO">314243487</td>
+                                    <td data-label="NOM ALUMNO">ARCOS PERALTA ERICK</td>
+                                    <td data-label="CORREO">erick_@gmail.com</td>
+                                    <td data-label="TELEFONO">5425565251</td>
+                                    <td data-la data-label="ESTATUS">EN CURSO</td>
+                                    <td data-label="CALIFICACIÓN"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
+                                            
+                                                <i class='bx bxs-pencil'></i>
+                                           
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="NÚMERO">314243814</td>
+                                    <td data-label="NOM ALUMNO">HERNÁNDEZ LEDEZMA LUIS FERNANDO</td>
+                                    <td data-label="CORREO">fernando_@gmail.com</td>
+                                    <td data-label="TELEFONO">5458565698</td>
+                                    <td data-la data-label="ESTATUS">EN CURSO</td>
+                                    <td data-label="CALIFICACIÓN"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
+                                            
+                                                <i class='bx bxs-pencil'></i>
+                                            
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>     
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-
-            <!-- MODAL PARA ACTUALIZAR LA CALIFICACION DEL ALUMNO || AUN LA TENGO EN DESARROLLO-->
-
+    </div>
 
 
-             <div class="modal fade" id="Modal_profesor_editalumno" tabindex="-1" aria-labelledby="Modal_profesor_editalumno" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="Modal_Edit_P">Agregar calificación</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="mt-3 mb-2"></div>
-                                <div class="form-group" id="Edit_plan_grup">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Calificación: (solo acepta valores enteros)" class="form-control" style="height: 60px">
-                                </div>
-                                </div>
-                                  
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="Edit_plan">
-                                    <input type="text" placeholder="Carrera:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="Edit_plan"></div>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Guardar</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+            
+
 
 
     <script src="../tools/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('#example').DataTable({
@@ -194,5 +149,6 @@ include "./includes/sidebar2.php";
         });
     </script>
 
+    <?php include "./modal/modal-prof-calif-alum.php"; ?>
 </body>
 </html>

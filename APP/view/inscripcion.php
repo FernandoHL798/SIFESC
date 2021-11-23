@@ -181,7 +181,8 @@ include "./includes/sidebar2.php";
 			})
 		});
 	</script>
-<?php include "./modal/modal-asignacion.php"; ?>
-<?php include "./modal/modal-baja-asignacion.php"; ?>
+
+	<?php include "./modal/modal-asignacion.php"; ?>
+	<?php include "./modal/modal-baja-asignacion.php"; ?>
 </body>
 </html>

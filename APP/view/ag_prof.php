@@ -37,169 +37,16 @@ include "./includes/sidebar2.php";
                 <div class="mt-3 mb-2"></div>
                 <div class="d-grid gap-2 col-3 mx-auto"></div>
 
-                        <div class="mt-3 mb-2"></div>
+                     <div class="mt-3 mb-2"></div>
                         <div class="d-grid gap-2 col-3 mx-auto">
-                           
-
-
-
-
-                    <div class="modal-content">
-                    <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">
-                              Agregar Profesor
-                        </button>
-                          </div>
-                          <!-- Modal -->
-                          <div class="modal fade" id="Asig_Modal_P" tabindex="-1" aria-labelledby="Modal_Asig_P" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="Modal_Asig_P">Agregar Profesor</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="mt-3 mb-2"></div>
-                                <div class="form-group" id="actual-pass-group">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Clave:" class="form-control" style="height: 60px">
-                                </div>
-                                </div>
-                                  
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Nombre:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Apellido Paterno:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Apellido Materno:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Correo:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="password-group">
-                                    <input type="text" placeholder="Telefono:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="password-group">
-                            <div class="form-floating">
-                                    <select class="form-select" id="floatingSelect">
-                                        <option hidden=""></option>
-                                        <option value="1">Informática</option>
-                                        <option value="2">Redes</option>
-                                        <option value="3">Informática Programación</option>
-                                    </select>
-                                        <label for="floatingSelect"><font SIZE=3>Departamento:</font></label>
+                            <div class="modal-content">
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">
+                                      Agregar Profesor
+                                </button>
                             </div>
-                            <div class="mt-3 mb-2"></div>
-                                  
-                            <div class="form-floating">
-                                    <select class="form-select" id="floatingSelect">
-                                        <option hidden=""></option>
-                                        <option value="1">3</option>
-                                        <option value="2">5</option>
-                                        <option value="3">7</option>
-                                    </select>
-                                        <label for="floatingSelect"><font SIZE=3>Área:</font></label>
-                            </div>
-                            
                         </div>
-                                
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Agregar</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Button trigger modal -->
-                        
-                          
-                          <!-- Modal Editar-->
-                          <div class="modal fade" id="Edit_Modal_P" tabindex="-1" aria-labelledby="Modal_Edit_P" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="Modal_Edit_P">Agregar Profesor</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <div class="mt-3 mb-2"></div>
-                                <div class="form-group" id="actual-pass-group">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Clave:" class="form-control" style="height: 60px">
-                                </div>
-                                </div>
-                                  
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Nombre:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Apellido Paterno:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Apellido Materno:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="">
-                                    <input type="text" placeholder="Correo:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="password-group">
-                                    <input type="text" placeholder="Telefono:" class="form-control" style="height: 60px">
-                                  </div>
-                                  <div class="mt-3 mb-2"></div>
-                                  <div class="form-group" id="password-group">
-                            <div class="form-floating">
-                                    <select class="form-select" id="floatingSelect">
-                                        <option hidden=""></option>
-                                        <option value="1">Informática</option>
-                                        <option value="2">Redes</option>
-                                        <option value="3">Informática Programación</option>
-                                    </select>
-                                        <label for="floatingSelect"><font SIZE=3>Departamento:</font></label>
-                            </div>
-                            <div class="mt-3 mb-2"></div>
-                                  
-                            <div class="form-floating">
-                                    <select class="form-select" id="floatingSelect">
-                                        <option hidden=""></option>
-                                        <option value="1">3</option>
-                                        <option value="2">5</option>
-                                        <option value="3">7</option>
-                                    </select>
-                                        <label for="floatingSelect"><font SIZE=3>Área:</font></label>
-                            </div>
-                            
-                        </div>
-                                
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Guardar</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                    </div>
-
-
-                            
-                          
-                        </div>
-                    </div>
+            </div>
 
                     <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
@@ -275,51 +122,27 @@ include "./includes/sidebar2.php";
         </div>
     </div>
 </div>
+    <script src="../tools/sidebar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!--   Datatables-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
+    <!-- extension responsive -->
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <!--Scrip para Modal-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
-        let arrow = document.querySelectorAll(".arrow");
-        console.log(arrow);
-        for (var i = 0; i < arrow.length; i++) {
-            arrow[i].addEventListener("click",(e)=>{
-                let arrowParent = e.target.parentElement.parentElement;
-                
-                arrowParent.classList.toggle("showMenu");
-
+        $(document).ready(function() {
+            $('#example').DataTable({
+                responsive: true
             });
-        }
-
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        console.log(sidebarBtn);
-
-        sidebarBtn.addEventListener("click", ()=>{
-            sidebar.classList.toggle("close");
-        });
+        } );  
 
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-            <!--   Datatables-->
-            <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
-
-            <!-- extension responsive -->
-            <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-
-            <!--Scrip para Modal-->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-
-
-            <script>
-                $(document).ready(function() {
-                    $('#example').DataTable({
-                        responsive: true
-                    });
-                } );  
-    
-            </script>
+    <?php include "./modal/modal-agregar-prof.php"; ?>
+    <?php include "./modal/modal-edit-prof.php"; ?>
 
 </body>
 </html>
