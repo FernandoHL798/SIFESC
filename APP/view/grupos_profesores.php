@@ -39,6 +39,11 @@ include "./includes/sidebar2.php";
                 <table id="example" class="table table-bordered">
                     <thead>
                         <tr class="informacion" id="informacion">
+                            <th colspan="2">ÁREA :
+                                <div class="datos_personales">
+                                    1
+                                </div>
+                            </th>
                             <th colspan="2">CLAVE DE PROFESOR:
                                 <div class="datos_personales">12345678</div>
                             </th>
@@ -52,21 +57,16 @@ include "./includes/sidebar2.php";
                                     Informática
                                 </div>
                             </th>
-                            <th colspan="2">ÁREA :
-                                <div class="datos_personales">
-                                    1
-                                </div>
-                            </th>
                         </tr>
                         <tr>
-                            <th colspan="3">PLANTEL:
-                                <div class="datos_personales">
-                                    106 - F.E.S. CUAUTITLÁN
-                                </div>
-                            </th>
                             <th colspan="4">PERIODO:
                                 <div class="datos_personales">
                                     2021/20
+                                </div>
+                            </th>
+                            <th colspan="3">PLANTEL:
+                                <div class="datos_personales">
+                                    106 - F.E.S. CUAUTITLÁN
                                 </div>
                             </th>
                             <th colspan="2">NO SE QUE VA AQUI</th>
@@ -153,7 +153,6 @@ include "./includes/sidebar2.php";
                                 </button>
                             </td>
                         </tr>
-                    
                 </table>
             </div>
         </div>

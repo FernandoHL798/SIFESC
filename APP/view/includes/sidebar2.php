@@ -89,8 +89,9 @@
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Administrador</a></li>
 					<li><a href="./ag_prof.php">Agrega profesor</a></li>
-					<li><a href="#">Agrega alumnos</a></li>
-					<li><a href="#">Asigna profesor</a></li>
+					<li><a href="./ag_alumno.php">Agrega alumnos</a></li>
+					<li><a href="./ag_asig.php">Agrega asignaturas</a></li>
+					<li><a href="./AsignaProfesor.php">Asigna profesor</a></li>
 					<li><a href="./plan_de_estudios.php">Crea plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
 					<li><a href="./saturacion_prof.php">Edita saturación</a></li>
 				</ul>

@@ -29,7 +29,6 @@ function insertPlan($params){
     $PLAN->setCreditosOptativos($params['creditos_op']);
     $PLAN->setCreditosTotales($params['creditos_t']);
     $PLAN->setSemestres($params['semestres']);
-    return $PLAN->queryUpdatePlan();
     return $PLAN->queryInsertPlan();
 }
 

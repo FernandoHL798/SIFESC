@@ -9,4 +9,4 @@ $params=[
 	"fecha_altabaja"=>"2000-12-20",
 	"hora_altabaja"=>"09:10"
 ];
-var_dump(insertInscripcion($params));
+var_dump(queryInsertInscripcion($params));

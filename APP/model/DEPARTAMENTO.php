@@ -51,7 +51,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryconsultaDepartamento(){
-        $query="SELECT `id_departamento`,`nombre`,`id_area_fk` FROM `departamento`";
+        $query="SELECT `id_departamento`,`nombre`,`id_area_fk` FROM `departamentos`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -59,8 +59,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryInsertDepartamento(){
-        $query="INSERT into `departamento`(`id_departamento`,`nombre`,`id_area_fk`) 
-        VALUES ('".$this->getIdDepartamento()."', '".$this->getNombre()."', '".$this->getIdAreaFk()."'";
+        $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_area_fk`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdAreaFk()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -68,8 +67,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryUpdateDepartamento(){
-        $query="UPDATE `departamento` SET `nombre` = '".$this->getNombre()."', `id_area_fk` = '".$this->getIdAreaFk()."'
-         WHERE `departamento`.`id_departamento` = '".$this->getIdDepartamento()."'";
+        $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_area_fk`='".$this->getIdAreaFk()."' WHERE `id_departamento`='".$this->getIdDepartamento()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -77,7 +75,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryDeleteDepartamento(){
-        $query="DELETE FROM `departamento` WHERE `id_departamento`='".$this->getIdDepartamento()."'";
+        $query="DELETE FROM `departamentos` WHERE `id_departamento`='".$this->getIdDepartamento()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

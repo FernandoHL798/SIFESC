@@ -67,8 +67,8 @@ class ASIGNACION extends CONEXION{
         $this->cupo = $cupo;
     }
 
-    public function queryconsultaAsignacion(){
-        $query="SELECT `id_asignacion`, `id_usuarioprofesor_fk`, `id_grupo_fk`, `cupo`, `updated_at`, `created_at` FROM `asignacion`";
+    public function queryconsultaAsignacion($id_plan){
+        $query="SELECT asi.nombre,asi.creditos, asi.semestre, asi.caracter, g.nombre_grupo, a.cupo FROM `asignacion` a, `grupos` g, `asignaturas` asi where a.id_grupo_fk=g.id_grupo AND g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

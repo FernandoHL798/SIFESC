@@ -4,4 +4,4 @@ $params=[
 	"id_area"=>"1",
 	"nombre"=>"ciencias"
 ];
-var_dump(insertSalon($params));
+var_dump(insertArea($params));

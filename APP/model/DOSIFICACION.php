@@ -113,7 +113,7 @@ class DOSIFICACION extends CONEXION{
 
     
     public function queryDeleteDosificacion(){
-        $query="DELETE FROM `dosificacion` WHERE `id_usuarioalumno_fk`='".$this->getIdUsuarioAlumnoFk()."' AND `id_perido_fk`='".$this->getIdPeriodoFk()."'";
+        $query="DELETE FROM `dosificacion` WHERE `id_usuarioalumno_fk`='".$this->getIdUsuarioAlumnoFk()."' AND `id_periodo_fk`='".$this->getIdPeriodoFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
