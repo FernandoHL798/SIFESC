@@ -49,40 +49,59 @@ include "./includes/sidebar2.php";
                     <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
-                            <th style="width: 400px;">Clave</th>
-                            <th style="width: 400px;">Nombre</th>
-                            <th style="width: 400px;">Acciones</th>
+                            <th style="width: 50px;">Clave</th>
+                            <th style="width: 100px;">Nombre</th>
+                            <th style="width: 50px;">Duración</th>
+                            <th style="width: 80px;">Limite inscripcion por periodo</th>
+                            <th style="width: 80px;">Creditos obligatorios</th>
+                            <th style="width: 80px;">Creditos optativos</th>
+                            <th style="width: 80px;">Creditos totales</th>
+                            <th style="width: 100px;">Acciones</th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td data-label="Asig">0017</td>
+                            <td data-label="Clave">0017</td>
                             <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
-                            
-                            
+                            <td data-label="Duración">9</td>
+                            <td data-label="Limite de Inscr. por periodo">8</td>
+                            <td data-label="Creditos Oblig.">359</td>
+                            <td data-label="Creditos Opt.">72</td>
+                            <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
+                                <a href="./saturacion_prof.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td data-label="Asig">0147</td>
-                            <td data-label="Nombre">ANALISIS FINANC. MAT. SISTEM. ELECTRON.</td>
+                            <td data-label="Clave">0017</td>
+                            <td data-label="Nombre">REDES COMPUTACIONALES III</td>
+                            <td data-label="Duración">9</td>
+                            <td data-label="Limite de Inscr. por periodo">8</td>
+                            <td data-label="Creditos Oblig.">359</td>
+                            <td data-label="Creditos Opt.">72</td>
+                            <td data-label="Creditos Tot.">431</td>
                             
                             <td data-label="Acciones">
-                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button> 
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
                             </td>
-                            
                         </tr>
                         <tr class="text-center">
-                             <td data-label="Clave Asig">0162</td>
-                            <td data-label="Nombre">INGLES II</td>
-                            
+                            <td data-label="Clave">0017</td>
+                            <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
+                            <td data-label="Duración">9</td>
+                            <td data-label="Limite de Inscr. por periodo">8</td>
+                            <td data-label="Creditos Oblig.">359</td>
+                            <td data-label="Creditos Opt.">72</td>
+                            <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
                                 <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button> 
                             </td>
                         </tr>
                     </tbody>

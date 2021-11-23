@@ -32,52 +32,14 @@
                     <div class="row">
                           
                             <p class="mb-4"></p>
-                            <h3 id="head3" class="text-center">Añada su correo electrónico para la recuperación de su cuenta</h3>
+                            <h3 id="head3" class="text-center">Configuración de Seguridad</h3>
                             <p class="mt-3 mb-4"></p>
                         
                     </div>
-                    <div class="row">
-                        <div class="col-5 mx-auto">
-                            <input type="email" class="form-control mb-3 mt-3" style="height: 55px;" id="floatingInput" placeholder="Introduzca su correo:" required="" autofocus=""> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-5 mx-auto">
-                            <input type="text" class="form-control" style="height: 55px;" id="cf_correo" placeholder="Confirme su correo:" required="" autofocus="">
-                        </div>
-                    </div>
+                    
                         
                     <div class="mt-3 mb-2"></div>
-                        <div class="d-grid gap-2 col-3 mx-auto">
-                            <div class="modal-content">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                          Confirmar
-                                </button>
-                            </div>
-                            <p class="mt-3 mb-2"></p>
-
-
-
-                        <!-- ESTE MODAL SE TENDRIA QUE ELIMINAR -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">¡ATENCIÓN!</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                      <div class="mt-3 mb-2"></div>
-                                      <label>Se ha enviado un correo de confirmación a la direccion: AQUI IRIA EL CORREO AGREGADO</label>
-                                    </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>   
+                        
                         </div>
 
 
