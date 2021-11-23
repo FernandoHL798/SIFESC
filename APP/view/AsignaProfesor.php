@@ -8,13 +8,33 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <!--para barra de busqueda -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <script type="text/javascript">
+    $(document).ready(function () {
+       (function($) {
+           $('#FiltrarContenido').keyup(function () {
+                var ValorBusqueda = new RegExp($(this).val(), 'i');
+                $('.BusquedaRapida tr').hide();
+                 $('.BusquedaRapida tr').filter(function () {
+                    return ValorBusqueda.test($(this).text());
+                  }).show();
+                    })
+          }(jQuery));
+    });
+    </script>
+    <!--para barra de busqueda -->
+
     <title>Saturacion_Prof</title>
 </head>
 <body id="body">
     <?php
 include "./includes/sidebar2.php";
     ?>
-
 
     <!--              AQUI VA EL CONTENIDO                -->
 <div class="home_content2">
@@ -36,11 +56,19 @@ include "./includes/sidebar2.php";
                 </div>
                 <div class="mt-3 mb-2"></div>
                 <div class="d-grid gap-2 col-3 mx-auto"></div>
-
+                <!-- Barra de busqueda -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Buscar</span>
+                  </div>
+                  <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese datos de busqueda" aria-label="Alumno" aria-describedby="basic-addon1">
+                </div>
+                <!-- Barra de busqueda -->
                      <div class="mt-3 mb-2"></div>
                         <div class="d-grid gap-2 col-3 mx-auto">
                             <div class="modal-content">
                             <!-- Button trigger modal -->
+
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">
                                       Asigna Profesor
                                 </button>
@@ -145,8 +173,18 @@ include "./includes/sidebar2.php";
 
     </script>
 
-    <?php include "./modal/modal-agregar-prof.php"; ?>
-    <?php include "./modal/modal-edit-prof.php"; ?>
+    <!-- script para busqueda -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="SIFESC/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/js/vendor/popper.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <!-- script para busqueda -->
+
+    <?php include "./modal/modal-AsignaProfesor.php"; ?>
+    <?php include "./modal/modal-editAsignaProfesor.php"; ?>
 
 </body>
 </html>
