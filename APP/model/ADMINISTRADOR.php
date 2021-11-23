@@ -3,7 +3,7 @@ include_once "CONEXION.php";
 class ADMINISTRADOR extends CONEXION{
 
     public function queryconsultaAdministrador(){
-        $query="SELECT `id_usuario_fk` FROM `administrador`";
+        $query="SELECT `usuario_id_fk` FROM `administrador`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -11,7 +11,7 @@ class ADMINISTRADOR extends CONEXION{
     }
 
     public function queryInsertAdministrador($idAdmin){
-        $query="INSERT into `administrador`(`id_usuario_fk`) 
+        $query="INSERT into `administrador`(`usuario_id_fk`) 
         VALUES ('".$idAdmin."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -20,7 +20,7 @@ class ADMINISTRADOR extends CONEXION{
     }
 
     public function queryDeleteAdministrador($idAdmin){
-        $query="DELETE FROM `administrador` WHERE `id_usuario_fk`='".$idAdmin."'";
+        $query="DELETE FROM `administrador` WHERE `usuario_id_fk`='".$idAdmin."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

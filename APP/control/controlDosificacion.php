@@ -2,35 +2,36 @@
 
 function consultaDosificacion(){
     include_once "../model/DOSIFICACION.php";
-    $DOSIFIACION = new DOSIFICACION();
-    return json_encode($DOSIFIACION->queryconsultaDosificacion());
+    $DOSIFICACION = new DOSIFICACION();
+    return json_encode($DOSIFICACION->queryconsultaDosificacion());
 }
 
 function updateDosificacion($params){
     include_once "../model/DOSIFICACION.php";
-    $DOSIFIACION = new DOSIFICACION();
-    $DOSIFIACION->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
-    $DOSIFIACION->setIdPeriodoFk($params['id_periodo_fk']);
-    $DOSIFIACION->setFechaInscripcion($params['fecha_inscripcion']);
-    $DOSIFIACION->setHoraInscripcion($params['hora_inscripcion']);
-    $DOSIFIACION->setFechaAltaBaja($params['fecha_altabaja']);
-    return $DOSIFIACION->queryUpdateDosificacion();
+    $DOSIFICACION = new DOSIFICACION();
+    $DOSIFICACION->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $DOSIFICACION->setIdPeriodoFk($params['id_periodo_fk']);
+    $DOSIFICACION->setFechaInscripcion($params['fecha_inscripcion']);
+    $DOSIFICACION->setHoraInscripcion($params['hora_inscripcion']);
+    $DOSIFICACION->setFechaAltaBaja($params['fecha_altabaja']);
+    return $DOSIFICACION->queryUpdateDosificacion();
 }
 
 function insertDosificacion($params){
     include_once "../model/DOSIFICACION.php";
-    $DOSIFIACION = new DOSIFICACION();
-    $DOSIFIACION->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
-    $DOSIFIACION->setIdPeriodoFk($params['id_periodo_fk']);
-    $DOSIFIACION->setFechaInscripcion($params['fecha_inscripcion']);
-    $DOSIFIACION->setHoraInscripcion($params['hora_inscripcion']);
-    $DOSIFIACION->setFechaAltaBaja($params['fecha_altabaja']);
-    return $DOSIFIACION->queryInsertDosificacion();
+    $DOSIFICACION = new DOSIFICACION();
+    $DOSIFICACION->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $DOSIFICACION->setIdPeriodoFk($params['id_periodo_fk']);
+    $DOSIFICACION->setFechaInscripcion($params['fecha_inscripcion']);
+    $DOSIFICACION->setHoraInscripcion($params['hora_inscripcion']);
+    $DOSIFICACION->setFechaAltaBaja($params['fecha_altabaja']);
+    return $DOSIFICACION->queryInsertDosificacion();
 }
 
-function deleteDosificacion($idDosificacion){
+function deleteDosificacion($params){
     include_once "../model/DOSIFICACION.php";
-    $DOSIFIACION = new DOSIFICACION();
-    $DOSIFIACION->setIdDosificacion($idDosificacion);
-    return $DOSIFIACION->queryDeleteDosificacion();
+    $DOSIFICACION = new DOSIFICACION();
+    $DOSIFICACION->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $DOSIFICACION->setIdPeriodoFk($params['id_periodo_fk']);
+    return $DOSIFICACION->queryDeleteDosificacion();
 }

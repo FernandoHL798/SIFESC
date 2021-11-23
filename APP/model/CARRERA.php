@@ -69,7 +69,7 @@ class CARRERA extends CONEXION{
 
     
     public function queryconsultaCarrera(){
-        $query="SELECT `id_carrera`,`id_area_fk`, `clave`, `nombre`, `updated_at`, `created_at` FROM `carrera`";
+        $query="SELECT `id_carrera`,`area_fk`, `clave`, `nombre`, `updated_at`, `created_at` FROM `carrera`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -77,7 +77,7 @@ class CARRERA extends CONEXION{
     }
 
     public function queryUpdateCarrera(){
-        $query="UPDATE `carrera` SET `id_area_fk` = '".$this->getIdAreaFk()."', `clave` = '".$this->getClave()."', `nombre` = '".$this->getNombre()."',
+        $query="UPDATE `carrera` SET `area_fk` = '".$this->getIdAreaFk()."', `clave` = '".$this->getClave()."', `nombre` = '".$this->getNombre()."',
          `updated_at` = current_timestamp() WHERE `carrera`.`id_carrera` = '".$this->getIdCarrera()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -86,7 +86,7 @@ class CARRERA extends CONEXION{
     }
 
     public function queryInsertCarrera(){
-        $query="INSERT into `carrera`(`id_carrera`,`id_area_fk`,`clave`,`nombre`,`updated_at`,`created_at`) 
+        $query="INSERT into `carrera`(`id_carrera`,`area_fk`,`clave`,`nombre`,`updated_at`,`created_at`) 
         VALUES ('".$this->getIdCarrera()."', '".$this->getIdAreaFk()."', '".$this->getClave()."', '".$this->getNombre()."',
         current_timestamp(), current_timestamp())";
         $this->connect();

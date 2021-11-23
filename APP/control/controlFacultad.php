@@ -16,8 +16,8 @@ function insertFacultad($params){
 function updateFacultad($params){
     include_once "../model/FACULTAD.php";
     $FACULTAD = new FACULTAD();
-    $FACULTAD->setIdFacultad($params['']);
-    $FACULTAD->setNombreFacultad($params['']);
+    $FACULTAD->setIdFacultad($params['id_Facultad']);
+    $FACULTAD->setNombreFacultad($params['nombre_fac']);
     return $FACULTAD->queryUpdateFacultad();
 }
 function deleteFacultad($idFacultad){

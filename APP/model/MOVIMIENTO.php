@@ -126,7 +126,7 @@ class MOVIMIENTO extends CONEXION{
     }
 
     public function queryInsertMovimiento(){
-        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprovado`, `veces_cursado`) 
+        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprobado`, `veces_cursado`) 
         VALUES ('".$this->getIdInscripcionFk()."', '".$this->getIdAsignacionFk()."', current_timestamp(),
         current_timestamp(), '".$this->getEstatus()."', '".$this->getCalificacion()."', '".$this->getAprobado()."', '".$this->getVecesCursado()."')";
         $this->connect();

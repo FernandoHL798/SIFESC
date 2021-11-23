@@ -8,6 +8,6 @@ $params=[
 	"antecesor"=>"Matematicas III",
 	"sucesor"=>"Matematicas VI",
 	"caracter"=>"ob",
-	"semestre"="5"
+	"semestre"=>"5"
 ];
 var_dump(updateAsignaturas($params));

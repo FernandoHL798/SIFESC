@@ -153,7 +153,7 @@ class HORARIO extends CONEXION{
     }
 
     public function queryDeleteHorario(){
-        $query="DELETE FROM `horario` WHERE `id_horrario`='".$this->getIdHorario()."'";
+        $query="DELETE FROM `horario` WHERE `id_horario`='".$this->getIdHorario()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
