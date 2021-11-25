@@ -29,15 +29,6 @@ CREATE TABLE `administrador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `administrador`
---
-
-LOCK TABLES `administrador` WRITE;
-/*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (10);
-/*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `alumno`
@@ -48,7 +39,7 @@ DROP TABLE IF EXISTS `alumno`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumno` (
   `usuario_id_fk` int(100) NOT NULL,
-  `id_generacion_fk` int(5) NOT NULL,
+  `id_generacion_fk` int(10) NOT NULL,
   `pregunta_secreta` int(2) NOT NULL,
   `respuesta_secreta` varchar(40) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -62,14 +53,6 @@ CREATE TABLE `alumno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `alumno`
---
-
-LOCK TABLES `alumno` WRITE;
-/*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
-/*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `area`
@@ -85,14 +68,6 @@ CREATE TABLE `area` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `area`
---
-
-LOCK TABLES `area` WRITE;
-/*!40000 ALTER TABLE `area` DISABLE KEYS */;
-/*!40000 ALTER TABLE `area` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `asignacion`
@@ -102,7 +77,7 @@ DROP TABLE IF EXISTS `asignacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `asignacion` (
-  `id_asignacion` int(10) NOT NULL,
+  `id_asignacion` int(10) NOT NULL AUTO_INCREMENT,
   `id_usuarioprofesor_fk` int(100) NOT NULL,
   `id_grupo_fk` int(5) NOT NULL,
   `cupo` int(3) NOT NULL,
@@ -112,18 +87,10 @@ CREATE TABLE `asignacion` (
   KEY `fk_asignacion_usuario` (`id_usuarioprofesor_fk`),
   KEY `fk_asignacion_grupos` (`id_grupo_fk`),
   CONSTRAINT `fk_asignacion_grupos` FOREIGN KEY (`id_grupo_fk`) REFERENCES `grupos` (`id_grupo`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_asignacion_usuario` FOREIGN KEY (`id_usuarioprofesor_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_asignacion_usuario` FOREIGN KEY (`id_usuarioprofesor_fk`) REFERENCES `profesor` (`usuario_id_fk`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `asignacion`
---
-
-LOCK TABLES `asignacion` WRITE;
-/*!40000 ALTER TABLE `asignacion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `asignacion` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `asignaturas`
@@ -133,10 +100,10 @@ DROP TABLE IF EXISTS `asignaturas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `asignaturas` (
-  `id_asignatura` int(10) NOT NULL,
+  `id_asignatura` int(10) NOT NULL AUTO_INCREMENT,
   `id_plan_fk` int(5) NOT NULL,
   `codigo` int(4) NOT NULL,
-  `nombre` varchar(25) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
   `creditos` int(2) NOT NULL,
   `antecesor` int(10) NOT NULL,
   `sucesor` int(10) NOT NULL,
@@ -150,14 +117,6 @@ CREATE TABLE `asignaturas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `asignaturas`
---
-
-LOCK TABLES `asignaturas` WRITE;
-/*!40000 ALTER TABLE `asignaturas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `asignaturas` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `carrera`
@@ -167,7 +126,7 @@ DROP TABLE IF EXISTS `carrera`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carrera` (
-  `id_carrera` int(5) NOT NULL,
+  `id_carrera` int(5) NOT NULL AUTO_INCREMENT,
   `clave` int(4) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -177,15 +136,6 @@ CREATE TABLE `carrera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `carrera`
---
-
-LOCK TABLES `carrera` WRITE;
-/*!40000 ALTER TABLE `carrera` DISABLE KEYS */;
-INSERT INTO `carrera` VALUES (114,100,'Ingeniería industrial','2011-06-17 11:00:00','2011-06-17 11:00:00',2),(116,100,'Ingeniería Mecánica Eléctrica','2011-03-03 12:00:00','2011-03-03 12:00:00',2),(118,100,'Ingeniería química','2003-09-29 11:00:00','2011-05-21 11:00:00',2),(126,100,'Tecnología','2007-03-09 12:00:00','2007-03-09 12:00:00',2),(130,100,'Ingeniería en telecomunicaciones, sistemas y elect','2011-06-17 11:00:00','2011-06-17 11:00:00',2),(204,100,'Ingenería Agricola','2004-06-30 11:00:00','2004-06-30 11:00:00',2),(205,100,'Ingeniería en alimentos','2004-06-30 11:00:00','2004-06-30 11:00:00',1),(207,106,'MEDICINA VETERINARIA Y ZOOTECNIA','2012-01-28 12:00:00','2021-11-23 18:52:50',2),(218,100,'Bioquímica diagnostíca','2008-03-29 12:00:00','2008-03-29 12:00:00',2),(219,100,'Farmacia','2008-03-28 12:00:00','2008-03-28 12:00:00',1),(308,308,'Licenciatura en informática','2003-09-26 11:00:00','2012-09-28 11:00:00',3);
-/*!40000 ALTER TABLE `carrera` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `departamentos`
@@ -204,14 +154,6 @@ CREATE TABLE `departamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `departamentos`
---
-
-LOCK TABLES `departamentos` WRITE;
-/*!40000 ALTER TABLE `departamentos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `departamentos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `dosificacion`
@@ -231,18 +173,10 @@ CREATE TABLE `dosificacion` (
   PRIMARY KEY (`id_usuarioalumno_fk`,`id_periodo_fk`),
   KEY `fk_dosificacion_periodo` (`id_periodo_fk`),
   CONSTRAINT `fk_dosificacion_periodo` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_dosificacion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_dosificacion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `alumno` (`usuario_id_fk`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dosificacion`
---
-
-LOCK TABLES `dosificacion` WRITE;
-/*!40000 ALTER TABLE `dosificacion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dosificacion` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `edificio`
@@ -252,7 +186,7 @@ DROP TABLE IF EXISTS `edificio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `edificio` (
-  `id_edificio` int(5) NOT NULL,
+  `id_edificio` int(5) NOT NULL AUTO_INCREMENT,
   `id_plantel_fk` int(5) NOT NULL,
   `clave` varchar(5) NOT NULL,
   `pisos` varchar(2) NOT NULL,
@@ -264,14 +198,6 @@ CREATE TABLE `edificio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `edificio`
---
-
-LOCK TABLES `edificio` WRITE;
-/*!40000 ALTER TABLE `edificio` DISABLE KEYS */;
-/*!40000 ALTER TABLE `edificio` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `facultad`
@@ -289,15 +215,6 @@ CREATE TABLE `facultad` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `facultad`
---
-
-LOCK TABLES `facultad` WRITE;
-/*!40000 ALTER TABLE `facultad` DISABLE KEYS */;
-INSERT INTO `facultad` VALUES (102,'F.E.S. CUAUTITLAN (ARTES PLASTICAS)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(105,'F.E.S. CUAUTITLAN (QUIMICA)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(106,'F.E.S. CUAUTITLAN (CONTADURIA)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(111,'F.E.S. CUAUTITLAN (INGENIERIA)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(116,'F.E.S. CUAUTITLAN (VETERINARIA)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(118,'F.E.S. CUAUTITLAN (AGRICOLA)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(195,'F.E.S. CUAUTITLAN (TECNOLOGIA)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(201,'F.E.S. ACATLAN (ARQUITECTURA)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(202,'F.E.S. ACATLAN (ARTES PLASTICAS)','1980-07-22 11:00:00','1975-05-17 11:00:00'),(203,'F.E.S. ACATLAN (ACTUARIA)','1980-07-22 11:00:00','1975-05-17 11:00:00');
-/*!40000 ALTER TABLE `facultad` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `generacion`
@@ -307,7 +224,7 @@ DROP TABLE IF EXISTS `generacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `generacion` (
-  `id_generacion` int(10) NOT NULL,
+  `id_generacion` int(10) NOT NULL AUTO_INCREMENT,
   `id_plan_fk` int(5) NOT NULL,
   `anio` varchar(5) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -318,14 +235,6 @@ CREATE TABLE `generacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `generacion`
---
-
-LOCK TABLES `generacion` WRITE;
-/*!40000 ALTER TABLE `generacion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `generacion` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `grupos`
@@ -335,7 +244,7 @@ DROP TABLE IF EXISTS `grupos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `grupos` (
-  `id_grupo` int(10) NOT NULL,
+  `id_grupo` int(10) NOT NULL AUTO_INCREMENT,
   `id_asignatura_fk` int(10) NOT NULL,
   `nombre_grupo` varchar(5) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -346,14 +255,6 @@ CREATE TABLE `grupos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `grupos`
---
-
-LOCK TABLES `grupos` WRITE;
-/*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `horario`
@@ -363,12 +264,12 @@ DROP TABLE IF EXISTS `horario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `horario` (
-  `id_horario` int(10) NOT NULL,
+  `id_horario` int(10) NOT NULL AUTO_INCREMENT,
   `id_grupo_fk` int(10) NOT NULL,
   `id_salon_fk` int(5) NOT NULL,
   `inicio` time NOT NULL,
   `fin` time NOT NULL,
-  `duracion` int(4) NOT NULL,
+  `duracion` double NOT NULL,
   `dia` int(1) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -380,14 +281,6 @@ CREATE TABLE `horario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `horario`
---
-
-LOCK TABLES `horario` WRITE;
-/*!40000 ALTER TABLE `horario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `horario` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `inscripcion`
@@ -397,7 +290,7 @@ DROP TABLE IF EXISTS `inscripcion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inscripcion` (
-  `id_inscripcion` int(15) NOT NULL,
+  `id_inscripcion` int(15) NOT NULL AUTO_INCREMENT,
   `id_usuarioalumno_fk` int(100) NOT NULL,
   `id_periodo_fk` varchar(7) NOT NULL,
   `fecha_inscripcion` date NOT NULL,
@@ -410,18 +303,10 @@ CREATE TABLE `inscripcion` (
   KEY `fk_inscripcion_usuario` (`id_usuarioalumno_fk`),
   KEY `fk_inscripcion_periodo` (`id_periodo_fk`),
   CONSTRAINT `fk_inscripcion_periodo` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_inscripcion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `fk_inscripcion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `alumno` (`usuario_id_fk`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `inscripcion`
---
-
-LOCK TABLES `inscripcion` WRITE;
-/*!40000 ALTER TABLE `inscripcion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `inscripcion` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `movimiento`
@@ -432,7 +317,7 @@ DROP TABLE IF EXISTS `movimiento`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movimiento` (
   `id_inscripcion_fk` int(10) NOT NULL,
-  `id_asignacion_fk` int(5) NOT NULL,
+  `id_asignacion_fk` int(10) NOT NULL,
   `estatus` int(2) NOT NULL,
   `calificacion` int(2) NOT NULL,
   `aprobado` int(1) NOT NULL,
@@ -446,14 +331,6 @@ CREATE TABLE `movimiento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `movimiento`
---
-
-LOCK TABLES `movimiento` WRITE;
-/*!40000 ALTER TABLE `movimiento` DISABLE KEYS */;
-/*!40000 ALTER TABLE `movimiento` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `periodo`
@@ -464,7 +341,7 @@ DROP TABLE IF EXISTS `periodo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `periodo` (
   `id_periodo` varchar(7) NOT NULL,
-  `id_asignacion_fk` int(5) NOT NULL,
+  `id_asignacion_fk` int(10) NOT NULL,
   `fecha_inscripcion` datetime NOT NULL,
   `fecha_altas_bajas` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -475,14 +352,6 @@ CREATE TABLE `periodo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `periodo`
---
-
-LOCK TABLES `periodo` WRITE;
-/*!40000 ALTER TABLE `periodo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `periodo` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `plandeestudios`
@@ -507,15 +376,6 @@ CREATE TABLE `plandeestudios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `plandeestudios`
---
-
-LOCK TABLES `plandeestudios` WRITE;
-/*!40000 ALTER TABLE `plandeestudios` DISABLE KEYS */;
-INSERT INTO `plandeestudios` VALUES (9,308,'1990',439,8,447,10,'2002-09-26 11:00:00','1990-09-26 11:00:00'),(100,130,'2011',372,40,412,9,'2011-06-17 11:00:00','2011-06-17 11:00:00'),(1119,308,'2012',359,72,431,9,'2012-09-28 11:00:00','2003-09-26 11:00:00');
-/*!40000 ALTER TABLE `plandeestudios` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `plantel`
@@ -536,15 +396,6 @@ CREATE TABLE `plantel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `plantel`
---
-
-LOCK TABLES `plantel` WRITE;
-/*!40000 ALTER TABLE `plantel` DISABLE KEYS */;
-INSERT INTO `plantel` VALUES (102,102,'F.E.S. CUAUTITLAN (ARTES PLASTICAS)','1975-05-17 11:00:00','1980-07-22 11:00:00'),(105,105,'F.E.S. CUAUTITLAN (QUIMICA)','1975-05-17 11:00:00','1980-07-22 11:00:00'),(106,106,'F.E.S. CUAUTITLAN (CONTADURIA)','1975-05-17 11:00:02','1980-07-22 11:00:03'),(111,111,'F.E.S. CUAUTITLAN (INGENIERIA)','1975-05-17 11:00:03','1980-07-22 11:00:03'),(116,116,'F.E.S. CUAUTITLAN (VETERINARIA)','1975-05-17 11:00:04','1980-07-22 11:00:04'),(118,118,'F.E.S. CUAUTITLAN (AGRICOLA)','1975-05-17 11:00:05','1980-07-22 11:00:05'),(195,195,'F.E.S. CUAUTITLAN (TECNOLOGIA)','1975-05-17 11:00:06','1980-07-22 11:00:06'),(201,201,'F.E.S. ACATLAN (ARQUITECTURA)','1975-05-17 11:00:00','1980-07-22 11:00:00');
-/*!40000 ALTER TABLE `plantel` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `plantel_carrera`
@@ -568,14 +419,6 @@ CREATE TABLE `plantel_carrera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `plantel_carrera`
---
-
-LOCK TABLES `plantel_carrera` WRITE;
-/*!40000 ALTER TABLE `plantel_carrera` DISABLE KEYS */;
-/*!40000 ALTER TABLE `plantel_carrera` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `profesor`
@@ -597,14 +440,6 @@ CREATE TABLE `profesor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `profesor`
---
-
-LOCK TABLES `profesor` WRITE;
-/*!40000 ALTER TABLE `profesor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `profesor` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `salon`
@@ -614,7 +449,7 @@ DROP TABLE IF EXISTS `salon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `salon` (
-  `id_salon` int(5) NOT NULL,
+  `id_salon` int(5) NOT NULL AUTO_INCREMENT,
   `id_edificio_fk` int(5) NOT NULL,
   `clave` varchar(5) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -625,14 +460,6 @@ CREATE TABLE `salon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `salon`
---
-
-LOCK TABLES `salon` WRITE;
-/*!40000 ALTER TABLE `salon` DISABLE KEYS */;
-/*!40000 ALTER TABLE `salon` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `usuario`
@@ -642,29 +469,22 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `id_usuario` int(100) NOT NULL,
+  `id_usuario` int(100) NOT NULL AUTO_INCREMENT,
   `cuenta_alumno` varchar(10) NOT NULL,
   `cuenta_profesor` varchar(13) NOT NULL,
   `cuenta_administrador` varchar(13) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
-  `primer_apellido` varchar(25) NOT NULL,
-  `segundo_apellido` varchar(25) NOT NULL,
+  `nombre` varchar(35) NOT NULL,
+  `primer_apellido` varchar(40) NULL,
+  `segundo_apellido` varchar(40) NULL,
   `correo` varchar(70) NOT NULL,
   `contrasenia` varchar(20) NOT NULL,
   `telefono` varchar(12) NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `usuario`
---
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'316246370','0','0','Arturo Sebastián','Zavala','Morales','sebzavala@comunidad.unam.mx','Arturo1234','5610729089'),(2,'419071602','0','0','Luz Fernanda','Espinoza','Antonio','luzespinoza250198@gmail.com','Luz1234','5560895392'),(3,'419070375','0','0','Luis Antonio','Villágomez','Pichardo','vipl891212@hotmail.com','Luis1234','5528121287'),(4,'0','316039109','0','Nayelli','Soto','Zuñiga','nayellisotoz@gmail.com','Nayelli1234','5536980291'),(5,'0','311264391','0','Miriam Viridiana','Martinez','Miranda','','Miriam1234','5620821221'),(6,'0','0','316341042','Daniela','Torrez','María','danielatorresh@comunidad.unam.mx','Daniela1234','5528083989'),(7,'0','0','314243919','Emmanuel','Martinez','Hernández','emmanuel_th_2698@hotmail.com','Emmanuel1234','5620907010'),(8,'0','0','312100195','Erick','Arcos','Peralta','arcosperaltaerick@hotmail.com','Erick1234','5548731534'),(9,'0','0','419068581','Omar','Romo','Bautista','omar.skaa@gmail.com','Omar123','5534069985'),(10,'0','0','316345978','Luis Fernando','Hernández','Ledezma','fernandohlqwe@gmail.com','Fernado1234','5537091960');
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

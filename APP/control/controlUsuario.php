@@ -19,6 +19,7 @@ function updateUsuario($params) {
     $USUARIOS->setSegundoApellido($params['segundo_apellido']);
     $USUARIOS->setCorreo($params['correo']);
     $USUARIOS->setTelefono($params['telefono']);
+    $USUARIOS->setFechaNacimiento($params['fecha_nacimiento']);
     $USUARIOS->setIdUsuario($params['id_usuario']);
     $result = $USUARIOS->queryUpdateUsuario();
     return $result;
@@ -37,6 +38,7 @@ function insertUsuario($params){
     $USUARIOS->setCorreo($params['correo']);
     $USUARIOS->setContrasenia(md5($params['pwd']));
     $USUARIOS->setTelefono($params['telefono']);
+    $USUARIOS->setFechaNacimiento($params['fecha_nacimiento']);
     $result= $USUARIOS->queryInsertUsuario();
     return $result;
 }
