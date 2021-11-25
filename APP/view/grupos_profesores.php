@@ -25,10 +25,16 @@ include "./includes/sidebar2.php";
                         </a>
                     </div>
                 </div>
+                <div class="row">
+                          
+                            <p class=""></p>
+                            <h3 id="head3" class="text-center">Mis Grupos Asignados</h3>
+                            <p class="mt-3 mb-4"></p>
+                        
+                                </div>
+                                    <div class="mt-3 mb-2"></div>
 
-    <div class="titulo">
-        Mis grupos asignados
-    </div>
+    
     <div class="">
         <div class="row">
             <div class="col-lg-12">
@@ -90,12 +96,8 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1701</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm d-grid gap-2 col-6 mx-auto">
-                                    <a class="text-black" href="./grupos_profesores_alumnos.php">
-                                        <i class='bx bx-show'></i>
-                                    </a>
-                                </button>
+                            <td class="text-center">
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                         <tr>
@@ -107,12 +109,8 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1103</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">2</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm d-grid gap-2 col-6 mx-auto">
-                                    <a class="text-black" href="./grupos_profesores_alumnos.php">
-                                        <i class='bx bx-show'></i>
-                                    </a>
-                                </button>
+                            <td class="text-center">
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                         <tr>
@@ -124,12 +122,8 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1751</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm d-grid gap-2 col-6 mx-auto">
-                                    <a class="text-black" href="./grupos_profesores_alumnos.php">
-                                        <i class='bx bx-show'></i>
-                                    </a>
-                                </button>
+                            <td class="text-center">
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                         <tr>
@@ -141,12 +135,8 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1502</td>
                             <td data-label="TIPO GRUPO">EXTRAORDINARIO</td>
                             <td data-label="SEMESTRE">5</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm d-grid gap-2 col-6 mx-auto">
-                                    <a class="text-black" href="./grupos_profesores_alumnos.php">
-                                        <i class='bx bx-show'></i>
-                                    </a>
-                                </button>
+                            <td class="text-center">
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                 </table>

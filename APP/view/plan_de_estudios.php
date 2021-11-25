@@ -72,7 +72,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Acciones">
                                 <a href="./saturacion_prof.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
@@ -87,7 +87,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Acciones">
                                 <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr class="text-center">
@@ -101,7 +101,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Acciones">
                                 <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
                             </td>
                         </tr>
                     </tbody>
@@ -143,6 +143,7 @@ include "./includes/sidebar2.php";
 
     <?php include "./modal/modal-agregar-plan-estu.php"; ?>
     <?php include "./modal/modal-edit-plan-estu.php"; ?>
+    <?php include "./modal/modal-baja_plan_e.php"; ?>
 
 </body>
 </html>

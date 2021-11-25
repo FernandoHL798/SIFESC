@@ -1,5 +1,5 @@
 <!-- Modal AGREGAR PROFESOR -->
-            <div class="modal fade" id="Asig_Modal_P" tabindex="-1" aria-labelledby="Modal_Asig_P" aria-hidden="true">
+            <div class="modal fade" id="Asig_Modal_Prof" tabindex="-1" aria-labelledby="Modal_Asig_P" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">

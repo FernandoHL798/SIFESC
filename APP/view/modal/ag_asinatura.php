@@ -1,14 +1,14 @@
 <!-- Modal AGREGAR Asignatura -->
-            <div class="modal fade" id="Asig_Modal_Asig" tabindex="-1" aria-labelledby="Modal_Asig_Asig" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="Modal_Asig_P">Agregar Asignatura</h5>
+  <div class="modal fade" id="Asig_Modal_Asig" tabindex="-1" aria-labelledby="Modal_Asig_Asig" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+               <h5 class="modal-title" id="Modal_Asig_P">Agregar Asignatura</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
+            </div>
+          <div class="modal-body">
                   <div class="mt-3 mb-2"></div>
-                  <div class="form-group" id="actual-pass-group">
+              <div class="form-group" id="actual-pass-group">
                   <div class="form-group">
                       <input type="text" placeholder="Clave:" class="form-control" style="height: 60px">
                   </div>
@@ -44,5 +44,5 @@
                 </div>
               </div>
             </div>
-          </div>
-      </div>
+  </div>
+      

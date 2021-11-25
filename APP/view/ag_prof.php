@@ -68,7 +68,7 @@ include "./includes/sidebar2.php";
                                             <td data-label="Dep">Informática</td>
                                             <td data-label="Área">2</td>
                                             <td data-label="Acciones">
-                                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Prof"><i class='bx bx-trash'></i></button> 
                                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                                             </td>
                                         </tr>
@@ -82,7 +82,7 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Dep">Redes</td>
                                                 <td data-label="Área">3</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Prof"><i class='bx bx-trash'></i></button>
                                                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                                                 </td>
                                         </tr>
@@ -96,7 +96,7 @@ include "./includes/sidebar2.php";
                                             <td data-label="Dep">Informática Programación</td>
                                             <td data-label="Área">5</td>
                                             <td data-label="Acciones">
-                                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Prof"><i class='bx bx-trash'></i></button>  
                                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                                             </td>
                                         </tr>
@@ -136,6 +136,7 @@ include "./includes/sidebar2.php";
             <script src="../service/add-profesor.js"></script>
             <?php include "./modal/modal-agregar-prof.php"; ?>
             <?php include "./modal/modal-edit-prof.php"; ?>
+            <?php include "./modal/modal-baja-prof.php"; ?>
 
 </body>
 </html>
