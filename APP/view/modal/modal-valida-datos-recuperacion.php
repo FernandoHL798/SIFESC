@@ -10,11 +10,11 @@
         <form>
           <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label font-weight-bold">Correo</label>
-            <input type="email" class="form-control" placeholder="ejemplo@correo.com" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" class="form-control" placeholder="ejemplo@correo.com" id="verifica_correo" name="verifica_correo" aria-describedby="emailHelp">
           </div>
           <div class="mb-4">
             <label for="exampleInputfnacimiento" class="form-label font-weight-bold">Fecha de nacimiento</label>
-            <input type="password" class="form-control mb-3" placeholder="ddmmaaaa" id="exampleInputfnacimiento">
+            <input type="password" class="form-control mb-3" placeholder="ddmmaaaa" id="verifica_fecha" name="verifica_fecha">
           </div>
           <div class="mb-4">
             <div class="form-floating">
@@ -28,7 +28,7 @@
             </div>
             <div class="mb-4">
               <label for="exampleInputCPostal" class="form-label font-weight-bold">Respuesta a la pregunta secreta</label>
-              <input type="email" class="form-control" placeholder="" id="exampleInputCPostal" aria-describedby="emailHelp">
+              <input type="email" class="form-control" placeholder="" id="verifica_resp" name="verifica_resp" aria-describedby="emailHelp">
             </div>
           </form>
         </div>
