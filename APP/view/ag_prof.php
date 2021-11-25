@@ -133,7 +133,7 @@ include "./includes/sidebar2.php";
                 } );  
 
             </script>
-
+            <script src="../service/add-profesor.js"></script>
             <?php include "./modal/modal-agregar-prof.php"; ?>
             <?php include "./modal/modal-edit-prof.php"; ?>
 
