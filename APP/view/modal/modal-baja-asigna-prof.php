@@ -1,4 +1,5 @@
-<!-- MODAL DE BAJA DE ASIGNATURA -->
+<!-- MODAL DE BAJA DE profesor -->
+  <form id="frm_baja_profesor" name="frm_baja_profesor">
 	 <div class="modal fade" id="Modal_baja_asig_prof" tabindex="-1" aria-labelledby="Modal_baja_a_p" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -19,3 +20,4 @@
         </div>
       </div>
     </div>
+  </form>

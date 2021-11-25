@@ -1,4 +1,7 @@
-<!-- MODAL DE BAJA DE ASIGNATURA -->
+<!-- MODAL DE BAJA DE PLAN DE ESTUDIOS
+    RELACIONADA CON EL BOTON DE ELIMINAR DE LA PAGINA plan_de_estudios.php
+ -->
+ <form id="frm_baja_plan_estudios" name="frm_baja_plan_estudios">
 	 <div class="modal fade" id="Modal_baja_Plan" tabindex="-1" aria-labelledby="Modal_baja_pl" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -19,3 +22,4 @@
         </div>
       </div>
     </div>
+  </form>

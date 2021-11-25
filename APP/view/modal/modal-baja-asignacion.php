@@ -1,4 +1,6 @@
-<!-- MODAL DE BAJA DE ASIGNATURA -->
+<!-- MODAL DE BAJA DE ASIGNATURA RELACIONADA CON EL BOTON ELIMINAR DE LA PANTALLA DE inscripcion.php
+-->
+  <form id="frm_baja_asignatura_inscrip" name="frm_baja_asignatura_inscrip">
 	 <div class="modal fade" id="Modal_baja" tabindex="-1" aria-labelledby="Modal_baja" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -19,3 +21,4 @@
         </div>
       </div>
     </div>
+  </form>

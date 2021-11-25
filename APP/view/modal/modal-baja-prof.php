@@ -1,4 +1,8 @@
-<!-- MODAL DE BAJA DE ASIGNATURA -->
+<!-- MODAL DE BAJA DE PROFESOR
+ACTUALMENTE CON PROBLEMAS || NO AGREGARE <FORM> HASTA CORREGIR
+ -->
+
+
 	 <div class="modal fade" id="Modal_baja_Prof" tabindex="-1" aria-labelledby="Modal_baja_P" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">

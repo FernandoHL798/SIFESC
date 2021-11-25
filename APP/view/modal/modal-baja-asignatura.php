@@ -1,5 +1,10 @@
-<!-- MODAL DE BAJA DE ASIGNATURA -->
-	 <div class="modal fade" id="Modal_baja_Asig" tabindex="-1" aria-labelledby="Modal_baja_Asignatura" aria-hidden="true">
+<!-- MODAL DE BAJA DE ASIGNATURA 
+    RELACIONADA CON LA BAJA DE ASIGNATURAS CORRESPONDIENTE A UN PLAN DE ESTUDIOS, PANTALLA ag_asig.php
+-->
+	 
+
+  <form id="frm_baja_asignatura_plan_e" name="frm_baja_asignatura_plan_e">
+   <div class="modal fade" id="Modal_baja_Asig" tabindex="-1" aria-labelledby="Modal_baja_Asignatura" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -19,3 +24,4 @@
         </div>
       </div>
     </div>
+  </form>

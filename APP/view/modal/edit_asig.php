@@ -1,4 +1,6 @@
 <!-- Modal Editar Asignatura-->
+
+          <form id="frm_m_edit_asignatura" name="frm_m_edit_asignatura">
               <div class="modal fade" id="Edit_Modal_P" tabindex="-1" aria-labelledby="Modal_Edit_P" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -10,17 +12,17 @@
                   <div class="mt-3 mb-2"></div>
                   <div class="form-group" id="actual-pass-group">
                   <div class="form-group">
-                      <input type="text" placeholder="Clave:" class="form-control" style="height: 60px">
+                      <input type="text" placeholder="Clave:" class="form-control" style="height: 60px" id="clave_asignatura" name="clave_asignatura">
                   </div>
                   </div>
                     
                     <div class="mt-3 mb-2"></div>
                     <div class="form-group" id="">
-                      <input type="text" placeholder="Nombre de la asignatura:" class="form-control" style="height: 60px">
+                      <input type="text" placeholder="Nombre de la asignatura:" class="form-control" style="height: 60px" id="nom_asignatura" name="nom_asignatura">
                     </div>
                     <div class="mt-3 mb-2"></div>
                       <div class="form-floating">
-                        <select class="form-select" id="floatingSelect">
+                        <select class="form-select" id="floatingSelect" id="semestre" name="semestre">
                             <option hidden=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -36,7 +38,7 @@
                       </div>
                     <div class="mt-3 mb-2"></div>
                     <div class="form-group" id="">
-                      <input type="text" placeholder="Creditos:" class="form-control" style="height: 60px">
+                      <input type="text" placeholder="Creditos:" class="form-control" style="height: 60px" id="creditos" name="creditos">
                     </div>
           </div>   
                 <div class="modal-footer">
@@ -47,3 +49,4 @@
             </div>
           </div>
       </div>
+    </form>

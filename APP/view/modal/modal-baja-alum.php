@@ -1,4 +1,5 @@
 <!-- MODAL DE BAJA DE ASIGNATURA -->
+  <form id="frm_baja_alumno" name="frm_baja_alumno">
 	 <div class="modal fade" id="Modal_baja_Alum" tabindex="-1" aria-labelledby="Modal_baja_Al" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -19,3 +20,4 @@
         </div>
       </div>
     </div>
+  </form>
