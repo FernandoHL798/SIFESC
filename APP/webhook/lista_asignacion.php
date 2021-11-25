@@ -1,4 +1,4 @@
 <?php
-include_once"../control/controlAsignacion.php";
-$id_plan="2";
-var_dump(consultaAsignacion($id_plan));
+include_once "../control/controlAsignacion.php";
+$id_plan = $_POST['idPlan'];
+echo consultaAsignacion($id_plan);
