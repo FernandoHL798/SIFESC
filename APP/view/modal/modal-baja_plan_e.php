@@ -1,7 +1,8 @@
-<!-- MODAL DE BAJA DE ASIGNATURA RELACIONADA CON EL BOTON ELIMINAR DE LA PANTALLA DE inscripcion.php
--->
-  <form id="frm_baja_asignatura_inscrip" name="frm_baja_asignatura_inscrip">
-	 <div class="modal fade" id="Modal_baja" tabindex="-1" aria-labelledby="Modal_baja" aria-hidden="true">
+<!-- MODAL DE BAJA DE PLAN DE ESTUDIOS
+    RELACIONADA CON EL BOTON DE ELIMINAR DE LA PAGINA plan_de_estudios.php
+ -->
+ <form id="frm_baja_plan_estudios" name="frm_baja_plan_estudios">
+	 <div class="modal fade" id="Modal_baja_Plan" tabindex="-1" aria-labelledby="Modal_baja_pl" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -11,7 +12,7 @@
             <div class="modal-body">
             <div class="mt-3 mb-2"></div>
             <div class="form-group" id="Edit_plan_grup">
-            		<H5>¿Esta seguro que desea dar de baja la materia?</H5>
+            		<H5>¿Esta seguro que desea dar de baja este plan de estudios?</H5>
             </div>
           </div>
           <div class="modal-footer">

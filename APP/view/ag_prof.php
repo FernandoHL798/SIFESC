@@ -81,7 +81,7 @@ include "./includes/sidebar2.php";
                                             <td data-label="Dep">Redes</td>
                                             <td data-label="Área">3</td>
                                             <td data-label="Acciones">
-                                                <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Prof"><i class='bx bx-trash'></i></button>  
                                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                                             </td>
                                     </tr>
@@ -110,7 +110,7 @@ include "./includes/sidebar2.php";
             </div>    
             <?php include "./modal/modal-agregar-prof.php"; ?>
             <?php include "./modal/modal-edit-prof.php"; ?>
-             
+            <?php include "./modal/modal-baja-prof.php"; ?> 
             <script src="../tools/sidebar.js"></script>
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

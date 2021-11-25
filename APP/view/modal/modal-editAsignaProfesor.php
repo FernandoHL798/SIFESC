@@ -1,9 +1,9 @@
 <!-- Modal AGREGAR PROFESOR -->
-            <div class="modal fade" id="Asig_Modal_P" tabindex="-1" aria-labelledby="Modal_Asig_P" aria-hidden="true">
+            <div class="modal fade" id="Edit_Modal_P" tabindex="-1" aria-labelledby="Modal_Asig_edit_Prof" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="Modal_Asig_P">Asigna Grupo a Profesor</h5>
+                    <h5 class="modal-title" id="Modal_Asig_P">Edita Grupo a Profesor</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
