@@ -21,7 +21,7 @@
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">
                         <div class="form-floating">
-                                <select class="form-select" id="floatingSelect">
+                                <select class="form-select" id="floatingSelect" id="edit-saturacion" name="edit-saturacion">
                                     <option hidden=""></option>
                                     <option value="1">1102</option>
                                     <option value="2">2102</option>
@@ -32,7 +32,7 @@
                         <div class="mt-3 mb-2"></div>
                               
                         <div class="form-floating">
-                                <select class="form-select" id="floatingSelect">
+                                <select class="form-select" id="floatingSelect" id="edit-saturacion2" name="edit-saturacion2">
                                     <option hidden=""></option>
                                     <option value="1">3</option>
                                     <option value="2">5</option>
@@ -42,11 +42,11 @@
                         </div>
                         <div class="mt-3 mb-2"></div>
                               <div class="form-group">
-                                <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 60px">
+                                <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 60px" id="edit-saturacion3" name="edit-saturacion3">
                               </div>
                               <div class="mt-3 mb-2"></div>
                               <div class="form-group">
-                                <input type="text" placeholder="Cupo:" class="form-control" style="height: 60px">
+                                <input type="text" placeholder="Cupo:" class="form-control" style="height: 60px" id="edit-saturacion4" name="edit-saturacion4">
                               </div>
                         </div>
                     

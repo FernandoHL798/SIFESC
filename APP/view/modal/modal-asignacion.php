@@ -13,7 +13,7 @@
 								<form>
 								  <div class="pruebass">
 								    <label for="exampleInputEmail1" class="form-label">Nombre de materia</label>
-								    <select class="form-select" aria-label="Default select example">
+								    <select class="form-select" aria-label="Default select example" id="asig_materia" name="asig_materia">
 										  <option selected>Selecciona la materia</option>
 										  <option value="1">Matemáticas I</option>
 										  <option value="2">Programación I</option>
