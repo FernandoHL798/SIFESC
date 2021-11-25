@@ -31,6 +31,15 @@
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
+                        <label class="form-control"> Fecha Nacimiento
+                        <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaNacimiento" name="fechaNacimiento"max="2004-10-08"> 
+                      </div>
+                      <div class="mt-3 mb-2"></div>
+                      <div class="form-group">
+                        <input type="text" placeholder="RFC:" class="form-control" style="height: 60px" id="RFC" name="RFC">
+                      </div>
+                      <div class="mt-3 mb-2"></div>
+                      <div class="form-group">
                         <input type="text" placeholder="Correo:" class="form-control" style="height: 60px" id="correo" name="correo">
                       </div>
                       <div class="mt-3 mb-2"></div>
@@ -67,7 +76,7 @@
                     <button type="submit" class="btn btn-primary">Agregar</button>
                   </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
       </div>

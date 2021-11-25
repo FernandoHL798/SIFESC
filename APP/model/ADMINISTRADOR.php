@@ -1,6 +1,6 @@
 <?php
-include_once "CONEXION.php";
-class ADMINISTRADOR extends CONEXION{
+include_once "USUARIO.php";
+class ADMINISTRADOR extends USUARIO{
 
     public function queryconsultaAdministrador(){
         $query="SELECT `usuario_id_fk` FROM `administrador`";

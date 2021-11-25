@@ -1,6 +1,6 @@
 <?php
-include_once "CONEXION.php";
-class ALUMNO extends CONEXION{
+include_once "USUARIO.php";
+class ALUMNO extends USUARIO{
     private $usuario_id_fk;
     private $id_generacion_fk;
     private $pregunta_secreta;

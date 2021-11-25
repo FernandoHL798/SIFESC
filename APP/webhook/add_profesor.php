@@ -4,5 +4,5 @@ $params=[
 	"id_usuarioprofesor_fk"=>"1",
 	"id_departamento_fk"=>"1"
 ];
-echo "Todo correcto";
+echo "1";
 //var_dump(insertProfesor($params));

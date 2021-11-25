@@ -1,10 +1,9 @@
 <?php
-include_once "CONEXION.php";
-class PROFESOR extends CONEXION{
+include_once "USUARIO.php";
+class PROFESOR extends USUARIO{
     private $id_usuario_fk;
     private $id_departamento_fk;
-    private $estatus;
-  
+    private $estatus;  
     /**
      * @return mixed
      */
