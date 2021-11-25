@@ -1,15 +1,8 @@
 <!-- Modal AGREGAR PROFESOR -->
-<<<<<<< Updated upstream
             <div class="modal fade" id="Asig_Modal_P" tabindex="-1" aria-labelledby="Modal_Asig_P" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <form id="frm-add-profesor">
-=======
-  <div class="modal fade" id="Asig_Modal_P" tabindex="-1" aria-labelledby="Modal_Asig_P" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-            <form>
->>>>>>> Stashed changes
                     <div class="modal-header">
                       <h5 class="modal-title" id="Modal_Asig_P">Agregar Profesor</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -66,9 +59,7 @@
                         </select>
                         <label for="floatingSelect"><font SIZE=3>Área:</font></label>
                       </div>
-                
-            </div>
-                    
+                    </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Agregar</button>
