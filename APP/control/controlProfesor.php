@@ -16,19 +16,17 @@ function updateEstatusProfesor($params){
 
 function insertProfesor($params){
     include_once "../model/PROFESOR.php";
+    include "tools/tools_id_generates.php";
     $PROFESOR = new PROFESOR();
 //GENERAMOS AL USUARIO
+    $PROFESOR->setIdUsuario(genIdUsuario(10));
 //Codigo de generar IDs
-    $busqueda=$params['idUsuario'] ?
-    $PROFESOR->setIdUsuario();
-    $PROFESOR->setCuentaAdministrador($params['cuentaAdministrador']);
-    $PROFESOR->setCuentaAlumno($params['cuentaAlumno']);
-    $PROFESOR->setCuentaProfesor($params['cuentaProf']);
+    $PROFESOR->setCuentaProfesor($params['rfc']);
     $PROFESOR->setNombre($params['nombre']);
-    $PROFESOR->setPrimerApellido($params['primer_apellido']);
-    $PROFESOR->setSegundoApellido($params['segundo_apellido']);
+    $PROFESOR->setPrimerApellido($params['app']);
+    $PROFESOR->setSegundoApellido($params['apm']);
     $PROFESOR->setCorreo($params['correo']);
-    $PROFESOR->setContrasenia(md5($params['pwd']));
+    $PROFESOR->setContrasenia(md5($params['fecha_nacimiento']));
     $PROFESOR->setTelefono($params['telefono']);
     $PROFESOR->setFechaNacimiento($params['fecha_nacimiento']);
 //Si el USUARIO se crea correctamente, generamos al profesor

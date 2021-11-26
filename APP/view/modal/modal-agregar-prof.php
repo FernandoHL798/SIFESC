@@ -36,7 +36,7 @@
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="RFC:" class="form-control" style="height: 60px" id="RFC" name="RFC">
+                        <input type="text" placeholder="RFC:" class="form-control" style="height: 60px" id="rfc" name="rfc">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
@@ -51,9 +51,9 @@
                         <div class="form-floating">
                           <select class="form-select" id="departamento" name="departamento">
                               <option hidden=""></option>
-                              <option value="1">Informática</option>
-                              <option value="2">Redes</option>
-                              <option value="3">Informática Programación</option>
+                              <option value="101ma">Informática</option>
+                              <option value="102ad">Redes</option>
+                              <option value="103co">Informática Programación</option>
                           </select>
                             <label for="floatingSelect"><font SIZE=3>Departamento:</font></label>
                         </div>

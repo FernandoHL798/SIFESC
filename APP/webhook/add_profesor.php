@@ -1,8 +1,13 @@
 <?php 
 include_once "../control/controlProfesor.php";
 $params=[
-	"id_usuarioprofesor_fk"=>"1",
-	"id_departamento_fk"=>"1"
+	"nombre"=> $_POST['nombre_profesor'],
+	"app"=> $_POST['app'],
+	"apm"=> $_POST['apm'],
+	"fecha_nacimiento"=> $_POST['fechaNacimiento'],
+	"rfc"=> $_POST['rfc'],
+	"correo"=> $_POST['correo'],
+	"telefono"=> $_POST['telefono'],
+	"id_departamento_fk"=>$_POST['departamento']
 ];
-echo "1";
-//var_dump(insertProfesor($params));
+echo insertProfesor($params);
