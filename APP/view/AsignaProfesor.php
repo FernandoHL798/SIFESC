@@ -50,7 +50,7 @@ include "./includes/sidebar2.php";
                             <div class="modal-content mb-4">
                             <!-- Button trigger modal -->
 
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_Prof">
                                       Asigna Profesor
                                 </button>
                             </div>
@@ -71,11 +71,11 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <th style="width: 70px;">RFC</th>
                             <th style="width: 100px;">Nombre</th>
-                            <th style="width: 100px;">Apellido Paterno</th>
-                            <th style="width: 100px;">Apellido Materno</th>
+                            <th style="width: 100px;">Primer Apellido</th>
+                            <th style="width: 100px;">Segundo Apellido</th>
                             <th style="width: 100px;">correo</th>
                             <th style="width: 120px;">Dep</th>
-                            <th style="width: 50px;">Área</th>
+                            
                             <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
@@ -87,7 +87,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Apellido M">Martinez</td>
                             <td data-label="Id_asignacion">@@@@@@@</td>
                             <td data-label="Dep">Informática</td>
-                            <td data-label="Área">2</td>
+                            
                             <td data-label="Acciones">
                                 <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
@@ -99,7 +99,7 @@ include "./includes/sidebar2.php";
                           <td data-label="Apellido M">Gonzales</td>
                           <td data-label="Id_asignacion">@@@@@@@</td>
                           <td data-label="Dep">Informática</td>
-                          <td data-label="Área">2</td>
+                          
                             <td data-label="Acciones">
                                 <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
@@ -112,7 +112,7 @@ include "./includes/sidebar2.php";
                           <td data-label="Apellido M">Soto</td>
                           <td data-label="Id_asignacion">@@@@@@@</td>
                           <td data-label="Dep">Informática</td>
-                          <td data-label="Área">2</td>
+                          
                             <td data-label="Acciones">
                                 <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>

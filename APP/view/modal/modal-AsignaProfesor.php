@@ -15,15 +15,7 @@ TENGO DUDAS CON ESTE MODAL NO AGREGAR NADA POR EL MOMENTO - EMMANUEL
                     <div class="modal-body">
                     <div class="mt-3 mb-2"></div>
                     <div class="form-group" id="actual-pass-group">
-                      <div class="form-floating">
-                              <select class="form-select" id="floatingSelect">
-                                  <option hidden=""></option>
-                                  <option value="1">3</option>
-                                  <option value="2">5</option>
-                                  <option value="3">7</option>
-                              </select>
-                                  <label for="floatingSelect"><font SIZE=3>Área:</font></label>
-                      </div>
+                      
                         <div class="mt-3 mb-2"></div>
                       <div class="form-floating">
                               <select class="form-select" id="floatingSelect">
@@ -49,11 +41,11 @@ TENGO DUDAS CON ESTE MODAL NO AGREGAR NADA POR EL MOMENTO - EMMANUEL
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Apellido Paterno:" class="form-control" style="height: 60px">
+                        <input type="text" placeholder="Primer Apellido:" class="form-control" style="height: 60px">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Apellido Materno:" class="form-control" style="height: 60px">
+                        <input type="text" placeholder="Segundo Apellido:" class="form-control" style="height: 60px">
                       </div>
                         <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">

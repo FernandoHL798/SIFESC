@@ -47,12 +47,12 @@ include "./includes/sidebar2.php";
                                 <tr class="text-center">
                                     <th style="width: 70px;">Clave</th>
                                     <th style="width: 90px;">Nombre</th>
-                                    <th style="width: 90px;">Apellido M</th>
-                                    <th style="width: 90px;">Apellido P</th>
+                                    <th style="width: 90px;">Primer Apellido</th>
+                                    <th style="width: 90px;">Segundo Apellido</th>
                                     <th style="width: 270px;">Correo</th>
                                     <th style="width: 120px;">Telefono</th>
                                     <th style="width: 120px;">Dep</th>
-                                    <th style="width: 50px;">Área</th>
+                                    
                                     <th style="width: 140px;">Acciones</th>
                                 </tr>
                             </thead>

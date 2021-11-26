@@ -9,17 +9,18 @@
                     </div>
                     <div class="modal-body">
                     <div class="mt-3 mb-2"></div>
+                      
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" >
                         <input type="text" placeholder="Nombre:" class="form-control" style="height: 60px" id="nombre_profesor" name="nombre_profesor">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="Apellido Paterno:" class="form-control" style="height: 60px" id="app" name="app">
+                        <input type="text" placeholder="Primer Apellido:" class="form-control" style="height: 60px" id="app" name="app">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="Apellido Materno:" class="form-control" style="height: 60px" id="apm" name="apm">
+                        <input type="text" placeholder="Segundo Apellido:" class="form-control" style="height: 60px" id="apm" name="apm">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
@@ -51,15 +52,7 @@
                         </div>
                       <div class="mt-3 mb-2"></div>
                       
-                      <div class="form-floating">
-                        <select class="form-select" id="area" name="area">
-                            <option hidden=""></option>
-                            <option value="1">3</option>
-                            <option value="2">5</option>
-                            <option value="3">7</option>
-                        </select>
-                        <label for="area"><font SIZE=3>Área:</font></label>
-                      </div>
+                      
                     </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
