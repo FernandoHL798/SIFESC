@@ -46,12 +46,12 @@
 			</li>
 
 			<li>
-				<a href="">
+				<a href="./Dosificacion.php">
 					<i class='bx bx-calendar'></i>
 					<span class="link_name">Dosificación</span>
 				</a>
 				<ul class="sub-menu blank">
-					<li><a class="link_name" href="#">Dosificación</a></li>
+					<li><a class="link_name" href="./Dosificacion.php">Dosificación</a></li>
 				</ul>
 			</li>
 

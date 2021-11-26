@@ -74,6 +74,52 @@ body{
 	color: white;
 }
 
+--Tabla Dosificacion --
+
+.tabled{
+	width: 100%;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+
+.tabled caption{
+	font-size: 28px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 8px;
+	color: black;
+}
+
+.tabled tr th{
+	background-color: #000066;
+	border: 1px solid #ccc;
+	font-size: 17px;
+	color: white;
+	text-align: center;
+
+}
+
+
+.tabled tr td{
+	font-size: 17px;
+}
+
+.tabled thead{
+	text-transform: uppercase;
+}
+
+.tabled tbody tr:hover{
+	background-color: rgba(195, 163, 16, 1);
+	color: white;
+}
+
+.tabled tbody td:hover{
+	background-color: rgba(195, 163, 16, 1);
+	color: white;
+}
+
 .sidebar{
 	position: fixed;
 	top: 0;
@@ -469,6 +515,44 @@ body{
 	}
 
 	.table td::before{
+		content: attr(data-label);
+		font-weight: bold;
+		text-transform: uppercase;
+		float: left;
+	}
+
+	-- Tabla Dosificacion --
+
+	@media screen and (max-width: 800px){
+	.tabled{
+		border: 0px;
+	}
+
+	.tabled thead{
+		display: none;
+	}
+
+	.tabled tr {
+		margin-bottom: 8px;
+		border-bottom: 4px solid #ddd;
+		display: block;
+	}
+
+	.tabled th, .table td{
+		font-size: 8px;
+	}
+
+	.tabled td{
+		display: block;
+		border-bottom: 1px solid #ddd;
+		text-align: right;
+	}
+
+	.tabled td:last-child{
+		border-bottom: 0px;
+	}
+
+	.tabled td::before{
 		content: attr(data-label);
 		font-weight: bold;
 		text-transform: uppercase;
