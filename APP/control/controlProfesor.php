@@ -17,11 +17,10 @@ function updateEstatusProfesor($params){
 function insertProfesor($params){
     include_once "../model/PROFESOR.php";
     include "tools/tools_id_generates.php";
+    $claveUsuario = genIdUsuario();
     $PROFESOR = new PROFESOR();
 //GENERAMOS AL USUARIO
-$mes=date_format("m"); $dia=date_format("d"); $hora= date_format("H");$min= date_format("i"); $sec=date_format("s");
-$idUsuario= $mes+ $dia + $hora + $min +$sec;
-    $PROFESOR->setIdUsuario($idUsuario);
+    $PROFESOR->setIdUsuario($claveUsuario);
 //Codigo de generar IDs
     $PROFESOR->setCuentaProfesor($params['rfc']);
     $PROFESOR->setNombre($params['nombre']);
