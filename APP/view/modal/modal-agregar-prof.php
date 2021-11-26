@@ -25,7 +25,7 @@
                       <div class="form-group">
                         <label class="form-control"> Fecha Nacimiento
                         <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaNacimiento" name="fechaNacimiento"max="2004-10-08"> 
-                      </div>
+                      
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
                         <input type="text" placeholder="RFC:" class="form-control" style="height: 60px" id="rfc" name="rfc">
@@ -47,7 +47,7 @@
                               <option value="102ad">Redes</option>
                               <option value="103co">Informática Programación</option>
                           </select>
-                            <label for="floatingSelect"><font SIZE=3>Departamento:</font></label>
+                            <label for="departamento"><font SIZE=3>Departamento:</font></label>
                         </div>
                       <div class="mt-3 mb-2"></div>
                       
@@ -58,14 +58,14 @@
                             <option value="2">5</option>
                             <option value="3">7</option>
                         </select>
-                        <label for="floatingSelect"><font SIZE=3>Área:</font></label>
+                        <label for="area"><font SIZE=3>Área:</font></label>
                       </div>
                     </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Agregar</button>
                   </div>
-                </div>
+                
               </form>
             </div>
           </div>

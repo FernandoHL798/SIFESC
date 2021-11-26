@@ -18,9 +18,8 @@ include "./includes/sidebar2.php";
     
     <!--              AQUI VA EL CONTENIDO                -->
     <div class="home_content2">
-        <div class="texthome">
- <form class="mb-4">              
-            <div class="mb-4">
+        <div class="texthome">            
+
                 <div class="row">
                     <div class="">
                         <a href="http://localhost/SIFESC/APP/view/index.php"> 
@@ -30,20 +29,15 @@ include "./includes/sidebar2.php";
                         </a>
                     </div>        
                 </div> 
-                        <h3 class="text-center mb-3">Planes de estudio</h3>
-                        <p class="text-center mb-5">Agrega los planes de estudio existentes</p>
-                <div class="d-grid gap-2 col-3 mx-auto">
-                    <div class="modal-content">
-                    <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">
-                              Agregar Plan de Estudios
-                        </button>
-                          </div>
-
-                    </div>
+                <div class="row">
+                    <p class="mb-2"></p>
+                    
                 </div>
-
-                    <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                
+                    <h4 class="text-center mb-5">Agregar asignaturas</h4>
+                    <p class="text-center mb-1">Selecciona el boton de vista para empezar a agregar asignaturas<br>
+                    correspondientes al plan de estudios que elijas</p>
+                    <table class="table table-bordered display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 50px;">Clave</th>
@@ -67,8 +61,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Creditos Opt.">72</td>
                             <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
+                                <a href="./ag_asig.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></
                             </td>
                         </tr>
                         <tr class="text-center">
@@ -81,8 +74,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Creditos Tot.">431</td>
                             
                             <td data-label="Acciones">
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button>
+                                <a href="./ag_asig.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></
                             </td>
                         </tr>
                         <tr class="text-center">
@@ -94,8 +86,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Creditos Opt.">72</td>
                             <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
+                                <a href="./ag_asig.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                             </td>
                         </tr>
                     </tbody>
@@ -110,7 +101,7 @@ include "./includes/sidebar2.php";
                 <p class="mt-3 mb-2"></p>
                 </div>
             </div>
-        </form>   
+ 
         </div>
     </div>
 </div>

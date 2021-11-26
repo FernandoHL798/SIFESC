@@ -1,5 +1,5 @@
 <!-- Modal AGREGAR Plan de esutios  -->
-        <form id="frm_m_a_plan_estudios" name="frm_m_a_plan_estudios">
+        <form id="frm_m_a_plan_estudios">
             <div class="modal fade" id="Asig_Modal" tabindex="-1" aria-labelledby="Modal_Asig" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">

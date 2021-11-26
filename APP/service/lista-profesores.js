@@ -12,7 +12,7 @@ function listaProfesores(){
             PROFESORES.forEach(profesor=> {
 
                 template += `<tr class="text-center" idProfesor="${profesor.usuario_id_fk}">
-                                <td data-label="Clave">${profesor.usuario_id_fk}</td>
+                                <td data-label="Clave">${profesor.cuenta_profesor}</td>
                                 <td data-label="Nombre">${profesor.nombre}</td>
                                 <td data-label="Apellido P">${profesor.primer_apellido}</td>
                                 <td data-label="Apellido M">${profesor.segundo_apellido}</td>

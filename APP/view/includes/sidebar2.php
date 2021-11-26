@@ -17,7 +17,7 @@
 
 			<li>
 				<div class="icon-link">
-					<a href="">
+					<a>
 						<i class='bx bx-shield-quarter' ></i>
 						<span class="link_name">Seguridad</span>
 					</a>
@@ -32,7 +32,7 @@
 
 			<li>
 				<div class="icon-link">
-					<a href="">
+					<a>
 						<i class='bx bx-pencil'></i>
 						<span class="link_name">Inscripción</span>
 					</a>
@@ -67,7 +67,7 @@
 
 			<li>
 				<div class="icon-link">
-					<a href="">
+					<a>
 						<i class='bx bxs-briefcase'></i>
 						<span class="link_name">Profesor</span>
 					</a>
@@ -80,7 +80,7 @@
 			</li>
 			<li>
 				<div class="icon-link">
-					<a href="">
+					<a>
 						<i class='bx bx-archive'></i>
 						<span class="link_name">Admin</span>
 					</a>
@@ -88,22 +88,22 @@
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Administrador</a></li>
-					<li><a href="./ag_prof.php">Agrega profesor</a></li>
-					<li><a href="./ag_alumno.php">Agrega alumnos</a></li>
-					<li><a href="./ag_asig.php">Agrega asignaturas</a></li>
-					<li><a href="./AsignaProfesor.php">Asigna profesor</a></li>
-					<li><a href="./plan_de_estudios.php">Crea plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
-					<li><a href="./saturacion_prof.php">Edita saturación</a></li>
+					<li><a href="./ag_prof.php">Profesor</a></li>
+					<li><a href="./ag_alumno.php">Alumnos</a></li>
+					<li><a href="./AsignaProfesor.php">Asignar materia a profesor</a></li>
+					<li><a href="./plan_de_estudios.php">Plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
+					<li><a href="./plan_de_estudios_saturacion.php">Saturación</a></li>
+					<li><a href="./plan_de_estudios_asignatura.php">Asignaturas</a></li>
 				</ul>
 			</li>
 
 			<li>
-				<a href="">
+				<a href="../../index.php">
 					<i class='bx bxs-log-out' ></i>
 					<span class="link_name">Cerrar sesión</span>
 				</a>
 				<ul class="sub-menu blank">
-					<li><a class="link_name" href="#">Cerrar sesión</a></li>
+					<li><a class="link_name" href="">Cerrar sesión</a></li>
 				</ul>
 			</li>
 
@@ -141,3 +141,4 @@
 			<span class="titulounam"></span>
 		</div>
 	</section>
+

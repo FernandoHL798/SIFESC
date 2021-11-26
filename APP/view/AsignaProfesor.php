@@ -14,19 +14,7 @@
     <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-    <script type="text/javascript">
-    $(document).ready(function () {
-       (function($) {
-           $('#FiltrarContenido').keyup(function () {
-                var ValorBusqueda = new RegExp($(this).val(), 'i');
-                $('.BusquedaRapida tr').hide();
-                 $('.BusquedaRapida tr').filter(function () {
-                    return ValorBusqueda.test($(this).text());
-                  }).show();
-                    })
-          }(jQuery));
-    });
-    </script>
+
     <!--para barra de busqueda -->
 
     <title>Saturacion_Prof</title>
@@ -54,19 +42,12 @@ include "./includes/sidebar2.php";
                     <p class="mb-2"></p>
 
                 </div>
-                <div class="mt-3 mb-2"></div>
-                <div class="d-grid gap-2 col-3 mx-auto"></div>
-                <!-- Barra de busqueda -->
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Buscar</span>
-                  </div>
-                  <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese datos de busqueda" aria-label="Alumno" aria-describedby="basic-addon1">
-                </div>
-                <!-- Barra de busqueda -->
-                     <div class="mt-3 mb-2"></div>
+            
+            
+                     
+                     <h3 class="text-center mb-3">Asigna materias a los profesores</h3>
                         <div class="d-grid gap-2 col-3 mx-auto">
-                            <div class="modal-content">
+                            <div class="modal-content mb-4">
                             <!-- Button trigger modal -->
 
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">
@@ -74,18 +55,25 @@ include "./includes/sidebar2.php";
                                 </button>
                             </div>
                         </div>
-            </div>
+
+                         <!-- Barra de busqueda -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Buscar</span>
+                  </div>
+                  <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese datos de busqueda" aria-label="Alumno" aria-describedby="basic-addon1">
+                </div>
+                <!-- Barra de busqueda -->
+                </div>
 
                     <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
-                            <th style="width: 70px;">Clave de Profesor</th>
+                            <th style="width: 70px;">RFC</th>
                             <th style="width: 100px;">Nombre</th>
                             <th style="width: 100px;">Apellido Paterno</th>
                             <th style="width: 100px;">Apellido Materno</th>
-                            <th style="width: 100px;">Clave de Asignación</th>
-                            <th style="width: 120px;">Grupo</th>
-                            <th style="width: 50px;">Cupo</th>
+                            <th style="width: 100px;">correo</th>
                             <th style="width: 120px;">Dep</th>
                             <th style="width: 50px;">Área</th>
                             <th style="width: 140px;">Acciones</th>
@@ -93,49 +81,40 @@ include "./includes/sidebar2.php";
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td data-label="Id_usuarioprofesor">0017</td>
+                            <td data-label="Id_usuarioprofesor">RFC</td>
                             <td data-label="Nombre">Maricela</td>
                             <td data-label="Apellido P">Lara</td>
                             <td data-label="Apellido M">Martinez</td>
-                            <td data-label="Id_asignacion">12345</td>
-                            <td data-label="id_grupo_fk">1003</td>
-                            <td data-label="cupo">28</td>
+                            <td data-label="Id_asignacion">@@@@@@@</td>
                             <td data-label="Dep">Informática</td>
                             <td data-label="Área">2</td>
                             <td data-label="Acciones">
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_prof"><i class='bx bx-trash'></i></button>
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
                         </tr>
                         <tr class="text-center">
-                          <td data-label="Id_usuarioprofesor">0017</td>
+                          <td data-label="Id_usuarioprofesor">RFC</td>
                           <td data-label="Nombre">Leonel Gilberto</td>
                           <td data-label="Apellido P">Zalazar</td>
                           <td data-label="Apellido M">Gonzales</td>
-                          <td data-label="Id_asignacion">12346</td>
-                          <td data-label="id_grupo_fk">1004</td>
-                          <td data-label="cupo">23</td>
+                          <td data-label="Id_asignacion">@@@@@@@</td>
                           <td data-label="Dep">Informática</td>
                           <td data-label="Área">2</td>
                             <td data-label="Acciones">
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_prof"><i class='bx bx-trash'></i></button>
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
 
                         </tr>
                         <tr class="text-center">
-                          <td data-label="Id_usuarioprofesor">0017</td>
+                          <td data-label="Id_usuarioprofesor">RFC</td>
                           <td data-label="Nombre">Mauricio</td>
                           <td data-label="Apellido P">Jaques</td>
                           <td data-label="Apellido M">Soto</td>
-                          <td data-label="Id_asignacion">12347</td>
-                          <td data-label="id_grupo_fk">1001</td>
-                          <td data-label="cupo">20</td>
+                          <td data-label="Id_asignacion">@@@@@@@</td>
                           <td data-label="Dep">Informática</td>
                           <td data-label="Área">2</td>
                             <td data-label="Acciones">
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_prof"><i class='bx bx-trash'></i></button>
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -180,6 +159,19 @@ include "./includes/sidebar2.php";
     <script>window.jQuery || document.write('<script src="SIFESC/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="/js/vendor/popper.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+       (function($) {
+           $('#FiltrarContenido').keyup(function () {
+                var ValorBusqueda = new RegExp($(this).val(), 'i');
+                $('.BusquedaRapida tr').hide();
+                 $('.BusquedaRapida tr').filter(function () {
+                    return ValorBusqueda.test($(this).text());
+                  }).show();
+                    })
+          }(jQuery));
+    });
+    </script>
 
     <!-- script para busqueda -->
 

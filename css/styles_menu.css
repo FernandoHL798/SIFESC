@@ -178,7 +178,8 @@ body{
 }
 
 .sidebar.close .nav-links{
-	overflow: visible;
+	/* SI SE PONE EL OVERFLOW:  SCROLL, EL SIDEBAR DE 78PX TIENE SCROLL PERO NO FUNCIONAN LOS SUBMENUS EN 78PX*/
+	overflow: visible;	
 }
 
 .sidebar .nav-links::-webkit-scrollbar{
