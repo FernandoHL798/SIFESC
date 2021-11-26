@@ -5,4 +5,5 @@ $params=[
 	"id_asignatura_fk"=>"1",
 	"nombre"=>"grupo1"
 ];
-var_dump(insertGrupos($params));
+$result=insertGrupos($params);
+echo $result;

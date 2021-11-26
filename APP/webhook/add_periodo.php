@@ -7,4 +7,5 @@ $params=[
 	"fecha_inscripcion"=>"2021-10-15",
 	"fecha_altabaja"=>"2021-10-20"
 ];
-var_dump(insertPeriodo($params));
+$result=insertPeriodo($params);
+echo $result;

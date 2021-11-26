@@ -6,4 +6,5 @@ $params=[
 	"pregunta_secreta"=>"2",
 	"respuesta_secreta"=>"manchas"
 ];
-var_dump(insertAlumno($params));
+$result=insertAlumno($params);
+echo $result;
