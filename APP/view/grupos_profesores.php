@@ -143,6 +143,11 @@ include "./includes/sidebar2.php";
             </div>
         </div>
     </div>
+    <!-- Se utiliza para darle espacio al final de la tabla -->
+                                <div class="mt-3 mb-2"></div>
+                                <div class="d-grid gap-2 col-3 mx-auto">
+                                    <p class="mt-3 mb-2"></p>
+                                </div>
 
 
    <script src="../tools/sidebar.js"></script>

@@ -153,7 +153,7 @@ include "./includes/sidebar2.php";
 
 
 	<div class="col-lg-12 mt-4">
-		<div  class="d-grid gap-2 col-11 mx-auto">
+		<div  class="d-grid gap-2 col-11 mx-auto mb-4">
 			<button class="btn btn-secondary" type="button" onclick="printData()">IMPRIMIR</button>
 
 			<button class="btn btn-secondary" type="button" class="btn btn-outline-success mt-1">SALIR</button>
