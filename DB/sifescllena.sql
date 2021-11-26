@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2021 a las 02:10:08
+-- Tiempo de generación: 26-11-2021 a las 04:32:21
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -208,11 +208,11 @@ CREATE TABLE `departamentos` (
 
 INSERT INTO `departamentos` (`id_departamento`, `nombre`, `id_area_fk`) VALUES
 ('101ma', 'Matemáticas', 1),
-('102ad', 'Administración', 1),
+('102fi', 'Física', 1),
 ('103co', 'Contaduría', 1),
 ('201bi', 'Biología', 2),
 ('202qu', 'Química', 2),
-('301ma', 'Matemáticas', 3),
+('301ge', 'Geografía', 3),
 ('302ad', 'Administración', 3),
 ('304in', 'Informática', 3),
 ('305ec', 'Economía', 3),
@@ -625,7 +625,7 @@ CREATE TABLE `profesor` (
 --
 
 INSERT INTO `profesor` (`usuario_id_fk`, `estatus`, `updated_at`, `created_at`, `id_departamento_fk`) VALUES
-(3, 1, '2021-11-25 22:58:30', '2021-11-25 22:58:30', '301ma'),
+(3, 1, '2021-11-25 22:58:30', '2021-11-25 22:58:30', '101ma'),
 (5, 1, '2021-11-25 22:58:30', '2021-11-25 22:58:30', '302ad'),
 (7, 1, '2021-11-25 22:59:03', '2021-11-25 22:59:03', '304in'),
 (9, 1, '2021-11-25 22:59:03', '2021-11-25 22:59:03', '304in');
