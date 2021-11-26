@@ -1,3 +1,4 @@
 <?php 
 include_once"../control/controlGeneracion.php";
-var_dump(consultaGeneracion());
+$result=consultaGeneracion();
+echo $result;
