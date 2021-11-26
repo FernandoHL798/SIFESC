@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlAsignaturas.php";
 $id_asignatura="1";
-var_dump(deleteAsignatura($id_asignatura));
+$result=deleteAsignatura($id_asignatura);
+echo $result;
