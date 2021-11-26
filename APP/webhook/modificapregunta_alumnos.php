@@ -5,4 +5,5 @@ $params=[
    "pregunta_secreta"=>"2",
    "respuesta_secreta"=>"amarillo"
 ];
-var_dump(updatePreguntaAlumno($params));
+$result=updatePreguntaAlumno($params);
+echo $result;

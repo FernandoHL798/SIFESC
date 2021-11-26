@@ -5,4 +5,5 @@ $params=[
 	"clave"=>"2",
 	"pisos"=>"2"
 ];
-var_dump(updateEdificio($params));
+$result=updateEdificio($params);
+echo $result;

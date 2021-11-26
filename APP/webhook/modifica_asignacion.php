@@ -6,4 +6,5 @@ $params=[
 	"id_grupo_fk"=>"1",
 	"cupo"=>"25"
 ];
-var_dump(updateAsignacion($params));
+$result=updateAsignacion($params);
+echo $result;

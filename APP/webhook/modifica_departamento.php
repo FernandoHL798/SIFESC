@@ -5,4 +5,5 @@ $params=[
 	"nombre"=>"Matematicas",
 	"id_area_fk"=>"1"
 ];
-var_dump(updateDepartamento($params));
+$result=updateDepartamento($params);
+echo $result;

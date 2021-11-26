@@ -9,4 +9,5 @@ $params=[
 	"duracion"=>"2",
 	"dia"=>"2000-12-20"
 ];
-var_dump(updateHorario($params));
+$result=updateHorario($params);
+echo $result;

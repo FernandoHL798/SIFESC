@@ -5,4 +5,5 @@ $params=[
 	"id_plantel_fk"=>"1",
 	"anio"=>"2000"
 ];
-var_dump(updateGeneracion($params));
+$result=updateGeneracion($params);
+echo $result;

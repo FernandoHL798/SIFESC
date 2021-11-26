@@ -5,4 +5,5 @@ $params=[
 	"id_departamento_fk"=>"1",
 	"estatus"=>"1"
 ];
-var_dump(updateEstatusProfesor($params));
+$result=updateEstatusProfesor($params);
+echo $result;
