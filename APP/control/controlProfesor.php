@@ -19,7 +19,9 @@ function insertProfesor($params){
     include "tools/tools_id_generates.php";
     $PROFESOR = new PROFESOR();
 //GENERAMOS AL USUARIO
-    $PROFESOR->setIdUsuario(genIdUsuario(10));
+$mes=date_format("m"); $dia=date_format("d"); $hora= date_format("H");$min= date_format("i"); $sec=date_format("s");
+$idUsuario= $mes+ $dia + $hora + $min +$sec;
+    $PROFESOR->setIdUsuario($idUsuario);
 //Codigo de generar IDs
     $PROFESOR->setCuentaProfesor($params['rfc']);
     $PROFESOR->setNombre($params['nombre']);

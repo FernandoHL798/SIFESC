@@ -17,7 +17,11 @@ $("#frm-add-profesor").on("submit", function(e){
     })
         .done(function(res){
         console.log(res);
+        $("#frm-add-profesor").trigger('reset');
+        $("#Asig_Modal_P").modal('hide');
+        listaProfesores();
         });
+        
     e.preventDefault();
 });
 /**

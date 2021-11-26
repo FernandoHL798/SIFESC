@@ -9,14 +9,6 @@
                     </div>
                     <div class="modal-body">
                     <div class="mt-3 mb-2"></div>
-                    
-                      <!-- 
-                        <div class="form-group">
-                    <div class="form-group">
-                        <input type="text" placeholder="Clave:" class="form-control" style="height: 60px" id="" name="">
-                    </div>
-                    </div>
-                      -->
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" >
                         <input type="text" placeholder="Nombre:" class="form-control" style="height: 60px" id="nombre_profesor" name="nombre_profesor">

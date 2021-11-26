@@ -56,49 +56,8 @@ include "./includes/sidebar2.php";
                                     <th style="width: 140px;">Acciones</th>
                                 </tr>
                             </thead>
-                                <tbody>
-                                    <tr class="text-center">
-                                        <td data-label="Clave">0017</td>
-                                        <td data-label="Nombre">Maricela</td>
-                                        <td data-label="Apellido M">Lara</td>
-                                        <td data-label="Apellido P">Martinez</td>
-                                        <td data-label="Correo">maricelalara_mtz@comunidad.unam.mx</td>
-                                        <td data-label="Tel">5546342310</td>
-                                        <td data-label="Dep">Informática</td>
-                                        <td data-label="Área">2</td>
-                                        <td data-label="Acciones">
-                                            <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
-                                        </td>
-                                    </tr>
-                                    <tr class="text-center">
-                                            <td data-label="Clave">00129</td>
-                                            <td data-label="Nombre">Leonel</td>
-                                            <td data-label="Apellido M">Gualberto</td>
-                                            <td data-label="Apellido P">Salazar</td>
-                                            <td data-label="Correo">leonelg_salazar@comunidad.unam.mx</td>
-                                            <td data-label="Tel">5546344510</td>
-                                            <td data-label="Dep">Redes</td>
-                                            <td data-label="Área">3</td>
-                                            <td data-label="Acciones">
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Prof"><i class='bx bx-trash'></i></button>  
-                                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
-                                            </td>
-                                    </tr>
-                                    <tr class="text-center">
-                                        <td data-label="Clave">00132</td>
-                                        <td data-label="Nombre">Mauricio</td>
-                                        <td data-label="Apellido M">Jaques</td>
-                                        <td data-label="Apellido P">Soto</td>
-                                        <td data-label="Correo">mauricioj_soto@comunidad.unam.mx</td>
-                                        <td data-label="Tel">5546398700</td>
-                                        <td data-label="Dep">Informática Programación</td>
-                                        <td data-label="Área">5</td>
-                                        <td data-label="Acciones">
-                                            <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
-                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
-                                        </td>
-                                    </tr>
+                                <tbody id="tbl-profesores-ag">
+                                    <!-- AJAX RESPONSE  -->
                                 </tbody>
                         </table>   
                         <!-- Se utiliza para darle espacio al final de la tabla -->
@@ -134,6 +93,8 @@ include "./includes/sidebar2.php";
                 } );  
 
             </script>
+            <script src="../service/control-profesor.js"></script>
+            <script src="../service/lista-profesores.js"></script>
             <script src="../service/add-profesor.js"></script>
 </body>
 </html>

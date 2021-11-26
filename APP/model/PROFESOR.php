@@ -50,7 +50,10 @@ class PROFESOR extends USUARIO{
     }
 
     public function queryconsultaProfesor(){
-        $query="SELECT `usuario_id_fk`,`id_departamento_fk`, `updated_at`, `created_at`, `estatus` FROM `profesor`";
+        $query="SELECT pr.`usuario_id_fk`,pr.`estatus`, pr.`id_departamento_fk`, us.cuenta_profesor, us.nombre, 
+        us.primer_apellido, us.segundo_apellido, us.correo,us.telefono,us.fecha_nacimiento, dep.nombre AS 
+        nombre_departamento, dep.id_area_fk FROM `profesor` pr, usuario us, departamentos dep WHERE pr.usuario_id_fk = us.id_usuario 
+        AND pr.id_departamento_fk= dep.id_departamento";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
