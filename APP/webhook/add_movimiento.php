@@ -8,4 +8,5 @@ $params=[
 	"aprobado"=>"1",
 	"veces_cursado"=>"1"
 ];
-var_dump(insertMovimiento($params));
+$result=insertMovimiento($params);
+echo $result;

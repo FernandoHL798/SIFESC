@@ -26,14 +26,29 @@
   <body>
     <div id="contenido">
       <center><H1><br>SELECCIONA UNA OPCION DE ACCESO</H1></center>
+
       <center>
-        <select name="combobox" class="form-control">
-          <option type="option" name="usuario" value="1" onClick="redirect(./index.php)" >Administrador</option>
-
-        </select>
+        <form name="FormSelecciona">
+            <select name="selecciona" id="selecciona">
+              <option value="nada" selected="selected">selecciona una opcion</option>
+              <option value="#">119 | Licenciatura Medico Veterinario Zoorecnista</option>
+              <option value="#">Profesor</option>
+              <option value="http://localhost/SIFESC/APP/view/index.php">Administrador</option>
+              <option value="#">116 | Licenciatuta en informática</option>
+            </select>
+        </form>
       </center>
-
+<script type="text/javascript">
+  var urlMenu = document.getElementById('selecciona');
+  urlMenu.onchange = function() {
+    var userOption = this.options(this.selectedIndex);
+    if (userOption.value != "nada") {
+      window.open(userOption.value, "Opciones", "");
+    }
+  }
+</script>
     </div>
-
+<!--- link del ejemplo
+https://www.youtube.com/watch?v=jFC91RVs4NE&t=742s --->
   </body>
 </html>

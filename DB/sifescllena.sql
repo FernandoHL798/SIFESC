@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2021 a las 01:23:42
+-- Tiempo de generación: 26-11-2021 a las 04:32:21
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sifesc`
+-- Base de datos: `sifesc2`
 --
 
 -- --------------------------------------------------------
@@ -208,11 +208,11 @@ CREATE TABLE `departamentos` (
 
 INSERT INTO `departamentos` (`id_departamento`, `nombre`, `id_area_fk`) VALUES
 ('101ma', 'Matemáticas', 1),
-('102ad', 'Administración', 1),
+('102fi', 'Física', 1),
 ('103co', 'Contaduría', 1),
 ('201bi', 'Biología', 2),
 ('202qu', 'Química', 2),
-('301ma', 'Matemáticas', 3),
+('301ge', 'Geografía', 3),
 ('302ad', 'Administración', 3),
 ('304in', 'Informática', 3),
 ('305ec', 'Economía', 3),
@@ -226,7 +226,7 @@ INSERT INTO `departamentos` (`id_departamento`, `nombre`, `id_area_fk`) VALUES
 
 CREATE TABLE `dosificacion` (
   `id_usuarioalumno_fk` int(100) NOT NULL,
-  `id_periodo_fk` varchar(7) NOT NULL,
+  `id_periodo_fk` int(100) NOT NULL,
   `fecha_inscripcion` date NOT NULL,
   `hora_inscripcion` time NOT NULL,
   `fecha_alta_baja` datetime NOT NULL,
@@ -239,13 +239,13 @@ CREATE TABLE `dosificacion` (
 --
 
 INSERT INTO `dosificacion` (`id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_alta_baja`, `updated_at`, `created_at`) VALUES
-(1, '1', '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:11:14', '2021-11-26 00:11:14'),
-(2, '1', '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:26', '2021-11-26 00:12:26'),
-(3, '1', '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:34', '2021-11-26 00:12:34'),
-(4, '1', '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:39', '2021-11-26 00:12:39'),
-(5, '1', '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:46', '2021-11-26 00:12:46'),
-(6, '1', '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:52', '2021-11-26 00:12:52'),
-(8, '1', '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:13:40', '2021-11-26 00:13:40');
+(1, 1, '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:11:14', '2021-11-26 00:11:14'),
+(2, 1, '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:26', '2021-11-26 00:12:26'),
+(3, 1, '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:34', '2021-11-26 00:12:34'),
+(4, 1, '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:39', '2021-11-26 00:12:39'),
+(5, 1, '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:46', '2021-11-26 00:12:46'),
+(6, 1, '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:12:52', '2021-11-26 00:12:52'),
+(8, 1, '2021-08-27', '10:00:00', '2021-09-10 10:00:00', '2021-11-26 00:13:40', '2021-11-26 00:13:40');
 
 -- --------------------------------------------------------
 
@@ -433,7 +433,7 @@ INSERT INTO `horario` (`id_horario`, `id_grupo_fk`, `id_salon_fk`, `inicio`, `fi
 CREATE TABLE `inscripcion` (
   `id_inscripcion` int(15) NOT NULL,
   `id_usuarioalumno_fk` int(100) NOT NULL,
-  `id_periodo_fk` varchar(7) NOT NULL,
+  `id_periodo_fk` int(100) NOT NULL,
   `fecha_inscripcion` date NOT NULL,
   `hora_inscripcion` time NOT NULL,
   `fecha_altas_bajas` date NOT NULL,
@@ -447,13 +447,13 @@ CREATE TABLE `inscripcion` (
 --
 
 INSERT INTO `inscripcion` (`id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`, `updated_at`, `created_at`) VALUES
-(1, 1, '1', '2021-08-27', '10:00:00', '2021-09-10', '10:00:00', '2021-11-26 00:14:14', '2021-11-26 00:14:14'),
-(2, 2, '1', '2021-08-27', '10:00:00', '2021-09-10', '10:00:00', '2021-11-26 00:15:28', '2021-11-26 00:15:28'),
-(3, 3, '1', '2021-08-27', '10:05:00', '2021-09-10', '10:05:00', '2021-11-26 00:15:50', '2021-11-26 00:15:50'),
-(4, 4, '1', '2021-08-27', '10:05:00', '2021-09-10', '10:05:00', '2021-11-26 00:15:57', '2021-11-26 00:15:57'),
-(5, 5, '1', '2021-08-27', '10:10:00', '2021-09-10', '10:10:00', '2021-11-26 00:16:11', '2021-11-26 00:16:11'),
-(6, 6, '1', '2021-08-27', '10:10:00', '2021-09-10', '10:10:00', '2021-11-26 00:16:17', '2021-11-26 00:16:17'),
-(7, 8, '1', '2021-08-27', '10:15:00', '2021-09-10', '10:15:00', '2021-11-26 00:16:30', '2021-11-26 00:16:30');
+(1, 1, 1, '2021-08-27', '10:00:00', '2021-09-10', '10:00:00', '2021-11-26 00:14:14', '2021-11-26 00:14:14'),
+(2, 2, 1, '2021-08-27', '10:00:00', '2021-09-10', '10:00:00', '2021-11-26 00:15:28', '2021-11-26 00:15:28'),
+(3, 3, 1, '2021-08-27', '10:05:00', '2021-09-10', '10:05:00', '2021-11-26 00:15:50', '2021-11-26 00:15:50'),
+(4, 4, 1, '2021-08-27', '10:05:00', '2021-09-10', '10:05:00', '2021-11-26 00:15:57', '2021-11-26 00:15:57'),
+(5, 5, 1, '2021-08-27', '10:10:00', '2021-09-10', '10:10:00', '2021-11-26 00:16:11', '2021-11-26 00:16:11'),
+(6, 6, 1, '2021-08-27', '10:10:00', '2021-09-10', '10:10:00', '2021-11-26 00:16:17', '2021-11-26 00:16:17'),
+(7, 8, 1, '2021-08-27', '10:15:00', '2021-09-10', '10:15:00', '2021-11-26 00:16:30', '2021-11-26 00:16:30');
 
 -- --------------------------------------------------------
 
@@ -492,7 +492,7 @@ INSERT INTO `movimiento` (`id_inscripcion_fk`, `id_asignacion_fk`, `estatus`, `c
 --
 
 CREATE TABLE `periodo` (
-  `id_periodo` varchar(7) NOT NULL,
+  `id_periodo` int(100) NOT NULL,
   `id_asignacion_fk` int(10) NOT NULL,
   `periodo` varchar(6) NOT NULL,
   `fecha_inscripcion` datetime NOT NULL,
@@ -506,14 +506,14 @@ CREATE TABLE `periodo` (
 --
 
 INSERT INTO `periodo` (`id_periodo`, `id_asignacion_fk`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at`) VALUES
-('1', 1, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:35:43', '2021-11-25 23:35:43'),
-('2', 2, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:13', '2021-11-25 23:36:13'),
-('3', 3, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:23', '2021-11-25 23:36:23'),
-('4', 4, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:31', '2021-11-25 23:36:31'),
-('5', 5, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:02', '2021-11-25 23:37:02'),
-('6', 6, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:11', '2021-11-25 23:37:11'),
-('7', 7, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:20', '2021-11-25 23:37:20'),
-('8', 8, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:28', '2021-11-25 23:37:28');
+(1, 1, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:35:43', '2021-11-25 23:35:43'),
+(2, 2, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:13', '2021-11-25 23:36:13'),
+(3, 3, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:23', '2021-11-25 23:36:23'),
+(4, 4, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:31', '2021-11-25 23:36:31'),
+(5, 5, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:02', '2021-11-25 23:37:02'),
+(6, 6, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:11', '2021-11-25 23:37:11'),
+(7, 7, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:20', '2021-11-25 23:37:20'),
+(8, 8, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:28', '2021-11-25 23:37:28');
 
 -- --------------------------------------------------------
 
@@ -625,7 +625,7 @@ CREATE TABLE `profesor` (
 --
 
 INSERT INTO `profesor` (`usuario_id_fk`, `estatus`, `updated_at`, `created_at`, `id_departamento_fk`) VALUES
-(3, 1, '2021-11-25 22:58:30', '2021-11-25 22:58:30', '301ma'),
+(3, 1, '2021-11-25 22:58:30', '2021-11-25 22:58:30', '101ma'),
 (5, 1, '2021-11-25 22:58:30', '2021-11-25 22:58:30', '302ad'),
 (7, 1, '2021-11-25 22:59:03', '2021-11-25 22:59:03', '304in'),
 (9, 1, '2021-11-25 22:59:03', '2021-11-25 22:59:03', '304in');
@@ -905,6 +905,12 @@ ALTER TABLE `inscripcion`
   MODIFY `id_inscripcion` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT de la tabla `periodo`
+--
+ALTER TABLE `periodo`
+  MODIFY `id_periodo` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `salon`
 --
 ALTER TABLE `salon`
@@ -956,7 +962,7 @@ ALTER TABLE `departamentos`
 -- Filtros para la tabla `dosificacion`
 --
 ALTER TABLE `dosificacion`
-  ADD CONSTRAINT `fk_dosificacion_periodo` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `dosificacion_ibfk_1` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_dosificacion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `alumno` (`usuario_id_fk`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
@@ -988,8 +994,8 @@ ALTER TABLE `horario`
 -- Filtros para la tabla `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  ADD CONSTRAINT `fk_inscripcion_periodo` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_inscripcion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `alumno` (`usuario_id_fk`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_inscripcion_usuario` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `alumno` (`usuario_id_fk`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `inscripcion_ibfk_1` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `movimiento`

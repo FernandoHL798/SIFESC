@@ -7,4 +7,5 @@ $params=[
 	"promedio_minimo"=>"8",
 	"cupo"=>"10"
 ];
-var_dump(updatePlantelCarrera($params));
+$result=updatePlantelCarrera($params);
+echo $result;

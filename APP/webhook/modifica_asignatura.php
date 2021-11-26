@@ -10,4 +10,5 @@ $params=[
 	"caracter"=>"ob",
 	"semestre"=>"5"
 ];
-var_dump(updateAsignaturas($params));
+$result=updateAsignaturas($params);
+echo $result;

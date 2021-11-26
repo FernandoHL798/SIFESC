@@ -4,4 +4,5 @@ $params =[
 "id_Facultad" => "1",
 "nombre_fac" => "Juana"
 ];
-echo insertFacultad($params);
+$result=insertFacultad($params);
+echo $result;

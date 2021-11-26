@@ -6,4 +6,5 @@ $params=[
 	"clave"=>"1",
 	"nombre"=>"2"
 ];
-var_dump(insertCarrera($params));
+$result=insertCarrera($params);
+echo $result;

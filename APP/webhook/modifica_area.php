@@ -4,4 +4,5 @@ $params=[
 	"id_area"=>"1",
 	"nombre"=>"ciencias"
 ];
-var_dump(updateArea($params));
+$result=updateArea($params);
+echo $result;

@@ -9,4 +9,5 @@ $params=[
 	"creditos_t"=>"100",
 	"semestres"=>"9"
 ];
-var_dump(insertPlan($params));
+$result=insertPlan($params);
+echo $result;

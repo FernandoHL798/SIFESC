@@ -1,3 +1,4 @@
 <?php 
 include_once"../control/controlUsuario.php";
-var_dump(consultaUsuarios());
+$result=consultaUsuarios();
+echo $result;

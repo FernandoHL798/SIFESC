@@ -4,4 +4,5 @@ $params=[
 	"id_inscripcion_fk"=>"1",
 	"id_asignacion_fk"=>"1"
 ];
-var_dump(deleteMovimiento($params));
+$result=deleteMovimiento($params);
+echo $result;

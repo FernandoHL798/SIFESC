@@ -9,4 +9,5 @@ $params=[
 	"fecha_altabaja"=>"2000-12-20",
 	"hora_altabaja"=>"09:10"
 ];
-var_dump(updateInscripcion($params));
+$result=updateInscripcion($params);
+echo $result;

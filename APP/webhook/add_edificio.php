@@ -6,4 +6,5 @@ $params=[
 	"clave"=>"2",
 	"pisos"=>"2"
 ];
-var_dump(insertEdificio($params));
+$result=insertEdificio($params);
+echo $result;

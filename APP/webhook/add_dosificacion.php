@@ -7,4 +7,5 @@ $params=[
 	"hora_inscripcion"=>"09:10",
 	"fecha_altabaja"=>"2000-12-20"
 ];
-var_dump(insertDosificacion($params));
+$result=insertDosificacion($params);
+echo $result;

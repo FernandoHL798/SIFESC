@@ -5,4 +5,5 @@ $params=[
 	"nombre"=>"Matematicas",
 	"id_area_fk"=>"1"
 ];
-var_dump(insertDepartamento($params));
+$result=insertDepartamento($params);
+echo $result;

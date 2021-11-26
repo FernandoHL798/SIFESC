@@ -5,4 +5,5 @@ $params=[
 	"id_facultad_fk"=>"1",
 	"nombre"=>"cuautitlan"
 ];
-var_dump(insertPlantel($params));
+$result=insertPlantel($params);
+echo $result;

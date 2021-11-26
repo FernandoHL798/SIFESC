@@ -11,4 +11,5 @@ $params=[
 	"caracter"=>"ob",
 	"semestre"=>"5"
 ];
-var_dump(insertAsignatura($params));
+$result=insertAsignatura($params);
+echo $result;

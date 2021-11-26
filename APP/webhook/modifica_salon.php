@@ -5,4 +5,5 @@ $params=[
 	"id_edificio_fk"=>"1",
 	"clave"=>"2"
 ];
-var_dump(updateSalon($params));
+$result=updateSalon($params);
+echo $result;
