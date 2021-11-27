@@ -7,23 +7,11 @@ function consultaAlumno(){
    return json_encode($result);
 }
 
-function updatePreguntaAlumno($params){
-    include_once "../model/ALUMNO.php";
-   $ALUMNO = new ALUMNO();
-   $ALUMNO->setUsuarioIdFk($params['id_Alumno']);
-   $ALUMNO->setPreguntaSecreta($params['pregunta_secreta']);
-   $ALUMNO->setRespuestaSecreta($params['respuesta_secreta']);
-   $result= $ALUMNO->queryUpdateRPwdAlumno();
-   return $result;
-}
-
 function insertAlumno($params){
    include_once "../model/ALUMNO.php";
    $ALUMNO = new ALUMNO();
    $ALUMNO->setUsuarioIdFk($params['id_usuarioalumno_fk']);
    $ALUMNO->setIdGeneracionFk($params['id_generacion_fk']);
-   $ALUMNO->setPreguntaSecreta($params['pregunta_secreta']);
-   $ALUMNO->setRespuestaSecreta($params['respuesta_secreta']);
    //Cuando un alumno se crea, el valor del estatus es 1 (Activo)
    $ALUMNO->setEstatus(1);
    //Cuando se crea un Alumno nuevo, el valor predefinido de bajas es 0

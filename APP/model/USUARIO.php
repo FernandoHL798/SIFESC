@@ -12,6 +12,8 @@ class USUARIO extends CONEXION{
     private $contrasenia;
     private $telefono;
     private $fecha_nacimiento;
+    private $pregunta_secreta;
+    private $respuesta_secreta;
   
     /**
      * @return mixed
@@ -178,11 +180,50 @@ class USUARIO extends CONEXION{
         $this->fecha_nacimiento = $fecha_nacimiento;
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getPreguntaSecreta()
+    {
+        return $this->pregunta_secreta;
+    }
+    /**
+     * @param mixed $pregunta_secreta
+     */
+    public function setPreguntaSecreta($pregunta_secreta): void
+    {
+        $this->pregunta_secreta = $pregunta_secreta;
+    }
+
+     /**
+     * @return mixed
+     */
+    public function getRespuestaSecreta()
+    {
+        return $this->respuesta_secreta;
+    }
+    /**
+     * @param mixed $respuesta_secreta
+     */
+    public function setRespuestaSecreta($respuesta_secreta): void
+    {
+        $this->respuesta_secreta = $respuesta_secreta;
+    }
+
     
     public function queryconsultaUsuario(){
-        $query="SELECT `id_usuario`, `cuenta_administrador`, `cuenta_alumno`, `cuenta_profesor`, `nombre`, `primer_apellido`, `segundo_apellido`, `correo`, `contrasenia`, `telefono`, `fecha_nacimiento` FROM `usuario`";
+        $query="SELECT `id_usuario`, `cuenta_administrador`, `cuenta_alumno`, `cuenta_profesor`, `nombre`, `primer_apellido`, `segundo_apellido`, `correo`, `contrasenia`, `telefono`, `fecha_nacimiento`, `pregunta_secreta`, `respuesta_secreta` FROM `usuario`";
         $this->connect();
         $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryUpdateRPwdUsuario(){
+        $query="UPDATE `alumno` SET `pregunta_secreta` = '".$this->getPreguntaSecreta()."', `respuesta_secreta` = '".$this->getRespuestaSecreta()."', `updated_at` = current_timestamp() WHERE `alumno`.`usuario_id_fk` = '".$this->getUsuarioIdFk()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
     }
@@ -206,8 +247,8 @@ class USUARIO extends CONEXION{
         return $resultado;
     }
     public function queryInsertUsuario(){
-        $query="INSERT into `usuario`(`id_usuario`,`cuenta_administrador`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `primer_apellido`, `segundo_apellido`,`correo`,`contrasenia`,`telefono`,`fecha_nacimiento`) 
-        VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdministrador()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getPrimerApellido()."', '".$this->getSegundoApellido()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."','".$this->getFechaNacimiento()."' )";
+        $query="INSERT into `usuario`(`id_usuario`,`cuenta_administrador`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `primer_apellido`, `segundo_apellido`,`correo`,`contrasenia`,`telefono`,`fecha_nacimiento`,`pregunta_secreta`,`respuesta_secreta`) 
+        VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdministrador()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getPrimerApellido()."', '".$this->getSegundoApellido()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."','".$this->getFechaNacimiento()."', '".$this->getPreguntaSecreta()."','".$this->getRespuestaSecreta()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

@@ -7,6 +7,17 @@ function consultaUsuarios(){
     $result=$USUARIOS->queryConsultaUsuario();
     return json_encode($result);
 }
+
+function updatePreguntaUsuario($params){
+    include_once "../model/USUARIO.php";
+   $USUARIO = new USUARIO();
+   $USUARIO->setIdUsuario($params['id_usuario']);
+   $USUARIO->setPreguntaSecreta($params['pregunta_secreta']);
+   $USUARIO->setRespuestaSecreta($params['respuesta_secreta']);
+   $result= $USUARIO->queryUpdateRPwdAlumno();
+   return $result;
+}
+
 //Las variables que llegaran se cambiaran por una sola con el apartado $params
 function updateUsuario($params) {
     include_once "../model/USUARIO.php";
@@ -39,6 +50,8 @@ function insertUsuario($params){
     $USUARIOS->setContrasenia(md5($params['pwd']));
     $USUARIOS->setTelefono($params['telefono']);
     $USUARIOS->setFechaNacimiento($params['fecha_nacimiento']);
+   |$USUARIOS->setPreguntaSecreta($params['pregunta_secreta']);
+    $USUARIOS->setRespuestaSecreta($params['respuesta_secreta']);
     $result= $USUARIOS->queryInsertUsuario();
     return $result;
 }

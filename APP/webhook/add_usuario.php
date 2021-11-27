@@ -11,7 +11,9 @@ $params=[
 "correo"=>"pacolr@gmail.com",
 "pwd"=>"0000",
 "telefono"=>"5516516878",
-"fecha_nacimiento"=>"2000-12-10"
+"fecha_nacimiento"=>"2000-12-10",
+"pregunta_secreta"=>"2",
+"respuesta_secreta"=>"manchas"
 ];
 
 $result=insertUsuario($params);

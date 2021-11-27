@@ -9,7 +9,6 @@ function updateEstatusProfesor($params){
     include_once "../model/PROFESOR.php";
     $PROFESOR = new PROFESOR();
     $PROFESOR->setIdUsuarioFk($params['id_usuarioprofesor_fk']);
-    $PROFESOR->setIdDepartamentoFk($params['id_departamento_fk']);
     $PROFESOR->setEstatus($params['estatus']);
     return $PROFESOR->queryUpdateEstatusProfesor();
 }
@@ -33,7 +32,6 @@ function insertProfesor($params){
 //Si el USUARIO se crea correctamente, generamos al profesor
     if($PROFESOR->queryInsertUsuario()){
         $PROFESOR->setIdUsuarioFk($PROFESOR->getIdUsuario());
-        $PROFESOR->setIdDepartamentoFk($params['id_departamento_fk']);
         $PROFESOR->setEstatus(1);
         return $PROFESOR->queryInsertProfesor();
     }

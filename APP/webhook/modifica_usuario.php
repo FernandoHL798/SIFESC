@@ -10,7 +10,9 @@ $params=[
 "segundo_apellido"=>"ramirez",
 "correo"=>"pacolr@gmail.com",
 "telefono"=>"5516516878",
-"fecha_nacimiento"=>"2000-12-10"
+"fecha_nacimiento"=>"2000-12-10",
+"pregunta_secreta"=>"1",
+"respuesta_secreta"=>"negrita"
 ];
 
 $result=updateUsuario($params);

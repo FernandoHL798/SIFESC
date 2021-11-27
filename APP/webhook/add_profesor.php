@@ -7,7 +7,6 @@ $params=[
 	"fecha_nacimiento"=> $_POST['fechaNacimiento'],
 	"rfc"=> $_POST['rfc'],
 	"correo"=> $_POST['correo'],
-	"telefono"=> $_POST['telefono'],
-	"id_departamento_fk"=>$_POST['departamento']
+	"telefono"=> $_POST['telefono']
 ];
 echo insertProfesor($params);
