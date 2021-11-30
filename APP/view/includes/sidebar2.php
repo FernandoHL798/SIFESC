@@ -134,7 +134,9 @@
 	<section class="home-section">
 		<div class="home-content">
 			<i class='bx bx-menu'></i>
-			<span class="titulounam">prueba de porcentaje</span>
+			<span class="titulounam">
+				<!--AQUI SE CORRIGE EL PORCENTAJE DEL TITULO-->
+			</span>
 				<span class="text">
 					Universidad Nacional Autónoma de México <br> SIFESC
 				</span>
