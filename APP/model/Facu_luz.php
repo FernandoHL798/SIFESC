@@ -4,13 +4,13 @@ class FACULTAD extens CONEXION{
 	private $id_facultad;
 	private $nombre_facultad;
 
-	public function getIdFacultad(){
+	/*public function getIdFacultad(){
 		return $this->id_facultad;
 	}
 
 	public function setIdFacultad($id_facultad):void{
 		$this->id_facultad=$id_facultad;	
-	}
+	}*/
 
 	public function getNombreFacultad(){
 		return $this->nombre_facultad;
