@@ -35,8 +35,7 @@ class PROFESOR extends USUARIO{
 
     public function queryconsultaProfesor(){
         $query="SELECT pr.`usuario_id_fk`,pr.`estatus`, us.cuenta_profesor, us.nombre, 
-        us.primer_apellido, us.segundo_apellido, us.correo,us.telefono,us.fecha_nacimiento, dep.nombre AS 
-        nombre_departamento, dep.id_area_fk FROM `profesor` pr, usuario us WHERE pr.usuario_id_fk = us.id_usuario";
+        us.primer_apellido, us.segundo_apellido, us.correo,us.telefono,us.fecha_nacimiento FROM `profesor` pr, usuario us WHERE pr.usuario_id_fk = us.id_usuario";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

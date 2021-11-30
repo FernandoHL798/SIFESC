@@ -5,6 +5,7 @@ function listaProfesores(){
         data : {        },
         success: function (response) {
             //Convertimos el string a JSON
+            console.log(response);
             let PROFESORES = JSON.parse(response);  
             console.log(PROFESORES);
             let template="";
@@ -18,8 +19,6 @@ function listaProfesores(){
                                 <td data-label="Apellido M">${profesor.segundo_apellido}</td>
                                 <td data-label="Correo">${profesor.correo}</td>
                                 <td data-label="Tel">${profesor.telefono}</td>
-                                <td data-label="Dep">${profesor.nombre_departamento}</td>
-                                <td data-label="Área">${profesor.id_area_fk}</td>
                                 <td data-label="Acciones">
                                     <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
