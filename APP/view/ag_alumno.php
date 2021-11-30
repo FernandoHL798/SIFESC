@@ -57,8 +57,6 @@
                     <th style="width: 100px;">Apellido Materno</th>
                     <th style="width: 270px;">Correo</th>
                     <th style="width: 120px;">Telefono</th>
-                    <th style="width: 50px;">Plan de estudios</th>
-                    <th style="width: 120px;">Carrera</th>
                     <th style="width: 140px;">Acciones</th>
                 </tr>
             </thead>
@@ -70,11 +68,9 @@
                     <td data-label="Apellido P">Pichardo</td>
                     <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
                     <td data-label="Tel">5531579580</td>
-                    <td data-label="Plan de estudios">1119</td>
-                    <td data-label="Dep">Informática</td>
                     <td data-label="Acciones">
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button>  
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
+                        <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button>  
+                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                     </td>
                 </tr>
                 <tr class="text-center">
@@ -84,11 +80,9 @@
                     <td data-label="Apellido P">Pichardo</td>
                     <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
                     <td data-label="Tel">5531579580</td>
-                    <td data-label="Plan de estudios">1119</td>
-                    <td data-label="Dep">Informática</td>
                     <td data-label="Acciones">
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button>  
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
+                        <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button>  
+                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                     </td>
                 </tr>
                 <tr class="text-center">
@@ -98,11 +92,9 @@
                     <td data-label="Apellido P">Pichardo</td>
                     <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
                     <td data-label="Tel">5531579580</td>
-                    <td data-label="Plan de estudios">1119</td>
-                    <td data-label="Dep">Informática</td>
                     <td data-label="Acciones">
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button> 
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
+                        <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button> 
+                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                     </td>
                 </tr>
             </tbody>

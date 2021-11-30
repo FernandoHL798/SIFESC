@@ -89,7 +89,7 @@
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Administrador</a></li>
 					<li><a href="./ag_prof.php">Profesor</a></li>
-					<li><a href="./ag_alumno.php">Alumnos</a></li>
+					<li><a href="./plan_de_estudios_alumnos.php">Alumnos</a></li>
 					<li><a href="./AsignaProfesor.php">Asignar materia a profesor</a></li>
 					<li><a href="./plan_de_estudios.php">Plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
 					<li><a href="./plan_de_estudios_saturacion.php">Saturación</a></li>
