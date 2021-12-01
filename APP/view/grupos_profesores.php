@@ -97,7 +97,7 @@ include "./includes/sidebar2.php";
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
                             <td class="text-center">
-                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                         <tr>
@@ -110,7 +110,7 @@ include "./includes/sidebar2.php";
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">2</td>
                             <td class="text-center">
-                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                         <tr>
@@ -123,7 +123,7 @@ include "./includes/sidebar2.php";
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
                             <td class="text-center">
-                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                         <tr>
@@ -136,7 +136,7 @@ include "./includes/sidebar2.php";
                             <td data-label="TIPO GRUPO">EXTRAORDINARIO</td>
                             <td data-label="SEMESTRE">5</td>
                             <td class="text-center">
-                                <a href="./grupos_profesores_alumnos.php"><button type="button" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
+                                <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                 </table>

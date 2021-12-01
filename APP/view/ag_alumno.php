@@ -69,32 +69,32 @@
                     <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
                     <td data-label="Tel">5531579580</td>
                     <td data-label="Acciones">
-                        <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button>  
-                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td data-label="Clave">419070375</td>
-                    <td data-label="Nombre">Luis Antonio</td>
-                    <td data-label="Apellido M">Villagomez</td>
-                    <td data-label="Apellido P">Pichardo</td>
-                    <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
-                    <td data-label="Tel">5531579580</td>
-                    <td data-label="Acciones">
-                        <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button>  
-                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td data-label="Clave">419070375</td>
-                    <td data-label="Nombre">Luis Antonio</td>
-                    <td data-label="Apellido M">Villagomez</td>
-                    <td data-label="Apellido P">Pichardo</td>
-                    <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
-                    <td data-label="Tel">5531579580</td>
-                    <td data-label="Acciones">
+                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
                         <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button> 
-                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <td data-label="Clave">419070375</td>
+                    <td data-label="Nombre">Luis Antonio</td>
+                    <td data-label="Apellido M">Villagomez</td>
+                    <td data-label="Apellido P">Pichardo</td>
+                    <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
+                    <td data-label="Tel">5531579580</td>
+                    <td data-label="Acciones">  
+                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                        <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button> 
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <td data-label="Clave">419070375</td>
+                    <td data-label="Nombre">Luis Antonio</td>
+                    <td data-label="Apellido M">Villagomez</td>
+                    <td data-label="Apellido P">Pichardo</td>
+                    <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
+                    <td data-label="Tel">5531579580</td>
+                    <td data-label="Acciones">
+                        <button type="button" title="Editar Alumno" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                        <button type="button" title="Eliminar Alumno" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Alum"><i class='bx bx-trash'></i></button>
                     </td>
                 </tr>
             </tbody>

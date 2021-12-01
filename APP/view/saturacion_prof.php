@@ -66,8 +66,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">28</td>
                                                 <td data-label="In">2</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
                                                 </td>
                                             </tr>
                                             <tr class="text-center">
@@ -79,8 +79,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">25</td>
                                                 <td data-label="In">24</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
                                                 </td>
                                                 
                                             </tr>
@@ -93,8 +93,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">35</td>
                                                 <td data-label="In">29</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -122,8 +122,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">30</td>
                                                 <td data-label="In">19</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
                                                 </td>
                                             </tr>
                                             <tr class="text-center">
@@ -135,8 +135,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">27</td>
                                                 <td data-label="In">25</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -164,8 +164,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">25</td>
                                                 <td data-label="In">13</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
                                                 </td>
                                             </tr>
                                             <tr class="text-center">
@@ -177,8 +177,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">22</td>
                                                 <td data-label="In">20</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -206,8 +206,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">23</td>
                                                 <td data-label="In">4</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -235,8 +235,8 @@ include "./includes/sidebar2.php";
                                                 <td data-label="Cup">23</td>
                                                 <td data-label="In">2</td>
                                                 <td data-label="Acciones">
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                    <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                    <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
                                                 </td>
                                             </tr>
                                                 <tr class="text-center">
@@ -248,8 +248,8 @@ include "./includes/sidebar2.php";
                                                     <td data-label="Cup">30</td>
                                                     <td data-label="In">22</td>
                                                     <td data-label="Acciones">
-                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button> 
-                                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                        <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                        <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
                                                     </td>
                                                 </tr>
                                                 <tr class="text-center">
@@ -261,8 +261,8 @@ include "./includes/sidebar2.php";
                                                     <td data-label="Cup">23</td>
                                                     <td data-label="In">14</td>
                                                     <td data-label="Acciones">
-                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>  
-                                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button> 
+                                                        <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                                        <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
                                                     </td>
                                                 </tr>
                                         </tbody>

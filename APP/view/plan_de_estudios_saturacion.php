@@ -53,7 +53,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
                             <td data-label="Duración">9</td>
                             <td data-label="Acciones">
-                                <a href="./saturacion_prof.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
                         </tr>
                         <tr class="text-center">
@@ -61,7 +61,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Nombre">REDES COMPUTACIONALES III</td>
                             <td data-label="Duración">9</td>
                             <td data-label="Acciones">
-                                <a href="./saturacion_prof.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
                         </tr>
                         <tr class="text-center">
@@ -69,7 +69,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
                             <td data-label="Duración">9</td>
                             <td data-label="Acciones">
-                                <a href="./saturacion_prof.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                             </td>
                         </tr>
                     </tbody>

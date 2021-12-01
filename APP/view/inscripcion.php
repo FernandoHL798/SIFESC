@@ -141,7 +141,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Gpo">1701</td>
                             <td data-label="Mov">Alta</td>
                             <td colspan="2" class="text-center">
-                                <button type="button" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
+                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -153,7 +153,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Gpo">1701</td>
                             <td data-label="Mov">Alta</td>
                             <td colspan="2" class="text-center">
-                                <button type="button" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
+                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -165,7 +165,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Gpo">1701</td>
                             <td data-label="Mov">Alta</td>
                             <td colspan="2" class="text-center">
-                                <button type="button" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
+                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -177,7 +177,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Gpo">1701</td>
                             <td data-label="Mov">Alta</td>
                             <td colspan="2" class="text-center">
-                                <button type="button" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
+                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -189,7 +189,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Gpo">1701</td>
                             <td data-label="Mov">Alta</td>
                             <td colspan="2" class="text-center">
-                                <button type="button" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
+                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                 </table>

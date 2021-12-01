@@ -62,7 +62,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Creditos Opt.">72</td>
                             <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
-                                <a href="./ag_asig.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                                  
                             </td>
                         </tr>
@@ -76,7 +76,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Creditos Tot.">431</td>
                             
                             <td data-label="Acciones">
-                                <a href="./ag_asig.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                                 
                             </td>
                         </tr>
@@ -89,7 +89,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Creditos Opt.">72</td>
                             <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
-                                <a href="./ag_asig.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                                 
                             </td>
                         </tr>

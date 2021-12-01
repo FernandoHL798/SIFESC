@@ -89,7 +89,7 @@ include "./includes/sidebar2.php";
                             <td data-label="Dep">Informática</td>
                             
                             <td data-label="Acciones">
-                                <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
                         </tr>
                         <tr class="text-center">
@@ -101,7 +101,7 @@ include "./includes/sidebar2.php";
                           <td data-label="Dep">Informática</td>
                           
                             <td data-label="Acciones">
-                                <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
 
                         </tr>
@@ -114,7 +114,7 @@ include "./includes/sidebar2.php";
                           <td data-label="Dep">Informática</td>
                           
                             <td data-label="Acciones">
-                                <a href="./AsignaProfesor_materia.php"><button type="button" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
                         </tr>
                     </tbody>
