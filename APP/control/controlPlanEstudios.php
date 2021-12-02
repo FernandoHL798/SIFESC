@@ -16,6 +16,11 @@ function updatePlan($params){
     $PLAN->setCreditosOptativos($params['creditos_op']);
     $PLAN->setCreditosTotales($params['creditos_t']);
     $PLAN->setSemestres($params['semestres']);
+    $PLAN->setMaximoCreditos($params['maximo_creditos']);
+    $PLAN->setMinimoCreditos($params['minimo_creditos']);
+    $PLAN->setMaximoSemestres($params['maximo_semestres']);
+    $PLAN->setMinimoMaterias($params['minimo_materias']);
+    $PLAN->setMaximoMaterias($params['maximo_materias']);
     return $PLAN->queryUpdatePlan();
 }
 
@@ -29,6 +34,11 @@ function insertPlan($params){
     $PLAN->setCreditosOptativos($params['creditos_op']);
     $PLAN->setCreditosTotales($params['creditos_t']);
     $PLAN->setSemestres($params['semestres']);
+    $PLAN->setMaximoCreditos($params['maximo_creditos']);
+    $PLAN->setMinimoCreditos($params['minimo_creditos']);
+    $PLAN->setMaximoSemestres($params['maximo_semestres']);
+    $PLAN->setMinimoMaterias($params['minimo_materias']);
+    $PLAN->setMaximoMaterias($params['maximo_materias']);
     return $PLAN->queryInsertPlan();
 }
 
