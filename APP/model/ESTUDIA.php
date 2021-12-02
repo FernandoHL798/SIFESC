@@ -1,32 +1,37 @@
 <?php
 include_once "CONEXION.php";
-class GENERACION extends CONEXION{
-    private $id_generacion;
+class ESTUDIA extends CONEXION{ 
+    private $id_usuarioalumno_fk;//quitar idgeneracion, agregar id usuarioalumno
     private $id_plan_fk;
     private $anio;
+    private $turno;//turno en el que estudia
+    private $baja;//bajas que ha metido
+    private $estatus;//estado del alumno: activo o baja
+
+
 
   
     /**
      * @return mixed
-     */
-    public function getIdGeneracion()
+     *///ID_USUARIOALUMNO_FK
+    public function getIdUsuarioAlumnoFk()
     {
-        return $this->id_generacion;
+        return $this->id_usuarioalumno_fk;//idusuarioalumno y id plan_fk
     }
     /**
-     * @param mixed $id_generacion
+     * @param mixed $id_usuarioalumno_fk
      */
-    public function setIdGeneracion($id_generacion): void
+    public function setIdUsuarioAlumnoFk($id_usuarioalumno_fk): void
     {
-        $this->id_generacion = $id_generacion;
+        $this->id_usuarioalumno_fk = $id_usuarioalumno_fk;
     }
 
     /**
      * @return mixed
-     */
+     *///ID_PLAN_FK
     public function getIdPlanFk()
     {
-        return $this->id_plan_fk;
+        return $this->id_plan_fk;//D: Ah no es cada atributo
     }
     /**
      * @param mixed $id_plan_fk
@@ -38,7 +43,7 @@ class GENERACION extends CONEXION{
 
       /**
      * @return mixed
-     */
+     *///ANIO
     public function getAnio()
     {
         return $this->anio;
@@ -50,27 +55,72 @@ class GENERACION extends CONEXION{
     {
         $this->anio = $anio;
     }
+
+    /**
+     * @return mixed
+     *///TURNO
+    public function getTurno()
+    {
+        return $this->turno;
+    }
+    /**
+     * @param mixed $turno
+     */
+    public function setTurno($turno): void
+    {
+        $this->turno = $turno;
+    }
     
-    public function queryconsultaGeneracion(){
-        $query="SELECT `id_generacion`, `id_plan_fk`, `anio`, `updated_at`, `created_at` FROM `generacion`";
+    /**
+     * @return mixed
+     *///BAJA
+    public function getBaja()
+    {
+        return $this->baja;
+    }
+    /**
+     * @param mixed $baja
+     */
+    public function setBaja($baja): void
+    {
+        $this->baja = $baja;
+    }
+
+    /**
+     * @return mixed
+     *///ESTATUS
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+    /**
+     * @param mixed $estatus
+     */
+    public function setEstatus($estatus): void
+    {
+        $this->estatus = $estatus;
+    }
+
+
+    public function queryconsultaEstudia(){
+        $query="SELECT `id_usuarioalumno_fk`, `id_plan_fk`, `anio`, `turno`, `baja`, `estatus`,  `updated_at`, `created_at` FROM `estudia`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }
 
-    public function queryUpdateGeneracion(){
-        $query="UPDATE `generacion` SET `id_plan_fk` = '".$this->getIdPlanFk()."', `anio` = '".$this->getAnio()."',
-         `updated_at` = current_timestamp() WHERE `generacion`.`id_generacion` = '".$this->getIdGeneracion()."'";
-        $this->connect();
+    public function queryUpdateEstudia(){
+        $query="UPDATE `estudia` SET  `anio` = '".$this->getAnio()."',`turno` = '".$this->getTurno()."', `baja` = '".$this->getBaja()."',
+         `updated_at` = current_timestamp() WHERE `estudia`.`id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."' AND `estudia`.`id_plan_fk` = '".$this->getIdPlanFk()."'";
         $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
     }
 
-    public function queryInsertGeneracion(){
-        $query="INSERT into `generacion`(`id_generacion`,`id_plan_fk`,`anio`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdGeneracion()."', '".$this->getIdPlanFk()."', '".$this->getAnio()."', current_timestamp(),
+    public function queryInsertEstudia(){
+        $query="INSERT into `estudia`(`id_usuarioalumno_fk`,`id_plan_fk`,`anio`,`turno`, `baja`, `estatus`,`updated_at`,`created_at`) 
+        VALUES ('".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPlanFk()."', '".$this->getAnio()."', '".$this->getTurno()."', '".$this->getBaja()."', '".$this->getEstatus()."', current_timestamp(),
         current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -78,11 +128,22 @@ class GENERACION extends CONEXION{
         return $resultado;
     }
 
-    public function queryDeleteGeneracion(){
-        $query="DELETE FROM `generacion` WHERE `id_generacion`='".$this->getIdGeneracion()."'";
+    public function queryDeleteEstudia(){
+        $query="DELETE FROM `estudia` WHERE `estudia`.`id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."' AND `estudia`.`id_plan_fk` = '".$this->getIdPlanFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
     }
+
+    public function queryUpdateEstatusEstudia(){
+        //UPDATE `alumno` SET `estatus`='[value-7]' WHERE `usuario_id_fk`=1
+        $query="UPDATE `estudia` SET `estatus`= ".$this->getEstatus().", `updated_at` = current_timestamp() 
+        WHERE `estudia`.`id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."' AND `estudia`.`id_plan_fk` = '".$this->getIdPlanFk()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
 }

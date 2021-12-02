@@ -1,6 +1,9 @@
 <?php 
-include_once"../control/controlAlumno.php";
-$id_Alumno="1";
-$estatus="0";
-$result=updateEstatusAlumno($id_Alumno,$estatus);
+include_once"../control/controlEstudia.php";
+$params=[
+	"id_usuarioalumno_fk"="1",
+	"id_plan_fk"="11",
+	"estatus"="0"
+];
+$result=updateEstatusEstudia($params);
 echo $result;

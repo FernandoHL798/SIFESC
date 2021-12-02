@@ -1,5 +1,8 @@
 <?php 
-include_once"../control/controlGeneracion.php";
-$id_generacion="1";
-$result=deleteGeneracion($id_generacion);
+include_once"../control/controlEstudia.php";
+$params=[
+	"id_usuarioalumno_fk"="1",
+	"id_plan_fk"="11"
+];
+$result=deleteEstudia($params);
 echo $result;

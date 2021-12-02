@@ -1,32 +1,47 @@
 <?php
 
-function consultaGeneracion(){
-    include_once "../model/GENERACION.php";
-    $GENERACION = new GENERACION();
-    return json_encode($GENERACION->queryconsultaGeneracion());
+function consultaEstudia(){
+    include_once "../model/ESTUDIA.php";
+    $ESTUDIA = new ESTUDIA();
+    return json_encode($ESTUDIA->queryconsultaEstudia());
 }
 
-function updateGeneracion($params){
-    include_once "../model/GENERACION.php";
-    $GENERACION = new GENERACION();
-    $GENERACION->setIdGeneracion($params['id_generacion']);
-    $GENERACION->setIdPlanFk($params['id_plantel_fk']);
-    $GENERACION->setAnio($params['anio']);
-    return $GENERACION->queryUpdateGeneracion();
+function updateEstudia($params){
+    include_once "../model/ESTUDIA.php";
+    $ESTUDIA = new ESTUDIA();
+    $ESTUDIA->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $ESTUDIA->setIdPlanFk($params['id_plan_fk']);
+    $ESTUDIA->setAnio($params['anio']);
+    $ESTUDIA->setTurno($params['turno']);//agregado turno
+    $ESTUDIA->setBaja($params['baja']);//agregado baja
+    return $ESTUDIA->queryUpdateEstudia();
 }
 
-function insertGeneracion($params){
-    include_once "../model/GENERACION.php";
-    $GENERACION = new GENERACION();
-    $GENERACION->setIdGeneracion($params['id_generacion']);
-    $GENERACION->setIdPlanFk($params['id_plantel_fk']);
-    $GENERACION->setAnio($params['anio']);
-    return $GENERACION->queryInsertGeneracion();
+function insertEstudia($params){
+    include_once "../model/ESTUDIA.php";
+    $ESTUDIA = new ESTUDIA();
+    $ESTUDIA->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $ESTUDIA->setIdPlanFk($params['id_plan_fk']);
+    $ESTUDIA->setAnio($params['anio']);
+    $ESTUDIA->setTurno($params['turno']);//agregado turno
+    $ESTUDIA->setBaja($params['baja']);//agregado baja
+    $ESTUDIA->setEstatus($params['estatus']);//agregado estatus
+    return $ESTUDIA->queryInsertEstudia();
 }
 
-function deleteGeneracion($idGeneracion){
-    include_once "../model/GENERACION.php";
-    $GENERACION = new GENERACION();
-    $GENERACION->setIdGeneracion($idGeneracion);
-    return $GENERACION->queryDeleteGeneracion();
+function deleteEstudia($params){
+    include_once "../model/ESTUDIA.php";
+    $ESTUDIA = new ESTUDIA();
+    $ESTUDIA->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $ESTUDIA->setIdPlanFk($params['id_plan_fk']);
+    return $ESTUDIA>queryDeleteEstudia();
+}
+
+function updateEstatusEstudia($params){
+    include_once "../model/ESTUDIA.php";
+    $ESTUDIA = new ESTUDIA();
+    $ESTUDIA->setEstatus($params['estatus']);
+    $ESTUDIA->setIdUsuarioAlumnoFk($params['id_usuarioalumno_fk']);
+    $ESTUDIA->setIdPlanFk($params['id_plan_fk']);
+    return $ESTUDIA->queryUpdateEstatusEstudia();
 }
