@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-12-2021 a las 01:34:08
+-- Tiempo de generación: 02-12-2021 a las 03:25:52
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -49,7 +49,6 @@ INSERT INTO `administrador` (`usuario_id_fk`) VALUES
 
 CREATE TABLE `alumno` (
   `usuario_id_fk` int(100) NOT NULL,
-  `id_generacion_fk` int(10) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
@@ -58,14 +57,14 @@ CREATE TABLE `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`usuario_id_fk`, `id_generacion_fk`, `updated_at`, `created_at`) VALUES
-(1, 7, '2021-11-25 21:54:25', '2021-11-25 21:54:25'),
-(2, 4, '2021-11-25 22:05:57', '2021-11-25 22:05:57'),
-(3, 4, '2021-11-25 22:07:41', '2021-11-25 22:07:41'),
-(4, 7, '2021-11-25 22:07:41', '2021-11-25 22:07:41'),
-(5, 6, '2021-11-25 22:14:27', '2021-11-25 22:14:27'),
-(6, 4, '2021-11-25 22:14:27', '2021-11-25 22:14:27'),
-(8, 7, '2021-11-25 22:14:48', '2021-11-25 22:14:48');
+INSERT INTO `alumno` (`usuario_id_fk`, `updated_at`, `created_at`) VALUES
+(1, '2021-11-25 21:54:25', '2021-11-25 21:54:25'),
+(2, '2021-11-25 22:05:57', '2021-11-25 22:05:57'),
+(3, '2021-11-25 22:07:41', '2021-11-25 22:07:41'),
+(4, '2021-11-25 22:07:41', '2021-11-25 22:07:41'),
+(5, '2021-11-25 22:14:27', '2021-11-25 22:14:27'),
+(6, '2021-11-25 22:14:27', '2021-11-25 22:14:27'),
+(8, '2021-11-25 22:14:48', '2021-11-25 22:14:48');
 
 -- --------------------------------------------------------
 
@@ -726,8 +725,7 @@ ALTER TABLE `administrador`
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`usuario_id_fk`),
-  ADD KEY `fk_alumno_generacion` (`id_generacion_fk`);
+  ADD PRIMARY KEY (`usuario_id_fk`);
 
 --
 -- Indices de la tabla `area`
