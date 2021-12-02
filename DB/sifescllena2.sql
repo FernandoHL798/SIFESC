@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-12-2021 a las 03:25:52
+-- Tiempo de generación: 02-12-2021 a las 07:24:36
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sifesc2`
+-- Base de datos: `sifesc`
 --
 
 -- --------------------------------------------------------
@@ -295,13 +295,14 @@ CREATE TABLE `estudia` (
 --
 
 INSERT INTO `estudia` (`id_usuarioalumno_fk`, `id_plan_fk`, `anio`, `baja`, `estatus`, `turno`, `created_at`, `updated_at`) VALUES
-(1, 9, '2008', 1, 1, 1, '2021-12-02 00:07:25', '2021-12-02 00:07:41'),
-(2, 1119, '2009', 0, 1, 2, '2021-12-02 00:07:25', '2021-12-02 00:07:41'),
-(3, 1119, '2010', 1, 2, 1, '2021-12-02 00:09:09', '2021-12-02 00:09:09'),
-(4, 1119, '2019', 1, 3, 2, '2021-12-02 00:30:07', '2021-12-02 00:30:07'),
-(5, 1119, '2017', 0, 1, 1, '2021-12-02 00:31:34', '2021-12-02 00:31:34'),
-(6, 1119, '2013', 0, 1, 2, '2021-12-02 00:32:12', '2021-12-02 00:32:12'),
-(8, 1119, '2019', 0, 1, 1, '2021-12-02 00:32:53', '2021-12-02 00:32:53');
+(1, 9, '2008', 1, 1, 1, '2021-12-02 05:19:26', '2021-12-02 05:19:26'),
+(2, 1119, '2009', 0, 1, 2, '2021-12-02 05:19:26', '2021-12-02 05:19:26'),
+(3, 1119, '2010', 1, 2, 1, '2021-12-02 05:20:07', '2021-12-02 05:20:07'),
+(4, 1119, '2019', 1, 3, 2, '2021-12-02 05:20:07', '2021-12-02 05:20:07'),
+(5, 1119, '2017', 0, 1, 1, '2021-12-02 05:20:39', '2021-12-02 05:20:39'),
+(6, 1119, '2013', 0, 1, 2, '2021-12-02 05:20:39', '2021-12-02 05:20:39'),
+(8, 9, '2000', 1, 2, 1, '2021-12-02 05:35:52', '2021-12-02 05:35:52'),
+(8, 1119, '2019', 0, 1, 1, '2021-12-02 05:20:57', '2021-12-02 05:20:57');
 
 -- --------------------------------------------------------
 
@@ -779,8 +780,8 @@ ALTER TABLE `edificio`
 -- Indices de la tabla `estudia`
 --
 ALTER TABLE `estudia`
-  ADD PRIMARY KEY (`id_usuarioalumno_fk`),
-  ADD KEY `plandeestudios` (`id_plan_fk`);
+  ADD PRIMARY KEY (`id_usuarioalumno_fk`,`id_plan_fk`),
+  ADD KEY `id_plan_fk` (`id_plan_fk`);
 
 --
 -- Indices de la tabla `facultad`
@@ -988,8 +989,8 @@ ALTER TABLE `edificio`
 -- Filtros para la tabla `estudia`
 --
 ALTER TABLE `estudia`
-  ADD CONSTRAINT `alumno` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `alumno` (`usuario_id_fk`),
-  ADD CONSTRAINT `plandeestudios` FOREIGN KEY (`id_plan_fk`) REFERENCES `plandeestudios` (`id_plan`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `estudia_ibfk_1` FOREIGN KEY (`id_usuarioalumno_fk`) REFERENCES `alumno` (`usuario_id_fk`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `estudia_ibfk_2` FOREIGN KEY (`id_plan_fk`) REFERENCES `plandeestudios` (`id_plan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `grupos`

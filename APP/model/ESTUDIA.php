@@ -119,8 +119,8 @@ class ESTUDIA extends CONEXION{
     }
 
     public function queryInsertEstudia(){
-        $query="INSERT into `estudia`(`id_usuarioalumno_fk`,`id_plan_fk`,`anio`,`turno`, `baja`, `estatus`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPlanFk()."', '".$this->getAnio()."', '".$this->getTurno()."', '".$this->getBaja()."', '".$this->getEstatus()."', current_timestamp(),
+        $query="INSERT into `estudia`(`id_usuarioalumno_fk`,`id_plan_fk`,`anio`, `baja`, `estatus`,`turno`,`created_at`,`updated_at`) 
+        VALUES ('".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPlanFk()."', '".$this->getAnio()."', '".$this->getBaja()."', '".$this->getEstatus()."', '".$this->getTurno()."', current_timestamp(),
         current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
