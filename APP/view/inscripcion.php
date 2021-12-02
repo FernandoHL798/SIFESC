@@ -87,24 +87,24 @@ include "./includes/sidebar2.php";
                             </th>
                             <th colspan="2">Año de Ingreso:
                                 <div class="datos_personales">
-                                    <span id="anio"></span>
+                                    <span id="anioEstudia"></span>
                                 </div>
                             </th>
                             <th colspan="2">Carrera:
                                 <div class="datos_personales">
-                                    <span id="carrera"></span>
+                                    <span id="idCarrera"></span>
                                 </div>
                             </th>
                         </tr>
                         <tr>
                             <th colspan="3">Plantel:
                                 <div class="datos_personales">
-                                    106 - F.E.S Cuautitlan (Contaduria)
+                                    <span id="Plantel"></span>
                                 </div>
                             </th>
                             <th colspan="3">Plan de estudios:
                                 <div class="datos_personales">
-                                    1119 - licenciado en informatica
+                                    <span id="Plan"></span>
                                 </div>
                             </th>
                             <th colspan="2">Periodo :
@@ -121,7 +121,7 @@ include "./includes/sidebar2.php";
                             <th>Nombre de la Asignatura</th>
                             <th>Cred
                                 <div class="datos_personales">
-                                    Contador de creditos (68)
+                                    Contador de creditos (<span id="creditoMaximo"></span>)
                                 </div>
                             </th>
                             <th>Sem</th>
@@ -245,6 +245,7 @@ include "./includes/sidebar2.php";
             <!--Scrip para Modal-->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
             <script src="../service/lista-alumno.js"></script>
+            <script src="../service/saturacion.js"></script>
             <script>
                 $(document).ready(function() {
                     $('#example').DataTable({

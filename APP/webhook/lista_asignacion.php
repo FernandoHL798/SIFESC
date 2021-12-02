@@ -1,5 +1,6 @@
 <?php
 include_once "../control/controlAsignacion.php";
 $id_plan = $_POST['idPlan'];
-$result=consultaAsignacion($id_plan);
+$idAsignatura= $_POST['idAsignatura'];
+$result=consultaAsignacion($id_plan,$idAsignatura);
 echo $result;

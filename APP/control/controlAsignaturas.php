@@ -1,9 +1,9 @@
 <?php
 //FUncion para consulta de todas las asignaturas.
-function consultaAsignaturas(){
+function consultaAsignaturas($id_plan){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
-    $result = $ASIGNATURA->queryConsultaAsignaturas();
+    $result = $ASIGNATURA->queryConsultaAsignaturas($id_plan);
     return json_encode($result);
 }
 
