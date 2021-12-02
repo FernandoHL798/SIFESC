@@ -18,8 +18,8 @@ class ALUMNO extends USUARIO{
         $this->usuario_id_fk = $usuario_id_fk;
     }
 
-    public function queryconsultaAlumno(){
-        $query="SELECT `usuario_id_fk`,`updated_at`, `created_at` FROM `alumno`";
+    public function queryconsultaAlumno($idUsuario,$idPlan){
+        $query="SELECT us.id_usuario,us.nombre, us.cuenta_alumno,us.primer_apellido, us.segundo_apellido, est.anio, est.turno, plan.id_plan, plan.nombre_plan, car.id_carrera,car.nombre as nombre_carrera,car.clave, plat.nombre AS nombre_plantel, plat.id_plantel, fac.nombre_facultad,fac.id_facultad FROM alumno al, usuario us, estudia est, plandeestudios plan, carrera car, plantel_carrera plan_car, plantel plat, facultad fac WHERE est.id_usuarioalumno_fk= al.usuario_id_fk AND est.id_plan_fk= plan.id_plan AND car.id_carrera= plan.id_carrera_fk AND car.id_carrera= plan_car.id_carrera_fk AND plan_car.id_plantel_fk = plat.id_plantel AND fac.id_facultad= plat.id_facultad_fk AND al.usuario_id_fk = us.id_usuario AND us.id_usuario=".$idUsuario." AND plan.id_plan=".$idPlan;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

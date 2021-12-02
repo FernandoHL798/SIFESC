@@ -1,9 +1,9 @@
 <?php
 //LFHL
-function consultaAlumno(){
+function consultaAlumno($idUsuario,$idPlan){
    include_once "../model/ALUMNO.php";
    $ALUMNO = new ALUMNO();
-   $result = $ALUMNO->queryConsultaAlumno();
+   $result = $ALUMNO->queryConsultaAlumno($idUsuario,$idPlan);
    return json_encode($result);
 }
 
