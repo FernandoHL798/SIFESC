@@ -131,67 +131,8 @@ include "./includes/sidebar2.php";
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <td data-label="No">1</td>
-                            <td data-label="Clave">1305</td>
-                            <td data-label="Nombre de la Asig">INFORMÁTICA VI</td>
-                            <td data-label="Cred">12</td>
-                            <td data-label="Sem">7</td>
-                            <td data-label="Gpo">1701</td>
-                            <td data-label="Mov">Alta</td>
-                            <td colspan="2" class="text-center">
-                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-label="No">1</td>
-                            <td data-label="Clave">1305</td>
-                            <td data-label="Nombre de la Asig">INFORMÁTICA VI</td>
-                            <td data-label="Cred">12</td>
-                            <td data-label="Sem">7</td>
-                            <td data-label="Gpo">1701</td>
-                            <td data-label="Mov">Alta</td>
-                            <td colspan="2" class="text-center">
-                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-label="No">1</td>
-                            <td data-label="Clave">1305</td>
-                            <td data-label="Nombre de la Asig">INFORMÁTICA VI</td>
-                            <td data-label="Cred">12</td>
-                            <td data-label="Sem">7</td>
-                            <td data-label="Gpo">1701</td>
-                            <td data-label="Mov">Alta</td>
-                            <td colspan="2" class="text-center">
-                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-label="No">1</td>
-                            <td data-label="Clave">1305</td>
-                            <td data-label="Nombre de la Asig">INFORMÁTICA VI</td>
-                            <td data-label="Cred">12</td>
-                            <td data-label="Sem">7</td>
-                            <td data-label="Gpo">1701</td>
-                            <td data-label="Mov">Alta</td>
-                            <td colspan="2" class="text-center">
-                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-label="No">1</td>
-                            <td data-label="Clave">1305</td>
-                            <td data-label="Nombre de la Asig">INFORMÁTICA VI</td>
-                            <td data-label="Cred">12</td>
-                            <td data-label="Sem">7</td>
-                            <td data-label="Gpo">1701</td>
-                            <td data-label="Mov">Alta</td>
-                            <td colspan="2" class="text-center">
-                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
-                            </td>
-                        </tr>
+                    <tbody id="tbl-movimiento">
+                        <!-- AJAX RESPONSE Lista alumno.js-->
                 </table>
             </div>
         </div>
@@ -246,6 +187,7 @@ include "./includes/sidebar2.php";
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
             <script src="../service/lista-alumno.js"></script>
             <script src="../service/saturacion.js"></script>
+            <script src="../service/add-movimiento.js"></script>
             <script>
                 $(document).ready(function() {
                     $('#example').DataTable({

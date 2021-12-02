@@ -1,7 +1,11 @@
 $(document).ready(function(){
 	datosAlumno();
     getAsignaturas();
-    getAsignaciones(5);
+    getListaMovimientos();
+    $("#asig_materia").change(function(){
+        var idAsignatura=$("#asig_materia").val();
+        getAsignaciones(idAsignatura);
+});
 });
 //Funcion para realizar peticion a un microservicio 
 function datosAlumno(){
@@ -51,19 +55,52 @@ function getAsignaturas(){
 
 function getAsignaciones(idAsignatura){
      $.ajax({
-        url: "../webhook/lista_asignacion.php",
+        url: "../webhook/lista_grupos.php",
         type: 'POST',
-        data : {       idPlan: "1119",
-        idAsignatura:idAsignatura    },
+        data : {      idAsignatura:idAsignatura    },
         success: function (response) {
             //Convertimos el string a JSON
             let ASIGNACIONES = JSON.parse(response);  
             console.log(ASIGNACIONES);
-            let template="";
-            ASIGNACIONES.forEach(asignatura=>{
-                
+            let htmlGrupos="";
+            htmlGrupos+=  `<option selected>Selecciona el grupo</option>`;
+            ASIGNACIONES.forEach(asignacion=>{
+                htmlGrupos += `
+                        <option value="${asignacion.id_asignacion}">${asignacion.nombre_grupo}</option>`;
             });
-            
+            $("#grupo").html(htmlGrupos);
+            }
+        });
+}
+function getListaMovimientos(){
+    $.ajax({
+        url: "../webhook/lista_movimiento.php",
+        type: 'POST',
+        data : {      idInscripcion:7    },
+        success: function (response) {
+            //Convertimos el string a JSON
+            let MOVIMIENTOS = JSON.parse(response);  
+            console.log(MOVIMIENTOS);
+            let tblMovimientos="";
+            let cont=0;
+            MOVIMIENTOS.forEach(movimiento=>{
+                cont++;
+                tblMovimientos += `
+                        <tr idMovimiento=${movimiento.id_movimiento}>
+                            <td data-label="No">${cont}</td>
+                            <td data-label="Clave">${movimiento.id_asignatura}</td>
+                            <td data-label="Nombre de la Asig">${movimiento.nombre}</td>
+                            <td data-label="Cred">${movimiento.creditos}</td>
+                            <td data-label="Sem">${movimiento.semestre}</td>
+                            <td data-label="Gpo">${movimiento.nombre_grupo}</td>
+                            <td data-label="Mov">Alta</td>
+                            <td colspan="2" class="text-center">
+                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
+                            </td>
+                        </tr>
+                        `;
+            });
+            $("#tbl-movimiento").html(tblMovimientos);
             }
         });
 }

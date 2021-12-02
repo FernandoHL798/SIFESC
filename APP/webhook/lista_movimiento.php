@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlMovimiento.php";
-$result=consultaMovimiento();
+$idInscripcion=$_POST['idInscripcion'];
+$result=consultaMovimiento($idInscripcion);
 echo $result;

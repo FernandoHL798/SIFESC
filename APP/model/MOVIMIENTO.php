@@ -106,8 +106,8 @@ class MOVIMIENTO extends CONEXION{
     }
     
 
-    public function queryconsultaMovimiento(){
-        $query="SELECT `id_inscripcion_fk`, `id_asignacion_fk`, `updated_at`, `created_at`, `estatus`, `calificacion`, `aprobado`, `veces_cursado` FROM `movimiento`";
+    public function queryconsultaMovimiento($idInscripcion){
+        $query="SELECT ins.id_periodo_fk, asi.id_asignacion, g.id_grupo, g.nombre_grupo, a.id_asignatura, a.codigo, a.nombre, a.creditos, a.semestre FROM `inscripcion` ins, `movimiento` mov, `asignacion` asi, `asignaturas` a, `grupos` g where ins.id_inscripcion=mov.id_inscripcion_fk and mov.id_asignacion_fk=asi.id_asignacion and asi.id_grupo_fk=g.id_grupo and g.id_asignatura_fk=a.id_asignatura and ins.id_inscripcion=".$idInscripcion;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
