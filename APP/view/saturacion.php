@@ -205,6 +205,97 @@ include "./includes/sidebar2.php";
                         </tr> -->
                     </tbody>
                 </table>
+                <table class="table table-bordered  display nowrap mt-3" cellspacing="0" width="100%">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 100px;">Clave Asig</th>
+                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 106px;">Gpo</th>
+                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Cr</th>
+                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 70px;">In</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-asignaciones">
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0017</td>
+                            <td data-label="Nombre">Sem. Redes de Computadoras II</td>
+                            <td data-label="Gpo">1011</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">28</td>
+                            <td data-label="In">2</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 100px;">Clave Asig</th>
+                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 106px;">Gpo</th>
+                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Cr</th>
+                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 70px;">In</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-asignaciones">
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0017</td>
+                            <td data-label="Nombre">Ingles II</td>
+                            <td data-label="Gpo">7201</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">28</td>
+                            <td data-label="In">2</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 100px;">Clave Asig</th>
+                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 106px;">Gpo</th>
+                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Cr</th>
+                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 70px;">In</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-asignaciones">
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0017</td>
+                            <td data-label="Nombre">Programación II</td>
+                            <td data-label="Gpo">1043</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">28</td>
+                            <td data-label="In">2</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 100px;">Clave Asig</th>
+                            <th style="width: 600px;">Nombre</th>
+                            <th style="width: 106px;">Gpo</th>
+                            <th style="width: 70px;">Se</th>
+                            <th style="width: 70px;">Cr</th>
+                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 70px;">In</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-asignaciones">
+                        <tr class="text-center">
+                            <td data-label="Clave Asig">0017</td>
+                            <td data-label="Nombre">Sem. Multimedia I</td>
+                            <td data-label="Gpo">2501</td>
+                            <td data-label="Se">9</td>
+                            <td data-label="Cr">8</td>
+                            <td data-label="Cup">28</td>
+                            <td data-label="In">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <p class="mt-3 mb-2"></p>
