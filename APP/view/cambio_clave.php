@@ -42,20 +42,64 @@
                         <div class="row">
                             <div class="col-5 mx-auto">
                                 <input type="email" class="form-control mt-2" style="height: 55px;" id="floatingInput" placeholder="Contraseña actual:" required="" autofocus=""> 
-                                </div>
                             </div>
+                        </div>
                             <div class="mt-3 mb-2"></div>
                         <div class="row">
                             <div class="col-5 mx-auto">
-                                <input type="email" class="form-control" style="height: 55px;" id="floatingInput" placeholder="Contraseña nueva:" required="" autofocus=""> 
-                                </div>
+                                <input type="text" class="form-control mb-2" placeholder="Ingresa tu contraseña" id="password">
+                                <span id="mensaje"></span>
+                                <br>
                             </div>
+
+                        </div>
+                            <ul class="col-5 mx-auto">
+                                <li id="mayus">Ingresa 3 mayusculas</li>
+                                <li id="special">3 Caracteres especiales</li>
+                                <li id="numbers">Números</li>
+                                <li id="lower">Minusculas</li>
+                                <li id="len">Mínimo 8 caracteres</li>
+                            </ul>
+
+                        <div class="center">
+                            <div class="col-5 mx-auto">
+                                <input type="password" class="form-control mb-2" placeholder="prueba de password con js" id="password">
+                                <span id="mensaje"></span>
+                            </div>
+                        </div>
+
+
+                                <div class="center col-5 mx-auto">
+                                  <div class="form">
+                                    <div class="form-element">
+                                      <input type="password" class="form-control mb-2" placeholder="prueba de password con js" id="password">
+                                      <div class="password-policies">
+                                        <div class="policy-length">
+                                          8 Characters
+                                        </div>
+                                        <div class="policy-number">
+                                          Contains Number
+                                        </div>
+                                        <div class="policy-uppercase">
+                                          Contains Uppercase
+                                        </div>
+                                        <div class="policy-special">
+                                          Contains Special Characters
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                        
+
+
                         <div class="mt-3 mb-2"></div>
                         <div class="row">
                             <div class="col-5 mx-auto">
-                                <input type="email" class="form-control" style="height: 55px;" id="floatingInput" placeholder="Confirmar contraseña :" required="" autofocus=""> 
-                                </div>
+                                <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" id="exampleInputPassword1">
                             </div>
+                        </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="d-grid gap-2 col-3 mx-auto">
 
@@ -81,9 +125,9 @@
     <!-- SCRIPTS -->
         
         <script src="../tools/sidebar.js"></script>
+        <script src="../service/password-confirmation.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFY lzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 		<script>
 			$(document).ready(function() {
 				$('#example').DataTable({
@@ -92,6 +136,7 @@
 			} );
 
 		</script>
+        
 		<?php include "./modal/modal-confirma-cambio-contra.php"; ?>
 	</body>
 	</html>
