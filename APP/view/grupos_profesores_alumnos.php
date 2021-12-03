@@ -128,6 +128,10 @@ include "./includes/sidebar2.php";
                     </div>
                 </div>
             </div>
+            <div class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
+                <button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
+            </div>
+            Aun no funciona este botón de imprimir (EMH)
         </div>
     </div>
 

@@ -42,11 +42,6 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <th style="width: 50px;">Clave</th>
                             <th style="width: 100px;">Nombre</th>
-                            <th style="width: 50px;">Duración</th>
-                            <th style="width: 80px;">Limite inscripcion por periodo</th>
-                            <th style="width: 80px;">Creditos obligatorios</th>
-                            <th style="width: 80px;">Creditos optativos</th>
-                            <th style="width: 80px;">Creditos totales</th>
                             <th style="width: 100px;">Acciones</th>
                             
                         </tr>
@@ -55,11 +50,6 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <td data-label="Clave">0017</td>
                             <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
-                            <td data-label="Duración">9</td>
-                            <td data-label="Limite de Inscr. por periodo">8</td>
-                            <td data-label="Creditos Oblig.">359</td>
-                            <td data-label="Creditos Opt.">72</td>
-                            <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
                                 <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></
                             </td>
@@ -67,11 +57,6 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <td data-label="Clave">0017</td>
                             <td data-label="Nombre">REDES COMPUTACIONALES III</td>
-                            <td data-label="Duración">9</td>
-                            <td data-label="Limite de Inscr. por periodo">8</td>
-                            <td data-label="Creditos Oblig.">359</td>
-                            <td data-label="Creditos Opt.">72</td>
-                            <td data-label="Creditos Tot.">431</td>
                             
                             <td data-label="Acciones">
                                 <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></
@@ -80,11 +65,6 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <td data-label="Clave">0017</td>
                             <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
-                            <td data-label="Duración">9</td>
-                            <td data-label="Limite de Inscr. por periodo">8</td>
-                            <td data-label="Creditos Oblig.">359</td>
-                            <td data-label="Creditos Opt.">72</td>
-                            <td data-label="Creditos Tot.">431</td>
                             <td data-label="Acciones">
                                 <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                             </td>

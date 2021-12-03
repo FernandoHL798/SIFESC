@@ -52,8 +52,8 @@ class GRUPOS extends CONEXION{
     }
 
     
-    public function queryconsultaGrupos(){
-        $query="SELECT `id_grupo`, `id_asignatura_fk`, `nombre_grupo`, `updated_at`, `created_at` FROM `grupos`";
+    public function queryconsultaGrupos($idAsignatura){
+        $query="SELECT g.nombre_grupo, asi.cupo, asi.id_asignacion FROM grupos g,asignacion asi where g.id_grupo = asi.id_grupo_fk AND g.id_asignatura_fk=".$idAsignatura;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

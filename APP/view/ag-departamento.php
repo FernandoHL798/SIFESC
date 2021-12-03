@@ -18,54 +18,95 @@ include "./includes/sidebar2.php";
     
     <!--              AQUI VA EL CONTENIDO                -->
     <div class="home_content2">
-        <div class="texthome">            
-
-                <div class="row">
+        <div class="texthome">
+        <form class="mb-4">              
+            <div class="mb-4">
+                <div class="grid">
                     <div class="">
                         <a href="http://localhost/SIFESC/APP/view/index.php" title="Volver"> 
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi    bi-arrow-left-circle" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
                             </svg>
                         </a>
-                    </div>        
+                    </div>
+                    <div>
+                        <h3 id="head3" class="text-center">Departamentos FESC</h3>
+                    </div>
+                    <div class="clock">
+                      <div class="hours">
+                        <div class="first">
+                          <div class="number">0</div>
+                        </div>
+                        <div class="second">
+                          <div class="number">0</div>
+                        </div>
+                      </div>
+                      <div class="tick">:</div>
+                      <div class="minutes">
+                        <div class="first">
+                          <div class="number">0</div>
+                        </div>
+                        <div class="second">
+                          <div class="number">0</div>
+                        </div>
+                      </div>
+
+                      <!--PROBLEMAS CON EL SEGUNDERO, NO LO AGREGO POR EL MOMENTO (EMMANUEL)
+                      <div class="tick">:</div>
+                      <div class="seconds">
+                        <div class="first">
+                          <div class="number">0</div>
+                        </div>
+                        <div class="second infinite">
+                          <div class="number">0</div>
+                        </div>
+                      </div>
+                        -->
+                    </div>     
                 </div> 
-                <div class="row">
-                    <p class="mb-2"></p>
-                    
+                        <p class="text-center mb-5">Agrega los departamentos existentes de la FESC</p>
+                    <div class="d-grid gap-2 col-3 mx-auto">
+                        <div class="modal-content">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#depto_Modal">
+                                  Agregar Departamento
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                
-                    <h4 class="text-center mb-5">Agregar asignaturas a saturación</h4>
-                    <p class="text-center mb-4">Selecciona el boton de vista para empezar a agregar asignaturas en saturación <br>
-                    correspondientes al plan de estudios que elijas</p>
-                    <table class="table table-bordered display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+
+                    <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
-                            <th style="width: 50px;">Clave</th>
-                            <th style="width: 100px;">Nombre</th>
+                            <th style="width: 50px;">Clave DEPTO.</th>
+                            <th style="width: 100px;">Nombre DEPTO.</th>
                             <th style="width: 100px;">Acciones</th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
+                            <td data-label="Clave">0011</td>
+                            <td data-label="Nombre">Departamento de informática</td>
                             <td data-label="Acciones">
-                                <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">REDES COMPUTACIONALES III</td>
+                            <td data-label="Clave">0012</td>
+                            <td data-label="Nombre">Departamento de administración</td>
                             <td data-label="Acciones">
-                                <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr class="text-center">
-                            <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
+                            <td data-label="Clave">0013</td>
+                            <td data-label="Nombre">Departamento ITSE</td>
                             <td data-label="Acciones">
-                                <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
                             </td>
                         </tr>
                     </tbody>
@@ -80,13 +121,14 @@ include "./includes/sidebar2.php";
                 <p class="mt-3 mb-2"></p>
                 </div>
             </div>
- 
+        </form>   
         </div>
     </div>
 </div>
 
 
     <script src="../tools/sidebar.js"></script>
+    <script src="../tools/clock.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -105,7 +147,7 @@ include "./includes/sidebar2.php";
         } );  
     </script>
 
-    <?php include "./modal/modal-agregar-plan-estu.php"; ?>
+    <?php include "./modal/modal-agregar-depto.php"; ?>
     <?php include "./modal/modal-edit-plan-estu.php"; ?>
     <?php include "./modal/modal-baja_plan_e.php"; ?>
 

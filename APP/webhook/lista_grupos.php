@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlGrupos.php";
-$result=consultaGrupos();
+$idAsignatura=$_POST['idAsignatura'];
+$result=consultaGrupos($idAsignatura);
 echo $result;

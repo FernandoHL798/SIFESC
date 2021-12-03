@@ -1,9 +1,9 @@
 <?php
 
-function consultaMovimiento(){
+function consultaMovimiento($idInscripcion){
     include_once "../model/MOVIMIENTO.php";
     $MOVIMIENTO = new MOVIMIENTO();
-    return json_encode($MOVIMIENTO->queryconsultaMovimiento());
+    return json_encode($MOVIMIENTO->queryconsultaMovimiento($idInscripcion));
 }
 
 function updateMovimiento($params){
@@ -23,10 +23,10 @@ function insertMovimiento($params){
     $MOVIMIENTO = new MOVIMIENTO();
     $MOVIMIENTO->setIdInscripcionFk($params['id_inscripcion_fk']);
     $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
-    $MOVIMIENTO->setEstatus($params['estatus']);
-    $MOVIMIENTO->setCalificacion($params['calificacion']);
-    $MOVIMIENTO->setAprobado($params['aprobado']);
-    $MOVIMIENTO->setVecesCursado($params['veces_cursado']);
+    $MOVIMIENTO->setEstatus("1");
+    $MOVIMIENTO->setCalificacion("");
+    $MOVIMIENTO->setAprobado(0);
+    $MOVIMIENTO->setVecesCursado(0);
     return $MOVIMIENTO->queryInsertMovimiento();
 }
 
