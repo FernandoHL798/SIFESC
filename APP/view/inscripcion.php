@@ -72,7 +72,7 @@ include "./includes/sidebar2.php";
     <div class="">
         <div class="row">
             <div class="col-lg-12">
-                <table id="example" class="table table-bordered">
+                <table id="table" class="table table-bordered">
                     <thead>
                         <tr>
                             <th colspan="1">Numero de cuenta:
@@ -127,7 +127,7 @@ include "./includes/sidebar2.php";
                             <th>Sem</th>
                             <th>Gpo</th>
                             <th>Mov</th>
-                            <th colspan="2">ACCION</th>
+                            <th>ACCION</th>
                         </tr>
                     </thead>
 
