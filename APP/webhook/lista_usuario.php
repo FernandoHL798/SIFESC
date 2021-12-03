@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlUsuario.php";
-$result=consultaUsuarios();
+$correoUsu="nayellisotoz@gmail.com";
+$result=consultaUsuarios($correoUsu);
 echo $result;
