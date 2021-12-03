@@ -9,7 +9,7 @@
                                     <div class="modal-body">
                                       <div class="mt-3 mb-2"></div>
                                       <label>Se ha enviado un correo de confirmación a la direccion: AQUI IRIA EL CORREO AGREGADO</label>
-                                       </form>
+                                    </div>
                                     </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
