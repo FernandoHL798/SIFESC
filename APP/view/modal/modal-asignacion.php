@@ -4,7 +4,7 @@
 			  	<div class="modal-dialog">
 				    <div class="modal-content">
 					      <div class="modal-header">
-					        <h5 class="modal-title" id="exampleModalLabel">Agregar materia</h5>
+					        <h5 class="modal-title" id="exampleModalLabel">Agregar asignatura</h5>
 					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					      </div>
 					      <div class="modal-body">
@@ -12,7 +12,7 @@
 					        <!-- CONTENIDO DEL MODAL-->
 									<form id="frm-add-movimiento">
 									  <div class="pruebass">
-									    <label for="exampleInputEmail1" class="form-label">Nombre de materia</label>
+									    <label for="exampleInputEmail1" class="form-label">Nombre de asignatura</label>
 									    <select class="form-select" aria-label="Default select example" id="asig_materia" name="asig_materia">
 											  <!-- AJAX RESPONSE LISTA ALUMNO-->
 											</select><br>

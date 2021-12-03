@@ -45,7 +45,7 @@ include "./includes/sidebar2.php";
             
             
                      
-                     <h3 class="text-center mb-3">Asigna materias a los profesores</h3>
+                     <h3 class="text-center mb-3">Asigna asignaturas a los profesores</h3>
                         <div class="d-grid gap-2 col-3 mx-auto">
                             <div class="modal-content mb-4">
                             <!-- Button trigger modal -->
@@ -61,7 +61,7 @@ include "./includes/sidebar2.php";
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Buscar</span>
                   </div>
-                  <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese datos de busqueda" aria-label="Alumno" aria-describedby="basic-addon1">
+                  <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese datos de búsqueda" aria-label="Alumno" aria-describedby="basic-addon1">
                 </div>
                 <!-- Barra de busqueda -->
                 </div>
@@ -74,7 +74,7 @@ include "./includes/sidebar2.php";
                             <th style="width: 100px;">Primer Apellido</th>
                             <th style="width: 100px;">Segundo Apellido</th>
                             <th style="width: 100px;">correo</th>
-                            <th style="width: 120px;">Dep</th>
+                            <th style="width: 120px;">Departamento</th>
                             
                             <th style="width: 140px;">Acciones</th>
                         </tr>

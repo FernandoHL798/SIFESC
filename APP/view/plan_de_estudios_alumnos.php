@@ -74,7 +74,7 @@ include "./includes/sidebar2.php";
                 </div>
                 
                     <h4 class="text-center mb-5">Agregar alumno</h4>
-                    <p class="text-center mb-4">Agrega alumno dependiendo plan de estudios al que pertenece oprima el boton de la accion para visualizar a los alumnos</p>
+                    <p class="text-center mb-4">Para agregar un alumno presione el botón de la columna "ACCIONES" según el plan de estudios al que pertenece.</p>
                     <table class="table table-bordered display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">

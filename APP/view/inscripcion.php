@@ -65,17 +65,26 @@ include "./includes/sidebar2.php";
                                 </div>     
                             </div> 
                             <div class="mt-3 mb-2"></div>
-                            <h4 class="text-center mb-5">Selecciona las materias que inscribiras en este nuevo periodo</h4>
-                            <p class="text-center mb-4">Para dar de alta una materia selecciona el botón << Agregar asignatura >> y rellena los campos requeridos<br>
-                            Para dar de baja la materia presiona el botón de eliminar ubicado en la columna de "ACCION". Seleccione este botón de acuerdo a la fila en donde se encuente su materia a dar de baja</p>  
+                            <h4 class="text-center mb-5">Selecciona las asignaturas que inscribirás en este nuevo periodo</h4>
+                            <p class="text-center mb-4">Para dar de alta una asignatura selecciona el botón << Agregar asignatura >> y rellena los campos requeridos.<br>
+                            Para dar de baja la asignatura presiona el botón de eliminar ubicado en la columna de "ACCIÓN". Seleccione este botón de acuerdo a la fila en donde se encuente su asignatura a dar de baja.</p>  
                         </div>
+
+<!-- BACK TE COMENTO ESTA PARTE DE CODIGO CON MOTIVO DE LA PRESENTACIÓN DEL DÍA DE MAÑANA 
+    VIERNES 03/12 AL PROFESOR LEONEL, SE DUPLICA LA TABLA Y NO VISUALIZO DE QUIEN ES EL CAMBIO
+
+    DESCOMENTEN SI LO TIENEN QUE USAR, Y SI YA NO FAVOR DE BORRARLO: EMH
+
+
+    ********************************************************************************************************************** 
+<<<<<<< Updated upstream
     <div class="">
         <div class="row">
             <div class="col-lg-12">
                 <table id="table" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th colspan="1">Numero de cuenta:
+                            <th colspan="1">Número de cuenta:
                                 <div class="datos_personales">
                                     <span id="cuenta_alumno"></span>
                                 </div>
@@ -116,7 +125,7 @@ include "./includes/sidebar2.php";
                         </tr>
                         <tr class="informacion" id="informacion">
                             
-                            <th>No</th>
+                            <th>No.</th>
                             <th>Clave</th>
                             <th>Nombre de la Asignatura</th>
                             <th>Cred
@@ -124,19 +133,85 @@ include "./includes/sidebar2.php";
                                     Contador de creditos (<span id="creditoMaximo"></span>)
                                 </div>
                             </th>
-                            <th>Sem</th>
-                            <th>Gpo</th>
-                            <th>Mov</th>
-                            <th>ACCION</th>
+                            <th>Sem.</th>
+                            <th>Gpo.</th>
+                            <th>Mov.</th>
+                            <th>ACCIóN</th>
                         </tr>
                     </thead>
+=======
 
-                    <tbody id="tbl-movimiento">
-                        <!-- AJAX RESPONSE Lista alumno.js-->
-                </table>
-            </div>
-        </div>
-    </div> 
+-------------------------------------------------------------------------------------------------------------------------->
+                        <div class="">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table id="table" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="1">Numero de cuenta:
+                                                    <div class="datos_personales">
+                                                        <span id="cuenta_alumno"></span>
+                                                    </div>
+                                                </th>
+                                                <th colspan="3">Nombre:
+                                                    <div class="datos_personales">
+                                                        <span id="nombreAlumno"></span>
+                                                    </div>
+                                                </th>
+                                                <th colspan="2">Año de Ingreso:
+                                                    <div class="datos_personales">
+                                                        <span id="anioEstudia"></span>
+                                                    </div>
+                                                </th>
+                                                <th colspan="2">Carrera:
+                                                    <div class="datos_personales">
+                                                        <span id="idCarrera"></span>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3">Plantel:
+                                                    <div class="datos_personales">
+                                                        <span id="Plantel"></span>
+                                                    </div>
+                                                </th>
+                                                <th colspan="3">Plan de estudios:
+                                                    <div class="datos_personales">
+                                                        <span id="Plan"></span>
+                                                    </div>
+                                                </th>
+                                                <th colspan="2">Periodo :
+                                                    <div class="datos_personales">
+                                                        Ejemplo de periodo
+                                                    </div>
+                                                </th>
+
+                                            </tr>
+                                            <tr class="informacion" id="informacion">
+                                                
+                                                <th>No</th>
+                                                <th>Clave</th>
+                                                <th>Nombre de la Asignatura</th>
+                                                <th>Cred
+                                                    <div class="datos_personales">
+                                                        Contador de creditos (<span id="creditoMaximo"></span>)
+                                                    </div>
+                                                </th>
+                                                <th>Sem</th>
+                                                <th>Gpo</th>
+                                                <th>Mov</th>
+                                                <th>ACCION</th>
+                                            </tr>
+                                        </thead>
+>>>>>>> Stashed changes
+
+                                        <tbody id="tbl-movimiento">
+                                            <!-- AJAX RESPONSE Lista alumno.js-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> 
 
                             <!-- Se utiliza para darle espacio al final de la tabla -->
                                 <div class="mt-3 mb-2"></div>
@@ -152,7 +227,7 @@ include "./includes/sidebar2.php";
                                 <div class=" col-3 mx-auto mt-2">
                                     <div class="modal-content mb-4">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-outline-success" onclick="window.location.href='./ConsultaInscripcion.php'">Solicitar</button>
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-avs-inscripcion">Solicitar</button>
                                             </div>
                                         </div>
                                         <div class="mt-3 mb-4"></div>
@@ -197,6 +272,7 @@ include "./includes/sidebar2.php";
 
             </script>
         <?php include "./modal/modal-asignacion.php"; ?>
+        <?php include "./modal/modal-avs-inscripcion.php"; ?>
         <?php include "./modal/modal-baja-asignacion.php"; ?>
 
 </body>

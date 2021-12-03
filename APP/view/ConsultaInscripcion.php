@@ -66,7 +66,7 @@ include "./includes/sidebar2.php";
 							</th>
 						</tr>
 						<tr class="informacion" id="informacion">
-							<th>NO</th>
+							<th>NO.</th>
 							<th>CLAVE</th>
 							<th>NOMBRE DE LA ASIGNATURA</th>
 							<th>CRED.</th>

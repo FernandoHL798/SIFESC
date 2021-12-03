@@ -30,15 +30,15 @@
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Creditos Obligatorios:" class="form-control" style="height: 60px" id="creditos_obli" name="creditos_obli">
+                        <input type="text" placeholder="Créditos Obligatorios:" class="form-control" style="height: 60px" id="creditos_obli" name="creditos_obli">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Creditos Optativos:" class="form-control" style="height: 60px" id="creditos_opta" name="creditos_opta">
+                        <input type="text" placeholder="Créditos Optativos:" class="form-control" style="height: 60px" id="creditos_opta" name="creditos_opta">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Creditos Totales:" class="form-control" style="height: 60px" id="creditos_totales" name="creditos_totales">
+                        <input type="text" placeholder="Créditos Totales:" class="form-control" style="height: 60px" id="creditos_totales" name="creditos_totales">
                       </div>
                     </div>
                   <div class="modal-footer">
