@@ -212,8 +212,10 @@ class USUARIO extends CONEXION{
     }
 
     
-    public function queryconsultaUsuario(){
-        $query="SELECT `id_usuario`, `cuenta_administrador`, `cuenta_alumno`, `cuenta_profesor`, `nombre`, `primer_apellido`, `segundo_apellido`, `correo`, `contrasenia`, `telefono`, `fecha_nacimiento`, `pregunta_secreta`, `respuesta_secreta` FROM `usuario`";
+    public function queryconsultaUsuario($correoUsu){
+        $query="SELECT us.id_usuario,us.cuenta_alumno, us.cuenta_profesor, us.cuenta_administrador, 
+us.nombre, us.primer_apellido, us.segundo_apellido, us.correo, us.contrasenia, 
+us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$correoUsu."'";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

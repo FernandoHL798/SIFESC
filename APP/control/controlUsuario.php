@@ -1,10 +1,10 @@
 <?php 
 //Funcion consulta Usuarios
 //LFHL
-function consultaUsuarios(){
+function consultaUsuarios($correoUsu){
     include_once "../model/USUARIO.php";
     $USUARIOS= new USUARIO();
-    $result=$USUARIOS->queryConsultaUsuario();
+    $result=$USUARIOS->queryConsultaUsuario($correoUsu);
     return json_encode($result);
 }
 
@@ -50,7 +50,7 @@ function insertUsuario($params){
     $USUARIOS->setContrasenia(md5($params['pwd']));
     $USUARIOS->setTelefono($params['telefono']);
     $USUARIOS->setFechaNacimiento($params['fecha_nacimiento']);
-   |$USUARIOS->setPreguntaSecreta($params['pregunta_secreta']);
+    $USUARIOS->setPreguntaSecreta($params['pregunta_secreta']);
     $USUARIOS->setRespuestaSecreta($params['respuesta_secreta']);
     $result= $USUARIOS->queryInsertUsuario();
     return $result;
