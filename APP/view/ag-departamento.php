@@ -64,7 +64,7 @@ include "./includes/sidebar2.php";
                         -->
                     </div>     
                 </div> 
-                        <p class="text-center mb-5">Agrega los departamentos existentes de la FESC</p>
+                        <p class="text-center mb-5">Agrega los departamentos existentes de la FESC.</p>
                     <div class="d-grid gap-2 col-3 mx-auto">
                         <div class="modal-content">
                             <!-- Button trigger modal -->

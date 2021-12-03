@@ -22,11 +22,11 @@
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Apellido Paterno:" class="form-control" style="height: 60px" id="app" name="app">
+                        <input type="text" placeholder="Primer Apellido:" class="form-control" style="height: 60px" id="app" name="app">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Apellido Materno:" class="form-control" style="height: 60px" id="apm" name="apm">
+                        <input type="text" placeholder="Segundo Apellido:" class="form-control" style="height: 60px" id="apm" name="apm">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
@@ -34,7 +34,7 @@
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">
-                        <input type="text" placeholder="Telefono:" class="form-control" style="height: 60px" id="telefono" name="telefono">
+                        <input type="text" placeholder="Teléfono:" class="form-control" style="height: 60px" id="telefono" name="telefono">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">

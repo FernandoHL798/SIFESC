@@ -52,9 +52,9 @@
                                 <div class="form-floating">
                                     <select class="form-select" id="floatingSelect">
                                         <option hidden=""></option>
-                                        <option value="1">¿Como se llama su mamá?</option>
-                                        <option value="2">¿Cual es el nombre de su primer mascota?</option>
-                                        <option value="3">¿Cual es el nombre de su escuela primaria?</option>
+                                        <option value="1">¿Cuál es tu color favorito?</option>
+                                        <option value="2">¿Cuál es el nombre de su primer mascota?</option>
+                                        <option value="3">¿Cuál es el nombre de su escuela primaria?</option>
                                     </select>
                                         <label for="floatingSelect"><font SIZE=3>Seleccione una pregunta secreta</font></label>
                             </div>

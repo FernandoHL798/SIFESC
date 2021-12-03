@@ -71,10 +71,10 @@ include "./includes/sidebar2.php";
                                     <th>NO. DE CUENTA</th>
                                     <th>NOM. ALUMNO</th>
                                     <th>CORREO</th>
-                                    <th>TELEFONO</th>
-                                    <th>ESTATUS???</th>
+                                    <th>TELÉFONO</th>
+                                    <th>ESTATUS</th>
                                     <th>CALIFICACIÓN</th>
-                                    <th>ACCION</th>
+                                    <th>ACCIÓN</th>
                                 </tr>
                             </thead>
                             <tbody>

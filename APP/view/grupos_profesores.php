@@ -46,7 +46,7 @@ include "./includes/sidebar2.php";
                                     1
                                 </div>
                             </th>
-                            <th colspan="2">CLAVE DE PROFESOR:
+                            <th colspan="3">CLAVE DE PROFESOR:
                                 <div class="datos_personales">12345678</div>
                             </th>
                             <th colspan="4">NOMBRE:
@@ -66,7 +66,7 @@ include "./includes/sidebar2.php";
                                     2021/20
                                 </div>
                             </th>
-                            <th colspan="3">PLANTEL:
+                            <th colspan="4">PLANTEL:
                                 <div class="datos_personales">
                                     106 - F.E.S. CUAUTITLÁN
                                 </div>
@@ -82,6 +82,7 @@ include "./includes/sidebar2.php";
                             <th>GPO.</th>
                             <th>TIPO GPO.</th>
                             <th>SEM.</th>
+                            <th>Inscritos</th>
                             <th>ACCION</th>
                         </tr>
                     </thead>
@@ -96,6 +97,7 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1701</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
+                            <td data-label="Inscritos">20</td>
                             <td class="text-center">
                                 <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
@@ -109,6 +111,7 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1103</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">2</td>
+                            <td data-label="Inscritos">20</td>
                             <td class="text-center">
                                 <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
@@ -122,6 +125,7 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1751</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
+                            <td data-label="Inscritos">20</td>
                             <td class="text-center">
                                 <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
@@ -135,6 +139,7 @@ include "./includes/sidebar2.php";
                             <td data-label="GRUPO">1502</td>
                             <td data-label="TIPO GRUPO">EXTRAORDINARIO</td>
                             <td data-label="SEMESTRE">5</td>
+                            <td data-label="Inscritos">20</td>
                             <td class="text-center">
                                 <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>

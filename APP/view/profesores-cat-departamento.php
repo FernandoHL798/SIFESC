@@ -66,7 +66,7 @@ include "./includes/sidebar2.php";
                 </div> 
 
                     <div class="mt-4 mb-6">
-                        <p class="text-center mb-5">Selecciona un departamento con el botón de la columna acciones para poder visualizar, agregar, editar y eliminar a los profesores que pertenecen a el.</p>
+                        <p class="text-center mb-5">Selecciona un departamento con el botón de la columna acciones para poder visualizar, agregar, editar y eliminar a los profesores que pertenecen a él.</p>
                     </div>
                 </div>
 

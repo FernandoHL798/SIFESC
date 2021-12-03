@@ -47,7 +47,7 @@
                             <div class="mt-3 mb-2"></div>
                         <div class="row">
                             <div class="col-5 mx-auto">
-                                <input type="text" class="form-control mb-2" placeholder="Ingresa tu contraseña" id="password">
+                                <input type="text" class="form-control mb-2" placeholder="Ingresa tu contraseña:" id="password">
                                 <span id="mensaje"></span>
                                 <br>
                             </div>
@@ -97,7 +97,7 @@
                         <div class="mt-3 mb-2"></div>
                         <div class="row">
                             <div class="col-5 mx-auto">
-                                <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" id="exampleInputPassword1">
+                                <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña:" id="exampleInputPassword1">
                             </div>
                         </div>
                         <div class="mt-3 mb-2"></div>

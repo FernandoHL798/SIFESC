@@ -85,7 +85,7 @@ include "./includes/sidebar2.php";
                                     <th style="width: 90px;">Primer Apellido</th>
                                     <th style="width: 90px;">Segundo Apellido</th>
                                     <th style="width: 270px;">Correo</th>
-                                    <th style="width: 120px;">Telefono</th>
+                                    <th style="width: 120px;">Teléfono</th>
                                     
                                     <th style="width: 140px;">Acciones</th>
                                 </tr>

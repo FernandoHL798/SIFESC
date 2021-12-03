@@ -31,7 +31,7 @@ include "./includes/sidebar2.php";
                     </div>        
                 </div> 
                         <h3 class="text-center mb-3">Planes de estudio</h3>
-                        <p class="text-center mb-5">Agrega los planes de estudio existentes</p>
+                        <p class="text-center mb-5">Agrega los planes de estudio existentes.</p>
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <div class="modal-content">
                     <!-- Button trigger modal -->
@@ -49,10 +49,10 @@ include "./includes/sidebar2.php";
                             <th style="width: 50px;">Clave</th>
                             <th style="width: 100px;">Nombre</th>
                             <th style="width: 50px;">Duración</th>
-                            <th style="width: 80px;">Limite inscripcion por periodo</th>
-                            <th style="width: 80px;">Creditos obligatorios</th>
-                            <th style="width: 80px;">Creditos optativos</th>
-                            <th style="width: 80px;">Creditos totales</th>
+                            <th style="width: 80px;">Límite inscripción por periodo</th>
+                            <th style="width: 80px;">Créditos obligatorios</th>
+                            <th style="width: 80px;">Créditos optativos</th>
+                            <th style="width: 80px;">Créditos totales</th>
                             <th style="width: 100px;">Acciones</th>
                             
                         </tr>
@@ -60,7 +60,8 @@ include "./includes/sidebar2.php";
                     <tbody>
                         <tr class="text-center">
                             <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
+                            <td data-label="Nombre">
+                            Informática</td>
                             <td data-label="Duración">9</td>
                             <td data-label="Limite de Inscr. por periodo">8</td>
                             <td data-label="Creditos Oblig.">359</td>
@@ -73,7 +74,7 @@ include "./includes/sidebar2.php";
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">REDES COMPUTACIONALES III</td>
+                            <td data-label="Nombre">Diseño Gráfico</td>
                             <td data-label="Duración">9</td>
                             <td data-label="Limite de Inscr. por periodo">8</td>
                             <td data-label="Creditos Oblig.">359</td>
@@ -87,7 +88,7 @@ include "./includes/sidebar2.php";
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
+                            <td data-label="Nombre">Ingenieria Agricola</td>
                             <td data-label="Duración">9</td>
                             <td data-label="Limite de Inscr. por periodo">8</td>
                             <td data-label="Creditos Oblig.">359</td>

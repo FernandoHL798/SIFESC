@@ -35,10 +35,10 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <th style="width: 100px;">Clave Asig</th>
                             <th style="width: 600px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 106px;">Gpo.</th>
+                            <th style="width: 70px;">Se.</th>
+                            <th style="width: 70px;">Cr.</th>
+                            <th style="width: 93px;">Cupo</th>
                             <th style="width: 70px;">In</th>
                         </tr>
                     </thead>
@@ -210,10 +210,10 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <th style="width: 100px;">Clave Asig</th>
                             <th style="width: 600px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 106px;">Gpo.</th>
+                            <th style="width: 70px;">Se.</th>
+                            <th style="width: 70px;">Cr.</th>
+                            <th style="width: 93px;">Cupo</th>
                             <th style="width: 70px;">In</th>
                         </tr>
                     </thead>
@@ -232,10 +232,10 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <th style="width: 100px;">Clave Asig</th>
                             <th style="width: 600px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 106px;">Gpo.</th>
+                            <th style="width: 70px;">Se.</th>
+                            <th style="width: 70px;">Cr.</th>
+                            <th style="width: 93px;">Cupo</th>
                             <th style="width: 70px;">In</th>
                         </tr>
                     </thead>
@@ -254,10 +254,10 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <th style="width: 100px;">Clave Asig</th>
                             <th style="width: 600px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 106px;">Gpo.</th>
+                            <th style="width: 70px;">Se.</th>
+                            <th style="width: 70px;">Cr.</th>
+                            <th style="width: 93px;">Cupo</th>
                             <th style="width: 70px;">In</th>
                         </tr>
                     </thead>
@@ -276,10 +276,10 @@ include "./includes/sidebar2.php";
                         <tr class="text-center">
                             <th style="width: 100px;">Clave Asig</th>
                             <th style="width: 600px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Se</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
+                            <th style="width: 106px;">Gpo.</th>
+                            <th style="width: 70px;">Se.</th>
+                            <th style="width: 70px;">Cr.</th>
+                            <th style="width: 93px;">Cupo</th>
                             <th style="width: 70px;">In</th>
                         </tr>
                     </thead>

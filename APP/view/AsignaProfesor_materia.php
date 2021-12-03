@@ -54,7 +54,7 @@ include "./includes/sidebar2.php";
                         <tr>
                             <th colspan="3">RFC
                                 <div class="datos_personales">
-                                    SOYUNRFC123
+                                    LAOP001009389
                                 </div>
                             </th>
                             <th colspan="3">DEPARTAMENTO :
@@ -62,7 +62,7 @@ include "./includes/sidebar2.php";
                                     INFORMÁTICA
                                 </div>
                             </th>
-                            <th colspan="3">AREA :
+                            <th colspan="3">ÁREA :
                                 <div class="datos_personales">
                                     1
                                 </div>
@@ -95,8 +95,8 @@ include "./includes/sidebar2.php";
                             <th>Asignatura</th>
                             <th>Sem</th>
                             <th>Grupo</th>
-                            <th>creditos</th>
-                            <th>caracter</th>
+                            <th>créditos</th>
+                            <th>carácter</th>
                             <th>ACCION</th>
                         </tr>
                     </thead>

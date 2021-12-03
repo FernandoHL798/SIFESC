@@ -53,10 +53,10 @@ include "./includes/sidebar2.php";
                                         </tr>
                                         <tr class=" text-center">
                                             <th style="width: 350px;">Carrera</th>
-                                            <td style="width: 350px;" data-label="Asig">308 - Informatica</td>
+                                            <td style="width: 350px;" data-label="Asig">308 - Informática</td>
                                         </tr>       
                                         <tr class=" text-center">
-                                            <th style="width: 350px;">Fecha de atencion</th>
+                                            <th style="width: 350px;">Fecha de atención</th>
                                             <td style="width: 350px;" data-label="Asig">19-Enero-2022</td>
                                         </tr>
                                         <tr class=" text-center">

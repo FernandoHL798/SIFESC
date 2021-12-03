@@ -18,7 +18,7 @@
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="Edit_plan_grup">
                         <div class="form-group">
-                            <input type="text" placeholder="Calificación: (solo acepta valores enteros)" class="form-control" style="height: 60px">
+                            <input type="text" placeholder="Calificación:" class="form-control" style="height: 60px">
                         </div>
                         </div>
                   </div>
