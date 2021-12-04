@@ -12,6 +12,7 @@ function updateAsignacion($params){
     $ASIGNACION->setIdAsignacion($params['id_asignacion']);
     $ASIGNACION->setIdUsuarioProfesorFk($params['id_usuarioprofesor_fk']);
     $ASIGNACION->setIdGrupoFk($params['id_grupo_fk']);
+    $ASIGNACION->setIdPeriodoFk($params['id_periodo_fk']);
     $ASIGNACION->setCupo($params['cupo']);
     return $ASIGNACION->queryUpdateAsignacion();
 }
@@ -22,6 +23,7 @@ function insertAsignacion($params){
     $ASIGNACION->setIdAsignacion($params['id_asignacion']);
     $ASIGNACION->setIdUsuarioProfesorFk($params['id_usuarioprofesor_fk']);
     $ASIGNACION->setIdGrupoFk($params['id_grupo_fk']);
+    $ASIGNACION->setIdPeriodoFk($params['id_periodo_fk']);
     $ASIGNACION->setCupo($params['cupo']);
     return $ASIGNACION->queryInsertAsignacion();
 }

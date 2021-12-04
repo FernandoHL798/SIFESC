@@ -6,7 +6,6 @@ class MOVIMIENTO extends CONEXION{
     private $estatus;
     private $calificacion;
     private $aprobado;
-    private $veces_cursado;
   
     /**
      * @return mixed
@@ -85,26 +84,7 @@ class MOVIMIENTO extends CONEXION{
     {
         $this->aprobado = $aprobado;
     }
-    
-     /**
-     * @return mixed
-     */
-
-    /**
-     * @return mixed
-     */
-    public function getVecesCursado()
-    {
-        return $this->veces_cursado;
-    }
-    /**
-     * @param mixed $veces_cursado
-     */
-    public function setVecesCursado($veces_cursado): void
-    {
-        $this->veces_cursado = $veces_cursado;
-    }
-    
+        
 
     public function queryconsultaMovimiento($idInscripcion){
         $query="SELECT ins.id_periodo_fk, asi.id_asignacion, g.id_grupo, g.nombre_grupo, a.id_asignatura, a.codigo, a.nombre, a.creditos, a.semestre FROM `inscripcion` ins, `movimiento` mov, `asignacion` asi, `asignaturas` a, `grupos` g where ins.id_inscripcion=mov.id_inscripcion_fk and mov.id_asignacion_fk=asi.id_asignacion and asi.id_grupo_fk=g.id_grupo and g.id_asignatura_fk=a.id_asignatura and ins.id_inscripcion=".$idInscripcion;
@@ -116,9 +96,7 @@ class MOVIMIENTO extends CONEXION{
 
     public function queryUpdateMovimiento(){
         $query="UPDATE `movimiento` SET `updated_at` = current_timestamp(), `estatus` = '".$this->getEstatus()."',
-         `calificacion` = '".$this->getCalificacion()."', `aprobado` = '".$this->getAprobado()."', 
-         `veces_cursado` = '".$this->getVecesCursado()."' WHERE `movimiento`.`id_inscripcion_fk` = 
-         '".$this->getIdInscripcionFk()."' AND `movimiento`.`id_asignacion_fk` = '".$this->getIdAsignacionFk()."'";
+         `calificacion` = '".$this->getCalificacion()."', `aprobado` = '".$this->getAprobado()."' WHERE `movimiento`.`id_inscripcion_fk` = '".$this->getIdInscripcionFk()."' AND `movimiento`.`id_asignacion_fk` = '".$this->getIdAsignacionFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -126,9 +104,8 @@ class MOVIMIENTO extends CONEXION{
     }
 
     public function queryInsertMovimiento(){
-        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprobado`, `veces_cursado`) 
-        VALUES ('".$this->getIdInscripcionFk()."', '".$this->getIdAsignacionFk()."', current_timestamp(),
-        current_timestamp(), '".$this->getEstatus()."', '".$this->getCalificacion()."', '".$this->getAprobado()."', '".$this->getVecesCursado()."')";
+        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprobado`) 
+        VALUES ('".$this->getIdInscripcionFk()."', '".$this->getIdAsignacionFk()."', current_timestamp(), current_timestamp(), '".$this->getEstatus()."', '".$this->getCalificacion()."', '".$this->getAprobado()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

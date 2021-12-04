@@ -4,6 +4,7 @@ $params=[
 	"id_asignacion"=>"1",
 	"id_usuarioprofesor_fk"=>"1",
 	"id_grupo_fk"=>"1",
+	"id_periodo_fk"=>"1",
 	"cupo"=>"25"
 ];
 $result=updateAsignacion($params);

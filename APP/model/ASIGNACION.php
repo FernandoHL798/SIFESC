@@ -4,6 +4,7 @@ class ASIGNACION extends CONEXION{
     private $id_asignacion;
     private $id_usuarioprofesor_fk;
     private $id_grupo_fk;
+    private $id_periodo_fk;
     private $cupo;
 
   
@@ -52,6 +53,21 @@ class ASIGNACION extends CONEXION{
         $this->id_grupo_fk = $id_grupo_fk;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdPeriodoFk()
+    {
+        return $this->id_periodo_fk;
+    }
+    /**
+     * @param mixed $id_periodo_fk
+     */
+    public function setIdPeriodoFk($id_periodo_fk): void
+    {
+        $this->id_periodo_fk = $id_periodo_fk;
+    }
+
      /**
      * @return mixed
      */
@@ -67,7 +83,8 @@ class ASIGNACION extends CONEXION{
         $this->cupo = $cupo;
     }
 
-    public function queryconsultaAsignacion($id_plan,$idAsignatura){
+    public function queryconsultaAsignacion($id_plan,$idAsignatura){ 
+        /*No se si se ocupa extraer periodo, creo que si*/
         $filtro = $idAsignatura>0 ? "AND g.id_asignatura_fk =".$idAsignatura : "";
         $query="SELECT asi.id_asignatura, asi.nombre,asi.creditos, asi.semestre, asi.caracter, asi.codigo, g.nombre_grupo, a.cupo, a.id_asignacion  FROM `asignacion` a, `grupos` g, `asignaturas` asi where a.id_grupo_fk=g.id_grupo AND g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan." ".$filtro;
         $this->connect();
@@ -87,9 +104,8 @@ class ASIGNACION extends CONEXION{
     }
 
     public function queryInsertAsignacion(){
-        $query="INSERT into `asignacion`(`id_asignacion`,`id_usuarioprofesor_fk`,`id_grupo_fk`,`cupo`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdAsignacion()."', '".$this->getIdUsuarioProfesorFk()."', '".$this->getIdGrupoFk()."',
-         '".$this->getCupo()."', current_timestamp(),current_timestamp())";
+        $query="INSERT into `asignacion`(`id_asignacion`,`id_usuarioprofesor_fk`,`id_grupo_fk`,`id_periodo_fk`,`cupo`,`updated_at`,`created_at`) 
+        VALUES ('".$this->getIdAsignacion()."', '".$this->getIdUsuarioProfesorFk()."', '".$this->getIdGrupoFk()."', '".$this->getIdPeriodoFk()."', '".$this->getCupo()."', current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

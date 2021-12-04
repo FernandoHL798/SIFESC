@@ -10,7 +10,6 @@ function updatePeriodo($params){
     include_once "../model/PERIODO.php";
     $PERIODO = new PERIODO();
     $PERIODO->setIdPeriodo($params['id_periodo']);
-    $PERIODO->setIdAsignacionFk($params['id_asignacion_fk']);
     $PERIODO->setPeriodo($params['periodo']);
     $PERIODO->setFechaInscripcion($params['fecha_inscripcion']);
     $PERIODO->setFechaAltasBajas($params['fecha_altabaja']);
@@ -21,7 +20,6 @@ function insertPeriodo($params){
     include_once "../model/PERIODO.php";
     $PERIODO = new PERIODO();
     $PERIODO->setIdPeriodo($params['id_periodo']);
-    $PERIODO->setIdAsignacionFk($params['id_asignacion_fk']);
     $PERIODO->setPeriodo($params['periodo']);
     $PERIODO->setFechaInscripcion($params['fecha_inscripcion']);
     $PERIODO->setFechaAltasBajas($params['fecha_altabaja']);

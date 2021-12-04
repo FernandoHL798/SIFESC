@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $("#frm-add-movimiento").on("submit", function(e){
-    alert("te escucho");
     var f = $(this);
     var formData = new FormData(document.getElementById("frm-add-movimiento"));
     formData.append("dato", "valor");

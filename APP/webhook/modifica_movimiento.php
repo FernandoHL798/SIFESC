@@ -5,8 +5,7 @@ $params=[
     "id_asignacion_fk"=>"1",
     "estatus"=>"1",
     "calificacion"=>"9",
-    "aprobado"=>"1",
-    "veces_cursado"=>"1"
+    "aprobado"=>"1"
 ];
 $result=updateMovimiento($params);
 echo $result;
