@@ -70,4 +70,27 @@ function updatePassword($params){
     $USUARIOS->setContrasenia($params['pwd']);
     return $USUARIOS->queryUpdatePassword();
 }
+
+function verficaUsuario($correo, $pw){
+    include_once "../model/USUARIO.php";
+    $USUARIO = new USUARIO();
+    $USUARIO->setCorreo($correo);
+    $USUARIO->setContrasenia(md5($pw));
+    $obj_user = $USUARIO->queryconsultaUsuario();
+    if(count($obj_user) > 0 ){
+        //creamos la sesion
+        session_start();
+        $_SESSION['id_usuario']    = $obj_user[0]['id_usuario'];
+        $_SESSION['usuario']        = $obj_user[0]['nombre'];
+        $_SESSION['app']       = $obj_user[0]['primer_apellido'];
+        $_SESSION['apm']       = $obj_user[0]['segundo_apellido'];
+        $_SESSION['numero_cuenta']         = $obj_user[0]['cuenta_alumno'];
+        $_SESSION['rfc']   = $obj_user[0]['cuenta_profesor'];
+        $_SESSION['no_trabajador']    = $obj_user[0]['cuenta_administrador'];
+        $_SESSION['correo']    = $obj_user[0]['correo'];
+        $_SESSION['sessionSuccess']    = true;
+        return true;
+    }
+    return false;
+}
 //LFHL

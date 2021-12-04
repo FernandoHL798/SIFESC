@@ -42,19 +42,20 @@
           </div>
           <div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center mb-4">
             <h1 class="mb-4">Bienvenido</h1>
-            <form>
+            <form id="frm-login">
               <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label font-weight-bold">Correo: </label>
-                <input type="email" class="form-control" placeholder="correo@ejemplo.com" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" placeholder="correo@ejemplo.com" id="email" name="email" aria-describedby="emailHelp">
               </div>
               <div class="mb-4">
                 <label for="exampleInputPassword1" class="form-label font-weight-bold">Contraseña: </label>
-                <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" id="exampleInputPassword1">
+                <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" id="pw" name="pw">
                 <a href="#" id="emailHelp" class="form-text text-muted text-decoration-none" data-bs-toggle="modal" data-bs-target="#validarDatos">¿Has olvidado tu contraseña?</a>
                 
               </div>
               <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
             </form>
+            <span id="mensaje"></span>
           </div>
            <div class="px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
            </div>
@@ -62,10 +63,11 @@
       </div>
     </section>
     <!-- Optional JavaScript; choose one of the two! -->
-
+    <!-- LIBRERIA AJAX requeried-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="./APP/service/login-ajax.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
