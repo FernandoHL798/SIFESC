@@ -535,6 +535,9 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    <!-- LIBRERIA AJAX requeried-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="../service/lista-alumno.js"></script>
 
 </body>
 </html>

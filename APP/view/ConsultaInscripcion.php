@@ -26,42 +26,44 @@ include "./includes/sidebar2.php";
 	<div class="container" id="contenido">
 		<div class="row">
 			<div class="col-lg-12">
-				<table id="example" class="table table-bordered">
+				<table id="table" class="table table-bordered">
 					<thead>
 						<tr class="informacion" id="informacion">
 							<th colspan="2">NÚMERO DE CUENTA:
-								<div class="datos_personales">314243919</div>
+								<div class="datos_personales">
+									<span id="cuenta_alumno"></span>
+								</div>
 							</th>
 							<th colspan="4">NOMBRE:
 								<div class="datos_personales">
-									EMMANUEL MARTÍNEZ HERNÁNDEZ
+									<span id="nombreAlumno"></span>
 								</div>
 							</th>
 							<th colspan="1">AÑO DE INGRESO:
 								<div class="datos_personales">
-									2019
+									<span id="anioEstudia"></span>
 								</div>
 							</th>
 							<th colspan="1">CARRERA:
 								<div class="datos_personales">
-									308
+									<span id="idCarrera"></span>
 								</div>
 							</th>
 						</tr>
 						<tr>
 							<th colspan="3">PLANTEL:
 								<div class="datos_personales">
-									106 - F.E.S. CUAUTITLÁN (CONTADURIA)
+									<span id="Plantel"></span>
 								</div>
 							</th>
 							<th colspan="4">PLAN DE ESTUDIOS:
 								<div class="datos_personales">
-									1119 - LICENCIADO EN INFORMÁTICA
+									<span id="Plan"></span>
 								</div>
 							</th>
 							<th colspan="1">Periodo:
 								<div class="datos_personales">
-									2022-1
+									<span id="Periodo"></span>Ejemplo de periodo
 								</div>
 							</th>
 						</tr>
@@ -80,78 +82,18 @@ include "./includes/sidebar2.php";
 						</tr>
 					</thead>
 
-					<tbody>
-						<tr>
-							<td data-label="NÚMERO">1</td>
-							<td data-label="CLAVE">1305</td>
-							<td data-label="NOMBRE ASIGNATURA">INFORMÁTICA VI</td>
-							<td data-label="CREDITOS">12</td>
-							<td data-la data-label="SEMESTRE">7</td>
-							<td data-label="GRUPO">1701</td>
-							<td colspan="5"
-								<div class="MOVIMIENTO">
-									ALTA
-								</div>
-							</td>
-							<tr>
-							<td data-label="NÚMERO">2</td>
-							<td data-label="CLAVE">1307</td>
-							<td data-label="NOMBRE ASIGNATURA">MATEMATICAS VI</td>
-							<td data-label="CREDITOS">8</td>
-							<td data-la data-label="SEMESTRE">7</td>
-							<td data-label="GRUPO">1701</td>
-							<td colspan="5"
-								<div class="MOVIMIENTO">
-									ALTA
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td data-label="NÚMERO">3</td>
-							<td data-label="CLAVE">1304</td>
-							<td data-label="NOMBRE ASIGNATURA">LABO. SISTEMAS COMP. VI</td>
-							<td data-label="CREDITOS">12</td>
-							<td data-la data-label="SEMESTRE">7</td>
-							<td data-label="GRUPO">1701</td>
-							<td colspan="5"
-								<div class="MOVIMIENTO">
-									ALTA
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td data-label="NÚMERO">4</td>
-							<td data-label="CLAVE">1311</td>
-							<td data-label="NOMBRE ASIGNATURA">SEMINARIO DE INVESTIGACIÓN</td>
-							<td data-label="CREDITOS">8</td>
-							<td data-la data-label="SEMESTRE">7</td>
-							<td data-label="GRUPO">1701</td>
-							<td colspan="5"
-								<div class="MOVIMIENTO">
-									ALTA
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td data-label="NÚMERO">5</td>
-							<td data-label="CLAVE">1307</td>
-							<td data-label="NOMBRE ASIGNATURA">ANALISIS</td>
-							<td data-label="CREDITOS">12</td>
-							<td data-la data-label="SEMESTRE">7</td>
-							<td data-label="GRUPO">1701</td>
-							<td colspan="5"
-								<div class="MOVIMIENTO">
-									ALTA
-								</div>
-							</td>
-							</tr>
+					<tbody id="tbl-movimiento">
+						<!--AJAX PARA LLENADO DE TABLA (RESPONSE Lista alumno.js)-->
+					</tbody>
 
 				</table>
 			</div>
 		</div>
 	</div>
 
-
+	<script src="../service/lista-alumno.js"></script>
+            <script src="../service/saturacion.js"></script>
+            <script src="../service/add-movimiento.js"></script>
 	<div class="col-lg-12 mt-4">
 		<div  class="d-grid gap-2 col-11 mx-auto mb-4">
 			<button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
@@ -162,10 +104,6 @@ include "./includes/sidebar2.php";
 
 			</div>
 	</div>
-
-
-
-
 
 	<!-- JavaScript Bundle with Popper -->
 	<script>
@@ -210,6 +148,9 @@ include "./includes/sidebar2.php";
 				})
 
 		</script>
+		<!-- LIBRERIA AJAX requeried-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="../service/lista-alumno.js"></script>
 </body>
 </html>
 </body>
