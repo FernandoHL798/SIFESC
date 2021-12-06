@@ -12,8 +12,8 @@ function datosAlumno(){
 	$.ajax({
         url: "../webhook/lista_alumnos.php",
         type: 'POST',
-        data : {   idUsuario: "8",
-        			idPlan: "9"     },
+        data : {   idUsuario: $("#idUsuario").val(),
+        			idPlan: "1119"     },
         success: function (response) {
             //Convertimos el string a JSON
             let ALUMNO = JSON.parse(response);  
@@ -33,7 +33,7 @@ function getAsignaturas(){
     $.ajax({
         url: "../webhook/lista_asignatura.php",
         type: 'POST',
-        data : {       idPlan: "1119"     },
+        data : {       idPlan: "9"     },
         success: function (response) {
             //Convertimos el string a JSON
             let ASIGNATURAS = JSON.parse(response);  
@@ -101,6 +101,28 @@ function getListaMovimientos(){
                         `;
             });
             $("#tbl-movimiento").html(tblMovimientos);
+            $("#tbl-consulta-inscripcion").html(tblConsultaIns(MOVIMIENTOS));
             }
         });
+}
+
+function tblConsultaIns(MOVIMIENTOS){
+let tblInscripcion="";
+            let cont=0;
+            MOVIMIENTOS.forEach(movimiento=>{
+                cont++;
+                tblInscripcion += `
+                        <tr idMovimiento=${movimiento.id_asignacion_fk}>
+                            <td data-label="No">${cont}</td>
+                            <td data-label="Clave">${movimiento.id_asignatura}</td>
+                            <td data-label="Nombre de la Asig">${movimiento.nombre}</td>
+                            <td data-label="Cred">${movimiento.creditos}</td>
+                            <td data-label="Sem">${movimiento.semestre}</td>
+                            <td data-label="Gpo">${movimiento.nombre_grupo}</td>
+                            <td data-label="Mov">Alta</td>
+                        </tr>
+                        `;
+            });
+            console.log(tblInscripcion);
+            return tblInscripcion;
 }

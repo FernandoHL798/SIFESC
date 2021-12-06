@@ -82,7 +82,7 @@ include "./includes/sidebar2.php";
 						</tr>
 					</thead>
 
-					<tbody id="tbl-movimiento">
+					<tbody id="tbl-consulta-inscripcion">
 						<!--AJAX PARA LLENADO DE TABLA (RESPONSE Lista alumno.js)-->
 					</tbody>
 
@@ -90,10 +90,8 @@ include "./includes/sidebar2.php";
 			</div>
 		</div>
 	</div>
-
-	<script src="../service/lista-alumno.js"></script>
-            <script src="../service/saturacion.js"></script>
-            <script src="../service/add-movimiento.js"></script>
+	<!-- LIBRERIA AJAX requeried-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<div class="col-lg-12 mt-4">
 		<div  class="d-grid gap-2 col-11 mx-auto mb-4">
 			<button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
@@ -148,8 +146,7 @@ include "./includes/sidebar2.php";
 				})
 
 		</script>
-		<!-- LIBRERIA AJAX requeried-->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
             <script src="../service/lista-alumno.js"></script>
 </body>
 </html>

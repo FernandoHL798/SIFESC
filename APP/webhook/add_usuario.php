@@ -1,11 +1,11 @@
 <?php 
 include_once"../control/controlUsuario.php";
 $params=[
-"id_usuario"=>"1",
+"id_usuario"=>"11",
 "cuentaAdministrador"=>"uhduhduhd",
 "cuentaAlumno"=>"321084654",
 "cuentaProf"=>"uhdudgas",
-"nombre"=>"paco",
+"nombre"=>"Paco",
 "primer_apellido"=>"lopez",
 "segundo_apellido"=>"ramirez",
 "correo"=>"pacolr@gmail.com",

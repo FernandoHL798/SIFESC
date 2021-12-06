@@ -1,5 +1,8 @@
 <div class="sidebar">
-		<div class="logo-details">
+	<?php
+	session_start();
+
+	?>		<div class="logo-details">
 			<i class='bx bxs-school'></i>
 			<span class="logo_name">Sistema de inscripción</span>
 		</div>
@@ -116,7 +119,8 @@
 
 						<div class="name-job">
 							<div class="profile_name">
-								Emmanuel Martínez Hernández
+								<input type="hidden" name="idUsuario" id="idUsuario" value="<?php echo $_SESSION['id_usuario'] ?>">
+								<?php echo $_SESSION['usuario']." ".$_SESSION['app']." ".$_SESSION['apm'] ?>
 							</div>
 							<div class="job">
 								<div class="form-check">
