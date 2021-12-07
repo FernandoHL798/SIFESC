@@ -107,7 +107,7 @@
 					<span class="link_name">Cerrar sesión</span>
 				</a>
 				<ul class="sub-menu blank">
-					<li><a class="link_name" href="">Cerrar sesión</a></li>
+					<li><a class="link_name" href="../webhook/c_logout.php">Cerrar sesión</a></li>
 				</ul>
 			</li>
 

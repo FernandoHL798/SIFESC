@@ -1,8 +1,6 @@
 //Star Session
 $(document).ready(function(){
 
-    console.log("Escuchando acciones");
-
     //-------------------Star Sessions
     $('#frm-login').submit(function (e)
     {
