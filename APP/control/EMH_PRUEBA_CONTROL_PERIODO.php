@@ -16,7 +16,7 @@ function insertPeriodo($params){
 	return $PERIODO -> queryInsertPeriodo();
 }
 
-function updatePeriodo(){
+function updatePeriodo($params){
 	include_once "../model/EMH_PRUEBA_PERIODO.php";
 	$PERIODO = new PERIODO();
 	$PERIODO -> setIdPeriodo($params['id_periodo']);
