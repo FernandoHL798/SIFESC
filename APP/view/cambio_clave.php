@@ -81,8 +81,6 @@ include_once "./includes/header.php"; ?>
                                 <li id="lower">Minusculas</li>
                                 <li id="len">Mínimo 8 caracteres</li>
                             </ul>
-
-
                         <!-- MIS PRUEBAS DE PASSWORD EMM -----------------------------------
                         <div class="center">
                             <div class="col-5 mx-auto">
@@ -145,21 +143,7 @@ include_once "./includes/header.php"; ?>
 	</div>
 
     <!-- SCRIPTS -->
-        
-        <script src="../tools/sidebar.js"></script>
-        <script src="../tools/clock.js"></script>
-        <script src="../service/password-confirmation.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFY lzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-		<script>
-			$(document).ready(function() {
-				$('#example').DataTable({
-					responsive: true
-				});
-			} );
-
-		</script>
-        
+        <?php include_once "./includes/js.php";?>
 		<?php include "./modal/modal-confirma-cambio-contra.php"; ?>
 	</body>
 	</html>
