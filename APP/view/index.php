@@ -1,3 +1,6 @@
+<?php
+include_once "./includes/session_verify.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>

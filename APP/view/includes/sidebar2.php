@@ -1,8 +1,5 @@
 <div class="sidebar">
-	<?php
-	session_start();
-
-	?>		<div class="logo-details">
+	<div class="logo-details">
 			<i class='bx bxs-school'></i>
 			<span class="logo_name">Sistema de inscripción</span>
 		</div>
@@ -102,12 +99,12 @@
 			</li>
 
 			<li>
-				<a href="../../index.php">
+				<a href="../webhook/c_logout.php">
 					<i class='bx bxs-log-out' ></i>
 					<span class="link_name">Cerrar sesión</span>
 				</a>
 				<ul class="sub-menu blank">
-					<li><a class="link_name" href="../webhook/c_logout.php">Cerrar sesión</a></li>
+					<li><a class="link_name">Cerrar sesión</a></li>
 				</ul>
 			</li>
 
