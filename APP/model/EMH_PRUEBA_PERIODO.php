@@ -97,7 +97,7 @@ class PERIODO extends CONEXION{
 
 	/* QUERY INSERTAR PERIODO .....................................................*/
     public function queryInsertPeriodo(){
-    	$query = "INSERT into 'periodo'('id_periodo','periodo','fecha_inscripcion','fecha_altas_bajas','created_at','updated_at') VALUES ('".$this -> getIdPeriodo()."', '".$this -> getPeriodo()."', '".$this -> getFechaInscripcion()."', '".$this -> getFechaAltasBajas()."', current_timestamp(), current_timestamp())";
+    	$query = "INSERT into `periodo`(`id_periodo`,`periodo`,`fecha_inscripcion`,`fecha_altas_bajas`,`created_at`,`updated_at`) VALUES ('".$this -> getIdPeriodo()."', '".$this -> getPeriodo()."', '".$this -> getFechaInscripcion()."', '".$this -> getFechaAltasBajas()."', current_timestamp(), current_timestamp())";
     	$this -> connect();
     	$resultado = $this->executeInstruction($query);
     	$this -> close();
