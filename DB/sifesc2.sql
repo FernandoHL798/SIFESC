@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2021 a las 03:30:29
+-- Tiempo de generación: 07-12-2021 a las 20:16:20
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -65,7 +65,8 @@ INSERT INTO `alumno` (`usuario_id_fk`, `semestre`, `updated_at`, `created_at`) V
 (4, 2, '2021-11-25 22:07:41', '2021-11-25 22:07:41'),
 (5, 2, '2021-11-25 22:14:27', '2021-11-25 22:14:27'),
 (6, 2, '2021-11-25 22:14:27', '2021-11-25 22:14:27'),
-(8, 1, '2021-11-25 22:14:48', '2021-11-25 22:14:48');
+(8, 1, '2021-11-25 22:14:48', '2021-11-25 22:14:48'),
+(11, 2, '2021-12-06 17:46:04', '2021-12-06 17:46:04');
 
 -- --------------------------------------------------------
 
@@ -98,6 +99,7 @@ CREATE TABLE `asignacion` (
   `id_asignacion` int(10) NOT NULL,
   `id_usuarioprofesor_fk` int(100) NOT NULL,
   `id_grupo_fk` int(5) NOT NULL,
+  `id_periodo_fk` int(100) NOT NULL,
   `cupo` int(3) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -107,15 +109,15 @@ CREATE TABLE `asignacion` (
 -- Volcado de datos para la tabla `asignacion`
 --
 
-INSERT INTO `asignacion` (`id_asignacion`, `id_usuarioprofesor_fk`, `id_grupo_fk`, `cupo`, `updated_at`, `created_at`) VALUES
-(1, 3, 31, 25, '2021-11-25 23:29:55', '2021-11-25 23:29:55'),
-(2, 3, 1, 25, '2021-11-25 23:29:55', '2021-11-25 23:29:55'),
-(3, 5, 2, 25, '2021-11-25 23:31:04', '2021-11-25 23:31:04'),
-(4, 5, 4, 25, '2021-11-25 23:31:04', '2021-11-25 23:31:04'),
-(5, 7, 11, 25, '2021-11-25 23:33:02', '2021-11-25 23:33:02'),
-(6, 7, 14, 25, '2021-11-25 23:33:02', '2021-11-25 23:33:02'),
-(7, 9, 12, 25, '2021-11-25 23:33:34', '2021-11-25 23:33:34'),
-(8, 9, 15, 25, '2021-11-25 23:33:34', '2021-11-25 23:33:34');
+INSERT INTO `asignacion` (`id_asignacion`, `id_usuarioprofesor_fk`, `id_grupo_fk`, `id_periodo_fk`, `cupo`, `updated_at`, `created_at`) VALUES
+(1, 3, 31, 1, 25, '2021-11-25 23:29:55', '2021-11-25 23:29:55'),
+(2, 3, 1, 1, 25, '2021-11-25 23:29:55', '2021-11-25 23:29:55'),
+(3, 5, 2, 1, 25, '2021-11-25 23:31:04', '2021-11-25 23:31:04'),
+(4, 5, 4, 1, 25, '2021-11-25 23:31:04', '2021-11-25 23:31:04'),
+(5, 7, 11, 1, 25, '2021-11-25 23:33:02', '2021-11-25 23:33:02'),
+(6, 7, 14, 1, 25, '2021-11-25 23:33:02', '2021-11-25 23:33:02'),
+(7, 9, 12, 1, 25, '2021-11-25 23:33:34', '2021-11-25 23:33:34'),
+(8, 9, 15, 1, 25, '2021-11-25 23:33:34', '2021-11-25 23:33:34');
 
 -- --------------------------------------------------------
 
@@ -166,14 +168,14 @@ CREATE TABLE `carrera` (
   `nombre` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `area_fk` int(2) NOT NULL
+  `id_area_fk` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
 --
 -- Volcado de datos para la tabla `carrera`
 --
 
-INSERT INTO `carrera` (`id_carrera`, `clave`, `nombre`, `created_at`, `updated_at`, `area_fk`) VALUES
+INSERT INTO `carrera` (`id_carrera`, `clave`, `nombre`, `created_at`, `updated_at`, `id_area_fk`) VALUES
 (1, 101, 'Actuaria', '2021-11-25 16:22:44', '2021-11-25 16:22:44', 1),
 (2, 102, 'Arquitectura', '2021-11-25 16:22:44', '2021-11-25 16:22:44', 1),
 (3, 103, 'Arquitectura del paizaje', '2021-11-25 16:24:47', '2021-11-25 16:24:47', 1),
@@ -195,24 +197,25 @@ INSERT INTO `carrera` (`id_carrera`, `clave`, `nombre`, `created_at`, `updated_a
 CREATE TABLE `departamentos` (
   `id_departamento` varchar(8) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `id_area_fk` int(2) NOT NULL
+  `id_area_fk` int(2) NOT NULL,
+  `id_plantel_fk` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `departamentos`
 --
 
-INSERT INTO `departamentos` (`id_departamento`, `nombre`, `id_area_fk`) VALUES
-('101ma', 'Matemáticas', 1),
-('102fi', 'Física', 1),
-('103co', 'Contaduría', 1),
-('201bi', 'Biología', 2),
-('202qu', 'Química', 2),
-('301ge', 'Geografía', 3),
-('302ad', 'Administración', 3),
-('304in', 'Informática', 3),
-('305ec', 'Economía', 3),
-('306', 'Derecho', 3);
+INSERT INTO `departamentos` (`id_departamento`, `nombre`, `id_area_fk`, `id_plantel_fk`) VALUES
+('101ma', 'Matemáticas', 1, 1),
+('102fi', 'Física', 1, 1),
+('103co', 'Contaduría', 1, 1),
+('201bi', 'Biología', 2, 1),
+('202qu', 'Química', 2, 1),
+('301ge', 'Geografía', 3, 1),
+('302ad', 'Administración', 3, 1),
+('304in', 'Informática', 3, 1),
+('305ec', 'Economía', 3, 1),
+('306', 'Derecho', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -303,7 +306,8 @@ INSERT INTO `estudia` (`id_usuarioalumno_fk`, `id_plan_fk`, `anio`, `baja`, `est
 (5, 1119, '2017', 0, 1, 1, '2021-12-02 05:20:39', '2021-12-02 05:20:39'),
 (6, 1119, '2013', 0, 1, 2, '2021-12-02 05:20:39', '2021-12-02 05:20:39'),
 (8, 9, '2000', 1, 2, 1, '2021-12-02 05:35:52', '2021-12-02 05:35:52'),
-(8, 1119, '2019', 0, 1, 1, '2021-12-02 05:20:57', '2021-12-02 05:20:57');
+(8, 1119, '2019', 0, 1, 1, '2021-12-02 05:20:57', '2021-12-02 05:20:57'),
+(11, 9, '2019', 0, 1, 1, '2021-12-06 17:48:30', '2021-12-06 17:48:30');
 
 -- --------------------------------------------------------
 
@@ -332,7 +336,8 @@ INSERT INTO `facultad` (`id_facultad`, `nombre_facultad`, `updated_at`, `created
 (7, 'Facultad de Contaduría y Administración', '2021-11-25 16:34:49', '2021-11-25 16:34:49'),
 (8, 'Facultad de Artes y Diseño', '2021-11-25 16:35:48', '2021-11-25 16:35:48'),
 (9, 'Facultad de Ciencias', '2021-11-25 16:35:48', '2021-11-25 16:35:48'),
-(10, 'Facultad de Derecho', '2021-11-25 16:36:06', '2021-11-25 16:36:06');
+(10, 'Facultad de Derecho', '2021-11-25 16:36:06', '2021-11-25 16:36:06'),
+(11, 'Juana', '2021-12-05 15:37:46', '2021-12-05 15:37:46');
 
 -- --------------------------------------------------------
 
@@ -459,13 +464,11 @@ INSERT INTO `inscripcion` (`id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_
 --
 
 CREATE TABLE `movimiento` (
-  `id_movimiento` int(10) NOT NULL,
   `id_inscripcion_fk` int(15) NOT NULL,
   `id_asignacion_fk` int(10) NOT NULL,
   `estatus` int(2) NOT NULL,
   `calificacion` varchar(2) NOT NULL,
   `aprobado` int(1) NOT NULL,
-  `veces_cursado` int(2) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -474,13 +477,16 @@ CREATE TABLE `movimiento` (
 -- Volcado de datos para la tabla `movimiento`
 --
 
-INSERT INTO `movimiento` (`id_movimiento`, `id_inscripcion_fk`, `id_asignacion_fk`, `estatus`, `calificacion`, `aprobado`, `veces_cursado`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, '', 1, 0, '2021-12-03 02:28:40', '2021-12-03 02:28:40'),
-(2, 2, 1, 1, '10', 1, 1, '2021-12-03 02:29:19', '2021-12-03 02:29:19'),
-(3, 3, 1, 1, '', 0, 0, '2021-12-03 02:29:48', '2021-12-03 02:29:48'),
-(4, 4, 1, 1, '', 0, 0, '2021-12-03 02:29:56', '2021-12-03 02:29:56'),
-(5, 5, 1, 1, '', 0, 0, '2021-12-03 02:30:09', '2021-12-03 02:30:09'),
-(6, 6, 1, 1, '', 0, 0, '2021-12-03 02:30:16', '2021-12-03 02:30:16');
+INSERT INTO `movimiento` (`id_inscripcion_fk`, `id_asignacion_fk`, `estatus`, `calificacion`, `aprobado`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '', 1, '2021-12-03 02:28:40', '2021-12-03 02:28:40'),
+(2, 1, 1, '10', 1, '2021-12-03 02:29:19', '2021-12-03 02:29:19'),
+(3, 1, 1, '', 0, '2021-12-03 02:29:48', '2021-12-03 02:29:48'),
+(4, 1, 1, '', 0, '2021-12-03 02:29:56', '2021-12-03 02:29:56'),
+(5, 1, 1, '', 0, '2021-12-03 02:30:09', '2021-12-03 02:30:09'),
+(6, 1, 1, '', 0, '2021-12-03 02:30:16', '2021-12-03 02:30:16'),
+(7, 1, 1, '', 0, '2021-12-04 04:29:15', '2021-12-04 04:29:15'),
+(7, 2, 1, '', 0, '2021-12-03 02:32:16', '2021-12-03 02:32:16'),
+(7, 3, 1, '', 0, '2021-12-05 05:13:54', '2021-12-05 05:13:54');
 
 -- --------------------------------------------------------
 
@@ -490,7 +496,6 @@ INSERT INTO `movimiento` (`id_movimiento`, `id_inscripcion_fk`, `id_asignacion_f
 
 CREATE TABLE `periodo` (
   `id_periodo` int(100) NOT NULL,
-  `id_asignacion_fk` int(10) NOT NULL,
   `periodo` varchar(6) NOT NULL,
   `fecha_inscripcion` datetime NOT NULL,
   `fecha_altas_bajas` datetime NOT NULL,
@@ -502,15 +507,16 @@ CREATE TABLE `periodo` (
 -- Volcado de datos para la tabla `periodo`
 --
 
-INSERT INTO `periodo` (`id_periodo`, `id_asignacion_fk`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at`) VALUES
-(1, 1, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:35:43', '2021-11-25 23:35:43'),
-(2, 2, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:13', '2021-11-25 23:36:13'),
-(3, 3, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:23', '2021-11-25 23:36:23'),
-(4, 4, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:31', '2021-11-25 23:36:31'),
-(5, 5, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:02', '2021-11-25 23:37:02'),
-(6, 6, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:11', '2021-11-25 23:37:11'),
-(7, 7, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:20', '2021-11-25 23:37:20'),
-(8, 8, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:28', '2021-11-25 23:37:28');
+INSERT INTO `periodo` (`id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at`) VALUES
+(1, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:35:43', '2021-11-25 23:35:43'),
+(2, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:13', '2021-11-25 23:36:13'),
+(3, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:23', '2021-11-25 23:36:23'),
+(4, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:36:31', '2021-11-25 23:36:31'),
+(5, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:02', '2021-11-25 23:37:02'),
+(6, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:11', '2021-11-25 23:37:11'),
+(7, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:20', '2021-11-25 23:37:20'),
+(8, '2022-1', '2021-08-27 17:35:24', '2021-09-10 17:35:24', '2021-11-25 23:37:28', '2021-11-25 23:37:28'),
+(9, '2047', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2021-12-07 02:45:48', '2021-12-07 02:45:48');
 
 -- --------------------------------------------------------
 
@@ -691,7 +697,7 @@ CREATE TABLE `usuario` (
   `primer_apellido` varchar(40) DEFAULT NULL,
   `segundo_apellido` varchar(40) DEFAULT NULL,
   `correo` varchar(70) NOT NULL,
-  `contrasenia` varchar(20) NOT NULL,
+  `contrasenia` varchar(32) NOT NULL,
   `telefono` varchar(12) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `pregunta_secreta` int(2) DEFAULT NULL,
@@ -703,7 +709,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `cuenta_alumno`, `cuenta_profesor`, `cuenta_administrador`, `nombre`, `primer_apellido`, `segundo_apellido`, `correo`, `contrasenia`, `telefono`, `fecha_nacimiento`, `pregunta_secreta`, `respuesta_secreta`) VALUES
-(1, '316039109', ' ', ' ', 'Nayelli', 'Soto', 'Zuñiga', 'nayellisotoz@gmail.com', '06102000', '5536980291', '2000-10-06', 0, NULL),
+(1, '316039109', ' ', ' ', 'Nayelli', 'Soto', 'Zuñiga', 'nayellisotoz@gmail.com', '49884d2c0a17bd2aa388e8c8fc7b79fb', '5536980291', '2000-10-06', 0, NULL),
 (2, '419070375', '', 'VIPL891212TA5', 'Luis Antonio', 'Villagomez', 'Pichardo', 'vip1891212@hotmail.com', '12121989', '5528121287', '1989-12-12', 0, NULL),
 (3, '316341042', 'TOHD0003244S1', '', 'Daniela Maria', 'Torres', 'Hernandez', 'danielatorresh@comunidad.unam.mx', '24032000', '5528083989', '2000-03-24', 0, NULL),
 (4, '312100195', '', '', 'Erick', 'Arcos', 'Peralta', 'arcosperaltaerick@hotmail.com', '15101998', '5548731534', '1998-10-15', 0, NULL),
@@ -712,7 +718,8 @@ INSERT INTO `usuario` (`id_usuario`, `cuenta_alumno`, `cuenta_profesor`, `cuenta
 (7, '', 'ROBO000809VC4', '', 'Omar', 'Romo', 'Bautista', 'omar.skaa@gmail.com', '09082000', '5534069985', '2000-08-09', 0, NULL),
 (8, '316345978', '', '', 'Luis Fernando', 'Hernández', 'Ledezma', 'fernandohlqwe@gmail.com', '16041998', '5537091960', '1998-04-16', 0, NULL),
 (9, '', 'AAAN0005208B6', 'AAAN0005208B6', 'Natalia', 'Andrade', 'Ayala', 'nataliaaa@gmail.com', '20052000', '5589562563', '2000-05-20', 0, NULL),
-(10, '', '', 'NUJM970814QJ5', 'Marisol', 'Núñez', 'Juárez', 'marisolnj@gmail.com', '14081997', '5545896505', '1997-08-14', 0, NULL);
+(10, '', '', 'NUJM970814QJ5', 'Marisol', 'Núñez', 'Juárez', 'marisolnj@gmail.com', '14081997', '5545896505', '1997-08-14', 0, NULL),
+(11, '321084654', 'uhdudgas', 'uhduhduhd', 'paco', 'lopez', 'ramirez', 'pacolr@gmail.com', '4a7d1ed414474e4033ac29ccb8653d9b', '5516516878', '2000-12-10', 2, 'manchas');
 
 --
 -- Índices para tablas volcadas
@@ -742,7 +749,8 @@ ALTER TABLE `area`
 ALTER TABLE `asignacion`
   ADD PRIMARY KEY (`id_asignacion`),
   ADD KEY `fk_asignacion_usuario` (`id_usuarioprofesor_fk`),
-  ADD KEY `fk_asignacion_grupos` (`id_grupo_fk`);
+  ADD KEY `fk_asignacion_grupos` (`id_grupo_fk`),
+  ADD KEY `id_periodo_fk` (`id_periodo_fk`);
 
 --
 -- Indices de la tabla `asignaturas`
@@ -755,14 +763,16 @@ ALTER TABLE `asignaturas`
 -- Indices de la tabla `carrera`
 --
 ALTER TABLE `carrera`
-  ADD PRIMARY KEY (`id_carrera`);
+  ADD PRIMARY KEY (`id_carrera`),
+  ADD KEY `id_area_fk` (`id_area_fk`);
 
 --
 -- Indices de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
   ADD PRIMARY KEY (`id_departamento`),
-  ADD KEY `fk_departamentos_area` (`id_area_fk`);
+  ADD KEY `fk_departamentos_area` (`id_area_fk`),
+  ADD KEY `id_plantel_fk` (`id_plantel_fk`);
 
 --
 -- Indices de la tabla `dosificacion`
@@ -818,16 +828,14 @@ ALTER TABLE `inscripcion`
 -- Indices de la tabla `movimiento`
 --
 ALTER TABLE `movimiento`
-  ADD PRIMARY KEY (`id_movimiento`),
-  ADD KEY `id_inscripcion` (`id_inscripcion_fk`),
+  ADD PRIMARY KEY (`id_inscripcion_fk`,`id_asignacion_fk`) USING BTREE,
   ADD KEY `id_asignacion` (`id_asignacion_fk`);
 
 --
 -- Indices de la tabla `periodo`
 --
 ALTER TABLE `periodo`
-  ADD PRIMARY KEY (`id_periodo`),
-  ADD KEY `fk_periodo_asignacion` (`id_asignacion_fk`);
+  ADD PRIMARY KEY (`id_periodo`);
 
 --
 -- Indices de la tabla `plandeestudios`
@@ -923,16 +931,10 @@ ALTER TABLE `inscripcion`
   MODIFY `id_inscripcion` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `movimiento`
---
-ALTER TABLE `movimiento`
-  MODIFY `id_movimiento` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT de la tabla `periodo`
 --
 ALTER TABLE `periodo`
-  MODIFY `id_periodo` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_periodo` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `salon`
@@ -944,7 +946,7 @@ ALTER TABLE `salon`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
@@ -966,6 +968,7 @@ ALTER TABLE `alumno`
 -- Filtros para la tabla `asignacion`
 --
 ALTER TABLE `asignacion`
+  ADD CONSTRAINT `asignacion_ibfk_1` FOREIGN KEY (`id_periodo_fk`) REFERENCES `periodo` (`id_periodo`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_asignacion_grupos` FOREIGN KEY (`id_grupo_fk`) REFERENCES `grupos` (`id_grupo`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_asignacion_usuario` FOREIGN KEY (`id_usuarioprofesor_fk`) REFERENCES `profesor` (`usuario_id_fk`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
@@ -976,9 +979,16 @@ ALTER TABLE `asignaturas`
   ADD CONSTRAINT `fk_asignaturas_plandeestudios` FOREIGN KEY (`id_plan_fk`) REFERENCES `plandeestudios` (`id_plan`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `carrera`
+--
+ALTER TABLE `carrera`
+  ADD CONSTRAINT `carrera_ibfk_1` FOREIGN KEY (`id_area_fk`) REFERENCES `area` (`id_area`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
+  ADD CONSTRAINT `departamentos_ibfk_1` FOREIGN KEY (`id_plantel_fk`) REFERENCES `plantel` (`id_plantel`),
   ADD CONSTRAINT `fk_departamentos_area` FOREIGN KEY (`id_area_fk`) REFERENCES `area` (`id_area`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
@@ -1027,12 +1037,6 @@ ALTER TABLE `inscripcion`
 ALTER TABLE `movimiento`
   ADD CONSTRAINT `id_asignacion` FOREIGN KEY (`id_asignacion_fk`) REFERENCES `asignacion` (`id_asignacion`) ON UPDATE CASCADE,
   ADD CONSTRAINT `id_inscripcion` FOREIGN KEY (`id_inscripcion_fk`) REFERENCES `inscripcion` (`id_inscripcion`);
-
---
--- Filtros para la tabla `periodo`
---
-ALTER TABLE `periodo`
-  ADD CONSTRAINT `fk_periodo_asignacion` FOREIGN KEY (`id_asignacion_fk`) REFERENCES `asignacion` (`id_asignacion`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `plandeestudios`
