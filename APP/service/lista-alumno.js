@@ -13,7 +13,7 @@ function datosAlumno(){
         url: "../webhook/lista_alumnos.php",
         type: 'POST',
         data : {   idUsuario: $("#idUsuario").val(),
-        			idPlan: "1119"     },
+        			idPlan: "9"     },
         success: function (response) {
             //Convertimos el string a JSON
             let ALUMNO = JSON.parse(response);  
