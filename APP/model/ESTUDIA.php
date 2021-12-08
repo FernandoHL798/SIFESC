@@ -102,8 +102,8 @@ class ESTUDIA extends CONEXION{
     }
 
 
-    public function queryconsultaEstudia(){
-        $query="SELECT `id_usuarioalumno_fk`, `id_plan_fk`, `anio`, `turno`, `baja`, `estatus`,  `updated_at`, `created_at` FROM `estudia`";
+    public function queryconsultaEstudia($idAlumno){
+        $query="SELECT e.id_usuarioalumno_fk, e.id_plan_fk, e.anio, e.turno, e.baja, c.nombre as nombre_carrera FROM estudia e, plandeestudios p, carrera c WHERE c.id_carrera=p.id_carrera_fk AND p.id_plan=e.id_plan_fk AND id_usuarioalumno_fk=".$idAlumno;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

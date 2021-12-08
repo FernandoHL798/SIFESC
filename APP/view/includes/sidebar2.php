@@ -120,11 +120,9 @@
 								<?php echo $_SESSION['usuario']." ".$_SESSION['app']." ".$_SESSION['apm'] ?>
 							</div>
 							<div class="job">
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-									<label class="form-check-label" for="flexRadioDefault2">
-										    | 1119 | <br>LICENCIADO EN INFORMÁTICA
-									</label>
+								<input type="text" id="idPlan">
+								<div class="form-check" id="rdo-carrera">
+									
 								</div>
 							</div>
 						</div>

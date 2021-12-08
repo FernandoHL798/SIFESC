@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlEstudia.php";
-$result=consultaEstudia();
+$idAlumno="8";
+$result=consultaEstudia($idAlumno);
 echo $result;

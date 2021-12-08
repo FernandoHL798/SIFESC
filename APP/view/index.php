@@ -41,8 +41,8 @@ include_once "./includes/header.php"; ?>
 				</div>
 		</div>
 	</div>
-	
 	<script src="../tools/sidebar.js"></script>
+	<script src="../service/carreras.js"></script>
 
 </body>
 </html>

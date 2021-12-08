@@ -123,6 +123,5 @@ let tblInscripcion="";
                         </tr>
                         `;
             });
-            console.log(tblInscripcion);
             return tblInscripcion;
 }

@@ -1,9 +1,9 @@
 <?php
 
-function consultaEstudia(){
+function consultaEstudia($idAlumno){
     include_once "../model/ESTUDIA.php";
     $ESTUDIA = new ESTUDIA();
-    return json_encode($ESTUDIA->queryconsultaEstudia());
+    return json_encode($ESTUDIA->queryconsultaEstudia($idAlumno));
 }
 
 function updateEstudia($params){
