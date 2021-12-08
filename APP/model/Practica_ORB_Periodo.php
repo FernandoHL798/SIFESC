@@ -65,7 +65,7 @@ class PERIODO_P_ORB extends CONEXION{
 				}
 
 	public function queryconsultaPeriodoorb(){
-        $query="SELECT `id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at` FROM `periodo`";
+        $query="SELECT `id_periodo`, `fecha_altas_bajas`, `created_at`, `updated_at` FROM `periodo`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -73,7 +73,7 @@ class PERIODO_P_ORB extends CONEXION{
     }
 
     public function queryUpdatePeriodoorb(){
-        $query="UPDATE `periodo` SET `periodo` = '".$this->getPeriodoorb()."', `fecha_inscripcionorb` = '".$this->getFechaInscripcionorb()."', `fecha_altas_bajasorb` = '".$this->getFechaAltasBajasorb()."', 
+        $query="UPDATE `periodo` SET `periodo` = '".$this->getPeriodoorb()."', `fecha_inscripcionorb` = '".$this->getFechaInscripcionorb()."',
         `updated_at` = current_timestamp() WHERE `periodo`.`periodoorb` = '".$this->getPeriodoorb()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -82,8 +82,8 @@ class PERIODO_P_ORB extends CONEXION{
     }
 
     public function queryInsertPeriodoorb(){
-        $query="INSERT into `periodo`(`id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at`) 
-        VALUES ('".$this->getIdPeriodoorb()."', '".$this->getPeriodoorb()."', '".$this->getFechaInscripcionorb()."', '".$this->getFechaAltasBajasorb()."', current_timestamp(),current_timestamp())";
+        $query="INSERT into `periodo`(`id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`) 
+        VALUES ('".$this->getIdPeriodoorb()."', '".$this->getPeriodoorb()."', '".$this->getFechaInscripcionorb()."', '".$this->getFechaAltasBajasorb()."', current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
