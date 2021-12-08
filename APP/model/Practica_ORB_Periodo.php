@@ -64,14 +64,7 @@ class PERIODO_P_ORB extends CONEXION{
 					$this ->fecha_altas_bajasorb = $fecha_altas_bajasorb;
 				}
 
-	public function queryconsultaPeriodoorb(){
-        $query="SELECT `id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at` FROM `periodo`";
-        $this->connect();
-        $resultado = $this->getData($query);
-        $this->close();
-        return $resultado;
-    }
-
+	
     public function queryUpdatePeriodoorb(){
         $query="UPDATE `periodo` SET `periodo` = '".$this->getPeriodoorb()."', `fecha_inscripcionorb` = '".$this->getFechaInscripcionorb()."', `fecha_altas_bajasorb` = '".$this->getFechaAltasBajasorb()."', 
         `updated_at` = current_timestamp() WHERE `periodo`.`periodoorb` = '".$this->getPeriodoorb()."'";
@@ -81,7 +74,22 @@ class PERIODO_P_ORB extends CONEXION{
         return $resultado;
     }
 
-    public function queryInsertPeriodoorb(){
+    
+    public function queryDeletePeriodoorb(){
+        $query="DELETE FROM `periodo` WHERE `periodo`='".$this->getPeriodoorb()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+	public function queryconsultaPeriodoorb(){
+        $query="SELECT `id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at` FROM `periodo`";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+	public function queryInsertPeriodoorb(){
         $query="INSERT into `periodo`(`id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at`) 
         VALUES ('".$this->getIdPeriodoorb()."', '".$this->getPeriodoorb()."', '".$this->getFechaInscripcionorb()."', '".$this->getFechaAltasBajasorb()."', current_timestamp(),current_timestamp())";
         $this->connect();
@@ -90,11 +98,4 @@ class PERIODO_P_ORB extends CONEXION{
         return $resultado;
     }
 
-    public function queryDeletePeriodoorb(){
-        $query="DELETE FROM `periodo` WHERE `periodo`='".$this->getPeriodoorb()."'";
-        $this->connect();
-        $resultado= $this->executeInstruction($query);
-        $this->close();
-        return $resultado;
-    }
 }
