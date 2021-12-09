@@ -1,7 +1,7 @@
 <?php include_once "./includes/session_verify.php";?>
 <!DOCTYPE html>
 <html>
-<?php $titulo="Agrega Alumno | SIFESC";
+<?php $titulo="Agrega Profesor | SIFESC";
 include_once "./includes/header.php";?>
 <body id="body">
 <?php include "./includes/sidebar2.php";?>
@@ -53,7 +53,7 @@ include_once "./includes/header.php";?>
                     <div class="modal-content">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">
-                          Agregar Alumno
+                          Agregar Profesor
                       </button>
                   </div>
               </div>
