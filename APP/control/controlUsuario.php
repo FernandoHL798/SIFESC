@@ -67,7 +67,8 @@ function updatePassword($params){
     include_once "../model/USUARIO.php";
     $USUARIOS= new USUARIO();
     $USUARIOS->setIdUsuario($params['idUsuario']);
-    $USUARIOS->setContrasenia($params['pwd']);
+    $USUARIOS->setContrasenia(md5($params['pwd']));
+    
     return $USUARIOS->queryUpdatePassword();
 }
 

@@ -256,7 +256,7 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
     }
 
     public function queryUpdatePassword(){
-        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id`=".$this->getIdUsuario();
+        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id_usuario`=".$this->getIdUsuario();
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

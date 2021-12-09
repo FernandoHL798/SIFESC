@@ -13,18 +13,26 @@ function datosAlumno(){
         url: "../webhook/lista_alumnos.php",
         type: 'POST',
         data : {   idUsuario: $("#idUsuario").val(),
-        			idPlan: "9"     },
+        			idPlan: $("#idPlan").val()     },
         success: function (response) {
             //Convertimos el string a JSON
+            console.log(response);
             let ALUMNO = JSON.parse(response);  
+
             console.log(ALUMNO);
-	        $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
+            hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+            if(ALUMNO[0].hora_inscripcion>=hora){
+                $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
             $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
             $("#anioEstudia").html(ALUMNO[0].anio);
             $("#idCarrera").html(ALUMNO[0].carrera_clave);
             $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
             $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
             $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+            }else{
+
+            }
+	        
             }
             
     });
@@ -33,7 +41,7 @@ function getAsignaturas(){
     $.ajax({
         url: "../webhook/lista_asignatura.php",
         type: 'POST',
-        data : {       idPlan: "9"     },
+        data : {       idPlan: $("#idPlan").val(),    },
         success: function (response) {
             //Convertimos el string a JSON
             let ASIGNATURAS = JSON.parse(response);  
@@ -76,7 +84,7 @@ function getListaMovimientos(){
     $.ajax({
         url: "../webhook/lista_movimiento.php",
         type: 'POST',
-        data : {      idInscripcion:7    },
+        data : {      idInscripcion:1    },
         success: function (response) {
             //Convertimos el string a JSON
             let MOVIMIENTOS = JSON.parse(response);  

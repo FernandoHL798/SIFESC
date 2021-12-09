@@ -19,3 +19,4 @@
             });
         } );  
     </script>
+<script src="../service/carreras.js"></script>

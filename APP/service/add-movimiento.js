@@ -16,7 +16,7 @@ $(document).ready(function(){
             getListaMovimientos();
         console.log(res);
         $("#frm-add-movimiento").trigger('reset');
-        $("#exampleModal").modal('hide');
+        $("#Asig_Mat_P").modal('hide');
         });
     e.preventDefault();
 });

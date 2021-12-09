@@ -42,7 +42,7 @@ include_once "./includes/header.php"; ?>
 		</div>
 	</div>
 	<script src="../tools/sidebar.js"></script>
-	<script src="../service/carreras.js"></script>
+	<?php include_once "./includes/js.php";?>
 
 </body>
 </html>
