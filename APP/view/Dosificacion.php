@@ -58,7 +58,8 @@ include "./includes/sidebar2.php";
                                     </div>     
                                 </div>  
                                 <div class="mt-5 mb-2">
-                                    
+                                    <div class="mt-3 mb-2"></div>
+                            <p class="text-center mb-4">Aquí podrás consultar la fecha y horario en la cual te corresponde realizar tu inscripción.</p>
                             
                                 <table class="tabled table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                                     <tbody>
