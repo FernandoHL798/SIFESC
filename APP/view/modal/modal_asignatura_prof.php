@@ -1,6 +1,6 @@
 
 <!-- Modal -->
-<div class="modal fade" id="Asig_Mat_P" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Add_Asignatura_prof" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  	<div class="modal-dialog">
 				    <div class="modal-content">
 					      <div class="modal-header">
@@ -11,6 +11,19 @@
 
 					        <!-- CONTENIDO DEL MODAL-->
 							<form id="frm-add-movimiento">
+									<div class="pruebass">
+										<div class="mt-3 mb-2"></div>
+					                      <div class="form-group" id="password-group">
+					                        <input type="text" placeholder="Clave Plan de Estudios:" class="form-control" style="height: 60px" id="telefono" name="telefono">
+					                      </div>
+					                      <div class="mt-3 mb-2"></div>
+					                      <div class="form-group" id="password-group">
+					                        <input type="text" placeholder="Plan de Estudios:" class="form-control" style="height: 60px" id="telefono" name="telefono">
+					                      </div>
+					                      <div class="mt-3 mb-2"></div>
+					                      <div class="form-group" id="password-group">
+					                        <input type="text" placeholder="Clave de la Asignatura:" class="form-control" style="height: 60px" id="telefono" name="telefono">
+					                      </div>
 					                     <div class="mt-3 mb-2"></div>
 									    <label for="exampleInputEmail1" class="form-label">Nombre de asignatura</label>
 									    <select class="form-select" aria-label="Default select example" id="asig_materia" name="asig_materia">
