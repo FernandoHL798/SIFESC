@@ -198,11 +198,6 @@ include_once "./includes/header.php";?>
         </div>    
     </div>    
               
-             
-            
-
-            
-            
 
              <!-- JavaScripts-->
         <?php include_once "./includes/js.php"; ?>
