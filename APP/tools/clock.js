@@ -27,7 +27,7 @@ var hoursContainer = document.querySelector('.hours')
                   var nowSeconds = now.getSeconds().toString()
                   if (lastSeconds !== nowSeconds) {
                     //tick()
-                    updateContainer(secondsContainer, nowSeconds)
+                   
                   }
                   
                   last = now

@@ -13,7 +13,7 @@ include "./includes/sidebar2.php";
         <div class="texthome">
             <div class="grid mt-3 mb-4">
                 <div class="">
-                    <a href="./profesores-cat-departamento.php" title="Volver"> 
+                    <a href="./grupos_profesores.php" title="Volver"> 
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi    bi-arrow-left-circle" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
                         </svg>
@@ -40,24 +40,12 @@ include "./includes/sidebar2.php";
                       <div class="number">0</div>
                     </div>
                   </div>
-
-                  <!--PROBLEMAS CON EL SEGUNDERO, NO LO AGREGO POR EL MOMENTO (EMMANUEL)
-                  <div class="tick">:</div>
-                  <div class="seconds">
-                    <div class="first">
-                      <div class="number">0</div>
-                    </div>
-                    <div class="second infinite">
-                      <div class="number">0</div>
-                    </div>
-                  </div>
-                    -->
                 </div>     
             </div> 
             <div class="">
                 <div class="row">
                     <div class="col-lg-12">
-                        <table id="example" class="table table-bordered">
+                        <table id="table" class="table table-bordered">
                             <thead>
                                 <tr class="informacion" id="informacion">
                                     <th colspan="2">PLAN DE ESTUDIOS:
@@ -92,7 +80,10 @@ include "./includes/sidebar2.php";
                                     </th>
 
                                 </tr>
-                                <tr class="informacion" id="informacion">
+                            </thead>
+
+                            <thead>
+                                <tr>
                                     <th>NO. DE CUENTA</th>
                                     <th>NOM. ALUMNO</th>
                                     <th>CORREO</th>
@@ -102,6 +93,7 @@ include "./includes/sidebar2.php";
                                     <th>ACCIÓN</th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <tr>
                                     <td data-label="NÚMERO">314243919</td>
@@ -109,7 +101,7 @@ include "./includes/sidebar2.php";
                                     <td data-label="CORREO">emmanuel_@gmail.com</td>
                                     <td data-label="TELEFONO">5458565251</td>
                                     <td data-la data-label="ESTATUS">EN CURSO</td>
-                                    <td data-label="CALIFICACIÓN"></td>
+                                    <td data-label="CALIFICACIÓN">7</td>
                                     <td>
                                         <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
                                             
@@ -156,7 +148,7 @@ include "./includes/sidebar2.php";
             <div class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
                 <button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
             </div>
-            Aun no funciona este botón de imprimir (EMH)
+            
         </div>
     </div>
     <!-- JavaScripts-->

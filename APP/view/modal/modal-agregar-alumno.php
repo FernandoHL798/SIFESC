@@ -57,6 +57,10 @@
                         </select>
                             <label for="carrera"><font SIZE=3>Carrera:</font></label>
                 </div>
+                <div class="mt-3 mb-2"></div>
+                <div class="form-group" id="">
+                        <input type="text" placeholder="Generación: " class="form-control" style="height: 60px" id="generacion" name="generacion">
+                </div>
 
             </div>  
                   <div class="modal-footer">

@@ -40,27 +40,15 @@ include "./includes/sidebar2.php";
                               <div class="number">0</div>
                             </div>
                           </div>
-
-                          <!--PROBLEMAS CON EL SEGUNDERO, NO LO AGREGO POR EL MOMENTO (EMMANUEL)
-                          <div class="tick">:</div>
-                          <div class="seconds">
-                            <div class="first">
-                              <div class="number">0</div>
-                            </div>
-                            <div class="second infinite">
-                              <div class="number">0</div>
-                            </div>
-                          </div>
-                            -->
                         </div>     
                     </div>     
                 <div class="mt-3 mb-2"></div>
 
     
-    <div class="">
+    
         <div class="row">
             <div class="col-lg-12">
-                <table id="example" class="table table-bordered">
+                <table id="table" class="table table-bordered">
                     <thead>
                         <tr class="informacion" id="informacion">
                             <th colspan="3">CLAVE DE PROFESOR:
@@ -101,6 +89,9 @@ include "./includes/sidebar2.php";
                                 </div>
                             </th>
                         </tr>
+                    </thead>
+
+                    <thead>
                         <tr class="informacion" id="informacion">
                             <th>NO</th>
                             <th>PLAN DE ESTUDIOS</th>
@@ -121,7 +112,7 @@ include "./includes/sidebar2.php";
                             <td data-label="PLAN DE ESTUDIOS">1119</td>
                             <td data-label="CARRERA">LIC. INFORMÁTICA</td>
                             <td data-label="CLAVE. ASIGNAT.">12</td>
-                            <td data-la data-label="NOM. ASIGNAT">PROGRAMACIÓN I</td>
+                            <td data-label="NOM. ASIGNAT">PROGRAMACIÓN I</td>
                             <td data-label="GRUPO">1701</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
@@ -135,7 +126,7 @@ include "./includes/sidebar2.php";
                             <td data-label="PLAN DE ESTUDIOS">1131</td>
                             <td data-label="CARRERA">CONTADURIA</td>
                             <td data-label="CLAVE. ASIGNAT.">135</td>
-                            <td data-la data-label="NOM. ASIGNAT">COMPUTO I</td>
+                            <td data-label="NOM. ASIGNAT">COMPUTO I</td>
                             <td data-label="GRUPO">1103</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">2</td>
@@ -149,7 +140,7 @@ include "./includes/sidebar2.php";
                             <td data-label="PLAN DE ESTUDIOS">1119</td>
                             <td data-label="CARRERA">LIC. INFORMÁTICA</td>
                             <td data-label="CLAVE. ASIGNAT.">12</td>
-                            <td data-la data-label="NOM. ASIGNAT">PROGRAMACIÓN I</td>
+                            <td data-label="NOM. ASIGNAT">PROGRAMACIÓN I</td>
                             <td data-label="GRUPO">1751</td>
                             <td data-label="TIPO GRUPO">ORDINARIO</td>
                             <td data-label="SEMESTRE">1</td>
@@ -163,7 +154,7 @@ include "./includes/sidebar2.php";
                             <td data-label="PLAN DE ESTUDIOS">1121</td>
                             <td data-label="CARRERA">ITSE</td>
                             <td data-label="CLAVE. ASIGNAT.">113</td>
-                            <td data-la data-label="NOM. ASIGNAT">PROGRAMACIÓN V</td>
+                            <td data-label="NOM. ASIGNAT">PROGRAMACIÓN V</td>
                             <td data-label="GRUPO">1502</td>
                             <td data-label="TIPO GRUPO">EXTRAORDINARIO</td>
                             <td data-label="SEMESTRE">5</td>
@@ -172,10 +163,11 @@ include "./includes/sidebar2.php";
                                 <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
-    </div>
+    
     <!-- Se utiliza para darle espacio al final de la tabla -->
     <div class="mt-3 mb-2"></div>
     <div class="d-grid gap-2 col-3 mx-auto">

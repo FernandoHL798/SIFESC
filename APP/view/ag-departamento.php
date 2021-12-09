@@ -41,18 +41,6 @@ include_once "./includes/header.php";?>
                           <div class="number">0</div>
                         </div>
                       </div>
-
-                      <!--PROBLEMAS CON EL SEGUNDERO, NO LO AGREGO POR EL MOMENTO (EMMANUEL)
-                      <div class="tick">:</div>
-                      <div class="seconds">
-                        <div class="first">
-                          <div class="number">0</div>
-                        </div>
-                        <div class="second infinite">
-                          <div class="number">0</div>
-                        </div>
-                      </div>
-                        -->
                     </div>     
                 </div> 
                         <p class="text-center mb-5">Agrega los departamentos existentes de la FESC.</p>
@@ -80,24 +68,24 @@ include_once "./includes/header.php";?>
                             <td data-label="Clave">0011</td>
                             <td data-label="Nombre">Departamento de informática</td>
                             <td data-label="Acciones">
-                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
+                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#depto_edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_depto"><i class='bx bx-trash'></i></button> 
                             </td>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave">0012</td>
                             <td data-label="Nombre">Departamento de administración</td>
                             <td data-label="Acciones">
-                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button>
+                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#depto_edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_depto"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave">0013</td>
                             <td data-label="Nombre">Departamento ITSE</td>
                             <td data-label="Acciones">
-                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button> 
+                                <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#depto_edit_Modal"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_depto"><i class='bx bx-trash'></i></button> 
                             </td>
                         </tr>
                     </tbody>
@@ -120,7 +108,7 @@ include_once "./includes/header.php";?>
     <?php include_once "./includes/js.php"; ?>
     <!-- Modales -->
     <?php include "./modal/modal-agregar-depto.php"; ?>
-    <?php include "./modal/modal-edit-plan-estu.php"; ?>
-    <?php include "./modal/modal-baja_plan_e.php"; ?>
+    <?php include "./modal/modal-edit-departamento.php"; ?>
+    <?php include "./modal/modal-baja-depto.php"; ?>
 </body>
 </html>
