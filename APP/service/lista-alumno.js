@@ -13,46 +13,78 @@ function datosAlumno(){
         url: "../webhook/lista_alumnos.php",
         type: 'POST',
         data : {   idUsuario: $("#idUsuario").val(),
-        			idPlan: $("#idPlan").val()     },
+        			idPlan: 9     },
         success: function (response) {
             //Convertimos el string a JSON
-            console.log(response);
             let ALUMNO = JSON.parse(response);  
-
             console.log(ALUMNO);
-            hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
-            if(ALUMNO[0].hora_inscripcion>=hora){
+            //Generamos la fecha actual con el formato Date() para poder tener la hora en la cual se esta logueando
+            var hoy = new Date();
+            //Variable que contiene la hora en el momento de usar
+            var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+            //Este apartado funciona para convertir la hora en la cual se desea cerrar la hora de inscripcion
+            numero = '1127';// Se define que es a las 11, tendrá que ir cambiando
+            fin = numero.substr(0,2) + ':' + numero.substr(2,2);
+            //Se condiciona para las horas, si la hora es mayor o igual a la hora de la inscripcion y que la hora sea menor a la hora de fin
+            var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+            if(ALUMNO[0].fecha_inscripcion==fecha){
+                if(ALUMNO[0].hora_inscripcion<=hora){
+                //Se imprimen los datos de el alumno
                 $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
-            $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
-            $("#anioEstudia").html(ALUMNO[0].anio);
-            $("#idCarrera").html(ALUMNO[0].carrera_clave);
-            $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
-            $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
-            $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+                $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
+                $("#anioEstudia").html(ALUMNO[0].anio);
+                $("#idCarrera").html(ALUMNO[0].carrera_clave);
+                $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
+                $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
+                $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+                document.getElementById('anuncio').style.display = 'none';
             }else{
-
+                document.getElementById('inscripcion').style.display = 'none';
+                document.getElementById('textosInscripcion').style.display = 'none';
+                document.getElementById('btnInscripciones').style.display = 'none';
+                document.getElementById('anuncio').style.display = 'block';
+                /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
+            }}else{
+                if(ALUMNO[0].fecha_altas_bajas<=fecha){
+                if(ALUMNO[0].hora_altas_bajas<=hora){
+                //Se imprimen los datos de el alumno
+                $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
+                $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
+                $("#anioEstudia").html(ALUMNO[0].anio);
+                $("#idCarrera").html(ALUMNO[0].carrera_clave);
+                $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
+                $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
+                $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+                document.getElementById('anuncio').style.display = 'none';
+            }}else{
+                document.getElementById('inscripcion').style.display = 'none';
+                document.getElementById('textosInscripcion').style.display = 'none';
+                document.getElementById('btnInscripciones').style.display = 'none';
+                document.getElementById('anuncio').style.display = 'block';
+                /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }
-	        
             }
-            
+     }       
     });
 }
 function getAsignaturas(){
     $.ajax({
         url: "../webhook/lista_asignatura.php",
         type: 'POST',
-        data : {       idPlan: $("#idPlan").val(),    },
+        data : {       idPlan: 9,    },
         success: function (response) {
             //Convertimos el string a JSON
+            console.log(response);
             let ASIGNATURAS = JSON.parse(response);  
             console.log(ASIGNATURAS);
             let template="";
             template+=  `<option selected>Selecciona la materia</option>`;
             ASIGNATURAS.forEach(asignatura=>{
                 if(asignatura.semestre<="1"){
+                   
                 template += `
                         <option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>
-                `;    
+                `;   
                 }
                 
             });

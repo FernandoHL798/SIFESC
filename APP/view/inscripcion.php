@@ -55,14 +55,15 @@ include_once "./includes/header.php";?>
                                     -->
                                 </div>     
                             </div> 
-                            <div class="mt-3 mb-2"></div>
-                            <h4 class="text-center mb-5">Selecciona las asignaturas que inscribirás en este nuevo periodo</h4>
+                            <div><h4 class="text-center mb-5" id="anuncio" >AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN</h4></div>
+                            <div class="mt-3 mb-2" id="textosInscripcion">
+                            <h4 class="text-center mb-5" >Selecciona las asignaturas que inscribirás en este nuevo periodo</h4>
                             <p class="text-center mb-4">Para dar de alta una asignatura selecciona el botón << Agregar asignatura >> y rellena los campos requeridos.<br>
-                            Para dar de baja la asignatura presiona el botón de eliminar ubicado en la columna de "ACCIÓN". Seleccione este botón de acuerdo a la fila en donde se encuente su asignatura a dar de baja.</p>  
+                            Para dar de baja la asignatura presiona el botón de eliminar ubicado en la columna de "ACCIÓN". Seleccione este botón de acuerdo a la fila en donde se encuente su asignatura a dar de baja.</p>  </div>
                         </div>
                         <div class="">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12" id="inscripcion">
                                     <table id="table" class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -135,8 +136,9 @@ include_once "./includes/header.php";?>
                                 <div class="d-grid gap-2 col-3 mx-auto">
                                     
                                 </div>
+                                <div  id="btnInscripciones">
                                 <div class="d-grid gap-2 col-3 mx-auto">
-                                    <div class="modal-content">
+                                    <div class="modal-content" >
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Mat_P">Agregar Asignatura</button>
                                     </div>
@@ -146,6 +148,7 @@ include_once "./includes/header.php";?>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-avs-inscripcion">Solicitar</button>
                                             </div>
+                                        </div>
                                         </div>
                                         <div class="mt-3 mb-4"></div>
                                 <div class="d-grid gap-2 col-3 mx-auto mb-4">
