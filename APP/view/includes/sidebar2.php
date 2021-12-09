@@ -16,6 +16,16 @@
 			</li>
 
 			<li>
+				<a href="./seleccion_carrera.php">
+					<i class='bx bxs-spreadsheet'></i>
+					<span class="link_name">Mis carreras</span>
+				</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="./seleccion_carrera.php">Mis carreras</a></li>
+				</ul>
+			</li>
+
+			<li>
 				<div class="icon-link">
 					<a>
 						<i class='bx bx-shield-quarter' ></i>

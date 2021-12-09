@@ -20,7 +20,6 @@ body{
 
 .grid .clock{
 	align-items: center;
-
 }
 
 .clock {
@@ -71,7 +70,6 @@ body{
   }
 }
 
-
 .datos_escolares{
 	color: rgba(195, 163, 16, 1);
 }
@@ -118,6 +116,11 @@ body{
 
 .table tr td{
 	font-size: 13px;
+}
+
+.form-check{
+	display: flex !important;
+    justify-content: center;
 }
 
 .table thead{
