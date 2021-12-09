@@ -90,13 +90,15 @@ include_once "./includes/header.php"; ?>
                     </div>
                 </div> 
             </div>    
-            <?php include "./modal/modal-agregar-prof.php"; ?>
-            <?php include "./modal/modal-edit-prof.php"; ?>
-            <?php include "./modal/modal-baja-prof.php"; ?> 
+           
             <!-- JavaScripts-->
             <?php include_once "./includes/js.php"; ?>
             <script src="../service/control-profesor.js"></script>
             <script src="../service/lista-profesores.js"></script>
             <script src="../service/add-profesor.js"></script>
+            <!-- Modales -->
+            <?php include "./modal/modal-agregar-prof.php"; ?>
+            <?php include "./modal/modal-edit-prof.php"; ?>
+            <?php include "./modal/modal-baja-prof.php"; ?> 
 </body>
 </html>

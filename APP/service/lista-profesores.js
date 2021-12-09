@@ -20,7 +20,7 @@ function listaProfesores(){
                                 <td data-label="Correo">${profesor.correo}</td>
                                 <td data-label="Tel">${profesor.telefono}</td>
                                 <td data-label="Acciones">
-                                    <button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button> 
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Prof"><i class='bx bx-trash'></i></button> 
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
                                 </td>
                             </tr>`;    

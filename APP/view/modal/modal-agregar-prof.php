@@ -40,19 +40,7 @@
                         <input type="text" placeholder="Telefono:" class="form-control" style="height: 60px" id="telefono" name="telefono">
                       </div>
                       <div class="mt-3 mb-2"></div>
-                      <div class="form-group">
-                        <div class="form-floating">
-                          <select class="form-select" id="departamento" name="departamento">
-                              <option hidden=""></option>
-                              <option value="101ma">Informática</option>
-                              <option value="102ad">Redes</option>
-                              <option value="103co">Informática Programación</option>
-                          </select>
-                            <label for="departamento"><font SIZE=3>Departamento:</font></label>
-                        </div>
-                      <div class="mt-3 mb-2"></div>
-                      
-                      
+                      <div class="form-group">  
                     </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
