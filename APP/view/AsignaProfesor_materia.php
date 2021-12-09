@@ -206,7 +206,7 @@ include_once "./includes/header.php";?>
 
              <!-- JavaScripts-->
         <?php include_once "./includes/js.php"; ?>
-        <?php include "./modal/modal-asignacion.php"; ?>
+        <?php include "./modal/modal_asignatura_prof.php"; ?>
         <?php include "./modal/modal-baja-asignacion.php"; ?>
         <?php include "./modal/ag_asinatura.php"; ?>
 
