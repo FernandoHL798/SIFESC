@@ -79,7 +79,7 @@ class PERIODO extends CONEXION{
 
 	/* QUERY CONSULTA PERIODO .....................................................*/
     public function queryconsultaPeriodo(){
-    	$query = "SELECT 'id_periodo', 'periodo', 'fecha_inscripcion', 'fecha_altas_bajas', 'created_at', 'updated_at' FROM 'periodo'";
+    	$query = "SELECT `id_periodo`, `periodo`, `fecha_inscripcion`, `fecha_altas_bajas`, `created_at`, `updated_at` FROM `periodo`";
     	$this -> connect();
     	$resultado = $this -> getData($query);
     	$this->close();
@@ -88,7 +88,7 @@ class PERIODO extends CONEXION{
 
 	/* QUERY ACTULIZAR PERIODO .....................................................*/
     public function queryUpdatePeriodo(){
-    	$query = "UPDATE 'periodo' SET 'periodo' = '".$this -> getPeriodo()."', 'fecha_inscripcion' = '".$this -> getFechaInscripcion()."', 'fecha_altas_bajas' = '".$this -> getFechaAltasBajas()."', 'updated_at' = current_timestamp() WHERE 'periodo'.'id_periodo' = '".$this -> getIdPeriodo()."'";
+    	$query = "UPDATE `periodo` SET `periodo` = '".$this -> getPeriodo()."', `fecha_inscripcion` = '".$this -> getFechaInscripcion()."', `fecha_altas_bajas` = '".$this -> getFechaAltasBajas()."', `updated_at` = current_timestamp() WHERE `periodo`.`id_periodo` = '".$this -> getIdPeriodo()."'";
     	$this -> connect();
     	$resultado = $this -> executeInstruction($query);
     	$this -> close();
@@ -106,7 +106,7 @@ class PERIODO extends CONEXION{
 
 	/* QUERY ELIMINAR PERIODO .....................................................*/
     public function queryDeletePeriodo(){
-    	$query = "DELETE FROM 'periodo' where 'id_periodo' = '".$this -> getIdPeriodo()."'";
+    	$query = "DELETE FROM `periodo` where `id_periodo` = '".$this -> getIdPeriodo()."'";
     	$this -> connect();
     	$resultado = $this -> executeInstruction($query);
     	$this -> close();

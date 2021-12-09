@@ -95,6 +95,7 @@
 					<li><a href="./plan_de_estudios.php">Plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
 					<li><a href="./plan_de_estudios_saturacion.php">Saturación</a></li>
 					<li><a href="./plan_de_estudios_asignatura.php">Asignaturas</a></li>
+					<li><a href="./admin_periodo.php">Periodo</a></li>
 				</ul>
 			</li>
 
