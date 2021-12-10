@@ -91,11 +91,10 @@ include_once "./includes/header.php";?>
             <!-- JavaScripts-->
             <?php include_once "./includes/js.php"; ?>
             <!-- Modales -->
-            <?php include "./modal/modal-agregar-alumno.php"; ?>
-
-            <?php include "./modal/modal-baja-alum.php"; ?>
+            <?php include "./modal/modal-agregar-prof.php"; ?>
 
 
+            
             <?php include "./modal/modal-edit-prof.php"; ?>
             <?php include "./modal/modal-baja-prof.php"; ?> 
             <!-- JavaScripts-->

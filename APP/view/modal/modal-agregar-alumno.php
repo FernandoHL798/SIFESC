@@ -1,11 +1,11 @@
 <!-- MODAL AGREGAR ALUMNO  // PANTALLA ag_alumno -->
             
-              <div class="modal fade" id="Asig_Modal_P" tabindex="-1" aria-labelledby="Modal_Asig_P" aria-hidden="true">
+              <div class="modal fade" id="Asig_Modal_Alum" tabindex="-1" aria-labelledby="Modal_Asig_Alum" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <form id="frm_m_a_alumno" name="frm_m_a_alumno">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="Modal_Asig_P">Agregar Alumno</h5>
+                      <h5 class="modal-title" id="Modal_Asig_Alum">Agregar Alumno</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
