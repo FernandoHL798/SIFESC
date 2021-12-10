@@ -18,57 +18,30 @@ body{
 	grid-template-columns: 33% 33% 33%;
 }
 
-.grid .clock{
-	align-items: center;
+/*
+    display: flex;
+    align-content: space-between;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+*/
+.grid .widget_clock .reloj_clock{
+	display: flex;
+    align-content: space-between;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
-.clock {
-  height: 5vh;
-  font-size: 3vh;
-  font-family: sans-serif;
-  line-height: 20.4vh;
-  display: flex;
-  position: relative;
-  justify-content: flex-end;
-  /*background: green;*/
-  overflow: hidden;
+.reloj_clock .cajaSegundos {
+  display: inline-block;  
+}
+.reloj_clock .ampm, .reloj_clock .segundos{
+  display: block;
 }
 
-.clock::before, .clock::after {
-  content: '';
-  width: 7ch;
-  height: 3vh;
-  position: absolute;
-  z-index: 2;
-}
-
-.clock::after {
-  bottom: 0;
-}
-
-.clock > div {
-  display: flex;
-}
-
-.tick {
-  line-height: 17vh;
-}
-
-.tick-hidden {
-}
-
-.move {
-  animation: move linear 1s infinite;
-}
-
-@keyframes move {
-  from {
-    transform: translateY(0vh);
-  }
-  to {
-    transform: translateY(-20vh);
-  }
-}
 
 .datos_escolares{
 	color: rgba(195, 163, 16, 1);

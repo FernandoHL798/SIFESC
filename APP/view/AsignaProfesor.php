@@ -20,7 +20,7 @@ include_once "./includes/header.php";?>
                         </a>
                     </div>
                     <div>
-                        <h3 id="head3" class="text-center">Agrega asignatura a profesor</h3>
+                        <h3 id="head3" class="text-center">Agrega asignatura a profesores</h3>
                     </div>
                     <div class="clock">
                       <div class="hours">
@@ -40,32 +40,13 @@ include_once "./includes/header.php";?>
                           <div class="number">0</div>
                         </div>
                       </div>
-
-                      <!--PROBLEMAS CON EL SEGUNDERO, NO LO AGREGO POR EL MOMENTO (EMMANUEL)
-                      <div class="tick">:</div>
-                      <div class="seconds">
-                        <div class="first">
-                          <div class="number">0</div>
-                        </div>
-                        <div class="second infinite">
-                          <div class="number">0</div>
-                        </div>
-                      </div>
-                        -->
                     </div>     
                 </div> 
-                        <div class="mt-3 mb-2"></div>
-                        <div class="d-grid gap-2 col-3 mx-auto">
-                        <p class="mt-3 mb-2"></p>
+                        <div class="mt-3 mb-2 text-center">
+                            <p>Selecciona el profesor al cual dessea agregarle materias</p>
                         </div>
                         <div class="d-grid gap-2 col-3 mx-auto">
-                            <div class="modal-content mb-4">
-                            <!-- Button trigger modal -->
-
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_Prof">
-                                      Asigna Profesor
-                                </button>
-                            </div>
+                        <p class="mt-3 mb-2"></p>
                         </div>
 
                          <!-- Barra de busqueda -->
@@ -85,9 +66,7 @@ include_once "./includes/header.php";?>
                             <th style="width: 100px;">Nombre</th>
                             <th style="width: 100px;">Primer Apellido</th>
                             <th style="width: 100px;">Segundo Apellido</th>
-                            <th style="width: 100px;">correo</th>
-                            <th style="width: 120px;">Departamento</th>
-                            
+                            <th style="width: 100px;">correo</th> 
                             <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
@@ -98,8 +77,6 @@ include_once "./includes/header.php";?>
                             <td data-label="Apellido P">Lara</td>
                             <td data-label="Apellido M">Martinez</td>
                             <td data-label="Id_asignacion">@@@@@@@</td>
-                            <td data-label="Dep">Informática</td>
-                            
                             <td data-label="Acciones">
                                 <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
@@ -110,8 +87,6 @@ include_once "./includes/header.php";?>
                           <td data-label="Apellido P">Zalazar</td>
                           <td data-label="Apellido M">Gonzales</td>
                           <td data-label="Id_asignacion">@@@@@@@</td>
-                          <td data-label="Dep">Informática</td>
-                          
                             <td data-label="Acciones">
                                 <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
@@ -123,8 +98,6 @@ include_once "./includes/header.php";?>
                           <td data-label="Apellido P">Jaques</td>
                           <td data-label="Apellido M">Soto</td>
                           <td data-label="Id_asignacion">@@@@@@@</td>
-                          <td data-label="Dep">Informática</td>
-                          
                             <td data-label="Acciones">
                                 <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td>
