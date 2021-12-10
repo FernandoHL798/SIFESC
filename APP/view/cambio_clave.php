@@ -3,14 +3,15 @@
 <html>
 <?php $titulo="Seguridad | SIFESC";
 include_once "./includes/header.php"; ?>
+
 <body id="body">
     <?php
     include "./includes/sidebar2.php";
     ?>
     
-	<!--              AQUI VA EL CONTENIDO                -->
-	<div class="home_content2">
-		<div class="texthome"> 
+    <!--              AQUI VA EL CONTENIDO                -->
+    <div class="home_content2">
+        <div class="texthome"> 
             <form>
                 <div class="">
                             <div class="grid">
@@ -58,65 +59,30 @@ include_once "./includes/header.php"; ?>
                             </div>     
                     <div class="mt-3 mb-2"></div>
                         </div>
-
-                        
-
-
                         <div class="row">      
                         <div class="mt-3 mb-2"></div>
                         <div class="row">
                             <div class="col-5 mx-auto">
-                                <input type="email" class="form-control mt-2" style="height: 55px;" id="floatingInput" placeholder="Contraseña actual:" required="" autofocus=""> 
+                                <input type="password" class="form-control mt-2" style="height: 55px;" id="floatingInput" placeholder="Contraseña actual:" required="" autofocus=""> 
                             </div>
                         </div>
                             <div class="mt-3 mb-2"></div>
                         <div class="row">
                             <div class="col-5 mx-auto">
-                                <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña:" id="password">
+                                <label for="psw"></label>
+    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña:" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                                 <span id="mensaje"></span>
-                                <br>
+                                
                             </div>
-
-                        </div>
-                            <ul class="col-5 mx-auto">
-                                <li id="mayus">Ingresa 3 mayusculas</li>
-                                <li id="special">3 Caracteres especiales</li>
-                                <li id="numbers">Números</li>
-                                <li id="lower">Minusculas</li>
-                                <li id="len">Mínimo 8 caracteres</li>
-                            </ul>
-                        <!-- MIS PRUEBAS DE PASSWORD EMM -----------------------------------
-                        <div class="center">
-                            <div class="col-5 mx-auto">
-                                <input type="password" class="form-control mb-2" placeholder="prueba de password con js" id="password">
-                                <span id="mensaje"></span>
-                            </div>
-                        </div>
-
-
-                                <div class="center col-5 mx-auto">
-                                  <div class="form">
-                                    <div class="form-element">
-                                      <input type="password" class="form-control mb-2" placeholder="prueba de password con js" id="password">
-                                      <div class="password-policies">
-                                        <div class="policy-length">
-                                          8 Characters
-                                        </div>
-                                        <div class="policy-number">
-                                          Contains Number
-                                        </div>
-                                        <div class="policy-uppercase">
-                                          Contains Uppercase
-                                        </div>
-                                        <div class="policy-special">
-                                          Contains Special Characters
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                        -->
+                          </div>
+                            <div id="aviso_restr" class="col-5 mx-auto">
+  <h4 class="titulo_restr text-left" 
+>La contraseña debe tener lo siguiente:</h4>
+  <p class="text-left" id="letter" class="invalid">Una letra <b>MINÚSCULA</b></p>
+  <p class="text-left" id="capital" class="invalid">Una letra <b>MAYÚSCULA</b></p>
+  <p class="text-left" id="number" class="invalid">Un <b>NÚMERO</b></p>
+  <p class="text-left" id="length" class="invalid">Mínimo de <b>8 caracteres</b></p>
+</div>
 
                         <div class="mt-3 mb-2"></div>
                         <div class="row">
@@ -142,14 +108,19 @@ include_once "./includes/header.php"; ?>
                         </div>
                 </div>                
             </form>
-        	</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
+
+<script src="../tools/restriccionClave.js"></script>
+
+
 
     <!-- SCRIPTS -->
-        <?php include_once "./includes/js.php";?>
-		<?php include "./modal/modal-confirma-cambio-contra.php"; ?>
-        
+    <?php include_once "./includes/js.php";?>
+        <?php include "./modal/modal-confirma-cambio-contra.php"; ?>
 
-	</body>
-	</html>
+
+
+    </body>
+    </html>
