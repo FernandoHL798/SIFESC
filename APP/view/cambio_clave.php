@@ -53,7 +53,7 @@ include_once "./includes/header.php"; ?>
                 <div class="row">
                   <div class="col-5 mx-auto">
                     <label for="psw"></label>
-                    <input type="password" class="form-control mb-2" placeholder="Ingresa tu nueva contraseña:" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <input type="password" class="form-control mb-2" placeholder="Ingresa tu nueva contraseña:" required id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     <span id="mensaje"></span>
 
                   </div>
@@ -70,7 +70,7 @@ include_once "./includes/header.php"; ?>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
-                    <input type="password" class="form-control mb-2" placeholder="Confirma tu nueva contraseña:" id="exampleInputPassword1">
+                    <input type="password" class="form-control mb-2" placeholder="Confirma tu nueva contraseña:" required id="exampleInputPassword1">
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
@@ -81,7 +81,7 @@ include_once "./includes/header.php"; ?>
                   <div id="btnConfirmarContra">
                   <div class="modal-content">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLong" id="confirmarContra">
+                    <button style="display: none;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLong" id="confirmarContra">
                       Confirmar
                     </button>
                   </div>
