@@ -62,7 +62,7 @@ include_once "./includes/header.php";?>
                 <table id="example" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th colspan="3">PLAN DE ESTUDIOS:
+                            <th colspan="4">PLAN DE ESTUDIOS:
                                 <div class="datos_personales">
                                     LICENCIADO EN Informática
                                 </div>
@@ -74,22 +74,22 @@ include_once "./includes/header.php";?>
                             </th>
                         </tr>
                         <tr>
-                            <th colspan="2">DURACION::
+                            <th colspan="2">DURACIÓN:
                                 <div class="datos_personales">
                                     9 SEMESTRES
                                 </div>
                             </th>
-                            <th colspan="2">CREDITOS OBLIGATORIOS:
+                            <th colspan="2">CRÉDITOS OBLIGATORIOS:
                                 <div class="datos_personales">
                                     450
                                 </div>
                             </th>
-                            <th colspan="1">CREDITOS OPTATIVAS:
+                            <th colspan="1">CRÉDITOS OPTATIVAS:
                                 <div class="datos_personales">
                                     80
                                 </div>
                             </th>
-                            <th colspan="2">CEDITOS TOTALES:
+                            <th colspan="2">CRÉDITOS TOTALES:
                                 <div class="datos_personales">
                                     450
                                 </div>
@@ -100,9 +100,10 @@ include_once "./includes/header.php";?>
                             <th>CLAVE ASIGN</th>
                             <th>NOMBRE DE LA ASIGNATURA</th>
                             <th>SEMESTRE</th>
-                            <th>CREDITOS</th>
-                            <th>CARACTER</th>
-                            <th colspan="2">ACCION</th>
+                            <th>CRÉDITOS</th>
+                            <th>CARÁCTER</th>
+                            <th>GRUPOS</th>
+                            <th colspan="2">ACCIÓN</th>
                         </tr>
                     </thead>
 
@@ -111,55 +112,61 @@ include_once "./includes/header.php";?>
                             <td data-label="CLAVE">1305</td>
                             <td data-label="NOMBRE ASIGNATURA">INFORMÁTICA VI</td>
                             <td data-la data-label="SEMESTRE">7</td>
-                            <td data-label="CREDITOS">12</td>
+                            <td data-label="CRÉDITOS">12</td>
                             <td data-label="CARACTER">Obligatoria</td>
+                            <td data-label="GRUPOS">2</td>
                             <td data-label="ACCIONES" class="text-center" colspan="2">
+                                <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
                                 <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-                                <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td data-label="CLAVE">1307</td>
                             <td data-label="NOMBRE ASIGNATURA">MATEMATICAS VI</td>
                             <td data-la data-label="SEMESTRE">7</td>
-                            <td data-label="CREDITOS">8</td>
+                            <td data-label="CRÉDITOS">8</td>
                             <td data-label="CARACTER">Optativa</td>
+                            <td data-label="GRUPOS">2</td>
                             <td data-label="ACCIONES" class="text-center" colspan="2">
-                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal" data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-                                <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td data-label="CLAVE">1304</td>
                             <td data-label="NOMBRE ASIGNATURA">LABO. SISTEMAS COMP. VI</td>
                             <td data-label="SEMESTRE">7</td>
-                            <td data-label="CREDITOS">12</td>
+                            <td data-label="CRÉDITOS">12</td>
                             <td data-label="CARACTER">Obligatoria</td>
+                            <td data-label="GRUPOS">2</td>
                             <td data-label="ACCIONES" class="text-center" colspan="2">
-                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal" data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-                                <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td data-label="CLAVE">1311</td>
                             <td data-label="NOMBRE ASIGNATURA">SEMINARIO DE INVESTIGACIÓN</td>
                             <td data-la data-label="SEMESTRE">7</td>
-                            <td data-label="CREDITOS">8</td>
+                            <td data-label="CRÉDITOS">8</td>
                             <td data-label="CARACTER">Obligatoria</td>
+                            <td data-label="GRUPOS">2</td>
                             <td data-label="ACCIONES" class="text-center" colspan="2">
-                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal" data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
                                 <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td data-label="CLAVE">1307</td>
                             <td data-label="NOMBRE ASIGNATURA">ANALISIS</td>
                             <td data-label="SEMESTRE">7</td>
-                            <td data-label="CREDITOS">12</td>
+                            <td data-label="CRÉDITOS">12</td>
                             <td data-label="CARACTER">Obligatoria</td>
+                            <td data-label="GRUPOS">2</td>
                             <td data-label="ACCIONES" class="text-center" colspan="2">
-                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
                                 <button type="button" class="btn btn-success btn-sm col-3 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
+                                <button type="button" class="btn btn-danger btn-sm col-3" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
+                                
                             </td>
                         </tr>
                 </table>

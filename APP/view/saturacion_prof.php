@@ -44,6 +44,8 @@ include_once "./includes/header.php";?>
                                     <div class="row">
                                         <p class="mb-2"></p>
                                         <h4 id="head3" class="text-center">1119 || Lic. Informática</h4>
+                                        <p class="mt-3"></p>
+                                        <p class="text-center mb-4">Aquí puedes agregar la saturación de las asignaturas del plan de estudios.</p>
                                     </div>
                                         <div class="mt-3 mb-2"></div>
                                     <div class="d-grid gap-2 col-2 mx-auto">

@@ -26,7 +26,7 @@
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Limite Inscrp. por Periodo:" class="form-control" style="height: 60px" id="limite_insc_x_periodo" name="limite_insc_x_periodo">
+                        <input type="text" placeholder="Límite Inscripción por Periodo:" class="form-control" style="height: 60px" id="limite_insc_x_periodo" name="limite_insc_x_periodo">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">

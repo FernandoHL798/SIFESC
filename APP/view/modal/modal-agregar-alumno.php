@@ -38,25 +38,8 @@
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">
-                <div class="form-floating">
-                        <select class="form-select" id="clave_plan_estudios" name="clave_plan_estudios">
-                            <option hidden=""></option>
-                            <option value="1">1119</option>
-                            <option value="2">0009</option>
-                            
-                        </select>
-                            <label for="clave_plan_estudios"><font SIZE=3>Plan de estudios:</font></label>
-                </div>
-                <div class="mt-3 mb-2"></div>
-                <div class="form-floating">
-                        <select class="form-select" id="carrera" name="carrera">
-                            <option hidden=""></option>
-                            <option value="1">Lic. Informática</option>
-                            <option value="2">Administración</option>
-                            <option value="3">MVZ</option>
-                        </select>
-                            <label for="carrera"><font SIZE=3>Carrera:</font></label>
-                </div>
+                
+                
                 <div class="mt-3 mb-2"></div>
                 <div class="form-group" id="">
                         <input type="text" placeholder="Generación: " class="form-control" style="height: 60px" id="generacion" name="generacion">
