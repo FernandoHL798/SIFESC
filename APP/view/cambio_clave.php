@@ -12,7 +12,7 @@ include_once "./includes/header.php"; ?>
         <!--              AQUI VA EL CONTENIDO                -->
         <div class="home_content2">
           <div class="texthome"> 
-            <form>
+            <form id="frm-verifica-contra">
               <div class="">
                 <div class="grid">
                   <div class="">
@@ -53,7 +53,7 @@ include_once "./includes/header.php"; ?>
                 <div class="row">
                   <div class="col-5 mx-auto">
                     <label for="psw"></label>
-                    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña:" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <input type="password" class="form-control mb-2" placeholder="Ingresa tu nueva contraseña:" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     <span id="mensaje"></span>
 
                   </div>
@@ -70,7 +70,7 @@ include_once "./includes/header.php"; ?>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
-                    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña:" id="exampleInputPassword1">
+                    <input type="password" class="form-control mb-2" placeholder="Confirma tu contraseña:" id="exampleInputPassword1">
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
@@ -78,12 +78,13 @@ include_once "./includes/header.php"; ?>
 
 
 
-
+                  <div id="btnConfirmarContra" class="d-none">
                   <div class="modal-content">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLong" id="confirmarContra">
                       Confirmar
                     </button>
+                  </div>
                   </div>
                   <p class="mt-3 mb-2"></p>
                   <div class="mb-4"></div>
@@ -95,10 +96,11 @@ include_once "./includes/header.php"; ?>
       </div>
       </div>
 
-
+      <script src= ../service/verifica-contra.js></script>
       <script src="../tools/restriccionClave.js"></script>
       <!-- SCRIPTS -->
       <?php include_once "./includes/js.php";?>
+
       <?php include "./modal/modal-confirma-cambio-contra.php"; ?>
 
 

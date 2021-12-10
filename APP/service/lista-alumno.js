@@ -37,7 +37,9 @@ function datosAlumno(){
                 $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+                $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
                 document.getElementById('anuncio').style.display = 'none';
+                
             }else{
                 document.getElementById('inscripcion').style.display = 'none';
                 document.getElementById('textosInscripcion').style.display = 'none';
@@ -45,7 +47,7 @@ function datosAlumno(){
                 document.getElementById('anuncio').style.display = 'block';
                 /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }}else{
-                if(ALUMNO[0].fecha_altas_bajas<=fecha){
+                if(ALUMNO[0].fecha_altas_bajas>=fecha){
                 if(ALUMNO[0].hora_altas_bajas<=hora){
                 //Se imprimen los datos de el alumno
                 $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
@@ -55,6 +57,7 @@ function datosAlumno(){
                 $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+                $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
                 document.getElementById('anuncio').style.display = 'none';
             }}else{
                 document.getElementById('inscripcion').style.display = 'none';
@@ -71,10 +74,9 @@ function getAsignaturas(){
     $.ajax({
         url: "../webhook/lista_asignatura.php",
         type: 'POST',
-        data : {       idPlan: 9,    },
+        data : {       idPlan: 9    },
         success: function (response) {
             //Convertimos el string a JSON
-            console.log(response);
             let ASIGNATURAS = JSON.parse(response);  
             console.log(ASIGNATURAS);
             let template="";
@@ -122,8 +124,10 @@ function getListaMovimientos(){
             let MOVIMIENTOS = JSON.parse(response);  
             console.log(MOVIMIENTOS);
             let tblMovimientos="";
-            let cont=0;
+            let cont=0;console.log(MOVIMIENTOS[0].estatus);
+            
             MOVIMIENTOS.forEach(movimiento=>{
+                if(MOVIMIENTOS[cont].estatus==1){
                 cont++;
                 tblMovimientos += `
                         <tr idMovimiento=${movimiento.id_movimiento}>
@@ -139,7 +143,11 @@ function getListaMovimientos(){
                             </td>
                         </tr>
                         `;
+                    }else{
+
+                    }
             });
+            
             $("#tbl-movimiento").html(tblMovimientos);
             $("#tbl-consulta-inscripcion").html(tblConsultaIns(MOVIMIENTOS));
             }

@@ -53,6 +53,7 @@ include_once "./includes/header.php";?>
                                                 <th colspan="1">Numero de cuenta:
                                                     <div class="datos_personales">
                                                         <span id="cuenta_alumno"></span>
+                                                        <span id="idInscripcionAlumno" class="d-none"></span>
                                                     </div>
                                                 </th>
                                                 <th colspan="3">Nombre:
@@ -151,6 +152,7 @@ include_once "./includes/header.php";?>
             <script src="../service/lista-alumno.js"></script>
             <script src="../service/saturacion.js"></script>
             <script src="../service/add-movimiento.js"></script>
+            <script src="../service/baja-movimiento.js"></script>
                 
         <?php include "./modal/modal-asignacion.php"; ?>
         <?php include "./modal/modal-avs-inscripcion.php"; ?>
