@@ -144,7 +144,7 @@ function getListaMovimientos(){
                         </tr>
                         `;
                     }else{
-
+cont++;
                     }
             });
             
