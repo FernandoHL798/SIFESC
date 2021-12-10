@@ -71,7 +71,7 @@ function getAsignaturas(){
     $.ajax({
         url: "../webhook/lista_asignatura.php",
         type: 'POST',
-        data : {       idPlan: 9,    },
+        data : {       idPlan:1119,    },
         success: function (response) {
             //Convertimos el string a JSON
             console.log(response);

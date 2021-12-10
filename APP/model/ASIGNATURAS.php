@@ -142,7 +142,7 @@ class ASIGNATURA extends CONEXION{
     }
     
     public function queryconsultaAsignaturas($id_plan){
-        $query="SELECT a.id_asignatura, a.codigo, a.nombre, a.creditos, a.antecesor, a.sucesor, a.caracter, a.semestre, m.calificacion FROM `asignaturas` a, `movimiento` m where `id_plan_fk`=".$id_plan." ADN a.id_asignatura=m.id_asignatura_fk";
+        $query="SELECT a.id_asignatura, a.codigo, a.nombre, a.creditos, a.antecesor, a.sucesor, a.caracter, a.semestre, m.calificacion FROM `asignaturas` a, grupo gpo, asignacion asi, `movimiento` m where a.id_plan_fk=".$id_plan." AND a.id_asignatura=gpo.id_asignatura_fk AND ";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
