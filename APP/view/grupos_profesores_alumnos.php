@@ -37,7 +37,7 @@ include "./includes/sidebar2.php";
             <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
         </div>
     </div> 
-    <div class="">
+    <div class="" id="contenido">
         <div class="row mb-5">
             <div class="col-lg-12 mt-5">
                 <table id="table" class="table table-bordered">

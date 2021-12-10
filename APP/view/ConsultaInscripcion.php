@@ -10,7 +10,6 @@ include "./includes/sidebar2.php";
 
 	<div class="home_content2">
 		<div class="texthome">
-	<form class="mb-4">
 		<div class="mb-4">
 			<div class="grid">
 				<div class="">
@@ -90,7 +89,7 @@ include "./includes/sidebar2.php";
 									<th>CRED.</th>
 									<th>SEM.</th>
 									<th>GPO.</th>
-									<th
+									<th>
 										<div class="datos_personales">
 											Movimiento:
 										</div>
@@ -108,7 +107,7 @@ include "./includes/sidebar2.php";
                         <p class="text-center mb-5">NOTA: LA VALIDEZ DE ESTE DOCUMENTO QUEDA SUJETA A LA REVISIÓN DEL PLAN DE ESTUDIOS Y COMPROBACIÓN DE TUS ASIGNATURAS EN LA PÁGINA DEL S.I.A.E. EN CASO DE NO COINCIDIR, PASAR A LA VENTANILLA DE TU CARRERA ANTES DEL 17 DE OCTUBRE DE 2021.</p>
                     </div>
 				</div>
-			</div>
+			
 			<div class="mt-4">
 					<p class="text-center mb-5">INSTRUCCIONES:</p>
 			</div>
@@ -117,7 +116,11 @@ include "./includes/sidebar2.php";
 					<p class="mb-4">2. No es necesario que acudas a Servicios Escolares para confirmar tu inscripción, los movimientos que realizaste en Inscripciones o los que realizaste hoy en Altas y Bajas es tu inscripción definitiva, que tendrás que revisar en la página <a href="https://www.dgae-siae.unam.mx/www_gate.php">www.dgae-siae.unam.mx</a> a partir del día 28 de septiembre de 2021, cualquier aclaración o duda tendrás que acudir a la ventanilla de tu carrera antes del día 17 de octubre de 2021.</p>
 					<p class="mb-4">3. Si requieres una constancia de inscripción (constancia de estudios), podrás tramitarla a partir del día 22 de septiembre de 2021 en la ventanilla virtual de Servicios Escolares.</p>
 			</div>
-	</form>
+		</div>
+
+
+
+
 	<!-- LIBRERIA AJAX requeried-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<div class="col-lg-12 mt-4">
@@ -136,50 +139,7 @@ include "./includes/sidebar2.php";
 			</div>
 	</div>
 
-	<!-- JavaScript Bundle with Popper -->
-	<script>
-
-			let arrow = document.querySelectorAll(".arrow");
-			console.log(arrow);
-			for (var i = 0; i < arrow.length; i++) {
-				arrow[i].addEventListener("click",(e)=>{
-					let arrowParent = e.target.parentElement.parentElement;
-
-					arrowParent.classList.toggle("showMenu");
-
-				});
-			}
-
-			let sidebar = document.querySelector(".sidebar");
-			let sidebarBtn = document.querySelector(".bx-menu");
-			console.log(sidebarBtn);
-
-			sidebarBtn.addEventListener("click", ()=>{
-				sidebar.classList.toggle("close");
-			});
-
-
-		</script>
-
-		<script>
-
-			function printData()
-				{
-				   var divToPrint=document.getElementById("contenido");
-				   newWin= window.open("");
-				   newWin.document.write(divToPrint.outerHTML);
-				   newWin.document.write('<link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">');
-				   newWin.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">');
-				   newWin.print();
-				   newWin.close();
-				}
-
-				$('Imprimir').on('click',function(){
-				printData();
-				})
-
-		</script>
-
+			<?php include_once "./includes/js.php"; ?>
             <script src="../service/lista-alumno.js"></script>
             <?php include_once "./includes/js.php"; ?>
 </body>

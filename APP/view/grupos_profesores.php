@@ -39,7 +39,7 @@ include "./includes/sidebar2.php";
           </div>
         </div>    
 
-        <div class="container" id="contenido">
+        <div class="mt-3" id="contenido">
           <div class="row">
             <div class="col-lg-12">
               <table id="table" class="table table-bordered">
@@ -165,62 +165,23 @@ include "./includes/sidebar2.php";
 
 
 
-      <div  class="d-grid gap-2 col-11 mx-auto mb-4">
+      <div class="d-grid gap-2 col-11 mx-auto mb-4">
         <button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
 
-        <button class="btn btn-danger" type="button" class="btn btn-outline-success mt-1">SALIR</button>
+        <button class="btn btn-danger mb-5" type="button" class="btn btn-outline-success mt-1">SALIR</button>
       </div>
-      </div>
-    </div>
-
         <!-- Se utiliza para darle espacio al final de la tabla -->
         <div class="mt-3 mb-2"></div>
         <div class="d-grid gap-2 col-3 mx-auto">
           <p class="mt-3 mb-2"></p>
         </div>
-        <!-- JavaScripts-->
-        <script>
 
-          let arrow = document.querySelectorAll(".arrow");
-          console.log(arrow);
-          for (var i = 0; i < arrow.length; i++) {
-            arrow[i].addEventListener("click",(e)=>{
-              let arrowParent = e.target.parentElement.parentElement;
+      </div>
 
-              arrowParent.classList.toggle("showMenu");
-
-            });
-          }
-
-          let sidebar = document.querySelector(".sidebar");
-          let sidebarBtn = document.querySelector(".bx-menu");
-          console.log(sidebarBtn);
-
-          sidebarBtn.addEventListener("click", ()=>{
-            sidebar.classList.toggle("close");
-          });
+    </div>
 
 
-        </script>
 
-        <script>
-
-          function printData()
-          {
-            var divToPrint=document.getElementById("contenido");
-            newWin= window.open("");
-            newWin.document.write(divToPrint.outerHTML);
-            newWin.document.write('<link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">');
-            newWin.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">');
-            newWin.print();
-            newWin.close();
-          }
-
-          $('Imprimir').on('click',function(){
-            printData();
-          })
-
-        </script>
         <?php include_once "./includes/js.php"; ?>
 </body>
 </html>
