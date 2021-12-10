@@ -41,7 +41,7 @@ include_once "./includes/header.php";?>
               </div> 
               <div class="mt-2 mb-2">
               </div>
-              <p class="text-center mb-4">La pregunta secreta es una medida de seguridad, ya que encaso de olvidar tu contraseña, con ella es posible identificarte. </p> 
+              <p class="text-center mb-4">La pregunta secreta es una medida de seguridad, ya que en caso de olvidar tu contraseña, con ella es posible identificarte. </p> 
               <div class="mt-5 mb-2"></div>
               <div class="row mt-5 mb-4">
                 <div class="col-6 mx-auto">
