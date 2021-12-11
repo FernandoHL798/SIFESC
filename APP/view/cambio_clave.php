@@ -74,6 +74,7 @@ include_once "./includes/header.php"; ?>
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
+                <div id="noContra"><h6 class="text-center" >Las contraseñas no coinciden </h6></div>
                 <div class="d-grid gap-2 col-3 mx-auto">
 
 
