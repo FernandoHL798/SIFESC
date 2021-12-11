@@ -43,7 +43,7 @@ $(document).ready(function(){
                         <div class="alert alert-success" role="alert">
                             <div class="d-flex align-items-center">
                                 ${obj_mje.Mensaje}<br>
-                                <strong>Iniciando sesión...</strong>
+                                <strong>  Iniciando sesión...</strong>
                                 <div class="spinner-border ml-auto" role="status" aria-hidden="true">
                                 </div>
                             </div>
