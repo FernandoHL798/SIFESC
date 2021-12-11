@@ -61,8 +61,8 @@ include_once "./includes/header.php";?>
                                 <th style="width: 90px;">Primer Apellido</th>
                                 <th style="width: 90px;">Segundo Apellido</th>
                                 <th style="width: 270px;">Correo</th>
+                                <th style="width: 120px;">Fecha de nacimiento</th>
                                 <th style="width: 120px;">Teléfono</th>
-
                                 <th style="width: 140px;">Acciones</th>
                             </tr>
                         </thead>
