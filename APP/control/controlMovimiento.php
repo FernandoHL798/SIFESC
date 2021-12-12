@@ -21,7 +21,7 @@ function insertMovimiento($params){
     $MOVIMIENTO->setIdInscripcionFk($params['id_inscripcion_fk']);
     $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
     $MOVIMIENTO->setEstatus("1");
-    $MOVIMIENTO->setCalificacion("");
+    $MOVIMIENTO->setCalificacion(0);
     $MOVIMIENTO->setAprobado(0);
     return $MOVIMIENTO->queryInsertMovimiento();
 }

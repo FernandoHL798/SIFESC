@@ -3,6 +3,7 @@ $(document).ready(function(){
     var formData = new FormData(document.getElementById("frm_baja_asignatura_inscrip"));
     formData.append("idInscripcion", "1");
     formData.append("idAsignacion", "1");
+    formData.append("estatus", "2");
     $.ajax({
         url: "../webhook/modifica_movimiento.php",
         type: 'POST',
@@ -16,7 +17,7 @@ $(document).ready(function(){
             getListaMovimientos();
         console.log(res);
         $("#frm_baja_asignatura_inscrip").trigger('reset');
-        $("#Modal-baja-asignacion").modal('hide');
+        $("#Modal_baja").modal('hide');
         });
         
     e.preventDefault();

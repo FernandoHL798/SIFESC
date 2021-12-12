@@ -1,11 +1,21 @@
 $(document).ready(function(){
-	datosAlumno();
-    getAsignaturas();
-    getListaMovimientos();
-    $("#asig_materia").change(function(){
-        var idAsignatura=$("#asig_materia").val();
-        getAsignaciones(idAsignatura);
-});
+    var terminoInsc;
+	if(terminoInsc!=1){
+        datosAlumno();
+        getAsignaturas();
+        getListaMovimientos();
+        tblConsultaIns();
+        var credMaxim;
+        $("#asig_materia").change(function(){
+            var idAsignatura=$("#asig_materia").val();
+            getAsignaciones(idAsignatura);
+        });
+    }else{
+        document.getElementById('inscripcion').style.display = 'none';
+        document.getElementById('textosInscripcion').style.display = 'none';
+        document.getElementById('btnInscripciones').style.display = 'none';
+        document.getElementById('anuncio').style.display = 'block';
+    }
 });
 //Funcion para realizar peticion a un microservicio 
 function datosAlumno(){
@@ -39,11 +49,12 @@ function datosAlumno(){
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
                 document.getElementById('anuncio').style.display = 'none';
-                
+                credMaxim=$("#creditoMaximo").text();
             }else{
                 document.getElementById('inscripcion').style.display = 'none';
                 document.getElementById('textosInscripcion').style.display = 'none';
-                document.getElementById('btnInscripciones').style.display = 'none';
+                document.getElementById('btnInscripciones1').style.display = 'none';
+                document.getElementById('btnInscripciones2').style.display = 'none';
                 document.getElementById('anuncio').style.display = 'block';
                 /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }}else{
@@ -59,10 +70,12 @@ function datosAlumno(){
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
                 document.getElementById('anuncio').style.display = 'none';
+                credMaxim=$("#creditoMaximo").text();
             }}else{
                 document.getElementById('inscripcion').style.display = 'none';
                 document.getElementById('textosInscripcion').style.display = 'none';
-                document.getElementById('btnInscripciones').style.display = 'none';
+                document.getElementById('btnInscripciones1').style.display = 'none';
+                document.getElementById('btnInscripciones2').style.display = 'none';
                 document.getElementById('anuncio').style.display = 'block';
                 /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }
@@ -125,13 +138,15 @@ function getListaMovimientos(){
             console.log(MOVIMIENTOS);
             let tblMovimientos="";
             let cont=0;console.log(MOVIMIENTOS[0].estatus);
-            
+            var credMen=0;
+            let c=0;
+            let a=credMaxim;
             MOVIMIENTOS.forEach(movimiento=>{
                 if(MOVIMIENTOS[cont].estatus==1){
-                cont++;
+                    credMen=parseInt(MOVIMIENTOS[cont].creditos); c++;
                 tblMovimientos += `
                         <tr idMovimiento=${movimiento.id_movimiento}>
-                            <td data-label="No">${cont}</td>
+                            <td data-label="No">${c}</td>
                             <td data-label="Clave">${movimiento.id_asignatura}</td>
                             <td data-label="Nombre de la Asig">${movimiento.nombre}</td>
                             <td data-label="Cred">${movimiento.creditos}</td>
@@ -143,25 +158,40 @@ function getListaMovimientos(){
                             </td>
                         </tr>
                         `;
+                        cont++;
                     }else{
 cont++;
                     }
+                    a=parseInt(a)-parseInt(credMen);
+                    console.log(a   +" creditos");
+                $("#creditoMaximo").html(parseInt(a));
+                if(a<=6){
+                document.getElementById('btnInscripciones1').style.display = 'none';
+                }
             });
             
             $("#tbl-movimiento").html(tblMovimientos);
-            $("#tbl-consulta-inscripcion").html(tblConsultaIns(MOVIMIENTOS));
             }
         });
 }
 
 function tblConsultaIns(MOVIMIENTOS){
-let tblInscripcion="";
+$.ajax({
+        url: "../webhook/lista_movimiento.php",
+        type: 'POST',
+        data : {      idInscripcion:1    },
+        success: function (response) {
+            //Convertimos el string a JSON
+            let MOVIMIENTOS = JSON.parse(response);  
+            console.log(MOVIMIENTOS);
+            let tblInscripcion="";
             let cont=0;
+            let c=0;
             MOVIMIENTOS.forEach(movimiento=>{
-                cont++;
+                if(MOVIMIENTOS[cont].estatus==1){c++;
                 tblInscripcion += `
-                        <tr idMovimiento=${movimiento.id_asignacion_fk}>
-                            <td data-label="No">${cont}</td>
+                        <tr idMovimiento=${movimiento.id_movimiento}>
+                            <td data-label="No">${c}</td>
                             <td data-label="Clave">${movimiento.id_asignatura}</td>
                             <td data-label="Nombre de la Asig">${movimiento.nombre}</td>
                             <td data-label="Cred">${movimiento.creditos}</td>
@@ -170,6 +200,13 @@ let tblInscripcion="";
                             <td data-label="Mov">Alta</td>
                         </tr>
                         `;
+                        cont++;
+                    }else{
+cont++;
+                    }
             });
-            return tblInscripcion;
+            
+            $("#tbl-consulta-inscripcion").html(tblInscripcion);
+            }
+        });
 }

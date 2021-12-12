@@ -10,7 +10,7 @@ include_once "./includes/header.php";?>
     <!--              AQUI VA EL CONTENIDO                -->
             <div class="home_content2">
                 <div class="texthome">
-                    <form class="mb-4">              
+                    <form class="mb-4" id=frm-inscripcion>              
                         <div class="">
                             <div class="grid">
                                 <div class="">
@@ -120,20 +120,22 @@ include_once "./includes/header.php";?>
                                 <div class="d-grid gap-2 col-3 mx-auto">
                                     
                                 </div>
-                                <div  id="btnInscripciones">
+                                <div  id="btnInscripciones1">
                                 <div class="d-grid gap-2 col-3 mx-auto">
                                     <div class="modal-content" >
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Mat_P">Agregar Asignatura</button>
                                     </div>
                                 </div>
+                                </div>
+                                <div id="btnInscripciones2">
                                 <div class=" col-3 mx-auto mt-2">
                                     <div class="modal-content mb-4">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-avs-inscripcion">Solicitar</button>
                                             </div>
                                         </div>
-                                        </div>
+                                </div>
                                         <div class="mt-3 mb-4"></div>
                                 <div class="d-grid gap-2 col-3 mx-auto mb-4">
                                     <p class="mt-3 mb-2"></p>
