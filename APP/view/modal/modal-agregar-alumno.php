@@ -29,6 +29,12 @@
                         <input type="text" placeholder="Segundo Apellido:" class="form-control" style="height: 60px" id="apm" name="apm">
                       </div>
                       <div class="mt-3 mb-2"></div>
+                      <div class="form-group">
+                        <label class="form-control"> Fecha Nacimiento
+                        <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaNacimiento" name="fechaNacimiento"max="2004-10-08"> 
+                      </label>
+                      </div>
+                      <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
                         <input type="text" placeholder="Correo:" class="form-control" style="height: 60px" id="correo" name="correo">
                       </div>

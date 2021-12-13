@@ -27,7 +27,7 @@
 			</li>
 
 			<li>
-				<a href="./seleccion_carrera.php">
+				<a href="./seleccion_carrera.php" class=" <?php echo $classAlumno ?>">
 					<i class='bx bxs-spreadsheet'></i>
 					<span class="link_name">Mis carreras</span>
 				</a>
