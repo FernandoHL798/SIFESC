@@ -7,13 +7,12 @@ function detallesSaturacion(){
         url: "../webhook/lista_asignacion.php",
         type: 'POST',
         data: {
-            idPlan : "1119",
+            idPlan : "9",
             idAsignatura:"0"
         },
         success: function (response) {
              //COnvertimos el string a JSON
            let SATURACIONES = JSON.parse(response);  
-           console.log(SATURACIONES);
             let template="";
             SATURACIONES.forEach(saturacion => {
                 template += `<tr class="text-center">

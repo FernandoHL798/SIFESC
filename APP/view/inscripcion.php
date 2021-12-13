@@ -151,10 +151,11 @@ include_once "./includes/header.php";?>
             </div>     
             <!-- JavaScripts-->
             <?php include_once "./includes/js.php"; ?>
+            <script src="../service/baja-movimiento.js"></script>
             <script src="../service/lista-alumno.js"></script>
             <script src="../service/saturacion.js"></script>
             <script src="../service/add-movimiento.js"></script>
-            <script src="../service/baja-movimiento.js"></script>
+            
                 
         <?php include "./modal/modal-asignacion.php"; ?>
         <?php include "./modal/modal-avs-inscripcion.php"; ?>

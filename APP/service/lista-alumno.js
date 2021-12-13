@@ -5,7 +5,7 @@ $(document).ready(function(){
         getAsignaturas();
         getListaMovimientos();
         tblConsultaIns();
-        var credMaxim;
+        var credMaxim=0;
         $("#asig_materia").change(function(){
             var idAsignatura=$("#asig_materia").val();
             getAsignaciones(idAsignatura);
@@ -27,7 +27,6 @@ function datosAlumno(){
         success: function (response) {
             //Convertimos el string a JSON
             let ALUMNO = JSON.parse(response);  
-            console.log(ALUMNO);
             //Generamos la fecha actual con el formato Date() para poder tener la hora en la cual se esta logueando
             var hoy = new Date();
             //Variable que contiene la hora en el momento de usar
@@ -36,8 +35,9 @@ function datosAlumno(){
             numero = '1127';// Se define que es a las 11, tendrá que ir cambiando
             fin = numero.substr(0,2) + ':' + numero.substr(2,2);
             //Se condiciona para las horas, si la hora es mayor o igual a la hora de la inscripcion y que la hora sea menor a la hora de fin
-            var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+            var fecha = hoy.getFullYear()+ '-' + ( hoy.getMonth() + 1 ) + '-' +hoy.getDate();
             if(ALUMNO[0].fecha_inscripcion==fecha){
+
                 if(ALUMNO[0].hora_inscripcion<=hora){
                 //Se imprimen los datos de el alumno
                 $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
@@ -58,7 +58,7 @@ function datosAlumno(){
                 document.getElementById('anuncio').style.display = 'block';
                 /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }}else{
-                if(ALUMNO[0].fecha_altas_bajas>=fecha){
+                if(ALUMNO[0].fecha_altas_bajas==fecha){
                 if(ALUMNO[0].hora_altas_bajas<=hora){
                 //Se imprimen los datos de el alumno
                 $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
@@ -91,7 +91,6 @@ function getAsignaturas(){
         success: function (response) {
             //Convertimos el string a JSON
             let ASIGNATURAS = JSON.parse(response);  
-            console.log(ASIGNATURAS);
             let template="";
             template+=  `<option selected>Selecciona la materia</option>`;
             ASIGNATURAS.forEach(asignatura=>{
@@ -135,7 +134,6 @@ function getListaMovimientos(){
         success: function (response) {
             //Convertimos el string a JSON
             let MOVIMIENTOS = JSON.parse(response);  
-            console.log(MOVIMIENTOS);
             let tblMovimientos="";
             let cont=0;
             var credMen=0;
@@ -155,7 +153,7 @@ function getListaMovimientos(){
                             <td data-label="Gpo">${movimiento.nombre_grupo}</td>
                             <td data-label="Mov">Alta</td>
                             <td colspan="2" class="text-center">
-                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" data-bs-toggle="modal"  data-bs-target="#Modal_baja"><i class='bx bx-trash'></i></button>
+                                <button type="button" title="Eliminar Materia" class="btn btn-danger btn-sm col-7" onclick="bajaMovimiento(${movimiento.id_asignacion})"><i class='bx bx-trash'></i></button>
                             </td>
                         </tr>
                         `;
@@ -181,6 +179,9 @@ function getListaMovimientos(){
         });
 }
 
+
+
+
 function tblConsultaIns(MOVIMIENTOS){
 $.ajax({
         url: "../webhook/lista_movimiento.php",
@@ -189,7 +190,6 @@ $.ajax({
         success: function (response) {
             //Convertimos el string a JSON
             let MOVIMIENTOS = JSON.parse(response);  
-            console.log(MOVIMIENTOS);
             let tblInscripcion="";
             let cont=0;
             let c=0;

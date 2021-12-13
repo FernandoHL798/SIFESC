@@ -43,7 +43,7 @@ include_once "./includes/header.php"; ?>
     </div>    
       <div class="mt-2 mb-2">
       </div>
-      <p class="text-center mb-4">Periodo: 2022-1.<span> || </span><span>Carrera: Lic. Informática.</span><span></span> || <span>Plan de estudios: 1119.</span></p> 
+      <p class="text-center mb-4">Periodo: 2022-1.<span> || </span><span>Carrera: Lic. Informática.</span><span></span> || <span>Plan de estudios: 9.</span></p> 
       <div class="mt-5 mb-2"></div>
         <table class="table table-bordered  display nowrap mt-3" cellspacing="0" width="100%">
             <thead>

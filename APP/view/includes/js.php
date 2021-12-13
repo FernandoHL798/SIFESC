@@ -1,4 +1,5 @@
-<script src="../tools/sidebar.js"></script>
+    <script src="../service/carreras.js"></script>
+    <script src="../tools/sidebar.js"></script>
     <script src="../tools/clock.js"></script>
     <script src="../tools/print.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -20,4 +21,3 @@
             });
         } );  
     </script>
-<script src="../service/carreras.js"></script>

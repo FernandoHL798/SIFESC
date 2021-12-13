@@ -17,7 +17,7 @@ $(document).ready(function(){
         if(res!=1){
             var formData = new FormData(document.getElementById("frm_baja_asignatura_inscrip"));
             formData.append("idInscripcion", "1");
-            formData.append("idAsignacion", "1");
+            formData.append("idAsignacion", $("#grupo").val());
             formData.append("estatus", "1");
             $.ajax({
                 url: "../webhook/modifica_movimiento.php",
@@ -45,6 +45,3 @@ $(document).ready(function(){
 });
 });
 /* funcion escucha para agregar al movimiento */
-
-
- 

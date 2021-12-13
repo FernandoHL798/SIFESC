@@ -1,4 +1,15 @@
 <div class="sidebar">
+	<?php
+	if($_SESSION['numero_cuenta']==""){
+		$classAlumno="d-none";
+	}
+	if($_SESSION['rfc']==""){
+		$classProfesor="d-none";	
+	}
+	if($_SESSION['no_trabajador']==""){
+		$classAdmin="d-none";
+	}
+	?>
 	<div class="logo-details">
 			<i class='bx bxs-school'></i>
 			<span class="logo_name">Sistema de inscripción</span>
@@ -41,7 +52,7 @@
 			</li>
 
 			<li>
-				<div class="icon-link">
+				<div class="icon-link <?php echo $classAlumno ?>">
 					<a>
 						<i class='bx bx-pencil'></i>
 						<span class="link_name">Inscripción</span>
@@ -56,7 +67,7 @@
 			</li>
 
 			<li>
-				<a href="./Dosificacion.php">
+				<a href="./Dosificacion.php" class="<?php echo $classAlumno ?>">
 					<i class='bx bx-calendar'></i>
 					<span class="link_name">Dosificación</span>
 				</a>
@@ -66,7 +77,7 @@
 			</li>
 
 			<li>
-				<a href="./saturacion.php">
+				<a href="./saturacion.php" class="<?php echo $classAlumno ?>">
 					<i class='bx bxs-error'></i>
 					<span class="link_name">Saturación</span>
 				</a>
@@ -76,7 +87,7 @@
 			</li>
 
 			<li>
-				<div class="icon-link">
+				<div class="icon-link <?php echo $classProfesor?>" >
 					<a>
 						<i class='bx bxs-briefcase'></i>
 						<span class="link_name">Profesor</span>
@@ -89,7 +100,7 @@
 				</ul>
 			</li>
 			<li>
-				<div class="icon-link">
+				<div class="icon-link <?php echo $classAdmin?>">
 					<a>
 						<i class='bx bx-archive'></i>
 						<span class="link_name">Admin</span>
@@ -131,7 +142,7 @@
 								<?php echo $_SESSION['usuario']." ".$_SESSION['app']." ".$_SESSION['apm'] ?>
 							</div>
 							<div class="job">
-								
+								<input type="hidden" name="idPlan" id="idPlan">
 								<div class="form-check" id="rdo-carrera">
 									
 								</div>
