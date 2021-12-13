@@ -137,14 +137,15 @@ function getListaMovimientos(){
             let MOVIMIENTOS = JSON.parse(response);  
             console.log(MOVIMIENTOS);
             let tblMovimientos="";
-            let cont=0;console.log(MOVIMIENTOS[0].estatus);
+            let cont=0;
             var credMen=0;
             let c=0;
             let a=credMaxim;
             MOVIMIENTOS.forEach(movimiento=>{
                 if(MOVIMIENTOS[cont].estatus==1){
-                    credMen=parseInt(MOVIMIENTOS[cont].creditos); c++;
-                tblMovimientos += `
+                    c++;
+                    credMen=parseInt(MOVIMIENTOS[cont].creditos); 
+                        tblMovimientos += `
                         <tr idMovimiento=${movimiento.id_movimiento}>
                             <td data-label="No">${c}</td>
                             <td data-label="Clave">${movimiento.id_asignatura}</td>
@@ -159,9 +160,14 @@ function getListaMovimientos(){
                         </tr>
                         `;
                         cont++;
+                 if(movimiento.maximo_materias==null || movimiento.maximo_materias>(c+1)){
+
                     }else{
-cont++;
+                        document.getElementById('btnInscripciones1').style.display = 'none';
                     }
+                }else{
+                       cont++;
+                }
                     a=parseInt(a)-parseInt(credMen);
                     console.log(a   +" creditos");
                 $("#creditoMaximo").html(parseInt(a));
