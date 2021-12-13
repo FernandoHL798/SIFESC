@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-12-2021 a las 19:00:29
+-- Tiempo de generación: 13-12-2021 a las 19:58:29
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -145,16 +145,16 @@ CREATE TABLE `asignaturas` (
 --
 
 INSERT INTO `asignaturas` (`id_asignatura`, `id_plan_fk`, `codigo`, `nombre`, `creditos`, `antecesor`, `sucesor`, `caracter`, `semestre`, `updated_at`, `created_at`) VALUES
-(1, 1119, 100, 'Administración I. Proceso Administrativo', 6, NULL, NULL, 1, 1, '2021-11-25 22:31:38', '2021-11-25 22:31:38'),
-(2, 1119, 101, 'Comunicación oral y escrita', 6, NULL, NULL, 1, 1, '2021-11-25 22:31:56', '2021-11-25 22:31:56'),
-(3, 9, 102, 'Informática I. Introducción a la informática', 12, NULL, NULL, 1, 1, '2021-11-25 22:34:33', '2021-11-25 22:34:33'),
-(4, 1119, 104, 'Taller de componentes de Hardware', 3, NULL, NULL, 1, 1, '2021-11-25 22:36:08', '2021-11-25 22:36:08'),
+(1, 9, 100, 'Administración I. Proceso Administrativo', 6, NULL, NULL, 1, 1, '2021-11-25 22:31:38', '2021-11-25 22:31:38'),
+(2, 9, 101, 'Comunicación oral y escrita', 6, NULL, NULL, 1, 1, '2021-11-25 22:31:56', '2021-11-25 22:31:56'),
+(3, 9, 102, 'Informática I. Introducción a la informática', 8, NULL, NULL, 1, 1, '2021-11-25 22:34:33', '2021-11-25 22:34:33'),
+(4, 9, 104, 'Taller de componentes de Hardware', 3, NULL, NULL, 1, 1, '2021-11-25 22:36:08', '2021-11-25 22:36:08'),
 (5, 9, 105, 'Análisis y diseño de algoritmos', 8, NULL, NULL, 1, 1, '2021-11-25 22:37:31', '2021-11-25 22:37:31'),
 (6, 9, 106, 'Matemáticas I. Matemáticas básicas', 8, NULL, NULL, 1, 1, '2021-11-25 22:38:24', '2021-11-25 22:38:24'),
 (7, 9, 107, 'Programación I. Introducción a la programación y ambientes integrados', 8, NULL, 11, 1, 1, '2021-11-25 22:39:12', '2021-11-25 22:39:12'),
 (8, 9, 200, 'Contabilidad', 8, NULL, NULL, 1, 2, '2021-11-25 22:40:00', '2021-11-25 22:40:00'),
 (9, 1119, 201, 'Administración II. Estructura administrativas', 6, NULL, NULL, 1, 2, '2021-11-25 22:41:30', '2021-11-25 22:41:30'),
-(10, 1119, 202, 'Informática II. Organización de archivos y estructura de datos', 12, NULL, NULL, 1, 2, '2021-11-25 22:47:05', '2021-11-25 22:47:05'),
+(10, 9, 202, 'Informática II. Organización de archivos y estructura de datos', 12, NULL, NULL, 1, 2, '2021-11-25 22:47:05', '2021-11-25 22:47:05'),
 (11, 1119, 203, 'Programación II. Programación avanzada', 8, 7, NULL, 1, 2, '2021-11-25 22:49:53', '2021-11-25 22:49:53');
 
 -- --------------------------------------------------------

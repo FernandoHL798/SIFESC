@@ -22,7 +22,7 @@ function detallesSaturacion(){
                                 <td data-label="Se">${saturacion.semestre}</td>
                                 <td data-label="Cr">${saturacion.creditos}</td>
                                 <td data-label="Cup">${saturacion.cupo}</td>
-                                <td data-label="In">2</td>
+                                <td data-label="In">${saturacion.inscritos}</td>
                             </tr> `;    
             });
             $("#tbl-asignaciones").html(template);
