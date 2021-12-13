@@ -46,11 +46,15 @@ include_once "./includes/header.php";?>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Add_Asignatura_prof">Agregar Asignatura</button>
                         </div>
                     </div>
+
+                    <div class="input-group mb-1 mt-4">
+                        <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar materia...">
+                    </div>
                 </div>
                 <div class="">
                     <div class="row">
                         <div class="col-lg-12">
-                            <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                            <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
                                         <th colspan="6">RFC

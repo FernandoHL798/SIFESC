@@ -35,7 +35,7 @@ include_once "./includes/header.php";?>
                         <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                     </div>
                 </div>    
-                <p class="text-center mb-5">Agrega los planes de estudio existentes.</p>
+                <p class="text-center mb-3">Agrega los planes de estudio existentes.</p>
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
@@ -43,11 +43,13 @@ include_once "./includes/header.php";?>
                             Agregar Plan de Estudios
                         </button>
                     </div>
-
+                </div>
+                <div class="input-group mb-1 mt-4">
+                    <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar plan de estudios...">
                 </div>
             </div>
 
-            <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+            <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px;">Clave</th>

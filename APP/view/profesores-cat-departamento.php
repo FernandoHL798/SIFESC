@@ -44,9 +44,13 @@ include "./includes/sidebar2.php";
                     <div class="mt-4 mb-6">
                         <p class="text-center mb-5">Selecciona un departamento con el botón de la columna acciones para poder visualizar, agregar, editar y eliminar a los profesores que pertenecen a él.</p>
                     </div>
+
+                    <div class="input-group mb-3">
+                        <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar departamento...">
+                  </div>
                 </div>
 
-                <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 50px;">Clave DEPTO.</th>

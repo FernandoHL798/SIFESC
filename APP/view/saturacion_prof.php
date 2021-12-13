@@ -38,18 +38,18 @@ include_once "./includes/header.php";?>
                     <div class="row">
                         <p class="mb-2"></p>
                         <h4 id="head3" class="text-center">1119 || Lic. Informática</h4>
-                        <p class="mt-3"></p>
                         <p class="text-center mb-4">Aquí puedes agregar la saturación de las asignaturas del plan de estudios.</p>
                     </div>
-                    <div class="mt-3 mb-2"></div>
+                    <div class="mt-1 mb-2"></div>
                     <div class="d-grid gap-2 col-2 mx-auto">
-
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">Agregar Asignatura</button>
-
+                    </div>
+                    <div class="input-group mb-1 mt-4">
+                        <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar asignatura...">
                     </div>
                 </div>
-                <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -105,7 +105,7 @@ include_once "./includes/header.php";?>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
+                <table class="table table-bordered order-table display nowrap table-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -147,7 +147,7 @@ include_once "./includes/header.php";?>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
+                <table class="table table-bordered order-table display nowrap table-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -189,7 +189,7 @@ include_once "./includes/header.php";?>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%">
+                <table class="table table-bordered order-table display nowrap table-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>
@@ -218,7 +218,7 @@ include_once "./includes/header.php";?>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-bordered  display nowrap table-responsive" cellspacing="0" width="100%" class="mb-4">
+                <table class="table table-bordered order-table display nowrap table-responsive" cellspacing="0" width="100%" class="mb-4">
                     <thead>
                         <tr class="text-center">
                             <th style="width: 100px;">Asig</th>

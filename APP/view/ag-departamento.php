@@ -37,7 +37,7 @@ include_once "./includes/header.php";?>
                         <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                     </div>
                 </div>    
-                <p class="text-center mb-5">Agrega los departamentos existentes de la FESC.</p>
+                <p class="text-center mb-3">Agrega los departamentos existentes de la FESC.</p>
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
@@ -46,9 +46,12 @@ include_once "./includes/header.php";?>
                         </button>
                     </div>
                 </div>
+                <div class="input-group mb-1 mt-4">
+                    <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar departamento...">
+                </div>
             </div>
 
-            <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+            <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px;">Clave DEPTO.</th>

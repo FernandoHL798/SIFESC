@@ -37,12 +37,18 @@ include "./includes/sidebar2.php";
             </div>
             <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
           </div>
-        </div>    
+        </div>
+
+        <div>
+          <div class="input-group mb-1 mt-4">
+            <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar mis asignaturas...">
+          </div>
+        </div>
 
         <div class="mt-3" id="contenido">
           <div class="row">
             <div class="col-lg-12">
-              <table id="table" class="table table-bordered">
+              <table id="table" class="table table-bordered order-table">
                 <thead>
                   <tr class="informacion" id="informacion">
                     <th colspan="3">CLAVE DE PROFESOR:

@@ -103,7 +103,7 @@
 				<div class="icon-link <?php echo $classAdmin?>">
 					<a>
 						<i class='bx bx-archive'></i>
-						<span class="link_name">Admin</span>
+						<span class="link_name">Administrador</span>
 					</a>
 					<i class='bx bx-chevron-down arrow'></i>
 				</div>

@@ -52,16 +52,20 @@ include_once "./includes/header.php";?>
                                 </button>
                             </div>
                         </div>
+
+                        <div class="input-group mb-1 mt-4">
+                            <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar profesor...">
+                        </div>
                     </div>
-                    <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                    <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                         <thead>
                             <tr class="text-center">
-                                <th style="width: 70px;">Clave</th>
+                                <th style="width: 70px;">RFC</th>
                                 <th style="width: 90px;">Nombre</th>
                                 <th style="width: 90px;">Primer Apellido</th>
                                 <th style="width: 90px;">Segundo Apellido</th>
                                 <th style="width: 270px;">Correo</th>
-                                <th style="width: 120px;">Fecha de nacimiento</th>
+                                <th style="width: 120px;">Fecha de nacimiento</th>  <!-- COLUMNA NUEVA      EMH --> 
                                 <th style="width: 120px;">Teléfono</th>
                                 <th style="width: 140px;">Acciones</th>
                             </tr>

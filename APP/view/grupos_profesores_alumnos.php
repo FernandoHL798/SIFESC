@@ -37,10 +37,16 @@ include "./includes/sidebar2.php";
             <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
         </div>
     </div> 
+
+    <div>
+      <div class="input-group mb-1 mt-4">
+        <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar mis alumnos...">
+    </div>
+    </div>
     <div class="" id="contenido">
-        <div class="row mb-5">
-            <div class="col-lg-12 mt-5">
-                <table id="table" class="table table-bordered">
+        <div class="row">
+            <div class="col-lg-12 mt-3">
+                <table id="table" class="table table-bordered order-table">
                     <thead>
                         <tr class="informacion" id="informacion">
                             <th colspan="2">PLAN DE ESTUDIOS:

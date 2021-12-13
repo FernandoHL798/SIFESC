@@ -43,7 +43,10 @@ include "./includes/sidebar2.php";
             </div>
             <p class="text-center mb-1">Selecciona el boton de vista para empezar a agregar asignaturas<br>
             correspondientes al plan de estudios que elijas</p>
-            <table class="table table-bordered display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+            <div class="input-group mb-1 mt-4">
+                <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar plan de estudios...">
+            </div>
+            <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px;">Clave</th>
@@ -87,20 +90,7 @@ include "./includes/sidebar2.php";
                 </div>
             </div>
 
-    <script src="../tools/sidebar.js"></script>
-    <script src="../tools/clock.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <!-- LIBRERIA AJAX requeried-->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="../service/lista-alumno.js"></script>
-    <!--   Datatables-->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
-    <!-- extension responsive -->
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <!--Scrip para Modal-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ <?php include_once "./includes/js.php"; ?>
 
     <script>
         $(document).ready(function() {
