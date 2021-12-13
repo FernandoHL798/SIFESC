@@ -41,7 +41,10 @@ include_once "./includes/header.php";?>
 
             <p class="text-center mb-4">Selecciona el boton de vista para empezar a agregar asignaturas en la saturación <br>
             correspondiente al plan de estudios que elijas</p>
-            <table class="table table-bordered display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+            <div class="input-group mb-1 mt-4">
+                <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar plan de estudios...">
+            </div>
+            <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px;">Clave</th>

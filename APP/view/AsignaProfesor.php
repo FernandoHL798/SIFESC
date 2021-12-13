@@ -47,15 +47,12 @@ include_once "./includes/header.php";?>
 
             <!-- Barra de busqueda -->
             <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Buscar</span>
-              </div>
-              <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese datos de búsqueda" aria-label="Alumno" aria-describedby="basic-addon1">
+              <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar profesor...">
             </div>
             <!-- Barra de busqueda -->
           </div>
 
-          <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+          <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
             <thead>
               <tr class="text-center">
                 <th style="width: 70px;">RFC</th>
@@ -105,9 +102,12 @@ include_once "./includes/header.php";?>
 </div>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
+
+
+
     <!-- script para busqueda -->
     <!-- Bootstrap core JavaScript
-    ================================================== -->
+    ==================================================
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="SIFESC/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="/js/vendor/popper.min.js"></script>
@@ -125,6 +125,9 @@ include_once "./includes/header.php";?>
           }(jQuery));
     });
     </script>
+
+ -->
+
 
     <!-- script para busqueda -->
 
