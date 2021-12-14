@@ -9,9 +9,8 @@
             </div>
             <div class="modal-body">
                     <div class="mt-3 mb-2"></div>
-                    <div class="mt-3 mb-2"></div>
-                      <div class="form-group">
-                            <input type="text" placeholder="Introduzca un RFC o número de cuenta para buscar..." class="form-control" style="height: 60px;" id="buscar_admin" name="buscar_admin"> <button type="submit" class= "btn btn-primary">Buscar</button>
+                        <div class="input-group">
+                          <input type="text" placeholder="Introduzca un RFC o número de cuenta" class="form-control" style="height: 60px; width: 250px;" id="buscar_admin" name="buscar_admin"><span class="input-group-addon"><button style="height: 60px;" id="add_admin" name="add_admin" type="button" class= "btn btn-primary">Buscar</button></span>  
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" >
