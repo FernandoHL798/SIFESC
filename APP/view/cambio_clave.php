@@ -46,7 +46,7 @@ include_once "./includes/header.php"; ?>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
-                    <input type="password" class="form-control mt-2" style="height: 55px;" id="floatingInput" placeholder="Contraseña actual:" required="" autofocus=""> 
+                    <input type="password" class="form-control mt-2" style="height: 55px;" id="contraAct" placeholder="Contraseña actual:" required="" autofocus=""> 
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
@@ -98,6 +98,7 @@ include_once "./includes/header.php"; ?>
       </div>
 
       <script src= ../service/verifica-contra.js></script>
+      <script src= ../service/cambia-contra.js></script>
       <script src="../tools/restriccionClave.js"></script>
       <!-- SCRIPTS -->
       <?php include_once "./includes/js.php";?>

@@ -1,8 +1,7 @@
 <?php
-
-$params = [
-"idUsuario"=> "1",
-"pwd"=> "1010"
-];
 include_once "../control/controlUsuario.php";
+$params = [
+"idUsuario"=> $_POST['idUsuario'],
+"pwd"=> $_POST['pwd']
+];
 echo updatePassword($params);
