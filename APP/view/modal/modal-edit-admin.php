@@ -1,9 +1,9 @@
 <!-- Modal Editar-->
-<div class="modal fade" id="Edit_Modal_P" tabindex="-1" aria-labelledby="     Modal_Edit_P" aria-hidden="true">
+<div class="modal fade" id="Modal_Edit_Adm" tabindex="-1" aria-labelledby="Modal_Edit_Admin" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="Modal_Edit_P">Editar profesor</h5>
+        <h5 class="modal-title" id="Modal_Edit_Admin">Editar administrador</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -13,7 +13,6 @@
             <input type="text" placeholder="Clave:" class="form-control" style="height: 60px">
           </div>
         </div>
-
         <div class="mt-3 mb-2"></div>
         <div class="form-group" id="">
           <input type="text" placeholder="Nombre:" class="form-control" style="height: 60px">
