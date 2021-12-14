@@ -10,8 +10,6 @@ include "./includes/sidebar2.php";
     <!--              AQUI VA EL CONTENIDO                -->
     <div class="home_content2">
         <div class="texthome">
-            <form class="mb-4">              
-                <div class="mb-4">
                     <div class="grid">
                         <div class="">
                             <a href="http://localhost/SIFESC/APP/view/index.php" title="Volver"> 
@@ -38,7 +36,7 @@ include "./includes/sidebar2.php";
                             <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                         </div>
                     </div>       
-                    <div class="mt-5 mb-2">
+                    <div class="mt-2 mb-2">
                         <div class="mt-3 mb-2"></div>
                         <p class="text-center mb-4">Aquí podrás consultar la fecha y hora en la cual te corresponde realizar tu inscripción.</p>
 
@@ -87,7 +85,7 @@ include "./includes/sidebar2.php";
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <p class="mt-3 mb-2"></p>
                 </div>
-            </form>
+            
         </div>                     
     </div>
 <!-- JavaScripts-->

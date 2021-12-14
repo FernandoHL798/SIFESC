@@ -14,7 +14,7 @@ include_once "./includes/header.php";?>
             <div class="mb-4">
                 <div class="grid">
                     <div class="">
-                        <a href="./index.php" title="Volver"> 
+                        <a href="./ag-periodo.php" title="Volver"> 
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi    bi-arrow-left-circle" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
                             </svg>
@@ -38,9 +38,9 @@ include_once "./includes/header.php";?>
                         <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                     </div>
                 </div>    
-
+                <h3 class="text-center mb-3">"""""INFORMACIÓN DEL PERÍODO""""</h3>
                 <h5 class="text-center mb-3">Agrega periodos</h5>
-                <p class="text-center mb-5">Agrega los nuevos periodos. <br> El sistema para todos los usuarios se basara en el periodo activo. <br> Solo se puede tener activo un periodo a la vez. <br>Las fechas son generales para todos, pero cada alumno tendra días y horas diferentes en el caso de la inscripción </p>
+                <p class="text-center mb-5">Agrega las fechas de este período. <br> El sistema para todos los usuarios se basara en el periodo activo. <br> Solo se puede tener activo un periodo a la vez. <br>Las fechas son generales para todos, pero cada alumno tendra días y horas diferentes en el caso de la inscripción </p>
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
@@ -55,7 +55,6 @@ include_once "./includes/header.php";?>
             <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                 <thead style="font-size: 5px!important">
                     <tr class="text-center">
-                        <th >Periodo</th>
                         <th >Dosificación inicio</th>
                         <th >Dosificación fin</th>
                         <th >Fecha de inscripción</th>
@@ -65,12 +64,10 @@ include_once "./includes/header.php";?>
                         <th >Inscripción altas y bajas</th>
                         <th >Fin de inscripción altas y bajas</th>
                         <th >Acciones</th>
-
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="text-center">
-                        <td data-label="Clave">2022/1</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -85,7 +82,7 @@ include_once "./includes/header.php";?>
                         </td>
                     </tr>
                     <tr class="text-center">
-                        <td data-label="Clave">2021/2</td>
+                    
                         <td data-label="Duración">09/08/2021</td>
                         <td data-label="Duración">19/08/2021</td>
                         <td data-label="Duración">09/09/2021</td>
@@ -100,7 +97,7 @@ include_once "./includes/header.php";?>
                         </td>
                     </tr>
                     <tr class="text-center">
-                        <td data-label="Clave">2021/1</td>
+                    
                         <td data-label="Duración">09/01/2021</td>
                         <td data-label="Duración">19/01/2021</td>
                         <td data-label="Duración">09/09/2021</td>
@@ -115,7 +112,7 @@ include_once "./includes/header.php";?>
                         </td>
                     </tr>
                     <tr class="text-center">
-                        <td data-label="Clave">2020/2</td>
+                    
                         <td data-label="Duración">09/09/2021</td>
                         <td data-label="Duración">19/09/2021</td>
                         <td data-label="Duración">09/09/2021</td>
