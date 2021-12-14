@@ -14,7 +14,7 @@ function updatePreguntaUsuario($params){
    $USUARIO->setIdUsuario($params['id_usuario']);
    $USUARIO->setPreguntaSecreta($params['pregunta_secreta']);
    $USUARIO->setRespuestaSecreta($params['respuesta_secreta']);
-   $result= $USUARIO->queryUpdateRPwdAlumno();
+   $result= $USUARIO->queryUpdateRPwdUsuario();
    return $result;
 }
 

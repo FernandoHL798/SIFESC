@@ -4,14 +4,12 @@
 <?php $titulo="Seguridad | SIFESC";
 include_once "./includes/header.php";?>
 <body id="body">
-      <?php
-      include "./includes/sidebar2.php";
-      ?>
+<?php include "./includes/sidebar2.php"; ?>
 
       <!--              AQUI VA EL CONTENIDO                -->
       <div class="home_content2">
         <div class="texthome"> 
-          <form>
+          <form id="frm-pregunta-seguridad">
             <div class="">
               <div class="grid">
                 <div class="">
@@ -46,7 +44,7 @@ include_once "./includes/header.php";?>
               <div class="row mt-5 mb-4">
                 <div class="col-6 mx-auto">
                   <div class="form-floating">
-                    <select class="form-select" id="floatingSelect">
+                    <select class="form-select" id="pregunta">
                       <option hidden=""></option>
                       <option value="1">¿Cuál es tu color favorito?</option>
                       <option value="2">¿Cuál es el nombre de su primer mascota?</option>
@@ -58,23 +56,25 @@ include_once "./includes/header.php";?>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
-                    <input type="email" class="form-control mt-2" style="height: 55px;" id="floatingInput" placeholder="Introduzca su respuesta:" required="" autofocus=""> 
+                    <input type="text" class="form-control mt-2" style="height: 55px;" id="respuesta1" placeholder="Introduzca su respuesta:" required="" autofocus=""> 
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
-                    <input type="email" class="form-control" style="height: 55px;" id="floatingInput" placeholder="Confirme su respuesta:" required="" autofocus=""> 
+                    <input type="text" class="form-control" style="height: 55px;" id="respuesta2" placeholder="Confirme su respuesta:" required="" autofocus=""> 
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
                 <div class="d-grid gap-2 col-3 mx-auto">
 
-
+                  <div class="mt-3 mb-2"></div>
+                <div id="noPregunta"><h6 class="text-center" >Las respuestas no coinciden </h6></div>
+                <div class="d-grid gap-2 col-3 mx-auto">
 
                   <div class="modal-content">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RespModal">
+                    <button style="display: none;" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RespModal" id="btnConfirmarPregu">
                       Confirmar
                     </button>
                   </div>
@@ -94,7 +94,7 @@ include_once "./includes/header.php";?>
     <?php include_once "./includes/js.php"; ?>
     <!-- PHP DE MODALES -->
     <?php include "./modal/modal-avs-pregunta.php"; ?>
-
+    <script src= ../service/cambia-pregunta.js></script>
 
 </body>
 </html>
