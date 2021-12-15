@@ -97,8 +97,6 @@ include_once "./includes/header.php"; ?>
         </div>
       </div>
       </div>
-
-      <script src= ../service/verifica-contra.js></script>
       <script src="../tools/restriccionClave.js"></script>
       <!-- SCRIPTS -->
       <?php include_once "./includes/js.php";?>
