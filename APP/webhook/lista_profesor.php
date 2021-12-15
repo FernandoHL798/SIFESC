@@ -1,3 +1,4 @@
 <?php 
 include_once "../control/controlProfesor.php";
-echo consultaProfesor();
+$idProfesor=$_POST['idProfesor'];
+echo consultaProfesor($idProfesor);

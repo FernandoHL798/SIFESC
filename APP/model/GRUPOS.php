@@ -55,7 +55,7 @@ class GRUPOS extends CONEXION{
     public function queryconsultaGrupos($idAsignatura,$idProfesor){
         $filterProfesor= $idProfesor>0 ? " AND asi.id_usuarioprofesor_fk=".$idProfesor : "";
         $filterAsignatura= $idAsignatura>0 ? " AND g.id_asignatura_fk=".$idAsignatura : "";
-        $query="SELECT g.nombre_grupo, asi.cupo, asi.id_asignacion FROM grupos g,asignacion asi where g.id_grupo = asi.id_grupo_fk ".$filterProfesor."".$filterAsignatura;
+        $query="SELECT plan.anio_plan, plan.id_plan, car.nombre as nombre_carrera, a.codigo, a.nombre as nombre_asignatura, g.nombre_grupo, a.semestre, asi.inscritos, asi.id_asignacion FROM grupos g,asignacion asi, asignaturas a, plandeestudios plan, carrera car where g.id_grupo = asi.id_grupo_fk AND a.id_asignatura= g.`id_asignatura_fk` AND plan.id_plan=a.id_plan_fk AND car.id_carrera= plan.id_carrera_fk".$filterProfesor."".$filterAsignatura;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

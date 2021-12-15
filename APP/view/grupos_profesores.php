@@ -52,15 +52,16 @@ include "./includes/sidebar2.php";
                 <thead>
                   <tr class="informacion" id="informacion">
                     <th colspan="3">CLAVE DE PROFESOR:
-                      <div class="datos_personales">12345678</div>
+                      <div class="datos_personales"><span id=rfc_profesor></span></div>
                     </th>
                     <th colspan="4">NOMBRE:
                       <div class="datos_personales">
-                        Maricela Lara Martínez
+                        <span id="nombre_profesor"></span>
                       </div>
                     </th>
                     <th colspan="3">DEPARTAMENTO:
                       <div class="datos_personales">
+                        <!-- tendra que ser un AJAX response de departamentos -->
                         Informática
                       </div>
                     </th>
@@ -80,7 +81,7 @@ include "./includes/sidebar2.php";
                     </th>
                     <th colspan="4">PLANTEL:
                       <div class="datos_personales">
-                        106 - F.E.S. CUAUTITLÁN
+                        <span id="nombre_plantel"></span>
                       </div>
                     </th>
                     <th colspan="3">Total de alumnos:
@@ -106,63 +107,8 @@ include "./includes/sidebar2.php";
                   </tr>
                 </thead>
 
-                <tbody>
-                  <tr>
-                    <td data-label="NÚMERO">1</td>
-                    <td data-label="PLAN DE ESTUDIOS">1119</td>
-                    <td data-label="CARRERA">LIC. INFORMÁTICA</td>
-                    <td data-label="CLAVE. ASIGNAT.">12</td>
-                    <td data-label="NOM. ASIGNAT">PROGRAMACIÓN I</td>
-                    <td data-label="GRUPO">1701</td>
-                    <td data-label="TIPO GRUPO">ORDINARIO</td>
-                    <td data-label="SEMESTRE">1</td>
-                    <td data-label="Inscritos">20</td>
-                    <td class="text-center">
-                      <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="NÚMERO">1</td>
-                    <td data-label="PLAN DE ESTUDIOS">1131</td>
-                    <td data-label="CARRERA">CONTADURIA</td>
-                    <td data-label="CLAVE. ASIGNAT.">135</td>
-                    <td data-label="NOM. ASIGNAT">COMPUTO I</td>
-                    <td data-label="GRUPO">1103</td>
-                    <td data-label="TIPO GRUPO">ORDINARIO</td>
-                    <td data-label="SEMESTRE">2</td>
-                    <td data-label="Inscritos">20</td>
-                    <td class="text-center">
-                      <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="NÚMERO">1</td>
-                    <td data-label="PLAN DE ESTUDIOS">1119</td>
-                    <td data-label="CARRERA">LIC. INFORMÁTICA</td>
-                    <td data-label="CLAVE. ASIGNAT.">12</td>
-                    <td data-label="NOM. ASIGNAT">PROGRAMACIÓN I</td>
-                    <td data-label="GRUPO">1751</td>
-                    <td data-label="TIPO GRUPO">ORDINARIO</td>
-                    <td data-label="SEMESTRE">1</td>
-                    <td data-label="Inscritos">20</td>
-                    <td class="text-center">
-                      <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="NÚMERO">1</td>
-                    <td data-label="PLAN DE ESTUDIOS">1121</td>
-                    <td data-label="CARRERA">ITSE</td>
-                    <td data-label="CLAVE. ASIGNAT.">113</td>
-                    <td data-label="NOM. ASIGNAT">PROGRAMACIÓN V</td>
-                    <td data-label="GRUPO">1502</td>
-                    <td data-label="TIPO GRUPO">EXTRAORDINARIO</td>
-                    <td data-label="SEMESTRE">5</td>
-                    <td data-label="Inscritos">20</td>
-                    <td class="text-center">
-                      <a href="./grupos_profesores_alumnos.php"><button type="button" title="Ver Grupo" class="btn btn-info btn-sm col-6 mx-auto"><i class='bx bx-show'></i></button></a>
-                    </td>
-                  </tr>
+                <tbody id="tbl-grupos-profesor">
+                  <!-- Ajax responser Lista-grupos-->
                 </tbody>
               </table>
             </div>

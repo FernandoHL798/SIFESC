@@ -1,4 +1,13 @@
-<?php include_once "./includes/session_verify.php";?>
+<?php include_once "./includes/session_verify.php";
+
+$idAsignacion = "";
+if (!isset($_GET['idAsignacion'])){
+    echo "<script>location.href ='javascript:history.back()';</script>";
+}
+else{
+    $idAsignacion = $_GET['idAsignacion'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php $titulo="Lista Grupo | SIFESC";
@@ -46,6 +55,7 @@ include "./includes/sidebar2.php";
     <div class="" id="contenido">
         <div class="row">
             <div class="col-lg-12 mt-3">
+                <input type="hidden" id="idAsignacion" name="idAsignacion" value="<?php echo $idAsignacion; ?>">
                 <table id="table" class="table table-bordered order-table">
                     <thead>
                         <tr class="informacion" id="informacion">
@@ -89,8 +99,8 @@ include "./includes/sidebar2.php";
                             <th>CORREO</th>
                             <th>TELÉFONO</th>
                             <th>ESTATUS</th>
-                            <th>CALIFICACIÓN</th>
-                            <th>ACCIÓN</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -100,12 +110,6 @@ include "./includes/sidebar2.php";
                             <td data-label="CORREO">emmanuel_@gmail.com</td>
                             <td data-label="TELEFONO">5458565251</td>
                             <td data-la data-label="ESTATUS">EN CURSO</td>
-                            <td data-label="CALIFICACIÓN">7</td>
-                            <td>
-                                <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
-                                    <i class='bx bxs-pencil'></i>
-                                </button>
-                            </td>
                         </tr>
                         <tr>
                          <td data-label="NÚMERO">314243487</td>
@@ -113,12 +117,6 @@ include "./includes/sidebar2.php";
                          <td data-label="CORREO">erick_@gmail.com</td>
                          <td data-label="TELEFONO">5425565251</td>
                          <td data-la data-label="ESTATUS">EN CURSO</td>
-                         <td data-label="CALIFICACIÓN"></td>
-                         <td>
-                            <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
-                                <i class='bx bxs-pencil'></i>
-                            </button>
-                        </td>
                     </tr>
                     <tr>
                         <td data-label="NÚMERO">314243814</td>
@@ -145,7 +143,9 @@ include "./includes/sidebar2.php";
     </div>
     </div>
     <!-- JavaScripts-->
-    <?php include_once "./includes/js.php"; ?>      
+    <?php include_once "./includes/js.php"; ?>     
+    <script src="../service/lista-alumnos-asignacion.js"></script> 
+    <!-- Modales-->
     <?php include "./modal/modal-prof-calif-alum.php"; ?>
 </body>
 </html>

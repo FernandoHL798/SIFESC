@@ -33,9 +33,9 @@ class PROFESOR extends USUARIO{
         $this->estatus = $estatus;
     }
 
-    public function queryconsultaProfesor(){
-        $query="SELECT pr.`usuario_id_fk`,pr.`estatus`, us.cuenta_profesor, us.nombre, 
-        us.primer_apellido, us.segundo_apellido, us.correo,us.telefono,us.fecha_nacimiento FROM `profesor` pr, usuario us WHERE pr.usuario_id_fk = us.id_usuario";
+    public function queryconsultaProfesor($idProfesor){
+        $filtroIdProf = $idProfesor>0 ? " AND pr.usuario_id_fk=".$idProfesor : "";
+        $query="SELECT pr.`usuario_id_fk`,pr.`estatus`, us.cuenta_profesor, us.nombre as nombre_profesor, us.primer_apellido, us.segundo_apellido, us.correo,us.telefono,us.fecha_nacimiento,pl.nombre as nombre_plantel, pl.id_plantel FROM `profesor` pr, usuario us, asignacion asi, grupos g, asignaturas a, plandeestudios plan, carrera car, plantel_carrera plc, plantel pl WHERE us.id_usuario= pr.usuario_id_fk AND pr.usuario_id_fk= asi.id_usuarioprofesor_fk AND asi.id_grupo_fk= g.id_grupo AND a.id_asignatura= g.id_asignatura_fk AND plan.id_plan= a.id_plan_fk AND car.id_carrera = plan.id_carrera_fk AND plc.id_carrera_fk = car.id_carrera AND pl.id_plantel= plc.id_plantel_fk".$filtroIdProf." GROUP BY pr.usuario_id_fk";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

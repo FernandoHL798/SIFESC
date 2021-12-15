@@ -1,8 +1,8 @@
 <?php
-function consultaProfesor(){
+function consultaProfesor($idProfesor){
     include_once "../model/PROFESOR.php";
     $PROFESOR = new PROFESOR();
-    return json_encode($PROFESOR->queryconsultaProfesor());
+    return json_encode($PROFESOR->queryconsultaProfesor($idProfesor));
 }
 
 function updateEstatusProfesor($params){
