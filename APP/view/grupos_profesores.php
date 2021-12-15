@@ -185,9 +185,8 @@ include "./includes/sidebar2.php";
       </div>
 
     </div>
-
-
-
-        <?php include_once "./includes/js.php"; ?>
+    <!-- JavaScripts-->
+    <?php include_once "./includes/js.php"; ?> 
+    <script src="../service/lista-grupos-profesores.js"></script>
 </body>
 </html>

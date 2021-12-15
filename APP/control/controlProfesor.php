@@ -31,9 +31,12 @@ function insertProfesor($params){
     $PROFESOR->setFechaNacimiento($params['fecha_nacimiento']);
 //Si el USUARIO se crea correctamente, generamos al profesor
     if($PROFESOR->queryInsertUsuario()){
+        include_once "enviaMail.php";
         $PROFESOR->setIdUsuarioFk($PROFESOR->getIdUsuario());
         $PROFESOR->setEstatus(1);
-        return $PROFESOR->queryInsertProfesor();
+        if($PROFESOR->queryInsertProfesor()){
+            return enviaCorreoRegistro($PROFESOR->getCorreo(),$PROFESOR->getNombre(),$PROFESOR->getCuentaProfesor(),"SIFESC");
+        } 
     }
     //Sino, retornamos error
     return false;
