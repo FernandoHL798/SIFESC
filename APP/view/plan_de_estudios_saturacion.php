@@ -48,34 +48,14 @@ include_once "./includes/header.php";?>
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px;">Clave</th>
-                        <th style="width: 100px;">Nombre</th>
+                        <th style="width: 100px;">Nombre de plan de estudios</th>
                         <th style="width: 100px;">Acciones</th>
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td data-label="Clave">1119</td>
-                        <td data-label="Nombre">INFORMÁTICA</td>
-                        <td data-label="Acciones">
-                            <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">REDES COMPUTACIONALES III</td>
-                            <td data-label="Acciones">
-                                <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td data-label="Clave">0017</td>
-                                <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
-                                <td data-label="Acciones">
-                                    <a href="./saturacion_prof.php"><button type="button" title="Ver Saturación" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
-                                </td>
-                            </tr>
-                        </tbody>
+                <tbody id="tbl-lista-plan">
+                    <!-- ajax lista plan de estudios -->
+                    </tbody>
                     </table>
 
                     <!-- Se utiliza para darle espacio al final de la tabla -->
@@ -90,6 +70,7 @@ include_once "./includes/header.php";?>
 
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
+    <script src="../service/lista-plandeestudios.js"></script>
     <!-- Modales -->
     <?php include "./modal/modal-agregar-plan-estu.php"; ?>
     <?php include "./modal/modal-edit-plan-estu.php"; ?>

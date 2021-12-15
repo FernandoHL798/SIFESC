@@ -15,7 +15,7 @@ $.ajax({
             let template="";
             CARRERAS.forEach(carrera=> {
                 template += `<tr class="text-center">
-                            <td data-label="Clave">${carrera.id_departamento}</td>
+                            <td data-label="Clave">${carrera.id_carrera}</td>
                             <td data-label="Nombre">${carrera.nombre}</td>
                             <td data-label="Acciones">
                             <a href="./turnos.php"><button type="button" title="Ver Alumnos" class="btn btn-info"><i class='bx bx-show'></i></button>

@@ -36,8 +36,8 @@ function datosAlumno(){
             fin = numero.substr(0,2) + ':' + numero.substr(2,2);
             //Se condiciona para las horas, si la hora es mayor o igual a la hora de la inscripcion y que la hora sea menor a la hora de fin
             var fecha = hoy.getFullYear()+ '-' + ( hoy.getMonth() + 1 ) + '-' +hoy.getDate();
-            if(ALUMNO[0].fecha_inscripcion==fecha){
 
+            if(ALUMNO[0].fecha_inscripcion==fecha){
                 if(ALUMNO[0].hora_inscripcion<=hora){
                 //Se imprimen los datos de el alumno
                 $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
@@ -47,7 +47,7 @@ function datosAlumno(){
                 $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
-                $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
+                $("#idInscripcionAlumno").val(ALUMNO[0].id_inscripcion);
                 document.getElementById('anuncio').style.display = 'none';
                 credMaxim=$("#creditoMaximo").text();
             }else{
@@ -68,7 +68,7 @@ function datosAlumno(){
                 $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
-                $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
+                $("#idInscripcionAlumno").val(ALUMNO[0].id_inscripcion);
                 document.getElementById('anuncio').style.display = 'none';
                 credMaxim=$("#creditoMaximo").text();
             }}else{
@@ -130,8 +130,9 @@ function getListaMovimientos(){
     $.ajax({
         url: "../webhook/lista_movimiento.php",
         type: 'POST',
-        data : {      idInscripcion:1    },
+        data : {      idInscripcion: 1   },
         success: function (response) {
+            console.log(response);
             //Convertimos el string a JSON
             let MOVIMIENTOS = JSON.parse(response);  
             let tblMovimientos="";

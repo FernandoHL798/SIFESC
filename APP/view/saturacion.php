@@ -46,7 +46,7 @@ include_once "./includes/header.php"; ?>
       <p class="text-center mb-4">Periodo: 2022-1.<span> || </span><span>Carrera: Lic. Informática.</span><span></span> || <span id="idPlan">Plan de estudios: 9.</span></p> 
       <div class="mt-5 mb-2">
           <div class="input-group mb-1 mt-4">
-            <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar materia...">
+            <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar...">
         </div>
       </div>
         <table class="table table-bordered order-table display nowrap mt-3" cellspacing="0" width="100%">
