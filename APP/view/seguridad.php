@@ -53,6 +53,7 @@ include_once "./includes/header.php";?>
                     <label for="floatingSelect"><font SIZE=3>Seleccione una pregunta secreta</font></label>
                   </div>
                 </div>
+                <div class="mt-3 mb-2"></div>
                 <div id="avisoCaracteres"><h6 class="text-center" >El límite de caracteres es de 50</h6></div>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">

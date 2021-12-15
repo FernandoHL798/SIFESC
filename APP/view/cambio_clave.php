@@ -50,6 +50,7 @@ include_once "./includes/header.php"; ?>
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
+                <div id="avisoEspacios"><h6 class="text-center" >Las contraseñas no deben tener espacios</h6></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
                     <label for="psw"></label>

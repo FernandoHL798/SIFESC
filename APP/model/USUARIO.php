@@ -255,8 +255,8 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         return $resultado;
     }
 
-    public function queryUpdatePassword(){
-        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id_usuario`=".$this->getIdUsuario()."' AND `contrasenia`='".$this->getContrasenia();
+    public function queryUpdatePassword($params){
+        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id_usuario`='".$this->getIdUsuario()."' AND contrasenia='".md5($params['pwdA'])."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

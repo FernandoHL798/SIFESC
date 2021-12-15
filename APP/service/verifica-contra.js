@@ -21,7 +21,15 @@ $(document).ready(function(){
         
     e.preventDefault();
     });
-
+    $("#psw").keyup(function(){              
+        var ta      =   $("#psw");
+        letras      =   ta.val().replace(/ /g, "");
+        ta.val(letras)
+}); $("#exampleInputPassword1").keyup(function(){              
+        var ta      =   $("#psw");
+        letras      =   ta.val().replace(/ /g, "");
+        ta.val(letras)
+}); 
     $('#psw, #exampleInputPassword1').on('keyup', function () {
     if ($('#psw').val() == $('#exampleInputPassword1').val()) {
         if($('#psw').val()==''){
