@@ -1,5 +1,5 @@
 <?php 
 include_once"../control/controlProfesor.php";
-$id_profesor="1";
+$id_profesor=$_POST['idProfesor'];
 $result=deleteProfesor($id_profesor);
 echo $result;

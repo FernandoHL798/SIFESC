@@ -1,75 +1,47 @@
-var hoursContainer = document.querySelector('.hours')
-                var minutesContainer = document.querySelector('.minutes')
-                var secondsContainer = document.querySelector('.seconds')
-                var tickElements = Array.from(document.querySelectorAll('.tick'))
+$(function(){
+          var actualizarHora = function(){
+            var fecha = new Date(),
+            hora = fecha.getHours(),
+            minutos = fecha.getMinutes(),
+            segundos = fecha.getSeconds(),
+            diaSemana = fecha.getDay(),
+            dia = fecha.getDate(),
+            mes = fecha.getMonth(),
+            anio = fecha.getFullYear(),
+            ampm;
 
-                var last = new Date(0)
-                last.setUTCHours(-1)
+            var $pHoras = $("#horas_clock"),
+            $pSegundos = $("#segundos_clock"),
+            $pMinutos = $("#minutos_clock"),
+            $pAMPM = $("#ampm"),
+            $pDiaSemana = $("#diaSemana"),
+            $pDia = $("#dia"),
+            $pMes = $("#mes"),
+            $pAnio = $("#anio");
+            var semana = ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+            var meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
-                var tickState = true
+            $pDiaSemana.text(semana[diaSemana]);
+            $pDia.text(dia);
+            $pMes.text(meses[mes]);
+            $pAnio.text(anio);
+            if(hora>=12){
+              hora = hora - 12;
+              ampm = "PM";
+            }else{
+              ampm = "AM";
+            }
+            if(hora == 0){
+              hora = 12;
+            }
+            if(hora<10){$pHoras.text("0"+hora)}else{$pHoras.text(hora)};
+            if(minutos<10){$pMinutos.text("0"+minutos)}else{$pMinutos.text(minutos)};
+            if(segundos<10){$pSegundos.text("0"+segundos)}else{$pSegundos.text(segundos)};
+            $pAMPM.text(ampm);
 
-                function updateTime () {
-                  var now = new Date
-                  
-                  var lastHours = last.getHours().toString()
-                  var nowHours = now.getHours().toString()
-                  if (lastHours !== nowHours) {
-                    updateContainer(hoursContainer, nowHours)
-                  }
-                  
-                  var lastMinutes = last.getMinutes().toString()
-                  var nowMinutes = now.getMinutes().toString()
-                  if (lastMinutes !== nowMinutes) {
-                    updateContainer(minutesContainer, nowMinutes)
-                  }
-                  
-                  var lastSeconds = last.getSeconds().toString()
-                  var nowSeconds = now.getSeconds().toString()
-                  if (lastSeconds !== nowSeconds) {
-                    //tick()
-                   
-                  }
-                  
-                  last = now
-                }
+          };
 
-                function tick () {
-                  tickElements.forEach(t => t.classList.toggle('tick-hidden'))
-                }
 
-                function updateContainer (container, newTime) {
-                  var time = newTime.split('')
-                  
-                  if (time.length === 1) {
-                    time.unshift('0')
-                  }
-                  
-                  
-                  var first = container.firstElementChild
-                  if (first.lastElementChild.textContent !== time[0]) {
-                    updateNumber(first, time[0])
-                  }
-                  
-                  var last = container.lastElementChild
-                  if (last.lastElementChild.textContent !== time[1]) {
-                    updateNumber(last, time[1])
-                  }
-                }
-
-                function updateNumber (element, number) {
-                  //element.lastElementChild.textContent = number
-                  var second = element.lastElementChild.cloneNode(true)
-                  second.textContent = number
-                  
-                  element.appendChild(second)
-                  element.classList.add('move')
-
-                  setTimeout(function () {
-                    element.classList.remove('move')
-                  }, 990)
-                  setTimeout(function () {
-                    element.removeChild(element.firstElementChild)
-                  }, 990)
-                }
-
-                setInterval(updateTime, 100)
+          actualizarHora();
+          var intervalo = setInterval(actualizarHora,1000);
+        });

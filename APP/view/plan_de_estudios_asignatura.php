@@ -1,21 +1,12 @@
+<?php include_once "./includes/session_verify.php";?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../../css/styles_menu.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <title>Saturacion_Prof</title>
-</head>
+<?php $titulo="Asignaturas | SIFESC";
+include_once "./includes/header.php"; ?>
 <body id="body">
     <?php
 include "./includes/sidebar2.php";
     ?>
-
-    
     <!--              AQUI VA EL CONTENIDO                -->
     <div class="home_content2">
         <div class="texthome">            
@@ -31,96 +22,75 @@ include "./includes/sidebar2.php";
                 <div>
                     <h3 id="head3" class="text-center">Agrega asignaturas</h3>
                 </div>
-                <div class="clock">
-                    <div class="hours">
-                        <div class="first">
-                            <div class="number">0</div>
+                <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
+                <div class="widget_clock">
+                    <div class="reloj_clock">
+                        <p id="horas_clock" class="horas_clock"></p>
+                        <p>:</p>
+                        <p id="minutos_clock" class="minutos_clock"></p>
+                        <p>:</p>
+                        <div class="cajaSegundos">
+                            <p id="segundos_clock" class="segundos_clock"></p>
                         </div>
-                        <div class="second">
-                            <div class="number">0</div>
-                        </div>
+                        <p id="ampm" class="ampm"></p>
                     </div>
-                    <div class="tick">:</div>
-                    <div class="minutes">
-                        <div class="first">
-                            <div class="number">0</div>
-                        </div>
-                        <div class="second">
-                            <div class="number">0</div>
-                        </div>
-                    </div>
-                </div>     
-            </div> 
-                <div class="row">
-                    <p class="mb-2"></p>
-                    
+                    <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                 </div>
-                    <p class="text-center mb-1">Selecciona el boton de vista para empezar a agregar asignaturas<br>
-                    correspondientes al plan de estudios que elijas</p>
-                    <table class="table table-bordered display nowrap table-responsive mt-3" cellspacing="0" width="100%">
-                    <thead>
-                        <tr class="text-center">
-                            <th style="width: 50px;">Clave</th>
-                            <th style="width: 100px;">Nombre</th>
-                            <th style="width: 100px;">Acciones</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="text-center">
-                            <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">SEM DE COMERCIO ELECTRONICO II</td>
-                            <td data-label="Acciones">
-                                <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></
+            </div>    
+            <div class="row">
+                <p class="mb-2"></p>
+
+            </div>
+            <p class="text-center mb-1">Selecciona el boton de vista para empezar a agregar asignaturas<br>
+            correspondientes al plan de estudios que elijas</p>
+            <div class="input-group mb-1 mt-4">
+                <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar plan de estudios...">
+            </div>
+            <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                <thead>
+                    <tr class="text-center">
+                        <th style="width: 50px;">Clave</th>
+                        <th style="width: 100px;">Nombre</th>
+                        <th style="width: 100px;">Acciones</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center">
+                        <td data-label="Clave">1119</td>
+                        <td data-label="Nombre">INFORMÁTICA</td>
+                        <td data-label="Acciones">
+                            <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a>
                             </td>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave">0017</td>
                             <td data-label="Nombre">REDES COMPUTACIONALES III</td>
-                            
+
                             <td data-label="Acciones">
                                 <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
-                            <td data-label="Acciones">
-                                <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td data-label="Clave">0017</td>
+                                <td data-label="Nombre">PROGRAMACION ORIENTADA A OBJ.</td>
+                                <td data-label="Acciones">
+                                    <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    </tbody>
+                    <!-- Se utiliza para darle espacio al final de la tabla -->
+                    <div class="mt-3 mb-2"></div>
+                    <div class="d-grid gap-2 col-3 mx-auto">
+                        <p class="mt-3 mb-2"></p>
+                    </div>
 
-                </table>
-                <!-- Se utiliza para darle espacio al final de la tabla -->
-                <div class="mt-3 mb-2"></div>
-                <div class="d-grid gap-2 col-3 mx-auto">
-                <p class="mt-3 mb-2"></p>
                 </div>
             </div>
- 
-        </div>
-    </div>
-</div>
 
-
-    <script src="../tools/sidebar.js"></script>
-    <script src="../tools/clock.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <!-- LIBRERIA AJAX requeried-->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="../service/lista-alumno.js"></script>
-    <!--   Datatables-->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
-    <!-- extension responsive -->
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <!--Scrip para Modal-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ <?php include_once "./includes/js.php"; ?>
 
     <script>
         $(document).ready(function() {

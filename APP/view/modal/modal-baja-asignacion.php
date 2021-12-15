@@ -9,6 +9,7 @@
                 <h5 class="modal-title" id="Modal_b">ADVERTENCIA</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
+              <input type="hidden" id="idAsignacion" name="idAsignacion">
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="Edit_plan_grup">
@@ -17,7 +18,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Aceptar</button>
+              <button type="submit" class="btn btn-primary">Aceptar</button>
             </div>
           </form>
         </div>

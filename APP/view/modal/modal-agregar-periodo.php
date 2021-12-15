@@ -16,12 +16,16 @@
                     </div>
                     </div>
                       <div class="mt-3 mb-2"></div>
-                      <div class="form-group" id="">
-                        <input type="text" placeholder="Fecha inicio de dosificación" class="form-control" style="height: 60px" id="inicio_dosifica" name="inicio_dosifica">
+                      <div class="form-group">
+                        <label class="form-control"> Fecha inicio del período
+                          <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaInicioPeriodo" name="fechaInicioPeriodo"max=""> 
+                        </label>
                       </div>
                       <div class="mt-3 mb-2"></div>
-                      <div class="form-group" id="">
-                        <input type="text" placeholder="Fecha final de dosificación" class="form-control" style="height: 60px" id="final_dosifica" name="final_dosifica">
+                      <div class="form-group">
+                        <label class="form-control"> Fecha fin del período
+                          <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> 
+                        </label>
                       </div>
                   </div>
                 <div class="modal-footer">

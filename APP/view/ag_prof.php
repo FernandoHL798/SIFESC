@@ -1,13 +1,14 @@
 <?php include_once "./includes/session_verify.php";?>
 <!DOCTYPE html>
 <html>
-<?php $titulo="Asignacion profesor | SIFESC";
-include_once "./includes/header.php"; ?>
+<?php $titulo="Agrega Profesor | SIFESC";
+include_once "./includes/header.php";?>
 <body id="body">
-    <?php include "./includes/sidebar2.php";?>
+<?php include "./includes/sidebar2.php";?>
     <!--              AQUI VA EL CONTENIDO                -->
-            <div class="home_content2">
+        <div class="home_content2">
             <div class="texthome">
+                <form class="mb-4">              
                     <div class="mb-4">
                         <div class="grid">
                             <div class="">
@@ -20,85 +21,89 @@ include_once "./includes/header.php"; ?>
                             <div>
                                 <h3 id="head3" class="text-center">Profesores</h3>
                             </div>
-                            <div class="clock">
-                              <div class="hours">
-                                <div class="first">
-                                  <div class="number">0</div>
+                            <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
+                            <div class="widget_clock">
+                                <div class="reloj_clock">
+                                    <p id="horas_clock" class="horas_clock"></p>
+                                    <p>:</p>
+                                    <p id="minutos_clock" class="minutos_clock"></p>
+                                    <p>:</p>
+                                    <div class="cajaSegundos">
+                                        <p id="segundos_clock" class="segundos_clock"></p>
+                                    </div>
+                                    <p id="ampm" class="ampm"></p>
                                 </div>
-                                <div class="second">
-                                  <div class="number">0</div>
-                                </div>
-                              </div>
-                              <div class="tick">:</div>
-                              <div class="minutes">
-                                <div class="first">
-                                  <div class="number">0</div>
-                                </div>
-                                <div class="second">
-                                  <div class="number">0</div>
-                                </div>
-                              </div>
-
-                              <!--PROBLEMAS CON EL SEGUNDERO, NO LO AGREGO POR EL MOMENTO (EMMANUEL)
-                              <div class="tick">:</div>
-                              <div class="seconds">
-                                <div class="first">
-                                  <div class="number">0</div>
-                                </div>
-                                <div class="second infinite">
-                                  <div class="number">0</div>
-                                </div>
-                              </div>
-                                -->
-                            </div>     
-                        </div> 
-
-                            <div class="row mb-4">
-                                <p class="mb-2"></p>
-                                <h3 id="head3" class="text-center">Departamento</h3>
-                                <h4 id="head3" class="text-center">0011 || Departamento de Informática</h4>
+                                <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                             </div>
+                        </div>    
+                        <div class="mt-3 mb-2"></div>                
+                        <div class="mt-3 mb-2">
+                            <h3 id="head3" class="text-center">Departamento</h3>
+                            <h4 id="head3" class="text-center">0011 || Departamento de Informática</h4>
+                        </div>
+                        <div class="d-grid gap-2 col-3 mx-auto"></div>
 
-                            <div class="d-grid gap-2 col-3 mx-auto mb-4">
-                                <div class="modal-content">
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">Agregar Profesor</button>
-                                </div>
+                        <div class="mt-3 mb-2"></div>
+                        <div class="d-grid gap-2 col-3 mx-auto">
+                            <div class="modal-content">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_P">
+                                    Agregar Profesor
+                                </button>
                             </div>
+                        </div>
+
+                        <div class="input-group mb-1 mt-4">
+                            <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar profesor...">
+                        </div>
                     </div>
-                        <table class="table table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
-                            <thead>
-                                <tr class="text-center">
-                                    <th style="width: 70px;">Clave</th>
-                                    <th style="width: 90px;">Nombre</th>
-                                    <th style="width: 90px;">Primer Apellido</th>
-                                    <th style="width: 90px;">Segundo Apellido</th>
-                                    <th style="width: 270px;">Correo</th>
-                                    <th style="width: 120px;">Teléfono</th>
-                                    
-                                    <th style="width: 140px;">Acciones</th>
-                                </tr>
-                            </thead>
-                                <tbody id="tbl-profesores-ag">
-                                    <!-- AJAX RESPONSE  -->
-                                </tbody>
-                        </table>   
-                        <!-- Se utiliza para darle espacio al final de la tabla -->
-                    <div class="mt-3 mb-2"></div>
-                    <div class="d-grid gap-2 col-3 mx-auto">
-                        <p class="mt-3 mb-2"></p>
-                    </div>
-                </div> 
-            </div>    
-           
-            <!-- JavaScripts-->
-            <?php include_once "./includes/js.php"; ?>
-            <script src="../service/control-profesor.js"></script>
-            <script src="../service/lista-profesores.js"></script>
-            <script src="../service/add-profesor.js"></script>
-            <!-- Modales -->
-            <?php include "./modal/modal-agregar-prof.php"; ?>
-            <?php include "./modal/modal-edit-prof.php"; ?>
-            <?php include "./modal/modal-baja-prof.php"; ?> 
+                    <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
+                        <thead>
+                            <tr class="text-center">
+                                <th style="width: 70px;">RFC</th>
+                                <th style="width: 90px;">Nombre</th>
+                                <th style="width: 90px;">Primer Apellido</th>
+                                <th style="width: 90px;">Segundo Apellido</th>
+                                <th style="width: 270px;">Correo</th>
+                                <th style="width: 120px;">Fecha de nacimiento</th>  <!-- COLUMNA NUEVA      EMH --> 
+                                <th style="width: 120px;">Teléfono</th>
+                                <th style="width: 140px;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbl-profesores-ag">
+                            <!-- AJAX RESPONSE  -->
+                        </tbody>
+                    </table>
+                </tbody>
+            </table>
+            <!-- Se utiliza para darle espacio al final de la tabla -->
+            <div class="mt-3 mb-2"></div>
+            <div class="d-grid gap-2 col-3 mx-auto">
+                <p class="mt-3 mb-2"></p>
+            </div>
+        </div>
+    </form>   
+    </div>
+    </div>
+    </div>
+
+    <!-- JavaScripts-->
+    <?php include_once "./includes/js.php"; ?>
+    <!-- Modales -->
+    <?php include "./modal/modal-agregar-prof.php"; ?>
+
+
+
+    <?php include "./modal/modal-edit-prof.php"; ?>
+    <?php include "./modal/modal-baja-prof.php"; ?> 
+    <!-- JavaScripts-->
+    <?php include_once "./includes/js.php"; ?>
+    <script src="../service/control-profesor.js"></script>
+    <script src="../service/lista-profesores.js"></script>
+    <script src="../service/add-profesor.js"></script>
+
+
+
+
 </body>
 </html>

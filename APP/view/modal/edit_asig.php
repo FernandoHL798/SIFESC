@@ -39,7 +39,7 @@
                         </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" placeholder="Creditos:" class="form-control" style="height: 60px" id="creditos" name="creditos">
+                        <input type="text" placeholder="Créditos:" class="form-control" style="height: 60px" id="creditos" name="creditos">
                       </div>
                       <div class="mt-3 mb-2"></div>
                         <div class="form-floating">
@@ -48,7 +48,11 @@
                               <option value="1">1 - Obligatoria</option>
                               <option value="2">2 - Optativa</option>
                           </select>
-                              <label for="floatingSelect"><font SIZE=3>Caracter:</font></label>
+                              <label for="floatingSelect"><font SIZE=3>Carácter:</font></label>
+                        </div>
+                        <div class="mt-3 mb-2"></div>
+                        <div class="form-group" id="">
+                          <input type="text" placeholder="Grupos:" class="form-control" style="height: 60px" id="creditos" name="creditos">
                         </div>
                       </div>   
                   <div class="modal-footer">

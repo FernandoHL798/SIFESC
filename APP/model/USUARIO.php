@@ -237,7 +237,7 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
     }
 
     public function queryUpdateRPwdUsuario(){
-        $query="UPDATE `alumno` SET `pregunta_secreta` = '".$this->getPreguntaSecreta()."', `respuesta_secreta` = '".$this->getRespuestaSecreta()."', `updated_at` = current_timestamp() WHERE `alumno`.`usuario_id_fk` = '".$this->getUsuarioIdFk()."'";
+        $query="UPDATE `usuario` SET `pregunta_secreta` = '".$this->getPreguntaSecreta()."', `respuesta_secreta` = '".$this->getRespuestaSecreta()."' WHERE `usuario`.`id_usuario` = '".$this->getIdUsuario()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -256,7 +256,7 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
     }
 
     public function queryUpdatePassword(){
-        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id_usuario`=".$this->getIdUsuario();
+        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id_usuario`=".$this->getIdUsuario()."' AND `contrasenia`='".$this->getContrasenia();
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

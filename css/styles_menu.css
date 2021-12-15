@@ -13,62 +13,95 @@ body{
 	width: 100%;
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 .grid{
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
 }
 
-.grid .clock{
-	align-items: center;
+/*
+    display: flex;
+    align-content: space-between;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+*/
+.grid .widget_clock .reloj_clock{
+	display: flex;
+    align-content: space-between;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
-.clock {
-  height: 5vh;
-  font-size: 3vh;
-  font-family: sans-serif;
-  line-height: 20.4vh;
-  display: flex;
-  position: relative;
-  justify-content: flex-end;
-  /*background: green;*/
-  overflow: hidden;
+.reloj_clock .cajaSegundos {
+  display: inline-block;  
+}
+.reloj_clock .ampm, .reloj_clock .segundos{
+  display: block;
 }
 
-.clock::before, .clock::after {
-  content: '';
-  width: 7ch;
-  height: 3vh;
-  position: absolute;
-  z-index: 2;
-}
-
-.clock::after {
-  bottom: 0;
-}
-
-.clock > div {
-  display: flex;
-}
-
-.tick {
-  line-height: 17vh;
-}
-
-.tick-hidden {
-}
-
-.move {
-  animation: move linear 1s infinite;
-}
-
-@keyframes move {
-  from {
-    transform: translateY(0vh);
-  }
-  to {
-    transform: translateY(-20vh);
-  }
-}
 
 .datos_escolares{
 	color: rgba(195, 163, 16, 1);

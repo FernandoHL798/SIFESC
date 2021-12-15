@@ -51,7 +51,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryconsultaDepartamento(){
-        $query="SELECT `id_departamento`,`nombre`,`id_area_fk` FROM `departamentos`";
+        $query="SELECT `id_departamento`,`nombre` FROM `departamentos`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

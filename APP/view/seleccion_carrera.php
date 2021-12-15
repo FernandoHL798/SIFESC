@@ -22,25 +22,19 @@ include_once "./includes/header.php";?>
                         <div>
                             <h3 id="head3" class="text-center">Selecciona carrera</h3>
                         </div>
-                        <div class="clock">
-                              <div class="hours">
-                                <div class="first">
-                                  <div class="number">0</div>
-                              </div>
-                              <div class="second">
-                                  <div class="number">0</div>
-                              </div>
-                          </div>
-                          <div class="tick">:</div>
-                        <div class="minutes">
-                            <div class="first">
-                              <div class="number">0</div>
-                          </div>
-                          <div class="second">
-                              <div class="number">0</div>
-                          </div>
+                  <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
+                      <div class="widget_clock">
+                        <div class="reloj_clock">
+                            <p id="horas_clock" class="horas_clock"></p>
+                            <p>:</p>
+                            <p id="minutos_clock" class="minutos_clock"></p>
+                            <p>:</p>
+                            <div class="cajaSegundos">
+                                <p id="segundos_clock" class="segundos_clock"></p>
+                            </div>
+                            <p id="ampm" class="ampm"></p>
                         </div>
-                    </div>     
+                   <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                 </div>       
             </div> 
                 <div class="row">

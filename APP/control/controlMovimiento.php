@@ -10,8 +10,6 @@ function updateMovimiento($params){
     include_once "../model/MOVIMIENTO.php";
     $MOVIMIENTO = new MOVIMIENTO();
     $MOVIMIENTO->setEstatus($params['estatus']);
-    $MOVIMIENTO->setCalificacion($params['calificacion']);
-    $MOVIMIENTO->setAprobado($params['aprobado']);
     $MOVIMIENTO->setIdInscripcionFk($params['id_inscripcion_fk']);
     $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
     return $MOVIMIENTO->queryUpdateMovimiento();
@@ -23,7 +21,7 @@ function insertMovimiento($params){
     $MOVIMIENTO->setIdInscripcionFk($params['id_inscripcion_fk']);
     $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
     $MOVIMIENTO->setEstatus("1");
-    $MOVIMIENTO->setCalificacion("");
+    $MOVIMIENTO->setCalificacion(0);
     $MOVIMIENTO->setAprobado(0);
     return $MOVIMIENTO->queryInsertMovimiento();
 }

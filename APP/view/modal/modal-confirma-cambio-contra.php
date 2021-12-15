@@ -16,9 +16,9 @@
 					<div class="modal-body">
 						Estas a punto de cambiar tu contraseña actual, ¿Estas seguro de que deseas continuar?
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer" id="btnConfirmarContra">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
-						<button type="button" class="btn btn-danger">Continuar</button>
+						<button type="submit" class="btn btn-danger">Continuar</button>
 					</div>
 				</form>
 			</div>

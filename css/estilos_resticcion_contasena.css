@@ -1,0 +1,40 @@
+#aviso_restr {
+  /*display:none;*/
+  background: #ffffff;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#aviso_restr p {
+  padding: 0px 35px;
+  font-size: 12px;
+}
+
+.titulo_restr{
+  font-size: 12px;
+}
+
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}

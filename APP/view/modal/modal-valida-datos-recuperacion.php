@@ -20,7 +20,7 @@
             <div class="form-floating">
               <select class="form-select mb-4" id="floatingSelect">
                 <option hidden=""></option>
-                <option value="1">¿Como se llama su mamá?</option>
+                <option value="1">¿Cuál es tu color favorito?</option>
                 <option value="2">¿Cual es el nombre de su primer mascota?</option>
                 <option value="3">¿Cual es el nombre de su escuela primaria?</option>
               </select>

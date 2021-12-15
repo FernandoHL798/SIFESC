@@ -10,13 +10,13 @@
                     <div class="mt-3 mb-2"></div>
                     <div class="form-group" id="actual-pass-group">
                     <div class="form-group">
-                        <input type="text" placeholder="Clave de la asignatura:" class="form-control" style="height: 60px">
+                        <input type="text" placeholder="Clave de la asignatura:" class="form-control" style="height: 60px" disabled>
                     </div>
                     </div>
                       
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">
-                        <input type="text" placeholder="Nombre de la asignatura" class="form-control" style="height: 60px">
+                        <input type="text" placeholder="Nombre de la asignatura" class="form-control" style="height: 60px" disabled>
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">
@@ -32,7 +32,7 @@
                         <div class="mt-3 mb-2"></div>
                               
                         <div class="form-floating">
-                                <select class="form-select" id="floatingSelect" id="edit-saturacion2" name="edit-saturacion2">
+                                <select class="form-select" id="floatingSelect" id="edit-saturacion2" name="edit-saturacion2" disabled>
                                     <option hidden=""></option>
                                     <option value="1">3</option>
                                     <option value="2">5</option>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="mt-3 mb-2"></div>
                               <div class="form-group">
-                                <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 60px" id="edit-saturacion3" name="edit-saturacion3">
+                                <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 60px" id="edit-saturacion3" name="edit-saturacion3" disabled>
                               </div>
                               <div class="mt-3 mb-2"></div>
                               <div class="form-group">

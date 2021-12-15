@@ -1,4 +1,15 @@
 <div class="sidebar">
+	<?php
+	if($_SESSION['numero_cuenta']==""){
+		$classAlumno="d-none";
+	}
+	if($_SESSION['rfc']==""){
+		$classProfesor="d-none";	
+	}
+	if($_SESSION['no_trabajador']==""){
+		$classAdmin="d-none";
+	}
+	?>
 	<div class="logo-details">
 			<i class='bx bxs-school'></i>
 			<span class="logo_name">Sistema de inscripción</span>
@@ -16,7 +27,7 @@
 			</li>
 
 			<li>
-				<a href="./seleccion_carrera.php">
+				<a href="./seleccion_carrera.php" class=" <?php echo $classAlumno ?>">
 					<i class='bx bxs-spreadsheet'></i>
 					<span class="link_name">Mis carreras</span>
 				</a>
@@ -41,7 +52,7 @@
 			</li>
 
 			<li>
-				<div class="icon-link">
+				<div class="icon-link <?php echo $classAlumno ?>">
 					<a>
 						<i class='bx bx-pencil'></i>
 						<span class="link_name">Inscripción</span>
@@ -56,7 +67,7 @@
 			</li>
 
 			<li>
-				<a href="./Dosificacion.php">
+				<a href="./Dosificacion.php" class="<?php echo $classAlumno ?>">
 					<i class='bx bx-calendar'></i>
 					<span class="link_name">Dosificación</span>
 				</a>
@@ -66,7 +77,7 @@
 			</li>
 
 			<li>
-				<a href="./saturacion.php">
+				<a href="./saturacion.php" class="<?php echo $classAlumno ?>">
 					<i class='bx bxs-error'></i>
 					<span class="link_name">Saturación</span>
 				</a>
@@ -76,7 +87,7 @@
 			</li>
 
 			<li>
-				<div class="icon-link">
+				<div class="icon-link <?php echo $classProfesor?>" >
 					<a>
 						<i class='bx bxs-briefcase'></i>
 						<span class="link_name">Profesor</span>
@@ -89,23 +100,24 @@
 				</ul>
 			</li>
 			<li>
-				<div class="icon-link">
+				<div class="icon-link <?php echo $classAdmin?>">
 					<a>
 						<i class='bx bx-archive'></i>
-						<span class="link_name">Admin</span>
+						<span class="link_name">Administrador</span>
 					</a>
 					<i class='bx bx-chevron-down arrow'></i>
 				</div>
 				<ul class="sub-menu">
 					<li><a class="link_name" href="#">Administrador</a></li>
 					<li><a href="./profesores-cat-departamento.php">Profesor</a></li>
-					<li><a href="./AsignaProfesor.php">Asignar materia a profesor</a></li>
+					<li><a href="./ag_asig_cat_departamento.php">Asignar materia a profesor</a></li>
 					<li><a href="./plan_de_estudios_alumnos.php">Alumnos</a></li>
-					<li><a href="./ag-departamento.php">Departamentos</a></li>
+					<li><a href="./ag_administradores.php">Administradores</a></li>
+					<li><a href="./cat-planteles.php">Departamentos</a></li>
 					<li><a href="./plan_de_estudios.php">Plan de estudios</a></li>   <!-- CREA PLANES DE ESTUDIOS-->
 					<li><a href="./plan_de_estudios_saturacion.php">Saturación</a></li>
 					<li><a href="./plan_de_estudios_asignatura.php">Asignaturas</a></li>
-					<li><a href="./admin_periodo.php">Periodo</a></li>
+					<li><a href="./ag-periodo.php">Periodo</a></li>
 				</ul>
 			</li>
 
@@ -131,7 +143,7 @@
 								<?php echo $_SESSION['usuario']." ".$_SESSION['app']." ".$_SESSION['apm'] ?>
 							</div>
 							<div class="job">
-								<input type="text" id="idPlan">
+								<input type="hidden" name="idPlan" id="idPlan">
 								<div class="form-check" id="rdo-carrera">
 									
 								</div>
