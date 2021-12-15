@@ -68,8 +68,7 @@ function updatePassword($params){
     $USUARIOS= new USUARIO();
     $USUARIOS->setIdUsuario($params['idUsuario']);
     $USUARIOS->setContrasenia(md5($params['pwd']));
-    
-    return $USUARIOS->queryUpdatePassword();
+    return $USUARIOS->queryUpdatePassword($params);
 }
 
 function verficaUsuario($correo, $pw){

@@ -56,13 +56,13 @@ include_once "./includes/header.php";?>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
-                    <input type="text" class="form-control mt-2" style="height: 55px;" id="respuesta1" placeholder="Introduzca su respuesta:" required="" autofocus=""> 
+                    <input type="text" class="form-control mt-2" style="height: 55px;" maxlength="50" id="respuesta1" placeholder="Introduzca su respuesta:" required="" autofocus=""> 
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
                 <div class="row">
                   <div class="col-5 mx-auto">
-                    <input type="text" class="form-control" style="height: 55px;" id="respuesta2" placeholder="Confirme su respuesta:" required="" autofocus=""> 
+                    <input type="text" class="form-control" style="height: 55px;" maxlength="50" id="respuesta2" placeholder="Confirme su respuesta:" required="" autofocus=""> 
                   </div>
                 </div>
                 <div class="mt-3 mb-2"></div>
