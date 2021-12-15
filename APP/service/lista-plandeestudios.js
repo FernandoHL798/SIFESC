@@ -1,6 +1,9 @@
+$(document).ready(function(){
+    listaplandeestudios();
+});
 function listaplandeestudios(){
     $.ajax({
-        url: "../webhook/lista_plandeestudios.php",
+        url: "../webhook/lista_planestudios.php",
         type:'POST',
         data : {},
         success: function (response){
@@ -17,6 +20,7 @@ function listaplandeestudios(){
                             </td>
                         </tr>`
             });
+            $("#tbl-lista-plan").html(template);
         }
     });
 }

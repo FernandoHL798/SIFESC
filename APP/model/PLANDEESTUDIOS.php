@@ -191,7 +191,7 @@ class PLANDEESTUDIOS extends CONEXION{
     }
 
     public function queryconsultaPlan(){
-        $query="SELECT `id_plan`, `id_carrera_fk`, `anio_plan`, `creditos_obligatorios`, `creditos_optativos`, `creditos_totales`,
+        $query="SELECT `id_plan`, `id_carrera_fk`, `anio_plan`, `nombre_plan`, `creditos_obligatorios`, `creditos_optativos`, `creditos_totales`,
         `semestres`, `maximo_creditos`, `minimo_creditos`, `maximo_semestres`, `minimo_materias`,
         `maximo_materias`,`updated_at`, `created_at` FROM `plandeestudios`";
         $this->connect();
