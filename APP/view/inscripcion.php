@@ -132,7 +132,7 @@ include_once "./includes/header.php";?>
                                 <div class=" col-3 mx-auto mt-2">
                                     <div class="modal-content mb-4">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-avs-inscripcion">Solicitar</button>
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-avs-inscripcion">Completar trámite</button>
                                             </div>
                                         </div>
                                 </div>
