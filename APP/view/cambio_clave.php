@@ -79,7 +79,7 @@ include_once "./includes/header.php"; ?>
 
 
 
-                  <div id="btnConfirmarContra">
+                  <div>
                   <div class="modal-content">
                     <!-- Button trigger modal -->
                     <button style="display: none;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLong" id="confirmarContra">
@@ -98,7 +98,6 @@ include_once "./includes/header.php"; ?>
       </div>
 
       <script src= ../service/verifica-contra.js></script>
-      <script src= ../service/cambia-contra.js></script>
       <script src="../tools/restriccionClave.js"></script>
       <!-- SCRIPTS -->
       <?php include_once "./includes/js.php";?>

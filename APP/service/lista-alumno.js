@@ -95,7 +95,6 @@ function getAsignaturas(){
             template+=  `<option selected>Selecciona la materia</option>`;
             ASIGNATURAS.forEach(asignatura=>{
                 if(asignatura.semestre<="1"){
-                   
                 template += `
                         <option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>
                 `;   

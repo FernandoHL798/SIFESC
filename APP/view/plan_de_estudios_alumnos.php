@@ -51,30 +51,10 @@ include_once "./includes/header.php";?>
                         <th style="width: 100px;">Acciones</th>      
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td data-label="Clave">0017</td>
-                        <td data-label="Nombre">Informática</td>
-                        <td data-label="Acciones">
-                            <a href="./turnos.php"><button type="button" title="Ver Alumnos" class="btn btn-info"><i class='bx bx-show'></i></button>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td data-label="Clave">0017</td>
-                            <td data-label="Nombre">Contaduria</td>
-                            <td data-label="Acciones">
-                                <a href="./turnos.php"><button type="button" title="Ver Alumnos" class="btn btn-info"><i class='bx bx-show'></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td data-label="Clave">0017</td>
-                                <td data-label="Nombre">Medico Veterinario Zootecnista</td>
-                                <td data-label="Acciones">
-                                    <a href="./turnos.php"><button type="button" title="Ver Alumnos" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <tbody id="tbl-lista-carreras">
+                    <!--AJAX LISTA CARRERAS-->
+                </tbody>
+            </table>
                     <!-- Se utiliza para darle espacio al final de la tabla -->
                     <div class="mt-3 mb-2"></div>
                     <div class="d-grid gap-2 col-3 mx-auto">
@@ -89,6 +69,7 @@ include_once "./includes/header.php";?>
     include "./modal/modal-agregar-plan-estu.php"; 
      include "./modal/modal-edit-plan-estu.php"; 
     include "./modal/modal-baja_plan_e.php"; ?>
+    <script src="../service/lista-carreras.js"></script>
 
 </body>
 </html>

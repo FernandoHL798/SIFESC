@@ -59,34 +59,11 @@ include "./includes/sidebar2.php";
 
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="text-center">
-                            <td data-label="Clave">0011</td>
-                            <td data-label="Nombre">Departamento de informática</td>
-                            <td data-label="Acciones">
-                                <a href="./ag_prof.php"><button type="button" title="Ver profesores" class="btn btn-info"><i class='bx bx-show'></i></button>
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td data-label="Clave">0012</td>
-                                <td data-label="Nombre">Departamento de administración</td>
-                                <td data-label="Acciones">
-                                    <a href="./ag_prof.php"><button type="button" title="Ver profesores" class="btn btn-info"><i class='bx bx-show'></i></button>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td data-label="Clave">0013</td>
-                                    <td data-label="Nombre">Departamento ITSE</td>
-                                    <td data-label="Acciones">
-                                        <a href="./ag_prof.php"><button type="button" title="Ver profesores" class="btn btn-info"><i class='bx bx-show'></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <tbody id="tbl-lista-departamentos">
+                        <!--AJAX LISTA DEPARTAMENTOS-->
+                    </tbody>
 
-                        </tbody>
-
-                    </table>
+                </table>
                     <!-- Se utiliza para darle espacio al final de la tabla -->
                     <div class="mt-3 mb-2"></div>
                     <div class="d-grid gap-2 col-3 mx-auto">
@@ -102,6 +79,7 @@ include "./includes/sidebar2.php";
     <?php include "./modal/modal-agregar-depto.php"; ?>
     <?php include "./modal/modal-edit-plan-estu.php"; ?>
     <?php include "./modal/modal-baja_plan_e.php"; ?>
+    <script src="../service/lista-departamentos.js"></script>
 
 </body>
 </html>
