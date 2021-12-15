@@ -53,7 +53,7 @@ include_once "./includes/header.php";?>
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbl-lista-plan">
                     <!-- ajax lista plan de estudios -->
                     </tbody>
                     </table>
