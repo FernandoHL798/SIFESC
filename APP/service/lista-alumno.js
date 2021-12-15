@@ -97,7 +97,8 @@ function getAsignaciones(idAsignatura){
      $.ajax({
         url: "../webhook/lista_grupos.php",
         type: 'POST',
-        data : {      idAsignatura:idAsignatura    },
+        data : {      idAsignatura:idAsignatura,
+                      idProfesor : "0"  },
         success: function (response) {
             //Convertimos el string a JSON
             let ASIGNACIONES = JSON.parse(response);  
