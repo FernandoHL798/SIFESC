@@ -33,3 +33,10 @@ function deleteMovimiento($params){
     $MOVIMIENTO->setIdAsignacionFk($params['id_asignacion_fk']);
     return $MOVIMIENTO->queryDeleteMovimiento();
 }
+
+function consultaMovimientosAsignacion($idAsignacion){
+    include_once "../model/MOVIMIENTO.php";
+    $MOVIMIENTO = new MOVIMIENTO();
+    $resultado= $MOVIMIENTO->queryConsultaMovimientosAsignacion($idAsignacion);
+    return json_encode($resultado);
+}

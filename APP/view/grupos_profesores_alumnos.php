@@ -60,9 +60,9 @@ include "./includes/sidebar2.php";
                     <thead>
                         <tr class="informacion" id="informacion">
                             <th colspan="2">PLAN DE ESTUDIOS:
-                                <div class="datos_personales">1119</div>
+                                <div class="datos_personales"><span id="idPlan"></span></div>
                             </th>
-                            <th colspan="3">CARRERA:
+                            <th colspan="1">CARRERA:
                                 <div class="datos_personales">
                                     LIC. INFORMÁTICA
                                 </div>
@@ -79,12 +79,12 @@ include "./includes/sidebar2.php";
                             </th>
                         </tr>
                         <tr>
-                            <th colspan="3">GRUPO:
+                            <th colspan="4">GRUPO:
                                 <div class="datos_personales">
                                     1702
                                 </div>
                             </th>
-                            <th colspan="4">SEMESTRE:
+                            <th colspan="1">SEMESTRE:
                                 <div class="datos_personales">
                                     7
                                 </div>
@@ -99,45 +99,17 @@ include "./includes/sidebar2.php";
                             <th>CORREO</th>
                             <th>TELÉFONO</th>
                             <th>ESTATUS</th>
-                            <th></th>
-                            <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td data-label="NÚMERO">314243919</td>
-                            <td data-label="NOM ALUMNO">MARTÍNEZ HERNÁNDEZ EMMANUEL</td>
-                            <td data-label="CORREO">emmanuel_@gmail.com</td>
-                            <td data-label="TELEFONO">5458565251</td>
-                            <td data-la data-label="ESTATUS">EN CURSO</td>
-                        </tr>
-                        <tr>
-                         <td data-label="NÚMERO">314243487</td>
-                         <td data-label="NOM ALUMNO">ARCOS PERALTA ERICK</td>
-                         <td data-label="CORREO">erick_@gmail.com</td>
-                         <td data-label="TELEFONO">5425565251</td>
-                         <td data-la data-label="ESTATUS">EN CURSO</td>
-                    </tr>
-                    <tr>
-                        <td data-label="NÚMERO">314243814</td>
-                        <td data-label="NOM ALUMNO">HERNÁNDEZ LEDEZMA LUIS FERNANDO</td>
-                        <td data-label="CORREO">fernando_@gmail.com</td>
-                        <td data-label="TELEFONO">5458565698</td>
-                        <td data-la data-label="ESTATUS">EN CURSO</td>
-                        <td data-label="CALIFICACIÓN"></td>
-                        <td>
-                            <button type="button" class="btn btn-success btn-sm d-grid gap-2 col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#Modal_profesor_editalumno">
-                                <i class='bx bxs-pencil'></i>
-                            </button>
-                        </td>
-                    </tr>
+                    <tbody id="tbl-alumnos-asignacion">
+                        <!--AJAX response alumnos Asignacion -->
                 </tbody>     
             </table>
         </div>
     </div>
     </div>
     <div class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
-        <button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
+        <button class="btn btn-primary" type="button" id="btnImprimirSat" onclick="printData()">IMPRIMIR</button>
     </div>
 
     </div>
