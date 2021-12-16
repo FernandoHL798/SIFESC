@@ -8,6 +8,29 @@ function consultaUsuarios($correoUsu){
     return json_encode($result);
 }
 
+function pswRecuperaContraUsuarios($params){
+    include_once "../model/USUARIO.php";
+    $USUARIOS= new USUARIO();
+    $USUARIOS->setCorreo($params['correo']);
+    $USUARIOS->setFechaNacimiento($params['fecha']);
+    $USUARIOS->setPreguntaSecreta($params['pregunta']);
+    $USUARIOS->setRespuestaSecreta($params['respuesta']);
+    $USUARIOS->setContrasenia(md5(generar_password_complejo()));
+    $result=$USUARIOS->queryUpdateContraUsuario();
+    return json_encode($result);
+}
+
+function generar_password_complejo(){
+    $cadena_base =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    $cadena_base .= '0123456789' ;
+    $cadena_base .= '!@#%^&*()_,./<>?;:[]{}\|=+';
+    $password = '';
+    $limite = strlen($cadena_base) - 1;
+    for ($i=0; $i < 8; $i++)
+    $password .= $cadena_base[rand(0, $limite)];
+    return $password;
+}
+
 function updatePreguntaUsuario($params){
     include_once "../model/USUARIO.php";
    $USUARIO = new USUARIO();

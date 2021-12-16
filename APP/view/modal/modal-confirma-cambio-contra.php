@@ -18,8 +18,7 @@
 					</div>
 					<div class="modal-footer" id="btnConfirmarContra">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
-						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Cambio_Con">Continuar</button>
-						
+						<button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Cambio_Con">Continuar</button>
 					</div>
 				</form>
 			</div>

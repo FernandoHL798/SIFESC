@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="frm-olvide-contra">
           <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label font-weight-bold">Correo</label>
             <input type="email" class="form-control" placeholder="ejemplo@correo.com" id="verifica_correo" name="verifica_correo" aria-describedby="emailHelp">
@@ -28,13 +28,13 @@
             </div>
             <div class="mb-4">
               <label for="exampleInputCPostal" class="form-label font-weight-bold">Respuesta a la pregunta secreta</label>
-              <input type="email" class="form-control" placeholder="" id="verifica_resp" name="verifica_resp" aria-describedby="emailHelp">
+              <input type="text" class="form-control" placeholder="" id="verifica_resp" name="verifica_resp" aria-describedby="emailHelp">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Enviar</button>
         </div>
       </div>
     </div>

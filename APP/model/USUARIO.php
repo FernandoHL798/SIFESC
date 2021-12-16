@@ -244,6 +244,14 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         return $resultado;
     }
 
+    public function queryUpdateContraUsuario(){
+        $query="UPDATE `usuario` SET `contrasenia` = '".$this->getContrasenia()."' WHERE `correo` = '".$this->getCorreo()."' AND `pregunta_secreta`='".$this->getPreguntaSecreta()."' AND `respuesta_secreta`='".$this->getRespuestaSecreta()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryUpdateUsuario(){
         $query="UPDATE `usuario` SET `cuenta_administrador` = '".$this->getCuentaAdministrador()."', `cuenta_alumno` = '".$this->getCuentaAlumno()."',
          `cuenta_profesor` = '".$this->getCuentaProfesor()."', `nombre` = '".$this->getNombre()."', 

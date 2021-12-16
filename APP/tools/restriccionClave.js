@@ -9,7 +9,6 @@ $(document).ready(function () {
   var c;
   var d;
 
-
 // When the user starts to type something inside the password field
 myInput.onkeyup = function() {
   // Validate lowercase letters
@@ -67,9 +66,7 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
         if ($('#psw').val() == $('#exampleInputPassword1').val()) {
 //CONDICION DE QUE LAS CONTRASEÑAS NO DEBEN ESTAR VACIAS
             if($('#psw').val()==''){
-                alert("No cumples las restricciones");
             }else{
-                alert("Contraseña guardada con exito");
                 var formData = new FormData(document.getElementById("frm_m_contrasena_nueva"));
                 formData.append("idUsuario", $("#idUsuario").val());
                 formData.append("contraAct", $("#contraAct").val());
@@ -85,6 +82,20 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
                 })
                 .done(function(res){
                   console.log(res);
+                  if(res!==1){
+                    $("#msjIncorrecto").show();
+                    console.log("no debe cambiar contra");
+                     $("#btnConfirmarContra").trigger("click");
+                     $("#aceptar").click(function(){
+                        $("#Modal_Cambio_Con").modal('hide');
+                     });
+                  } else{
+                    $("#msjCorrecto").show();
+                    $("#btnConfirmarContra").trigger("click");
+                    $("#aceptar").click(function(){
+                        document.location.href = "/SIFESC/APP/view/seguridad.php";
+                     });
+                  }
                   $("#frm_m_contrasena_nueva").trigger('reset');
                   $("#exampleModalLong").modal('hide');
                 });
@@ -92,9 +103,7 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
                 e.preventDefault();
    
             }} else {
-              alert("No cumples las restricciones");
           }}else{
-              alert("No cumples las restricciones");
             }
 });
 
@@ -129,5 +138,7 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
         document.getElementById('noContra').style.display = 'block';
         $("#confirmarContra").hide();
     }});
-
 });
+
+
+    
