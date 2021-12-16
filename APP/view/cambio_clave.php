@@ -102,6 +102,7 @@ include_once "./includes/header.php"; ?>
       <?php include_once "./includes/js.php";?>
 
       <?php include "./modal/modal-confirma-cambio-contra.php"; ?>
+      <?php include "./modal/modal-cambio-contraseña.php"; ?>
 
 
 

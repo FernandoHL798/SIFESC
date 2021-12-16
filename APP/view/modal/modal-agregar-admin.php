@@ -10,7 +10,8 @@
             <div class="modal-body">
                     <div class="mt-3 mb-2"></div>
                         <div class="input-group">
-                          <input type="text" placeholder="Introduzca un RFC o número de cuenta" class="form-control" style="height: 60px; width: 250px;" id="buscar_admin" name="buscar_admin"><span class="input-group-addon"><button style="height: 60px;" id="add_admin" name="add_admin" type="button" class= "btn btn-primary">Buscar</button></span>  
+                          <input type="text" placeholder="Introduzca un RFC o número de cuenta" class="form-control" style="height: 60px; width: 250px;" id="buscar_admin" name="buscar_admin"><span class="input-group-addon"><button style="height: 60px;" id="add_admin" name="add_admin" type="button" class= "btn btn-primary">Buscar</button></span>
+                          <h8 class="modal-title" id="Modal_Ag_Aadmin">              Usuario no encontrado</h8>  
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" >
