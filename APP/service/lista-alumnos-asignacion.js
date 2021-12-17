@@ -1,7 +1,27 @@
 $(document).ready(function(){
-	console.log("Escuchando Acciones");
+    cargaGrupo();
     cargaAlumnosAsignacion();
 });
+
+function cargaGrupo(){
+    $.ajax({
+        url: "../webhook/lista_grupos_asignatura.php",
+        type: 'POST',
+        data : { idAsignacion: $("#idAsignacion").val(),
+                idUsuario: $("#idUsuario").val()},
+        success: function (response) {
+            //Convertimos el string a JSON
+            let GRUPOS = JSON.parse(response);  
+            let grupo= GRUPOS[0];
+            $("#Plan").html(GRUPOS[0].nombre_plan);
+            $("#carre").html(GRUPOS[0].nombre_carrera);
+            $("#codigoAsig").html(grupo.codigo);
+            $("#nombreAsig").html(grupo.nombre_asignatura);
+            $("#grupo").html(grupo.nombre_grupo);
+            $("#semestre").html(grupo.semestre);
+            }
+    });
+}
 
 function cargaAlumnosAsignacion(){
     $.ajax({
@@ -10,13 +30,11 @@ function cargaAlumnosAsignacion(){
         data : { idAsignacion: $("#idAsignacion").val()},
         success: function (response) {
             //Convertimos el string a JSON
-            let ALUMNOS = JSON.parse(response);  
-            console.log(ALUMNOS);
+            let ALUMNOS = JSON.parse(response);
             let alumnosVal= ALUMNOS.length;
             let template="";
             //Generamos el dato de el grupo
             let datos= ALUMNOS[0];
-            console.log(datos);
             $("#idPlan").html(datos.id_plan);
             if(alumnosVal>0){
             ALUMNOS.forEach(alumno => {

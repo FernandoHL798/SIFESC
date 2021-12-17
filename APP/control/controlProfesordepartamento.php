@@ -1,8 +1,8 @@
 <?php
-function consultaProfesordepartamento(){
+function consultaProfesordepartamento($idUsuario){
     include_once "../model/PROFESORDEPARTAMENTO.php";
     $PROFESORDEP = new PROFESORDEPARTAMENTO();
-    return json_encode($PROFESORDEP->queryconsultaProfesordepartamento());
+    return json_encode($PROFESORDEP->queryconsultaProfesordepartamento($idUsuario));
 }
 
 function updateEstatusProfesordepartamento($params){

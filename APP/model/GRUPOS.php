@@ -104,6 +104,15 @@ class GRUPOS extends CONEXION{
         return $resultado;
     }
 
+    public function queryconsultaGruposAsignatura($idAsignacion,$idProfesor){
+        $filterProfesor= $idProfesor>0 ? " AND asi.id_usuarioprofesor_fk=".$idProfesor : "";
+        $query="SELECT a.codigo, p.nombre_plan, c.nombre as nombre_carrera, a.nombre as nombre_asignatura, g.nombre_grupo, a.semestre FROM plandeestudios p, grupos g, asignaturas a, carrera c, asignacion asi WHERE p.id_plan=a.id_plan_fk and g.id_asignatura_fk=a.id_asignatura and c.id_carrera=p.id_carrera_fk and asi.id_grupo_fk=g.id_grupo and asi.id_asignacion=".$idAsignacion."".$filterProfesor;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryUpdateGrupos(){
         $query="UPDATE `grupos` SET `id_asignatura_fk` = '".$this->getIdAsignaturaFk()."', 
         `nombre_grupo` = '".$this->getNombreGrupo()."', `tipo`='".$this->getTipo()."', `estatus`='".$this->getEstatus()."',`updated_at` = current_timestamp() WHERE `grupos`.`id_grupo` = '".$this->getIdGrupo()."'";

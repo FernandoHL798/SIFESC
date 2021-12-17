@@ -61,8 +61,7 @@ include "./includes/sidebar2.php";
                     </th>
                     <th colspan="3">DEPARTAMENTO:
                       <div class="datos_personales">
-                        <!-- tendra que ser un AJAX response de departamentos -->
-                        Informática
+                        <span id="deptos"></span>
                       </div>
                     </th>
                   </tr>
@@ -81,7 +80,7 @@ include "./includes/sidebar2.php";
                     </th>
                     <th colspan="3">Total de alumnos:
                       <div class="datos_personales">
-                        SUMATORIA TOTAL ALUMNOS POR PERIODO
+                        <span id="total_alum">0</span>
                       </div>
                     </th>
                   </tr>

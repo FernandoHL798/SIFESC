@@ -146,7 +146,7 @@ function getListaMovimientos(){
                         tblMovimientos += `
                         <tr idMovimiento=${movimiento.id_movimiento}>
                             <td data-label="No">${c}</td>
-                            <td data-label="Clave">${movimiento.id_asignatura}</td>
+                            <td data-label="Clave">${movimiento.codigo}</td>
                             <td data-label="Nombre de la Asig">${movimiento.nombre}</td>
                             <td data-label="Cred">${movimiento.creditos}</td>
                             <td data-label="Sem">${movimiento.semestre}</td>

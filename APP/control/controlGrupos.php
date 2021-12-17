@@ -12,6 +12,12 @@ function consultaGruposPeriodo($idAsignatura,$idProfesor,$idPeriodo){
     return json_encode($GRUPOS->queryconsultaGruposPeriodo($idAsignatura,$idProfesor,$idPeriodo));
 }
 
+function consultaGruposAsignatura($idAsignacion,$idProfesor){
+    include_once "../model/GRUPOS.php";
+    $GRUPOS = new GRUPOS();
+    return json_encode($GRUPOS->queryconsultaGruposAsignatura($idAsignacion,$idProfesor));
+}
+
 function updateGrupos($params){
     include_once "../model/GRUPOS.php";
     $GRUPOS = new GRUPOS();

@@ -60,33 +60,35 @@ include "./includes/sidebar2.php";
                     <thead>
                         <tr class="informacion" id="informacion">
                             <th colspan="2">PLAN DE ESTUDIOS:
-                                <div class="datos_personales"><span id="idPlan"></span></div>
+                                <div class="datos_personales">
+                                    <span id="Plan"></span>
+                                </div>
                             </th>
                             <th colspan="1">CARRERA:
                                 <div class="datos_personales">
-                                    LIC. INFORMÁTICA
+                                    <span id="carre"></span>
                                 </div>
                             </th>
                             <th colspan="1">CLAVE ASIGNATURA:
                                 <div class="datos_personales">
-                                    113
+                                    <span id="codigoAsig"></span>
                                 </div>
                             </th>
                             <th colspan="1">NOMBRE ASIGNATURA :
                                 <div class="datos_personales">
-                                    SEGURIDAD INFORMÁTICA
+                                    <span id="nombreAsig"></span>
                                 </div>
                             </th>
                         </tr>
                         <tr>
                             <th colspan="4">GRUPO:
                                 <div class="datos_personales">
-                                    1702
+                                    <span id="grupo"></span>
                                 </div>
                             </th>
                             <th colspan="1">SEMESTRE:
                                 <div class="datos_personales">
-                                    7
+                                    <span id="semestre"></span>
                                 </div>
                             </th>
 

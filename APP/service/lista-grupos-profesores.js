@@ -5,7 +5,7 @@ $(document).ready(function(){
         });
     periodo();
     cargaDatosProfesor();
-    cargaDeptosProfesor();
+    cargaDeptoProfesor();
 });
 
 function periodo(){
@@ -54,9 +54,9 @@ function cargaDatosProfesor(){
 
 function cargaDeptoProfesor(){
     $.ajax({
-        url: "../webhook/lista_departamento.php",
+        url: "../webhook/lista_profesordepartamento.php",
         type: 'POST',
-        data : { idProfesor: $("#idUsuario").val()},
+        data : { idUsuario: $("#idUsuario").val()},
         success: function (response) {
             //Convertimos el string a JSON
             let DEPTOS = JSON.parse(response);  
@@ -91,7 +91,9 @@ function consultaGruposProfesor(idPeriodo){
             let GRUPOS = JSON.parse(response);
             let template="";
             let cont=0;
+            let ins=0;
 	        GRUPOS.forEach(grupo => {
+                ins= parseInt(ins)+parseInt(grupo.inscritos);
                 cont++;
                 template += `
                 <tr>
@@ -112,7 +114,7 @@ function consultaGruposProfesor(idPeriodo){
                 `;    
             });
             $("#tbl-grupos-profesor").html(template);
-            
+            $("#total_alum").html(ins);
             }
             
     });

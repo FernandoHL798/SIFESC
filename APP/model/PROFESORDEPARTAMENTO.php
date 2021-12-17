@@ -50,8 +50,8 @@ class PROFESORDEPARTAMENTO extends CONEXION{
         $this->estatus = $estatus;
     }
 
-    public function queryconsultaProfesordepartamento(){
-        $query="SELECT `usuarioprofesor_id_fk`, `created_at`, `updated_at`, `estatus`, `departamento_id_fk` FROM `profesor_departamento`";
+    public function queryconsultaProfesordepartamento($idUsuario){
+        $query="SELECT d.nombre, pd.usuarioprofesor_id_fk, pd.created_at, pd.updated_at, pd.estatus, pd.departamento_id_fk FROM profesor_departamento pd, departamentos d WHERE d.id_departamento=pd.departamento_id_fk AND pd.usuarioprofesor_id_fk='".$idUsuario."'";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
