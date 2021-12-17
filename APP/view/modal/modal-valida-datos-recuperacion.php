@@ -34,10 +34,12 @@
             </div>
             <div class="modal-footer" id="btnEnvio">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#Modal_Olvide">Enviar</button>
+              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Olvide">Enviar</button>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+  
+    <?php include ".APP/view/modal/modal-aviso-olvide-contraseña.php"; ?>

@@ -246,6 +246,7 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
 
     public function queryUpdateContraUsuario(){
         $query="UPDATE `usuario` SET `contrasenia` = '".$this->getContrasenia()."' WHERE `correo` = '".$this->getCorreo()."' AND `pregunta_secreta`='".$this->getPreguntaSecreta()."' AND `respuesta_secreta`='".$this->getRespuestaSecreta()."'";
+        return $query;
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

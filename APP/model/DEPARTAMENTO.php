@@ -3,7 +3,7 @@ include_once "CONEXION.php";
 class DEPARTAMENTO extends CONEXION{
     private $id_departamento;
     private $nombre;
-    private $id_area_fk
+    private $id_area_fk;
     private $estatus;
   
     /**
