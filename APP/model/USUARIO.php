@@ -216,6 +216,7 @@ class USUARIO extends CONEXION{
         $query="SELECT us.id_usuario,us.cuenta_alumno, us.cuenta_profesor, us.cuenta_administrador, 
 us.nombre, us.primer_apellido, us.segundo_apellido, us.correo, us.contrasenia, 
 us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$this->getCorreo()."' AND us.contrasenia='".$this->getContrasenia()."'";
+return $query;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
