@@ -13,6 +13,7 @@ class PLANDEESTUDIOS extends CONEXION{
     private $maximo_semestres;
     private $minimo_materias;
     private $maximo_materias;
+    private $estatus;
 
 
     /**
@@ -190,10 +191,25 @@ class PLANDEESTUDIOS extends CONEXION{
         $this->$maximo_materias = $maximo_materias;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+    /**
+     * @param mixed $tipo
+     */
+    public function setEstatus($estatus): void
+    {
+        $this->tipo = $estatus;
+    }
+
     public function queryconsultaPlan(){
         $query="SELECT `id_plan`, `id_carrera_fk`, `anio_plan`, `nombre_plan`, `creditos_obligatorios`, `creditos_optativos`, `creditos_totales`,
         `semestres`, `maximo_creditos`, `minimo_creditos`, `maximo_semestres`, `minimo_materias`,
-        `maximo_materias`,`updated_at`, `created_at` FROM `plandeestudios`";
+        `maximo_materias`,`estatus`,`updated_at`, `created_at` FROM `plandeestudios`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -207,7 +223,7 @@ class PLANDEESTUDIOS extends CONEXION{
          `creditos_totales` = '".$this->getCreditosTotales()."', `semestres` = '".$this->getSemestres()."',
          `maximo_creditos`='".$this->getMaximoCreditos()."', `minimo_creditos`='".$this->getMinimoCreditos()."',
          `maximo_semestres`='".$this->getMaximoSemestres()."',`minimo_materias`='".$this->getMinimoMaterias()."',
-         `maximo_materias`='".$this->getMaximoMaterias()."',
+         `maximo_materias`='".$this->getMaximoMaterias()."',`estatus`='".$this->getEstatus()."',
          `updated_at` = current_timestamp() WHERE `plandeestudios`.`id_plan` = '".$this->getIdPlan()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -216,13 +232,9 @@ class PLANDEESTUDIOS extends CONEXION{
     }
 
     public function queryInsertPlan(){
-        $query="INSERT into `plandeestudios`(`id_plan`,`id_carrera_fk`,`anio_plan`,`creditos_obligatorios`,`creditos_optativos`,
-        `creditos_totales`,`semestres`,`maximo_creditos`, `minimo_creditos`, `maximo_semestres`, `minimo_materias`,
-        `maximo_materias``updated_at`,`created_at`)
+        $query="INSERT into `plandeestudios`(`id_plan`,`id_carrera_fk`,`anio_plan`,`creditos_obligatorios`,`creditos_optativos`,`creditos_totales`,`semestres`,`maximo_creditos`, `minimo_creditos`, `maximo_semestres`, `minimo_materias`, `maximo_materias`,`estatus`,`updated_at`,`created_at`)
         VALUES ('".$this->getIdPlan()."', '".$this->getIdCarreraFk()."', '".$this->getAnioPlan()."',
-        '".$this->getCreditosObligatorios()."', '".$this->getCreditosOptativos()."',
-        '".$this->getCreditosTotales()."', '".$this->getSemestres()."','".$this->getMaximoCreditos()."','".$this->getMinimoCreditos()."',
-        '".$this->getMaximoSemestres()."','".$this->getMinimoMaterias()."','".$this->getMaximoMaterias()."', current_timestamp(),current_timestamp())";
+        '".$this->getCreditosObligatorios()."', '".$this->getCreditosOptativos()."','".$this->getCreditosTotales()."', '".$this->getSemestres()."','".$this->getMaximoCreditos()."','".$this->getMinimoCreditos()."','".$this->getMaximoSemestres()."','".$this->getMinimoMaterias()."','".$this->getMaximoMaterias()."','".$this->getEstatus()."', current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

@@ -11,8 +11,13 @@ function updatePeriodo($params){
     $PERIODO = new PERIODO();
     $PERIODO->setIdPeriodo($params['id_periodo']);
     $PERIODO->setPeriodo($params['periodo']);
-    $PERIODO->setFechaInscripcion($params['fecha_inscripcion']);
-    $PERIODO->setFechaAltasBajas($params['fecha_altabaja']);
+    $PERIODO->setFechaInscripcion($params['fecha_inscripcion_in']);
+    $PERIODO->setFechaInscripcion($params['fecha_inscripcion_fin']);
+    $PERIODO->setFechaAltasBajas($params['fecha_altabaja_in']);
+    $PERIODO->setFechaAltasBajas($params['fecha_altabaja_fin']);
+    $PERIODO->setFechaInscripcion($params['fecha_periodo_in']);
+    $PERIODO->setFechaAltasBajas($params['fecha_periodo_fin']);
+    $PERIODO->setEstatus($params['estatus']);
     return $PERIODO->queryUpdatePeriodo();
 }
 
@@ -21,8 +26,13 @@ function insertPeriodo($params){
     $PERIODO = new PERIODO();
     $PERIODO->setIdPeriodo($params['id_periodo']);
     $PERIODO->setPeriodo($params['periodo']);
-    $PERIODO->setFechaInscripcion($params['fecha_inscripcion']);
-    $PERIODO->setFechaAltasBajas($params['fecha_altabaja']);
+    $PERIODO->setFechaInscripcion($params['fecha_inscripcion_in']);
+    $PERIODO->setFechaInscripcion($params['fecha_inscripcion_fin']);
+    $PERIODO->setFechaAltasBajas($params['fecha_altabaja_in']);
+    $PERIODO->setFechaAltasBajas($params['fecha_altabaja_fin']);
+    $PERIODO->setFechaInscripcion($params['fecha_periodo_in']);
+    $PERIODO->setFechaAltasBajas($params['fecha_periodo_fin']);
+    $PERIODO->setEstatus($params['estatus']);
     return $PERIODO->queryInsertPeriodo();
 }
 

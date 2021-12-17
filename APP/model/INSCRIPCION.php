@@ -8,6 +8,7 @@ class INSCRIPCION extends CONEXION{
     private $hora_inscripcion;
     private $fecha_altas_bajas;
     private $hora_altas_bajas;
+    private $estatus;
 
   
     /**
@@ -123,9 +124,24 @@ class INSCRIPCION extends CONEXION{
         $this->hora_altas_bajas = $hora_altas_bajas;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+    /**
+     * @param mixed $tipo
+     */
+    public function setEstatus($estatus): void
+    {
+        $this->tipo = $estatus;
+    }
+
     
     public function queryconsultaInscripcion(){
-        $query="SELECT `id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`, `updated_at`, `created_at` FROM `inscripcion`";
+        $query="SELECT `id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`, `estatus`, `updated_at`, `created_at` FROM `inscripcion`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -135,8 +151,7 @@ class INSCRIPCION extends CONEXION{
     public function queryUpdateInscripcion(){
         $query="UPDATE `inscripcion` SET `id_usuarioalumno_fk` = '".$this->getIdUsuarioAlumnoFk()."', 
         `id_periodo_fk` = '".$this->getIdPeriodoFk()."', `fecha_inscripcion` = '".$this->getFechaInscripcion()."',
-         `hora_inscripcion` = '".$this->getHoraInscripcion()."', `fecha_altas_bajas` = '".$this->getFechaAltasBajas()."',
-         `hora_altas_bajas` = '".$this->getHoraAltasBajas()."', `updated_at` = current_timestamp()
+         `hora_inscripcion` = '".$this->getHoraInscripcion()."', `fecha_altas_bajas` = '".$this->getFechaAltasBajas()."', `hora_altas_bajas` = '".$this->getHoraAltasBajas()."', `estatus`='".$this->getEstatus()."', `updated_at` = current_timestamp()
          WHERE `inscripcion`.`id_inscripcion` = '".$this->getIdInscripcion()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -145,10 +160,10 @@ class INSCRIPCION extends CONEXION{
     }
 
     public function queryInsertInscripcion(){
-        $query="INSERT into `inscripcion`(`id_inscripcion`,`id_usuarioalumno_fk`,`id_periodo_fk`,`fecha_inscripcion`,`hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`,`updated_at`,`created_at`) 
+        $query="INSERT into `inscripcion`(`id_inscripcion`,`id_usuarioalumno_fk`,`id_periodo_fk`,`fecha_inscripcion`,`hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`,`estatus`,`updated_at`,`created_at`) 
         VALUES ('".$this->getIdInscripcion()."', '".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPeriodoFk()."',
          '".$this->getFechaInscripcion()."', '".$this->getHoraInscripcion()."', '".$this->getFechaAltasBajas()."',
-          '".$this->getHoraAltasBajas()."',current_timestamp(),current_timestamp())";
+          '".$this->getHoraAltasBajas()."','".$this->getEstatus()."',current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

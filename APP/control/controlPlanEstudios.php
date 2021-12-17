@@ -21,6 +21,7 @@ function updatePlan($params){
     $PLAN->setMaximoSemestres($params['maximo_semestres']);
     $PLAN->setMinimoMaterias($params['minimo_materias']);
     $PLAN->setMaximoMaterias($params['maximo_materias']);
+    $PLAN->setEstatus($params['estatus']);
     return $PLAN->queryUpdatePlan();
 }
 
@@ -39,6 +40,7 @@ function insertPlan($params){
     $PLAN->setMaximoSemestres($params['maximo_semestres']);
     $PLAN->setMinimoMaterias($params['minimo_materias']);
     $PLAN->setMaximoMaterias($params['maximo_materias']);
+    $PLAN->setEstatus($params['estatus']);
     return $PLAN->queryInsertPlan();
 }
 

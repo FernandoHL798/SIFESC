@@ -10,13 +10,13 @@
               </div>
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
-              <div class="form-group" id="actualizacion-correcta">
+              <div class="form-group">
               		<H5 id="msjCorrecto" style="display: none;">Se te ha enviado un correo con tu nueva contraseña</H5>
                   <H5 id="msjIncorrecto" style="display: none;">Verifica los datos</H5>
               </div>
             </div>
             <div class="modal-footer">
-              <button id="aceptar" type="button" class="btn btn-primary">Aceptar</button>
+              <button id="okey" type="button" class="btn btn-primary">Aceptar</button>
             </div>
           </form>
         </div>

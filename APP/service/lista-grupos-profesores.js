@@ -1,10 +1,11 @@
 $(document).ready(function(){
     $("#periodo").change(function(){
             var idPeriodo=$("#periodo").val();
-            cargaDatosProfesor(idPeriodo);
+            consultaGruposProfesor(idPeriodo);
         });
     periodo();
-    
+    cargaDatosProfesor();
+    cargaDeptosProfesor();
 });
 
 function periodo(){
@@ -32,7 +33,7 @@ function periodo(){
         });
 }
 
-function cargaDatosProfesor(idPeriodo){
+function cargaDatosProfesor(){
     $.ajax({
         url: "../webhook/lista_profesor.php",
         type: 'POST',
@@ -47,7 +48,33 @@ function cargaDatosProfesor(idPeriodo){
             $("#nombre_plantel").html(profesor.id_plantel+" - "+profesor.nombre_plantel);
             //se generan apartados con otras peticiones
             //Generamos las tablas de los grupos.
-            consultaGruposProfesor(idPeriodo);
+            }
+    });
+}
+
+function cargaDeptoProfesor(){
+    $.ajax({
+        url: "../webhook/lista_departamento.php",
+        type: 'POST',
+        data : { idProfesor: $("#idUsuario").val()},
+        success: function (response) {
+            //Convertimos el string a JSON
+            let DEPTOS = JSON.parse(response);  
+            console.log(DEPTOS);
+             let dep="";
+             let cont=0;
+             DEPTOS.forEach(deptos => {
+                if(cont==0){
+                    cont++;
+                    dep = deptos.nombre;
+                }else{
+                    cont++;
+                    dep = dep+", "+deptos.nombre;
+                }
+                });
+             $("#deptos").html(dep);
+            //se generan apartados con otras peticiones
+            //Generamos las tablas de los grupos.
             }
     });
 }
@@ -61,8 +88,7 @@ function consultaGruposProfesor(idPeriodo){
                 idPeriodo: idPeriodo},
         success: function (response) {
             //Convertimos el string a JSON
-            let GRUPOS = JSON.parse(response);  
-            console.log(GRUPOS);
+            let GRUPOS = JSON.parse(response);
             let template="";
             let cont=0;
 	        GRUPOS.forEach(grupo => {
@@ -75,7 +101,7 @@ function consultaGruposProfesor(idPeriodo){
                     <td data-label="CLAVE. ASIGNAT.">${grupo.codigo}</td>
                     <td data-label="NOM. ASIGNAT">${grupo.nombre_asignatura}</td>
                     <td data-label="GRUPO">${grupo.nombre_grupo}</td>
-                    <td data-label="TIPO GRUPO">ORDINARIO</td>
+                    <td data-label="TIPO GRUPO">${grupo.tipo}</td>
                     <td data-label="SEMESTRE">${grupo.semestre}</td>
                     <td data-label="Inscritos">${grupo.inscritos}</td>
                     <td class="text-center">

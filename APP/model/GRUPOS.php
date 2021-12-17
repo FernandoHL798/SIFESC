@@ -4,6 +4,8 @@ class GRUPOS extends CONEXION{
     private $id_grupo;
     private $id_asignatura_fk;
     private $nombre_grupo;
+    private $tipo;
+    private $estatus;
 
   
     /**
@@ -51,6 +53,36 @@ class GRUPOS extends CONEXION{
         $this->nombre_grupo = $nombre_grupo;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+    /**
+     * @param mixed $tipo
+     */
+    public function setTipo($tipo): void
+    {
+        $this->tipo = $tipo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+    /**
+     * @param mixed $tipo
+     */
+    public function setEstatus($estatus): void
+    {
+        $this->tipo = $estatus;
+    }
+
     
     public function queryconsultaGrupos($idAsignatura,$idProfesor){
         $filterProfesor= $idProfesor>0 ? " AND asi.id_usuarioprofesor_fk=".$idProfesor : "";
@@ -65,7 +97,7 @@ class GRUPOS extends CONEXION{
     public function queryconsultaGruposPeriodo($idAsignatura,$idProfesor,$idPeriodo){
         $filterProfesor= $idProfesor>0 ? " AND asi.id_usuarioprofesor_fk=".$idProfesor : "";
         $filterAsignatura= $idAsignatura>0 ? " AND g.id_asignatura_fk=".$idAsignatura : "";
-        $query="SELECT plan.anio_plan, plan.id_plan, car.nombre as nombre_carrera, a.codigo, a.nombre as nombre_asignatura, g.nombre_grupo, a.semestre, asi.inscritos, asi.id_asignacion FROM grupos g, asignacion asi, asignaturas a, plandeestudios plan, carrera car, periodo per where g.id_grupo = asi.id_grupo_fk AND a.id_asignatura= g.`id_asignatura_fk` AND plan.id_plan=a.id_plan_fk AND car.id_carrera= plan.id_carrera_fk AND per.id_periodo=asi.id_periodo_fk".$filterProfesor."".$filterAsignatura;
+        $query="SELECT plan.anio_plan, plan.id_plan, car.nombre as nombre_carrera, a.codigo, a.nombre as nombre_asignatura, g.nombre_grupo, a.semestre, asi.inscritos, asi.id_asignacion, g.tipo FROM grupos g, asignacion asi, asignaturas a, plandeestudios plan, carrera car, periodo per where g.id_grupo = asi.id_grupo_fk AND a.id_asignatura= g.`id_asignatura_fk` AND plan.id_plan=a.id_plan_fk AND car.id_carrera= plan.id_carrera_fk AND per.id_periodo=asi.id_periodo_fk AND per.id_periodo=".$idPeriodo."".$filterProfesor."".$filterAsignatura;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -74,7 +106,7 @@ class GRUPOS extends CONEXION{
 
     public function queryUpdateGrupos(){
         $query="UPDATE `grupos` SET `id_asignatura_fk` = '".$this->getIdAsignaturaFk()."', 
-        `nombre_grupo` = '".$this->getNombreGrupo()."', `updated_at` = current_timestamp() WHERE `grupos`.`id_grupo` = '".$this->getIdGrupo()."'";
+        `nombre_grupo` = '".$this->getNombreGrupo()."', `tipo`='".$this->getTipo()."', `estatus`='".$this->getEstatus()."',`updated_at` = current_timestamp() WHERE `grupos`.`id_grupo` = '".$this->getIdGrupo()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -83,7 +115,7 @@ class GRUPOS extends CONEXION{
 
     public function queryInsertGrupos(){
         $query="INSERT into `grupos`(`id_grupo`,`id_asignatura_fk`,`nombre_grupo`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdGrupo()."', '".$this->getIdAsignaturaFk()."', '".$this->getNombreGrupo()."', 
+        VALUES ('".$this->getIdGrupo()."', '".$this->getIdAsignaturaFk()."', '".$this->getNombreGrupo()."', '".$this->getTipo()."','".$this->getEstatus()."', 
         current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);

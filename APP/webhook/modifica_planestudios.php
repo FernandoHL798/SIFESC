@@ -12,7 +12,8 @@ $params=[
 	"minimo_creditos"=>"44",
 	"maximo_semestres"=>"50",
 	"minimo_materias"=>"4",
-	"maximo_materias"=>"8"
+	"maximo_materias"=>"8",
+	"estatus"=>""
 ];
 $result=updatePlan($params);
 echo $result;

@@ -90,7 +90,7 @@ function getAsignaturas(){
         data : {       idPlan: 9    },
         success: function (response) {
             //Convertimos el string a JSON
-            let ASIGNATURAS = JSON.parse(response);  
+            let ASIGNATURAS = JSON.parse(response); 
             let template="";
             template+=  `<option selected>Selecciona la materia</option>`;
             ASIGNATURAS.forEach(asignatura=>{
@@ -132,7 +132,6 @@ function getListaMovimientos(){
         type: 'POST',
         data : {      idInscripcion: 1   },
         success: function (response) {
-            console.log(response);
             //Convertimos el string a JSON
             let MOVIMIENTOS = JSON.parse(response);  
             let tblMovimientos="";
@@ -168,7 +167,6 @@ function getListaMovimientos(){
                        cont++;
                 }
                     a=parseInt(a)-parseInt(credMen);
-                    console.log(a   +" creditos");
                 $("#creditoMaximo").html(parseInt(a));
                 if(a<=6){
                 document.getElementById('btnInscripciones1').style.display = 'none';

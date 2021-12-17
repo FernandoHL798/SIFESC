@@ -9,7 +9,8 @@ $params=[
 	"antecesor"=>"Matematicas III",
 	"sucesor"=>"Matematicas VI",
 	"caracter"=>"ob",
-	"semestre"=>"5"
+	"semestre"=>"5",
+	"estatus"=>""
 ];
 $result=insertAsignatura($params);
 echo $result;

@@ -1,5 +1,5 @@
 <?php 
-include_once "../control/controlProfesor.php";
+include_once "../control/controlGrupos.php";
 $idAsignatura=$_POST['idAsignatura'];
 $idProfesor=$_POST['idProfesor'];
 $idPeriodo=$_POST['idPeriodo'];

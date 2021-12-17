@@ -67,7 +67,7 @@ include "./includes/sidebar2.php";
                     </th>
                   </tr>
                   <tr>
-                    <th colspan="3">PERIODO: 2021/2
+                    <th colspan="3">PERIODO:
                       <div class="">
                         <select class="form-select" id="periodo" aria-label="Default select example">
                           

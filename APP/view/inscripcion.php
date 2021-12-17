@@ -155,7 +155,6 @@ include_once "./includes/header.php";?>
             <script src="../service/baja-movimiento.js"></script>
             <script src="../service/lista-alumno.js"></script>
             <script src="../service/add-movimiento.js"></script>
-            <script src="../service/consulta-inscripcion.js"></script>
             
                 
         <?php include "./modal/modal-asignacion.php"; ?>

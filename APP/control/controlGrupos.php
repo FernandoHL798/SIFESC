@@ -18,6 +18,8 @@ function updateGrupos($params){
     $GRUPOS->setIdGrupo($params['id_grupo']);
     $GRUPOS->setNombreGrupo($params['nombre']);
     $GRUPOS->setIdAsignaturaFk($params['id_asignatura_fk']);
+    $GRUPOS->setTipo($params['tipo']);
+    $GRUPOS->setEstatus($params['estatus']);
     return $GRUPOS->queryUpdateGrupos();
 }
 
@@ -27,6 +29,8 @@ function insertGrupos($params){
     $GRUPOS->setIdGrupo($params['id_grupo']);
     $GRUPOS->setIdAsignaturaFk($params['id_asignatura_fk']);
     $GRUPOS->setNombreGrupo($params['nombre']);
+    $GRUPOS->setTipo($params['tipo']);
+    $GRUPOS->setEstatus($params['estatus']);
     return $GRUPOS->queryInsertGrupos();
 }
 

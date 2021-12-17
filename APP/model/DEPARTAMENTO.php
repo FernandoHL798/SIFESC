@@ -3,7 +3,8 @@ include_once "CONEXION.php";
 class DEPARTAMENTO extends CONEXION{
     private $id_departamento;
     private $nombre;
-    private $id_area_fk;
+    private $id_area_fk
+    private $estatus;
   
     /**
      * @return mixed
@@ -50,8 +51,23 @@ class DEPARTAMENTO extends CONEXION{
         $this->id_area_fk = $id_area_fk;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+    /**
+     * @param mixed $tipo
+     */
+    public function setEstatus($estatus): void
+    {
+        $this->tipo = $estatus;
+    }
+
     public function queryconsultaDepartamento(){
-        $query="SELECT `id_departamento`,`nombre` FROM `departamentos`";
+        $query="SELECT `id_departamento`,`nombre`,`id_area_fk`, `estatus` FROM `departamentos`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -59,7 +75,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryInsertDepartamento(){
-        $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_area_fk`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdAreaFk()."')";
+        $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_area_fk`, `estatus`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdAreaFk()."','".$this->getEstatus()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -67,7 +83,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryUpdateDepartamento(){
-        $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_area_fk`='".$this->getIdAreaFk()."' WHERE `id_departamento`='".$this->getIdDepartamento()."'";
+        $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_area_fk`='".$this->getIdAreaFk()."',`estatus`='".$this->getEstatus()."' WHERE `id_departamento`='".$this->getIdDepartamento()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

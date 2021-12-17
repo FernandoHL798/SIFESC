@@ -16,6 +16,7 @@ function updateInscripcion($params){
     $INSCRIPCION->setHoraInscripcion($params['hora_inscripcion']);
     $INSCRIPCION->setFechaAltasBajas($params['fecha_altabaja']);
     $INSCRIPCION->setHoraAltasBajas($params['hora_altabaja']);
+    $INSCRIPCION->setEstatus($params['estatus']);
     return $INSCRIPCION->queryUpdateInscripcion();
 }
 
@@ -29,6 +30,7 @@ function queryInsertInscripcion($params){
     $INSCRIPCION->setHoraInscripcion($params['hora_inscripcion']);
     $INSCRIPCION->setFechaAltasBajas($params['fecha_altabaja']);
     $INSCRIPCION->setHoraAltasBajas($params['hora_altabaja']);
+    $INSCRIPCION->setEstatus($params['estatus']);
     return $INSCRIPCION->queryInsertInscripcion();
 }
 

@@ -7,7 +7,8 @@ $params=[
 	"fecha_inscripcion"=>"2000-12-10",
 	"hora_inscripcion"=>"09:10",
 	"fecha_altabaja"=>"2000-12-20",
-	"hora_altabaja"=>"09:10"
+	"hora_altabaja"=>"09:10",
+	"estatus"=>""
 ];
 $result=queryInsertInscripcion($params);
 echo $result;

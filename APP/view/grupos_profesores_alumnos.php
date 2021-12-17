@@ -116,8 +116,6 @@ include "./includes/sidebar2.php";
     </div>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>     
-    <script src="../service/lista-alumnos-asignacion.js"></script> 
-    <!-- Modales-->
-    <?php include "./modal/modal-prof-calif-alum.php"; ?>
+    <script src="../service/lista-alumnos-asignacion.js"></script>
 </body>
 </html>
