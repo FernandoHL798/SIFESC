@@ -20,7 +20,17 @@ function consultaVerificacionUsuario(){
     .done(function(res){
         console.log(res);
         if(res='trueMessage sent!'){
-            
+            $("#msjCorrecto").show();
+            $("#btnEnvio").trigger("click");
+            $("#okey").click(function(){
+                $("#Modal_Olvide").modal('hide');
+            });
+        } else{
+            $("#msjIncorrecto").show();
+            $("#btnEnvio").trigger("click");
+            $("#okey").click(function(){
+                $("#Modal_Olvide").modal('hide');
+            });
         }
         $("#frm-olvide-contra").trigger('reset');
         $("#validarDatos").modal('hide');

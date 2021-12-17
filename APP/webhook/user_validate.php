@@ -13,7 +13,7 @@ if (isset($_POST['pw']) && isset($_POST['correo'])) {
     else{
         $mje = array(
             "mjeType" => "0",
-            "Mensaje" => "No existe la cuenta o el correo es incorrecto"
+            "Mensaje" => "No existe la cuenta o la contraseña es incorrecto"
         );
     }
     echo json_encode($mje);

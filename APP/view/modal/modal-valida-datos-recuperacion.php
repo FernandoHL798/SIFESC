@@ -32,9 +32,9 @@
               <label for="exampleInputCPostal" class="form-label font-weight-bold">Respuesta a la pregunta secreta</label>
               <input type="text" class="form-control" placeholder="" id="verifica_resp" name="verifica_resp" aria-describedby="emailHelp">
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id="btnEnvio">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#Modal_Olvide">Enviar</button>
             </div>
           </form>
         </div>

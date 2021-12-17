@@ -44,8 +44,7 @@ function cargaAlumnosAsignacion(){
                             <td data-label="NOM ALUMNO">${alumno.primer_apellido+" "+ alumno.segundo_apellido+ " "+ alumno.nombre_alumno}</td>
                             <td data-label="CORREO">${alumno.correo}</td>
                             <td data-label="TELEFONO">${alumno.telefono}</td>
-                            //Preguntar el apartado del estatus
-                            <td data-la data-label="ESTATUS">EN CURSO</td>
+                            <td data-la data-label="ESTATUS">${alumno.estatus}</td>
                         </tr>
                 `;    
             });

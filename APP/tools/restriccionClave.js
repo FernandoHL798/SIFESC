@@ -84,7 +84,6 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
                   console.log(res);
                   if(res!=1){
                     $("#msjIncorrecto").show();
-                    console.log("no debe cambiar contra");
                      $("#btnConfirmarContra").trigger("click");
                      $("#aceptar").click(function(){
                         $("#Modal_Cambio_Con").modal('hide');
