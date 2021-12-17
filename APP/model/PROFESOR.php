@@ -41,6 +41,13 @@ class PROFESOR extends USUARIO{
         $this->close();
         return $resultado;
     }
+     public function queryconsultaNombreProfesor($idProfesor){
+        $query="SELECT u.nombre, u.primer_apellido, u.segundo_apellido FROM usuario u, profesor p WHERE p.usuario_id_fk=u.id_usuario and p.usuario_id_fk=".$idProfesor;    
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
 
     public function queryUpdateEstatusProfesor(){
         $query="UPDATE `profesor` SET `updated_at` = current_timestamp(), `estatus` = '".$this->getEstatus()."' WHERE `profesor`.`usuario_id_fk` = '".$this->getIdUsuarioFk()."'";

@@ -95,6 +95,15 @@ function consultaGruposProfesor(idPeriodo){
 	        GRUPOS.forEach(grupo => {
                 ins= parseInt(ins)+parseInt(grupo.inscritos);
                 cont++;
+                if(grupo.tipo==1){
+                    tipoG='Ordinario';
+                }else{
+                    if(grupo.tipo==2){
+                        tipoG='Extraordinario';
+                    }else{
+                        tipoG='No definido';
+                    }
+                }
                 template += `
                 <tr>
                     <td data-label="NÚMERO">${cont}</td>
@@ -103,7 +112,7 @@ function consultaGruposProfesor(idPeriodo){
                     <td data-label="CLAVE. ASIGNAT.">${grupo.codigo}</td>
                     <td data-label="NOM. ASIGNAT">${grupo.nombre_asignatura}</td>
                     <td data-label="GRUPO">${grupo.nombre_grupo}</td>
-                    <td data-label="TIPO GRUPO">${grupo.tipo}</td>
+                    <td data-label="TIPO GRUPO">${tipoG}</td>
                     <td data-label="SEMESTRE">${grupo.semestre}</td>
                     <td data-label="Inscritos">${grupo.inscritos}</td>
                     <td class="text-center">

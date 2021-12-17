@@ -38,13 +38,35 @@ function cargaAlumnosAsignacion(){
             $("#idPlan").html(datos.id_plan);
             if(alumnosVal>0){
             ALUMNOS.forEach(alumno => {
+                if(alumno.estatus==1){
+                    estaAlum='Activo';
+                    console.log(estaAlum);
+                }else{
+                    if(alumno.estatus==2){
+                        estaAlum='Baja temporal por semestre';
+                    }else{
+                        if(alumno.estatus==3){
+                            estaAlum='Baja temporal por año';
+                        }else{
+                            if(alumno.estatus==4){
+                                estaAlum='Baja total';
+                            }else{
+                                if(alumno.estatus==5){
+                                    estaAlum='Titulado';
+                                }else{
+                                    estaAlum='No definido';
+                                }
+                            }
+                        }
+                    }
+                }
                 template += `
                 <tr>
                             <td data-label="NÚMERO">${alumno.cuenta_alumno}</td>
                             <td data-label="NOM ALUMNO">${alumno.primer_apellido+" "+ alumno.segundo_apellido+ " "+ alumno.nombre_alumno}</td>
                             <td data-label="CORREO">${alumno.correo}</td>
                             <td data-label="TELEFONO">${alumno.telefono}</td>
-                            <td data-la data-label="ESTATUS">${alumno.estatus}</td>
+                            <td data-la data-label="ESTATUS">${estaAlum}</td>
                         </tr>
                 `;    
             });

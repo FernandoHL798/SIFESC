@@ -4,6 +4,11 @@ function consultaProfesor($idProfesor){
     $PROFESOR = new PROFESOR();
     return json_encode($PROFESOR->queryconsultaProfesor($idProfesor));
 }
+function consultaNombreProfesor($idProfesor){
+    include_once "../model/PROFESOR.php";
+    $PROFESOR = new PROFESOR();
+    return json_encode($PROFESOR->queryconsultaNombreProfesor($idProfesor));
+}
 
 function updateEstatusProfesor($params){
     include_once "../model/PROFESOR.php";

@@ -119,7 +119,7 @@ class MOVIMIENTO extends CONEXION{
         return $resultado;
     }
     public function queryConsultaMovimientosAsignacion($idAsignacion){
-         $query = "SELECT plan.id_plan, car.nombre as nombre_carrera, asi.codigo, asi.nombre, g.nombre_grupo, asi.semestre, us.cuenta_alumno, us.nombre as nombre_alumno, us.primer_apellido, us.segundo_apellido, us.correo,us.telefono FROM `movimiento` mov, asignacion a, grupos g, asignaturas asi, plandeestudios plan, carrera car, inscripcion ins, alumno al, usuario us WHERE mov.id_asignacion_fk= a.id_asignacion AND g.id_grupo=a.id_grupo_fk AND asi.id_asignatura=g.id_asignatura_fk AND plan.id_plan= asi.id_plan_fk AND mov.id_inscripcion_fk= ins.id_inscripcion AND ins.id_usuarioalumno_fk= al.usuario_id_fk AND us.id_usuario=al.usuario_id_fk AND plan.id_carrera_fk=car.id_carrera AND `id_asignacion_fk`=".$idAsignacion;
+         $query = "SELECT plan.id_plan, car.nombre as nombre_carrera, asi.codigo, asi.nombre, g.nombre_grupo, asi.semestre, us.cuenta_alumno, us.nombre as nombre_alumno, us.primer_apellido, us.segundo_apellido, us.correo,us.telefono, es.estatus FROM movimiento mov, asignacion a, grupos g, asignaturas asi, plandeestudios plan, carrera car, inscripcion ins, alumno al, usuario us, estudia es WHERE mov.id_asignacion_fk= a.id_asignacion AND g.id_grupo=a.id_grupo_fk AND asi.id_asignatura=g.id_asignatura_fk AND plan.id_plan= asi.id_plan_fk AND mov.id_inscripcion_fk= ins.id_inscripcion AND ins.id_usuarioalumno_fk= al.usuario_id_fk AND us.id_usuario=al.usuario_id_fk AND plan.id_carrera_fk=car.id_carrera AND es.id_usuarioalumno_fk=us.id_usuario AND `id_asignacion_fk`=".$idAsignacion;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
