@@ -82,7 +82,7 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
                 })
                 .done(function(res){
                   console.log(res);
-                  if(res!==1){
+                  if(res!=1){
                     $("#msjIncorrecto").show();
                     console.log("no debe cambiar contra");
                      $("#btnConfirmarContra").trigger("click");
@@ -108,15 +108,22 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
 });
 
 //QUITA LOS ESPACIOS EN EL RECUADRO DE LA NUEVA CONTRASEÑA    
+    
     $("#psw").keyup(function(){              
         var ta      =   $("#psw");
         letras      =   ta.val().replace(/ /g, "");
         ta.val(letras)
-    }); $("#exampleInputPassword1").keyup(function(){              
+    });$("#exampleInputPassword1").keyup(function(){              
         var ta      =   $("#psw");
         letras      =   ta.val().replace(/ /g, "");
         ta.val(letras)
-    }); 
+    });
+    $("#exampleInputPassword1").on('paste', function(e){
+    e.preventDefault();
+  });
+    $("#psw").on('paste', function(e){
+    e.preventDefault();
+  });
 //CONDICION DE QUE SE CUMPLAN RESTRICCIONES DE GENERAR LA CONTRASEÑA
       $('#psw, #exampleInputPassword1').on('keyup', function () {
       if(a==1 && b==1 && c==1 && d==1){
