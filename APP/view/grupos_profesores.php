@@ -69,13 +69,8 @@ include "./includes/sidebar2.php";
                   <tr>
                     <th colspan="3">PERIODO: 2021/2
                       <div class="">
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Seleccione el periodo</option>
-                          <option value="1">2201/1</option>
-                          <option value="2">2020/2</option>
-                          <option value="3">2020/1</option>
-                          <option value="2">2019/2</option>
-                          <option value="3">2019/1</option>
+                        <select class="form-select" id="periodo" aria-label="Default select example">
+                          
                         </select>
                       </div>
                     </th>

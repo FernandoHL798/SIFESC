@@ -15,21 +15,11 @@ function pswRecuperaContraUsuarios($params){
     $USUARIOS->setFechaNacimiento($params['fecha']);
     $USUARIOS->setPreguntaSecreta($params['pregunta']);
     $USUARIOS->setRespuestaSecreta($params['respuesta']);
-    $USUARIOS->setContrasenia(md5(generar_password_complejo()));
+    $USUARIOS->setContrasenia(md5($params['contra']));
     $result=$USUARIOS->queryUpdateContraUsuario();
     return json_encode($result);
 }
 
-function generar_password_complejo(){
-    $cadena_base =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    $cadena_base .= '0123456789' ;
-    $cadena_base .= '!@#%^&*()_,./<>?;:[]{}\|=+';
-    $password = '';
-    $limite = strlen($cadena_base) - 1;
-    for ($i=0; $i < 8; $i++)
-    $password .= $cadena_base[rand(0, $limite)];
-    return $password;
-}
 
 function updatePreguntaUsuario($params){
     include_once "../model/USUARIO.php";

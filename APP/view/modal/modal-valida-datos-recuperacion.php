@@ -6,6 +6,8 @@
         <h5 class="modal-title" id="exampleModalLabel">Verifica tu identidad</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-header">
+      <h6 class="modal-title" id="exampleModalLabel">Recuerda que si no has cambiado tu contraseña, esta sera tu fecha de nacimiento </h6></div>
       <div class="modal-body">
         <form id="frm-olvide-contra">
           <div class="mb-4">
@@ -32,7 +34,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" id="aceptar" class="btn btn-primary">Enviar</button>
             </div>
           </form>
         </div>

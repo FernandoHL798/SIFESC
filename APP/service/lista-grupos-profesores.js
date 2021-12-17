@@ -1,9 +1,38 @@
 $(document).ready(function(){
-	console.log("Escuchando Acciones");
-    cargaDatosProfesor();
+    $("#periodo").change(function(){
+            var idPeriodo=$("#periodo").val();
+            cargaDatosProfesor(idPeriodo);
+        });
+    periodo();
+    
 });
 
-function cargaDatosProfesor(){
+function periodo(){
+    $.ajax({
+        url: "../webhook/lista_periodo.php",
+        type: 'POST',
+        data : {    },
+        success: function (response) {
+            //Convertimos el string a JSON
+            let PERIODOS = JSON.parse(response);  
+            let cont=0;
+            let template="";
+            template+=  `<option selected>Selecciona un periodo</option>`;
+            PERIODOS.forEach(periodo=>{
+                if(cont<5){
+                    cont++;
+                template += `
+                        <option value="${periodo.id_periodo}">${periodo.periodo}</option>
+                `;   
+                }
+                
+            });
+            $("#periodo").html(template);
+            }
+        });
+}
+
+function cargaDatosProfesor(idPeriodo){
     $.ajax({
         url: "../webhook/lista_profesor.php",
         type: 'POST',
@@ -18,17 +47,18 @@ function cargaDatosProfesor(){
             $("#nombre_plantel").html(profesor.id_plantel+" - "+profesor.nombre_plantel);
             //se generan apartados con otras peticiones
             //Generamos las tablas de los grupos.
-            consultaGruposProfesor();
+            consultaGruposProfesor(idPeriodo);
             }
     });
 }
 
-function consultaGruposProfesor(){
+function consultaGruposProfesor(idPeriodo){
     $.ajax({
-        url: "../webhook/lista_grupos.php",
+        url: "../webhook/lista_grupos_periodo.php",
         type: 'POST',
         data : {   idAsignatura:"0",
-                   idProfesor: $("#idUsuario").val()},
+                   idProfesor: $("#idUsuario").val(),
+                idPeriodo: idPeriodo},
         success: function (response) {
             //Convertimos el string a JSON
             let GRUPOS = JSON.parse(response);  

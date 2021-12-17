@@ -11,8 +11,8 @@
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="actualizacion-correcta">
-              		<H5 id="msjCorrecto" style="display: none;">El cambio de contraseña ha sido exitosa</H5>
-                  <H5 id="msjIncorrecto" style="display: none;">No se ha podido hacer el cambio de contraseña</H5>
+              		<H5 id="msjCorrecto" style="display: none;">El cambio de contraseña ha sido exitoso</H5>
+                  <H5 id="msjIncorrecto" style="display: none;">Verifica los datos</H5>
               </div>
             </div>
             <div class="modal-footer">

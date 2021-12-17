@@ -96,6 +96,7 @@ if(isset($_SESSION['usuario']) && $_SESSION['sessionSuccess'])
     -->
     <!-- PHP DE MODALES -->
     <?php include "./APP/view/modal/modal-valida-datos-recuperacion.php"; ?>
+    <?php include "./modal/modal-olvide-contraseña.php"; ?>
     <script src="./APP/service/recupera-contra.js"></script>
 
   </body>

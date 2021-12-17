@@ -6,6 +6,12 @@ function consultaGrupos($idAsignatura,$idProfesor){
     return json_encode($GRUPOS->queryconsultaGrupos($idAsignatura,$idProfesor));
 }
 
+function consultaGruposPeriodo($idAsignatura,$idProfesor,$idPeriodo){
+    include_once "../model/GRUPOS.php";
+    $GRUPOS = new GRUPOS();
+    return json_encode($GRUPOS->queryconsultaGruposPeriodo($idAsignatura,$idProfesor,$idPeriodo));
+}
+
 function updateGrupos($params){
     include_once "../model/GRUPOS.php";
     $GRUPOS = new GRUPOS();

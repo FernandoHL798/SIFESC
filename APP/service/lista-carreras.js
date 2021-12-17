@@ -1,5 +1,6 @@
 $(document).ready(function(){
     listaCarreras();
+    carreraSimultanea();
 });
 
 function listaCarreras(){

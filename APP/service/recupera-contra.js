@@ -18,6 +18,17 @@ function consultaVerificacionUsuario(){
         processData: false
     })
     .done(function(res){
+        console.log(res);
+        if(res!==1){
+                    $("#msjIncorrecto").show();
+                     $("#btnConfirmarContra").trigger("click");
+                     $("#aceptar").click(function(){
+                        $("#Modal_Olvide").modal('hide');
+                     });
+                  } else{
+                    $("#msjCorrecto").show();
+                    $("#btnConfirmarContra").trigger("click");
+                  }
         $("#frm-olvide-contra").trigger('reset');
         $("#validarDatos").modal('hide');
     });
