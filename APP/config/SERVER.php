@@ -3,7 +3,7 @@
 //constantes de parametros de la conexion a la base
 
 const SERVER="localhost";
-const DB="sifesc2";//DB= data base name
+const DB="sifesc";//DB= data base name
 const USER="root";
 const PASS="";
 date_default_timezone_set("America/Mexico_City");
