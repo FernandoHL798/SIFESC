@@ -33,6 +33,7 @@ function cargaAlumnosAsignacion(){
             let ALUMNOS = JSON.parse(response);
             let alumnosVal= ALUMNOS.length;
             let template="";
+            let cont=0;
             //Generamos el dato de el grupo
             let datos= ALUMNOS[0];
             $("#idPlan").html(datos.id_plan);
@@ -60,6 +61,7 @@ function cargaAlumnosAsignacion(){
                         }
                     }
                 }
+                cont++;
                 template += `
                 <tr>
                             <td data-label="NÚMERO">${alumno.cuenta_alumno}</td>
@@ -70,10 +72,18 @@ function cargaAlumnosAsignacion(){
                         </tr>
                 `;    
             });
-            $("#tbl-alumnos-asignacion").html(template);    
+            $("#tbl-alumnos-asignacion").html(template);   
+            if(cont==0){
+                document.getElementById('avisoAlum').style.display = 'block';
+            } else{
+                document.getElementById('avisoAlum').style.display = 'none';
+            }   
         } else{
-            template=`<h4> NO HAY ALUMNOS INSCRITOS </h4>`;
-            //Falta ocultar boton imprimir
+             if(cont==0){
+                document.getElementById('avisoAlum').style.display = 'block';
+            } else{
+                document.getElementById('avisoAlum').style.display = 'none';
+            }
             $("#tbl-alumnos-asignacion").html(template); 
         }
             

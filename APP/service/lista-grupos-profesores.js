@@ -4,8 +4,10 @@ $(document).ready(function(){
             consultaGruposProfesor(idPeriodo);
         });
     periodo();
-    cargaDatosProfesor();
-    cargaDeptoProfesor();
+    let Prof1=0;
+    cargaDatosProfesor(Prof1);
+    cargaDeptoProfesor(Prof1);
+    let conta=0;
 });
 
 function periodo(){
@@ -18,7 +20,6 @@ function periodo(){
             let PERIODOS = JSON.parse(response);  
             let cont=0;
             let template="";
-            template+=  `<option selected>Selecciona un periodo</option>`;
             PERIODOS.forEach(periodo=>{
                 if(cont<5){
                     cont++;
@@ -33,7 +34,7 @@ function periodo(){
         });
 }
 
-function cargaDatosProfesor(){
+function cargaDatosProfesor(Prof1){
     $.ajax({
         url: "../webhook/lista_profesor.php",
         type: 'POST',
@@ -43,13 +44,29 @@ function cargaDatosProfesor(){
             let PROFESORES = JSON.parse(response);  
             console.log(PROFESORES);
             let profesor= PROFESORES[0];
-            $("#nombre_profesor").html(profesor.nombre_profesor+" "+profesor.primer_apellido+" "+ profesor.segundo_apellido);
+            $("#nombre_profesor").html(profesor.primer_apellido+" "+ profesor.segundo_apellido+" "+ profesor.nombre_profesor);
             $("#rfc_profesor").html(profesor.cuenta_profesor);
             $("#nombre_plantel").html(profesor.id_plantel+" - "+profesor.nombre_plantel);
-            //se generan apartados con otras peticiones
-            //Generamos las tablas de los grupos.
             }
     });
+    cargaNombreProfesor(Prof1);
+}
+
+function cargaNombreProfesor(Prof1){
+    if(Prof1==0){
+    $.ajax({
+        url: "../webhook/lista_nombreProfesor.php",
+        type: 'POST',
+        data : { idProfesor: $("#idUsuario").val()},
+        success: function (response) {
+            //Convertimos el string a JSON
+            let PROFESOR = JSON.parse(response);
+            let profe= PROFESOR[0];
+            console.log(PROFESOR);
+            $("#nombre_profesor").html(profe.primer_apellido+" "+ profe.segundo_apellido+" "+profe.nombre);
+            $("#rfc_profesor").html(profe.cuenta_profesor);
+            }
+    });}
 }
 
 function cargaDeptoProfesor(){
@@ -124,7 +141,11 @@ function consultaGruposProfesor(idPeriodo){
             });
             $("#tbl-grupos-profesor").html(template);
             $("#total_alum").html(ins);
-            }
-            
+            if(cont==0){
+                document.getElementById('aviso').style.display = 'block';
+            } else{
+                document.getElementById('aviso').style.display = 'none';
+            }}   
     });
+    
 }

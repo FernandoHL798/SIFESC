@@ -110,7 +110,10 @@ include "./includes/sidebar2.php";
         </div>
     </div>
     </div>
-    <div class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
+    <div id="avisoAlum">
+            <h3 id="avi" class="text-center">No tienes alumnos inscritos</h3>
+    </div>
+    <div id="btnImprim" class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
         <button class="btn btn-primary" type="button" id="btnImprimirSat" onclick="printData()">IMPRIMIR</button>
     </div>
 

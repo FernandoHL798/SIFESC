@@ -42,7 +42,7 @@ class PROFESOR extends USUARIO{
         return $resultado;
     }
      public function queryconsultaNombreProfesor($idProfesor){
-        $query="SELECT u.nombre, u.primer_apellido, u.segundo_apellido FROM usuario u, profesor p WHERE p.usuario_id_fk=u.id_usuario and p.usuario_id_fk=".$idProfesor;    
+        $query="SELECT u.cuenta_profesor, u.nombre, u.primer_apellido, u.segundo_apellido FROM usuario u, profesor p WHERE p.usuario_id_fk=u.id_usuario and p.usuario_id_fk=".$idProfesor;    
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

@@ -52,7 +52,8 @@ include "./includes/sidebar2.php";
                 <thead>
                   <tr class="informacion" id="informacion">
                     <th colspan="3">CLAVE DE PROFESOR:
-                      <div class="datos_personales"><span id=rfc_profesor></span></div>
+                      <div class="datos_personales">
+                        <span id=rfc_profesor></span></div>
                     </th>
                     <th colspan="4">NOMBRE:
                       <div class="datos_personales">
@@ -109,9 +110,11 @@ include "./includes/sidebar2.php";
           </div>
         </div>
 
+        <div id="aviso">
+            <h3 id="avisoAsig" class="text-center">No tienes asignaciones</h3>
+          </div>
 
-
-      <div class="d-grid gap-2 col-11 mx-auto mb-4">
+      <div id="btnImpri" class="d-grid gap-2 col-11 mx-auto mb-4">
         <button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
 
         <!--<button class="btn btn-danger mb-5" type="button" class="btn btn-outline-success mt-1">SALIR</button>-->
