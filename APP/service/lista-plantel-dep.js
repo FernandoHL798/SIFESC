@@ -5,6 +5,7 @@ $(document).ready(function(){
    /*editaDepto();*/
    /*function bajaDepto();*/
 /*function bajaDepto();*/
+});
 /* LISTA PLANTELES -------------------------*/
 function listaplantelesdep(){
     $.ajax({
@@ -29,6 +30,7 @@ function listaplantelesdep(){
     });
 }
 /* LISTA DEPARTAMENTOS -------------------------*/
+
 function listaDepartamentos(){
 $.ajax({
         url: "../webhook/lista_departamento.php",   
@@ -54,7 +56,8 @@ $.ajax({
         } 
     });
 }
- /*ELIMINA DEPARTAMENTO ------------------------- */
+
+/*ELIMINA DEPARTAMENTO ------------------------- */
 /*function eliminaDepto(){
     $("#frm_baja_deptos").on("submit", function(e){
     alert("Entrando al summmmmmbiiiit")
