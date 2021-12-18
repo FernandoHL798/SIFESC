@@ -1,6 +1,6 @@
 <!-- Modal AGREGAR DEPARTAMENTO  -->
         
-            <div class="modal fade" id="depto_Modal" tabindex="-1" aria-labelledby="Modal_depto" aria-hidden="true">
+            <div class="modal fade" id="Add_depto_Modal" tabindex="-1" aria-labelledby="Modal_depto" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <form id="frm_m_a_departamento">
@@ -28,7 +28,7 @@
                   </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Guardar</button>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
                 </form>
               </div>

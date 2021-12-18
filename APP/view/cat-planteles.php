@@ -49,19 +49,8 @@ include_once "./includes/header.php";?>
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td data-label="Nombre">Facultad de Estudios Superiores Cuautitlán CAMPO 4</td>
-                        <td data-label="Acciones">
-                            <a href="./ag-departamento.php"><button type="button" title="Ver Departamentos" class="btn btn-info"><i class='bx bx-show'></i></button>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td data-label="Nombre">Facultad de Estudios Superiores Cuautitlán CAMPO 1</td>
-                        <td data-label="Acciones">
-                            <a href="./ag-departamento.php"><button type="button" title="Ver Departamentos" class="btn btn-info"><i class='bx bx-show'></i></button>
-                        </td>
-                    </tr>
+                <tbody id="tbl-planteles-dep">
+                    
                 </tbody>
             </table>
                 <!-- Se utiliza para darle espacio al final de la tabla -->
@@ -78,8 +67,7 @@ include_once "./includes/header.php";?>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
     <!-- Modales -->
-    <?php include "./modal/modal-agregar-depto.php"; ?>
-    <?php include "./modal/modal-edit-departamento.php"; ?>
-    <?php include "./modal/modal-baja-depto.php"; ?>
+    
+    <script src="../service/lista-plantel-dep.js"></script>
 </body>
 </html>

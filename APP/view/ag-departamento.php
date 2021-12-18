@@ -60,31 +60,8 @@ include_once "./includes/header.php";?>
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td data-label="Clave">0011</td>
-                        <td data-label="Nombre">Departamento de informática</td>
-                        <td data-label="Acciones">
-                            <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#depto_edit_Modal"><i class='bx bxs-pencil'></i></button>
-                            <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_depto"><i class='bx bx-trash'></i></button> 
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td data-label="Clave">0012</td>
-                        <td data-label="Nombre">Departamento de administración</td>
-                        <td data-label="Acciones">
-                            <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#depto_edit_Modal"><i class='bx bxs-pencil'></i></button>
-                            <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_depto"><i class='bx bx-trash'></i></button>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td data-label="Clave">0013</td>
-                        <td data-label="Nombre">Departamento ITSE</td>
-                        <td data-label="Acciones">
-                            <button type="button" title="Editar departamento" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#depto_edit_Modal"><i class='bx bxs-pencil'></i></button>
-                            <button type="button" title="Eliminar departamento" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_depto"><i class='bx bx-trash'></i></button> 
-                        </td>
-                    </tr>
+                <tbody id="tbl-departamentos">
+                    
                 </tbody>
             </table>
             <!-- Se utiliza para darle espacio al final de la tabla -->
@@ -101,5 +78,7 @@ include_once "./includes/header.php";?>
     <?php include "./modal/modal-agregar-depto.php"; ?>
     <?php include "./modal/modal-edit-departamento.php"; ?>
     <?php include "./modal/modal-baja-depto.php"; ?>
+    <script src="../service/lista-plantel-dep.js"></script>
+    
 </body>
 </html>
