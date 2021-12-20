@@ -76,6 +76,14 @@ class CARRERA extends CONEXION{
         return $resultado;
     }
 
+    public function queryconsultaCarreraAlumnos($idUsuario){
+        $query="SELECT p.id_plantel, plan.id_plan, plan.nombre_plan, c.id_carrera, c.nombre, c.id_area_fk, c.clave, e.anio, e.turno FROM alumno al, plantel p, plandeestudios plan, carrera c, estudia e, plantel_carrera pc WHERE e.id_plan_fk=plan.id_plan and plan.id_carrera_fk=c.id_carrera and al.usuario_id_fk=e.id_usuarioalumno_fk and p.id_plantel=pc.id_plantel_fk and pc.id_carrera_fk=c.id_carrera and al.usuario_id_fk='".$idUsuario."'";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryUpdateCarrera(){
         $query="UPDATE `carrera` SET `id_area_fk` = '".$this->getIdAreaFk()."', `clave` = '".$this->getClave()."', `nombre` = '".$this->getNombre()."',
          `updated_at` = current_timestamp() WHERE `carrera`.`id_carrera` = '".$this->getIdCarrera()."'";

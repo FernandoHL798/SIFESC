@@ -67,40 +67,14 @@ include_once "./includes/header.php";?>
                     <th>Selecciona carrera</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="text-center">
-                    <td data-label="Clave">0106</td>
-                    <td data-label="Nombre">308</td>
-                    <td data-label="Apellido M">1119</td>
-                    <td data-label="Apellido P">LIC EN INFORMATICA</td>
-                    <td data-label="Correo">01</td>
-                    <td data-label="Tel">2018</td>
-                    <td data-label="Acciones">
-                        <div class="">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td data-label="Clave">0111</td>
-                    <td data-label="Nombre">116</td>
-                    <td data-label="Apellido M">1498</td>
-                    <td data-label="Apellido P">INGENIERO MECANICO ELECTRICISTA</td>
-                    <td data-label="Correo">02</td>
-                    <td data-label="Tel">2020</td>
-                    <td data-label="Acciones">  
-                        <div class="">
-                            <input class="form-check-input center" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        </div>
-                    </td>
-                </tr>
+            <tbody id="tbl-carreras">
             </tbody>
         </table>
 
         <div class="d-grid gap-2 col-3 mx-auto">
             <div class="modal-content">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Consultar</button>
+                <button type="submit" class="btn btn-primary">Consultar</button>
             </div>
         </div>
 
@@ -121,7 +95,7 @@ include_once "./includes/header.php";?>
 <?php include "./modal/modal-agregar-alumno.php"; ?>
 <?php include "./modal/modal-edit-alumno.php"; ?>
 <?php include "./modal/modal-baja-alum.php"; ?>
-
+<script src="../service/consulta-carreras.js"></script>
 
 </body>
 </html>
