@@ -17,10 +17,25 @@ $(document).ready(function(){
     .done(function(res){
         console.log(res);
         if(res>0){
-            $("#mjeContra").html("Se te ha enviado un correo con tu nueva contraseña");
+            let template=`<div class="alert alert-success" role="alert">
+                            <div class="d-flex align-items-center">
+                                <strong> Se te ha enviado un correo con tu nueva contraseña </strong>
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true">
+                                </div>
+                            </div>
+                        </div>`;
+            $("#mjeContra").html(template);
+
             $("#frm-olvide-contra").trigger('reset');
         } else{
-           $("#mjeContra").html("Verifica tus datos");
+            let template=`<div class="alert alert-success" role="alert">
+                            <div class="d-flex align-items-center">
+                                <strong> Verifica tus datos </strong>
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true">
+                                </div>
+                            </div>
+                        </div>`;
+           $("#mjeContra").html(template);
         }
     });
         

@@ -269,8 +269,17 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
-        return $query;
+        return $resultado;
     }
+
+    public function queryConsultaPassword(){
+        $query ="SELECT * FROM `usuario` WHERE `id_usuario`='".$this->getIdUsuario()."' AND `contrasenia`='".$this->getContrasenia()."'";
+        $this->connect();
+        $resultado= $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryInsertUsuario(){
         $query="INSERT into `usuario`(`id_usuario`,`cuenta_administrador`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `primer_apellido`, `segundo_apellido`,`correo`,`contrasenia`,`telefono`,`fecha_nacimiento`,`pregunta_secreta`,`respuesta_secreta`) 
         VALUES ('".$this->getIdUsuario()."', '".$this->getCuentaAdministrador()."', '".$this->getCuentaAlumno()."', '".$this->getCuentaProfesor()."', '".$this->getNombre()."', '".$this->getPrimerApellido()."', '".$this->getSegundoApellido()."', '".$this->getCorreo()."','".$this->getContrasenia()."','".$this->getTelefono()."','".$this->getFechaNacimiento()."', '".$this->getPreguntaSecreta()."','".$this->getRespuestaSecreta()."')";

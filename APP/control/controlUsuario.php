@@ -76,12 +76,17 @@ function deleteUsuario($id_usuario){
     return $result;
 }
 
-function updatePassword($params){
+function consultaPassword($params){
     include_once "../model/USUARIO.php";
     $USUARIOS= new USUARIO();
     $USUARIOS->setIdUsuario($params['idUsuario']);
-    $USUARIOS->setContrasenia(md5($params['pwd']));
-    return $USUARIOS->queryUpdatePassword($params);
+    $USUARIOS->setContrasenia(md5($params['pwdA']));
+    $obj_user = $USUARIOS->queryConsultaPassword();
+    if(count($obj_user)>0){
+        $USUARIOS->setContrasenia(md5($params['pwd']));
+        return $USUARIOS->queryUpdatePassword();
+    }
+    return false;
 }
 
 function verficaUsuario($correo, $pw){

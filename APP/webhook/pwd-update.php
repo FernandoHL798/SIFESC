@@ -5,4 +5,5 @@ $params = [
 "pwdA"=> $_POST['contraAct'],
 "pwd"=> $_POST['psw']
 ];
-echo updatePassword($params);
+$result=consultaPassword($params);
+echo $result;

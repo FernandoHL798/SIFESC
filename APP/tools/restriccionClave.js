@@ -83,15 +83,13 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
                 .done(function(res){
                   console.log(res);
                   if(res){
-                    alert("entre correcto");
                     $("#msjCorrecto").show();
                     $("#msjIncorrecto").hide();
                     $("#btnConfirmarContra").trigger("click");
                     $("#aceptar").click(function(){
-                        document.location.href = "/equipo3/APP/view/seguridad.php";
+                        document.location.href = "../view/seguridad.php";
                      });
                   } else{
-                    alert("entre incorrecto");
                     $("#msjIncorrecto").show();
                      $("#msjCorrecto").hide();
                      $("#btnConfirmarContra").trigger("click");
@@ -117,9 +115,9 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
         letras      =   ta.val().replace(/ /g, "");
         ta.val(letras)
     });$("#exampleInputPassword1").keyup(function(){              
-        var ta      =   $("#psw");
-        letras      =   ta.val().replace(/ /g, "");
-        ta.val(letras)
+        var te      =   $("#exampleInputPassword1");
+        letra      =   te.val().replace(/ /g, "");
+        te.val(letra)
     });
     $("#exampleInputPassword1").on('paste', function(e){
     e.preventDefault();
