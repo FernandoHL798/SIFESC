@@ -390,7 +390,7 @@ function objMailSend($toMail, $intencion, $asunto, $body)
     $mail->FromName = 'SIFESC | '.$intencion;
     $mail->AddAddress($para); // Dirección a la que llegaran los mensajes
 
-    $mail->Port = PORT_SMTP;
+    //$mail->Port = PORT_SMTP;
     $mail->IsHTML(true);
     $mail->Subject  = $asunto;
     $mail->Body = $body;

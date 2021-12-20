@@ -16,7 +16,7 @@
           </div>
           <div class="mb-4">
             <label for="exampleInputfnacimiento" class="form-label font-weight-bold">Fecha de nacimiento</label>
-            <input type="password" class="form-control mb-3" placeholder="ddmmaaaa" id="verifica_fecha" name="verifica_fecha">
+            <input type="date" class="form-control mb-3" placeholder="ddmmaaaa" id="verifica_fecha" name="verifica_fecha">
           </div>
           <div class="mb-4">
             <div class="form-floating">
@@ -34,12 +34,11 @@
             </div>
             <div class="modal-footer" id="btnEnvio">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Olvide">Enviar</button>
+              <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
           </form>
+          <span id="mjeContra"></span>
         </div>
       </div>
     </div>
-  </div>
-  
-    <?php include ".APP/view/modal/modal-aviso-olvide-contraseña.php"; ?>
+  </div>  

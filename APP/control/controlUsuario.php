@@ -106,4 +106,25 @@ function verficaUsuario($correo, $pw){
     }
     return false;
 }
+
+function consultaUsuarioPreguntaCorreo($params){
+    include_once "../model/USUARIO.php";
+    $USUARIO = new USUARIO();
+    $USUARIO->setCorreo($params['correo']);
+    $USUARIO->setPreguntaSecreta($params['pregunta']);
+    $USUARIO->setRespuestaSecreta($params['respuesta']);
+    $obj_user = $USUARIO->queryConsultaUsuarioPreguntaCorreo();
+    if(count($obj_user) > 0 ){
+        include_once "tools/tools_id_generates.php";
+        $USUARIO->setIdUsuario($obj_user[0]['id_usuario']) ;
+        $npw = generar_password_complejo();
+        $USUARIO->setContrasenia(md5($npw));
+        if($USUARIO->queryUpdatePassword()){
+            include_once "../send.php";
+            return enviaCorreo($params['correo'],$obj_user[0]['nombre'],$npw);
+        }
+    }
+    return false;
+    
+}
 //LFHL

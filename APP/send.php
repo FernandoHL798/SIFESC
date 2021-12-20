@@ -1,8 +1,8 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 
-function enviaCorreo($correo, $pwd){
+function enviaCorreo($correo, $nombre, $pwd){
 
 /*** This example shows sending a message using PHP's mail() function.*/
 //Import the PHPMailer class into the global namespace
@@ -25,13 +25,9 @@ $mail->Subject = 'Cambio de contraseña SIFESC';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
-$mail->Body = 'La contraseña a sido cambiada exitosamente, tu nueva contraseña es: '.$pwd;
+$mail->Body = 'Estima@ usuario '.$nombre.', La contraseña a sido cambiada exitosamente, tu nueva contraseña es: '.$pwd;
 //Attach an image file
 
 //send the message, check for errors
-if (!$mail->send()) {
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message sent!';
-}
+return $mail->send();
 }

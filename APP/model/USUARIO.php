@@ -220,6 +220,7 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         $resultado = $this->getData($query);
         $this->close();
         return $resultado;
+        }
         /*
         
         function consultaCuentaUsuario(){
@@ -234,7 +235,7 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         return $result;
     }
         */
-    }
+    
 
     public function queryUpdateRPwdUsuario(){
         $query="UPDATE `usuario` SET `pregunta_secreta` = '".$this->getPreguntaSecreta()."', `respuesta_secreta` = '".$this->getRespuestaSecreta()."' WHERE `usuario`.`id_usuario` = '".$this->getIdUsuario()."'";
@@ -244,13 +245,12 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         return $resultado;
     }
 
-    public function queryUpdateContraUsuario(){
-        $query="UPDATE `usuario` SET `contrasenia` = '".$this->getContrasenia()."' WHERE `correo` = '".$this->getCorreo()."' AND `pregunta_secreta`='".$this->getPreguntaSecreta()."' AND `respuesta_secreta`='".$this->getRespuestaSecreta()."'";
-        return $query;
+    public function queryConsultaUsuarioPreguntaCorreo(){
+        $query="SELECT * FROM `usuario` WHERE correo='".$this->getCorreo()."' AND `pregunta_secreta`='".$this->getPreguntaSecreta()."' AND `respuesta_secreta`='".$this->getRespuestaSecreta()."'";
         $this->connect();
-        $resultado= $this->executeInstruction($query);
+        $result = $this->getData($query);
         $this->close();
-        return $resultado;
+        return $result;
     }
 
     public function queryUpdateUsuario(){
@@ -264,12 +264,12 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         return $resultado;
     }
 
-    public function queryUpdatePassword($params){
-        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."'WHERE `id_usuario`='".$this->getIdUsuario()."' AND contrasenia='".md5($params['pwdA'])."'";
+    public function queryUpdatePassword(){
+        $query ="UPDATE `usuario` SET `contrasenia`='".$this->getContrasenia()."' WHERE `id_usuario`='".$this->getIdUsuario()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
-        return $resultado;
+        return $query;
     }
     public function queryInsertUsuario(){
         $query="INSERT into `usuario`(`id_usuario`,`cuenta_administrador`,`cuenta_alumno`,`cuenta_profesor`,`nombre`, `primer_apellido`, `segundo_apellido`,`correo`,`contrasenia`,`telefono`,`fecha_nacimiento`,`pregunta_secreta`,`respuesta_secreta`) 

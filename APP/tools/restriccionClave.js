@@ -82,17 +82,21 @@ $("#frm_m_contrasena_nueva").on("submit", function(e){
                 })
                 .done(function(res){
                   console.log(res);
-                  if(res!=1){
+                  if(res){
+                    alert("entre correcto");
+                    $("#msjCorrecto").show();
+                    $("#msjIncorrecto").hide();
+                    $("#btnConfirmarContra").trigger("click");
+                    $("#aceptar").click(function(){
+                        document.location.href = "/equipo3/APP/view/seguridad.php";
+                     });
+                  } else{
+                    alert("entre incorrecto");
                     $("#msjIncorrecto").show();
+                     $("#msjCorrecto").hide();
                      $("#btnConfirmarContra").trigger("click");
                      $("#aceptar").click(function(){
                         $("#Modal_Cambio_Con").modal('hide');
-                     });
-                  } else{
-                    $("#msjCorrecto").show();
-                    $("#btnConfirmarContra").trigger("click");
-                    $("#aceptar").click(function(){
-                        document.location.href = "/SIFESC/APP/view/seguridad.php";
                      });
                   }
                   $("#frm_m_contrasena_nueva").trigger('reset');

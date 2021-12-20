@@ -21,6 +21,7 @@ include_once "./includes/header.php"; ?>
 								</div>
 							</div>
 						</div>
+
 						<div class="mt-3 mb-2 text-center">
 							<div style="text-align:center;padding:1em 0;"> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=medium&timezone=America%2FMexico_City" width="100%" height="115" frameborder="0" seamless></iframe> </div>
 						</div>
@@ -31,6 +32,9 @@ include_once "./includes/header.php"; ?>
 								<a href="https://www.dgae-siae.unam.mx/www_gate.php">DGAE/SIAE.</a>
 							</label>
 							</div>
+							 <button style="display: none;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Olvide" id="confirmarContra">
+                      Confirmar
+                    </button>
 							<div>
 							<label class="">Si tuviste algún problema haciendo uso del sistema, envíanos un mensaje a 
 								<a href="http://cuautitlan.dgae.unam.mx/">Servicios Escolares.</a>

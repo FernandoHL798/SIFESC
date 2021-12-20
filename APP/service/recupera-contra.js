@@ -1,7 +1,4 @@
 $(document).ready(function(){
-    consultaVerificacionUsuario();
-});
-function consultaVerificacionUsuario(){
     $("#frm-olvide-contra").on("submit", function(e){
     var formData = new FormData(document.getElementById("frm-olvide-contra"));
     formData.append("correo", $("#verifica_correo").val());
@@ -9,7 +6,7 @@ function consultaVerificacionUsuario(){
     formData.append("pregunta", $("#floatingSelect").val());
     formData.append("respuesta", $("#verifica_resp").val());
     $.ajax({
-        url: "./APP/webhook/pwd-recover.php",
+        url: "./APP/webhook/olvide_contra.php",
         type: 'POST',
         data: formData,
         dataType: "html",
@@ -19,24 +16,15 @@ function consultaVerificacionUsuario(){
     })
     .done(function(res){
         console.log(res);
-        if(res='trueMessage sent!'){
-            $("#msjCorrecto").show();
-            $("#btnEnvio").trigger("click");
-            $("#okey").click(function(){
-                $("#Modal_Olvide").modal('hide');
-            });
+        if(res>0){
+            $("#mjeContra").html("Se te ha enviado un correo con tu nueva contraseña");
+            $("#frm-olvide-contra").trigger('reset');
         } else{
-            $("#msjIncorrecto").show();
-            $("#btnEnvio").trigger("click");
-            $("#okey").click(function(){
-                $("#Modal_Olvide").modal('hide');
-            });
+           $("#mjeContra").html("Verifica tus datos");
         }
-        $("#frm-olvide-contra").trigger('reset');
-        $("#validarDatos").modal('hide');
     });
         
     e.preventDefault();
     });
-}
+});
 
