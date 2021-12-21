@@ -9,7 +9,6 @@ $.ajax({
         data : {       },                           
         success: function (response) {              
             //Convertimos el string a JSON
-            console.log(response);
             let CARRERAS = JSON.parse(response);
             console.log(CARRERAS);
             let template="";
@@ -18,7 +17,7 @@ $.ajax({
                             <td data-label="Clave">${carrera.id_carrera}</td>
                             <td data-label="Nombre">${carrera.nombre}</td>
                             <td data-label="Acciones">
-                            <a href="./turnos.php"><button type="button" title="Ver Alumnos" class="btn btn-info"><i class='bx bx-show'></i></button>
+                            <a href="./ag_alumno.php?idPlan=${carrera.id_carrera}"><button type="button" title="Ver Alumnos" class="btn btn-info"><i class='bx bx-show'></i></button>
                             </td></tr>`;    
             });
             $("#tbl-lista-carreras").html(template);

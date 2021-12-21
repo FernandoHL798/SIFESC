@@ -50,3 +50,9 @@ function deletePlan($id_Plan){
     $PLAN->setIdPlan($id_Plan);
     return $PLAN->queryDeletePlan();
 }
+
+function consultaAsignaturasPlan($idPlan){
+    include_once "../model/PLANDEESTUDIOS.php";
+    $PLAN = new PLANDEESTUDIOS();
+    return json_encode($PLAN->queryConsultaAsignaturasPlan($idPlan));
+}

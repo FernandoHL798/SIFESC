@@ -105,7 +105,7 @@ cont++;
         url: "../webhook/lista_asignacion.php",
         type: 'POST',
         data: {
-            idPlan : "9",
+            idPlan : $("#idPlanSat").val(),
             idAsignatura:"0"
         },
         success: function (response) {
@@ -179,7 +179,7 @@ cont++;
                 </tr>`;
                         }}}
             });
-            $("#tbl-sturacion-asignaciones").html(template);
+            $("#tbl-saturacion-asignaciones").html(template);
         }
         
     });

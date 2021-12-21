@@ -55,7 +55,7 @@ include "./includes/sidebar2.php";
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbl-lista-plan-asignatura">
                     <tr class="text-center">
                         <td data-label="Clave">1119</td>
                         <td data-label="Nombre">INFORMÁTICA</td>
@@ -100,6 +100,7 @@ include "./includes/sidebar2.php";
         } );  
     </script>
 
+    <script src="../service/lista-plandeestudios.js"></script>
     <?php include "./modal/modal-agregar-plan-estu.php"; ?>
     <?php include "./modal/modal-edit-plan-estu.php"; ?>
     <?php include "./modal/modal-baja_plan_e.php"; ?>

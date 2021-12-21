@@ -98,8 +98,6 @@ include_once "./includes/header.php";?>
     <?php include "./modal/modal-baja-prof.php"; ?> 
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
-    <script src="../service/control-profesor.js"></script>
-    <script src="../service/lista-profesores.js"></script>
     <script src="../service/add-profesor.js"></script>
 
 

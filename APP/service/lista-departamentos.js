@@ -18,7 +18,7 @@ $.ajax({
                             <td data-label="Clave">${departamento.id_departamento}</td>
                             <td data-label="Nombre">${departamento.nombre}</td>
                             <td data-label="Acciones">
-                                <a href="./ag_prof.php"><button type="button" title="Ver profesores" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <a href="./ag_prof.php?idDepartamento=${departamento.id_departamento}"><button type="button" title="Ver profesores" class="btn btn-info"><i class='bx bx-show'></i></button>
                                 </td>
                             </tr>`;    
             });
