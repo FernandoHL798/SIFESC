@@ -21,12 +21,11 @@ function carrerasAlumno(){
                     <td data-label="Generacion">${carrera.anio}</td>
                     <td data-label="Acciones">
                         <div class="">
-                            <input class="form-check-input" onclick="cambiaPlanAlumno(${carrera.id_plan});" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <input class="form-check-input" onclick="cambiaPlanAlumno(${carrera.id_plan});" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         </div>
                     </td>
                 </tr>
                 `;    
-                $("#idPlan").val(carrera.id_plan);
             });
             $("#tbl-carreras").html(template);
             }
@@ -35,10 +34,12 @@ function carrerasAlumno(){
 
 function cambiaPlanAlumno(idPlan){
     console.log(idPlan);
+    var formData = new FormData();
+    formData.append("idPlan", idPlan);
      $.ajax({
         url: "../../APP/webhook/update-plan-alumno.php", //webhook actualiza el plan del alumno en el session
         type: 'POST',
-        data: { idplan:idPlan},
+        data: formData,
         dataType: "html",
         cache: false,
         contentType: false,
@@ -46,7 +47,7 @@ function cambiaPlanAlumno(idPlan){
     })
     .done(function(res){
         console.log(res);
-        e.preventDefault();
+        $("#idPlan").val(idPlan);
     });
         
     

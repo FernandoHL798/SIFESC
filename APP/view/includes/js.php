@@ -1,4 +1,3 @@
-    <script src="../service/carreras.js"></script>
     <script src="../tools/sidebar.js"></script>
     <script src="../tools/clock.js"></script>
     <script src="../tools/print.js"></script>
