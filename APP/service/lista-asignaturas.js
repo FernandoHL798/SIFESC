@@ -43,7 +43,13 @@ function listaplandeestudios(){
                                 <td data-la data-label="SEMESTRE">${asignatura.semestre}</td>
                                 <td data-label="CRÉDITOS">${asignatura.creditos}</td>
                                 <td data-label="CARACTER">${asignatura.caracter}</td>
-                                <td data-label="GRUPOS">(??????), 1001, 1002, 1003</td>
+                                <td data-label="GRUPOS">
+                                    <li>1001</li>
+                                    <li>1002</li>
+                                    <li>1003</li>
+                                    <li>1051</li>
+                                </td>
+                                <td class="text-center"> <button type="button" class="btn btn-primary btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-message-square-add'></i></button></td>
                                 <td data-label="ACCIONES" class="text-center" colspan="2">
                                     <button type="button" class="btn btn-success btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
                                     <button type="button" class="btn btn-danger btn-sm col-5" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>

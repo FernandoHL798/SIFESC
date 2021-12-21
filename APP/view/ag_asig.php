@@ -66,7 +66,7 @@ include_once "./includes/header.php";?>
                                         LICENCIADO EN Informática
                                     </div>
                                 </th>
-                                <th colspan="3">CLAVE:
+                                <th colspan="4">CLAVE:
                                     <div class="datos_personales">
                                         1119 - LICENCIADO EN INFORMÁTICA
                                     </div>
@@ -88,7 +88,7 @@ include_once "./includes/header.php";?>
                                         80
                                     </div>
                                 </th>
-                                <th colspan="2">CRÉDITOS TOTALES:
+                                <th colspan="3">CRÉDITOS TOTALES:
                                     <div class="datos_personales">
                                         450
                                     </div>
@@ -102,13 +102,13 @@ include_once "./includes/header.php";?>
                                 <th>CRÉDITOS</th>
                                 <th>CARÁCTER</th>
                                 <th>GRUPOS</th>
+                                <th>AGREGA GRUPOS</th>
                                 <th>ACCIÓN</th>
                             </tr>
                         </thead>
 
                         <tbody id="tbl-lista-asignatura">
                             <!-- ajax lista asignatura -->
-                            
                         </tbody>
                     </table>
                 </div>
