@@ -143,7 +143,7 @@
 								<?php echo $_SESSION['usuario']." ".$_SESSION['app']." ".$_SESSION['apm'] ?>
 							</div>
 							<div class="job">
-								<input type="hidden" name="idPlan" id="idPlan">
+								<input type="text" name="idPlan" id="idPlan" value="<?php echo $_SESSION['idPlan']?>">
 								<div class="form-check" id="rdo-carrera">
 									
 								</div>
