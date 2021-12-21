@@ -55,9 +55,9 @@ include_once "./includes/header.php";?>
                     <thead>
                         <tr class="text-center">
                             <th style="width: 70px;">Número de cuenta</th>
-                            <th style="width: 100px;">Nombre(s)</th>
                             <th style="width: 100px;">Primer Apellido</th>
                             <th style="width: 100px;">Segundo Apellido </th>
+                            <th style="width: 100px;">Nombre(s)</th>
                             <th style="width: 270px;">Correo</th>
                             <th style="width: 120px;">Teléfono</th>
                             <th style="width: 120px;">Fecha de nacimiento</th>
@@ -68,9 +68,9 @@ include_once "./includes/header.php";?>
                     <tbody>
                         <tr class="text-center">
                             <td data-label="Clave">419070375</td>
-                            <td data-label="Nombre">Luis Antonio</td>
                             <td data-label="Apellido M">Villagomez</td>
                             <td data-label="Apellido P">Pichardo</td>
+                            <td data-label="Nombre">Luis Antonio</td>
                             <td data-label="Correo">vipl891212@comunidad.unam.mx</td>
                             <td data-label="Tel">5531579580</td>
                             <td data-label="Fecha de nacimiento">08-09-1995</td>
@@ -82,9 +82,9 @@ include_once "./includes/header.php";?>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave">314243919</td>
-                            <td data-label="Nombre">Emmanuel</td>
                             <td data-label="Apellido M">Martínez</td>
                             <td data-label="Apellido P">Hernández</td>
+                            <td data-label="Nombre">Emmanuel</td>
                             <td data-label="Correo">emma@gmail.com</td>
                             <td data-label="Tel">5620907010</td>
                             <td data-label="Fecha de nacimiento">06-06-1998</td>
@@ -96,9 +96,9 @@ include_once "./includes/header.php";?>
                         </tr>
                         <tr class="text-center">
                             <td data-label="Clave">3145698536</td>
-                            <td data-label="Nombre">Luis Fernando</td>
                             <td data-label="Apellido M">Hernández</td>
                             <td data-label="Apellido P">Ledezma</td>
+                            <td data-label="Nombre">Luis Fernando</td>
                             <td data-label="Correo">luis@hotmail.com</td>
                             <td data-label="Tel">5584986325</td>
                             <td data-label="Fecha de nacimiento">01-02-2000</td>
