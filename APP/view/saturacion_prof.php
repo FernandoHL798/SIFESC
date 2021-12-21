@@ -1,4 +1,13 @@
-<?php include_once "./includes/session_verify.php";?>
+<?php include_once "./includes/session_verify.php";
+
+$idPlan = "";
+if (!isset($_GET['idPlan'])){
+    echo "<script>location.href ='javascript:history.back()';</script>";
+}
+else{
+    $idPlan = $_GET['idPlan'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php $titulo="Agrega asignatura | SIFESC";
@@ -49,7 +58,8 @@ include_once "./includes/header.php";?>
                         <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar asignatura...">
                     </div>
                 </div>
-            <div id="contenido">    
+            <div id="contenido">
+                <input type="text" name="idPlanSat" id="idPlanSat" value="<?php echo $idPlan;?>">
                 <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%" >
                     <thead>
                         <tr class="text-center">
@@ -63,7 +73,7 @@ include_once "./includes/header.php";?>
                             <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody id="tbl-sturacion-asignaciones">
+                    <tbody id="tbl-saturacion-asignaciones">
                     <!------------Ajax -------------------->   
                     </tbody>
                 </table>

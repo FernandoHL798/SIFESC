@@ -47,6 +47,6 @@ function updateEstatusEstudia($params){
 }
 function updatePlanAlumno($idPlan){
     session_start();
-    $_SESSION['idPlan']   = $idPlan;
+    $_SESSION['idPlan']  = $idPlan;
     return true;
 }

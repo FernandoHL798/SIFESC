@@ -8,7 +8,7 @@ function detallesSaturacion(){
         url: "../webhook/lista_asignacion.php",
         type: 'POST',
         data: {
-            idPlan : "9",
+            idPlan : $("#idPlan").val(),
             idAsignatura:"0"
         },
         success: function (response) {
@@ -71,7 +71,9 @@ cont++;
                 </tr>`;
                         }}}
             });
+            let plan="Plan de estudios: "+$("#idPlan").val();
             $("#tbl-asignaciones").html(template);
+            $("#idPlanAlum").html(plan);
         }
         
     });
@@ -85,7 +87,7 @@ function detallesSaturacionPlan(){
         url: "../webhook/lista_asignacion.php",
         type: 'POST',
         data: {
-            idPlan : "9",
+            idPlan : $("#idPlanSat").val(),
             idAsignatura:"0"
         },
         success: function (response) {
@@ -159,7 +161,7 @@ cont++;
                 </tr>`;
                         }}}
             });
-            $("#tbl-sturacion-asignaciones").html(template);
+            $("#tbl-saturacion-asignaciones").html(template);
         }
         
     });
