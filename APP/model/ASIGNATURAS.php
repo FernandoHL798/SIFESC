@@ -180,12 +180,13 @@ class ASIGNATURA extends CONEXION{
         $query="INSERT into `asignaturas`(`id_asignatura`,`id_plan_fk`,`codigo`,`nombre`,`creditos`,`antecesor`,`sucesor`,`caracter`,`semestre`,`estatus`,`updated_at`,`created_at`) 
         VALUES ('".$this->getIdAsignatura()."', '".$this->getIdPlanFk()."', '".$this->getCodigo()."', 
         '".$this->getNombre()."', '".$this->getCreditos()."', '".$this->getAntecesor()."', 
-        '".$this->getSucesor()."', '".$this->getCaracter()."', '".$this->getSemestre()."', '".$this->getEstatus()."'
+        '".$this->getSucesor()."', '".$this->getCaracter()."', '".$this->getSemestre()."', '1',
         current_timestamp(), current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
+        
     }
 
     public function queryDeleteAsignaturas(){

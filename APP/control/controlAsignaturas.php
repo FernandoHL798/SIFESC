@@ -22,7 +22,6 @@ function insertAsignatura($params){
     $ASIGNATURA->setSucesor($params['sucesor']);
     $ASIGNATURA->setCaracter($params['caracter']);
     $ASIGNATURA->setSemestre($params['semestre']);
-    $ASIGNATURA->setEstatus($params['estatus']);
     $result = $ASIGNATURA->queryInsertAsignaturas();
     return $result;
 }

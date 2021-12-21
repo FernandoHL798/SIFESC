@@ -1,16 +1,16 @@
 <?php 
 include_once"../control/controlAsignaturas.php";
 $params=[
-	"idasignatura"=>"1",
-	"idPlan"=>"1",
-	"codigo"=>"5568",
-	"nombre"=>"Matematicas V",
-	"creditos"=>"12",
-	"antecesor"=>"Matematicas III",
-	"sucesor"=>"Matematicas VI",
-	"caracter"=>"ob",
-	"semestre"=>"5",
-	"estatus"=>""
+	"idasignatura"=>$_POST['clave_asignatura'],
+	"idPlan"=>$_POST['idPlan'],
+	"codigo"=> $_POST['clave_asignatura'],
+	"nombre"=>$_POST['nom_asignatura'],
+	"creditos"=>$_POST['creditos'],
+	"antecesor"=>"1", //chequeo con Naye sobre front
+	"sucesor"=>"2", //chequeo con Naye sobre front
+	"caracter"=>$_POST['caracter'],
+	"semestre"=>$_POST['semestre']
 ];
 $result=insertAsignatura($params);
 echo $result;
+

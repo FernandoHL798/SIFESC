@@ -1,4 +1,12 @@
-<?php include_once "./includes/session_verify.php";?>
+<?php include_once "./includes/session_verify.php";
+$idPlan = "";
+if (!isset($_GET['idPlan'])){
+    echo "<script>location.href ='javascript:history.back()';</script>";
+}
+else{
+    $idPlan = $_GET['idPlan'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php $titulo="Asignacion | SIFESC";
@@ -38,6 +46,7 @@ include_once "./includes/header.php";?>
             <p>Agrega las materias que correspondan al plan de estudios seleccionado</p>
         </div>
         <div class="d-grid gap-2 col-3 mx-auto mb-3">
+            <input type="hidden" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
             <div class="modal-content">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_Asig">Agregar Asignatura</button>
@@ -97,68 +106,9 @@ include_once "./includes/header.php";?>
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr>
-                                <td data-label="CLAVE">1305</td>
-                                <td data-label="NOMBRE ASIGNATURA">INFORMÁTICA VI</td>
-                                <td data-la data-label="SEMESTRE">7</td>
-                                <td data-label="CRÉDITOS">12</td>
-                                <td data-label="CARACTER">Obligatoria</td>
-                                <td data-label="GRUPOS">1001, 1002, 1003</td>
-                                <td data-label="ACCIONES" class="text-center" colspan="2">
-                                    <button type="button" class="btn btn-success btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm col-5" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="CLAVE">1307</td>
-                                <td data-label="NOMBRE ASIGNATURA">MATEMATICAS VI</td>
-                                <td data-la data-label="SEMESTRE">7</td>
-                                <td data-label="CRÉDITOS">8</td>
-                                <td data-label="CARACTER">Optativa</td>
-                                <td data-label="GRUPOS">1001, 1002, 1003</td>
-                                <td data-label="ACCIONES" class="text-center" colspan="2">
-                                    <button type="button" class="btn btn-success btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm col-5" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="CLAVE">1304</td>
-                                <td data-label="NOMBRE ASIGNATURA">LABO. SISTEMAS COMP. VI</td>
-                                <td data-label="SEMESTRE">7</td>
-                                <td data-label="CRÉDITOS">12</td>
-                                <td data-label="CARACTER">Obligatoria</td>
-                                <td data-label="GRUPOS">1001, 1002, 1003, 1051, 1052</td>
-                                <td data-label="ACCIONES" class="text-center" colspan="2">
-                                    <button type="button" class="btn btn-success btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm col-5" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="CLAVE">1311</td>
-                                <td data-label="NOMBRE ASIGNATURA">SEMINARIO DE INVESTIGACIÓN</td>
-                                <td data-la data-label="SEMESTRE">7</td>
-                                <td data-label="CRÉDITOS">8</td>
-                                <td data-label="CARACTER">Obligatoria</td>
-                                <td data-label="GRUPOS">1001, 1002, 1003</td>
-                                <td data-label="ACCIONES" class="text-center" colspan="2">
-                                    <button type="button" class="btn btn-success btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm col-5" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="CLAVE">1307</td>
-                                <td data-label="NOMBRE ASIGNATURA">ANALISIS</td>
-                                <td data-label="SEMESTRE">7</td>
-                                <td data-label="CRÉDITOS">12</td>
-                                <td data-label="CARACTER">Obligatoria</td>
-                                <td data-label="GRUPOS">1101, 1102, 1103</td>
-                                <td data-label="ACCIONES" class="text-center" colspan="2">
-                                    <button type="button" class="btn btn-success btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm col-5" data-bs-toggle="modal"  data-bs-target="#Modal_baja_Asig"><i class='bx bx-trash'></i></button>
-
-                                </td>
-                            </tr>
+                        <tbody id="tbl-lista-asignatura">
+                            <!-- ajax lista asignatura -->
+                            
                         </tbody>
                     </table>
                 </div>
@@ -182,7 +132,7 @@ include_once "./includes/header.php";?>
                 } );  
 
             </script>
-
+            <script src="../service/lista-asignaturas.js"></script>
             <?php include "./modal/ag_asinatura.php"; ?>
             <?php include "./modal/edit_asig.php"; ?> 
             <?php include "./modal/modal-baja-asignatura.php"; ?> 
