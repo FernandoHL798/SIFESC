@@ -1,15 +1,34 @@
 $(document).ready(function () {
-    detallesSaturacion();
-    detallesSaturacionPlan();
+    let peri="";
+    periodo(peri);
+   // detallesSaturacionPlan();
+    
 });
 
-function detallesSaturacion(){
+function periodo(peri){
+    $.ajax({
+        url: "../webhook/lista_periodo.php",
+        type: 'POST',
+        data : {    },
+        success: function (response) {
+            //Convertimos el string a JSON
+            let PERIODOS = JSON.parse(response);
+            peri= $("#periodo").text(PERIODOS[0].periodo);
+                $("#periodo").html("Periodo: "+PERIODOS[0].periodo+" || ");
+            }
+        });
+    console.log(peri);
+    detallesSaturacion(peri);
+}
+
+function detallesSaturacion(peri){
     $.ajax({
         url: "../webhook/lista_asignacion.php",
         type: 'POST',
         data: {
             idPlan : $("#idPlan").val(),
-            idAsignatura:"0"
+            idAsignatura:"0",
+            periodo: peri
         },
         success: function (response) {
              //COnvertimos el string a JSON
@@ -71,9 +90,8 @@ cont++;
                 </tr>`;
                         }}}
             });
-            let plan="Plan de estudios: "+$("#idPlan").val();
             $("#tbl-asignaciones").html(template);
-            $("#idPlanAlum").html(plan);
+            $("#idPlanAlum").html("Plan de estudios: "+$("#idPlan").val());
         }
         
     });
@@ -82,7 +100,7 @@ cont++;
 
 /*  FUNCION PARA SATURACION PARA MATERIAS EN PLAN DE ESTUDIO .......................................................................................................................*/
 
-function detallesSaturacionPlan(){
+/*function detallesSaturacionPlan(){
     $.ajax({
         url: "../webhook/lista_asignacion.php",
         type: 'POST',
@@ -167,4 +185,4 @@ cont++;
     });
 }
 
-
+*/

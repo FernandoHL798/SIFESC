@@ -1,9 +1,9 @@
 <?php
 //LFHL
-function consultaAsignacion($id_plan,$idAsignatura){
+function consultaAsignacion($id_plan,$idAsignatura,$Periodo){
  include_once "../model/ASIGNACION.php";
  $ASIGNACION = new ASIGNACION();
- return json_encode($ASIGNACION->queryconsultaAsignacion($id_plan,$idAsignatura));
+ return json_encode($ASIGNACION->queryconsultaAsignacion($id_plan,$idAsignatura,$Periodo));
 }
 
 function updateAsignacion($params){

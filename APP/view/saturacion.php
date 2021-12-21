@@ -43,7 +43,7 @@ include_once "./includes/header.php"; ?>
     </div>    
       <div class="mt-2 mb-2">
       </div>
-      <p class="text-center mb-4">Periodo: 2022-1.<span> || </span><span>Carrera: Lic. Informática.</span><span></span> || <span id="idPlanAlum">Plan de estudios: 9.</span></p> 
+      <p class="text-center mb-4"><span id="periodo"></span><span id="carrera">Carrera: Lic. Informática.</span><span></span> || <span id="idPlanAlum"></span></p> 
       <div class="mt-5 mb-2">
           <div class="input-group mb-1 mt-4">
             <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar...">
