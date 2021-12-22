@@ -165,11 +165,12 @@ class ASIGNATURA extends CONEXION{
         return $resultado;
     }
 
-    public function queryUpdateAsignaturas(){
+    public function queryUpdateAsignaturas($estatus){
         $query="UPDATE `asignaturas` SET `codigo` = '".$this->getCodigo()."', `nombre` = '".$this->getNombre()."',
          `creditos` = '".$this->getCreditos()."', `antecesor` = '".$this->getAntecesor()."', 
          `sucesor` = '".$this->getSucesor()."', `caracter` = '".$this->getCaracter()."',
-          `semestre` = '".$this->getSemestre()."', `estatus`='".$this->getEstatus()."',`updated_at` = current_timestamp() WHERE `asignaturas`.`id_asignatura` = '".$this->getIdAsignatura()."'";
+          `semestre` = '".$this->getSemestre()."', `estatus`='".$estatus."',`updated_at` = current_timestamp() WHERE `asignaturas`.`id_asignatura` = '".$this->getIdAsignatura()."'";
+        //retrun $query;
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -189,8 +190,8 @@ class ASIGNATURA extends CONEXION{
         
     }
 
-    public function queryDeleteAsignaturas(){
-        $query="DELETE FROM `asignaturas` WHERE `id_asignatura`='".$this->getIdAsignatura()."'";
+    public function queryDeleteAsignaturas($estatus){
+        $query="UPDATE `asignaturas` SET `estatus`='".$estatus."',`updated_at` = current_timestamp() WHERE `asignaturas`.`id_asignatura` = '".$this->getIdAsignatura()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

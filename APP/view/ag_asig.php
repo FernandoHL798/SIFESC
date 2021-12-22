@@ -133,6 +133,7 @@ include_once "./includes/header.php";?>
 
             </script>
             <script src="../service/lista-asignaturas.js"></script>
+            <script src="../service/baja-asignatura.js"></script>
             <?php include "./modal/ag_asinatura.php"; ?>
             <?php include "./modal/edit_asig.php"; ?> 
             <?php include "./modal/modal-baja-asignatura.php"; ?> 
