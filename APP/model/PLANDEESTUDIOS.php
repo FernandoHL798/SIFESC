@@ -4,6 +4,7 @@ class PLANDEESTUDIOS extends CONEXION{
     private $id_plan;
     private $id_carrera_fk;
     private $anio_plan;
+    private $nombre_plan;
     private $creditos_obligatorios;
     private $creditos_optativos;
     private $creditos_totales;
@@ -14,6 +15,21 @@ class PLANDEESTUDIOS extends CONEXION{
     private $minimo_materias;
     private $maximo_materias;
     private $estatus;
+
+    /**
+     * @return mixed
+     */
+    public function getNombrePlan()
+    {
+        return $this->nombre_plan;
+    }
+    /**
+     * @param mixed $id_plan
+     */
+    public function setNombrePlan($nombre_plan): void
+    {
+        $this->nombre_plan = $nombre_plan;
+    }
 
 
     /**
@@ -232,9 +248,13 @@ class PLANDEESTUDIOS extends CONEXION{
     }
 
     public function queryInsertPlan(){
-        $query="INSERT into `plandeestudios`(`id_plan`,`id_carrera_fk`,`anio_plan`,`creditos_obligatorios`,`creditos_optativos`,`creditos_totales`,`semestres`,`maximo_creditos`, `minimo_creditos`, `maximo_semestres`, `minimo_materias`, `maximo_materias`,`estatus`,`updated_at`,`created_at`)
-        VALUES ('".$this->getIdPlan()."', '".$this->getIdCarreraFk()."', '".$this->getAnioPlan()."',
-        '".$this->getCreditosObligatorios()."', '".$this->getCreditosOptativos()."','".$this->getCreditosTotales()."', '".$this->getSemestres()."','".$this->getMaximoCreditos()."','".$this->getMinimoCreditos()."','".$this->getMaximoSemestres()."','".$this->getMinimoMaterias()."','".$this->getMaximoMaterias()."','".$this->getEstatus()."', current_timestamp(),current_timestamp())";
+        $query="INSERT INTO `plandeestudios` (`id_plan`, `id_carrera_fk`, `anio_plan`, `nombre_plan`, `creditos_obligatorios`, `creditos_optativos`, `creditos_totales`, `semestres`, `maximo_creditos`, `minimo_creditos`, `maximo_semestres`, `minimo_materias`, `maximo_materias`, `estatus`, `updated_at`, `created_at`)
+        VALUES ('".$this->getIdPlan()."', '".$this->getIdCarreraFk()."', '".$this->getAnioPlan()."', '".$this->getNombrePlan()."', '".$this->getCreditosObligatorios()."', '".$this->getCreditosOptativos()."', '".$this->getCreditosTotales()."', '".$this->getSemestres()."',
+        '".$this->getMaximoCreditos()."',
+        '".$this->getMinimoCreditos()."',
+         '".$this->getMaximoSemestres()."',
+          '".$this->getMinimoMaterias()."',
+           '".$this->getMaximoMaterias()."', '".$this->getEstatus()."', current_timestamp(), current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -245,6 +265,14 @@ class PLANDEESTUDIOS extends CONEXION{
         $query="DELETE FROM `plandeestudios` WHERE `id_plan`='".$this->getIdPlan()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryConsultaAsignaturasPlan($idPlan){
+        $query="SELECT asi.id_asignatura ,asi.codigo,asi.semestre,asi.creditos,asi.caracter, asi.nombre FROM `asignaturas` asi, plandeestudios plan WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan=".$idPlan;
+        $this->connect();
+        $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }

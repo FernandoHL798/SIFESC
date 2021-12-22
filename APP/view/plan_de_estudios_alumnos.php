@@ -51,7 +51,7 @@ include_once "./includes/header.php";?>
                         <th style="width: 100px;">Acciones</th>      
                     </tr>
                 </thead>
-                <tbody id="tbl-lista-carreras">
+                <tbody id="tbl-lista-planes-alumnos">
                     <!--AJAX LISTA CARRERAS-->
                 </tbody>
             </table>
@@ -69,7 +69,7 @@ include_once "./includes/header.php";?>
     include "./modal/modal-agregar-plan-estu.php"; 
      include "./modal/modal-edit-plan-estu.php"; 
     include "./modal/modal-baja_plan_e.php"; ?>
-    <script src="../service/lista-carreras.js"></script>
+    <script src="../service/lista-plandeestudios.js"></script>
 
 </body>
 </html>

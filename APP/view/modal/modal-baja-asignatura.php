@@ -17,10 +17,11 @@
               <div class="form-group" id="Edit_plan_grup">
               		<H5>¿Esta seguro que desea dar de baja esta asignatura?</H5>
               </div>
+              <input type="hidden" placeholder="idAsignatura baja" class="form-control"style="height: 45px" name="idAsignatura_baja" id="idAsignatura_baja">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Aceptar</button>
+              <button type="submit" class="btn btn-primary">Aceptar</button>
             </div>
           </form>
         </div>

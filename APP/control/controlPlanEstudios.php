@@ -30,6 +30,7 @@ function insertPlan($params){
     $PLAN = new PLANDEESTUDIOS();
     $PLAN->setIdPlan($params['id_plan']);
     $PLAN->setIdCarreraFk($params['id_carrera_fk']);
+    $PLAN->setNombrePlan($params['nombre_plan']);
     $PLAN->setAnioPlan($params['anio_plan']);
     $PLAN->setCreditosObligatorios($params['creditos_ob']);
     $PLAN->setCreditosOptativos($params['creditos_op']);
@@ -49,4 +50,10 @@ function deletePlan($id_Plan){
     $PLAN = new PLANDEESTUDIOS();
     $PLAN->setIdPlan($id_Plan);
     return $PLAN->queryDeletePlan();
+}
+
+function consultaAsignaturasPlan($idPlan){
+    include_once "../model/PLANDEESTUDIOS.php";
+    $PLAN = new PLANDEESTUDIOS();
+    return json_encode($PLAN->queryConsultaAsignaturasPlan($idPlan));
 }

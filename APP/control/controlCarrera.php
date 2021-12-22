@@ -5,6 +5,12 @@ function consultaCarrera(){
    return json_encode($CARRERA->queryconsultaCarrera());
 }
 
+function consultaCarreraAlumnos($idUsuario){
+    include_once "../model/CARRERA.php";
+    $CARRERA = new CARRERA();
+   return json_encode($CARRERA->queryconsultaCarreraAlumnos($idUsuario));
+}
+
 function updateCarrera($params){
     include_once "../model/CARRERA.php";
     $CARRERA = new CARRERA();

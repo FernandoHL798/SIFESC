@@ -44,8 +44,6 @@ include_once "./includes/header.php"; ?>
 					</form>
 				</div>
 		</div>
-	</div>
-	<script src="../tools/sidebar.js"></script>
 	<?php include_once "./includes/js.php";?>
 
 </body>

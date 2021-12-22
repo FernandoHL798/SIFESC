@@ -81,7 +81,7 @@ include_once "./includes/header.php";?>
                         <td data-label="Acciones">
                             <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
                             <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./admin_periodo.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
+                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
                         </td>
                     </tr>
                     <tr class="text-center">
@@ -97,7 +97,7 @@ include_once "./includes/header.php";?>
                         <td data-label="Acciones">
                             <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
                             <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./admin_periodo.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
+                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
 
                             </td>
                         </tr>
@@ -115,7 +115,7 @@ include_once "./includes/header.php";?>
                           <td data-label="Acciones">
                             <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
                             <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./admin_periodo.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
+                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
 
                             </td>
                         </tr>
@@ -133,7 +133,7 @@ include_once "./includes/header.php";?>
                           <td data-label="Acciones">
                             <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
                             <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./admin_periodo.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
+                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
 
                         </td>
                     </tr>

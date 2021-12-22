@@ -22,13 +22,12 @@ function insertAsignatura($params){
     $ASIGNATURA->setSucesor($params['sucesor']);
     $ASIGNATURA->setCaracter($params['caracter']);
     $ASIGNATURA->setSemestre($params['semestre']);
-    $ASIGNATURA->setEstatus($params['estatus']);
     $result = $ASIGNATURA->queryInsertAsignaturas();
     return $result;
 }
 //funcion para actualizar asignaturas
 //PARAMETROS CON ESTILO $params, se hará cuando se cree el MS
-function updateAsignaturas($params){
+function updateAsignaturas($params, $estatus){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
     $ASIGNATURA->setIdAsignatura($params['idasignatura']);
@@ -39,16 +38,16 @@ function updateAsignaturas($params){
     $ASIGNATURA->setSucesor($params['sucesor']);
     $ASIGNATURA->setCaracter($params['caracter']);
     $ASIGNATURA->setSemestre($params['semestre']);
-    $ASIGNATURA->setEstatus($params['estatus']);
-    $result = $ASIGNATURA->queryUpdateAsignaturas();
+    //$ASIGNATURA->setEstatus($params['estatus']);
+    $result = $ASIGNATURA->queryUpdateAsignaturas($estatus);
     return $result;
 }
 //funcion para eliminar asignaturas
 
-function deleteAsignatura($idAsignatura){
+function deleteAsignatura($id_asignatura, $estatus){
     include_once "../model/ASIGNATURAS.php";
     $ASIGNATURA= new ASIGNATURA();
-    $ASIGNATURA->setIdAsignatura($idAsignatura);
-    $result= $ASIGNATURA->queryDeleteAsignaturas();
+    $ASIGNATURA->setIdAsignatura($id_asignatura);
+    $result= $ASIGNATURA->queryDeleteAsignaturas($estatus);
     return $result;
 }
