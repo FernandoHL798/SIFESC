@@ -10,10 +10,6 @@ include_once "./includes/header.php"; ?>
       <div class="texthome">
 
         <div class="grid">
-          <div class="">
-            <a href="./index.php" title="Volver">
-            </a>
-          </div>
           <div>
             <h3 id="head3" class="text-center">Mis grupos asignados</h3>
           </div>
@@ -124,5 +120,11 @@ include_once "./includes/header.php"; ?>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
     <script src="../service/lista-grupos-profesores.js"></script>
+    <script type="text/javascript">
+function closeCurrentWindow()
+{
+  window.close();
+}
+</script>
 </body>
 </html>
