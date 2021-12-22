@@ -49,11 +49,12 @@ include_once "./includes/header.php";?>
                         <h4 id="head3" class="text-center">1119 || Lic. Informática</h4>
                         <p class="text-center mb-4">Aquí puedes agregar la saturación de las asignaturas del plan de estudios.</p>
                     </div>
+                    <!--
                     <div class="mt-1 mb-2"></div>
                     <div class="d-grid gap-2 col-2 mx-auto">
-                        <!-- Button trigger modal -->
+                        <!-- Button trigger modal --
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">Agregar Asignatura</button>
-                    </div>
+                    </div> -->
                     <div class="input-group mb-1 mt-4">
                         <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar asignatura...">
                     </div>
