@@ -118,6 +118,7 @@ include_once "./includes/header.php";?>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
     <script src="../service/lista-plandeestudios.js"></script>
+    <script src="../service/add-plandeestudios.js"></script>
     <!-- Modales -->
     <?php include "./modal/modal-agregar-plan-estu.php"; ?>
     <?php include "./modal/modal-edit-plan-estu.php"; ?>
