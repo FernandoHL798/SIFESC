@@ -46,13 +46,13 @@ include_once "./includes/header.php";?>
                     </div>    
                     <div class="row">
                         <p class="mb-2"></p>
-                        <h4 id="head3" class="text-center">1119 || Lic. Informática</h4>
+                        <h4 id="head3" class="text-center"><span id="periodo_sat"></span><span id="carrera_sat"></span><span id="plan_de_estudios_sat"></span></h4>
                         <p class="text-center mb-4">Aquí puedes agregar la saturación de las asignaturas del plan de estudios.</p>
                     </div>
                     <!--
                     <div class="mt-1 mb-2"></div>
                     <div class="d-grid gap-2 col-2 mx-auto">
-                        <!-- Button trigger modal --
+                         Button trigger modal --
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">Agregar Asignatura</button>
                     </div> -->
                     <div class="input-group mb-1 mt-4">
@@ -60,7 +60,7 @@ include_once "./includes/header.php";?>
                     </div>
                 </div>
             <div id="contenido">
-                <input type="text" name="idPlanSat" id="idPlanSat" value="<?php echo $idPlan;?>">
+                <input type="hidden" name="idPlanSat" id="idPlanSat" value="<?php echo $idPlan;?>">
                 <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%" >
                     <thead>
                         <tr class="text-center">
@@ -97,7 +97,7 @@ include_once "./includes/header.php";?>
         </div>
         <!-- JavaScripts-->
         <?php include_once "./includes/js.php"; ?>
-        <script src="../service/saturacion.js"></script>
+        <script src="../service/saturacion-prof.js"></script>
         <!-- Modales -->
             <?php include "./modal/modal-agregar-saturacion.php"; ?>
             <?php include "./modal/modal-edit-saturacion.php"; ?>
@@ -105,3 +105,4 @@ include_once "./includes/header.php";?>
 
 </body>
 </html>
+

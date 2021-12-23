@@ -2,7 +2,7 @@ $(document).ready(function(){
     listaplandeestudios();
     actualizarasignatura();
     $("#frm_m_a_asignatura").on("submit", function(e){
-     var f = $(this);
+    var f = $(this);
     var formData = new FormData(document.getElementById("frm_m_a_asignatura"));
     formData.append("dato", "valor");
     formData.append("idPlan", $("#idPlanAsig").val());
@@ -37,15 +37,19 @@ function listaplandeestudios(){
             let ASIGNATURAS =JSON.parse(response);
             console.log(ASIGNATURAS);
             let template="";
+            cont=0;
             ASIGNATURAS.forEach(asignatura=>{
+                if(asignatura.estatus<2){
                 template += `<tr>
                                 <td data-label="CLAVE">${asignatura.codigo}</td>
                                 <td data-label="NOMBRE ASIGNATURA">${asignatura.nombre}</td>
                                 <td data-la data-label="SEMESTRE">${asignatura.semestre}</td>
                                 <td data-label="CRÉDITOS">${asignatura.creditos}</td>
                                 <td data-label="CARACTER">${asignatura.caracter}</td>
-                                <td data-label="GRUPOS">
-                                    <li>1001</li>
+                                <td data-label="ESTATUS">
+                                    <li>${asignatura.estatus}</li>
+                                </td>
+                                <td data-label="GRUPOS"><li>1001</li>
                                     <li>1002</li>
                                     <li>1003</li>
                                     <li>1051</li>
@@ -55,7 +59,8 @@ function listaplandeestudios(){
                                     <button type="button" class="btn btn-success btn-sm col-5 mx-auto" onclick="editarAsignatura(${asignatura.id_asignatura},'${asignatura.codigo}','${asignatura.nombre}',${asignatura.semestre},${asignatura.creditos},'${asignatura.caracter}');"><i class='bx bxs-pencil'></i></button>
                                     <button type="button" class="btn btn-danger btn-sm col-5" onclick="bajaAsignatura(${asignatura.id_asignatura});"><i class='bx bx-trash'></i></button>
                                 </td>
-                            </tr>`
+                            </tr>`;    
+                }
             });
             $("#tbl-lista-asignatura").html(template);
             

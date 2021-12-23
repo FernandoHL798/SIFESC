@@ -1,8 +1,8 @@
 <?php
-function consultaCarrera(){
+function consultaCarrera($idPlan){
     include_once "../model/CARRERA.php";
     $CARRERA = new CARRERA();
-   return json_encode($CARRERA->queryconsultaCarrera());
+   return json_encode($CARRERA->queryconsultaCarrera($idPlan));
 }
 
 function consultaCarreraAlumnos($idUsuario){

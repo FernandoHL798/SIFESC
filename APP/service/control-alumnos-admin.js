@@ -10,7 +10,19 @@ function listaAlumnosPerPlan(){
         success: function (response){
             let ALUMNOS =JSON.parse(response);
             console.log(ALUMNOS);
-            let template="";
+            let template=`<thead>
+                        <tr class="text-center">
+                            <th style="width: 70px;">Número de cuenta</th>
+                            <th style="width: 100px;">Primer Apellido</th>
+                            <th style="width: 100px;">Segundo Apellido </th>
+                            <th style="width: 100px;">Nombre(s)</th>
+                            <th style="width: 270px;">Correo</th>
+                            <th style="width: 120px;">Teléfono</th>
+                            <th style="width: 120px;">Fecha de nacimiento</th>
+                            <th style="width: 100px;">Generación</th>
+                            <th style="width: 140px;">Acciones</th>
+                        </tr>
+                    </thead>`;
             ALUMNOS.forEach(alumno=>{
                 template += `
                         <tr class="text-center">
