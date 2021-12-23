@@ -1,19 +1,20 @@
 <?php
 include_once"../control/controlPlanEstudios.php";
 $params=[
-	"id_plan"=>"1",
-	"id_carrera_fk"=>"1",
-	"anio_plan"=>"2021",
-	"creditos_ob"=>"80",
-	"creditos_op"=>"20",
-	"creditos_t"=>"100",
-	"semestres"=>"9",
-	"maximo_creditos"=>"60",
-	"minimo_creditos"=>"44",
-	"maximo_semestres"=>"50",
-	"minimo_materias"=>"4",
-	"maximo_materias"=>"8",
-	"estatus"=>""
+	"id_plan"=>$_POST['clave_plan_estudios'],
+	"id_carrera_fk"=>$_POST['clave_carrera'],
+	"nombre_plan"=>$_POST['nombre_plan_e'],
+	"anio_plan"=>$_POST['limite_insc_x_periodo'],
+	"creditos_ob"=>$_POST['creditos_obli'],
+	"creditos_op"=>$_POST['creditos_opta'],
+	"creditos_t"=>$_POST['creditos_totales'],
+	"semestres"=>$_POST['Duracion_semestres'],
+	"maximo_creditos"=>$_POST['max_creditos'],
+	"minimo_creditos"=>$_POST['min_creditos'],
+	"maximo_semestres"=>$_POST['max_semestres'],
+	"minimo_materias"=>$_POST['min_materias'],
+	"maximo_materias"=>$_POST['max_materias'],
+	"estatus"=>$_POST['estatus']
 ];
 $result=updatePlan($params);
 echo $result;

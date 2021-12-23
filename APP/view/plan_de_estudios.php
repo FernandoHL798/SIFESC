@@ -20,7 +20,7 @@ include_once "./includes/header.php";?>
                     <div>
                         <h3 id="head3" class="text-center">Planes de estudio</h3>
                     </div>
-                    <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
+                    <!-- RELOJ FUNCIONAL Y BONITO -------------------------------------------------------------->
                     <div class="widget_clock">
                         <div class="reloj_clock">
                             <p id="horas_clock" class="horas_clock"></p>
@@ -32,14 +32,14 @@ include_once "./includes/header.php";?>
                             </div>
                             <p id="ampm" class="ampm"></p>
                         </div>
-                        <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
+                        <!-- RELOJ FUNCIONAL Y BONITO -------------------------------------------------------------->
                     </div>
                 </div>
                 <p class="text-center mb-3">Agrega los planes de estudio existentes.</p>
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Agrega_Plan_Modal">
                             Agregar Plan de Estudios
                         </button>
                     </div>
