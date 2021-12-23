@@ -97,9 +97,8 @@ function eliminaDepto(idDepto){
 $("#frm_m_a_departamento").on("submit", function(e){
     var f = $(this);
     var formData = new FormData(document.getElementById("frm_m_a_departamento"));
-    formData.append("id_departamento", "135");
-    formData.append("nombre", "MECANICA DE ARRANCONES GG"); 
-    formData.append("estatus", "1");
+    formData.append("dato", "valor");
+    formData.append("id_plantel", $("#idPlantel").val());
     $.ajax({
         url: "../webhook/add_departamento.php",
         type: "post",
@@ -108,7 +107,7 @@ $("#frm_m_a_departamento").on("submit", function(e){
         cache: false,
         contentType: false,
         processData: false
-    })
+    }) 
         .done(function(res){
         console.log(res);
         if(res!=1){
@@ -135,13 +134,13 @@ $("#frm_m_a_departamento").on("submit", function(e){
         $("#Add_depto_Modal").modal('hide');
         }});
     e.preventDefault();
-});
+}); 
 
 //Funcion Elimina! ----------------------------------------------------
 $("#frm_baja_deptos").on("submit", function(e){
     var f = $(this);
     var formData = new FormData(document.getElementById("frm_baja_deptos"));
-            formData.append("id_departamento", "306"); 
+            formData.append("id_departamento", $("#clave_depto").val());
             formData.append("estatus", "2");
             $.ajax({
                 url: "../webhook/elimina_departamento.php",
