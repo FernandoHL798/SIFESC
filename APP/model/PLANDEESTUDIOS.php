@@ -232,14 +232,14 @@ class PLANDEESTUDIOS extends CONEXION{
         return $resultado;
     }
 
-    public function queryUpdatePlan(){
+    public function queryUpdatePlan($params){
         $query="UPDATE `plandeestudios` SET `id_carrera_fk` = '".$this->getIdCarreraFk()."',
          `anio_plan` = '".$this->getAnioPlan()."', `creditos_obligatorios` = '".$this->getCreditosObligatorios()."',
          `creditos_optativos` = '".$this->getCreditosOptativos()."',
          `creditos_totales` = '".$this->getCreditosTotales()."', `semestres` = '".$this->getSemestres()."',
-         `maximo_creditos`='".$this->getMaximoCreditos()."', `minimo_creditos`='".$this->getMinimoCreditos()."',
-         `maximo_semestres`='".$this->getMaximoSemestres()."',`minimo_materias`='".$this->getMinimoMaterias()."',
-         `maximo_materias`='".$this->getMaximoMaterias()."',`estatus`='".$this->getEstatus()."',
+         `maximo_creditos`='".$params['maximo_creditos']."', `minimo_creditos`='".$params['minimo_creditos']."',
+         `maximo_semestres`='".$params['maximo_semestres']."',`minimo_materias`='".$params['minimo_materias']."',
+         `maximo_materias`='".$params['maximo_materias']."',`estatus`='".$params['estatus']."',
          `updated_at` = current_timestamp() WHERE `plandeestudios`.`id_plan` = '".$this->getIdPlan()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
