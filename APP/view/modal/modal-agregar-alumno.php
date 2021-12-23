@@ -53,7 +53,7 @@
                 <div class="mb-4">
                   <div class="mt-3 mb-2"></div>
             <div class="form-floating">
-              <select class="form-select mb-4" id="estatus">
+              <select class="form-select mb-4" id="estatus" name="estatus">
                 <option hidden=""></option>
                 <option value="1">Activo</option>
                 <option value="2">Baja temporal por semestre</option>

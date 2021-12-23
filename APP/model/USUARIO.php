@@ -222,8 +222,8 @@ us.pregunta_secreta, us.respuesta_secreta FROM `usuario` us WHERE us.correo='".$
         return $resultado;
         }
 
-        public function queryconsultaExisteUsuario(){
-        $query="SELECT us.id_usuario FROM `usuario` us WHERE us.correo='".$this->getCorreo()."'";
+        public function queryconsultaExisteUsuario($cuentaAlumno){
+        $query="SELECT us.id_usuario FROM `usuario` us WHERE us.cuenta_alumno='".$cuentaAlumno."'";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
