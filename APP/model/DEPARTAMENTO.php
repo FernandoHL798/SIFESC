@@ -3,7 +3,7 @@ include_once "CONEXION.php";
 class DEPARTAMENTO extends CONEXION{
     private $id_departamento;
     private $nombre;
-    private $id_area_fk;
+    private $id_plantel_fk;
     private $estatus;
   
     /**
@@ -39,16 +39,16 @@ class DEPARTAMENTO extends CONEXION{
     /**
      * @return mixed
      */
-    public function getIdAreaFk()
+    public function getIdPlantelFk()
     {
-        return $this->id_area_fk;
+        return $this->id_plantel_fk;
     }
     /**
-     * @param mixed $id_area_fk
+     * @param mixed $id_plantel_fk
      */
-    public function setIdAreaFk($id_area_fk): void
+    public function setIdPlantelFk($id_plantel_fk): void
     {
-        $this->id_area_fk = $id_area_fk;
+        $this->id_plantel_fk = $id_plantel_fk;
     }
 
     /**
@@ -67,7 +67,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryconsultaDepartamento(){
-        $query="SELECT `id_departamento`,`nombre`,`id_area_fk`, `estatus` FROM `departamentos`";
+        $query="SELECT `id_departamento`,`nombre`,`id_plantel_fk`, `estatus` FROM `departamentos`";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -75,7 +75,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryInsertDepartamento($params){
-        $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_area_fk`, `estatus`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdAreaFk()."','".$params['estatus']."')";
+        $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_plantel_fk`, `estatus`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdPlantelFk()."','".$params['estatus']."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -83,7 +83,7 @@ class DEPARTAMENTO extends CONEXION{
     }
 
     public function queryUpdateDepartamento(){
-        $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_area_fk`='".$this->getIdAreaFk()."',`estatus`='".$this->getEstatus()."' WHERE `id_departamento`='".$this->getIdDepartamento()."'";
+        $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_plantel_fk`='".$this->getIdPlantelFk()."',`estatus`='".$this->getEstatus()."' WHERE `id_departamento`='".$this->getIdDepartamento()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

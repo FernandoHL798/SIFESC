@@ -3,7 +3,7 @@
               <div class="modal fade" id="Asig_Modal_Alum" tabindex="-1" aria-labelledby="Modal_Asig_Alum" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <form id="frm_m_a_alumno" name="frm_m_a_alumno">
+                    <form id="frm_m_a_alumno">
                     <div class="modal-header">
                       <h5 class="modal-title" id="Modal_Asig_Alum">Agregar Alumno</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -53,7 +53,7 @@
                 <div class="mb-4">
                   <div class="mt-3 mb-2"></div>
             <div class="form-floating">
-              <select class="form-select mb-4" id="estatus">
+              <select class="form-select mb-4" id="estatus" name="estatus">
                 <option hidden=""></option>
                 <option value="1">Activo</option>
                 <option value="2">Baja temporal por semestre</option>

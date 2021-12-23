@@ -1,5 +1,5 @@
 <?php 
-include_once"../control/controlUsuario.php";
+include_once"../control/controlAlumno.php";
 $params=[
 	"cuentaAlumno"=>$_POST['num_cuenta'],
 	"nombre"=>$_POST['nombre_alumno'],
