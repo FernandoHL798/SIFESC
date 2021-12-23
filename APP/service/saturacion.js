@@ -12,12 +12,16 @@ function periodo(peri){
         type: 'POST',
         data : {    },
         success: function (response) {
+            if($("#idPlan").val()>0){
             //Convertimos el string a JSON
             let PERIODOS = JSON.parse(response);
                 $("#periodo").html("Periodo: "+PERIODOS[0].periodo+" || ");
                 peri= PERIODOS[0].periodo;
                 detallesSaturacion(peri);
+            }else{
+                $("#periodo").html("AUN NO HAS SELECCIONADO O NO TIENES ASIGNADO UN PLAN DE ESTUDIOS, REVISA EN MIS CARRERAS PARA CONTINUAR");
             }
+        }
         });
 }
 
@@ -28,10 +32,13 @@ $.ajax({
         data : {  idPlan: $("#idPlan").val()    },                           
         success: function (response) {            
             //Convertimos el string a JSON
+        if($("#idPlan").val()>0){
             let CARRERA = JSON.parse(response);
             CARRERA.forEach(carrera=> {
                 $("#carrera").html("Carrera: "+CARRERA[0].nombre+" || ");
             });
+        }else{
+        }
         }
         
     });
@@ -48,6 +55,7 @@ function detallesSaturacion(peri){
         },
         success: function (response) {
              //COnvertimos el string a JSON
+             if($("#idPlan").val()>0){
            let SATURACIONES = JSON.parse(response);  
             let template="";
             let cont=0;
@@ -102,6 +110,6 @@ function detallesSaturacion(peri){
             $("#tbl-asignaciones").html(template);
             $("#idPlanAlum").html("Plan de estudios: "+$("#idPlan").val());
         }
-        
+        }
     });
 }
