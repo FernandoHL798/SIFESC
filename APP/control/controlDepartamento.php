@@ -11,7 +11,7 @@ function insertDepartamento($params){
     $DEPARTAMENTO = new DEPARTAMENTO();
     $DEPARTAMENTO->setIdDepartamento($params['id_departamento']);
     $DEPARTAMENTO->setNombre($params['nombre']);
-    $DEPARTAMENTO->setIdAreaFk($params['id_area_fk']);
+    $DEPARTAMENTO->setIdPlantelFk($params['id_plantel_fk']);
     $DEPARTAMENTO->setEstatus($params['estatus']);
     return $DEPARTAMENTO->queryInsertDepartamento($params);
 }
@@ -21,7 +21,7 @@ function updateDepartamento($params){
     $DEPARTAMENTO = new DEPARTAMENTO();
     $DEPARTAMENTO->setIdDepartamento($params['id_departamento']);
     $DEPARTAMENTO->setNombre($params['nombre']);
-    $DEPARTAMENTO->setIdAreaFk($params['id_area_fk']);
+    $DEPARTAMENTO->setIdPlantelFk($params['id_plantel_fk']);
     $DEPARTAMENTO->setEstatus($params['estatus']);
     return $DEPARTAMENTO->queryUpdateDepartamento();
 }
