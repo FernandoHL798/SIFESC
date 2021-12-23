@@ -82,7 +82,7 @@ function editarAsignatura(idAsignatura,clave,nombre,semestre,creditos,caracter){
 }
 
 function actualizarasignatura(){
-       $("#frm_modal_edit_asignatura").on("submit", function(e){
+    $("#frm_modal_edit_asignatura").on("submit", function(e){
     //var f = $(this);
     var formData = new FormData(document.getElementById("frm_modal_edit_asignatura"));
     //formData.append("dato", "valor");

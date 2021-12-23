@@ -94,8 +94,7 @@ class ASIGNACION extends CONEXION{
     }
 
     public function queryUpdateAsignacion(){
-        $query="UPDATE `asignacion` SET `id_usuarioprofesor_fk` = '".$this->getIdUsuarioProfesorFk()."',
-         `id_grupo_fk` = '".$this->getIdGrupoFk()."', `cupo` = '".$this->getCupo()."', 
+         $query="UPDATE `asignacion` SET `cupo` = '".$this->getCupo()."',
          `updated_at` = current_timestamp() WHERE `asignacion`.`id_asignacion` = '".$this->getIdAsignacion()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);

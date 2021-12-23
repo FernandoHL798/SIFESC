@@ -61,10 +61,11 @@ include_once "./includes/header.php";?>
                 </div>
             <div id="contenido">
                 <input type="hidden" name="idPlanSat" id="idPlanSat" value="<?php echo $idPlan;?>">
+                <!--<input type="text" name="usuario" id="usuario" value="<?php //echo  $_SESSION['id_usuario']?>"> -->
                 <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%" >
                     <thead>
                         <tr class="text-center">
-                            <th style="width: 100px;">Asig</th>
+                            <th style="width: 100px;">Clave asig</th>
                             <th style="width: 400px;">Nombre</th>
                             <th style="width: 106px;">Gpo</th>
                             <th style="width: 70px;">Sem</th>
@@ -72,7 +73,7 @@ include_once "./includes/header.php";?>
                             <th style="width: 93px;">Cup</th>
                             <th style="width: 70px;">In</th>
                             <th style="width: 140px;">Acciones</th>
-                        </tr>
+                            </tr>
                     </thead>
                     <tbody id="tbl-saturacion-asignaciones">
                     <!------------Ajax -------------------->   

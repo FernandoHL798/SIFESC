@@ -1,53 +1,55 @@
 <!-- Modal Editar SATURACION-->
-              <div class="modal fade" id="Edit_Modal" tabindex="-1" aria-labelledby="Modal_Edit" aria-hidden="true">
+              <div class="modal fade" id="Edit-Sat-Modal" tabindex="-1" aria-labelledby="Edit-Sat-Modal" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <form id="frm-edit-saturacion">
+                    <form id="frm-edit-saturacion-prof">
                     <div class="modal-header">
                       <h5 class="modal-title" id="Modal_Edit">Editar asignatura</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                      <div class="mt-3 mb-2"></div>
+                    <div class="form-group" id="actual-pass-group">
+                    <div class="form-group">
+                        <input type="hidden" id="idusuario_sat" name="idusuario_sat" placeholder="ID Usuario" class="form-control" style="height: 45px" disabled>
+                        <input type="hidden" id="idasignacion_sat" name="idasignacion_sat" placeholder="ID Asignacion" class="form-control" style="height: 45px" disabled>
+                    </div>
+                    </div>
                     <div class="mt-3 mb-2"></div>
                     <div class="form-group" id="actual-pass-group">
                     <div class="form-group">
-                        <input type="text" placeholder="Clave de la asignatura:" class="form-control" style="height: 60px" disabled>
+                      <label for="clave_asignatura_sat">Clave:</label>
+                        <input type="text" id="clave_asignatura_sat" name="clave_asignatura_sat" placeholder="Clave de la asignatura:" class="form-control" style="height: 45px" disabled>
                     </div>
                     </div>
-                      
+                    <div class="mt-3 mb-2"></div>
+                    <div class="form-group" id="actual-pass-group">
+                    <div class="form-group">
+                      <label for="nombre_sat">Nombre:</label>
+                        <input type="text" id="nombre_sat" name="nombre_sat" placeholder="Nombre de la asignatura" class="form-control" style="height: 45px" disabled>
+                    </div>
+                    </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">
-                        <input type="text" placeholder="Nombre de la asignatura" class="form-control" style="height: 60px" disabled>
-                      </div>
-                      <div class="mt-3 mb-2"></div>
-                      <div class="form-group" id="password-group">
+                        <label for="semestre_sat">Semestre:</label>
                         <div class="form-floating">
-                                <select class="form-select" id="floatingSelect" id="edit-saturacion" name="edit-saturacion">
-                                    <option hidden=""></option>
-                                    <option value="1">1102</option>
-                                    <option value="2">2102</option>
-                                    <option value="3">3102</option>
-                                </select>
-                                    <label for="floatingSelect"><font SIZE=3.5>Grupo:</font></label>
+                                <input type="text" id="semestre_sat" name="semestre_sat" placeholder="Semestre:" class="form-control" style="height: 45px" disabled>
+                        <div class="mt-3 mb-2"></div>
                         </div>
                         <div class="mt-3 mb-2"></div>
-                              
+                        <label for="grupo_sat">Grupo:</label>
                         <div class="form-floating">
-                                <select class="form-select" id="floatingSelect" id="edit-saturacion2" name="edit-saturacion2" disabled>
-                                    <option hidden=""></option>
-                                    <option value="1">3</option>
-                                    <option value="2">5</option>
-                                    <option value="3">7</option>
-                                </select>
-                                    <label for="floatingSelect"><font SIZE=3.5>Semestre:</font></label>
+                                <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 45px" id="grupo_sat" name="grupo_sat" disabled>
                         </div>
                         <div class="mt-3 mb-2"></div>
                               <div class="form-group">
-                                <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 60px" id="edit-saturacion3" name="edit-saturacion3" disabled>
+                                <label for="creditos_sat">Creditos:</label>
+                                <input type="text" placeholder="Numero de creditos:" class="form-control" style="height: 45px" id="creditos_sat" name="creditos_sat" disabled>
                               </div>
                               <div class="mt-3 mb-2"></div>
                               <div class="form-group">
-                                <input type="text" placeholder="Cupo:" class="form-control" style="height: 60px" id="edit-saturacion4" name="edit-saturacion4">
+                                <label for="cupo_sat">Saturacion:</label>
+                                <input type="number" min="0" placeholder="Cupo:" class="form-control" style="height: 45px" id="cupo_sat" name="cupo_sat">
                               </div>
                         </div>
                     

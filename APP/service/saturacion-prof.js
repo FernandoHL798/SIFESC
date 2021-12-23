@@ -62,10 +62,10 @@ function detallesSaturacionPlan(peri){
                                 <td data-label="Se">${saturacion.semestre}</td>
                                 <td data-label="Cr">${saturacion.creditos}</td>
                                 <td data-label="Cup">${saturacion.cupo}</td>
-                                <td data-label="In">${saturacion.inscritos}</td>
+                                <td data-label="In" type="hidden">${saturacion.inscritos}</td>
                                 <td data-label="Acciones">
-                                <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
+                                <button type="button" title="Editar Asignatura" class="btn btn-success" onclick="editarSaturacion('${saturacion.id_asignacion}','${saturacion.codigo}','${saturacion.nombre}','${saturacion.nombre_grupo}','${saturacion.semestre}','${saturacion.creditos}','${saturacion.cupo}');"><i class='bx bxs-pencil'></i></button>
+                                <!--<button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button> -->
                             </td>
                             </tr> `;
                 }else{if(cont==(tamañoSaturacion)-1){
@@ -79,8 +79,8 @@ function detallesSaturacionPlan(peri){
                                 <td data-label="Cup">${saturacion.cupo}</td>
                                 <td data-label="In">${saturacion.inscritos}</td>
                                 <td data-label="Acciones">
-                                <button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button>
-                                <button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button>   
+                                <button type="button" title="Editar Asignatura" class="btn btn-success" onclick="editarSaturacion('${saturacion.id_asignacion}','${saturacion.codigo}','${saturacion.nombre}','${saturacion.nombre_grupo}','${saturacion.semestre}','${saturacion.creditos}','${saturacion.cupo}');"><i class='bx bxs-pencil'></i></button>
+                                <!--<button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button> -->
                             </td>
                             </tr> `;
                 }else{
@@ -94,16 +94,19 @@ function detallesSaturacionPlan(peri){
                                 <td data-label="Cr">${saturacion.creditos}</td>
                                 <td data-label="Cup">${saturacion.cupo}</td>
                                 <td data-label="In">${saturacion.inscritos}</td>
-                                <td data-label="Acciones"><button type="button" title="Editar Asignatura" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal"><i class='bx bxs-pencil'></i></button><button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button></td>
+                                <td data-label="Acciones">
+                                <button type="button" title="Editar Asignatura" class="btn btn-success" onclick="editarSaturacion('${saturacion.id_asignacion}','${saturacion.codigo}','${saturacion.nombre}','${saturacion.nombre_grupo}','${saturacion.semestre}','${saturacion.creditos}','${saturacion.cupo}');"><i class='bx bxs-pencil'></i></button>
+                                <!--<button type="button" title="Eliminar Asignatura" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_asig_plan"><i class='bx bx-trash'></i></button> -->
+                                </td>
                             </tr> <tr class="text-center">
-                            <th style="width: 100px;">Asig</th>
-                            <th style="width: 400px;">Nombre</th>
-                            <th style="width: 106px;">Gpo</th>
-                            <th style="width: 70px;">Sem</th>
-                            <th style="width: 70px;">Cr</th>
-                            <th style="width: 93px;">Cup</th>
-                            <th style="width: 70px;">In</th>
-                            <th style="width: 140px;">Acciones</th>
+                            <th style="width: 100px;">CLAVE ASIG</th>
+                            <th style="width: 400px;">NOMBRE</th>
+                            <th style="width: 106px;">GPO</th>
+                            <th style="width: 70px;">SEM</th>
+                            <th style="width: 70px;">CR</th>
+                            <th style="width: 93px;">CUP</th>
+                            <th style="width: 70px;">IN</th>
+                            <th style="width: 140px;">ACCIONES</th>
                             </tr>`;
                         }}}
             });
@@ -112,4 +115,47 @@ function detallesSaturacionPlan(peri){
         }
         
     });
+}
+
+function editarSaturacion(idasignacion, codigo, nombre, grupo, semestre, creditos, cupo){
+   $('#Edit-Sat-Modal').modal('show');
+   let id_usuario= $("#idUsuario").val();
+   //Todas las variables que se pueden editar en el modal
+   $("#idusuario_sat").val(id_usuario);
+   $("#clave_asignatura_sat").val(codigo);
+   $("#idasignacion_sat").val(idasignacion);
+   $("#nombre_sat").val(nombre);
+   $("#grupo_sat").val(grupo);
+   $("#semestre_sat").val(semestre);
+   $("#creditos_sat").val(creditos);
+   $("#cupo_sat").val(cupo);
+   console.log(id_usuario);
+
+    $("#frm-edit-saturacion-prof").on("submit", function(e){
+    //var f = $(this);
+    var formData = new FormData(document.getElementById("frm-edit-saturacion-prof"));
+    //formData.append("dato", "valor");
+    formData.append("idAsignacionSat", $("#idasignacion_sat").val());
+    formData.append("cupo", $("#cupo_sat").val());
+    console.log(cupo);
+    $.ajax({
+        url: "../webhook/modifica_asignacion.php",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+        .done(function(res){
+        //Ocultar modal, resetear form y cargar lista
+        console.log(res);
+        $("#frm-edit-saturacion-prof").trigger('reset');
+        $("#Edit-Sat-Modal").modal('hide');
+        periodo();
+        
+        });
+    e.preventDefault();
+});
+
 }

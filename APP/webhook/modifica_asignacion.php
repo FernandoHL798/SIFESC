@@ -1,11 +1,8 @@
 <?php 
 include_once"../control/controlAsignacion.php";
 $params=[
-	"id_asignacion"=>"1",
-	"id_usuarioprofesor_fk"=>"1",
-	"id_grupo_fk"=>"1",
-	"id_periodo_fk"=>"1",
-	"cupo"=>"25"
+	"id_asignacion"=>$_POST['idAsignacionSat'],
+	"cupo"=>$_POST['cupo']
 ];
 $result=updateAsignacion($params);
 echo $result;
