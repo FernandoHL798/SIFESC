@@ -20,7 +20,7 @@ include_once "./includes/header.php";?>
                         </a>
                     </div>
                     <div>
-                        <h3 id="head3" class="text-center">Planteles FESC</h3>
+                        <h3 id="head3" class="text-center">Planteles</h3>
                     </div>
                     <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
                     <div class="widget_clock">
@@ -44,7 +44,8 @@ include_once "./includes/header.php";?>
             <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                 <thead>
                     <tr class="text-center">
-                        <th style="width: 100px;">Nombre Plantel.</th>
+                        <th style="width: 50px;">Clave</th>
+                        <th style="width: 100px;">Nombre Plantel</th>
                         <th style="width: 100px;">Acciones</th>
 
                     </tr>

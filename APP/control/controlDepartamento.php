@@ -13,7 +13,7 @@ function insertDepartamento($params){
     $DEPARTAMENTO->setNombre($params['nombre']);
     $DEPARTAMENTO->setIdAreaFk($params['id_area_fk']);
     $DEPARTAMENTO->setEstatus($params['estatus']);
-    return $DEPARTAMENTO->queryInsertDepartamento();
+    return $DEPARTAMENTO->queryInsertDepartamento($params);
 }
 
 function updateDepartamento($params){
@@ -26,9 +26,9 @@ function updateDepartamento($params){
     return $DEPARTAMENTO->queryUpdateDepartamento();
 }
 
-function deleteDepartamento($idDepartamento){
+function deleteDepartamento($idDepartamento,$estatus){
     include_once "../model/DEPARTAMENTO.php";
     $DEPARTAMENTO = new DEPARTAMENTO();
     $DEPARTAMENTO->setIdDepartamento($idDepartamento);
-    return $DEPARTAMENTO->queryDeleteDepartamento();
+    return $DEPARTAMENTO->queryDeleteDepartamento($estatus);
 }
