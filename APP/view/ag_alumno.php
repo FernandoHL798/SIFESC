@@ -26,7 +26,7 @@ include_once "./includes/header.php";?>
                             </a>
                         </div>
                         <div>
-                            <h3 id="head3" class="text-center">Agregar Alumno<br>--ADJUNTAR TURNO-- <br>PLAN DE ESTUDIO</h3>
+                            <h3 id="head3" class="text-center">Agregar Alumno<br>PLAN DE ESTUDIO</h3>
                         </div>
                         <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
                         <div class="widget_clock">
@@ -54,9 +54,19 @@ include_once "./includes/header.php";?>
                             </button>
                         </div>
                     </div>
+                        <div class="mt-3 mb-2"></div>
+                        <div class="form-floating col-3" >
+                            <select class="form-select mb-4" id="turno">
+                                <option value="0">Todos</option>
+                                <option value="1">Matutino</option>
+                                <option value="2">Vespertino</option>
+                            </select>
+                            <label for="estatus"><font SIZE=3>Seleccione Turno</font></label>
+                        </div>
+
                     <input type="hidden" name="idPlanAlumnos" id="idPlanAlumnos" value="<?php echo $idPlan; ?>" >
                     <div class="input-group mb-1 mt-4">
-                        <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Buscar alumno...">
+                        <input class="form-control col-6 light-table-filter" data-table="order-table" type="text" placeholder="Buscar alumno...">
                     </div>
                 </div>
 
@@ -71,6 +81,7 @@ include_once "./includes/header.php";?>
                             <th style="width: 120px;">Teléfono</th>
                             <th style="width: 120px;">Fecha de nacimiento</th>
                             <th style="width: 100px;">Generación</th>
+                            <th style="width: 100px;">Estatus</th>
                             <th style="width: 140px;">Acciones</th>
                         </tr>
                     </thead>

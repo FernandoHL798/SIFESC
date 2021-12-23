@@ -52,7 +52,7 @@ function insertUsuario($params){
     include_once "../model/USUARIO.php";
     $USUARIOS= new USUARIO();
     //FUNCION GENERADORA DE ID
-    $USUARIOS->setIdUsuario($params['id_usuario']);
+    $USUARIOS->setIdUsuario($params['cuenta']);
     $USUARIOS->setCuentaAdministrador($params['cuentaAdministrador']);
     $USUARIOS->setCuentaAlumno($params['cuentaAlumno']);
     $USUARIOS->setCuentaProfesor($params['cuentaProf']);

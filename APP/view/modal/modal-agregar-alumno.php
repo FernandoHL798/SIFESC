@@ -9,6 +9,11 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                      <div class="mt-3 mb-2"></div>
+                        <div class="input-group">
+                          <input type="text" placeholder="Introduzca un RFC o número de cuenta" class="form-control" style="height: 60px; width: 250px;" id="buscar_admin" name="buscar_admin"><span class="input-group-addon"><button style="height: 60px;" id="add_admin" name="add_admin" type="button" class= "btn btn-primary">Buscar</button></span>
+                          <h8 class="modal-title" id="Modal_Ag_Aadmin">              Usuario no encontrado</h8>  
+                      </div>
                     <div class="mt-3 mb-2"></div>
                     <div class="form-group" id="actual-pass-group">
                     <div class="form-group">
@@ -41,20 +46,27 @@
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="password-group">
                         <input type="text" placeholder="Teléfono:" class="form-control" style="height: 60px" id="telefono" name="telefono">
-                      </div>
-                      <div class="mt-3 mb-2"></div>
-                      <div class="form-group" id="password-group">
-                
-                
+                      </div>       
                 <div class="mt-3 mb-2"></div>
                 <div class="form-group" id="">
                         <input type="text" placeholder="Generación: " class="form-control" style="height: 60px" id="generacion" name="generacion">
-                </div>
-
-            </div>  
+                <div class="mb-4">
+                  <div class="mt-3 mb-2"></div>
+            <div class="form-floating">
+              <select class="form-select mb-4" id="estatus">
+                <option hidden=""></option>
+                <option value="1">Activo</option>
+                <option value="2">Baja temporal por semestre</option>
+                <option value="3">Baja temporal por año</option>
+                <option value="4">Baja total</option>
+                <option value="5">Titulado</option>
+              </select>
+              <label for="estatus"><font SIZE=3>Seleccione estatus</font></label>
+            </div>
+            </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
                   </div>
                 </div>
                </form>

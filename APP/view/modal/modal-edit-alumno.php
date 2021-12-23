@@ -37,18 +37,23 @@
             <div class="form-group" id="password-group">
               <input type="text" placeholder="Teléfono:" class="form-control" style="height: 60px" id="telefono" name="telefono">
             </div>
-            <div class="mt-3 mb-2"></div>
-            <div class="form-group" id="password-group">
-              
-              
-              
               <div class="mt-3 mb-2"></div>
                 <div class="form-group" id="">
                         <input type="text" placeholder="Generación: " class="form-control" style="height: 60px" id="generacion" name="generacion">
                 </div>
-
+                <div class="mb-4">
+                  <div class="mt-3 mb-2"></div>
+            <div class="form-floating">
+              <select class="form-select mb-4" id="estatus">
+                <option hidden=""></option>
+                <option value="1">Activo</option>
+                <option value="2">Baja temporal por semestre</option>
+                <option value="3">Baja temporal por año</option>
+                <option value="4">Baja total</option>
+                <option value="5">Titulado</option>
+              </select>
+              <label for="estatus"><font SIZE=3>Seleccione estatus</font></label>
             </div>
-
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-primary">Guardar</button>
