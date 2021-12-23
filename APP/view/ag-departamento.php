@@ -1,4 +1,12 @@
-<?php include_once "./includes/session_verify.php";?>
+<?php include_once "./includes/session_verify.php";
+$idPlantel ="";
+if (!isset($_GET['idPlantel'])){
+    echo "<script>location.href ='javascript:history.back()';</script>";
+}
+else{
+    $idPlantel = $_GET['idPlantel'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php $titulo="Departamentos | SIFESC";
@@ -20,7 +28,7 @@ include_once "./includes/header.php";?>
                         </a>
                     </div>
                     <div>
-                        <h3 id="head3" class="text-center">Departamentos FESC</h3>
+                        <h3 id="head3" class="text-center">Departamentos</h3>
                     </div>
                     <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
                     <div class="widget_clock">
@@ -37,11 +45,12 @@ include_once "./includes/header.php";?>
                         <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->      
                     </div>
                 </div>    
-                <p class="text-center mb-3">Agrega los departamentos existentes de la FESC.</p>
+                <p class="text-center mb-3">Aquí podrás visualizar los departamentos de este plantel.</p>
                 <div class="d-grid gap-2 col-3 mx-auto">
+                    <input type="text" id="idPlantel" name="idPlantel" value="<?php echo $idPlantel;?>">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#depto_Modal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Add_depto_Modal">
                             Agregar Departamento
                         </button>
                     </div>

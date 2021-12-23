@@ -47,7 +47,7 @@ include_once "./includes/header.php";?>
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px;">Clave</th>
-                        <th style="width: 100px;">Nombre Carrera</th>
+                        <th style="width: 100px;">Nombre Plan de estudios</th>
                         <th style="width: 100px;">Acciones</th>      
                     </tr>
                 </thead>

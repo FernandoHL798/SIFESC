@@ -1,10 +1,10 @@
 <?php 
 include_once"../control/controlDepartamento.php";
 $params=[
-	"id_departamento"=>"1",//$_POST['']
-	"nombre"=>"Matematicas",
+	"id_departamento"=>"135",//$_POST['']
+	"nombre"=>"MECANICA DE ARRANCONES",
 	"id_area_fk"=>"1",
-	"estatus"=>""
+	"estatus"=>"1"
 ];
 $result=insertDepartamento($params);
 echo $result;

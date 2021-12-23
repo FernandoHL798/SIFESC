@@ -74,8 +74,8 @@ class DEPARTAMENTO extends CONEXION{
         return $resultado;
     }
 
-    public function queryInsertDepartamento(){
-        $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_area_fk`, `estatus`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdAreaFk()."','".$this->getEstatus()."')";
+    public function queryInsertDepartamento($params){
+        $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_area_fk`, `estatus`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdAreaFk()."','".$params['estatus']."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -90,8 +90,8 @@ class DEPARTAMENTO extends CONEXION{
         return $resultado;
     }
 
-    public function queryDeleteDepartamento(){
-        $query="DELETE FROM `departamentos` WHERE `id_departamento`='".$this->getIdDepartamento()."'";
+    public function queryDeleteDepartamento($estatus){
+        $query="UPDATE `departamentos` SET `estatus`='".$estatus."' WHERE `id_departamento`='".$this->getIdDepartamento()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

@@ -66,9 +66,9 @@ include_once "./includes/header.php";?>
                                         LICENCIADO EN Informática
                                     </div>
                                 </th>
-                                <th colspan="4">CLAVE:
+                                <th colspan="6">CLAVE:
                                     <div class="datos_personales">
-                                        1119 - LICENCIADO EN INFORMÁTICA
+                                        1119
                                     </div>
                                 </th>
                             </tr>
@@ -83,7 +83,7 @@ include_once "./includes/header.php";?>
                                         450
                                     </div>
                                 </th>
-                                <th colspan="1">CRÉDITOS OPTATIVAS:
+                                <th colspan="3">CRÉDITOS OPTATIVAS:
                                     <div class="datos_personales">
                                         80
                                     </div>
@@ -101,6 +101,7 @@ include_once "./includes/header.php";?>
                                 <th>SEMESTRE</th>
                                 <th>CRÉDITOS</th>
                                 <th>CARÁCTER</th>
+                                <th>ESTATUS</th>
                                 <th>GRUPOS</th>
                                 <th>AGREGA GRUPOS</th>
                                 <th>ACCIÓN</th>

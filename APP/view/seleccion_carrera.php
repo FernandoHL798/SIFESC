@@ -71,13 +71,6 @@ include_once "./includes/header.php";?>
             </tbody>
         </table>
 
-        <div class="d-grid gap-2 col-3 mx-auto">
-            <div class="modal-content">
-                <!-- Button trigger modal -->
-                <button type="submit" class="btn btn-primary">Consultar</button>
-            </div>
-        </div>
-
 <!-- Se utiliza para darle espacio al final de la tabla -->
 <div class="mt-3 mb-2"></div>
 <div class="d-grid gap-2 col-3 mx-auto">

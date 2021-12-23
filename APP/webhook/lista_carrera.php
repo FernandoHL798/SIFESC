@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlCarrera.php";
-$result=consultaCarrera();
+$idPlan=$_POST['idPlan'];
+$result=consultaCarrera($idPlan);
 echo $result;

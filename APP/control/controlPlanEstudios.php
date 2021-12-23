@@ -22,7 +22,7 @@ function updatePlan($params){
     $PLAN->setMinimoMaterias($params['minimo_materias']);
     $PLAN->setMaximoMaterias($params['maximo_materias']);
     $PLAN->setEstatus($params['estatus']);
-    return $PLAN->queryUpdatePlan();
+    return $PLAN->queryUpdatePlan($params);
 }
 
 function insertPlan($params){

@@ -68,8 +68,9 @@ class CARRERA extends CONEXION{
     }
 
     
-    public function queryconsultaCarrera(){
-        $query="SELECT `id_carrera`,`id_area_fk`, `clave`, `nombre`, `updated_at`, `created_at` FROM `carrera`";
+    public function queryconsultaCarrera($idPlan){
+        $filtro = $idPlan>0 ? " AND p.id_plan=".$idPlan : "";
+        $query="SELECT c.id_carrera,c.id_area_fk,c.clave,c.nombre,c.updated_at,c.created_at FROM `carrera` c, `plandeestudios` p WHERE c.id_carrera=p.id_carrera_fk".$filtro;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

@@ -6,7 +6,7 @@ $(document).ready(function(){
       formData.append("dato", "valor");
       $.ajax({
           url: "../webhook/add_planestudios.php",
-          type: "post",
+          type: 'POST',
           dataType: "html",
           data: formData,
           cache: false,
@@ -16,11 +16,11 @@ $(document).ready(function(){
           .done(function(res){
           console.log(res);
           $("#frm_m_a_plan_estudios").trigger('reset');
-          $("#modal-plandeestudios").modal('hide');
+          $("#Agrega_Plan").modal('hide');
           listaProfesores();
           });
 
-      e.preventDefault();
+
   });
 
   });

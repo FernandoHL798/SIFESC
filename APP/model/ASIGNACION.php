@@ -85,7 +85,7 @@ class ASIGNACION extends CONEXION{
 
     public function queryconsultaAsignacion($id_plan,$idAsignatura,$Periodo){ 
         $filtro = $idAsignatura>0 ? "AND g.id_asignatura_fk =".$idAsignatura : "";
-        $filtroPer = $Periodo>0 ? "AND per.periodo =".$Periodo : "";
+        $filtroPer = $Periodo>0 ? "AND per.periodo ='".$Periodo."'" : "";
         $query="SELECT c.nombre, per.periodo, asi.id_asignatura, asi.nombre,asi.creditos, asi.semestre, asi.caracter, asi.codigo, g.nombre_grupo, a.cupo, a.id_asignacion, a.inscritos  FROM `asignacion` a, `grupos` g, `asignaturas` asi, `carrera` c, `periodo` per, `plantel_carrera` plc, `plantel` p, `plandeestudios` plan where a.id_grupo_fk=g.id_grupo AND g.id_asignatura_fk=asi.id_asignatura AND plc.id_carrera_fk=c.id_carrera AND per.id_periodo=a.id_periodo_fk AND plc.id_plantel_fk=p.id_plantel AND plan.id_plan=asi.id_plan_fk AND plan.id_carrera_fk=c.id_carrera AND asi.id_plan_fk=".$id_plan." ".$filtro." ".$filtroPer." ORDER BY g.nombre_grupo";
         $this->connect();
         $resultado = $this->getData($query);
