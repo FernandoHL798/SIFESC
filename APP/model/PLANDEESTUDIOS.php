@@ -270,7 +270,7 @@ class PLANDEESTUDIOS extends CONEXION{
     }
 
     public function queryConsultaAsignaturasPlan($idPlan){
-        $query="SELECT asi.id_asignatura ,asi.codigo,asi.semestre,asi.creditos,asi.caracter, asi.nombre FROM `asignaturas` asi, plandeestudios plan WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan=".$idPlan;
+        $query="SELECT asi.id_asignatura ,asi.codigo,asi.semestre,asi.creditos,asi.caracter, asi.nombre, asi.estatus FROM `asignaturas` asi, plandeestudios plan WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan=".$idPlan;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

@@ -13,22 +13,27 @@
                       <div class="mt-3 mb-2"></div>
                   <div class="form-group" id="actual-pass-group">
                       <div class="form-group">
-                          <input type="number" placeholder="Clave:" class="form-control" style="height: 60px" id="clave_asignatura" name="clave_asignatura">
+                        <label for="clave_asignatura">Clave:</label>
+                          <input type="number" placeholder="Clave:" class="form-control" style="height: 45px" id="clave_asignatura" name="clave_asignatura">
                       </div>
                       </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
-                          <input type="text" placeholder="Nombre de la asignatura:" class="form-control" style="height: 60px" id="nom_asignatura" name="nom_asignatura">
+                          <label for="nom_asignatura">Nombre de la asignatura:</label>
+                          <input type="text" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura" name="nom_asignatura">
                         </div>
                         <div class="mt-3 mb-2"></div>
                           <div class="form-group">
-                          <input type="number" placeholder="Semestre:" class="form-control" style="height: 60px" id="semestre" name="semestre">
+                          <label for="semestre">Semestre:</label>
+                          <input type="number" placeholder="Semestre:" class="form-control" style="height: 45px" id="semestre" name="semestre">
                       </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
-                          <input type="number" placeholder="Créditos:" class="form-control" style="height: 60px" id="creditos" name="creditos">
+                          <label for="creditos">Creditos:</label>
+                          <input type="number" placeholder="Créditos:" class="form-control" style="height: 45px" id="creditos" name="creditos">
                         </div>
                         <div class="mt-3 mb-2"></div>
+                        <label for="caracter">Caracter:</label>
                           <div class="form-floating">
                             <select class="form-select" id="caracter" name="caracter">
                                 <option hidden=""></option>
@@ -37,10 +42,11 @@
                             </select>
                                 <label for="caracter"><font SIZE=3>Carácter:</font></label>
                           </div>
-                          <div class="mt-3 mb-2"></div>
+                          <!--<div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
-                          <input type="text" placeholder="Grupos:" class="form-control" style="height: 60px" id="grupos" name="grupos">
-                        </div>
+                          <label for="grupos">Grupos:</label>
+                          <input type="text" placeholder="Grupos:" class="form-control" style="height: 45px" id="grupos" name="grupos">
+                        </div>-->
                       </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
