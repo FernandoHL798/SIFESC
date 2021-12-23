@@ -54,20 +54,22 @@ include_once "./includes/header.php";?>
                             </button>
                         </div>
                     </div>
-                        <div class="mt-3 mb-2"></div>
-                        <div class="form-floating col-3" >
-                            <select class="form-select mb-4" id="turno">
+
+                    <input type="hidden" name="idPlanAlumnos" id="idPlanAlumnos" value="<?php echo $idPlan; ?>">
+                    <div class="row col-10 mx-auto">
+                    <div class="input-group mb-1 mt-4">
+                        <input class="form-control light-table-filter" style="height: 58px;" data-table="order-table" type="text" placeholder="Buscar alumno..."><span class="input-group-addon">
+                            
+                            <div class="form-floating" style="margin-left: 25px; width: 280px; " >
+                            <select class="form-select mb-4"id="turno">
                                 <option value="0">Todos</option>
                                 <option value="1">Matutino</option>
                                 <option value="2">Vespertino</option>
                             </select>
                             <label for="estatus"><font SIZE=3>Seleccione Turno</font></label>
-                        </div>
-
-                    <input type="hidden" name="idPlanAlumnos" id="idPlanAlumnos" value="<?php echo $idPlan; ?>" >
-                    <div class="input-group mb-1 mt-4">
-                        <input class="form-control col-6 light-table-filter" data-table="order-table" type="text" placeholder="Buscar alumno...">
+                        </div></span>
                     </div>
+                </div>
                 </div>
 
                 <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
