@@ -73,3 +73,9 @@ function updateProfesor($params){
     }
     return false;
 }
+
+function consultaProfesorDepartamento($idDepartamento){
+    include_once "../model/PROFESOR.php";
+    $PROFESOR = new PROFESOR();
+    return json_encode($PROFESOR->queryConsultaProfesorDepartamento($idDepartamento));
+}
