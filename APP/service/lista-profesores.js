@@ -1,8 +1,39 @@
+$(document).ready(function(){
+    listaProfesores();
+ $("#frm-edit_profesor").on("submit", function(e){
+    //var f = $(this);
+    var formData = new FormData(document.getElementById("frm-edit_profesor"));
+    //formData.append("dato", "valor");
+    formData.append("dato","valor");
+    $.ajax({
+        url: "../webhook/modifica_profesordepartamento.php",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+        .done(function(res){
+        //Ocultar modal, resetear form y cargar lista
+        console.log(res);
+        $("#frm-edit_profesor").trigger('reset');
+        $("#modal_edit_Prof").modal('hide');
+        listaProfesores();
+        
+        });
+    e.preventDefault();
+});
+
+});
+
+
 function listaProfesores(){                         /* NOMBRO COMO QUIERA */
     $.ajax({
-        url: "../webhook/lista_profesor.php",       /* NOMBRE DEL WEBHOOK DEL MICRO SERVICIO A UTILIZAR */
+        url: "../webhook/lista-profesores-departamento.php",       /* NOMBRE DEL WEBHOOK DEL MICRO SERVICIO A UTILIZAR */
         type: 'POST',                               /*  */
-        data : {       },                           /*Es para mandar los valores para traer un registro en especifico idUsuario: $('#idUsuario').val()*/
+        data : {  idDepartamento : $("#idDepartamento").val()
+             },                           /*Es para mandar los valores para traer un registro en especifico idUsuario: $('#idUsuario').val()*/
         success: function (response) {              /*  */
             //Convertimos el string a JSON
             console.log(response);
@@ -16,7 +47,7 @@ function listaProfesores(){                         /* NOMBRO COMO QUIERA */
             PROFESORES.forEach(profesor=> {         /* "profesor" se nombra como sea */   
                                                     /* los datos tienen que ser de la base de datos  */
 
-                template += `<tr class="text-center" idProfesor="${profesor.usuario_id_fk}">      
+                template += `<tr class="text-center" idProfesor="${profesor.id_usuario}">      
                                 <td data-label="Clave">${profesor.cuenta_profesor}</td>
                                 <td data-label="Nombre">${profesor.nombre}</td>
                                 <td data-label="Apellido P">${profesor.primer_apellido}</td>
@@ -25,8 +56,8 @@ function listaProfesores(){                         /* NOMBRO COMO QUIERA */
                                 <td data-label="Correo">${profesor.fecha_nacimiento}</td>
                                 <td data-label="Tel">${profesor.telefono}</td>
                                 <td data-label="Acciones">
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" onclick="eliminaProfesor(${profesor.usuario_id_fk});"><i class='bx bx-trash'></i></button> 
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Modal_P"><i class='bx bxs-pencil'></i></button> 
+                                    <button type="button" class="btn btn-danger" onclick="eliminaProfesor(${profesor.id_usuario});"><i class='bx bx-trash'></i></button> 
+                                    <button type="button" class="btn btn-success"  onclick="editarProfesor(${profesor.id_usuario},'${profesor.cuenta_profesor}', '${profesor.nombre}' ,'${profesor.primer_apellido}', '${profesor.segundo_apellido}', '${profesor.correo}', '${profesor.fecha_nacimiento}', '${profesor.telefono}');"><i class='bx bxs-pencil'></i></button> 
                                 </td>
                             </tr>`;    
             });
@@ -38,6 +69,20 @@ function listaProfesores(){                         /* NOMBRO COMO QUIERA */
 
 /*  TERMINA LA LISTA .......................................................................................................................*/
 
+/* FUNCION PARA EDITAR ..........................................................................................................*/
+function editarProfesor(idUsuario,cuenta_profesor, nombre, primer_apellido, segundo_apellido, correo, fecha_nacimiento, telefono){
+    $('#Edit_Modal_P').modal('show');
+    console.log(idUsuario);
+    //VARIABLES QUE SE PUEDEN EDITAR EN EL MODAL
+    $("#id_usuario_edit").val(idUsuario);
+    $("#rfc_edit").val(cuenta_profesor);
+    $("#nombre_profesor_edit").val(nombre);
+    $("#app_edit").val(primer_apellido);
+    $("#apm_edit").val(segundo_apellido);
+    $("#correo_edit").val(correo);
+    $("#fechaNacimiento_edit").val(fecha_nacimiento);
+    $("#telefono_edit").val(telefono);
+}
 
 /*  FUNCION PARA ELIMINAR .......................................................................................................................*/
 function eliminaProfesor(idProf){

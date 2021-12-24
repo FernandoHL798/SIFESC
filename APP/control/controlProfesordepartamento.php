@@ -14,6 +14,13 @@ function updateEstatusProfesordepartamento($params){
     return $PROFESORDEP->queryUpdateEstatusProfesordepartamento();
 }
 
+function updateProfesordepartamento($params){
+    include_once "../model/PROFESORDEPARTAMENTO.php";
+    $PROFESORDEP = new PROFESORDEPARTAMENTO();
+
+    return $PROFESORDEP->queryUpdateEstatusProfesordepartamento();
+}
+
 function insertProfesordepartamento($params){
     include_once "../model/PROFESORDEPARTAMENTO.php";
     $PROFESORDEP = new PROFESORDEPARTAMENTO();

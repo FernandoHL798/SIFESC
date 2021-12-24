@@ -1,4 +1,12 @@
-<?php include_once "./includes/session_verify.php";?>
+<?php include_once "./includes/session_verify.php";
+$idDepartamento = "";
+if (!isset($_GET['idDepartamento'])){
+    echo "<script>location.href ='javascript:history.back()';</script>";
+}
+else{
+    $idDepartamento = $_GET['idDepartamento'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php $titulo="Agrega Profesor | SIFESC";
@@ -41,6 +49,7 @@ include_once "./includes/header.php";?>
                             <h3 id="head3" class="text-center">Departamento</h3>
                             <h4 id="head3" class="text-center">0011 || Departamento de Informática</h4>
                         </div>
+                        <input type="hidden" id="idDepartamento" name="idDepartamento" value="<?php echo $idDepartamento;?>">
                         <div class="d-grid gap-2 col-3 mx-auto"></div>
 
                         <div class="mt-3 mb-2"></div>
@@ -99,6 +108,7 @@ include_once "./includes/header.php";?>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
     <script src="../service/add-profesor.js"></script>
+    <script src="../service/lista-profesores.js"></script>
 
 
 

@@ -5,4 +5,5 @@ $params=[
 	"estatus"=> "1",
 	"id_departamento_fk"=>"1"
 ];
+
 echo updateProfesordepartamento($params);
