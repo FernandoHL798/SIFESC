@@ -54,3 +54,22 @@ function deleteProfesor($idUsuario){
     $PROFESOR->setIdUsuarioFk($idUsuario);
     return $PROFESOR->queryDeleteProfesor();
 }
+function updateProfesor($params){
+    include_once "../model/PROFESOR.php";
+    $PROFESOR = new PROFESOR();
+    //Setear datos del usuario
+    $PROFESOR->setIdUsuario($params['idUsario']);
+    $PROFESOR->setCuentaProfesor($params['rfc']);
+    $PROFESOR->setNombre($params['nombre']);
+    $PROFESOR->setPrimerApellido($params['app']);
+    $PROFESOR->setSegundoApellido($params['apm']);
+    $PROFESOR->setCorreo($params['correo']);
+    $PROFESOR->setFechaNacimiento($params['fecha_nacimiento']);
+    $PROFESOR->setTelefono($params['telefono']);
+    $obj_user= $PROFESOR->queryUpdateUsuario();
+    //Si la actualizacion en el usuario es correcta, entoncese actualizamos el profesor
+    if($obj_user){
+        return $PROFESOR->queryUpdateProfesor($params[/*Id del usuario que es el mismo del profesor */]);
+    }
+    return false;
+}

@@ -73,4 +73,11 @@ class PROFESOR extends USUARIO{
         $this->close();
         return $resultado;
     }
+    public function queryUpdateProfesor($idProfesor){
+        $query="UPDATE `profesor` SET `updated_at`=CURRENT_TIMESTAMP() WHERE usuario_id_fk=".$idProfesor;
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
 }
