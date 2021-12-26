@@ -1,7 +1,10 @@
 <!-- Modal AGREGAR Plan de esutios  -->
+<!-- Button trigger modal -->
 
-<div class="modal fade" id="Agrega_Plan" tabindex="-1" aria-labelledby="Agrega_Plan_Modal" aria-hidden="true">
-  <div class="modal-dialog">
+
+<!-- Modal -->
+<div class="modal fade" id="modal-add-plan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
     <div class="modal-content">
       <form id="frm_m_a_plan_estudios">
         <div class="modal-header">
@@ -74,3 +77,7 @@
 </div>
 </div>
 </div>
+<!--<div class="modal fade" id="Agrega_Plan" tabindex="-1" aria-labelledby="Agrega_Plan" aria-hidden="true">
+  
+</div>
+-->

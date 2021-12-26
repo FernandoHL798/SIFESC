@@ -39,8 +39,8 @@ include_once "./includes/header.php";?>
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Agrega_Plan_Modal">
-                            Agregar Plan de Estudios
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-plan">
+                                Launch demo modal
                         </button>
                     </div>
                 </div>
@@ -64,47 +64,7 @@ include_once "./includes/header.php";?>
                     </tr>
                 </thead>
                 <tbody id="tbl-plan-estudios">
-                    <tr class="text-center">
-                        <td data-label="Clave">0017</td>
-                        <td data-label="Nombre">
-                        Informática</td>
-                        <td data-label="Duración">9</td>
-                        <td data-label="Limite de Inscr. por periodo">8</td>
-                        <td data-label="Creditos Oblig.">359</td>
-                        <td data-label="Creditos Opt.">72</td>
-                        <td data-label="Creditos Tot.">431</td>
-                        <td data-label="Acciones">
-                            <button type="button" title="Editar Plan" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                            <button type="button" title="Eliminar Plan" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td data-label="Clave">0017</td>
-                        <td data-label="Nombre">Diseño Gráfico</td>
-                        <td data-label="Duración">9</td>
-                        <td data-label="Limite de Inscr. por periodo">8</td>
-                        <td data-label="Creditos Oblig.">359</td>
-                        <td data-label="Creditos Opt.">72</td>
-                        <td data-label="Creditos Tot.">431</td>
-
-                        <td data-label="Acciones">
-                            <button type="button" title="Editar Plan" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                            <button type="button" title="Eliminar Plan" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td data-label="Clave">0017</td>
-                        <td data-label="Nombre">Ingenieria Agricola</td>
-                        <td data-label="Duración">9</td>
-                        <td data-label="Limite de Inscr. por periodo">8</td>
-                        <td data-label="Creditos Oblig.">359</td>
-                        <td data-label="Creditos Opt.">72</td>
-                        <td data-label="Creditos Tot.">431</td>
-                        <td data-label="Acciones">
-                            <button type="button" title="Editar Plan" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Edit_Plan_Modal"><i class='bx bxs-pencil'></i></button>
-                            <button type="button" title="Eliminar Plan" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_Plan"><i class='bx bx-trash'></i></button>
-                        </td>
-                    </tr>
+                    <!-- AJAX RESPONSE -->
                 </tbody>
             </table>
             <!-- Se utiliza para darle espacio al final de la tabla -->
