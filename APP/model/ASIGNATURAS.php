@@ -158,7 +158,7 @@ class ASIGNATURA extends CONEXION{
     }
     
     public function queryconsultaAsignaturas($id_plan){
-        $query="SELECT a.id_asignatura, a.id_plan_fk, a.codigo, a.nombre, a.creditos, a.antecesor, a.sucesor, a.caracter, a.semestre, a.estatus FROM asignaturas a, grupos g, asignacion asi WHERE a.id_asignatura=g.id_asignatura_fk AND g.id_grupo=asi.id_grupo_fk AND a.id_plan_fk=".$id_plan." GROUP BY a.nombre";
+        $query="SELECT a.id_asignatura, a.id_plan_fk, a.codigo, a.nombre, a.creditos, a.antecesor, a.sucesor, a.caracter, a.semestre, a.estatus FROM asignaturas a, grupos g, asignacion asi WHERE a.id_asignatura=g.id_asignatura_fk AND g.id_grupo=asi.id_grupo_fk AND a.id_plan_fk=".$id_plan." GROUP BY a.codigo";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -179,7 +179,7 @@ class ASIGNATURA extends CONEXION{
 
     public function queryInsertAsignaturas(){
         $query="INSERT into `asignaturas`(`id_asignatura`,`id_plan_fk`,`codigo`,`nombre`,`creditos`,`antecesor`,`sucesor`,`caracter`,`semestre`,`estatus`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdAsignatura()."', '".$this->getIdPlanFk()."', '".$this->getCodigo()."', 
+        VALUES (NULL, '".$this->getIdPlanFk()."', '".$this->getCodigo()."', 
         '".$this->getNombre()."', '".$this->getCreditos()."', '".$this->getAntecesor()."', 
         '".$this->getSucesor()."', '".$this->getCaracter()."', '".$this->getSemestre()."', '1',
         current_timestamp(), current_timestamp())";
@@ -196,5 +196,12 @@ class ASIGNATURA extends CONEXION{
         $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
+    }
+    public function queryUpdateEstatusAsignatura($idAsignatura){
+         $query="UPDATE `asignaturas` SET `estatus`='1',`updated_at` = current_timestamp() WHERE `asignaturas`.`id_asignatura` = '".$idAsignatura."'";
+            $this->connect();
+            $resultado= $this->executeInstruction($query);
+            $this->close();
+            return $resultado;   
     }
 }

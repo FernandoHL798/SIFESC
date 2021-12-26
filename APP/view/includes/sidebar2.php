@@ -139,7 +139,7 @@
 
 						<div class="name-job">
 							<div class="profile_name">
-								<input type="text" name="idUsuario" id="idUsuario" value="<?php echo $_SESSION['id_usuario'] ?>">
+								<input type="hidden" name="idUsuario" id="idUsuario" value="<?php echo $_SESSION['id_usuario'] ?>">
 								<?php echo $_SESSION['usuario']." ".$_SESSION['app']." ".$_SESSION['apm'] ?>
 							</div>
 							<div class="job">
