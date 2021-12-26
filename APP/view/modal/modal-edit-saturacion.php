@@ -4,7 +4,7 @@
                   <div class="modal-content">
                     <form id="frm-edit-saturacion-prof">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="Modal_Edit">Editar asignatura</h5>
+                      <h5 class="modal-title" id="Modal_Edit">Editar cupo asignatura:</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -49,14 +49,20 @@
                               <div class="mt-3 mb-2"></div>
                               <div class="form-group">
                                 <label for="cupo_sat">Saturacion:</label>
-                                <input type="number" min="0" placeholder="Cupo:" class="form-control" style="height: 45px" id="cupo_sat" name="cupo_sat">
+                                <input type="hidden" min="0" max="100"placeholder="Cupo:" class="form-control" style="height: 45px" id="cupo_sat2" name="cupo_sat2" disabled  >
+                                <input type="number" min="0" max="100"placeholder="Cupo:" class="form-control" style="height: 45px" id="cupo_sat" name="cupo_sat" autofocus="autofocus" onfocus="this.select()" onkeydown="habilitar()" onkeyup="habilitar()">
+                                <input type="hidden" min="0" max="100"placeholder="" class="form-control" style="height: 45px" id="cupo_sat3" name="cupo_sat3" disabled  >
+                                <div class="alert alert-danger" id="sin-valor-alert">
+                                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                  <strong>¡Introduce un valor!</strong>
+                                </div>
                               </div>
                         </div>
                     
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" onclick="required()" class="btn btn-primary" id="btn-guardar">Guardar</button>
                   </div>
                   </form>
                 </div>

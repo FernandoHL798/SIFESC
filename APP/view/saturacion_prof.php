@@ -97,6 +97,9 @@ include_once "./includes/header.php";?>
 
         </div>
         <!-- JavaScripts-->
+        <script type="text/javascript">document.frm-edit-saturacion-prof.cupo_sat.focus();</script>
+
+        
         <?php include_once "./includes/js.php"; ?>
         <script src="../service/saturacion-prof.js"></script>
         <!-- Modales -->

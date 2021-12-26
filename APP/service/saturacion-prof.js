@@ -119,6 +119,8 @@ function detallesSaturacionPlan(peri){
 
 function editarSaturacion(idasignacion, codigo, nombre, grupo, semestre, creditos, cupo){
    $('#Edit-Sat-Modal').modal('show');
+   $("#btn-guardar").prop("disabled", true);
+   $("#sin-valor-alert").hide();
    let id_usuario= $("#idUsuario").val();
    //Todas las variables que se pueden editar en el modal
    $("#idusuario_sat").val(id_usuario);
@@ -128,7 +130,9 @@ function editarSaturacion(idasignacion, codigo, nombre, grupo, semestre, credito
    $("#grupo_sat").val(grupo);
    $("#semestre_sat").val(semestre);
    $("#creditos_sat").val(creditos);
+   $("#cupo_sat2").val(cupo);
    $("#cupo_sat").val(cupo);
+   $('#cupo_sat').focus().select();
    console.log(id_usuario);
 
     $("#frm-edit-saturacion-prof").on("submit", function(e){
@@ -150,6 +154,7 @@ function editarSaturacion(idasignacion, codigo, nombre, grupo, semestre, credito
         .done(function(res){
         //Ocultar modal, resetear form y cargar lista
         console.log(res);
+        $("#btn-guardar").prop("disabled", true );
         $("#frm-edit-saturacion-prof").trigger('reset');
         $("#Edit-Sat-Modal").modal('hide');
         periodo();
@@ -158,4 +163,32 @@ function editarSaturacion(idasignacion, codigo, nombre, grupo, semestre, credito
     e.preventDefault();
 });
 
+}
+
+function habilitar() {
+    let val2= $("#cupo_sat2").val();
+    let val1= $("#cupo_sat").val();
+    if (val1 != val2){
+    $("#btn-guardar").prop("disabled", false );
+    }else{
+        $("#btn-guardar").prop("disabled", true );
+    }
+    
+};
+
+function required(){
+    let val= $("#cupo_sat").val();
+    let val3= $("#cupo_sat3").val();
+    console.log ();
+    if (val == val3){
+        //alert("Introduce un valor");
+        $("#sin-valor-alert").fadeTo(2000, 500).slideUp(500, function(){
+        $("#sin-valor-alert").slideUp(500);
+    }); 
+        event.preventDefault();
+        return false;
+    }else{
+        event.currentTarget.submit();
+        return true;
+    }
 }
