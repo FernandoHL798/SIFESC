@@ -62,10 +62,7 @@
           <div class="form-group" id="">
             <input type="text" placeholder="Mínimo Materias" class="form-control" style="height: 60px" id="min_mat" name="min_mat">
           </div>
-          <div class="mt-3 mb-2"></div>
-          <div class="form-group" id="">
-            <input type="text" placeholder="Máximo Materias" class="form-control" style="height: 60px" id="max_mat" name="max_mat">
-          </div>
+
 
         </div>
       <div class="modal-footer">
