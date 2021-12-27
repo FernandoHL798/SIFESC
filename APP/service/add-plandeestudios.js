@@ -24,3 +24,27 @@ $(document).ready(function(){
   });
 
   });
+
+  window.onload = function() {
+    generateHTMLListaCarreras();
+  };
+
+
+  function generateHTMLListaCarreras(){
+    $.ajax({
+        url: "../webhook/lista-carreras.php",
+        type: 'POST',
+        data : { },
+        success: function (response) {
+            //Convertimos el string a JSON
+            let CARRERAS = JSON.parse(response);  
+            let template="";
+            console.log(CARRERAS);
+	        CARRERAS.forEach(carrera => {
+                template += `
+                `;    
+            });
+//            $("#rdo-carrera").html(template);
+            }
+    });
+  }

@@ -37,3 +37,9 @@ function deleteCarrera($idCarrera){
     $CARRERA->setIdCarrera($idCarrera);
     return $CARRERA->queryDeleteCarrera();
 }
+
+function consultaListaCarreras(){
+    include_once "../model/CARRERA.php";
+    $CARRERA = new CARRERA();
+    return json_encode($CARRERA->queryConsultaListaCarreras());
+}

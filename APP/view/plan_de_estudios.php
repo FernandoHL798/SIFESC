@@ -40,7 +40,7 @@ include_once "./includes/header.php";?>
                     <div class="modal-content">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-plan">
-                                Launch demo modal
+                                Nuevo plan de estudios
                         </button>
                     </div>
                 </div>

@@ -25,6 +25,3 @@ function carrerasAlumno(){
             }
     });
 }
-$("#carrera").change(function(){
-        alert("Cambio");
-});

@@ -111,4 +111,12 @@ class CARRERA extends CONEXION{
         $this->close();
         return $resultado;
     }
+    
+    public function queryConsultaListaCarreras(){
+        $query = "SELECT * FROM `carrera`";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
 }

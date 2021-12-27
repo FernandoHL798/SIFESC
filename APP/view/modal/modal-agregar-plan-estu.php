@@ -1,7 +1,3 @@
-<!-- Modal AGREGAR Plan de esutios  -->
-<!-- Button trigger modal -->
-
-
 <!-- Modal -->
 <div class="modal fade" id="modal-add-plan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
@@ -19,7 +15,8 @@
         </div>
         </div>
         <div class="mt-3 mb-2"></div>
-        <div class="form-group" id="">
+        <div class="form-group">
+          <!-- Akax response por select-->
             <input type="text" placeholder="Clave Carrera:" class="form-control" style="height: 60px" id="clave_carr" name="clave_carr">
         </div>
           <div class="mt-3 mb-2"></div>
