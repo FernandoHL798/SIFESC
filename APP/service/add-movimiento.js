@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    let id_inscripcion=0;
     $("#frm-add-movimiento").on("submit", function(e){
     var f = $(this);
     var formData = new FormData(document.getElementById("frm-add-movimiento"));
@@ -13,10 +14,10 @@ $(document).ready(function(){
         processData: false
     })
         .done(function(res){
-        console.log(res);
+        id_inscripcion=$("#idInscripcionAlumno").text();
         if(res!=1){
             var formData = new FormData(document.getElementById("frm_baja_asignatura_inscrip"));
-            formData.append("idInscripcion", "1");
+            formData.append("idInscripcion", $("#idInscripcionAlumno").text());
             formData.append("idAsignacion", $("#grupo").val());
             formData.append("estatus", "1");
             $.ajax({
@@ -29,15 +30,14 @@ $(document).ready(function(){
                 processData: false
             })
             .done(function(res){
-            getListaMovimientos();
-            console.log(res);
+            listaMovimientos(id_inscripcion);
             $("#frm-add-movimiento").trigger('reset');
             $("#Asig_Mat_P").modal('hide');
             });
         
     e.preventDefault();
         }else{
-            getListaMovimientos();
+            listaMovimientos(id_inscripcion);
         $("#frm-add-movimiento").trigger('reset');
         $("#Asig_Mat_P").modal('hide');
         }});

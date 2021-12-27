@@ -1,9 +1,11 @@
 $(document).ready(function(){
+    let id_inscripcion=0;
     $("#frm_baja_asignatura_inscrip").on("submit", function(e){
         var formData = new FormData(document.getElementById("frm_baja_asignatura_inscrip"));
-    formData.append("idInscripcion", "1");
+    formData.append("idInscripcion",$("#idInscripcionAlumno").text());
     formData.append("idAsignacion", $("#idAsignacion").val());
     formData.append("estatus", "2");
+    id_inscripcion=$("#idInscripcionAlumno").text();
     $.ajax({
         url: "../webhook/modifica_movimiento.php",
         type: 'POST',
@@ -14,8 +16,7 @@ $(document).ready(function(){
         processData: false
     })
         .done(function(res){
-            getListaMovimientos();
-        console.log(res);
+            listaMovimientos(id_inscripcion);
         $("#frm_baja_asignatura_inscrip").trigger('reset');
         $("#Modal_baja").modal('hide');
         });
