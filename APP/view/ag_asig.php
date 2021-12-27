@@ -63,34 +63,34 @@ include_once "./includes/header.php";?>
                             <tr>
                                 <th colspan="4">PLAN DE ESTUDIOS:
                                     <div class="datos_personales">
-                                        LICENCIADO EN Informática
+                                        <span id="nombre_plan">"></span>
                                     </div>
                                 </th>
-                                <th colspan="6">CLAVE:
+                                <th colspan="6">CLAVE PLAN DE ESTUDIOS:
                                     <div class="datos_personales">
-                                        1119
+                                        <span id="idPlanAsig_ag_asig"></span>
                                     </div>
                                 </th>
                             </tr>
                             <tr>
                                 <th colspan="2">DURACIÓN:
                                     <div class="datos_personales">
-                                        9 SEMESTRES
+                                        <span id="duracion"></span>
                                     </div>
                                 </th>
                                 <th colspan="2">CRÉDITOS OBLIGATORIOS:
                                     <div class="datos_personales">
-                                        450
+                                        <span id="cr_obl"></span>
                                     </div>
                                 </th>
                                 <th colspan="3">CRÉDITOS OPTATIVAS:
                                     <div class="datos_personales">
-                                        80
+                                        <span id="cr_opt"></span>
                                     </div>
                                 </th>
                                 <th colspan="3">CRÉDITOS TOTALES:
                                     <div class="datos_personales">
-                                        450
+                                        <span id="cr_total"></span>
                                     </div>
                                 </th>
                             </tr>
@@ -109,7 +109,7 @@ include_once "./includes/header.php";?>
                         </thead>
 
                         <tbody id="tbl-lista-asignatura">
-                            <!-- ajax lista asignatura -->
+                            <!---------------------------- ajax lista asignatura------------------->
                         </tbody>
                     </table>
                 </div>

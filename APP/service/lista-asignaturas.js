@@ -1,6 +1,7 @@
 $(document).ready(function(){
     listaplandeestudios();
     actualizarasignatura();
+    listaDatosPlan();
     $("#frm_m_a_asignatura").on("submit", function(e){
     var f = $(this);
     var formData = new FormData(document.getElementById("frm_m_a_asignatura"));
@@ -54,7 +55,7 @@ function listaplandeestudios(){
                                     <li>1003</li>
                                     <li>1051</li>
                                 </td>
-                                <td class="text-center"> <button type="button" class="btn btn-primary btn-sm col-5 mx-auto" data-bs-toggle="modal"  data-bs-target="#Edit_Modal_P"><i class='bx bxs-message-square-add'></i></button></td>
+                                <td class="text-center"><a href="./ag_grupos.php"><button type="button" class="btn btn-primary btn-sm col-5 mx-auto"><i class='bx bxs-message-square-add'></i></button></td>
                                 <td data-label="ACCIONES" class="text-center" colspan="2">
                                     <button type="button" class="btn btn-success btn-sm col-5 mx-auto" onclick="editarAsignatura(${asignatura.id_asignatura},'${asignatura.codigo}','${asignatura.nombre}',${asignatura.semestre},${asignatura.creditos},'${asignatura.caracter}');"><i class='bx bxs-pencil'></i></button>
                                     <button type="button" class="btn btn-danger btn-sm col-5" onclick="bajaAsignatura(${asignatura.id_asignatura});"><i class='bx bx-trash'></i></button>
@@ -63,7 +64,25 @@ function listaplandeestudios(){
                 }
             });
             $("#tbl-lista-asignatura").html(template);
-            
+            $("#idPlanAsig_ag_asig").html($("#idPlanAsig").val());
+        }
+    });
+}
+
+function listaDatosPlan(){
+    $.ajax({
+        url: "../webhook/lista_datos_plan.php",
+        type:'POST',
+        data : {id_plan:$("#idPlanAsig").val()},
+        success: function (response){
+            let PLANESESTUDIO =JSON.parse(response);
+            PLANESESTUDIO.forEach(planes=>{
+                $("#nombre_plan").html(PLANESESTUDIO[0].nombre_plan);
+                $("#duracion").html(PLANESESTUDIO[0].semestres+" Semestres");
+                $("#cr_obl").html(PLANESESTUDIO[0].creditos_obligatorios);
+                $("#cr_opt").html(PLANESESTUDIO[0].creditos_optativos);
+                $("#cr_total").html(PLANESESTUDIO[0].creditos_totales);
+            });
         }
     });
 }

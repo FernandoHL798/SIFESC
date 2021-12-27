@@ -57,7 +57,7 @@ include "./includes/sidebar2.php";
                 </thead>
                 <tbody id="tbl-lista-plan-asignatura">
                     <tr class="text-center">
-                        <td data-label="Clave">1119</td>
+                        <!-- <td data-label="Clave">1119</td>
                         <td data-label="Nombre">INFORMÁTICA</td>
                         <td data-label="Acciones">
                             <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a>
@@ -77,7 +77,7 @@ include "./includes/sidebar2.php";
                                 <td data-label="Acciones">
                                     <a href="./ag_asig.php"><button type="button" title="Ver Asignatura" class="btn btn-info"><i class='bx bx-show'></i></button></a> 
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
 

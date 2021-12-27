@@ -6,6 +6,12 @@ function consultaPlanes(){
     return json_encode($PLAN->queryconsultaPlan());
 }
 
+function consultaDatosPlan($idPlan){
+    include_once "../model/PLANDEESTUDIOS.php";
+    $PLAN = new PLANDEESTUDIOS();
+    return json_encode($PLAN->queryconsultaDatosPlan($idPlan));
+}
+
 function updatePlan($params){
     include_once "../model/PLANDEESTUDIOS.php";
     $PLAN = new PLANDEESTUDIOS();
