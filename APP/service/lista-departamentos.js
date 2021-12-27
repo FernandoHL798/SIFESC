@@ -6,7 +6,7 @@ function listaDepartamentos(){
 $.ajax({
         url: "../webhook/lista_departamento.php",   
         type: 'POST',                               
-        data : {       },                           
+        data : {  id_plantel: '0'     },                           
         success: function (response) {              
             //Convertimos el string a JSON
             console.log(response);
