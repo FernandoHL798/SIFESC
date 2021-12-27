@@ -39,8 +39,7 @@ include_once "./includes/header.php";?>
                 <div class="d-grid gap-2 col-3 mx-auto">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-plan">
-                                Nuevo plan de estudios
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-plan">Agregar Plan de Estudios
                         </button>
                     </div>
                 </div>
@@ -53,9 +52,14 @@ include_once "./includes/header.php";?>
                 <thead>
                     <tr class="text-center">
                         <th style="width: 50px;">Clave</th>
+                        <th style="width: 50px;">Clave carrera</th>
                         <th style="width: 100px;">Nombre</th>
                         <th style="width: 50px;">Duración</th>
                         <th style="width: 80px;">Límite inscripción por periodo</th>
+                        <th style="width: 80px;">Máximo créditos</th>
+                        <th style="width: 80px;">Mínimo créditos</th>
+                        <th style="width: 80px;">Máximo semestres</th>
+                        <th style="width: 80px;">Mínimo Materias</th>
                         <th style="width: 80px;">Créditos obligatorios</th>
                         <th style="width: 80px;">Créditos optativos</th>
                         <th style="width: 80px;">Créditos totales</th>

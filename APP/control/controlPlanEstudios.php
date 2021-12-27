@@ -20,8 +20,9 @@ function updatePlan($params){
     $PLAN->setMinimoCreditos($params['minimo_creditos']);
     $PLAN->setMaximoSemestres($params['maximo_semestres']);
     $PLAN->setMinimoMaterias($params['minimo_materias']);
+    //Preguntar a Naye
     $PLAN->setMaximoMaterias($params['maximo_materias']);
-    $PLAN->setEstatus($params['estatus']);
+    $PLAN->setEstatus("1");
     return $PLAN->queryUpdatePlan($params);
 }
 

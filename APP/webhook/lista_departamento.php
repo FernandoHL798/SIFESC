@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlDepartamento.php";
-$result=consultaDepartamento();
+$idPlantel=$_POST['id_plantel'];
+$result=consultaDepartamento($idPlantel);
 echo $result;

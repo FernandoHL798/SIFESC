@@ -66,8 +66,9 @@ class DEPARTAMENTO extends CONEXION{
         $this->tipo = $estatus;
     }
 
-    public function queryconsultaDepartamento(){
-        $query="SELECT `id_departamento`,`nombre`,`id_plantel_fk`, `estatus` FROM `departamentos`";
+    public function queryconsultaDepartamento($idPlantel){
+        $filtroPlantel= $idPlantel>0? " WHERE id_plantel_fk=".$idPlantel: "";
+        $query="SELECT `id_departamento`,`nombre`,`id_plantel_fk`, `estatus` FROM `departamentos`".$filtroPlantel;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -82,8 +83,8 @@ class DEPARTAMENTO extends CONEXION{
         return $resultado;
     }
 
-    public function queryUpdateDepartamento(){
-        $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_plantel_fk`='".$this->getIdPlantelFk()."',`estatus`='".$this->getEstatus()."' WHERE `id_departamento`='".$this->getIdDepartamento()."'";
+    public function queryUpdateDepartamento($estatus,$id_depto){
+        $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_plantel_fk`='".$this->getIdPlantelFk()."',`estatus`='".$estatus."', `id_departamento`='".$this->getIdDepartamento()."' WHERE `id_departamento`='".$id_depto."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

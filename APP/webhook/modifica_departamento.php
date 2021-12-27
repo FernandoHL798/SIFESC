@@ -1,10 +1,11 @@
 <?php 
 include_once"../control/controlDepartamento.php";
 $params=[
-	"id_departamento"=>"1",
-	"nombre"=>"Matematicas",
-	"id_plantel_fk"=>"1",
-	"estatus"=>""
+	"id_departamento"=>$_POST['clave_depto'],
+	"nombre"=>$_POST['nombre_depto'],
+	"id_plantel_fk"=>$_POST['id_plantel']
 ];
-$result=updateDepartamento($params);
+$estatus = $_POST['estatus'];
+$id_depto = $_POST['id_depto'];
+$result=updateDepartamento($params, $estatus, $id_depto);
 echo $result;
