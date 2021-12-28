@@ -115,7 +115,7 @@ include "./includes/sidebar2.php";
           </div>
 
       <div id="btnImpri" class="d-grid gap-2 col-11 mx-auto mb-4">
-        <button class="btn btn-primary" type="button" onclick="window.open('grupos_profesores_print.php')">IMPRIMIR</button>
+        <button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
 
         <!--<button class="btn btn-danger mb-5" type="button" class="btn btn-outline-success mt-1">SALIR</button>-->
       </div>
