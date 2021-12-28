@@ -1,10 +1,14 @@
 <?php
 //LFHL
 function consultaAlumno($idUsuario,$idPlan){
-   include_once "../model/ALUMNO.php";
-   $ALUMNO = new ALUMNO();
-   $result = $ALUMNO->queryConsultaAlumno($idUsuario,$idPlan);
-   return json_encode($result);
+    include_once "../model/ALUMNO.php";
+    $ALUMNO = new ALUMNO();
+    $result = $ALUMNO->queryConsultaAlumno($idUsuario,$idPlan);
+    if(count($result)>0){
+        return json_encode($result);
+    }else{
+        return false;
+    }
 }
 
 function insertAlumno($params){

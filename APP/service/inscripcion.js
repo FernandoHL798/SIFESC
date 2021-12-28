@@ -17,7 +17,9 @@ function datosAlumno(id_inscripcion){
         data : {   idUsuario: $("#idUsuario").val(),
                     idPlan: $("#idPlan").val()     },
         success: function (response) {
+            console.log(response);
             //Convertimos el string a JSON
+            if(response!=false){
             let ALUMNO = JSON.parse(response);  
             //Generamos la fecha actual con el formato Date() para poder tener la hora en la cual se esta logueando
             var hoy = new Date();
@@ -48,7 +50,6 @@ function datosAlumno(id_inscripcion){
                 document.getElementById('btnInscripciones1').style.display = 'none';
                 document.getElementById('btnInscripciones2').style.display = 'none';
                 document.getElementById('anuncio').style.display = 'block';
-                document.getElementById('noInscripcion').style.display = 'block';
                 document.getElementById('terminoInscr').style.display = 'none';
                 /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }}else{
@@ -65,7 +66,6 @@ function datosAlumno(id_inscripcion){
                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
                 id_inscripcion=ALUMNO[0].id_inscripcion;
                 document.getElementById('anuncio').style.display = 'none';
-                document.getElementById('noInscripcion').style.display = 'none';
                 credMaxim=$("#creditoMaximo").text();
                 credMinimo=ALUMNO[0].minimo_creditos;
                 listaMovimientos(id_inscripcion);
@@ -83,13 +83,22 @@ function datosAlumno(id_inscripcion){
             }else{
                 document.getElementById('terminoInscr').style.display = 'block';
                 document.getElementById('inscripcion').style.display = 'none';
-                document.getElementById('noInscripcion').style.display = 'none';
                 document.getElementById('textosInscripcion').style.display = 'none';
                 document.getElementById('btnInscripciones1').style.display = 'none';
                 document.getElementById('btnInscripciones2').style.display = 'none';
                 document.getElementById('anuncio').style.display = 'none';
             }
-     }       
+
+                document.getElementById('noInscripcion').style.display = 'none';
+     }else{
+        document.getElementById('noInscripcion').style.display = 'block';
+        document.getElementById('inscripcion').style.display = 'none';
+        document.getElementById('textosInscripcion').style.display = 'none';
+        document.getElementById('btnInscripciones1').style.display = 'none';
+        document.getElementById('btnInscripciones2').style.display = 'none';
+        document.getElementById('anuncio').style.display = 'none';
+        document.getElementById('terminoInscr').style.display = 'none';
+     }}       
     });
 
 }
@@ -108,12 +117,10 @@ function asignaturas(credito,nombres){
                 if(asignatura.semestre<="1"){
                     if(credito==68){
                         template += `
-                        <option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>
-                `;
+                        <option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;
             }else{
                 console.log(credito+"-"+asignatura.creditos);
                     if(asignatura.creditos<=credito || credito==''){
-                        
                         if(asignatura.nombre!=nombres){
                 template += `
                         <option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>
@@ -156,7 +163,7 @@ function listaMovimientos(id_inscripcion){
         success: function (response) {
             //Convertimos el string a JSON
             console.log(response);
-            let MOVIMIENTOS = JSON.parse(response);  
+            let MOVIMIENTOS = JSON.parse(response);
             console.log(MOVIMIENTOS);
             let tblMovimientos="";
             let cont=0;
