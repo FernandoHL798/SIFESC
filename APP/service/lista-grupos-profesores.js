@@ -19,7 +19,7 @@ function periodo(){
             //Convertimos el string a JSON
             let PERIODOS = JSON.parse(response);  
             let cont=0;
-            let template="";
+            let template="<option value=selecciona>Selecciona el periodo</option>";
             PERIODOS.forEach(periodo=>{
                 if(cont<5){
                     cont++;
