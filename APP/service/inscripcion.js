@@ -217,6 +217,11 @@ function listaMovimientos(id_inscripcion){
 
             });
             asignaturas(a,nombres);
+            if(c>0){
+                document.getElementById('btnInscripciones2').style.display = 'block';
+            }else{
+                document.getElementById('btnInscripciones2').style.display = 'none';
+            }
             $("#tbl-movimiento").html(tblMovimientos);
             }
         });
