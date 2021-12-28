@@ -1,12 +1,15 @@
 <?php 
 include_once "../control/controlProfesor.php";
 $params=[
-	"nombre"=> "Brenda Paola",
-	"app"=> "Gonzalez",
-	"apm"=> "Gonzalez",
-	"fecha_nacimiento"=> "26-12-1999",
-	"rfc"=> "GOBPSADAKOSA",
-	"correo"=> "fernandohlqwe@gmail.com",
-	"telefono"=> "5537091960"
+
+	"nombre"=>$_POST['nombre_profesor_ag'],
+	"app"=>$_POST['app_ag'],
+	"apm"=>$_POST['apm_ag'],
+	"fecha_nacimiento"=>$_POST['fechaNacimiento_ag'],
+	"rfc"=>$_POST['rfc_ag'],
+	"correo"=>$_POST['correo_ag'],
+	"telefono"=>$_POST['telefono_ag']
+	
 ];
-echo insertProfesor($params);
+$result = insertProfesor($params);
+echo $result;

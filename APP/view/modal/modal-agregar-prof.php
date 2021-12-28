@@ -11,33 +11,33 @@
                     <div class="mt-3 mb-2"></div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" >
-                        <input type="text" placeholder="Nombre:" class="form-control" style="height: 60px" id="nombre_profesor" name="nombre_profesor">
+                        <input type="text" placeholder="Nombre:" class="form-control" style="height: 60px" id="nombre_profesor_ag" name="nombre_profesor_ag">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="Primer Apellido:" class="form-control" style="height: 60px" id="app" name="app">
+                        <input type="text" placeholder="Primer Apellido:" class="form-control" style="height: 60px" id="app_ag" name="app_ag">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="Segundo Apellido:" class="form-control" style="height: 60px" id="apm" name="apm">
+                        <input type="text" placeholder="Segundo Apellido:" class="form-control" style="height: 60px" id="apm_ag" name="apm_ag">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
                         <label class="form-control"> Fecha Nacimiento
-                        <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaNacimiento" name="fechaNacimiento"max="2004-10-08"> 
+                        <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaNacimiento_ag" name="fechaNacimiento_ag"max="2004-10-08"> 
                       </label>
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="RFC:" class="form-control" style="height: 60px" id="rfc" name="rfc">
+                        <input type="text" placeholder="RFC:" class="form-control" style="height: 60px" id="rfc_ag" name="rfc_ag">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="Correo:" class="form-control" style="height: 60px" id="correo" name="correo">
+                        <input type="text" placeholder="Correo:" class="form-control" style="height: 60px" id="correo_ag" name="correo_ag">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
-                        <input type="text" placeholder="Telefono:" class="form-control" style="height: 60px" id="telefono" name="telefono">
+                        <input type="text" placeholder="Telefono:" class="form-control" style="height: 60px" id="telefono_ag" name="telefono_ag">
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">  

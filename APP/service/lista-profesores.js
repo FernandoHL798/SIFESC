@@ -1,12 +1,13 @@
 $(document).ready(function(){
     listaProfesores();
- $("#frm-edit_profesor").on("submit", function(e){
+ $("#frm-add-profesor").on("submit", function(e){
     //var f = $(this);
-    var formData = new FormData(document.getElementById("frm-edit_profesor"));
+    var formData = new FormData(document.getElementById("frm-add-profesor"));
     //formData.append("dato", "valor");
     formData.append("dato","valor");
+    
     $.ajax({
-        url: "../webhook/modifica_profesordepartamento.php",
+        url: "../webhook/add_profesor.php",
         type: "post",
         dataType: "html",
         data: formData,
@@ -17,8 +18,8 @@ $(document).ready(function(){
         .done(function(res){
         //Ocultar modal, resetear form y cargar lista
         console.log(res);
-        $("#frm-edit_profesor").trigger('reset');
-        $("#modal_edit_Prof").modal('hide');
+        $("#frm-add-profesor").trigger('reset');
+        $("Asig_Modal_P").modal('hide');
         listaProfesores();
         
         });

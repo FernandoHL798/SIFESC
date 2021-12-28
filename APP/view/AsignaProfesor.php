@@ -1,4 +1,12 @@
-<?php include_once "./includes/session_verify.php";?>
+<?php include_once "./includes/session_verify.php";
+$idDepartamento = "";
+if (!isset($_GET['idDepartamento'])){
+    echo "<script>location.href ='javascript:history.back()';</script>";
+}
+else{
+    $idDepartamento = $_GET['idDepartamento'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php $titulo="Asignaciones | SIFESC";
@@ -51,7 +59,7 @@ include_once "./includes/header.php";?>
             </div>
             <!-- Barra de busqueda -->
           </div>
-
+          <input type="hidden" name="idDepartamento" id="idDepartamento" value="<?php echo $idDepartamento;?>">
           <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
             <thead>
               <tr class="text-center">
@@ -63,30 +71,8 @@ include_once "./includes/header.php";?>
                 <th style="width: 140px;">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="text-center">
-                <td data-label="Id_usuarioprofesor">MALA985762HDF4LC</td>
-                <td data-label="Nombre">Maricela</td>
-                <td data-label="Apellido P">Lara</td>
-                <td data-label="Apellido M">Martinez</td>
-                <td data-label="Id_asignacion">maricela@gmail.com</td>
-                <td data-label="Acciones">
-                  <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
-                  </td>
-                </tr>
-                <tr class="text-center">
-                  <td data-label="Id_usuarioprofesor">JASO986575DJDJCL</td>
-                  <td data-label="Nombre">Mauricio</td>
-                  <td data-label="Apellido P">Jaques</td>
-                  <td data-label="Apellido M">Soto</td>
-                  <td data-label="Id_asignacion">mau@hotmail.com</td>
-                  <td data-label="Acciones">
-                    <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
+            <tbody id="tbl_lista_profesores_materias">
+                
             </tbody>
 
           </table>
@@ -103,37 +89,11 @@ include_once "./includes/header.php";?>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>
 
-
-
-    <!-- script para busqueda -->
-    <!-- Bootstrap core JavaScript
-    ==================================================
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="SIFESC/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="/js/vendor/popper.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-       (function($) {
-           $('#FiltrarContenido').keyup(function () {
-                var ValorBusqueda = new RegExp($(this).val(), 'i');
-                $('.BusquedaRapida tr').hide();
-                 $('.BusquedaRapida tr').filter(function () {
-                    return ValorBusqueda.test($(this).text());
-                  }).show();
-                    })
-          }(jQuery));
-    });
-    </script>
-
- -->
-
-
     <!-- script para busqueda -->
 
     <?php include "./modal/modal-AsignaProfesor.php"; ?>
     <?php include "./modal/modal-editAsignaProfesor.php"; ?>
     <?php include "./modal/modal-baja-asigna-prof.php"; ?>
-
-</body>
+    <script src="../service/lista-profesores-materias.js"></script>
+  </body>
 </html>

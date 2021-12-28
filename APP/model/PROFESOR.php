@@ -60,6 +60,7 @@ class PROFESOR extends USUARIO{
     public function queryInsertProfesor(){
         $query="INSERT into `profesor`(`usuario_id_fk`,`updated_at`,`created_at`,`estatus`) 
         VALUES ('".$this->getIdUsuarioFk()."',current_timestamp(),current_timestamp(), '".$this->getEstatus()."')";
+        return $query;
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
