@@ -159,6 +159,15 @@ class INSCRIPCION extends CONEXION{
         return $resultado;
     }
 
+     public function queryUpdateEstatusInscripcion(){
+        $query="UPDATE `inscripcion` SET `estatus`='".$this->getEstatus()."', `updated_at` = current_timestamp()
+         WHERE `inscripcion`.`id_inscripcion` = '".$this->getIdInscripcion()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryInsertInscripcion(){
         $query="INSERT into `inscripcion`(`id_inscripcion`,`id_usuarioalumno_fk`,`id_periodo_fk`,`fecha_inscripcion`,`hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`,`estatus`,`updated_at`,`created_at`) 
         VALUES ('".$this->getIdInscripcion()."', '".$this->getIdUsuarioAlumnoFk()."', '".$this->getIdPeriodoFk()."',

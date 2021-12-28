@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#periodo").change(function(){
             var idPeriodo=$("#periodo").val();
             consultaGruposProfesor(idPeriodo);
+            $("#perio").html(idPeriodo);
         });
     periodo();
     let Prof1=0;

@@ -113,7 +113,7 @@ include "./includes/sidebar2.php";
 			</div>
 			<div class="mt-1 mb-2">
 					<p class="mb-4">1. Tu inscripción ha quedado registrada con el folio 404084.</p>
-					<p class="mb-4">2. No es necesario que acudas a Servicios Escolares para confirmar tu inscripción, los movimientos que realizaste en Inscripciones o los que realizaste hoy en Altas y Bajas es tu inscripción definitiva, que tendrás que revisar en la página <a href="https://www.dgae-siae.unam.mx/www_gate.php">www.dgae-siae.unam.mx</a> a partir del día 28 de septiembre de 2021, cualquier aclaración o duda tendrás que acudir a la ventanilla de tu carrera antes del día 17 de octubre de 2021.</p>
+					<p class="mb-4">2. No es necesario que acudas a Servicios Escolares para confirmar tu inscripción, los movimientos que realizaste en Inscripciones o los que realizaste hoy en Altas y Bajas es tu inscripción definitiva, que tendrás que revisar en la página <a href="https://www.dgae-siae.unam.mx/www_gate.php">www.dgae-siae.unam.mx</a>, cualquier aclaración o duda tendrás que acudir a la ventanilla de tu carrera antes del día 17 de octubre de 2021.</p>
 					<p class="mb-4">3. Si requieres una constancia de inscripción (constancia de estudios), podrás tramitarla a partir del día 22 de septiembre de 2021 en la ventanilla virtual de Servicios Escolares.</p>
 			</div>
 		</div>

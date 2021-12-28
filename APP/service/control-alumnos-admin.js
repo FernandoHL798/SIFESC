@@ -1,25 +1,6 @@
 $(document).ready(function(){
     listaAlumnosPerPlan();
-    $("#frm_m_a_alumno").on("submit", function(e){
-        var f = $(this);
-        var formData = new FormData(document.getElementById("frm_m_a_alumno"));
-        formData.append("dato", "valor");
-        formData.append("idPlan", $("#idPlanAlumnos").val());
-        $.ajax({
-            url: "../webhook/add_alumnos.php",
-            type: "post",
-            dataType: "html",
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false
-        })
-            .done(function(res){
-            console.log(res);
-            listaAlumnosPerPlan();
-        });
-        e.preventDefault();
-    });
+    agregaAlumnos();
 });
 function listaAlumnosPerPlan(){
     $.ajax({
@@ -54,6 +35,7 @@ function listaAlumnosPerPlan(){
                         }
                     }
                 }
+                
                 template += `
                         <tr class="text-center">
                             <td data-label="Clave">${alumno.cuenta_alumno}</td>
@@ -78,3 +60,23 @@ function listaAlumnosPerPlan(){
     });
 }
 
+function agregaAlumnos(){
+    $("#frm_m_a_alumno").on("submit", function(e){
+    var f = $(this);
+    var formData = new FormData(document.getElementById("frm_m_a_alumno"));
+    formData.append("dato", "valor");
+    $.ajax({
+        url: "../webhook/consulta_existe_usuario.php",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+        .done(function(res){
+        console.log(res);
+    });
+    e.preventDefault();
+});
+}

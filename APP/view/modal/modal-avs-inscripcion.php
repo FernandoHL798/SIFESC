@@ -16,7 +16,7 @@
                   
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Regresar</button>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="window.location.href='./ConsultaInscripcion.php'">Aceptar</button>
+                <button type="submit" class="btn btn-success" data-bs-dismiss="modal" onclick="window.location.href='./ConsultaInscripcion.php'">Aceptar</button>
               </div>
               </form>
             </div>

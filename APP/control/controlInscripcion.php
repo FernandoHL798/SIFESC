@@ -20,6 +20,14 @@ function updateInscripcion($params){
     return $INSCRIPCION->queryUpdateInscripcion();
 }
 
+function updateEstatusInscripcion($params){
+    include_once "../model/INSCRIPCION.php";
+    $INSCRIPCION = new INSCRIPCION();
+    $INSCRIPCION->setIdInscripcion($params['id_inscripcion']);
+    $INSCRIPCION->setEstatus($params['estatus']);
+    return $INSCRIPCION->queryUpdateEstatusInscripcion();
+}
+
 function queryInsertInscripcion($params){
     include_once "../model/INSCRIPCION.php";
     $INSCRIPCION = new INSCRIPCION();
