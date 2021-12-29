@@ -2,7 +2,7 @@ $(document).ready(function(){
     if($("#idPlan").val()>0){
         let id_inscripcion=0;
         var idAsignatura=0;
-        var idGrupo=0;
+        var idAsignacion=0;
         let peri=0;
         datosAlumno(id_inscripcion);
         $("#asig_materia").change(function(){
@@ -10,8 +10,8 @@ $(document).ready(function(){
             gruposAsig(idAsignatura);
         });
         $("#grupo").change(function(){
-            idGrupo=$("#grupo").val();
-            saturacionGrupo(idAsignatura,idGrupo);
+            idAsignacion=$("#grupo").val();
+            saturacionGrupo(idAsignatura,idAsignacion);
         });
         var credMaxim=0;
         var credMinimo=0;
@@ -161,7 +161,7 @@ function gruposAsig(idAsignatura){
             htmlGrupos+=  `<option selected>Selecciona el grupo</option>`;
             ASIGNACIONES.forEach(asignacion=>{
                 htmlGrupos += `
-                        <option value="${asignacion.id_grupo}">${asignacion.nombre_grupo}</option>`;
+                        <option value="${asignacion.id_asignacion}">${asignacion.nombre_grupo}</option>`;
             });
             $("#grupo").html(htmlGrupos);
             }
@@ -264,8 +264,8 @@ function tramiteTerminado(){
 });
 }
 
-function saturacionGrupo(idAsignatura,idGrupo){
-    
+function saturacionGrupo(idAsignatura,idAsignacion){
+
     $.ajax({
         url: "../webhook/lista_asignacion_alumnos.php",
         type: 'POST',
@@ -273,7 +273,7 @@ function saturacionGrupo(idAsignatura,idGrupo){
             idPlan : $("#idPlan").val(),
             idAsignatura:idAsignatura,
             periodo: peri,
-            idGrupo: idGrupo
+            idAsignacion: idAsignacion
         },
         success: function (response) {
             console.log(response);
