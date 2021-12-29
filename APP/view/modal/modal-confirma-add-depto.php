@@ -11,11 +11,11 @@
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="actualizacion-correcta">
-              		<H5 id="msjCorrecto" style="display: none;">El Departamento se agrego correctamente</H5>
+              		<H5 id="msjCorrecto">El Departamento se agrego correctamente</H5>
               </div>
             </div>
             <div class="modal-footer">
-              <button id="ag-depto-correcto" type="button" class="btn btn-primary">Aceptar</button>
+              <button id="ag-depto-correcto" type="submit" class="btn btn-primary">Aceptar</button>
             </div>
           </form>
         </div>

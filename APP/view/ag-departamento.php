@@ -47,7 +47,7 @@ include_once "./includes/header.php";?>
                 </div>    
                 <p class="text-center mb-3">Aquí podrás visualizar los departamentos de este plantel.</p>
                 <div class="d-grid gap-2 col-3 mx-auto">
-                    <input type="text" id="idPlantel" name="idPlantel" value="<?php echo $idPlantel;?>">
+                    <input type="hidden" id="idPlantel" name="idPlantel" value="<?php echo $idPlantel;?>">
                     <div class="modal-content">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Add_depto_Modal">
@@ -86,6 +86,7 @@ include_once "./includes/header.php";?>
     <?php include "./modal/modal-agregar-depto.php"; ?>
     <?php include "./modal/modal-edit-departamento.php"; ?>
     <?php include "./modal/modal-baja-depto.php"; ?>
+    <?php include "./modal/modal-confirma-add-depto.php"; ?>
     <script src="../service/lista-plantel-dep.js"></script>
     
 </body>

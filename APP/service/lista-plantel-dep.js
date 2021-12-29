@@ -152,12 +152,13 @@ let nombre2=$('#nombre_depto_edit').val();
 
 $("#frm_m_a_departamento").on("submit", function(e){
     var f = $(this);
+    let estatus=0;
     var formData = new FormData(document.getElementById("frm_m_a_departamento"));
     formData.append("dato", "valor");
     formData.append("id_plantel", $("#idPlantel").val());
     $.ajax({
         url: "../webhook/lista-existe-departamento.php",
-        type: "post",
+        type: 'POST',
         dataType: "html",
         data: formData,
         cache: false,
@@ -166,7 +167,7 @@ $("#frm_m_a_departamento").on("submit", function(e){
     })
     .done(function(res){
         console.log(res);
-        if (res!=true) {  
+        if (res==false || res=='[{"estatus":"2"}]') {  
     $.ajax({
         url: "../webhook/add_departamento.php",
         type: "post",
@@ -194,7 +195,8 @@ $("#frm_m_a_departamento").on("submit", function(e){
             console.log(res);
             $("#frm_m_a_departamento").trigger('reset');
             $("#Add_depto_Modal").modal('hide');
-
+            $("#Modal-confirmacion-ag-depto").modal('show');
+            
         // $('#Modal-confirmacion-ag-depto').modal('show');
         // $("#frm-conf-ag-depto").on("submit", function(e){
             });
@@ -203,8 +205,8 @@ $("#frm_m_a_departamento").on("submit", function(e){
             listaDepartamentos(); 
         $("#frm_m_a_departamento").trigger('reset');
         $("#Add_depto_Modal").modal('hide');
-        alert("El registro se hizo con exito");
-        window.location.reload();
+        $("#Modal-confirmacion-ag-depto").modal('show');
+        
         }});
 }else{
     $("#existe").html("¡AVISO! El departamento ya existe");
@@ -214,22 +216,45 @@ $("#frm_m_a_departamento").on("submit", function(e){
     e.preventDefault();
 });
 
+$("#frm-conf-ag-depto").on("submit", function(e){
+    window.location.reload();
+});
+
 $('input[name=clave_depto_ag2]').bind('keypress', function(event) {
-var regex = new RegExp("^[A-Z 0-9 À-ÿ]+$");
+var regex = new RegExp("^[A-Z0-9_]*$");
 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
 if (!regex.test(key)) {
 event.preventDefault();
 return false;
 }
 });
+$('input[name=nombre_depto_ag2]').bind('keypress', function(event) {
+var regex = new RegExp("^[A-Z ]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+$('input[name=nombre_depto_edit]').bind('keypress', function(event) {
+var regex = new RegExp("^[A-Z ]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+
 $('input[name=clave_depto_edit]').bind('keypress', function(event) {
-var regex = new RegExp("^[A-Z 0-9 À-ÿ]+$");
+var regex = new RegExp("^[A-Z0-9_]*$");
 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
 if (!regex.test(key)) {
 event.preventDefault();
 return false;
 }
 });
+
+
 
 //Condicion para que no guarde campos vacios (add depto)--------------------------------
 function validar(){

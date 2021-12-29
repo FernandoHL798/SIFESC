@@ -12,13 +12,12 @@
                     <div class="mt-3 mb-2"></div>
                     <div class="form-group" id="actual-pass-group">
                     <div class="form-group">
-                        
-                        <input type="text" maxlength="15" required pattern="[0-0]{1}[1-4]{1}[0-9]{2}[A-Z 0-9 À-ÿ]{11}" placeholder="Clave de departamento:" class="form-control" style="height: 60px" id="clave_depto_ag2" name="clave_depto_ag2" title="Los primeros 2 numeros deben ser acorde al area (01-04) luego 2 numeros aleatorios y despues letras (11)." onkeyup="validar()" onkeydown="validar()">
+                        <input type="text" maxlength="15" pattern="[0-0]{1}[1-4]{1}[0-9]{2}[A-Z À-ÿ_]{1,}" ng-pattern="/^[a-zA-Z0-9]*$/" placeholder="Clave de departamento:" class="form-control" style="height: 60px" id="clave_depto_ag2" name="clave_depto_ag2" title="Los primeros 2 numeros deben ser acorde al area (01-04) luego 2 numeros aleatorios y despues letras (11). Solo acepta mayusculas" onkeyup="validar()" onkeydown="validar()">
                     </div>
                     </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
-                        <input type="text" maxlength="30" placeholder="Nombre del departamento:" class="form-control" style="height: 60px" id="nombre_depto_ag2" name="nombre_depto_ag2" onkeyup="validar()" onkeydown="validar()" >
+                        <input type="text" maxlength="30" pattern="[A-Z À-ÿ]{1,}"  placeholder="Nombre del departamento:" class="form-control" style="height: 60px" id="nombre_depto_ag2" name="nombre_depto_ag2" title="Solo puede introducir letras mayusculas" onkeyup="validar()" onkeydown="validar()" >
                       </div>
                       
                       <div class="mt-3 mb-1">
