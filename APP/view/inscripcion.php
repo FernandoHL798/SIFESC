@@ -53,7 +53,7 @@ include_once "./includes/header.php";?>
                                                 <th colspan="1">Numero de cuenta:
                                                     <div class="datos_personales">
                                                         <span id="cuenta_alumno"></span>
-                                                        <span id="idInscripcionAlumno"></span>
+                                                        <input type="hidden" id="idInscripcionAlumno"></input>
                                                     </div>
                                                 </th>
                                                 <th colspan="3">Nombre:
