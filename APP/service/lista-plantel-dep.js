@@ -215,7 +215,15 @@ $("#frm_m_a_departamento").on("submit", function(e){
 });
 
 $('input[name=clave_depto_ag2]').bind('keypress', function(event) {
-var regex = new RegExp("^[A-Z 0-9]+$");
+var regex = new RegExp("^[A-Z 0-9 À-ÿ]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+$('input[name=clave_depto_edit]').bind('keypress', function(event) {
+var regex = new RegExp("^[A-Z 0-9 À-ÿ]+$");
 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
 if (!regex.test(key)) {
 event.preventDefault();

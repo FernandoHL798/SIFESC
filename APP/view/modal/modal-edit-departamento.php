@@ -13,7 +13,7 @@
                     <div class="form-group" id="actual-pass-group">
                     <div class="form-group">
                       <input type="hidden" class="form-control" disabled="" id="clave_edit2" name="clave_edit2">
-                        <input type="text" maxlength="15" required pattern="[0-0]{1}[1-4]{1}[0-9]{2}[a-z A-Z À-ÿ]{11}" placeholder="Clave de departamento:" class="form-control" style="height: 60px" id="clave_depto_edit" name="clave_depto_edit" title="Los primeros 2 numeros deben ser acorde al area (01-04) luego 2 numeros aleatorios y despues letras (11)." onkeyup="verificar()" onkeydown="verificar()">
+                        <input type="text" maxlength="15" required pattern="[0-0]{1}[1-4]{1}[0-9]{2}[A-Z 0-9 À-ÿ]{11}" placeholder="Clave de departamento:" class="form-control" style="height: 60px" id="clave_depto_edit" name="clave_depto_edit" title="Los primeros 2 numeros deben ser acorde al area (01-04) luego 2 numeros aleatorios y despues letras (11)." onkeyup="verificar()" onkeydown="verificar()">
                     </div>
                     </div>
                       <div class="mt-3 mb-2"></div>
