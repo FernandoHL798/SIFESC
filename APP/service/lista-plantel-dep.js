@@ -194,12 +194,17 @@ $("#frm_m_a_departamento").on("submit", function(e){
             console.log(res);
             $("#frm_m_a_departamento").trigger('reset');
             $("#Add_depto_Modal").modal('hide');
+
+        // $('#Modal-confirmacion-ag-depto').modal('show');
+        // $("#frm-conf-ag-depto").on("submit", function(e){
             });
-        
-        }else{
+        }
+        else{
             listaDepartamentos(); 
         $("#frm_m_a_departamento").trigger('reset');
         $("#Add_depto_Modal").modal('hide');
+        alert("El registro se hizo con exito");
+        window.location.reload();
         }});
 }else{
     $("#existe").html("¡AVISO! El departamento ya existe");
@@ -209,6 +214,14 @@ $("#frm_m_a_departamento").on("submit", function(e){
     e.preventDefault();
 });
 
+$('input[name=clave_depto_ag2]').bind('keypress', function(event) {
+var regex = new RegExp("^[A-Z 0-9]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
 
 //Condicion para que no guarde campos vacios (add depto)--------------------------------
 function validar(){
