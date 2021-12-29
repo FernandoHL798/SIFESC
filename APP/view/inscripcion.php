@@ -85,7 +85,7 @@ include_once "./includes/header.php";?>
                                                 </th>
                                                 <th colspan="2">Periodo :
                                                     <div class="datos_personales">
-                                                        <span id="Periodo"></span>Ejemplo de periodo
+                                                        <span id="Periodo"></span>
                                                     </div>
                                                 </th>
 

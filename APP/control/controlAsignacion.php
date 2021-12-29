@@ -6,6 +6,12 @@ function consultaAsignacion($id_plan,$idAsignatura,$Periodo){
  return json_encode($ASIGNACION->queryconsultaAsignacion($id_plan,$idAsignatura,$Periodo));
 }
 
+function consultaAlumnoAsignacion($params){
+ include_once "../model/ASIGNACION.php";
+ $ASIGNACION = new ASIGNACION();
+ return json_encode($ASIGNACION->queryconsultaAlumnoAsignacion($params));
+}
+
 function updateAsignacion($params){
     include_once "../model/ASIGNACION.php";
     $ASIGNACION = new ASIGNACION();
