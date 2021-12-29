@@ -6,15 +6,16 @@
         <div class="modal-dialog">
           <div class="modal-content">
              <form id="frm_baja_deptos">
-              <input type="text" id="idDepartamento" name="idDepartamento">
+              <input type="hidden" id="nombre_depto" name="nombre_depto"><br>
+              <input type="hidden" id="idDepartamento" name="idDepartamento">
               <div class="modal-header">
-                <h5 class="modal-title" id="Modal_b">ADVERTENCIA</h5>
+                <h5 class="modal-title" id="Modal_b">ADVERTENCIA </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="Edit_plan_grup">
-              		<H5>¿Esta seguro que desea dar de baja este departamento?</H5>
+              		<H5>¿Esta seguro que desea dar de baja el departamento "<span id="nombre_depto_el"></span>" ?</H5>  
               </div>
             </div>
             <div class="modal-footer">

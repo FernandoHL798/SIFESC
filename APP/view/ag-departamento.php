@@ -69,8 +69,7 @@ include_once "./includes/header.php";?>
 
                     </tr>
                 </thead>
-                <tbody id="tbl-departamentos">
-                    
+                <tbody id="tbl-departamentos2">
                 </tbody>
             </table>
             <!-- Se utiliza para darle espacio al final de la tabla -->

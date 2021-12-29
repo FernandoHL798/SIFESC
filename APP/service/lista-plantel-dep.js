@@ -1,7 +1,10 @@
 $(document).ready(function(){
     listaplantelesdep();
     listaDepartamentos();
-    //tblDeptoEstatus();
+    tblDeptoEstatus();
+    var myInput = document.getElementById("clave_depto_ag2");
+    var length = document.getElementById("length");
+    var d;
     
 });
 /* LISTA PLANTELES -------------------------*/
@@ -45,7 +48,7 @@ $.ajax({
                             <td id="nombre_depto" data-label="Nombre">${departamento.nombre}</td>
                             <td data-label="Acciones">
                                 <button type="submit" title="Editar departamento" class="btn btn-success" onclick="editarDepart('${departamento.id_departamento}','${departamento.nombre}');"><i class='bx bxs-pencil'></i></button>
-                                <button type="submit" title="Elimina departamento" class="btn btn-danger" onclick="eliminaDepto('${departamento.id_departamento}');" ><i class='bx bx-trash'></i></button>
+                                <button type="submit" title="Elimina departamento" class="btn btn-danger" onclick="eliminaDepto('${departamento.id_departamento}','${departamento.nombre}');" ><i class='bx bx-trash'></i></button>
                                 </td>
                             </tr>`;    
             });
@@ -54,9 +57,12 @@ $.ajax({
     }); 
 }
 //ELIMINA DEPARTAMENTO -------------------------------------------------------------------
-function eliminaDepto(id_departamento){
+function eliminaDepto(id_departamento, nombre){
     $("#Modal_baja_depto").modal('show');
     $("#idDepartamento").val(id_departamento);
+    $("#nombre_depto").val(nombre);
+    $("#nombre_depto_el").html($("#nombre_depto").val());
+    console.log(nombre);
    $("#frm_baja_deptos").on("submit", function(e){
 
     var f = $(this);
@@ -87,10 +93,12 @@ function eliminaDepto(id_departamento){
 
 // EDITA DEPARTAMENTO -------------------------------------------------------------------
 function editarDepart(id_departamento, nombre){
-   $('#depto_edit_Modal').modal('show');
+   $('#depto_edit_Modal2').modal('show');
    //Todas las variables que se pueden editar en el modal
-   $("#clave_depto").val(id_departamento);
-   $("#nombre_depto").val(nombre);
+   $("#clave_depto_edit").val(id_departamento);
+   $("#clave_edit2").val(id_departamento);
+   $("#nombre_depto_edit").val(nombre);
+   $("#nombre_edit2").val(nombre);
     $("#frm_m_edit_departamento").on("submit", function(e){
     //var f = $(this);
     var formData = new FormData(document.getElementById("frm_m_edit_departamento"));
@@ -111,19 +119,54 @@ function editarDepart(id_departamento, nombre){
         //Ocultar modal, resetear form y cargar lista
         console.log(res);
         $("#frm_m_edit_departamento").trigger('reset');
-        $("#depto_edit_Modal").modal('hide');
-        listaDepartamentos();        
+        $("#depto_edit_Modal2").modal('hide');
+        listaDepartamentos();
+        window.location.reload();        
         });
     e.preventDefault();
 });
 }
+//Condicion de que si no se ah modificado no dejara guardar (modal edit)----------------------
+function verificar(){
+
+let clave1=$('#clave_edit2').val();
+let clave2=$('#clave_depto_edit').val();
+let nombre1=$('#nombre_edit2').val();
+let nombre2=$('#nombre_depto_edit').val();
+
+    if(clave1==clave2 && nombre1==nombre2){
+                
+                $("#BtnEditDepto").prop("disabled", true);
+            }else{
+                if(clave2=='' || nombre2==''){
+                
+                $("#BtnEditDepto").prop("disabled", true);
+            }else{
+                $("#BtnEditDepto").prop("disabled", false);
+            }
+            }                  
+}
+
 
 //AGREGA DEPARTAMENTO -----------------------------------------------------
+
 $("#frm_m_a_departamento").on("submit", function(e){
     var f = $(this);
     var formData = new FormData(document.getElementById("frm_m_a_departamento"));
     formData.append("dato", "valor");
     formData.append("id_plantel", $("#idPlantel").val());
+    $.ajax({
+        url: "../webhook/lista-existe-departamento.php",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+    .done(function(res){
+        console.log(res);
+        if (res!=true) {  
     $.ajax({
         url: "../webhook/add_departamento.php",
         type: "post",
@@ -136,9 +179,9 @@ $("#frm_m_a_departamento").on("submit", function(e){
         .done(function(res){
         console.log(res);
         if(res!=1){
-            
+            formData.append("estatus", "1");
             $.ajax({
-                url: "../webhook/modifica_departamento.php",
+                url: "../webhook/modifica-estatus-departamento.php",
                 type: 'POST',
                 data: formData,
                 dataType: "html",
@@ -154,18 +197,32 @@ $("#frm_m_a_departamento").on("submit", function(e){
             });
         
         }else{
-            listaDepartamentos();
+            listaDepartamentos(); 
         $("#frm_m_a_departamento").trigger('reset');
         $("#Add_depto_Modal").modal('hide');
         }});
+}else{
+    $("#existe").html("¡AVISO! El departamento ya existe");
+    $("#frm_m_a_departamento").trigger('reset');
+}
+});
     e.preventDefault();
-}); 
-
-//CONDICIONES ----------------------------------------------------------------------------
+});
 
 
-/*
+//Condicion para que no guarde campos vacios (add depto)--------------------------------
+function validar(){
+    
+let cl2=$('#clave_depto_ag2').val();
+let nom2=$('#nombre_depto_ag2').val();
 
+    if(cl2=='' || nom2==''){
+                
+                $("#BtnGuardarag").prop("disabled", true);
+            }else{
+                $("#BtnGuardarag").prop("disabled", false); 
+            }                  
+}
 
 // Condicion para estatus ------------------------------------------------------
 function tblDeptoEstatus(DEPARTAMENTOS){
@@ -180,22 +237,21 @@ $.ajax({
             let tblestausdep="";
             let cont=0;
             DEPARTAMENTOS.forEach(departamento=>{
-                if(DEPARTAMENTOS[cont].estatus==1){
+                console.log(departamento.estatus);
+                if(departamento.estatus==1){
                 tblestausdep += `
                         <tr class="text-center">
                             <td id="clave_depto" data-label="Clave">${departamento.id_departamento}</td>
                             <td id="nombre_depto" data-label="Nombre">${departamento.nombre}</td>
                             <td data-label="Acciones">
                                 <button type="submit" title="Editar departamento" class="btn btn-success" onclick="editarDepart('${departamento.id_departamento}','${departamento.nombre}');"><i class='bx bxs-pencil'></i></button>
-                                <button type="submit" title="Elimina departamento" class="btn btn-danger" onclick="eliminaDepto('${departamento.id_departamento}');" ><i class='bx bx-trash'></i></button>
-                                </td>
+                                <button type="submit" title="Elimina departamento" class="btn btn-danger" onclick="eliminaDepto('${departamento.id_departamento}','${departamento.nombre}');" ><i class='bx bx-trash'></i></button>
+                               </td>
                             </tr>
-                        `;
-                        
-                    }else{
+                        `;   
                     }
             });
-            $("#tbl-departamentos").html(tblestausdep);
+            $("#tbl-departamentos2").html(tblestausdep);
             }
         });      
 }
@@ -203,117 +259,15 @@ $.ajax({
 //Condicion para campos vacios ------------------------------------------------------------------
 
 
-//Condicion de que sean 15 caracteres los 1eros 4 numeros (el 1er numero que sea del area) y los demas letras 
-var myInputD = document.getElementById("clave_depto");
-  var letter = document.getElementById("letter");
-  var capital = document.getElementById("capital");
-  var number = document.getElementById("number");
-  var length = document.getElementById("length");
-  var a;
-  var b;
-  var c;
-  var d;
-
-// When the user starts to type something inside the password field
-myInputD.onkeyup = function() {
-  // Validate lowercase letters
-  var lowerCaseLetters = /[a-z]/g;
-  if(myInputD.value.match(lowerCaseLetters)) {  
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
-    a=1;
-  } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
-    a=0;
-  }
+//Condicion de que sean 15 caracteres los 1eros 4 numeros (los 1eros dos numeros que sea del area) y los demas letras 
   
-  // Validate capital letters
-  var upperCaseLetters = /[A-Z]/g;
-  if(myInputD.value.match(upperCaseLetters)) {  
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
-    b=1;
-  } else {
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
-    b=0;
-  }
 
-  // Validate numbers
-  var numbers = /[0-9]/g;
-  if(myInputD.value.match(numbers)) {  
-    number.classList.remove("invalid");
-    number.classList.add("valid");
-    c=1;
-  } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
-    c=0;
-  }
-  
-  // Validate length
-  if(myInputD.value.length >= 15) {
-    length.classList.remove("invalid");
-    length.classList.add("valid");
-    d=1;
-  } else {
-    length.classList.remove("valid");
-    length.classList.add("invalid");
-    d=0;
-  }
-}
-
-//Condicion de que si no se han llenado los campos del modal mande un mensaje 
-$("#frm_m_a_departamento").on("submit", function(e){
-      if(a==1 && b==1 && c==1 && d==1){
-//CONDICION DE QUE LOS CAMPOS NO DEBEN ESTAR VACIOS
-            if($('#clave_depto').val()==''){
-                alert("Entre");
-            }else{
-                var formData = new FormData(document.getElementById("frm_m_a_departamento"));
-                formData.append("clave_depto", $("#clave_depto").val());
-                formData.append("nombre_depto", $("#nombre_depto").val());
-                $.ajax({
-                  url: "../webhook/pwd-update.php",
-                  type: 'POST',
-                  data : formData,
-                  dataType: "html",
-                  cache: false,
-                  contentType: false,
-                  processData: false
-                })
-                .done(function(res){
-                  console.log(res);
-                  if(res){
-                    $("#msjCorrecto").show();
-                    $("#msjIncorrecto").hide();
-                    $("#btnConfirmarContra").trigger("click");
-                    $("#aceptar").click(function(){
-                        document.location.href = "../view/seguridad.php";
-                     });
-                  } else{
-                    $("#msjIncorrecto").show();
-                     $("#msjCorrecto").hide();
-                     $("#btnConfirmarContra").trigger("click");
-                     $("#aceptar").click(function(){
-                        $("#Modal_Cambio_Con").modal('hide');
-                     });
-                  }
-                  $("#frm_m_a_departamento").trigger('reset');
-                  $("#exampleModalLong").modal('hide');
-                });
         
-                e.preventDefault();
-   
-            } else {
-          }}else{
-            }
-});
 
-//Condicion de que si no se ah modificado nada mande un mensaje que esta igual
+           
+                
+            
 
 
-//
 
-*/
+

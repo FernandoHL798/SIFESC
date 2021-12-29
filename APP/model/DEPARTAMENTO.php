@@ -75,6 +75,15 @@ class DEPARTAMENTO extends CONEXION{
         return $resultado;
     }
 
+    public function queryconsultaExisteDepartamento($idPlantel, $nombre){
+        $filtroPlantel= $idPlantel>0? " id_plantel_fk=".$idPlantel: "";
+        $query="SELECT `estatus` FROM `departamentos` WHERE ".$filtroPlantel." AND `nombre` = '".$nombre."'";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryInsertDepartamento($params){
         $query="INSERT INTO `departamentos`(`id_departamento`, `nombre`, `id_plantel_fk`, `estatus`) VALUES ('".$this->getIdDepartamento()."','".$this->getNombre()."','".$this->getIdPlantelFk()."','".$params['estatus']."')";
         $this->connect();
@@ -85,6 +94,13 @@ class DEPARTAMENTO extends CONEXION{
 
     public function queryUpdateDepartamento($estatus,$id_depto){
         $query="UPDATE `departamentos` SET `nombre`='".$this->getNombre()."',`id_plantel_fk`='".$this->getIdPlantelFk()."',`estatus`='".$estatus."', `id_departamento`='".$this->getIdDepartamento()."' WHERE `id_departamento`='".$id_depto."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+    public function queryUpdateEstatusDepartamento($params){
+        $query="UPDATE `departamentos` SET `estatus`='".$params['estatus']."' WHERE `nombre`='".$this->getNombre()."' AND `id_plantel_fk`='".$this->getIdPlantelFk()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

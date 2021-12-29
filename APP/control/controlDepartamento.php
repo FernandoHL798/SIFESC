@@ -6,6 +6,25 @@ function consultaDepartamento($idPlantel){
     return json_encode($DEPARTAMENTO->queryconsultaDepartamento($idPlantel));
 }
 
+function consultaExisteDepartamento($idPlantel, $nombre){
+    include_once "../model/DEPARTAMENTO.php";
+    $DEPARTAMENTO = new DEPARTAMENTO();
+    $resul = $DEPARTAMENTO->queryconsultaExisteDepartamento($idPlantel, $nombre);
+    if(count($resul)>0) {
+        return json_encode($resul);
+    }else{
+        return false;
+   }    
+}
+
+function updateEstatusDepartamento($params){
+    include_once "../model/DEPARTAMENTO.php";
+    $DEPARTAMENTO = new DEPARTAMENTO();
+    $DEPARTAMENTO->setNombre($params['nombre']);
+    $DEPARTAMENTO->setIdPlantelFk($params['id_plantel_fk']);
+    return $DEPARTAMENTO->queryUpdateEstatusDepartamento($params);
+}
+
 function insertDepartamento($params){
     include_once "../model/DEPARTAMENTO.php";
     $DEPARTAMENTO = new DEPARTAMENTO();
