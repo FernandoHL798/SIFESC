@@ -37,8 +37,14 @@ function insertPeriodo($params){
 }
 
 function deletePeriodo($idPeriodo){
-include_once "../model/PERIODO.php";
+    include_once "../model/PERIODO.php";
     $PERIODO = new PERIODO();
     $PERIODO->setIdPeriodo($idPeriodo);
     return $PERIODO->queryDeletePeriodo();
+}
+//Funcion para traer el ultimo periodo en la dosificacion
+function consultaPeriodoUltimo(){
+    include_once "../model/PERIODO.php";
+    $PERIODO = new PERIODO();
+    return json_encode($PERIODO->queryConsultaPeriodoUltimo());
 }

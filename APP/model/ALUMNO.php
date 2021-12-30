@@ -55,5 +55,16 @@ class ALUMNO extends USUARIO{
         $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
+
+        SELECT us.id_usuario, us.cuenta_alumno, us.nombre AS nombre_alumno, us.primer_apellido,us.segundo_apellido, es.turno, car.nombre AS nombre_carrera FROM alumno al, usuario us, estudia es, plandeestudios plan, carrera car WHERE al.usuario_id_fk= us.id_usuario AND al.usuario_id_fk=es.id_usuarioalumno_fk AND es.id_plan_fk= plan.id_plan AND plan.id_carrera_fk= car.id_carrera AND us.id_usuario=8 AND plan.id_plan=9;
     }*/
+    public function queryConsultaAlumnoPlan($idUsuario,$idPlan){
+        $filtroUsuario= $idUsuario>0? " AND al.usuario_id_fk=".$idUsuario: "";
+        $filtroPlan= $idPlan>0 ? " AND plan.id_plan=".$idPlan : "";
+        $query="SELECT us.id_usuario, us.cuenta_alumno, us.nombre AS nombre_alumno, us.primer_apellido,us.segundo_apellido, es.turno, car.id_carrera, car.nombre AS nombre_carrera FROM alumno al, usuario us, estudia es, plandeestudios plan, carrera car WHERE al.usuario_id_fk= us.id_usuario AND al.usuario_id_fk=es.id_usuarioalumno_fk AND es.id_plan_fk= plan.id_plan AND plan.id_carrera_fk= car.id_carrera ".$filtroUsuario.$filtroPlan;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
 }

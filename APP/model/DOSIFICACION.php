@@ -111,6 +111,14 @@ class DOSIFICACION extends CONEXION{
         return $resultado;
     }
 
+    public function queryconsultaDosificacionPeriodo($idUsuario,$idPeriodo){
+        $query="SELECT dos.* FROM dosificacion dos, periodo per, alumno al WHERE per.id_periodo = dos.id_periodo_fk AND dos.id_usuarioalumno_fk=al.usuario_id_fk AND id_usuarioalumno_fk=".$idUsuario." AND per.id_periodo=".$idPeriodo;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;        
+    }
+
     
     public function queryDeleteDosificacion(){
         $query="DELETE FROM `dosificacion` WHERE `id_usuarioalumno_fk`='".$this->getIdUsuarioAlumnoFk()."' AND `id_periodo_fk`='".$this->getIdPeriodoFk()."'";

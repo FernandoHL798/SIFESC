@@ -82,3 +82,9 @@ function updateEstatusAlumno($id_Alumno,$estatus){
     $ALUMNO->setUsuarioIdFk($id_Alumno);
     return $ALUMNO->queryUpdateEstatusAlumno();
 }
+
+function consultaAlumnoPlan($idUsuario,$idPlan){
+    include_once "../model/ALUMNO.php";
+    $ALUMNO = new ALUMNO();
+    return json_encode($ALUMNO->queryConsultaAlumnoPlan($idUsuario,$idPlan));    
+}

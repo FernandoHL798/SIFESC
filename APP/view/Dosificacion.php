@@ -19,7 +19,7 @@ include "./includes/sidebar2.php";
                             </a>
                         </div>
                         <div>
-                            <h3 id="head3" class="text-center">Dosificación para el periodo 2022-I</h3>
+                            <h3 id="head3" class="text-center">Dosificación para el periodo <span id="nombre_periodo"></span></h3>
                         </div>
                         <!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
                         <div class="widget_clock">
@@ -44,19 +44,19 @@ include "./includes/sidebar2.php";
                             <tbody>
                                 <tr class=" text-center">
                                     <th style="width: 350px;">Número de cuenta</th>
-                                    <td style="width: 350px;" data-label="Asig">419068581</td>
+                                    <td style="width: 350px;" data-label="Asig"><span id="tbl-noCuenta"></span></td>
                                 </tr>
                                 <tr class=" text-center">
                                     <th style="width: 350px;">Nombre del alumno</th>
-                                    <td style="width: 350px;" data-label="Asig">Omar Romo Bautista</td>
+                                    <td style="width: 350px;" data-label="Asig"> <span id="tbl-nombreAlumno"></span> </td>
                                 </tr>
                                 <tr class=" text-center">
                                     <th style="width: 350px;">Turno</th>
-                                    <td style="width: 350px;" data-label="Asig">Matutino</td>
+                                    <td style="width: 350px;" data-label="Asig"> <span id="tbl-Turno"></span> </td>
                                 </tr>
                                 <tr class=" text-center">
                                     <th style="width: 350px;">Carrera</th>
-                                    <td style="width: 350px;" data-label="Asig">308 - Informática</td>
+                                    <td style="width: 350px;" data-label="Asig"> <span id="tbl-Carrera"></span> </td>
                                 </tr>       
                                 <tr class=" text-center">
                                     <th style="width: 350px;">Fecha de atención</th>
@@ -90,5 +90,6 @@ include "./includes/sidebar2.php";
     </div>
 <!-- JavaScripts-->
 <?php include_once "./includes/js.php"; ?>
+<script src="../service/control-dosificacion.js"></script>
 </body>
 </html>

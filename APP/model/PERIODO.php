@@ -181,4 +181,12 @@ class PERIODO extends CONEXION{
         $this->close();
         return $resultado;
     }
+    //Funcion query para traer el ultimo periodo para la dosificacion
+    public function queryConsultaPeriodoUltimo(){
+        $query="SELECT * FROM periodo ORDER BY id_periodo DESC LIMIT 1;";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;       
+    }
 }
