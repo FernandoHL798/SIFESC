@@ -11,7 +11,7 @@
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="actualizacion-correcta">
-              		<H5 id="msjCorrecto">El Departamento se agrego correctamente</H5>
+              		<H5 id="msjCorrecto">El Departamento se agregó correctamente</H5>
               </div>
             </div>
             <div class="modal-footer">
