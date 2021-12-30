@@ -167,19 +167,7 @@ $("#frm_m_a_departamento").on("submit", function(e){
     })
     .done(function(res){
         console.log(res);
-        if (res==false || res=='[{"estatus":"2"}]') {  
-    $.ajax({
-        url: "../webhook/add_departamento.php",
-        type: "post",
-        dataType: "html",
-        data: formData,
-        cache: false,
-        contentType: false,
-        processData: false
-    }) 
-        .done(function(res){
-        console.log(res);
-        if(res!=1){
+        if (res=='[{"estatus":"2"}]') {  
             formData.append("estatus", "1");
             $.ajax({
                 url: "../webhook/modifica-estatus-departamento.php",
@@ -191,28 +179,39 @@ $("#frm_m_a_departamento").on("submit", function(e){
                 processData: false
             })
             .done(function(res){
-            listaDepartamentos();
-            console.log(res);
-            $("#frm_m_a_departamento").trigger('reset');
-            $("#Add_depto_Modal").modal('hide');
-            $("#Modal-confirmacion-ag-depto").modal('show');
-            
-        // $('#Modal-confirmacion-ag-depto').modal('show');
-        // $("#frm-conf-ag-depto").on("submit", function(e){
+                listaDepartamentos();
+                console.log(res);
+                $("#frm_m_a_departamento").trigger('reset');
+                $("#Add_depto_Modal").modal('hide');
+                $("#Modal-confirmacion-ag-depto").modal('show');  
             });
+        }else if(res==false){
+            $.ajax({
+                url: "../webhook/add_departamento.php",
+                type: "post",
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false
+            }) 
+            .done(function(res){
+                console.log(res);
+                if(res!=1){
+                    $("#existe").html("¡AVISO! El departamento ya existe");
+                    $("#frm_m_a_departamento").trigger('reset');
+                }else{
+                    listaDepartamentos();
+                    $("#frm_m_a_departamento").trigger('reset');
+                    $("#Add_depto_Modal").modal('hide');
+                    $("#Modal-confirmacion-ag-depto").modal('show');
+                }
+            });
+        }else{
+            $("#existe").html("¡AVISO! El departamento ya existe");
+            $("#frm_m_a_departamento").trigger('reset');
         }
-        else{
-            listaDepartamentos(); 
-        $("#frm_m_a_departamento").trigger('reset');
-        $("#Add_depto_Modal").modal('hide');
-        $("#Modal-confirmacion-ag-depto").modal('show');
-        
-        }});
-}else{
-    $("#existe").html("¡AVISO! El departamento ya existe");
-    $("#frm_m_a_departamento").trigger('reset');
-}
-});
+    });
     e.preventDefault();
 });
 
