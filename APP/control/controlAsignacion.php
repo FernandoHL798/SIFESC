@@ -20,6 +20,14 @@ function updateAsignacion($params){
     return $ASIGNACION->queryUpdateAsignacion();
 }
 
+function updateInscritosAsignacion($params){
+    include_once "../model/ASIGNACION.php";
+    $ASIGNACION = new ASIGNACION();
+    $ASIGNACION->setIdAsignacion($params['id_asignacion']);
+    $ASIGNACION->setInscritos($params['inscritos']);
+    return $ASIGNACION->queryUpdateInscritosAsignacion();
+}
+
 function insertAsignacion($params){
     include_once "../model/ASIGNACION.php";
     $ASIGNACION = new ASIGNACION();

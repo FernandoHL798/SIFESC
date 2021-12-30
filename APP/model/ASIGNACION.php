@@ -6,6 +6,7 @@ class ASIGNACION extends CONEXION{
     private $id_grupo_fk;
     private $id_periodo_fk;
     private $cupo;
+    private $inscritos;
 
   
     /**
@@ -83,6 +84,21 @@ class ASIGNACION extends CONEXION{
         $this->cupo = $cupo;
     }
 
+     /**
+     * @return mixed
+     */
+    public function getInscritos()
+    {
+        return $this->inscritos;
+    }
+    /**
+     * @param mixed $cupo
+     */
+    public function setInscritos($inscritos): void
+    {
+        $this->inscritos = $inscritos;
+    }
+
     public function queryconsultaAsignacion($id_plan,$idAsignatura,$Periodo){ 
         $filtro = $idAsignatura>0 ? "AND g.id_asignatura_fk =".$idAsignatura : "";
         $filtroPer = $Periodo>0 ? "AND per.periodo ='".$Periodo."'" : "";
@@ -102,8 +118,15 @@ class ASIGNACION extends CONEXION{
     }
 
     public function queryUpdateAsignacion(){
-         $query="UPDATE `asignacion` SET `cupo` = '".$this->getCupo()."',
-         `updated_at` = current_timestamp() WHERE `asignacion`.`id_asignacion` = '".$this->getIdAsignacion()."'";
+         $query="UPDATE `asignacion` SET `cupo` = '".$this->getCupo()."', `updated_at` = current_timestamp() WHERE `asignacion`.`id_asignacion` = '".$this->getIdAsignacion()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryUpdateInscritosAsignacion(){
+         $query="UPDATE `asignacion` SET `inscritos` = '".$this->getInscritos()."', `updated_at` = current_timestamp() WHERE `asignacion`.`id_asignacion` = '".$this->getIdAsignacion()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

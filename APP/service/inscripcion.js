@@ -280,6 +280,8 @@ function saturacionGrupo(idAsignatura,idAsignacion){
              //COnvertimos el string a JSON
             let SATURACIONES = JSON.parse(response);  
             $("#saturacionGrupoAsig").html(SATURACIONES[0].inscritos+" inscritos de un cupo de "+SATURACIONES[0].cupo);
+            $("#ins").html(SATURACIONES[0].inscritos);
+            $("#cup").html(SATURACIONES[0].cupo);
         }
     });
 }
