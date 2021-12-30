@@ -204,4 +204,22 @@ class ASIGNATURA extends CONEXION{
             $this->close();
             return $resultado;   
     }
+
+    public function queryconsultaExixtenciaAsignatura($id_plan){
+        $query="SELECT a.id_asignatura, a.id_plan_fk, a.codigo, a.nombre, a.creditos, a.antecesor, a.sucesor, a.caracter, a.semestre, a.estatus FROM asignaturas a, grupos g, asignacion asi WHERE a.id_asignatura=g.id_asignatura_fk AND g.id_grupo=asi.id_grupo_fk AND a.id_plan_fk=".$id_plan." GROUP BY a.codigo";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
+            public function queryUpdateEstatusAsignaturasPlan($idPlan,$codigo,$estatus){
+        /*$query="SELECT asi.estatus FROM `asignaturas` asi, plandeestudios plan WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan=$idPlan AND asi.codigo=$codigo;";*/
+        $query="UPDATE`asignaturas` asi, plandeestudios plan SET  asi.estatus ='".$estatus."'  WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan='".$id_plan."' AND asi.codigo='".$codigo."'";
+        //return  $query;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
 }

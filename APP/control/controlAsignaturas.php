@@ -51,3 +51,10 @@ function deleteAsignatura($id_asignatura, $estatus){
     $result= $ASIGNATURA->queryDeleteAsignaturas($estatus);
     return $result;
 }
+
+function updateestatusasignaturaplan($idPlan,$codigo,$estatus){
+    include_once "../model/ASIGNATURAS.php";
+    $ASIGNATURA= new ASIGNATURA();
+    $result= $ASIGNATURA->queryUpdateEstatusAsignaturasPlan($idPlan,$codigo,$estatus);
+    return $result;
+}

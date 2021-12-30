@@ -14,33 +14,38 @@
                   <div class="form-group" id="actual-pass-group">
                       <div class="form-group">
                         <label for="clave_asignatura">Clave:</label>
-                          <input type="number" placeholder="Clave:" class="form-control" style="height: 45px" id="clave_asignatura" name="clave_asignatura">
+                          <input type="number" placeholder="" class="form-control" style="height: 45px" id="clave_asignatura_2" name="clave_asignatura_2" disabled>
+                          <input type="number" placeholder="Clave:" class="form-control" style="height: 45px" id="clave_asignatura_add" name="clave_asignatura_add" >
+                          <button type="submit" class="btn btn-primary" id="btnverifica" disabled>Verificar</button>
                       </div>
                       </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
                           <label for="nom_asignatura">Nombre de la asignatura:</label>
-                          <input type="text" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura" name="nom_asignatura">
+                          <input type="text" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura_add" name="nom_asignatura_add">
                         </div>
                         <div class="mt-3 mb-2"></div>
                           <div class="form-group">
                           <label for="semestre">Semestre:</label>
-                          <input type="number" placeholder="Semestre:" class="form-control" style="height: 45px" id="semestre" name="semestre">
+                          <input type="number" placeholder="Semestre:" class="form-control" style="height: 45px" id="semestre_add" name="semestre_add">
                       </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
                           <label for="creditos">Creditos:</label>
-                          <input type="number" placeholder="Créditos:" class="form-control" style="height: 45px" id="creditos" name="creditos">
+                          <input type="number" placeholder="Créditos:" class="form-control" style="height: 45px" id="creditos_add" name="creditos_add">
                         </div>
                         <div class="mt-3 mb-2"></div>
                         <label for="caracter">Caracter:</label>
                           <div class="form-floating">
-                            <select class="form-select" id="caracter" name="caracter">
+                            <select class="form-select" id="caracter_add" name="caracter_add">
                                 <option hidden=""></option>
                                 <option value="1">1 - Obligatoria</option>
                                 <option value="2">2 - Optativa</option>
                             </select>
                                 <label for="caracter"><font SIZE=3>Carácter:</font></label>
+                          </div>
+                          <div>
+                            <span class="" id="existe_asig"></span>
                           </div>
                           <!--<div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
@@ -50,7 +55,7 @@
                       </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                      <button type="submit" class="btn btn-primary">Agregar</button>
+                      <button type="submit" class="btn btn-primary" id="btnagregarasig">Agregar</button>
                     </div>
                 </form>
               </div>

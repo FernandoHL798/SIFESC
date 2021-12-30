@@ -59,8 +59,20 @@ function deletePlan($id_Plan){
     return $PLAN->queryDeletePlan();
 }
 
-function consultaAsignaturasPlan($idPlan){
+function consultaExisteAsignaturasPlan($idPlan,$codigo){
+    include_once "../model/PLANDEESTUDIOS.php";
+    $PLAN = new PLANDEESTUDIOS();
+    $result = $PLAN->queryConsultaExisteAsignaturasPlan($idPlan,$codigo);
+    if(count($result)>0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+    function consultaAsignaturasPlan($idPlan){
     include_once "../model/PLANDEESTUDIOS.php";
     $PLAN = new PLANDEESTUDIOS();
     return json_encode($PLAN->queryConsultaAsignaturasPlan($idPlan));
+
 }

@@ -3,30 +3,71 @@ $(document).ready(function(){
     actualizarasignatura();
     listaDatosPlan();
     $("#frm_m_a_asignatura").on("submit", function(e){
-    var f = $(this);
-    var formData = new FormData(document.getElementById("frm_m_a_asignatura"));
-    formData.append("dato", "valor");
-    formData.append("idPlan", $("#idPlanAsig").val());
-    $.ajax({
-        url: "../webhook/add_asignatura.php",
-        type: "post",
-        dataType: "html",
-        data: formData,
-        cache: false,
-        contentType: false,
-        processData: false
-    })
+        var f = $(this);
+        estatus=0;
+        var formData= new FormData(document.getElementById("frm_m_a_asignatura"));
+        //formData.append("dato", "valor");
+        formData.append("idPlan", $("#idPlanAsig").val());
+        formData.append("clave_asignatura", $("#clave_asignatura_add").val());
+        formData.append("nom_asignatura", $("#nom_asignatura_add").val());
+        formData.append("semestre", $("#semestre_add").val());
+        formData.append("creditos", $("#creditos_add").val());
+        formData.append("caracter", $("#caracter_add").val());
+        $.ajax({
+        url: "../webhook/lista-asignaturas-plan-consulta.php",
+        type:'POST',
+        data : {
+            id_plan:$("#idPlanAsig").val(),
+            clave_asignatura:$("#clave_asignatura_add").val()
+        }})
         .done(function(res){
         console.log(res);
-        //Ocultar modal, resetear form y cargar lista de los planes
-        console.log(res);
-        $("#frm_m_a_asignatura").trigger('reset');
-        $("#Asig_Modal_Asig").modal('hide');
-        listaplandeestudios();
-        
-        });
-    e.preventDefault();
-});
+        if(res==false|| res=='[{"estatus":"2"}]'){
+            $.ajax({
+                url: "../webhook/add_asignatura.php",
+                type: "post",
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false
+            })
+                .done(function(res){
+                console.log(res);
+                if(res!=1){
+                    formData.append("estatus", "1");
+                    $.ajax({
+                        url: "../webhook/modifica-estatus-asignatura.php",
+                        type: 'POST',
+                        data: formData,
+                        dataType: "html",
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    })
+                        .done(function(res){
+                        listaplandeestudios();
+                        console.log(res);
+                        $("#frm_m_a_asignatura").trigger('reset');
+                        $("#Asig_Modal_Asig").modal('hide');
+                        $("#Modal-confirmacion-ag-asig").modal('show');
+            });
+        }
+        else{
+            listaplandeestudios();
+            $("#frm_m_a_asignatura").trigger('reset');
+            $("#Asig_Modal_Asig").modal('hide');
+            $("#Modal-confirmacion-ag-asig").modal('show');    
+        }});
+
+            }else{
+                $("#existe_asig").html("¡AVISO! El departamento ya existe");
+                $("#frm_m_a_asignatura").trigger('reset');
+            }
+    })
+        e.preventDefault();
+    });
 
 });
 function listaplandeestudios(){
@@ -127,26 +168,60 @@ function actualizarasignatura(){
         $("#frm_modal_edit_asignatura").trigger('reset');
         $("#Edit_Modal_P").modal('hide');
         listaplandeestudios();
-        
         });
     e.preventDefault();
 });
 }
 
+//Fucion que nos permite lanzar modal y deshabilitar los inputs
+/*function verificavacio(){
+    let clave= $("#clave_asignatura").val();
+    //let clave2= $("#clave_asignatura_2").val();
+    if(clave==""){
+        $("#btnverifica").prop("disabled", true );
+        $("#btnagregarasig").prop("disabled", true );
+    }
+    $("#btnverifica").prop("disabled", false );
+}*/
 
-//Funcion quer sirve para enviar datos para agregar asignatura
-
-
-/*
-function listaplandeestudios(){
+/*function exiteasignaturaenplan(){
     $.ajax({
-        url: "../webhook/lista_planestudios.php",
+        url: "../webhook/lista-asignaturas-plan-consulta.php",
         type:'POST',
-        data : {id_plan:$("#idPlanAsig").val(},
-        success: function (response){
-            let PLANESESTUDIO =JSON.parse(response);
-            console.log(PLANESESTUDIO);
+        data : {
+            id_plan:$("#idPlanAsig").val(),
+            clave_asignatura:$("#clave_asignatura").val()
+        }})
+    .done(function(res){
+        console.log(res);
+        if(res==false){
+            return 1;
+        }else{
+            return 11;
         }
-    });
+    })
+}*/
+
+/*function verificarexiste(){
+    let clave= $("#clave_asignatura").val();
+    if(clave==''){
+        $("#btnagregarasig").prop("disabled", true );    
+    }
+    $("#btnagregarasig").prop("disabled", false );
+    var control= exiteasignaturaenplan();
+    console.log(control);
+    if(control=='1'){
+        alert("Funka");
+    }
+    event.preventDefault();
+}*/
+
+function modfunciones(){
+    $('#Asig_Modal_Asig').modal('show');
+    /*$("#btnverifica").prop("disabled", true );
+    $("#btnagregarasig").prop("disabled", true );
+    $("#nom_asignatura").prop("disabled", true );
+    $("#semestre").prop("disabled", true );
+    $("#creditos").prop("disabled", true );
+    $("#caracter").prop("disabled", true );*/
 }
-*/
