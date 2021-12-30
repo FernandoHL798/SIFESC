@@ -64,7 +64,7 @@ function consultaExisteAsignaturasPlan($idPlan,$codigo){
     $PLAN = new PLANDEESTUDIOS();
     $result = $PLAN->queryConsultaExisteAsignaturasPlan($idPlan,$codigo);
     if(count($result)>0){
-        return true;
+        return json_encode($result);
     }else{
         return false;
     }
