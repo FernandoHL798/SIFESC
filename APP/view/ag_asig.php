@@ -49,7 +49,7 @@ include_once "./includes/header.php";?>
             <input type="hidden" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
             <div class="modal-content">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal_Asig">Agregar Asignatura</button>
+                <button type="button" class="btn btn-primary" onclick="modfunciones();">Agregar Asignatura</button>
             </div>
         </div> 
         <div class="input-group mb-4 mt-4">
@@ -136,8 +136,9 @@ include_once "./includes/header.php";?>
             <script src="../service/lista-asignaturas.js"></script>
             <script src="../service/baja-asignatura.js"></script>
             <?php include "./modal/ag_asinatura.php"; ?>
-            <?php include "./modal/edit_asig.php"; ?> 
-            <?php include "./modal/modal-baja-asignatura.php"; ?> 
+            <?php include "./modal/edit_asig.php"; ?>
+            <?php include "./modal/modal-confirma-add-asig.php"; ?>
+            <?php include "./modal/modal-baja-asignatura.php"; ?>
 
 </body>
 </html>

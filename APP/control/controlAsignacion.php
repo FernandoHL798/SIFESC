@@ -6,12 +6,26 @@ function consultaAsignacion($id_plan,$idAsignatura,$Periodo){
  return json_encode($ASIGNACION->queryconsultaAsignacion($id_plan,$idAsignatura,$Periodo));
 }
 
+function consultaAlumnoAsignacion($params){
+ include_once "../model/ASIGNACION.php";
+ $ASIGNACION = new ASIGNACION();
+ return json_encode($ASIGNACION->queryconsultaAlumnoAsignacion($params));
+}
+
 function updateAsignacion($params){
     include_once "../model/ASIGNACION.php";
     $ASIGNACION = new ASIGNACION();
     $ASIGNACION->setIdAsignacion($params['id_asignacion']);
     $ASIGNACION->setCupo($params['cupo']);
     return $ASIGNACION->queryUpdateAsignacion();
+}
+
+function updateInscritosAsignacion($params){
+    include_once "../model/ASIGNACION.php";
+    $ASIGNACION = new ASIGNACION();
+    $ASIGNACION->setIdAsignacion($params['id_asignacion']);
+    $ASIGNACION->setInscritos($params['inscritos']);
+    return $ASIGNACION->queryUpdateInscritosAsignacion();
 }
 
 function insertAsignacion($params){

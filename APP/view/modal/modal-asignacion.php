@@ -20,6 +20,9 @@
 										    <select class="form-select" aria-label="Default select example" id="grupo" name="grupo">
 												 <!-- AJAX RESPONSE LISTA ALUMNO-->
 												</select><br>
+										<label id="saturacionGrupoAsig"></label>
+										<input type="hidden" id="ins"></input>
+										<input type="hidden" id="cup"></input>
 									</div>
 						        <div class="modal-footer">
 							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

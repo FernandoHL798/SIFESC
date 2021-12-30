@@ -12,17 +12,27 @@ function periodo(peri){
         type: 'POST',
         data : {    },
         success: function (response) {
-            if($("#idPlan").val()>0){
+            let cont=0;
             //Convertimos el string a JSON
             let PERIODOS = JSON.parse(response);
-                $("#periodo").html("Periodo: "+PERIODOS[0].periodo+" || ");
-                peri= PERIODOS[0].periodo;
-                detallesSaturacion(peri);
-            }else{
-                $("#periodo").html("AUN NO HAS SELECCIONADO O NO TIENES ASIGNADO UN PLAN DE ESTUDIOS, REVISA EN MIS CARRERAS PARA CONTINUAR");
-            }
+            console.log(cont);
+            PERIODOS.forEach(periodo => {
+                if($("#idPlan").val()>0){
+                    if(PERIODOS[cont].estatus==1){
+                        console.log(PERIODOS[cont].periodo);
+                        $("#periodo").html("Periodo: "+PERIODOS[cont].periodo+" || ");
+                        peri= PERIODOS[cont].periodo;
+                        detallesSaturacion(peri);
+                    }else{
+                        console.log("No agarra");
+                        cont++;
+                    }
+                }else{
+                    $("#periodo").html("AUN NO HAS SELECCIONADO O NO TIENES ASIGNADO UN PLAN DE ESTUDIOS, REVISA EN MIS CARRERAS PARA CONTINUAR");
+                }
+            });
         }
-        });
+    });
 }
 
 function listaCarreras(){
@@ -30,7 +40,8 @@ $.ajax({
         url: "../webhook/lista_carrera.php",   
         type: 'POST',                               
         data : {  idPlan: $("#idPlan").val()    },                           
-        success: function (response) {            
+        success: function (response) {
+                console.log(response);       
             //Convertimos el string a JSON
         if($("#idPlan").val()>0){
             let CARRERA = JSON.parse(response);
@@ -55,6 +66,7 @@ function detallesSaturacion(peri){
         },
         success: function (response) {
              //COnvertimos el string a JSON
+                console.log(response);
              if($("#idPlan").val()>0){
            let SATURACIONES = JSON.parse(response);  
             let template="";

@@ -284,4 +284,13 @@ class PLANDEESTUDIOS extends CONEXION{
         $this->close();
         return $resultado;
     }
+
+    public function queryConsultaExisteAsignaturasPlan($idPlan,$codigo){
+        $query="SELECT asi.estatus FROM `asignaturas` asi, plandeestudios plan WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan=$idPlan AND asi.codigo=$codigo;";
+        //return  $query;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
 }

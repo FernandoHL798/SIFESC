@@ -13,4 +13,3 @@ $params=[
 ];
 $result=insertAsignatura($params);
 echo $result;
-

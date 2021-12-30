@@ -48,6 +48,7 @@ function cambiaPlanAlumno(idPlan){
     .done(function(res){
         console.log(res);
         $("#idPlan").val(idPlan);
+        document.getElementById('idPlan').style.display = 'block';
     });
         
     

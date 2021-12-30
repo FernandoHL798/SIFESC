@@ -159,8 +159,8 @@ class INSCRIPCION extends CONEXION{
         return $resultado;
     }
 
-     public function queryUpdateEstatusInscripcion(){
-        $query="UPDATE `inscripcion` SET `estatus`='".$this->getEstatus()."', `updated_at` = current_timestamp()
+     public function queryUpdateEstatusInscripcion($params){
+        $query="UPDATE `inscripcion` SET `estatus`='".$params['estatus']."', `updated_at` = current_timestamp()
          WHERE `inscripcion`.`id_inscripcion` = '".$this->getIdInscripcion()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);

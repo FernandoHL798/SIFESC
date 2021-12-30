@@ -38,9 +38,7 @@ include_once "./includes/header.php";?>
                                     <!-- RELOJ FUNCIONAL Y BONITO ---------------------------- -->      
                                 </div>       
                             </div> 
-                            <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="anuncio" >AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN</h4></div>
-                            <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="noInscripcion" >NO GENERASTE TU INSCRIPCIÓN</h4></div>
-                            <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="terminoInscr" >YA HAS COMPLETADO TU TRAMITE</h4></div>
+                            <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="anuncio" ></h4></div>
                             <div class="mt-3 mb-2" id="textosInscripcion">
                             <h4 class="text-center mb-5" >Selecciona las asignaturas que inscribirás en este nuevo periodo</h4>
                             <p class="text-center mb-4">Para dar de alta una asignatura selecciona el botón << Agregar asignatura >> y rellena los campos requeridos.<br>
@@ -55,7 +53,7 @@ include_once "./includes/header.php";?>
                                                 <th colspan="1">Numero de cuenta:
                                                     <div class="datos_personales">
                                                         <span id="cuenta_alumno"></span>
-                                                        <span id="idInscripcionAlumno"></span>
+                                                        <input type="hidden" id="idInscripcionAlumno"></input>
                                                     </div>
                                                 </th>
                                                 <th colspan="3">Nombre:
@@ -87,7 +85,7 @@ include_once "./includes/header.php";?>
                                                 </th>
                                                 <th colspan="2">Periodo :
                                                     <div class="datos_personales">
-                                                        <span id="Periodo"></span>Ejemplo de periodo
+                                                        <span id="Periodo"></span>
                                                     </div>
                                                 </th>
 

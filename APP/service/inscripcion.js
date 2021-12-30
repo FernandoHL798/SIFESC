@@ -1,13 +1,30 @@
 $(document).ready(function(){
+    if($("#idPlan").val()>0){
         let id_inscripcion=0;
+        var idAsignatura=0;
+        var idAsignacion=0;
+        let peri=0;
         datosAlumno(id_inscripcion);
         $("#asig_materia").change(function(){
-            var idAsignatura=$("#asig_materia").val();
+            idAsignatura=$("#asig_materia").val();
             gruposAsig(idAsignatura);
+        });
+        $("#grupo").change(function(){
+            idAsignacion=$("#grupo").val();
+            saturacionGrupo(idAsignatura,idAsignacion);
         });
         var credMaxim=0;
         var credMinimo=0;
         tramiteTerminado();
+        document.getElementById('anuncio').style.display = 'none';
+    }else{
+        document.getElementById('textosInscripcion').style.display = 'none';
+        document.getElementById('btnInscripciones1').style.display = 'none';
+        document.getElementById('btnInscripciones2').style.display = 'none';
+        document.getElementById('inscripcion').style.display='none';
+        document.getElementById('anuncio').style.display = 'block';
+        $("#anuncio").html("AUN NO HAS SELECCIONADO O NO TIENES ASIGNADO UN PLAN DE ESTUDIOS, REVISA EN MIS CARRERAS PARA CONTINUAR");
+    }
 });
 
 function datosAlumno(id_inscripcion){
@@ -37,20 +54,19 @@ function datosAlumno(id_inscripcion){
                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
+                $("#Periodo").html(ALUMNO[0].periodo);
+                peri=ALUMNO[0].periodo;
                 id_inscripcion=ALUMNO[0].id_inscripcion;
-                document.getElementById('anuncio').style.display = 'none';
                 credMaxim=$("#creditoMaximo").text();
                 credMinimo=ALUMNO[0].minimo_creditos;
-                document.getElementById('noInscripcion').style.display = 'none';
                 listaMovimientos(id_inscripcion);
-                document.getElementById('terminoInscr').style.display = 'none';
             }else{
-                document.getElementById('inscripcion').style.display = 'none';
                 document.getElementById('textosInscripcion').style.display = 'none';
                 document.getElementById('btnInscripciones1').style.display = 'none';
                 document.getElementById('btnInscripciones2').style.display = 'none';
+                document.getElementById('inscripcion').style.display='none';
                 document.getElementById('anuncio').style.display = 'block';
-                document.getElementById('terminoInscr').style.display = 'none';
+                $("#anuncio").html("AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN");
                 /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }}else{
                 if(ALUMNO[0].fecha_altas_bajas==fecha){
@@ -64,40 +80,37 @@ function datosAlumno(id_inscripcion){
                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
+                $("#Periodo").html(ALUMNO[0].periodo);
+                peri=ALUMNO[0].periodo;
                 id_inscripcion=ALUMNO[0].id_inscripcion;
-                document.getElementById('anuncio').style.display = 'none';
                 credMaxim=$("#creditoMaximo").text();
                 credMinimo=ALUMNO[0].minimo_creditos;
-                listaMovimientos(id_inscripcion);
-                document.getElementById('terminoInscr').style.display = 'none';
+                listaMovimientos(id_inscripcion)
             }}else{
-                document.getElementById('inscripcion').style.display = 'none';
                 document.getElementById('textosInscripcion').style.display = 'none';
                 document.getElementById('btnInscripciones1').style.display = 'none';
                 document.getElementById('btnInscripciones2').style.display = 'none';
+                document.getElementById('inscripcion').style.display='none';
                 document.getElementById('anuncio').style.display = 'block';
-                document.getElementById('terminoInscr').style.display = 'none';
+                $("#anuncio").html("AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN");
                 /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
             }
             }
             }else{
-                document.getElementById('terminoInscr').style.display = 'block';
-                document.getElementById('inscripcion').style.display = 'none';
                 document.getElementById('textosInscripcion').style.display = 'none';
                 document.getElementById('btnInscripciones1').style.display = 'none';
                 document.getElementById('btnInscripciones2').style.display = 'none';
-                document.getElementById('anuncio').style.display = 'none';
+                document.getElementById('inscripcion').style.display='none';
+                document.getElementById('anuncio').style.display = 'block';
+                $("#anuncio").html("YA HAS COMPLETADO TU TRAMITE");
             }
-
-                document.getElementById('noInscripcion').style.display = 'none';
      }else{
-        document.getElementById('noInscripcion').style.display = 'block';
-        document.getElementById('inscripcion').style.display = 'none';
-        document.getElementById('textosInscripcion').style.display = 'none';
-        document.getElementById('btnInscripciones1').style.display = 'none';
-        document.getElementById('btnInscripciones2').style.display = 'none';
-        document.getElementById('anuncio').style.display = 'none';
-        document.getElementById('terminoInscr').style.display = 'none';
+                document.getElementById('textosInscripcion').style.display = 'none';
+                document.getElementById('btnInscripciones1').style.display = 'none';
+                document.getElementById('btnInscripciones2').style.display = 'none';
+                document.getElementById('inscripcion').style.display='none';
+                document.getElementById('anuncio').style.display = 'block';
+                $("#anuncio").html("NO GENERASTE TU INSCRIPCIÓN");
      }}       
     });
 
@@ -107,7 +120,8 @@ function asignaturas(credito,nombres){
     $.ajax({
         url: "../webhook/lista_asignatura.php",
         type: 'POST',
-        data : {       idPlan: $("#idPlan").val()    },
+        data : {       idPlan: $("#idPlan").val(),
+                        periodo: peri    },
         success: function (response) {
             //Convertimos el string a JSON
             let ASIGNATURAS = JSON.parse(response); 
@@ -248,4 +262,26 @@ function tramiteTerminado(){
         
     e.preventDefault();
 });
+}
+
+function saturacionGrupo(idAsignatura,idAsignacion){
+
+    $.ajax({
+        url: "../webhook/lista_asignacion_alumnos.php",
+        type: 'POST',
+        data: {
+            idPlan : $("#idPlan").val(),
+            idAsignatura:idAsignatura,
+            periodo: peri,
+            idAsignacion: idAsignacion
+        },
+        success: function (response) {
+            console.log(response);
+             //COnvertimos el string a JSON
+            let SATURACIONES = JSON.parse(response);  
+            $("#saturacionGrupoAsig").html(SATURACIONES[0].inscritos+" inscritos de un cupo de "+SATURACIONES[0].cupo);
+            $("#ins").html(SATURACIONES[0].inscritos);
+            $("#cup").html(SATURACIONES[0].cupo);
+        }
+    });
 }
