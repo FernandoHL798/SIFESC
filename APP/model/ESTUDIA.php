@@ -109,6 +109,13 @@ class ESTUDIA extends CONEXION{
         $this->close();
         return $resultado;
     }
+    public function queryconsultaEstatusEstudia($idAlumno,$idPlan){
+        $query="SELECT e.id_usuarioalumno_fk, e.id_plan_fk, e.anio, e.turno, e.baja, e.semestre, e.estatus, c.nombre as nombre_carrera FROM estudia e, plandeestudios p, carrera c WHERE c.id_carrera=p.id_carrera_fk AND p.id_plan=e.id_plan_fk AND e.id_usuarioalumno_fk=".$idAlumno." AND p.id_plan=".$idPlan;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
 
     public function queryUpdateEstudia(){
         $query="UPDATE `estudia` SET  `anio` = '".$this->getAnio()."',`turno` = '".$this->getTurno()."', `baja` = '".$this->getBaja()."',

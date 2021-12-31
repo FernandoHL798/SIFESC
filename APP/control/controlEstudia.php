@@ -5,6 +5,11 @@ function consultaEstudia($idAlumno){
     $ESTUDIA = new ESTUDIA();
     return json_encode($ESTUDIA->queryconsultaEstudia($idAlumno));
 }
+function consultaEstatusEstudia($idAlumno,$idPlan){
+    include_once "../model/ESTUDIA.php";
+    $ESTUDIA = new ESTUDIA();
+    return json_encode($ESTUDIA->queryconsultaEstatusEstudia($idAlumno,$idPlan));
+}
 
 function updateEstudia($params){
     include_once "../model/ESTUDIA.php";
