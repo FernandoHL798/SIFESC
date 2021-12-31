@@ -55,6 +55,10 @@ include_once "./includes/header.php";?>
                                                         <span id="cuenta_alumno"></span>
                                                         <input type="hidden" id="idInscripcionAlumno"></input>
                                                         <input type="hidden" id="semestreAlu"></input>
+                                                        <input type="hidden" id="fechaIns"></input>
+                                                        <input type="hidden" id="fechaAltas"></input>
+                                                        <input type="hidden" id="estatusIns"></input>
+                                                        <input type="hidden" id="turnoAlu"></input>
                                                     </div>
                                                 </th>
                                                 <th colspan="3">Nombre:
