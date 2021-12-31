@@ -233,6 +233,7 @@ function listaMovimientos(id_inscripcion){
 
             });
             asignaturas(a,nombres);
+            $("#saturacionGrupoAsig").html("");
             if(c>0){
                 document.getElementById('btnInscripciones2').style.display = 'block';
             }else{
