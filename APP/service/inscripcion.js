@@ -47,69 +47,81 @@ function datosAlumno(id_inscripcion){
                 var hoy = new Date();
                 var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
                 var fecha = hoy.getFullYear()+ '-' + ( hoy.getMonth() + 1 ) + '-' +hoy.getDate();
-                if(ALUMNO[0].estatusInscripcion==1){
-                    if(ALUMNO[0].fecha_inscripcion==fecha){
-                        if(ALUMNO[0].hora_inscripcion<=hora){
-                            //Se imprimen los datos de el alumno
-                            $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
-                            $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
-                            $("#anioEstudia").html(ALUMNO[0].anio);
-                            $("#idCarrera").html(ALUMNO[0].carrera_clave);
-                            $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_plantel);
-                            $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
-                            $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
-                            $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
-                            $("#Periodo").html(ALUMNO[0].periodo);
-                            $("#semestreAlu").html(ALUMNO[0].semestre);
-                            $("#fechaIns").html(ALUMNO[0].fecha_inscripcion);
-                            $("#fechaAltas").html("");
-                            $("#estatusIns").html(ALUMNO[0].estatusInscripcion);
-                            semestre=ALUMNO[0].semestre;
-                            fechaInscrip=ALUMNO[0].fecha_inscripcion;
-                            fechaAltasB=0;
-                            estatusIns=ALUMNO[0].estatusInscripcion;
-                            turnoAlu=ALUMNO[0].turno;
-                            peri=ALUMNO[0].periodo;
-                            id_inscripcion=ALUMNO[0].id_inscripcion;
-                            credMaxim=$("#creditoMaximo").text();
-                            credMinimo=ALUMNO[0].minimo_creditos;
-                            listaMovimientos(id_inscripcion);
-                        }else{
-                            document.getElementById('textosInscripcion').style.display = 'none';
-                            document.getElementById('btnInscripciones1').style.display = 'none';
-                            document.getElementById('btnInscripciones2').style.display = 'none';
-                            document.getElementById('inscripcion').style.display='none';
-                            document.getElementById('anuncio').style.display = 'block';
-                            $("#anuncio").html("AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN");
-                            /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
-                        }
-                    }else{
-                        if(ALUMNO[0].fecha_altas_bajas==fecha){
-                            if(ALUMNO[0].hora_altas_bajas<=hora){
-                                //Se imprimen los datos de el alumno
-                                $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
-                                $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
-                                $("#anioEstudia").html(ALUMNO[0].anio);
-                                $("#idCarrera").html(ALUMNO[0].carrera_clave);
-                                $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
-                                $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
-                                $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
-                                $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
-                                $("#Periodo").html(ALUMNO[0].periodo);
-                                $("#semestreAlu").html(ALUMNO[0].semestre);
-                                $("#fechaIns").html("");
-                                $("#fechaAltas").html(ALUMNO[0].fecha_altas_bajas);
-                                $("#estatusIns").html(ALUMNO[0].estatusInscripcion);
-                                semestre=ALUMNO[0].semestre;
-                                fechaInscrip=0;
-                                fechaAltasB=ALUMNO[0].fecha_altas_bajas;
-                                estatusIns=ALUMNO[0].estatusInscripcion;
-                                turnoAlu=ALUMNO[0].turno;
-                                peri=ALUMNO[0].periodo;
-                                id_inscripcion=ALUMNO[0].id_inscripcion;
-                                credMaxim=$("#creditoMaximo").text();
-                                credMinimo=ALUMNO[0].minimo_creditos;
-                                listaMovimientos(id_inscripcion)
+                if(ALUMNO[0].semestre>1){
+                    if(ALUMNO[0].estatusAlumno==1){
+                        if(ALUMNO[0].estatusInscripcion==1){
+                            if(ALUMNO[0].fecha_inscripcion==fecha){
+                                if(ALUMNO[0].hora_inscripcion<=hora){
+                                    //Se imprimen los datos de el alumno
+                                    $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
+                                    $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
+                                    $("#anioEstudia").html(ALUMNO[0].anio);
+                                    $("#idCarrera").html(ALUMNO[0].carrera_clave);
+                                    $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_plantel);
+                                    $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
+                                    $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+                                    $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
+                                    $("#Periodo").html(ALUMNO[0].periodo);
+                                    $("#semestreAlu").html(ALUMNO[0].semestre);
+                                    $("#fechaIns").html(ALUMNO[0].fecha_inscripcion);
+                                    $("#fechaAltas").html("");
+                                    $("#estatusIns").html(ALUMNO[0].estatusInscripcion);
+                                    semestre=ALUMNO[0].semestre;
+                                    fechaInscrip=ALUMNO[0].fecha_inscripcion;
+                                    fechaAltasB=0;
+                                    estatusIns=ALUMNO[0].estatusInscripcion;
+                                    turnoAlu=ALUMNO[0].turno;
+                                    peri=ALUMNO[0].periodo;
+                                    id_inscripcion=ALUMNO[0].id_inscripcion;
+                                    credMaxim=$("#creditoMaximo").text();
+                                    credMinimo=ALUMNO[0].minimo_creditos;
+                                    listaMovimientos(id_inscripcion);
+                                }else{
+                                    document.getElementById('textosInscripcion').style.display = 'none';
+                                    document.getElementById('btnInscripciones1').style.display = 'none';
+                                    document.getElementById('btnInscripciones2').style.display = 'none';
+                                    document.getElementById('inscripcion').style.display='none';
+                                    document.getElementById('anuncio').style.display = 'block';
+                                    $("#anuncio").html("AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN");
+                                    /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
+                                }
+                            }else{
+                                if(ALUMNO[0].fecha_altas_bajas==fecha){
+                                    if(ALUMNO[0].hora_altas_bajas<=hora){
+                                        //Se imprimen los datos de el alumno
+                                        $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
+                                        $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
+                                        $("#anioEstudia").html(ALUMNO[0].anio);
+                                        $("#idCarrera").html(ALUMNO[0].carrera_clave);
+                                        $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
+                                        $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
+                                        $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
+                                        $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
+                                        $("#Periodo").html(ALUMNO[0].periodo);
+                                        $("#semestreAlu").html(ALUMNO[0].semestre);
+                                        $("#fechaIns").html("");
+                                        $("#fechaAltas").html(ALUMNO[0].fecha_altas_bajas);
+                                        $("#estatusIns").html(ALUMNO[0].estatusInscripcion);
+                                        semestre=ALUMNO[0].semestre;
+                                        fechaInscrip=0;
+                                        fechaAltasB=ALUMNO[0].fecha_altas_bajas;
+                                        estatusIns=ALUMNO[0].estatusInscripcion;
+                                        turnoAlu=ALUMNO[0].turno;
+                                        peri=ALUMNO[0].periodo;
+                                        id_inscripcion=ALUMNO[0].id_inscripcion;
+                                        credMaxim=$("#creditoMaximo").text();
+                                        credMinimo=ALUMNO[0].minimo_creditos;
+                                        listaMovimientos(id_inscripcion)
+                                    }
+                                }else{
+                                    document.getElementById('textosInscripcion').style.display = 'none';
+                                    document.getElementById('btnInscripciones1').style.display = 'none';
+                                    document.getElementById('btnInscripciones2').style.display = 'none';
+                                    document.getElementById('inscripcion').style.display='none';
+                                    document.getElementById('anuncio').style.display = 'block';
+                                    $("#anuncio").html("AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN");
+                                    /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
+                                }
                             }
                         }else{
                             document.getElementById('textosInscripcion').style.display = 'none';
@@ -117,8 +129,22 @@ function datosAlumno(id_inscripcion){
                             document.getElementById('btnInscripciones2').style.display = 'none';
                             document.getElementById('inscripcion').style.display='none';
                             document.getElementById('anuncio').style.display = 'block';
-                            $("#anuncio").html("AÚN NO ES TU FECHA U HORA DE INSCRIPCIÓN");
-                            /*Se oculta la tabla y se imprime un AUN NO ES TU HORA DE INSCRIPCIÓN*/
+                            $("#anuncio").html("YA HAS COMPLETADO TU TRAMITE");
+                        }
+                    }else{
+                        document.getElementById('textosInscripcion').style.display = 'none';
+                        document.getElementById('btnInscripciones1').style.display = 'none';
+                        document.getElementById('btnInscripciones2').style.display = 'none';
+                        document.getElementById('inscripcion').style.display='none';
+                        document.getElementById('anuncio').style.display = 'block';
+                        if(ALUMNO[0].estatusAlumno==2){
+                            $("#anuncio").html("Te diste de baja de semestre");
+                        }else if(ALUMNO[0].estatusAlumno==3){
+                            $("#anuncio").html("Te diste de baja de año");
+                        }else if(ALUMNO[0].estatusAlumno==4){
+                            $("#anuncio").html("Te diste de baja definitiba");
+                        }else if(ALUMNO[0].estatusAlumno==5){
+                            $("#anuncio").html("Te titulaste");
                         }
                     }
                 }else{
@@ -127,7 +153,7 @@ function datosAlumno(id_inscripcion){
                     document.getElementById('btnInscripciones2').style.display = 'none';
                     document.getElementById('inscripcion').style.display='none';
                     document.getElementById('anuncio').style.display = 'block';
-                    $("#anuncio").html("YA HAS COMPLETADO TU TRAMITE");
+                    $("#anuncio").html("Alumno de primer semestre, dirigete a consulta tu inscripción");
                 }
             }else{
                 document.getElementById('textosInscripcion').style.display = 'none';
@@ -191,17 +217,19 @@ function gruposAsig(idAsignatura){
             let htmlGrupos="";
             htmlGrupos+=  `<option selected>Selecciona el grupo</option>`;
             ASIGNACIONES.forEach(asignacion=>{
-                if(fechaInscrip==fecha){
-                    if(ASIGNACIONES[cont].turno==turnoAlu){
-                        console.log("entre ins");
-                        cont++;
+                if(asignacion.estatus==1){
+                    if(fechaInscrip==fecha){
+                        if(asignacion.turno==turnoAlu){
+                            console.log("entre ins");
+                            cont++;
+                            htmlGrupos += `<option value="${asignacion.id_asignacion}">${asignacion.nombre_grupo}</option>`;
+                        }else{
+                            cont++;
+                        }
+                    }else if(fechaAltasB==fecha){
+                        console.log("entre bajas");
                         htmlGrupos += `<option value="${asignacion.id_asignacion}">${asignacion.nombre_grupo}</option>`;
-                    }else{
-                        cont++;
                     }
-                }else if(fechaAltasB==fecha){
-                    console.log("entre bajas");
-                    htmlGrupos += `<option value="${asignacion.id_asignacion}">${asignacion.nombre_grupo}</option>`;
                 }
             });
             $("#grupo").html(htmlGrupos);

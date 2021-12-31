@@ -88,7 +88,13 @@ $(document).ready(function(){
                 }            
             });
         }else{
-            $("#saturacionGrupoAsig").html("El grupo esta saturado, elige otro");
+            if($("#asig_materia").val()=='Selecciona la materia'){
+                $("#saturacionGrupoAsig").html("Selecciona una asignatura y un grupo para continuar");
+            }else if($("#grupo").val()=='Selecciona el grupo'){
+                $("#saturacionGrupoAsig").html("Selecciona un grupo para continuar");
+            }else{
+                $("#saturacionGrupoAsig").html("El grupo esta saturado, elige otro");
+            }
         }
         e.preventDefault();
     });
