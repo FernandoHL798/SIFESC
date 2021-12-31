@@ -6,6 +6,7 @@ class MOVIMIENTO extends CONEXION{
     private $estatus;
     private $calificacion;
     private $aprobado;
+    private $semestre;
   
     /**
      * @return mixed
@@ -65,10 +66,6 @@ class MOVIMIENTO extends CONEXION{
     {
         $this->calificacion = $calificacion;
     }
-    
-     /**
-     * @return mixed
-     */
 
     /**
      * @return mixed
@@ -83,6 +80,21 @@ class MOVIMIENTO extends CONEXION{
     public function setAprobado($aprobado): void
     {
         $this->aprobado = $aprobado;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSemestre()
+    {
+        return $this->semestre;
+    }
+    /**
+     * @param mixed $semestre
+     */
+    public function setSemestre($semestre): void
+    {
+        $this->semestre = $semestre;
     }
         
 
@@ -103,8 +115,8 @@ class MOVIMIENTO extends CONEXION{
     }
 
     public function queryInsertMovimiento(){
-        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprobado`) 
-        VALUES ('".$this->getIdInscripcionFk()."', '".$this->getIdAsignacionFk()."', current_timestamp(), current_timestamp(), '".$this->getEstatus()."', '".$this->getCalificacion()."', '".$this->getAprobado()."')";
+        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprobado`, `semestre`) 
+        VALUES ('".$this->getIdInscripcionFk()."', '".$this->getIdAsignacionFk()."', current_timestamp(), current_timestamp(), '".$this->getEstatus()."', '".$this->getCalificacion()."', '".$this->getAprobado()."', '".$this->getSemestre()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

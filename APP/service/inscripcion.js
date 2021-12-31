@@ -55,6 +55,7 @@ function datosAlumno(id_inscripcion){
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
                 $("#Periodo").html(ALUMNO[0].periodo);
+                $("#semestreAlu").html(ALUMNO[0].semestre);
                 peri=ALUMNO[0].periodo;
                 id_inscripcion=ALUMNO[0].id_inscripcion;
                 credMaxim=$("#creditoMaximo").text();
@@ -81,6 +82,7 @@ function datosAlumno(id_inscripcion){
                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
                 $("#Periodo").html(ALUMNO[0].periodo);
+                $("#semestreAlu").html(ALUMNO[0].semestre);
                 peri=ALUMNO[0].periodo;
                 id_inscripcion=ALUMNO[0].id_inscripcion;
                 credMaxim=$("#creditoMaximo").text();

@@ -2,14 +2,17 @@ $(document).ready(function(){
     let id_inscripcion=0;
     let inscritos=0;
     let cupo=0;
+    let semestre=0;
     $("#frm-add-movimiento").on("submit", function(e){
         var f = $(this);
         inscritos=parseInt($("#ins").text())+1;
         let cupo=parseInt($("#cup").text());
         console.log(cupo+">="+inscritos);
         if(cupo>=inscritos){
+            console.log($("#semestreAlu").text());
             var formData = new FormData(document.getElementById("frm-add-movimiento"));
             formData.append("idInscripcion", $("#idInscripcionAlumno").text());
+            formData.append("semestreMov", $("#semestreAlu").text());
             formData.append("dato", "valor");
             $.ajax({
                 url: "../webhook/add_movimiento.php",
