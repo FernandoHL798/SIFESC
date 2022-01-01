@@ -10,8 +10,7 @@ $(document).ready(function(){
         let estatusIns=0;
         let semestre=0;
         let estat=0;
-        estatusAlum();
-        datosAlumno(id_inscripcion);
+        estatusAlum(id_inscripcion);
         $("#asig_materia").change(function(){
             idAsignatura=$("#asig_materia").val();
             gruposAsig(idAsignatura);
@@ -33,7 +32,7 @@ $(document).ready(function(){
         $("#anuncio").html("AUN NO HAS SELECCIONADO O NO TIENES ASIGNADO UN PLAN DE ESTUDIOS, REVISA EN MIS CARRERAS PARA CONTINUAR");
     }
 });
-function estatusAlum() {
+function estatusAlum(id_inscripcion) {
     $.ajax({
         url: "../webhook/lista_estudia_estatus.php",
         type: 'POST',
@@ -42,7 +41,7 @@ function estatusAlum() {
         success: function (response) {
             console.log(response);
             let ESTUDIA = JSON.parse(response);
-            if(ESTUDIA[0].estatus>1){
+            if(ESTUDIA[0].estatus>=2){
                 estat=1;
                 document.getElementById('textosInscripcion').style.display = 'none';
                 document.getElementById('btnInscripciones1').style.display = 'none';
@@ -59,13 +58,14 @@ function estatusAlum() {
                     $("#anuncio").html("No puedes realizar tu inscripción puesto que estás titulado.");
                }
            }else{
-                if(ESTUDIA[0].semestre>1){
+                if(ESTUDIA[0].semestre>=2){
                     document.getElementById('btnInscripciones1').style.display = 'block';
                     document.getElementById('btnInscripciones2').style.display = 'block';
+                    datosAlumno(id_inscripcion);
                 }else{
-                    document.getElementById('textosInscripcion').style.display = 'none';
                     document.getElementById('btnInscripciones1').style.display = 'none';
                     document.getElementById('btnInscripciones2').style.display = 'none';
+                    document.getElementById('textosInscripcion').style.display = 'none';
                     document.getElementById('inscripcion').style.display='none';
                     document.getElementById('anuncio').style.display = 'block';
                     $("#anuncio").html("Alumno de primer semestre, dirigete a consulta tu inscripción");
@@ -224,6 +224,8 @@ function gruposAsig(idAsignatura){
                       idProfesor : "0",
                       periodo: peri  },
         success: function (response) {
+            
+            $("#saturacionGrupoAsig").html("");
             console.log(peri);
             console.log(response);
             //Convertimos el string a JSON
@@ -236,6 +238,7 @@ function gruposAsig(idAsignatura){
             let htmlGrupos="";
             htmlGrupos+=  `<option selected>Selecciona el grupo</option>`;
             ASIGNACIONES.forEach(asignacion=>{
+                console.log(asignacion.estatus, asignacion.periodo);
                 if(asignacion.estatus==1){
                     if(fechaInscrip==fecha){
                         if(asignacion.turno==turnoAlu){
@@ -257,16 +260,13 @@ function gruposAsig(idAsignatura){
 }
 
 function listaMovimientos(id_inscripcion){
-    console.log(id_inscripcion);
     $.ajax({
         url: "../webhook/lista_movimiento.php",
         type: 'POST',
         data : {      idInscripcion: id_inscripcion   },
         success: function (response) {
             //Convertimos el string a JSON
-            console.log(response);
             let MOVIMIENTOS = JSON.parse(response);
-            console.log(MOVIMIENTOS);
             let tblMovimientos="";
             let cont=0;
             var credMen=0;
