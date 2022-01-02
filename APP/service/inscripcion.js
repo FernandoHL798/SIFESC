@@ -88,7 +88,7 @@ function datosAlumno(id_inscripcion){
                 //Generamos la fecha actual con el formato Date() para poder tener la hora en la cual se esta logueando
                 var hoy = new Date();
                 var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
-                var fecha = hoy.getFullYear()+ '-' + ( hoy.getMonth() + 1 ) + '-' +hoy.getDate();
+                var fecha = hoy.getFullYear()+ '-' + ( ""+hoy.getMonth() + 1 ) + '-' +("0"+hoy.getDate());
                 if(ALUMNO[0].estatusInscripcion==1){
                     if(ALUMNO[0].fecha_inscripcion==fecha){
                         if(ALUMNO[0].hora_inscripcion<=hora){
@@ -146,6 +146,7 @@ function datosAlumno(id_inscripcion){
                                 semestre=ALUMNO[0].semestre;
                                 fechaInscrip=0;
                                 fechaAltasB=ALUMNO[0].fecha_altas_bajas;
+                                console.log(fechaAltasB);
                                 estatusIns=ALUMNO[0].estatusInscripcion;
                                 turnoAlu=ALUMNO[0].turno;
                                 peri=ALUMNO[0].periodo;
@@ -233,16 +234,17 @@ function gruposAsig(idAsignatura){
             console.log(ASIGNACIONES);
             var hoy = new Date();
             var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
-            var fecha = hoy.getFullYear()+ '-' + ( hoy.getMonth() + 1 ) + '-' +hoy.getDate();
+            var fecha = hoy.getFullYear()+ '-' + ( ""+hoy.getMonth() + 1 ) + '-' +("0"+hoy.getDate());
             let cont=0;
             let htmlGrupos="";
             htmlGrupos+=  `<option selected>Selecciona el grupo</option>`;
             ASIGNACIONES.forEach(asignacion=>{
                 console.log(asignacion.estatus, asignacion.periodo);
                 if(asignacion.estatus==1){
+                    console.log(fecha+" = "+fechaAltasB);
                     if(fechaInscrip==fecha){
+                        console.log("entre ins");
                         if(asignacion.turno==turnoAlu){
-                            console.log("entre ins");
                             cont++;
                             htmlGrupos += `<option value="${asignacion.id_asignacion}">${asignacion.nombre_grupo}</option>`;
                         }else{
