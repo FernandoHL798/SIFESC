@@ -46,3 +46,9 @@ function deleteGrupo($idGrupo){
     $GRUPOS->setIdGrupo($idGrupo);
     return $GRUPOS->queryDeleteGrupos();
 }
+
+function queryconsultaGruposAsignaturas($id_plan_fk,$codigo){
+    include_once "../model/GRUPOS.php";
+    $GRUPOS = new GRUPOS();
+    return json_encode($GRUPOS->queryconsultaGruposAsignaturas($id_plan_fk,$codigo));
+}

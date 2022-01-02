@@ -155,4 +155,11 @@ class GRUPOS extends CONEXION{
         $this->close();
         return $resultado;
     }
+    public function queryconsultaGruposAsignaturas($id_plan_fk,$codigo){
+        $query= "SELECT * FROM grupos g, asignaturas asi WHERE g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan_fk." AND asi.codigo =".$codigo;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
 }
