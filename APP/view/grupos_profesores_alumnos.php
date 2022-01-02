@@ -108,19 +108,44 @@ include "./includes/sidebar2.php";
                 </tbody>     
             </table>
         </div>
-    </div>
-    </div>
-    <div id="avisoAlum">
+            </div>
+        </div>
+        <div id="avisoAlum">
             <h3 id="avi" class="text-center">No tienes alumnos inscritos</h3>
-    </div>
-    <div id="btnImprim" class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
-        <button class="btn btn-primary" type="button" id="btnImprimirSat" onclick="printData()">IMPRIMIR</button>
+        </div>
+        <div id="btnImprim" class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
+            <button class="btn btn-primary" type="button" id="btnImprimirSat" onclick="printData()">IMPRIMIR</button>
+        </div>
+
+        <div id="btnexc" class="d-grid gap-2 col-11 mx-auto mb-4 mt-3">
+            <button id="btnExportar" class="btn btn-success">
+                <i class="fas fa-file-excel"></i> Exportar datos a Excel
+            </button>
+        </div>
+
+        </div>
     </div>
 
-    </div>
-    </div>
+        <!-- script para exportar a excel -->
+<script>
+    const $btnExportar = document.querySelector("#btnExportar"),
+        $table = document.querySelector("#table");
+
+    $btnExportar.addEventListener("click", function() {
+        let tableExport = new TableExport($table, {
+            exportButtons: false, // No queremos botones
+            filename: "Mi grupo", //Nombre del archivo de Excel
+            sheetname: "Lista", //Título de la hoja
+        });
+        let datos = tableExport.getExportData();
+        let preferenciasDocumento = datos.table.xlsx;
+        tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
+    });
+</script>
     <!-- JavaScripts-->
     <?php include_once "./includes/js.php"; ?>     
     <script src="../service/lista-alumnos-asignacion.js"></script>
+
+
 </body>
 </html>

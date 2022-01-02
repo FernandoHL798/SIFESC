@@ -1,4 +1,12 @@
-<?php include_once "./includes/session_verify.php";?>
+<?php include_once "./includes/session_verify.php";
+$cuenta_profesor = "";
+if (!isset($_GET['cuenta_profesor'])){
+    echo "<script>location.href ='javascript:history.back()';</script>";
+}
+else{
+    $cuenta_profesor = $_GET['cuenta_profesor'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <?php $titulo="Asignacion | SIFESC";
@@ -54,6 +62,7 @@ include_once "./includes/header.php";?>
                 <div class="">
                     <div class="row">
                         <div class="col-lg-12">
+                            <input type="text" name="cuenta_profesor" id="cuenta_profesor" value="<?php echo $cuenta_profesor;?>">
                             <table class="table table-bordered order-table display nowrap table-responsive mt-3" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
