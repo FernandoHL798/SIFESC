@@ -1,9 +1,9 @@
 <?php
 
-function consultaGrupos($idAsignatura,$idProfesor){
+function consultaGrupos($idAsignatura,$idProfesor,$periodo){
     include_once "../model/GRUPOS.php";
     $GRUPOS = new GRUPOS();
-    return json_encode($GRUPOS->queryconsultaGrupos($idAsignatura,$idProfesor));
+    return json_encode($GRUPOS->queryconsultaGrupos($idAsignatura,$idProfesor,$periodo));
 }
 
 function consultaGruposPeriodo($idAsignatura,$idProfesor,$idPeriodo){

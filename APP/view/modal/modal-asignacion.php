@@ -18,7 +18,7 @@
 											</select><br>
 											<label for="exampleInputEmail1" class="form-label">Selecciona grupo</label>
 										    <select class="form-select" aria-label="Default select example" id="grupo" name="grupo">
-												 <!-- AJAX RESPONSE LISTA ALUMNO-->
+												 <option selected>Selecciona el grupo</option>
 												</select><br>
 										<label id="saturacionGrupoAsig"></label>
 										<input type="hidden" id="ins"></input>

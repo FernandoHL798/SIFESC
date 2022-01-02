@@ -55,6 +55,10 @@ include_once "./includes/header.php";?>
                                                         <span id="cuenta_alumno"></span>
                                                         <input type="hidden" id="idInscripcionAlumno"></input>
                                                         <input type="hidden" id="semestreAlu"></input>
+                                                        <input type="hidden" id="fechaIns"></input>
+                                                        <input type="hidden" id="fechaAltas"></input>
+                                                        <input type="hidden" id="estatusIns"></input>
+                                                        <input type="hidden" id="turnoAlu"></input>
                                                     </div>
                                                 </th>
                                                 <th colspan="3">Nombre:
@@ -121,7 +125,7 @@ include_once "./includes/header.php";?>
                                 <div class="d-grid gap-2 col-3 mx-auto">
                                     
                                 </div>
-                                <div  id="btnInscripciones1">
+                                <div  id="btnInscripciones1" style="display: none;">
                                 <div class="d-grid gap-2 col-3 mx-auto">
                                     <div class="modal-content" >
                                         <!-- Button trigger modal -->
@@ -129,7 +133,7 @@ include_once "./includes/header.php";?>
                                     </div>
                                 </div>
                                 </div>
-                                <div id="btnInscripciones2">
+                                <div id="btnInscripciones2" style="display: none;">
                                 <div class=" col-3 mx-auto mt-2">
                                     <div class="modal-content mb-4">
                                         <!-- Button trigger modal -->
