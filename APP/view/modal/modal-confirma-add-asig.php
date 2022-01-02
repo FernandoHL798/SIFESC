@@ -3,7 +3,7 @@
 	 <div class="modal fade" id="Modal-confirmacion-ag-asig" tabindex="-1" aria-labelledby="Modal-Confirmacion-deptp" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <form id="frm-conf-ag-depto">
+            <form id="frm-conf-ag-asig">
               <div class="modal-header">
                 <h5 class="modal-title" id="Modal_ag-c-d">AVISO</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

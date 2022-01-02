@@ -15,7 +15,7 @@
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="Edit_plan_grup">
-              		<H5>¿Esta seguro que desea dar de baja esta asignatura?</H5>
+              		<H5>¿Esta seguro que desea dar de baja la asignatura: <b><span id="nombasigbaja"></span></b> ?</H5>
               </div>
               <input type="hidden" placeholder="idAsignatura baja" class="form-control"style="height: 45px" name="idAsignatura_baja" id="idAsignatura_baja">
             </div>

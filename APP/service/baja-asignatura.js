@@ -25,9 +25,12 @@ $(document).ready(function(){
 });
 });
 
-function bajaAsignatura(idAsignatura){
+function bajaAsignatura(idAsignatura,nombre){
+    let nombreasig=nombre;
    //$('#Modal_baja_Asig').modal('show');
    //Todas las variables que se pueden editar en el modal
    $("#idAsignatura_baja").val(idAsignatura);
    $('#Modal_baja_Asig').modal('show');
+   console.log(nombreasig);
+   $("#nombasigbaja").html(nombreasig);
 }

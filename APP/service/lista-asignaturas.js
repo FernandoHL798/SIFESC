@@ -14,63 +14,75 @@ $(document).ready(function(){
         formData.append("creditos", $("#creditos_add").val());
         formData.append("caracter", $("#caracter_add").val());
         $.ajax({
-        url: "../webhook/lista-asignaturas-plan-consulta.php",
-        type:'POST',
-        data : {
-            id_plan:$("#idPlanAsig").val(),
-            clave_asignatura:$("#clave_asignatura_add").val()
-        }})
-        .done(function(res){
-        console.log(res);
-        if(res==false|| res=='[{"estatus":"2"}]'){
-            $.ajax({
-                url: "../webhook/add_asignatura.php",
-                type: "post",
-                dataType: "html",
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false
-            })
+            url: "../webhook/lista-asignaturas-plan-consulta.php",
+            type:'POST',
+            data : {
+                id_plan:$("#idPlanAsig").val(),
+                clave_asignatura:$("#clave_asignatura_add").val()
+            }})
+            .done(function(res){
+            console.log(res);
+            if(res==false){
+                $.ajax({
+                    url: "../webhook/add_asignatura.php",
+                    type: "post",
+                    dataType: "html",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                })
                 .done(function(res){
-                console.log(res);
-                if(res!=1){
-                    formData.append("estatus", "1");
-                    $.ajax({
-                        url: "../webhook/modifica-estatus-asignatura.php",
-                        type: 'POST',
-                        data: formData,
-                        dataType: "html",
-                        data: formData,
-                        cache: false,
-                        contentType: false,
-                        processData: false
-                    })
-                        .done(function(res){
+                    console.log(res);
+                    if(res!=1){
+                        $("#do_exist").prop("disabled", false );
+                        $("#do_exist").fadeTo(2000, 500).slideUp(500, function(){
+                            $("#do_exist").slideUp(500);
+                        });
+                        $("#do_exist").prop("disabled", true );
+                        $("#existe_asig").html("¡AVISO! La asignatura ya existe");
+                        $("#frm_m_a_asignatura").trigger('reset');
+                    }else{
                         listaplandeestudios();
-                        console.log(res);
                         $("#frm_m_a_asignatura").trigger('reset');
                         $("#Asig_Modal_Asig").modal('hide');
-                        $("#Modal-confirmacion-ag-asig").modal('show');
-            });
-        }
-        else{
-            listaplandeestudios();
-            $("#frm_m_a_asignatura").trigger('reset');
-            $("#Asig_Modal_Asig").modal('hide');
-            $("#Modal-confirmacion-ag-asig").modal('show');    
-        }});
-
-            }else{
-                $("#existe_asig").html("¡AVISO! El departamento ya existe");
+                        $("#Modal-confirmacion-ag-asig").modal('show');    
+                    }
+                });
+            }else if(res=='[{"estatus":"2"}]'){
+                formData.append("estatus", "1");
+                $.ajax({
+                    url: "../webhook/modifica-estatus-asignatura.php",
+                    type: 'POST',
+                    data: formData,
+                    dataType: "html",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                })
+                .done(function(res){
+                    listaplandeestudios();
+                    console.log(res);
+                    $("#frm_m_a_asignatura").trigger('reset');
+                    $("#Asig_Modal_Asig").modal('hide');
+                    alert("Funka!");
+                    $("#Modal-confirmacion-ag-asig").modal('show');
+                });
+            }else if(res=='[{"estatus":"1"}]'){
+                $("#do_exist").fadeTo(2000, 500).slideUp(500, function(){
+                            $("#do_exist").slideUp(500);
+                        });
+                $("#existe_asig").html("¡AVISO! La asignatura ya existe");
                 $("#frm_m_a_asignatura").trigger('reset');
             }
-    })
+        })
         e.preventDefault();
     });
-
 });
+
 function listaplandeestudios(){
+    var idpasig= $("#idPlanAsig").val();
     $.ajax({
         url: "../webhook/lista-asignaturas-plan.php",
         type:'POST',
@@ -79,27 +91,34 @@ function listaplandeestudios(){
             let ASIGNATURAS =JSON.parse(response);
             console.log(ASIGNATURAS);
             let template="";
+            let caractertxt;
+            let estatustxt;
             cont=0;
             ASIGNATURAS.forEach(asignatura=>{
                 if(asignatura.estatus<2){
+                    if (asignatura.caracter=='1'){
+                        caractertxt="Obligatoria";
+                    }else if (asignatura.caracter=='2'){
+                        caractertxt="Optativa requerida";
+                    }else if (asignatura.caracter=='3'){
+                        caractertxt="Optativa de elección";
+                    }
+                    if (asignatura.estatus='1'){
+                        estatustxt="Activa";
+                    }else if (asignatura.estatus='2'){
+                        estatustxt="Inactiva";
+                    }
                 template += `<tr>
                                 <td data-label="CLAVE">${asignatura.codigo}</td>
                                 <td data-label="NOMBRE ASIGNATURA">${asignatura.nombre}</td>
                                 <td data-la data-label="SEMESTRE">${asignatura.semestre}</td>
                                 <td data-label="CRÉDITOS">${asignatura.creditos}</td>
-                                <td data-label="CARACTER">${asignatura.caracter}</td>
-                                <td data-label="ESTATUS">
-                                    <li>${asignatura.estatus}</li>
-                                </td>
-                                <td data-label="GRUPOS"><li>1001</li>
-                                    <li>1002</li>
-                                    <li>1003</li>
-                                    <li>1051</li>
-                                </td>
-                                <td class="text-center"><a href="./ag_grupos.php"><button type="button" class="btn btn-primary btn-sm col-5 mx-auto"><i class='bx bxs-message-square-add'></i></button></td>
+                                <td data-label="CARACTER">${caractertxt}</td>
+                                <td data-label="ESTATUS">${estatustxt}</td>
+                                <td class="text-center"><a href="./ag_grupos.php?idPlan=${idpasig}&codigo_asi=${asignatura.codigo}"><button type="button" class="btn btn-primary btn-sm col-5 mx-auto"><i class='bx bxs-message-square-add'></i></button></td>
                                 <td data-label="ACCIONES" class="text-center" colspan="2">
                                     <button type="button" class="btn btn-success btn-sm col-5 mx-auto" onclick="editarAsignatura(${asignatura.id_asignatura},'${asignatura.codigo}','${asignatura.nombre}',${asignatura.semestre},${asignatura.creditos},'${asignatura.caracter}');"><i class='bx bxs-pencil'></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm col-5" onclick="bajaAsignatura(${asignatura.id_asignatura});"><i class='bx bx-trash'></i></button>
+                                    <button type="button" class="btn btn-danger btn-sm col-5" onclick="bajaAsignatura(${asignatura.id_asignatura},'${asignatura.nombre}');"><i class='bx bx-trash'></i></button>
                                 </td>
                             </tr>`;    
                 }
@@ -130,22 +149,37 @@ function listaDatosPlan(){
 
 //funcion para editar asignatura
 function editarAsignatura(idAsignatura,clave,nombre,semestre,creditos,caracter){
-   $('#Edit_Modal_P').modal('show');
-   //Todas las variables que se pueden editar en el modal
-   $("#idAsignatura_edit").val(idAsignatura);
-   $("#clave_asignatura_edit").val(clave);
-   $("#nom_asignatura_edit").val(nombre);
-   $("#semestre_edit").val(semestre);
+    var indiceDatos= caracter;
+    console.log(caracter);
+    console.log(indiceDatos);
+    $('#Edit_Modal_P').modal('show');
+    //Todas las variables que se pueden editar en el modal
+    $("#idAsignatura_edit").val(idAsignatura);
+    $("#clave_asignatura_edit").val(clave);
+    $("#nom_asignatura_edit").val(nombre);
+    $('#caracter_edit').val(caracter);
+    if(caracter=='1'){
+        $("#semestre_edit").prop("disabled", false );
+        $("#semestre_edit").val(semestre);
+    }else if(caracter=='2'){
+        $("#semestre_edit").prop("disabled", true );
+        $("#semestre_edit").val(semestre);
+    }else if(caracter=='3'){
+        $("#semestre_edit").prop("disabled", false );
+        $("#semestre_edit").val(semestre);
+    }
+   //$('#caracter_edit').val(caracter);
+   //$("#semestre_edit").val(semestre);
    $("#creditos_edit").val(creditos);
-   $("#caracter_edit").val(caracter);
-   //document.getElementById("caracter_edit").value = 2;
 }
 
 function actualizarasignatura(){
+    verificavacioedit();
     $("#frm_modal_edit_asignatura").on("submit", function(e){
     //var f = $(this);
     var formData = new FormData(document.getElementById("frm_modal_edit_asignatura"));
     //formData.append("dato", "valor");
+    verificavacioedit();
     formData.append("idAsignatura", $("#idAsignatura_edit").val());
     formData.append("codigo", $("#clave_asignatura_edit").val());
     formData.append("nombre", $("#nom_asignatura_edit").val());
@@ -173,55 +207,96 @@ function actualizarasignatura(){
 });
 }
 
-//Fucion que nos permite lanzar modal y deshabilitar los inputs
-/*function verificavacio(){
-    let clave= $("#clave_asignatura").val();
-    //let clave2= $("#clave_asignatura_2").val();
-    if(clave==""){
-        $("#btnverifica").prop("disabled", true );
-        $("#btnagregarasig").prop("disabled", true );
-    }
-    $("#btnverifica").prop("disabled", false );
-}*/
-
-/*function exiteasignaturaenplan(){
-    $.ajax({
-        url: "../webhook/lista-asignaturas-plan-consulta.php",
-        type:'POST',
-        data : {
-            id_plan:$("#idPlanAsig").val(),
-            clave_asignatura:$("#clave_asignatura").val()
-        }})
-    .done(function(res){
-        console.log(res);
-        if(res==false){
-            return 1;
-        }else{
-            return 11;
-        }
-    })
-}*/
-
-/*function verificarexiste(){
-    let clave= $("#clave_asignatura").val();
-    if(clave==''){
-        $("#btnagregarasig").prop("disabled", true );    
-    }
-    $("#btnagregarasig").prop("disabled", false );
-    var control= exiteasignaturaenplan();
-    console.log(control);
-    if(control=='1'){
-        alert("Funka");
-    }
-    event.preventDefault();
-}*/
-
 function modfunciones(){
     $('#Asig_Modal_Asig').modal('show');
-    /*$("#btnverifica").prop("disabled", true );
+    $("#do_exist").hide();
     $("#btnagregarasig").prop("disabled", true );
-    $("#nom_asignatura").prop("disabled", true );
-    $("#semestre").prop("disabled", true );
-    $("#creditos").prop("disabled", true );
-    $("#caracter").prop("disabled", true );*/
+    $("#nom_asignatura_add").prop("disabled", false );
+    $("#caracter_add").prop("disabled", false );
+    $("#semestre_add").prop("disabled", true );
+    $("#creditos_add").prop("disabled", false );
 }
+
+function modprop(){
+    $('#Asig_Modal_Asig').modal('show');
+    $("#do_exist").hide();
+    $("#btnverifica").prop("disabled", false );
+    $("#btnagregarasig").prop("disabled", false );
+    $("#nom_asignatura_add").prop("disabled", true );
+    $("#semestre_add").prop("disabled", true );
+    $("#creditos_add").prop("disabled", true );
+    $("#caracter_add").prop("disabled", true );
+}
+
+function verificavacioag(){
+    if(($("#clave_asignatura_add").val()!='')&&($("#nom_asignatura_add").val()!='')&&($("#semestre_add").val()!='')&&($("#creditos_add").val()!='')&&($("#caracter_add").val()!='')){
+        console.log("estan llenos");
+        $("#btnagregarasig").prop("disabled", false);    
+    }else {
+        console.log("no estan llenos");
+        $("#btnagregarasig").prop("disabled", true);
+    }
+}
+
+function verificavacioedit(){
+    if(($("#idAsignatura_edit").val()!='')&&($("#clave_asignatura_edit").val()!='')&&($("#nom_asignatura_edit").val()!='')&&($("#semestre_edit").val()!='')&&($("#creditos_edit").val()!='')&&($("#caracter_edit").val()!='')){
+        console.log("estan llenos");
+        $("#btnasigedit").prop("disabled", false);    
+    }else {
+        console.log("no estan llenos");
+        $("#btnasigedit").prop("disabled", true);
+    }
+}
+
+function funcionesadd(){
+    verificavacioag();
+    activarSemestreSelectAg();
+}
+
+function activarSemestreSelectAg(){
+    if(($("#caracter_add").val()=='1')||($("#caracter_add").val()=='2')||($("#caracter_add").val()=='3')){
+        if(($("#caracter_add").val()=='1')){
+            $("#semestre_add").prop("disabled", false );
+            $("#semestre_add").val('');
+            $("#semestre_add").attr('min',1);
+            $("#semestre_add").attr('max',9);
+        }else if($("#caracter_add").val()=='2'){
+            $("#semestre_add").val('20');
+            $("#semestre_add").prop("disabled", true );
+        }else if(($("#caracter_add").val()=='3')){
+            $("#semestre_add").val('0');
+            $("#semestre_add").prop("disabled", false );
+        }
+    }
+}
+
+function funcionesEdit(){
+    verificavacioedit();
+    activarSemestreSelectEdit();
+}
+
+function activarSemestreSelectEdit(){
+    if(($("#caracter_edit").val()=='1')||($("#caracter_edit").val()=='2')||($("#caracter_edit").val()=='3')){
+        if(($("#caracter_edit").val()=='1')){
+            $("#semestre_edit").prop("disabled", false );
+            $("#semestre_edit").val('');
+            $("#semestre_edit").attr('min',1);
+            $("#semestre_edit").attr('max',9);
+            verificavacioedit();
+        }else if($("#caracter_edit").val()=='2'){
+            $("#semestre_edit").val('20');
+            $("#semestre_edit").prop("disabled", true );
+            verificavacioedit();
+        }else if(($("#caracter_edit").val()=='3')){
+            $("#semestre_edit").val('0');
+            $("#semestre_edit").prop("disabled", false );
+            verificavacioedit();
+        }
+    }
+}
+
+$("semestre_add").keyup(function(){
+    var value = $(this).val().replace(/[08-9]/g, "");
+    $(this).val(value)
+})
+

@@ -102,7 +102,6 @@ include_once "./includes/header.php";?>
                                 <th>CRÉDITOS</th>
                                 <th>CARÁCTER</th>
                                 <th>ESTATUS</th>
-                                <th>GRUPOS</th>
                                 <th>AGREGA GRUPOS</th>
                                 <th>ACCIÓN</th>
                             </tr>
@@ -139,6 +138,5 @@ include_once "./includes/header.php";?>
             <?php include "./modal/edit_asig.php"; ?>
             <?php include "./modal/modal-confirma-add-asig.php"; ?>
             <?php include "./modal/modal-baja-asignatura.php"; ?>
-
 </body>
 </html>

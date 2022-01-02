@@ -215,10 +215,10 @@ class ASIGNATURA extends CONEXION{
 
             public function queryUpdateEstatusAsignaturasPlan($idPlan,$codigo,$estatus){
         /*$query="SELECT asi.estatus FROM `asignaturas` asi, plandeestudios plan WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan=$idPlan AND asi.codigo=$codigo;";*/
-        $query="UPDATE`asignaturas` asi, plandeestudios plan SET  asi.estatus ='".$estatus."'  WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan='".$id_plan."' AND asi.codigo='".$codigo."'";
+        $query="UPDATE`asignaturas` asi, plandeestudios plan SET  asi.estatus ='".$estatus."'  WHERE plan.id_plan=asi.id_plan_fk AND plan.id_plan='".$idPlan."' AND asi.codigo='".$codigo."'";
         //return  $query;
         $this->connect();
-        $resultado = $this->getData($query);
+        $resultado = $this->executeInstruction($query);
         $this->close();
         return $resultado;
     }
