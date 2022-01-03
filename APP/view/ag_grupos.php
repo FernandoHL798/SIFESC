@@ -48,23 +48,26 @@ include_once "./includes/header.php";?>
                                     <!-- RELOJ FUNCIONAL Y BONITO ---------------------------- -->      
                                 </div>       
                             </div>
-                            <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="anuncio" >NOMBRE Y CLAVE DE PLAN DE ESTUDIOS</h4></div> 
+                            <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="anuncio" ><span id="nom_plan"></span> || Plan: <span id="clave_pln"></span></h4></div> 
                             <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="anuncio" >Agrega grupos a la materia seleccionada</h4></div>
                         </div>
                         <div class="">
                             <div class="row">
                                 <div class="col-lg-12" id="inscripcion">
-                                    <input type="text" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
-                                    <input type="text" name="clave_asig" id="clave_asig" value="<?php echo $claveAsig;?>">
-                                    <input type="text" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
+                                    <input type="hidden" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
+                                    <input type="hidden" name="clave_asig" id="clave_asig" value="<?php echo $claveAsig;?>">
+                                    <input type="hidden" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
                                     <table id="table" class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th colspan="2">Clave de asignatura
-                                                </th>
-                                                <th colspan="2">Nombre de la asignatura:
                                                     <div class="datos_personales">
-                                                        <span id="nombreAlumno"></span>
+                                                        <span id="clave_Asig_gru"></span>
+                                                    </div>
+                                                </th>
+                                                <th colspan="3">Nombre de la asignatura:
+                                                    <div class="datos_personales">
+                                                        <span id="nombre_Asig_gru"></span>
                                                     </div>
                                                 </th>
 
@@ -72,17 +75,17 @@ include_once "./includes/header.php";?>
                                             <tr>
                                                 <th colspan="1">Semestre:
                                                     <div class="datos_personales">
-                                                        <span id="anioEstudia"></span>
+                                                        <span id="semestre_Asig_gru"></span>
                                                     </div>
                                                 </th>
                                                 <th colspan="1">Créditos:
                                                     <div class="datos_personales">
-                                                        <span id="idCarrera"></span>
+                                                        <span id="cr_Asig_gru"></span>
                                                     </div>
                                                 </th>
-                                                <th colspan="2">Carácter:
+                                                <th colspan="3">Carácter:
                                                     <div class="datos_personales">
-                                                        <span id="Plantel"></span>
+                                                        <span id="caracter_Asig_gru"></span>
                                                     </div>
                                                 </th>
 
@@ -91,20 +94,21 @@ include_once "./includes/header.php";?>
                                                 
                                                 <th>No</th>
                                                 <th>GRUPOS</th>
+                                                <th>TURNO</th>
                                                 <th>TIPO</th>
                                                 <th>ACCION</th>
                                             </tr>
                                         </thead>
 
                                         <tbody id="tbl-grupos">
-                                            <tr>
+                                            <!-- <tr>
                                                 <td>1</td>
                                                 <td>1101</td>
                                                 <td>OBL</td>
                                                 <td data-label="Acciones" class="text-center">
                                                     <button type="button" title="Eliminar grupo" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_grupo"><i class='bx bx-trash'></i></button>
                                                 </td>
-                                            </tr>
+                                            </tr>-->
                                             
                                         </tbody>
                                     </table>
@@ -121,7 +125,7 @@ include_once "./includes/header.php";?>
                                 <div class="d-grid gap-2 col-3 mx-auto">
                                     <div class="modal-content" >
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agrega_grupo">Agregar Grupos</button>
+                                        <button type="button" class="btn btn-primary" onclick="altaGrupo();">Agregar Grupos</button>
                                     </div>
                                 </div>
                                 </div>

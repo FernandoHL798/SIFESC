@@ -11,12 +11,13 @@
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="Edit_plan_grup">
-              		<H5>¿Esta seguro que desea dar de baja este grupo?</H5>
+              		<H5>¿Esta seguro que desea dar de baja el grupo: <span id="baja_gupo_asig"></span> ?</H5>
+                  <input type="hidden" name="idgrupo" id="idgrupo">
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Aceptar</button>
+              <button type="submit" class="btn btn-primary">Aceptar</button>
             </div>
           </form>
         </div>

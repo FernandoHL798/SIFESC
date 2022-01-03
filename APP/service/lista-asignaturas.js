@@ -66,7 +66,7 @@ $(document).ready(function(){
                     console.log(res);
                     $("#frm_m_a_asignatura").trigger('reset');
                     $("#Asig_Modal_Asig").modal('hide');
-                    alert("Funka!");
+                    alert("La materia ya existe! se dara de alta");
                     $("#Modal-confirmacion-ag-asig").modal('show');
                 });
             }else if(res=='[{"estatus":"1"}]'){

@@ -52,3 +52,9 @@ function queryconsultaGruposAsignaturas($id_plan_fk,$codigo){
     $GRUPOS = new GRUPOS();
     return json_encode($GRUPOS->queryconsultaGruposAsignaturas($id_plan_fk,$codigo));
 }
+
+function queryUpdateGruposAs($id_grupo){
+    include_once "../model/GRUPOS.php";
+    $GRUPOS = new GRUPOS();
+    return $GRUPOS->queryUpdateGruposAs($id_grupo);
+}

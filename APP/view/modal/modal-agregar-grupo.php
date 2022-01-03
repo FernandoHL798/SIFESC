@@ -18,11 +18,31 @@
             <div class="form-group">
               <input type="text" placeholder="Grupo: " class="form-control" style="height: 60px" id="grupo_agrega" name="grupo_agrega">
             </div>
+            <div class="mt-3 mb-2"></div>
+                        <label for="tipo_add">Tipo:</label>
+                          <div class="form-floating">
+                            <select class="form-select" id="tipo_add" name="tipo_add">
+                                <option hidden=""></option>
+                                <option value="1">Ordinario</option>
+                                <option value="2">Extraordinario</option>
+                            </select>
+                                <label for="tipo_add"><font SIZE=3>Tipo:</font></label>
+                          </div>
+            <div class="mt-3 mb-2"></div>
+                        <label for="tipo_add">Turno:</label>
+                          <div class="form-floating">
+                            <select class="form-select" id="turno_add" name="turno_add">
+                                <option hidden=""></option>
+                                <option value="1">Matutino</option>
+                                <option value="2">Vespertino</option>
+                            </select>
+                                <label for="turno_add"><font SIZE=3>Turno:</font></label>
+                          </div>
           </div>
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Agregar</button>
+        <button type="submit" id="btnGrupo_add" class="btn btn-primary">Agregar</button>
       </div>
     </form>
   </div>
