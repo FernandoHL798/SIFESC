@@ -71,9 +71,14 @@ include "./includes/sidebar2.php";
 											<span id="Plantel"></span>
 										</div>
 									</th>
-									<th colspan="4">PLAN DE ESTUDIOS:
+									<th colspan="2">PLAN DE ESTUDIOS:
 										<div class="datos_personales">
 											<span id="Plan"></span>
+										</div>
+									</th>
+									<th colspan="2">CREDITOS:
+										<div class="datos_personales">
+											<span id="creditos"></span>
 										</div>
 									</th>
 									<th colspan="2">Periodo:
