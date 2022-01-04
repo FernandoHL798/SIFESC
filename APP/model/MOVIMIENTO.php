@@ -106,6 +106,14 @@ class MOVIMIENTO extends CONEXION{
         return $resultado;
     }
 
+    public function queryconsultaAltasMovimiento($idInscripcion,$updated){
+        $query="SELECT ins.id_periodo_fk, asi.id_asignacion, g.id_grupo, g.nombre_grupo, a.id_asignatura, a.codigo, a.nombre, a.creditos, a.semestre, mov.id_inscripcion_fk, mov.estatus, mov.altas, p.maximo_materias FROM `inscripcion` ins, `movimiento` mov, `asignacion` asi, `asignaturas` a, `grupos` g, plandeestudios p where ins.id_inscripcion=mov.id_inscripcion_fk and mov.id_asignacion_fk=asi.id_asignacion and asi.id_grupo_fk=g.id_grupo and g.id_asignatura_fk=a.id_asignatura and a.id_plan_fk=p.id_plan and ins.id_inscripcion=".$idInscripcion." AND mov.updated_at>".$updated;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryUpdateMovimiento(){
         $query="UPDATE `movimiento` SET `updated_at` = current_timestamp(), `estatus` = '".$this->getEstatus()."' WHERE `movimiento`.`id_inscripcion_fk` = '".$this->getIdInscripcionFk()."' AND `movimiento`.`id_asignacion_fk` = '".$this->getIdAsignacionFk()."'";
         $this->connect();
@@ -114,9 +122,9 @@ class MOVIMIENTO extends CONEXION{
         return $resultado;
     }
 
-    public function queryInsertMovimiento(){
-        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprobado`, `semestre`) 
-        VALUES ('".$this->getIdInscripcionFk()."', '".$this->getIdAsignacionFk()."', current_timestamp(), current_timestamp(), '".$this->getEstatus()."', '".$this->getCalificacion()."', '".$this->getAprobado()."', '".$this->getSemestre()."')";
+    public function queryInsertMovimiento($params){
+        $query="INSERT into `movimiento`(`id_inscripcion_fk`,`id_asignacion_fk`,`updated_at`,`created_at`,`estatus`,`calificacion`,`aprobado`, `altas`,`semestre`) 
+        VALUES ('".$this->getIdInscripcionFk()."', '".$this->getIdAsignacionFk()."', current_timestamp(), current_timestamp(), '".$this->getEstatus()."', '".$this->getCalificacion()."', '".$this->getAprobado()."', '".$params['alta']."','".$this->getSemestre()."')";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();

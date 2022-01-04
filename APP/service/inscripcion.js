@@ -10,7 +10,7 @@ $(document).ready(function(){
         let estatusIns=0;
         let semestre=0;
         let estat=0;
-        estatusAlum(id_inscripcion);
+        perdisteTramite(id_inscripcion);
         $("#asig_materia").change(function(){
             idAsignatura=$("#asig_materia").val();
             gruposAsig(idAsignatura);
@@ -32,6 +32,188 @@ $(document).ready(function(){
         $("#anuncio").html("AUN NO HAS SELECCIONADO O NO TIENES ASIGNADO UN PLAN DE ESTUDIOS, REVISA EN MIS CARRERAS PARA CONTINUAR");
     }
 });
+function perdisteTramite(id_inscripcion,fechaInscrip,fechaAltasB){
+    $.ajax({
+        url: "../webhook/lista_inscripcion.php",
+        type: 'POST',
+        data : {   idUsuario: $("#idUsuario").val(),
+                    idPlan: $("#idPlan").val()     },
+        success: function (response) {
+            let INSCRIPCION = JSON.parse(response);
+            var hoy = new Date();
+            var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+            var fecha = hoy.getFullYear()+ '-' + ( ""+hoy.getMonth() + 1 ) + '-' +("0"+hoy.getDate());
+            if(INSCRIPCION[0].fecha_altas_bajas<fecha && INSCRIPCION[0].estatus==1){
+                document.getElementById('btnInscripciones1').style.display = 'none';
+                document.getElementById('btnInscripciones2').style.display = 'none';
+                document.getElementById('textosInscripcion').style.display = 'none';
+                document.getElementById('inscripcion').style.display='none';
+                document.getElementById('finTramite').style.display = 'block';
+                document.getElementById('anuncio').style.display = 'none';
+                id_inscripcion=INSCRIPCION[0].id_inscripcion;
+                fechaInscrip=INSCRIPCION[0].fecha_inscripcion;
+                fechaAltasB=INSCRIPCION[0].fecha_altas_bajas;
+                inscritos=INSCRIPCION[0].inscritos;
+                console.log(fechaAltasB);
+                bajaAltasBajas(id_inscripcion,fechaAltasB,fechaInscrip,inscritos);
+            }else if(INSCRIPCION[0].fecha_inscripcion<fecha && INSCRIPCION[0].estatus==1){
+                document.getElementById('btnInscripciones1').style.display = 'none';
+                document.getElementById('btnInscripciones2').style.display = 'none';
+                document.getElementById('textosInscripcion').style.display = 'none';
+                document.getElementById('inscripcion').style.display='none';
+                document.getElementById('finTramite').style.display = 'block';
+                document.getElementById('anuncio').style.display = 'none';
+                id_inscripcion=INSCRIPCION[0].id_inscripcion;
+                inscritos=INSCRIPCION[0].inscritos;
+                bajaInsc(id_inscripcion,inscritos);
+            }else{
+                document.getElementById('finTramite').style.display = 'none';
+                estatusAlum(id_inscripcion);
+            }
+        } 
+    });
+}
+
+function bajaInsc(id_inscripcion,inscritos){
+    alert("entre");
+    $.ajax({
+        url: "../webhook/lista_movimiento.php",
+        type: 'POST',
+        data : {   idInscripcion: id_inscripcion },
+        success: function (response) {
+            let BAJAINS = JSON.parse(response);
+            BAJAINS.forEach(bajasi=>{
+                if(bajasi.estatus==1){
+                    console.log(bajasi.id_asignacion);
+                    var formData = new FormData(document.getElementById("frm-inscripcion"));
+                    formData.append("idInscripcion", id_inscripcion);
+                    formData.append("idAsignacion", bajasi.id_asignacion);
+                    formData.append("estatus", "2");
+                    $.ajax({
+                        url: "../webhook/modifica_movimiento.php",
+                        type: "post",
+                        dataType: "html",
+                        data :formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    })
+                    .done(function(res){
+                        console.log(res);
+                        if(res==1){
+                            formData.append("idAsignacion", bajasi.id_asignacion);
+                            formData.append("inscritos", inscritos);
+                            $.ajax({
+                                url: "../webhook/modifica_inscritos_asignacion.php",
+                                type: 'POST',
+                                data: formData,
+                                dataType: "html",
+                                cache: false,
+                                contentType: false,
+                                processData: false
+                            })
+                            .done(function(res){
+                                console.log(res);
+                                console.log("se cambio");
+                            });
+                        }
+                    });
+                }
+            });
+        } 
+    });
+}
+
+function bajaAltasBajas(id_inscripcion,fechaAltasB,fechaInscrip, inscritos){
+    alert("entre bajas");
+    $.ajax({
+        url: "../webhook/lista_movimiento_altas_bajas.php",
+        type: 'POST',
+        data : {   idInscripcion: id_inscripcion,
+                    updated: fechaAltasB },
+        success: function (response) {
+            console.log(response);
+            let cont=0;
+            let BAJAALTAS = JSON.parse(response);
+            BAJAALTAS.forEach(bajasal=>{
+                if(BAJAALTAS[cont].estatus==1 && BAJAALTAS[cont].altas==0){
+                    cont++;
+                    console.log(bajasal.id_asignacion);
+                    var formData = new FormData(document.getElementById("frm-inscripcion"));
+                    formData.append("idInscripcion", id_inscripcion);
+                    formData.append("idAsignacion", bajasal.id_asignacion);
+                    formData.append("estatus", "2");
+                    $.ajax({
+                        url: "../webhook/modifica_movimiento.php",
+                        type: "post",
+                        dataType: "html",
+                        data :formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    })
+                    .done(function(res){
+                        console.log(res);
+                        if(res==1){
+                            formData.append("idAsignacion", bajasi.id_asignacion);
+                            formData.append("inscritos", inscritos);
+                            $.ajax({
+                                url: "../webhook/modifica_inscritos_asignacion.php",
+                                type: 'POST',
+                                data: formData,
+                                dataType: "html",
+                                cache: false,
+                                contentType: false,
+                                processData: false
+                            })
+                            .done(function(res){
+                                console.log(res);
+                                console.log("se cambio");
+                            });
+                        }
+                    });
+                }else if(BAJAALTAS[cont].estatus==2 && BAJAALTAS[cont].altas==0){
+                    cont++;
+                    console.log(bajasal.id_asignacion);
+                    var formData = new FormData(document.getElementById("frm-inscripcion"));
+                    formData.append("idInscripcion", id_inscripcion);
+                    formData.append("idAsignacion", bajasal.id_asignacion);
+                    formData.append("estatus", "1");
+                    $.ajax({
+                        url: "../webhook/modifica_movimiento.php",
+                        type: "post",
+                        dataType: "html",
+                        data :formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    })
+                    .done(function(res){
+                        console.log(res);
+                        if(res==1){
+                            formData.append("idAsignacion", bajasi.id_asignacion);
+                            formData.append("inscritos", inscritos);
+                            $.ajax({
+                                url: "../webhook/modifica_inscritos_asignacion.php",
+                                type: 'POST',
+                                data: formData,
+                                dataType: "html",
+                                cache: false,
+                                contentType: false,
+                                processData: false
+                            })
+                            .done(function(res){
+                                console.log(res);
+                                console.log("se cambio");
+                            });
+                        }
+                    });
+                }
+            });
+        } 
+    });
+}
+
 function estatusAlum(id_inscripcion) {
     $.ajax({
         url: "../webhook/lista_estudia_estatus.php",
@@ -74,6 +256,7 @@ function estatusAlum(id_inscripcion) {
         }
     });
 }
+
 function datosAlumno(id_inscripcion){
     $.ajax({
         url: "../webhook/lista_alumnos.php",
@@ -117,6 +300,7 @@ function datosAlumno(id_inscripcion){
                             document.getElementById('btnInscripciones1').style.display = 'block';
                             document.getElementById('btnInscripciones2').style.display = 'block';
                             listaMovimientos(id_inscripcion);
+                            $("#alta").html("1");
                         }else{
                             document.getElementById('textosInscripcion').style.display = 'none';
                             document.getElementById('btnInscripciones1').style.display = 'none';
@@ -156,6 +340,7 @@ function datosAlumno(id_inscripcion){
                                 listaMovimientos(id_inscripcion)
                                 document.getElementById('btnInscripciones1').style.display = 'block';
                                 document.getElementById('btnInscripciones2').style.display = 'block';
+                                $("#alta").html("2");
                             }
                         }else{
                             document.getElementById('textosInscripcion').style.display = 'none';

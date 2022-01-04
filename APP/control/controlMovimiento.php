@@ -6,6 +6,12 @@ function consultaMovimiento($idInscripcion){
     return json_encode($MOVIMIENTO->queryconsultaMovimiento($idInscripcion));
 }
 
+function consultaAltasMovimiento($idInscripcion,$updated){
+    include_once "../model/MOVIMIENTO.php";
+    $MOVIMIENTO = new MOVIMIENTO();
+    return json_encode($MOVIMIENTO->queryconsultaAltasMovimiento($idInscripcion,$updated));
+}
+
 function updateMovimiento($params){
     include_once "../model/MOVIMIENTO.php";
     $MOVIMIENTO = new MOVIMIENTO();
@@ -24,7 +30,7 @@ function insertMovimiento($params){
     $MOVIMIENTO->setSemestre($params['semestre']);
     $MOVIMIENTO->setCalificacion(0);
     $MOVIMIENTO->setAprobado(0);
-    return $MOVIMIENTO->queryInsertMovimiento();
+    return $MOVIMIENTO->queryInsertMovimiento($params);
 }
 
 function deleteMovimiento($params){

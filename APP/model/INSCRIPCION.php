@@ -2,6 +2,7 @@
 include_once "CONEXION.php";
 class INSCRIPCION extends CONEXION{
     private $id_inscripcion;
+    private $id_plan_fk;
     private $id_usuarioalumno_fk;
     private $id_periodo_fk;
     private $fecha_inscripcion;
@@ -140,8 +141,8 @@ class INSCRIPCION extends CONEXION{
     }
 
     
-    public function queryconsultaInscripcion(){
-        $query="SELECT `id_inscripcion`, `id_usuarioalumno_fk`, `id_periodo_fk`, `fecha_inscripcion`, `hora_inscripcion`, `fecha_altas_bajas`, `hora_altas_bajas`, `estatus`, `updated_at`, `created_at` FROM `inscripcion`";
+    public function queryconsultaInscripcion($idPlan,$idUsuario){
+        $query="SELECT a.inscritos, i.id_inscripcion, i.id_periodo_fk, i.fecha_inscripcion, i.hora_inscripcion, i.fecha_altas_bajas, i.hora_altas_bajas, i.estatus, i.updated_at, i.created_at FROM movimiento m, inscripcion i, asignacion a WHERE a.id_periodo_fk=i.id_periodo_fk AND m.id_inscripcion_fk=i.id_inscripcion AND m.id_asignacion_fk=a.id_asignacion AND i.id_claveplan_fk=".$idPlan." AND `id_usuarioalumno_fk`=".$idUsuario;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

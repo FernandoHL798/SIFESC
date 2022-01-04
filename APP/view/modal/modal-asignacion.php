@@ -23,6 +23,7 @@
 										<label id="saturacionGrupoAsig"></label>
 										<input type="hidden" id="ins"></input>
 										<input type="hidden" id="cup"></input>
+										<input type="hidden" id="alta"></input>
 									</div>
 						        <div class="modal-footer">
 							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

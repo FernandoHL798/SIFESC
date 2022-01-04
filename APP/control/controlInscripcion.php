@@ -1,9 +1,9 @@
 <?php
 
-function consultaInscripcion(){
+function consultaInscripcion($idPlan,$idUsuario){
     include_once "../model/INSCRIPCION.php";
     $INSCRIPCION = new INSCRIPCION();
-    return json_encode($INSCRIPCION->queryconsultaInscripcion());
+    return json_encode($INSCRIPCION->queryconsultaInscripcion($idPlan,$idUsuario));
 }
 
 function updateInscripcion($params){

@@ -39,6 +39,7 @@ include_once "./includes/header.php";?>
                                 </div>       
                             </div> 
                             <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="anuncio" ></h4></div>
+                            <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="finTramite" >No completaste tu inscripción y no se ha guardado tu lugar en las asignaciones.</h4></div>
                             <div class="mt-3 mb-2" id="textosInscripcion">
                             <h4 class="text-center mb-5" >Selecciona las asignaturas que inscribirás en este nuevo periodo</h4>
                             <p class="text-center mb-4">Para dar de alta una asignatura selecciona el botón << Agregar asignatura >> y rellena los campos requeridos.<br>
