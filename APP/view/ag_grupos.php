@@ -58,6 +58,7 @@ include_once "./includes/header.php";?>
                                     <input type="hidden" name="clave_asig" id="clave_asig" value="<?php echo $claveAsig;?>">
                                     <input type="hidden" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
                                     <table id="table" class="table table-bordered">
+                                        <input type="hidden" id="idasignaturagrupo" name="idasignaturagrupo">
                                         <thead>
                                             <tr>
                                                 <th colspan="2">Clave de asignatura
@@ -101,14 +102,7 @@ include_once "./includes/header.php";?>
                                         </thead>
 
                                         <tbody id="tbl-grupos">
-                                            <!-- <tr>
-                                                <td>1</td>
-                                                <td>1101</td>
-                                                <td>OBL</td>
-                                                <td data-label="Acciones" class="text-center">
-                                                    <button type="button" title="Eliminar grupo" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modal_baja_grupo"><i class='bx bx-trash'></i></button>
-                                                </td>
-                                            </tr>-->
+                                        <!--  Ajax tabla grupos   -->
                                             
                                         </tbody>
                                     </table>

@@ -266,6 +266,9 @@ function activarSemestreSelectAg(){
         }else if(($("#caracter_add").val()=='3')){
             $("#semestre_add").val('0');
             $("#semestre_add").prop("disabled", false );
+            $("#semestre_edit").attr('min',0);
+            $("#semestre_edit").attr('minlength',1);
+            $("#semestre_edit").attr('maxlength',1);
         }
     }
 }
@@ -290,6 +293,9 @@ function activarSemestreSelectEdit(){
         }else if(($("#caracter_edit").val()=='3')){
             $("#semestre_edit").val('0');
             $("#semestre_edit").prop("disabled", false );
+            $("#semestre_edit").attr('min',0);
+            $("#semestre_edit").attr('minlength',1);
+            $("#semestre_edit").attr('maxlength',1);
             verificavacioedit();
         }
     }

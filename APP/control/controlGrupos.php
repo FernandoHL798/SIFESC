@@ -36,6 +36,7 @@ function insertGrupos($params){
     $GRUPOS->setIdAsignaturaFk($params['id_asignatura_fk']);
     $GRUPOS->setNombreGrupo($params['nombre']);
     $GRUPOS->setTipo($params['tipo']);
+    $GRUPOS->setTurno($params['turno']);
     $GRUPOS->setEstatus($params['estatus']);
     return $GRUPOS->queryInsertGrupos();
 }
@@ -53,8 +54,19 @@ function queryconsultaGruposAsignaturas($id_plan_fk,$codigo){
     return json_encode($GRUPOS->queryconsultaGruposAsignaturas($id_plan_fk,$codigo));
 }
 
-function queryUpdateGruposAs($id_grupo){
+function queryUpdateGruposAs($id_grupo,$estatus){
     include_once "../model/GRUPOS.php";
     $GRUPOS = new GRUPOS();
-    return $GRUPOS->queryUpdateGruposAs($id_grupo);
+    return $GRUPOS->queryUpdateGruposAs($id_grupo,$estatus);
+}
+
+function consultaExisteGrupo($id_plan_fk,$codigo,$nombre_grupo){
+    include_once "../model/GRUPOS.php";
+    $GRUPOS = new GRUPOS();
+    $result = $GRUPOS->queryconsultaExisteGrupo($id_plan_fk,$codigo,$nombre_grupo);
+    if(count($result)>0){
+        return json_encode($result);
+    }else{
+        return false;
+    }
 }

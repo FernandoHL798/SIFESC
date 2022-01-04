@@ -139,8 +139,8 @@ class GRUPOS extends CONEXION{
     }
 
     public function queryInsertGrupos(){
-        $query="INSERT into `grupos`(`id_grupo`,`id_asignatura_fk`,`nombre_grupo`,`updated_at`,`created_at`) 
-        VALUES ('".$this->getIdGrupo()."', '".$this->getIdAsignaturaFk()."', '".$this->getNombreGrupo()."', '".$this->getTipo()."','".$this->getEstatus()."', 
+        $query="INSERT into `grupos`(`id_grupo`,`id_asignatura_fk`,`nombre_grupo`,`turno`,`tipo`,`estatus`,`updated_at`,`created_at`) 
+        VALUES ('".$this->getIdGrupo()."', '".$this->getIdAsignaturaFk()."', '".$this->getNombreGrupo()."', '".$this->getTurno()."', '".$this->getTipo()."','".$this->getEstatus()."', 
         current_timestamp(),current_timestamp())";
         $this->connect();
         $resultado= $this->executeInstruction($query);
@@ -164,10 +164,18 @@ class GRUPOS extends CONEXION{
         return $resultado;
     }
 
-    public function queryUpdateGruposAs($id_grupo){
-        $query="UPDATE `grupos` SET `estatus`='2'WHERE `id_grupo` =".$id_grupo;
+    public function queryUpdateGruposAs($id_grupo,$estatus){
+        $query="UPDATE `grupos` SET `estatus`='".$estatus."' WHERE `id_grupo` =".$id_grupo;
         $this->connect();
         $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryconsultaExisteGrupo($id_plan_fk,$codigo,$nombre_grupo){
+        $query= "SELECT g.id_grupo, g.estatus, g.tipo, asi.nombre, asi.creditos, asi.semestre, asi.caracter, g.turno, g.id_asignatura_fk, asi.id_asignatura, asi.codigo FROM grupos g, asignaturas asi WHERE g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan_fk." AND asi.codigo =".$codigo." AND g.nombre_grupo =".$nombre_grupo;
+        $this->connect();
+        $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }

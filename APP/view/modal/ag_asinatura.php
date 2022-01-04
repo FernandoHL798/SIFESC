@@ -41,7 +41,7 @@
                         <div class="mt-3 mb-2"></div>
                           <div class="form-group">
                           <label for="semestre">Semestre:</label>
-                          <input type="number" placeholder="Semestre:" class="form-control" style="height: 45px" id="semestre_add" name="semestre_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()">
+                          <input type="number" pattern="^[0-3]{1}" placeholder="Semestre:" class="form-control" style="height: 45px" id="semestre_add" name="semestre_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()" pattern="^[0-3]{1}">
                       </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
