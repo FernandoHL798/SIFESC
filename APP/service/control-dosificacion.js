@@ -37,7 +37,23 @@ function getDatosAlumno(){
             $("#tbl-nombreAlumno").html(alumno.nombre_alumno+' '+alumno.primer_apellido+' '+ alumno.segundo_apellido);
             let turno = alumno.turno>1 ? "Vespertino" : "Matutino";
             $("#tbl-Turno").html(turno);
-            $("#tbl-Carrera").html(alumno.id_carrera+' - '+alumno.nombre_carrera);
+            $("#tbl-Carrera").html(alumno.clave+' - '+alumno.nombre_carrera);
             }
         });   
+}
+
+function verificaDosificacion(){
+    $.ajax({
+        url: "../webhook/consultaPeriodo-dosificacion.php",
+        type: 'POST',
+        data : {   },
+        success: function (response) {
+            //Convertimos el string a JSON
+            let PERIODOS = JSON.parse(response); 
+            let template="";
+            console.log(PERIODOS);
+            $("#nombre_periodo").html(PERIODOS[0].periodo);
+            getDatosAlumno();
+            }
+        });      
 }
