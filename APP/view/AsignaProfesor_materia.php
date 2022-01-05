@@ -113,10 +113,10 @@ include_once "./includes/header.php";?>
                                 </thead>
 
                                 <tbody id="tbl_materias_profesores">
-                                   
+                                    <!-- AJAX RESPONSE --> 
                                 </tbody>
-                            </table>
-                        </div>
+                               </table>
+                           </div>
                     </div>
                 </div>   
                 <!-- Se utiliza para darle espacio al final de la tabla -->
