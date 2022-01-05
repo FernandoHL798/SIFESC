@@ -9,6 +9,7 @@ function carrerasAlumno(){
         success: function (response) {
             //Convertimos el string a JSON
             let CARRERA = JSON.parse(response);  
+            console.log(CARRERA);
             let template="";
 	        CARRERA.forEach(carrera => {
                 template += `
@@ -21,7 +22,7 @@ function carrerasAlumno(){
                     <td data-label="Generacion">${carrera.anio}</td>
                     <td data-label="Acciones">
                         <div class="">
-                            <input class="form-check-input" onclick="cambiaPlanAlumno(${carrera.id_plan});" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <input class="form-check-input" onclick="cambiaPlanAlumno(${carrera.id_plan},${carrera.id_carrera});" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         </div>
                     </td>
                 </tr>
@@ -32,12 +33,13 @@ function carrerasAlumno(){
     });
 }
 
-function cambiaPlanAlumno(idPlan){
+function cambiaPlanAlumno(idPlan,idCarrera){
     console.log(idPlan);
     var formData = new FormData();
     formData.append("idPlan", idPlan);
+    formData.append("idCarrera", idCarrera);
      $.ajax({
-        url: "../../APP/webhook/update-plan-alumno.php", //webhook actualiza el plan del alumno en el session
+        url: "../webhook/update-plan-alumno.php", //webhook actualiza el plan del alumno en el session
         type: 'POST',
         data: formData,
         dataType: "html",
