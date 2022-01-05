@@ -1,15 +1,10 @@
 <?php 
 include_once"../control/controlPeriodo.php";
 $params=[
-	"id_periodo"=>"1",
-	"periodo"=>"2021-1",
-	"fecha_inscripcion_in"=>"2021-10-15",
-	"fecha_inscripcion_fin"=>"2021-10-15",
-	"fecha_altabaja_in"=>"2021-10-20",
-	"fecha_altabaja_fin"=>"2021-10-20",
-	"fecha_periodo_in"=>"2021-10-15",
-	"fecha_periodo_fin"=>"2021-10-20",
-	"estatus"=>""
+	"fecha_periodo_ini"=>$_POST['fechaInicioPeriodo'],
+	"fecha_periodo_fin"=>$_POST['fechaFinPeriodo2']
 ];
-$result=updatePeriodo($params);
+$estatus = $_POST['estatus'];
+$id_periodo=$_POST['idPeriodoM'];
+$result=updatePeriodo($params, $estatus, $id_period);
 echo $result;
