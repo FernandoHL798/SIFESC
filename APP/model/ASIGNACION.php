@@ -143,7 +143,7 @@ class ASIGNACION extends CONEXION{
     }
 
     public function queryDeleteAsignacion(){
-        $query="DELETE FROM `asignacion` WHERE `id_asignacion`='".$this->getIdAsignacion()."'";
+        $query="UPDATE `asignacion` SET `id_asignacion` = ".$this->getIdAsignacion()."*-1 WHERE `id_asignacion` = ".$this->getIdAsignacion();
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
