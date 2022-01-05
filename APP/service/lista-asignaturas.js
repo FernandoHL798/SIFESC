@@ -79,7 +79,40 @@ $(document).ready(function(){
         })
         e.preventDefault();
     });
+//Condicion para NOMBRE
+$('input[name=nom_asignatura_add]').bind('keypress', function(event) {
+var regex = new RegExp("^[A-ZÀ-ÿ0-9 ]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
 });
+//Condicion para CLAVE
+$('input[name=clave_asignatura_add]').bind('keypress', function(event) {
+var regex = new RegExp("^[0-9_]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+//Condicion para CREDITOS
+$('input[name=creditos_add]').bind('keypress', function(event) {
+var regex = new RegExp("^[1-9_]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+
+});
+
+
+
+
+
 
 function listaplandeestudios(){
     var idpasig= $("#idPlanAsig").val();

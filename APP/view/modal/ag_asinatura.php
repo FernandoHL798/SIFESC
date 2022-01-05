@@ -14,8 +14,8 @@
                   <div class="form-group" id="actual-pass-group">
                       <div class="form-group">
                         <label for="clave_asignatura">Clave:</label>
-                          <input type="number" placeholder="" class="form-control" style="height: 45px" id="clave_asignatura_2" name="clave_asignatura_2" disabled hidden>
-                          <input type="number" placeholder="Clave:" class="form-control" style="height: 45px" id="clave_asignatura_add" name="clave_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()">
+                          <input type="number" maxlength="4" placeholder="" class="form-control" style="height: 45px" id="clave_asignatura_2" name="clave_asignatura_2" disabled hidden>
+                          <input type="text" maxlength="4" pattern="[0-9]{4}" placeholder="Clave:" class="form-control" style="height: 45px" id="clave_asignatura_add" name="clave_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()" title="Clave Incorrecta" title="Deben ser 4 caracteres">
                           <div class="alert alert-danger" id="do_exist">
                                   <a href="#" class="close" data-dismiss="alert">&times;</a>
                                   <strong>¡Aviso!</strong>La asignatura ya existe
@@ -25,7 +25,7 @@
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
                           <label for="nom_asignatura">Nombre de la asignatura:</label>
-                          <input type="text" style="text-transform:uppercase;" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura_add" name="nom_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                          <input type="text" maxlength="50" pattern="[A-ZÀ-ÿ0-9]{1,}" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura_add" name="nom_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()" onkeyup="javascript:this.value=this.value.toUpperCase();">
                         </div>
                         <div class="mt-3 mb-2"></div>
                         <label for="caracter">Carácter:</label>

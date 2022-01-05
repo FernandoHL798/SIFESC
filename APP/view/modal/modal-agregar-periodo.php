@@ -1,6 +1,6 @@
 <!-- Modal AGREGAR Periodo -->
         
-            <div class="modal fade" id="Modal_Add_Periodo" tabindex="-1" aria-labelledby="Modal_Asig" aria-hidden="true">
+            <div class="modal fade" id="Modal_Add_Periodo2" tabindex="-1" aria-labelledby="Modal_Asig" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <form id="frm_m_a_periodo">
