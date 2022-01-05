@@ -15,7 +15,7 @@
                       <div class="form-group">
                         <label for="clave_asignatura">Clave:</label>
                           <input type="number" placeholder="" class="form-control" style="height: 45px" id="clave_asignatura_2" name="clave_asignatura_2" disabled hidden>
-                          <input type="number" placeholder="Clave:" class="form-control" style="height: 45px" id="clave_asignatura_add" name="clave_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()">
+                          <input type="number" maxlength="" placeholder="Clave:" class="form-control" style="height: 45px" id="clave_asignatura_add" name="clave_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()">
                           <div class="alert alert-danger" id="do_exist">
                                   <a href="#" class="close" data-dismiss="alert">&times;</a>
                                   <strong>¡Aviso!</strong>La asignatura ya existe
@@ -25,7 +25,7 @@
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
                           <label for="nom_asignatura">Nombre de la asignatura:</label>
-                          <input type="text" style="text-transform:uppercase;" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura_add" name="nom_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                          <input type="text" maxlength="50" pattern="[A-ZÀ-ÿ0-9]{1,}" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura_add" name="nom_asignatura_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()" >
                         </div>
                         <div class="mt-3 mb-2"></div>
                         <label for="caracter">Carácter:</label>
@@ -40,9 +40,19 @@
                           </div>
                         <div class="mt-3 mb-2"></div>
                           <div class="form-group">
-                          <label for="semestre">Semestre:</label>
+                          <label id="labelsemestre" for="semestre">Semestre:</label>
                           <input type="number" pattern="^[0-3]{1}" placeholder="Semestre:" class="form-control" style="height: 45px" id="semestre_add" name="semestre_add" onkeydown="verificavacioag()" onkeyup="verificavacioag()" onblur="verificavacioag()" onfocus="verificavacioag()" pattern="^[0-3]{1}">
                       </div>
+                      
+                          <div class="form-floating">
+                            <select class="form-select" id="semestre_adds" name="semestre_adds" onkeydown="funcionesadd()" onkeyup="funcionesadd()" onblur="funcionesadd()" onfocus="funcionesadd()" onselect="funcionesadd()" onclick="funcionesadd()" hidden>
+                                <option hidden=""></option>
+                                <option value="0">0</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                                <label for="caracter"><font SIZE=3>Semestre:</font></label>
+                          </div>
                         <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
                           <label for="creditos">Creditos:</label>
