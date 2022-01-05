@@ -1,6 +1,9 @@
 <?php 
 include_once"../control/controlAlumno.php";
-$idUsuario=$_POST['idUsuario'];
-$idPlan=$_POST['idPlan'];
-$result=consultaAlumno($idUsuario,$idPlan);
+$params=[
+	"idUsuario"=>$_POST['idUsuario'],
+	"idPlan"=>$_POST['idPlan'],
+	"estatusPeriodo"=>$_POST['estatusPeriodo']
+];
+$result=consultaAlumno($params);
 echo $result;

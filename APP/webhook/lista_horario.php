@@ -1,4 +1,5 @@
 <?php 
 include_once"../control/controlHorario.php";
-$result=consultaHorario();
+$idInscripcion=$_POST['idInscripcion'];
+$result=consultaHorario($idInscripcion);
 echo $result;

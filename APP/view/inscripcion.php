@@ -122,6 +122,7 @@ include_once "./includes/header.php";?>
                         </div> 
 
                             <!-- Se utiliza para darle espacio al final de la tabla -->
+                                <div class="mt-3 mb-2"><h4 class="text-center mb-5" id="traslapan" ></h4></div>
                                 <div class="mt-3 mb-2"></div>
                                 <div class="d-grid gap-2 col-3 mx-auto">
                                     

@@ -25,7 +25,7 @@ $mail->Subject = 'Cambio de contraseña SIFESC';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
-$mail->Body = 'Estima@ usuario '.$nombre.', La contraseña a sido cambiada exitosamente, tu nueva contraseña es: '.$pwd;
+$mail->Body = 'Estimado usuario '.$nombre.', tu contraseña ha sido modificada exitosamente. Tu nueva contraseña es: '.$pwd;
 //Attach an image file
 
 //send the message, check for errors

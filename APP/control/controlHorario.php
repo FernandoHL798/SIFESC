@@ -1,8 +1,8 @@
 <?php
-function consultaHorario(){
+function consultaHorario($idInscripcion){
     include_once "../model/HORARIO.php";
     $HORARIO = new HORARIO();
-    return json_encode($HORARIO->queryconsultaHorario());
+    return json_encode($HORARIO->queryconsultaHorario($idInscripcion));
 }
 
 function updateHorario($params){

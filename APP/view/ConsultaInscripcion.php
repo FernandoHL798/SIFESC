@@ -83,7 +83,7 @@ include "./includes/sidebar2.php";
 									</th>
 									<th colspan="2">Periodo:
 										<div class="datos_personales">
-											<span id="Periodo"></span>Ejemplo de periodo
+											<span id="Periodo"></span>
 										</div>
 									</th>
 								</tr>
@@ -94,11 +94,7 @@ include "./includes/sidebar2.php";
 									<th>CRED.</th>
 									<th>SEM.</th>
 									<th>GPO.</th>
-									<th>
-										<div class="datos_personales">
-											Movimiento:
-										</div>
-									</th>
+									<th>Movimiento</th>
 								</tr>
 							</thead>
 

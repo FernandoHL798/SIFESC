@@ -39,41 +39,46 @@ function perdisteTramite(id_inscripcion,fechaInscrip,fechaAltasB){
         data : {   idUsuario: $("#idUsuario").val(),
                     idPlan: $("#idPlan").val()     },
         success: function (response) {
-            let INSCRIPCION = JSON.parse(response);
-            var hoy = new Date();
-            var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
-            var fecha = hoy.getFullYear()+ '-' + ( ""+hoy.getMonth() + 1 ) + '-' +("0"+hoy.getDate());
-            if(INSCRIPCION[0].fecha_altas_bajas<fecha && INSCRIPCION[0].estatus==1){
-                document.getElementById('btnInscripciones1').style.display = 'none';
-                document.getElementById('btnInscripciones2').style.display = 'none';
-                document.getElementById('textosInscripcion').style.display = 'none';
-                document.getElementById('inscripcion').style.display='none';
-                document.getElementById('finTramite').style.display = 'block';
-                document.getElementById('anuncio').style.display = 'none';
-                id_inscripcion=INSCRIPCION[0].id_inscripcion;
-                fechaInscrip=INSCRIPCION[0].fecha_inscripcion;
-                fechaAltasB=INSCRIPCION[0].fecha_altas_bajas;
-                inscritos=INSCRIPCION[0].inscritos;
-                console.log(fechaAltasB);
-                bajaAltasBajas(id_inscripcion,fechaAltasB,fechaInscrip,inscritos);
-            }else if(INSCRIPCION[0].fecha_inscripcion<fecha && INSCRIPCION[0].estatus==1){
-                document.getElementById('btnInscripciones1').style.display = 'none';
-                document.getElementById('btnInscripciones2').style.display = 'none';
-                document.getElementById('textosInscripcion').style.display = 'none';
-                document.getElementById('inscripcion').style.display='none';
-                document.getElementById('finTramite').style.display = 'block';
-                document.getElementById('anuncio').style.display = 'none';
-                id_inscripcion=INSCRIPCION[0].id_inscripcion;
-                inscritos=INSCRIPCION[0].inscritos;
-                bajaInsc(id_inscripcion,inscritos);
+            console.log(response);
+            if(response!=false && response!="[]"){
+                let INSCRIPCION = JSON.parse(response);
+                var hoy = new Date();
+                var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+                var fecha = hoy.getFullYear()+ '-' + ( ""+hoy.getMonth() + 1 ) + '-' +("0"+hoy.getDate());
+                if(INSCRIPCION[0].fecha_altas_bajas<fecha && INSCRIPCION[0].estatus==1){
+                    document.getElementById('btnInscripciones1').style.display = 'none';
+                    document.getElementById('btnInscripciones2').style.display = 'none';
+                    document.getElementById('textosInscripcion').style.display = 'none';
+                    document.getElementById('inscripcion').style.display='none';
+                    document.getElementById('finTramite').style.display = 'block';
+                    document.getElementById('anuncio').style.display = 'none';
+                    id_inscripcion=INSCRIPCION[0].id_inscripcion;
+                    fechaInscrip=INSCRIPCION[0].fecha_inscripcion;
+                    fechaAltasB=INSCRIPCION[0].fecha_altas_bajas;
+                    inscritos=INSCRIPCION[0].inscritos;
+                    console.log(fechaAltasB);
+                    bajaAltasBajas(id_inscripcion,fechaAltasB,fechaInscrip,inscritos);
+                }else if(INSCRIPCION[0].fecha_inscripcion<fecha && INSCRIPCION[0].estatus==1){
+                    document.getElementById('btnInscripciones1').style.display = 'none';
+                    document.getElementById('btnInscripciones2').style.display = 'none';
+                    document.getElementById('textosInscripcion').style.display = 'none';
+                    document.getElementById('inscripcion').style.display='none';
+                    document.getElementById('finTramite').style.display = 'block';
+                    document.getElementById('anuncio').style.display = 'none';
+                    id_inscripcion=INSCRIPCION[0].id_inscripcion;
+                    inscritos=INSCRIPCION[0].inscritos;
+                    bajaInsc(id_inscripcion,inscritos);
+                }else{
+                    document.getElementById('finTramite').style.display = 'none';
+                    estatusAlum(id_inscripcion);
+                }
             }else{
                 document.getElementById('finTramite').style.display = 'none';
-                estatusAlum(id_inscripcion);
+                    estatusAlum(id_inscripcion);
             }
         } 
     });
 }
-
 function bajaInsc(id_inscripcion,inscritos){
     alert("entre");
     $.ajax({
@@ -81,6 +86,7 @@ function bajaInsc(id_inscripcion,inscritos){
         type: 'POST',
         data : {   idInscripcion: id_inscripcion },
         success: function (response) {
+            console.log(response);
             let BAJAINS = JSON.parse(response);
             BAJAINS.forEach(bajasi=>{
                 if(bajasi.estatus==1){
@@ -262,7 +268,8 @@ function datosAlumno(id_inscripcion){
         url: "../webhook/lista_alumnos.php",
         type: 'POST',
         data : {   idUsuario: $("#idUsuario").val(),
-                    idPlan: $("#idPlan").val()     },
+                    idPlan: $("#idPlan").val(),
+                    estatusPeriodo: 1    },
         success: function (response) {
             console.log(response);
             //Convertimos el string a JSON
@@ -318,7 +325,7 @@ function datosAlumno(id_inscripcion){
                                 $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
                                 $("#anioEstudia").html(ALUMNO[0].anio);
                                 $("#idCarrera").html(ALUMNO[0].carrera_clave);
-                                $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad+' ('+ALUMNO[0].nombre_plantel+')');
+                                $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_plantel);
                                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                                 $("#creditoMaximo").html(ALUMNO[0].maximo_creditos);
                                 $("#idInscripcionAlumno").html(ALUMNO[0].id_inscripcion);
@@ -380,8 +387,10 @@ function asignaturas(credito,nombres){
                         periodo: peri    },
         success: function (response) {
             //Convertimos el string a JSON
+            console.log(response);
             let ASIGNATURAS = JSON.parse(response); 
             let template="";
+            let cont=0;
             template+=  `<option selected>Selecciona la materia</option>`;
             ASIGNATURAS.forEach(asignatura=>{
                 if(asignatura.semestre==semestre){
@@ -390,7 +399,8 @@ function asignaturas(credito,nombres){
                     }else{
                         console.log(credito+"-"+asignatura.creditos);
                         if(asignatura.creditos<=credito || credito==''){
-                            if(asignatura.nombre!=nombres){
+                            if(ASIGNATURAS[cont].nombre!=nombres[cont].nombre){
+                                cont++;
                                 template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;   
                             }
                         }
@@ -452,6 +462,7 @@ function listaMovimientos(id_inscripcion){
         type: 'POST',
         data : {      idInscripcion: id_inscripcion   },
         success: function (response) {
+            console.log(response);
             //Convertimos el string a JSON
             let MOVIMIENTOS = JSON.parse(response);
             let tblMovimientos="";
@@ -500,6 +511,7 @@ function listaMovimientos(id_inscripcion){
                 }
             });
             asignaturas(a,nombres);
+            traslape(id_inscripcion);
             $("#saturacionGrupoAsig").html("");
             if(c>0){
                 document.getElementById('btnInscripciones2').style.display = 'block';
@@ -551,5 +563,61 @@ function saturacionGrupo(idAsignatura,idAsignacion){
             $("#ins").html(SATURACIONES[0].inscritos);
             $("#cup").html(SATURACIONES[0].cupo);
         }
+    });
+}
+
+function traslape(id_inscripcion){
+    console.log(id_inscripcion);
+    $.ajax({
+        url: "../webhook/lista_horario.php",
+        type: 'POST',
+        data : {   idInscripcion: id_inscripcion },
+        success: function (response) {
+            console.log(response);
+            let TRASLAPAN = JSON.parse(response);
+            let cont=0;
+            let tras='';
+            let tamañoMaterias=TRASLAPAN.length;
+            TRASLAPAN.forEach(traslapa=>{
+                console.log(TRASLAPAN[cont].dia);
+                if(cont<(tamañoMaterias-1))
+                if(TRASLAPAN[cont].dia==TRASLAPAN[cont+1].dia){
+                    if(((TRASLAPAN[cont+1].inicio==TRASLAPAN[cont].inicio && TRASLAPAN[cont+1].fin==TRASLAPAN[cont].fin) || (TRASLAPAN[cont+1].fin<TRASLAPAN[cont].fin && TRASLAPAN[cont+1].fin>TRASLAPAN[cont].inicio)) || ((TRASLAPAN[cont].inicio==TRASLAPAN[cont+1].inicio && TRASLAPAN[cont].fin==TRASLAPAN[cont+1].fin) || (TRASLAPAN[cont].fin<TRASLAPAN[cont+1].fin && TRASLAPAN[cont].fin>TRASLAPAN[cont+1].inicio))){
+                        console.log("inicio"+TRASLAPAN[cont].inicio+"-"+TRASLAPAN[cont+1].inicio);
+                        console.log("fin"+TRASLAPAN[cont].fin+"-"+TRASLAPAN[cont+1].fin);
+                        if(TRASLAPAN[cont].dia==1){
+                            $("#traslapan").html(tras+"Traslape con "+TRASLAPAN[cont+1].nombre+" y "+TRASLAPAN[cont].nombre+" el día Lunes");
+                            tras=$("#traslapan").text();
+                            cont++;
+                        }else if(TRASLAPAN[cont].dia==2){
+                            $("#traslapan").html(tras+"Traslape con "+TRASLAPAN[cont+1].nombre+" y "+TRASLAPAN[cont].nombre+" el día Martes");
+                            tras=$("#traslapan").text();
+                            cont++;
+                        }else if(TRASLAPAN[cont].dia==3){
+                            $("#traslapan").html(tras+"Traslape con "+TRASLAPAN[cont+1].nombre+" y "+TRASLAPAN[cont].nombre+" el día Miercoles");
+                            tras=$("#traslapan").text();
+                            cont++;
+                        }else if(TRASLAPAN[cont].dia==4){
+                            $("#traslapan").html(tras+"Traslape con "+TRASLAPAN[cont+1].nombre+" y "+TRASLAPAN[cont].nombre+" el día Jueves");
+                            tras=$("#traslapan").text();
+                            cont++;
+                        }else if(TRASLAPAN[cont].dia==5){
+                            $("#traslapan").html(tras+"Traslape con "+TRASLAPAN[cont+1].nombre+" y "+TRASLAPAN[cont].nombre+" el día Viernes");
+                            tras=$("#traslapan").text();
+                            cont++;
+                        }else if(TRASLAPAN[cont].dia==6){
+                            $("#traslapan").html(tras+"Traslape con "+TRASLAPAN[cont+1].nombre+" y "+TRASLAPAN[cont].nombre+" el día Sabado");
+                            tras=$("#traslapan").text();
+                            cont++;
+                        }
+                        console.log("mismo dia y misma hora");
+                    }
+                    console.log("solo mismo dia");
+                }else{
+                    cont++;
+                    console.log("diferente dia");
+                }
+            });
+        } 
     });
 }

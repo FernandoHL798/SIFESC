@@ -8,18 +8,21 @@ function datosAlumno(){
         url: "../webhook/lista_alumnos.php",
         type: 'POST',
         data : {   idUsuario: $("#idUsuario").val(),
-        			idPlan: $("#idPlan").val()     },
+        			idPlan: $("#idPlan").val(),
+                    estatusPeriodo: 0     },
         success: function (response) {
+            console.log(response);
             //Convertimos el string a JSON
             let ALUMNO = JSON.parse(response);
                 $("#cuenta_alumno").html(ALUMNO[0].cuenta_alumno);
                 $("#nombreAlumno").html(ALUMNO[0].nombre+' '+ALUMNO[0].primer_apellido+' '+ALUMNO[0].segundo_apellido);
                 $("#anioEstudia").html(ALUMNO[0].anio);
                 $("#idCarrera").html(ALUMNO[0].carrera_clave);
-                $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_facultad);
+                $("#Plantel").html(ALUMNO[0].id_plantel+' - '+ALUMNO[0].nombre_plantel);
                 $("#Plan").html(ALUMNO[0].id_plan+' - '+ALUMNO[0].nombre_plan);
                 $("#idInscripcionAlumno").val(ALUMNO[0].id_inscripcion);
                 $("#creditos").html(ALUMNO[0].maximo_creditos);
+                $("#Periodo").html(ALUMNO[0].periodo);
                 credMaxim=$("#creditos").text();
                 tblConsultaIns(ALUMNO[0].id_inscripcion);
      }       
@@ -39,6 +42,7 @@ function tblConsultaIns(id_inscripcion){
             let cont=0;
             let c=0;
             var credMen=0;
+            let creditos=0;
             let a=credMaxim;
             MOVIMIENTOS.forEach(movimiento=>{
                 if(MOVIMIENTOS[cont].estatus==1){
@@ -54,7 +58,8 @@ function tblConsultaIns(id_inscripcion){
                                             <td data-label="Mov">Alta</td>
                                         </tr>`;
                     a=parseInt(a)-parseInt(credMen);
-                    $("#creditos").html(parseInt(a));
+                    creditos=credMaxim-a;
+                    $("#creditos").html(parseInt(creditos));
                     cont++;
                 }else{
                     cont++;
