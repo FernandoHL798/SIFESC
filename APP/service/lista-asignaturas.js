@@ -79,7 +79,40 @@ $(document).ready(function(){
         })
         e.preventDefault();
     });
+//Condicion para NOMBRE
+$('input[name=nom_asignatura_add]').bind('keypress', function(event) {
+var regex = new RegExp("^[A-ZÀ-ÿ0-9 ]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
 });
+//Condicion para CLAVE
+$('input[name=clave_asignatura_add]').bind('keypress', function(event) {
+var regex = new RegExp("^[0-9_]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+//Condicion para CREDITOS
+$('input[name=creditos_add]').bind('keypress', function(event) {
+var regex = new RegExp("^[1-9_]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+
+});
+
+
+
+
+
 
 function listaplandeestudios(){
     var idpasig= $("#idPlanAsig").val();
@@ -115,7 +148,7 @@ function listaplandeestudios(){
                                 <td data-label="CRÉDITOS">${asignatura.creditos}</td>
                                 <td data-label="CARACTER">${caractertxt}</td>
                                 <td data-label="ESTATUS">${estatustxt}</td>
-                                <td class="text-center"><a href="./ag_grupos.php?idPlan=${idpasig}&codigo_asi=${asignatura.codigo}"><button type="button" class="btn btn-primary btn-sm col-5 mx-auto"><i class='bx bxs-message-square-add'></i></button></td>
+                                <td class="text-center"><a href="./ag_grupos.php?idPlan=${idpasig}&codigo_asi=${asignatura.codigo}&id_asignaturafk=${asignatura.id_asignatura}"><button type="button" class="btn btn-primary btn-sm col-5 mx-auto"><i class='bx bxs-message-square-add'></i></button></td>
                                 <td data-label="ACCIONES" class="text-center" colspan="2">
                                     <button type="button" class="btn btn-success btn-sm col-5 mx-auto" onclick="editarAsignatura(${asignatura.id_asignatura},'${asignatura.codigo}','${asignatura.nombre}',${asignatura.semestre},${asignatura.creditos},'${asignatura.caracter}');"><i class='bx bxs-pencil'></i></button>
                                     <button type="button" class="btn btn-danger btn-sm col-5" onclick="bajaAsignatura(${asignatura.id_asignatura},'${asignatura.nombre}');"><i class='bx bx-trash'></i></button>
@@ -256,14 +289,20 @@ function funcionesadd(){
 function activarSemestreSelectAg(){
     if(($("#caracter_add").val()=='1')||($("#caracter_add").val()=='2')||($("#caracter_add").val()=='3')){
         if(($("#caracter_add").val()=='1')){
+            $("#semestre_add").prop("hidden", false );
             $("#semestre_add").prop("disabled", false );
+            $("#semestre_adds").prop("hidden", true );
             $("#semestre_add").val('');
             $("#semestre_add").attr('min',1);
             $("#semestre_add").attr('max',9);
         }else if($("#caracter_add").val()=='2'){
             $("#semestre_add").val('20');
+            $("#semestre_add").prop("hidden", false );
+            $("#semestre_adds").prop("hidden", true );
             $("#semestre_add").prop("disabled", true );
         }else if(($("#caracter_add").val()=='3')){
+            $("#semestre_add").prop("hidden", true );
+            $("#semestre_adds").prop("hidden", false );
             $("#semestre_add").val('0');
             $("#semestre_add").prop("disabled", false );
             $("#semestre_edit").attr('min',0);
@@ -300,9 +339,3 @@ function activarSemestreSelectEdit(){
         }
     }
 }
-
-$("semestre_add").keyup(function(){
-    var value = $(this).val().replace(/[08-9]/g, "");
-    $(this).val(value)
-})
-

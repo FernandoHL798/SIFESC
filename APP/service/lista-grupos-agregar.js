@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	listaGruposAsignatura();
+    listaDatosGrupos();
 	datosPlandeestudios();
 
 
@@ -39,11 +40,8 @@ $(document).ready(function(){
     var formData = new FormData(document.getElementById("frm_m_a_grupo"));
     console.log();
     formData.append("idAsignatura", $("#idPlanAsig_add_gr").val());
-    formData.append("codigo", $("#clave_asig_add_gr").val());
+    formData.append("id_asig_fk", $("#id_asignatura_add_gr").val());
     formData.append("nombre_grupo", $("#grupo_agrega").val());
-    formData.append("tipo", $("#tipo_add").val());
-    formData.append("turno", $("#turno_add").val());
-
     $.ajax({
         url: "../webhook/verifica_existe_grupo.php",
         type: 'POST',
@@ -81,9 +79,13 @@ $(document).ready(function(){
         
     e.preventDefault();
 
+            }else if(GRUPO[0].estatus!='2'){
+                alert("El grupo ya esta listado");
             }
+
         }else{
-            formData.append("codigo", $("#idasignaturagrupo_add").val());
+            formData.append("id_asig_fk", $("#id_asignatura_add_gr").val());
+            //formData.append("codigo", $("#idasignaturagrupo_add").val());
             formData.append("nombre_grupo", $("#grupo_agrega").val());
             formData.append("tipo", $("#tipo_add").val());
             formData.append("turno", $("#turno_add").val());
@@ -152,6 +154,47 @@ function datosPlandeestudios(){
     });
 }
 
+function listaDatosGrupos(){
+    $.ajax({
+        url: "../webhook/consulta_datos_grupos.php",
+        type:'POST',
+        data : {
+            idAsignatura:$("#idPlanAsig").val(),
+            id_asig_fk:$("#id_asignatura").val()
+        },
+        success: function (response){
+            let GRUPOS =JSON.parse(response);
+            console.log(GRUPOS);
+            GRUPOS.forEach(grupo=>{
+                $("#nombre_Asig_gru").html(grupo.nombre);
+                $("#clave_Asig_gru").html($("#clave_asig").val());
+                $("#semestre_Asig_gru").html(grupo.semestre);
+                $("#cr_Asig_gru").html(grupo.creditos);
+                $("#idasignaturagrupo").val(grupo.id_asignatura);
+                if (grupo.caracter=='1'){
+                    caractertx="Obligatoria";
+                }else if (grupo.caracter=='2'){
+                    caractertx="Optativa requerida";
+                }else if (grupo.caracter=='3'){
+                    caractertx="Optativa de elección";
+                }
+                if(grupo.turno=='1'){
+                    turnotx="Matutino";
+                }else if(grupo.turno=='2'){
+                    turnotx="Vespertino";
+                }else{
+                    turnotx="Inactivo";
+                }
+                 if(grupo.tipo=="1"){
+                    tipotx="Ordinario";
+                }else if(grupo.turno=="2"){
+                    tipotx="Extraordinario";
+                }
+                $("#caracter_Asig_gru").html(caractertx);
+            });
+        }
+    });
+}
 
 
 
@@ -161,7 +204,7 @@ function listaGruposAsignatura(){
         type:'POST',
         data : {
         	idAsignatura:$("#idPlanAsig").val(),
-        	codigo:$("#clave_asig").val()
+        	codigo:$("#id_asignatura").val()
     	},
         success: function (response){
             let GRUPOS =JSON.parse(response);
@@ -210,6 +253,7 @@ function listaGruposAsignatura(){
                                 <td>${turnotx}</td>
                                 <td>${tipotx}</td>
                                 <td data-label="Acciones" class="text-center">
+                                <button type="button" class="btn btn-success btn-sm col-5 mx-auto" onclick="editarGrupo('${grupo.id_grupo}','${grupo.nombre_grupo}','${grupo.turno}','${grupo.tipo}');"><i class='bx bxs-pencil'></i></button>
                                 <button type="button" title="Eliminar grupo" class="btn btn-danger" onclick="bajaGrupo('${grupo.nombre}','${grupo.estatus}','${grupo.nombre_grupo}','${grupo.id_grupo}');"><i class='bx bx-trash'></i></button>
                                  </td>
                              </tr>`;
@@ -258,7 +302,46 @@ function activarBotonAgregar(){
 }
 
 function limpiar(){
-    //$("#frm_m_a_grupo").html("");
     $("#frm_m_a_grupo").trigger('reset');
     $("#agrega_grupo").modal('hide');
+}
+
+function editarGrupo(idgrupo,nombre,turno,tipo){
+    $('#edita_grupo').modal('show');
+    $("#edita_grupo_mombre").html(nombre);
+    $("#grupo_agrega_edit").val(nombre);
+    $("#tipo_add_edit").val(tipo);
+    $("#turno_add_edit").val(turno);
+
+    $("#frm_m_e_grupo").on("submit", function(e){
+    var formData = new FormData(document.getElementById("frm_m_e_grupo"));
+    console.log();
+    formData.append("id_grupo", idgrupo);
+    formData.append("id_asignatura_fk", $("#id_asignatura_add_gr").val());
+    formData.append("nombre", $("#grupo_agrega_edit").val());
+    formData.append("tipo", $("#tipo_add_edit").val());
+    formData.append("turno", $("#turno_add_edit").val());
+    formData.append("estatus", "1");
+    $.ajax({
+        url: "../webhook/modifica_grupos.php",
+        type: 'POST',
+        data: formData,
+        dataType: "html",
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+        .done(function(res){
+            console.log(res);
+            listaGruposAsignatura();
+            listaDatosGrupos();
+            datosPlandeestudios();
+            console.log(res);
+            $("#frm_m_e_grupo").trigger('reset');
+            $("#edita_grupo").modal('hide');
+        });
+        
+    e.preventDefault();
+});
+
 }

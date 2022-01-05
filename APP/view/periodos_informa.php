@@ -42,39 +42,9 @@ include "./includes/sidebar2.php";
                     </div>
 
                         <table class="tabled table-bordered  display nowrap table-responsive mt-3" cellspacing="0" width="100%">
-                            <tbody>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de inicio de la dosificación</th>
-                                    <td style="width: 350px;"><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de fin de la dosificación</th>
-                                    <td><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de inicio de inscripciones</th>
-                                    <td><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de fin de inscripciones</th>
-                                    <td><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de inicio de la dosificación (ALTAS Y BAJAS)</th>
-                                    <td><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de fin de la dosificación (ALTAS Y BAJAS)</th>
-                                    <td><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de inicio de inscripciones (ALTAS Y BAJAS)</th>
-                                    <td><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>
-                                <tr class=" text-center">
-                                    <th style="width: 350px;">Fecha de fin de inscripciones (ALTAS Y BAJAS)</th>
-                                    <td><input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> </td>
-                                </tr>              
+                            <tbody id="tbl-fechasPerido">
+                                
+                                              
   
 
                             </tbody>
@@ -83,16 +53,17 @@ include "./includes/sidebar2.php";
                 </div>
 
                 <!-- Se utiliza para darle espacio al final de la tabla -->
-                <div class="mt-3 mb-2"></div>
+                    <div class="mt-3 mb-2"></div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#guarda_cambios_fechas">Guardar Cambios</button>
-                  </div>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#guarda_cambios_fechas">Guardar Cambios</button>
+                          <!-- Se utiliza para darle espacio al final de la tabla -->
+                        <div class="mt-3 mb-2"></div>
+                        <div class="d-grid gap-2 col-3 mx-auto">
+                            <p class="mt-3 mb-2"></p>
+                        </div>
+                    </div>
 
-                <!-- Se utiliza para darle espacio al final de la tabla -->
-                <div class="mt-3 mb-2"></div>
-                <div class="d-grid gap-2 col-3 mx-auto">
-                    <p class="mt-3 mb-2"></p>
-                </div>
+                
             
         </div>                     
     </div>

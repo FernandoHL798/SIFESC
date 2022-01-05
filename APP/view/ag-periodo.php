@@ -47,6 +47,7 @@ include_once "./includes/header.php";?>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Asig_Modal">
                             Nuevo Periodo
                         </button>
+                        <input type="hidden" id="idPeriodo" name="idPeriodo" value="<?php echo $idPeriodo;?>">
                     </div>
 
                 </div>
@@ -67,76 +68,8 @@ include_once "./includes/header.php";?>
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td data-label="Clave">2022/1</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <label class="switch">
-                              <input type="checkbox">
-                              <span class="slider round"></span>
-                          </label>
-                        </td>
-                        <td data-label="Acciones">
-                            <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
-                            <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td data-label="Clave">2021/2</td>
-                        <td data-label="Duración">09/08/2021</td>
-                        <td data-label="Duración">19/08/2021</td>
-                        <td>
-                            <label class="switch">
-                              <input type="checkbox" checked>
-                              <span class="slider round"></span>
-                          </label>
-                        </td>
-                        <td data-label="Acciones">
-                            <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
-                            <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
-
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td data-label="Clave">2021/1</td>
-                            <td data-label="Duración">09/01/2021</td>
-                            <td data-label="Duración">19/01/2021</td>
-                            <td>
-                                <label class="switch">
-                                  <input type="checkbox">
-                                  <span class="slider round"></span>
-                              </label>
-                          </td>
-
-                          <td data-label="Acciones">
-                            <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
-                            <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
-
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td data-label="Clave">2020/2</td>
-                            <td data-label="Duración">09/09/2021</td>
-                            <td data-label="Duración">19/09/2021</td>
-                            <td>
-                                <label class="switch">
-                                  <input type="checkbox">
-                                  <span class="slider round"></span>
-                              </label>
-                          </td>
-
-                          <td data-label="Acciones">
-                            <button type="button" title="Eliminar Período" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#elimina_periodo"><i class='bx bx-trash'></i></button> 
-                            <button type="button" title="Editar Período" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit_periodo"><i class='bx bxs-pencil'></i></button>
-                            <a href="./periodos_informa.php"><button type="button" title="Ver acciones del período" class="btn btn-info"><i class='bx bx-show'></i></button>
-
-                        </td>
-                    </tr>
+                <tbody id="tbl-adminperiodo2">
+            
                 </tbody>
             </table>
             <!-- Se utiliza para darle espacio al final de la tabla -->
@@ -152,6 +85,7 @@ include_once "./includes/header.php";?>
 <?php include "./modal/modal-agregar-periodo.php"; ?>
 <?php include "./modal/modal-edit-periodo.php"; ?>
 <?php include "./modal/modal-baja-periodo.php"; ?>
+<script src="../service/lista-admin-periodo.js"></script>
 
 </body>
 </html>

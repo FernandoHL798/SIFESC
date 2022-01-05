@@ -3,6 +3,10 @@ include_once "CONEXION.php";
 class PERIODO extends CONEXION{
     private $id_periodo;
     private $periodo;
+    private $fecha_inicio_dosificacion;
+    private $fecha_fin_dosificacion;
+    private $fecha_inicio_dosificacion_altasbajas;
+    private $fecha_baja_dosificacion_altasbajas;
     private $fecha_inscripcion_inicio;
     private $fecha_inscripcion_fin;
     private $fecha_altas_bajas_inicio;
@@ -10,7 +14,6 @@ class PERIODO extends CONEXION{
     private $fecha_periodo_inicio;
     private $fecha_periodo_fin;
     private $estatus;
-
   
     /**
      * @return mixed
@@ -41,7 +44,62 @@ class PERIODO extends CONEXION{
     {
         $this->periodo = $periodo;
     }
-
+    /**
+     * @return mixed
+     */
+    public function getFechaInicioDosifiacion()
+    {
+        return $this->fecha_inicio_dosificacion;
+    }
+    /**
+     * @param mixed $fecha_inicio_dosificacion
+     */
+    public function setFechaInicioDosificacion($fecha_inicio_dosificacion): void
+    {
+        $this->fecha_inicio_dosificacion = $fecha_inicio_dosificacion;
+    }
+    /**
+     * @return mixed
+     */
+    public function getFechaFinDosificacion()
+    {
+        return $this->fecha_fin_dosificacion;
+    }
+    /**
+     * @param mixed $fecha_fin_dosificacion
+     */
+    public function setFechaFinDosificacion($fecha_fin_dosificacion): void
+    {
+        $this->fecha_fin_dosificacion = $fecha_fin_dosificacion;
+    }
+    /**
+     * @return mixed
+     */
+    public function getFechaInicioDosifiacionAB()
+    {
+        return $this->fecha_inicio_dosificacion_altasbajas;
+    }
+    /**
+     * @param mixed $fecha_inicio_dosificacion_altasbajas
+     */
+    public function setFechaInicioDosificacionAB($fecha_inicio_dosificacion_altasbajas): void
+    {
+        $this->fecha_inicio_dosificacion_altasbajas = $fecha_inicio_dosificacion_altasbajas;
+    }
+    /**
+     * @return mixed
+     */
+    public function getFechaBajaDosificacionAB()
+    {
+        return $this->fecha_baja_dosificacion_altasbajas;
+    }
+    /**
+     * @param mixed $fecha_baja_dosificacion_altasbajas
+     */
+    public function setFechaBajaDosificacionAB($fecha_baja_dosificacion_altasbajas): void
+    {
+        $this->fecha_baja_dosificacion_altasbajas = $fecha_baja_dosificacion_altasbajas;
+    }
     /**
      * @return mixed
      */
@@ -149,16 +207,31 @@ class PERIODO extends CONEXION{
     
     
     public function queryconsultaPeriodo(){
-        $query="SELECT `id_periodo`, `periodo`, `fecha_inscripcion_inicio`, `fecha_inscripcion_fin`, `fecha_altas_bajas_inicio`,`fecha_altas_bajas_fin`, `fecha_periodo_inicio`, `fecha_periodo_fin`,`estatus`,`updated_at`, `created_at` FROM `periodo` ORDER by `id_periodo` DESC";
+        $query="SELECT `id_periodo`, `periodo`, `fecha_inicio_dosificacion`, `fecha_fin_dosificacion`, `fecha_inicio_dosificacion_altasbajas`, `fecha_baja_dosificacion_altasbajas`, `fecha_inscripcion_inicio`, `fecha_inscripcion_fin`, `fecha_altas_bajas_inicio`,`fecha_altas_bajas_fin`, `fecha_periodo_inicio`, `fecha_periodo_fin`,`estatus`,`updated_at`, `created_at` FROM `periodo` ORDER by `id_periodo` DESC";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+    public function queryconsultaExistePeriodo($idPeriodo, $Periodo){
+        $filtroPeriodo= $idPeriodo>0? " id_plantel_fk=".$idPeriodo: "";
+        $query="SELECT `estatus` FROM `periodo` WHERE ".$filtroPeriodo." AND `periodo` = '".$Periodo."'";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
         return $resultado;
     }
 
-    public function queryUpdatePeriodo(){
-        $query="UPDATE `periodo` SET `periodo` = '".$this->getPeriodo()."', `fecha_inscripcion_inicio` = '".$this->getFechaInscripcionInicio()."', `fecha_inscripcion_fin` = '".$this->getFechaInscripcionFin()."', `fecha_altas_bajas_inicio` = '".$this->getFechaAltasBajasInicio()."', `fecha_altas_bajas_fin` = '".$this->getFechaAltasBajasFin()."', `fecha_periodo_inicio` = '".$this->getFechaPeriodoInicio()."', `fecha_periodo_fin` = '".$this->getFechaAltasBajasFin()."',`estatus`='".$this->getEstatus()."',`updated_at` = current_timestamp()
-          WHERE `periodo`.`id_periodo` = '".$this->getIdPeriodo()."'";
+    public function queryUpdatePeriodo($estatus, $id_period){
+        $query="UPDATE `periodo` SET `fecha_periodo_inicio` = '".$this->getFechaPeriodoInicio()."', `fecha_periodo_fin` = '".$this->getFechaPeriodoFin()."',`estatus`='".$estatus."',`updated_at` = current_timestamp()
+          WHERE `periodo`='".$this->getIdPeriodo()."'";
+        $this->connect();
+        $resultado= $this->executeInstruction($query);
+        $this->close();
+        return $resultado;
+    }
+    public function queryCambiaEstatusPeriodo($params){
+        $query="UPDATE `periodo` SET `estatus`='".$params['estatus']."' WHERE `periodo`='".$this->getPeriodo()."' AND `id_periodo`='".$this->getIdPeriodo()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -173,9 +246,9 @@ class PERIODO extends CONEXION{
         $this->close();
         return $resultado;
     }
-
-    public function queryDeletePeriodo(){
-        $query="DELETE FROM `periodo` WHERE `id_periodo`='".$this->getIdPeriodo()."'";
+    //---------------------DELETE-->
+    public function queryUpdateEstatusPeriodo($estatus){
+        $query="UPDATE `periodo` SET `estatus`='".$estatus."' WHERE `id_periodo`='".$this->getIdPeriodo()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -189,4 +262,12 @@ class PERIODO extends CONEXION{
         $this->close();
         return $resultado;       
     }
+
+/*public function queryconsultaContraUser(){
+        $query="SELECT `contrasenia` FROM `usuario`";
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }*/
 }

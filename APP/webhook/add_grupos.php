@@ -1,7 +1,7 @@
 <?php 
 include_once"../control/controlGrupos.php";
 $params=[
-	"id_asignatura_fk"=>$_POST['codigo'],
+	"id_asignatura_fk"=>$_POST['id_asig_fk'],
 	"nombre"=>$_POST['nombre_grupo'],
 	"tipo"=>$_POST['tipo'],
 	"turno"=>$_POST['turno_add'],

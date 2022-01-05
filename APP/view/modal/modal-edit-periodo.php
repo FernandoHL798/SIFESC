@@ -22,19 +22,21 @@
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
                         <label class="form-control"> Fecha inicio del período
-                          <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaInicioPeriodo" name="fechaInicioPeriodo"max=""> 
+                          <input type="date" placeholder="Fecha Inicio Periodo:" class="form-control" style="height: 60px" id="fechaInicioPeriodo2" name="fechaInicioPeriodo2" disabled=""> 
+                          <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaInicioPeriodo" name="fechaInicioPeriodo" onkeyup="verificarmod()" onkeydown="verificarmod()" onchange="verificarmod()"> 
                         </label>
                       </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group">
                         <label class="form-control"> Fecha fin del período
-                          <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo" name="fechaFinPeriodo"max=""> 
+                          <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo2" name="fechaFinPeriodo2" disabled="">
+                          <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" style="height: 60px" id="fechaFinPeriodo3" name="fechaFinPeriodo3" onkeyup="verificarmod()" onkeydown="verificarmod()" onchange="verificarmod()"> 
                         </label>
                       </div>
                   </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Edtiar</button>
+                  <button type="submit" class="btn btn-primary" id="BtnGuardarPer" disabled="">Guardar</button>
                 </div>
                 </form>
               </div>
