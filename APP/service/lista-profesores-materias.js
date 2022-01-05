@@ -28,7 +28,7 @@ function listaProfesoresMaterias(){                         /* NOMBRO COMO QUIER
                                 <td data-label="Apellido M">${profesor.segundo_apellido}</td>
                                 <td data-label="Correo">${profesor.correo}</td>
                                 <td data-label="Acciones">
-                                <a href="./AsignaProfesor_materia.php"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
+                                <a href="./AsignaProfesor_materia.php?idProfesor=${profesor.id_usuario}"><button type="button" title="Ver Profesor" class="btn btn-info"><i class='bx bx-show'></i></button>
                                 </td>
                             </tr>`;    
             });
