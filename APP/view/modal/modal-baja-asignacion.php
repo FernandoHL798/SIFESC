@@ -13,7 +13,7 @@
               <div class="modal-body">
               <div class="mt-3 mb-2"></div>
               <div class="form-group" id="Edit_plan_grup">
-              		<H5>¿Esta seguro que desea dar de baja la materia?</H5>
+              		<H5>¿Esta seguro que desea dar de baja la asignación?</H5>
               </div>
             </div>
             <div class="modal-footer">

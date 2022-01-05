@@ -10,9 +10,14 @@ $(document).ready(function(){
         formData.append("idPlan", $("#idPlanAsig").val());
         formData.append("clave_asignatura", $("#clave_asignatura_add").val());
         formData.append("nom_asignatura", $("#nom_asignatura_add").val());
-        formData.append("semestre", $("#semestre_add").val());
-        formData.append("creditos", $("#creditos_add").val());
         formData.append("caracter", $("#caracter_add").val());
+        if ($("#caracter_add").val()=='3'){
+            formData.append("semestre", $("#semestre_adds").val());
+        }else if($("#caracter_add").val()!='3'){
+            formData.append("semestre", $("#semestre_add").val());
+        }
+        formData.append("creditos", $("#creditos_add").val());
+        console.log(formData);
         $.ajax({
             url: "../webhook/lista-asignaturas-plan-consulta.php",
             type:'POST',
@@ -79,6 +84,8 @@ $(document).ready(function(){
         })
         e.preventDefault();
     });
+
+
 //Condicion para NOMBRE
 $('input[name=nom_asignatura_add]').bind('keypress', function(event) {
 var regex = new RegExp("^[A-ZÀ-ÿ0-9 ]+$");
@@ -88,6 +95,16 @@ event.preventDefault();
 return false;
 }
 });
+
+$('input[name=nom_asignatura_edit]').bind('keypress', function(event) {
+var regex = new RegExp("^[A-ZÀ-ÿ0-9 ]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+
 //Condicion para CLAVE
 $('input[name=clave_asignatura_add]').bind('keypress', function(event) {
 var regex = new RegExp("^[0-9_]+$");
@@ -97,6 +114,17 @@ event.preventDefault();
 return false;
 }
 });
+
+$('input[name=clave_asignatura_edit]').bind('keypress', function(event) {
+var regex = new RegExp("^[0-9_]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
+
+
 //Condicion para CREDITOS
 $('input[name=creditos_add]').bind('keypress', function(event) {
 var regex = new RegExp("^[1-9_]+$");
@@ -107,11 +135,16 @@ return false;
 }
 });
 
+$('input[name=creditos_edit]').bind('keypress', function(event) {
+var regex = new RegExp("^[1-9_]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
 });
 
-
-
-
+});
 
 
 function listaplandeestudios(){
@@ -186,23 +219,31 @@ function editarAsignatura(idAsignatura,clave,nombre,semestre,creditos,caracter){
     console.log(caracter);
     console.log(indiceDatos);
     $('#Edit_Modal_P').modal('show');
+    activarSemestreSelectAg();
     //Todas las variables que se pueden editar en el modal
     $("#idAsignatura_edit").val(idAsignatura);
     $("#clave_asignatura_edit").val(clave);
     $("#nom_asignatura_edit").val(nombre);
     $('#caracter_edit').val(caracter);
+    $("#semestre_edit_s").val(semestre);
+    $("#semestre_edit").val(semestre);
     if(caracter=='1'){
+        $("#semestre_adds").prop("hidden", true );
+        $("#semestre_add").prop("hidden", false );
         $("#semestre_edit").prop("disabled", false );
-        $("#semestre_edit").val(semestre);
+        
+        
     }else if(caracter=='2'){
+        $("#semestre_add").prop("hidden", false );
         $("#semestre_edit").prop("disabled", true );
-        $("#semestre_edit").val(semestre);
+        $("#semestre_adds").prop("hidden", true );
+        
     }else if(caracter=='3'){
+        $("#semestre_add").prop("hidden", true );
         $("#semestre_edit").prop("disabled", false );
-        $("#semestre_edit").val(semestre);
+        $("#semestre_adds").prop("hidden", false );
+        
     }
-   //$('#caracter_edit').val(caracter);
-   //$("#semestre_edit").val(semestre);
    $("#creditos_edit").val(creditos);
 }
 
@@ -216,9 +257,13 @@ function actualizarasignatura(){
     formData.append("idAsignatura", $("#idAsignatura_edit").val());
     formData.append("codigo", $("#clave_asignatura_edit").val());
     formData.append("nombre", $("#nom_asignatura_edit").val());
-    formData.append("semestre", $("#semestre_edit").val());
-    formData.append("creditos", $("#creditos_edit").val());
     formData.append("caracter", $("#caracter_edit").val());
+    if($("#caracter_edit").val()=='3'){
+        formData.append("semestre", $("#semestre_edit_s").val());
+    }else if($("#caracter_edit").val()!='3'){
+        formData.append("semestre", $("#semestre_edit").val());
+    }
+    formData.append("creditos", $("#creditos_edit").val());
     formData.append("estatus", "1");
     $.ajax({
         url: "../webhook/modifica_asignatura.php",
@@ -272,7 +317,7 @@ function verificavacioag(){
 }
 
 function verificavacioedit(){
-    if(($("#idAsignatura_edit").val()!='')&&($("#clave_asignatura_edit").val()!='')&&($("#nom_asignatura_edit").val()!='')&&($("#semestre_edit").val()!='')&&($("#creditos_edit").val()!='')&&($("#caracter_edit").val()!='')){
+    if(($("#idAsignatura_edit").val()!='')&&($("#clave_asignatura_edit").val()!='')&&($("#nom_asignatura_edit").val()!='')&&($("#creditos_edit").val()!='')&&($("#caracter_edit").val()!='')&&(($("#semestre_edit").val()!='')||($("#semestre_edit_s").val()!=''))){
         console.log("estan llenos");
         $("#btnasigedit").prop("disabled", false);    
     }else {
@@ -320,16 +365,22 @@ function funcionesEdit(){
 function activarSemestreSelectEdit(){
     if(($("#caracter_edit").val()=='1')||($("#caracter_edit").val()=='2')||($("#caracter_edit").val()=='3')){
         if(($("#caracter_edit").val()=='1')){
+            $("#semestre_edit").prop("hidden", false );
+            $("#semestre_edit_s").prop("hidden", true );
             $("#semestre_edit").prop("disabled", false );
             $("#semestre_edit").val('');
             $("#semestre_edit").attr('min',1);
             $("#semestre_edit").attr('max',9);
             verificavacioedit();
         }else if($("#caracter_edit").val()=='2'){
+            $("#semestre_edit").prop("hidden", false );
+            $("#semestre_edit_s").prop("hidden", true );
             $("#semestre_edit").val('20');
             $("#semestre_edit").prop("disabled", true );
             verificavacioedit();
         }else if(($("#caracter_edit").val()=='3')){
+            $("#semestre_edit").prop("hidden", true );
+            $("#semestre_edit_s").prop("hidden", false );
             $("#semestre_edit").val('0');
             $("#semestre_edit").prop("disabled", false );
             $("#semestre_edit").attr('min',0);

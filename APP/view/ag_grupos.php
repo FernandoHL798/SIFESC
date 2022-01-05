@@ -56,9 +56,9 @@ include_once "./includes/header.php";?>
                         <div class="">
                             <div class="row">
                                 <div class="col-lg-12" id="inscripcion">
-                                    <input type="text" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
-                                    <input type="text" name="clave_asig" id="clave_asig" value="<?php echo $claveAsig;?>">
-                                    <input type="text" name="id_asignatura" id="id_asignatura" value="<?php echo $idasignaturafk;?>">
+                                    <input type="text" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>" hidden>
+                                    <input type="text" name="clave_asig" id="clave_asig" value="<?php echo $claveAsig;?>" hidden>
+                                    <input type="text" name="id_asignatura" id="id_asignatura" value="<?php echo $idasignaturafk;?>" hidden>
                                     <table id="table" class="table table-bordered">
                                         <input type="hidden" id="idasignaturagrupo" name="idasignaturagrupo">
                                         <thead>
