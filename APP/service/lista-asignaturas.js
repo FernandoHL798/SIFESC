@@ -289,14 +289,20 @@ function funcionesadd(){
 function activarSemestreSelectAg(){
     if(($("#caracter_add").val()=='1')||($("#caracter_add").val()=='2')||($("#caracter_add").val()=='3')){
         if(($("#caracter_add").val()=='1')){
+            $("#semestre_add").prop("hidden", false );
             $("#semestre_add").prop("disabled", false );
+            $("#semestre_adds").prop("hidden", true );
             $("#semestre_add").val('');
             $("#semestre_add").attr('min',1);
             $("#semestre_add").attr('max',9);
         }else if($("#caracter_add").val()=='2'){
             $("#semestre_add").val('20');
+            $("#semestre_add").prop("hidden", false );
+            $("#semestre_adds").prop("hidden", true );
             $("#semestre_add").prop("disabled", true );
         }else if(($("#caracter_add").val()=='3')){
+            $("#semestre_add").prop("hidden", true );
+            $("#semestre_adds").prop("hidden", false );
             $("#semestre_add").val('0');
             $("#semestre_add").prop("disabled", false );
             $("#semestre_edit").attr('min',0);
@@ -333,9 +339,3 @@ function activarSemestreSelectEdit(){
         }
     }
 }
-
-$("semestre_add").keyup(function(){
-    var value = $(this).val().replace(/[08-9]/g, "");
-    $(this).val(value)
-})
-
