@@ -115,7 +115,7 @@ function listaplandeestudios(){
                                 <td data-label="CRÉDITOS">${asignatura.creditos}</td>
                                 <td data-label="CARACTER">${caractertxt}</td>
                                 <td data-label="ESTATUS">${estatustxt}</td>
-                                <td class="text-center"><a href="./ag_grupos.php?idPlan=${idpasig}&codigo_asi=${asignatura.codigo}"><button type="button" class="btn btn-primary btn-sm col-5 mx-auto"><i class='bx bxs-message-square-add'></i></button></td>
+                                <td class="text-center"><a href="./ag_grupos.php?idPlan=${idpasig}&codigo_asi=${asignatura.codigo}&id_asignaturafk=${asignatura.id_asignatura}"><button type="button" class="btn btn-primary btn-sm col-5 mx-auto"><i class='bx bxs-message-square-add'></i></button></td>
                                 <td data-label="ACCIONES" class="text-center" colspan="2">
                                     <button type="button" class="btn btn-success btn-sm col-5 mx-auto" onclick="editarAsignatura(${asignatura.id_asignatura},'${asignatura.codigo}','${asignatura.nombre}',${asignatura.semestre},${asignatura.creditos},'${asignatura.caracter}');"><i class='bx bxs-pencil'></i></button>
                                     <button type="button" class="btn btn-danger btn-sm col-5" onclick="bajaAsignatura(${asignatura.id_asignatura},'${asignatura.nombre}');"><i class='bx bx-trash'></i></button>

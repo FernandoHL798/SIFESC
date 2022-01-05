@@ -1,12 +1,14 @@
 <?php include_once "./includes/session_verify.php";
 $idPlan = "";
 $claveAsig="";
+$idasignaturafk="";
 if (!isset($_GET['idPlan'])){
     echo "<script>location.href ='javascript:history.back()';</script>";
 }
 else{
     $idPlan = $_GET['idPlan'];
     $claveAsig = $_GET['codigo_asi'];
+    $idasignaturafk = $_GET['id_asignaturafk'];
 }
 ?>
 <!DOCTYPE html>
@@ -54,9 +56,9 @@ include_once "./includes/header.php";?>
                         <div class="">
                             <div class="row">
                                 <div class="col-lg-12" id="inscripcion">
-                                    <input type="hidden" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
-                                    <input type="hidden" name="clave_asig" id="clave_asig" value="<?php echo $claveAsig;?>">
-                                    <input type="hidden" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
+                                    <input type="text" name="idPlanAsig" id="idPlanAsig" value="<?php echo $idPlan;?>">
+                                    <input type="text" name="clave_asig" id="clave_asig" value="<?php echo $claveAsig;?>">
+                                    <input type="text" name="id_asignatura" id="id_asignatura" value="<?php echo $idasignaturafk;?>">
                                     <table id="table" class="table table-bordered">
                                         <input type="hidden" id="idasignaturagrupo" name="idasignaturagrupo">
                                         <thead>
@@ -138,6 +140,7 @@ include_once "./includes/header.php";?>
         <script src="../service/lista-grupos-agregar.js"></script>
         <?php include "./modal/modal-agregar-grupo.php"; ?>
         <?php include "./modal/modal-baja-grupo.php"; ?>
+        <?php include "./modal/modal-editar-grupo.php"; ?>
 
 </body>
 </html>

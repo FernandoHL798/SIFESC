@@ -92,7 +92,7 @@ class GRUPOS extends CONEXION{
         return $this->estatus;
     }
     /**
-     * @param mixed $tipo
+     * @param mixed $estatus
      */
     public function setEstatus($estatus): void
     {
@@ -131,7 +131,7 @@ class GRUPOS extends CONEXION{
 
     public function queryUpdateGrupos(){
         $query="UPDATE `grupos` SET `id_asignatura_fk` = '".$this->getIdAsignaturaFk()."', 
-        `nombre_grupo` = '".$this->getNombreGrupo()."', `tipo`='".$this->getTipo()."', `estatus`='".$this->getEstatus()."',`updated_at` = current_timestamp() WHERE `grupos`.`id_grupo` = '".$this->getIdGrupo()."'";
+        `nombre_grupo` = '".$this->getNombreGrupo()."', `tipo`='".$this->getTipo()."', `turno`='".$this->getTurno()."', `estatus`='".$this->getEstatus()."',`updated_at` = current_timestamp() WHERE `grupos`.`id_grupo` = '".$this->getIdGrupo()."'";
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
@@ -155,9 +155,10 @@ class GRUPOS extends CONEXION{
         $this->close();
         return $resultado;
     }
-    public function queryconsultaGruposAsignaturas($id_plan_fk,$codigo){
-        /*$query= "SELECT * FROM grupos g, asignaturas asi WHERE g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan_fk." AND asi.codigo =".$codigo;*/
-        $query= "SELECT g.id_grupo, g.nombre_grupo, g.estatus, g.tipo, asi.nombre, asi.creditos, asi.semestre, asi.caracter, g.turno, g.id_asignatura_fk, asi.id_asignatura, asi.codigo FROM grupos g, asignaturas asi WHERE g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan_fk." AND asi.codigo =".$codigo;
+    public function queryconsultaGruposAsignaturas($id_plan_fk,$id_asignatura_fk){
+        /*$query= "SELECT * FROM grupos g, asignaturas asi WHERE g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan_fk." AND asi.codigo =".$codigo;
+        $query= "SELECT g.id_grupo, g.id_asignatura_fk, g.nombre_grupo, g.tipo, g.turno, g.estatus, asi.id_asignatura, asi.codigo, asi.nombre, asi.creditos, asi.caracter, asi.semestre FROM grupos g, asignaturas asi WHERE g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan_fk." AND asi.codigo =".$codigo;*/
+        $query= "SELECT g.id_grupo, g.id_asignatura_fk, g.nombre_grupo, g.tipo, g.turno, g.estatus, asi.id_asignatura, asi.codigo, asi.nombre, asi.creditos, asi.caracter, asi.semestre FROM grupos g, asignaturas asi WHERE asi.id_plan_fk=".$id_plan_fk." AND g.id_asignatura_fk=".$id_asignatura_fk." AND asi.id_asignatura=".$id_asignatura_fk;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
@@ -172,8 +173,16 @@ class GRUPOS extends CONEXION{
         return $resultado;
     }
 
-    public function queryconsultaExisteGrupo($id_plan_fk,$codigo,$nombre_grupo){
-        $query= "SELECT g.id_grupo, g.estatus, g.tipo, asi.nombre, asi.creditos, asi.semestre, asi.caracter, g.turno, g.id_asignatura_fk, asi.id_asignatura, asi.codigo FROM grupos g, asignaturas asi WHERE g.id_asignatura_fk=asi.id_asignatura AND asi.id_plan_fk=".$id_plan_fk." AND asi.codigo =".$codigo." AND g.nombre_grupo =".$nombre_grupo;
+    public function queryconsultaExisteGrupo($id_plan_fk,$id_asignatura_fk,$nombre_grupo){
+        $query= "SELECT g.id_grupo, g.id_asignatura_fk, g.nombre_grupo, g.tipo, g.turno, g.estatus, asi.id_asignatura, asi.codigo, asi.nombre, asi.creditos, asi.caracter, asi.semestre FROM grupos g, asignaturas asi WHERE asi.id_plan_fk=".$id_plan_fk." AND g.id_asignatura_fk=".$id_asignatura_fk." AND asi.id_asignatura=".$id_asignatura_fk." AND g.nombre_grupo =".$nombre_grupo;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
+    public function queryconsultaDatosGrupo($id_plan_fk,$id_asignatura_fk){
+        $query= "SELECT * FROM asignaturas asi WHERE asi.id_plan_fk=".$id_plan_fk." AND asi.id_asignatura=".$id_asignatura_fk;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();
