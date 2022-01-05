@@ -45,3 +45,9 @@ function deleteAsignacion($idAsignacion){
     $ASIGNACION->setIdAsignacion($idAsignacion);
     return $ASIGNACION->queryDeleteAsignacion();
 }
+
+function consultaAsignacionesProfesor($idProfesor){
+    include_once "../model/ASIGNACION.php";
+    $ASIGNACION = new ASIGNACION();
+    return json_encode($ASIGNACION->queryConsultaAsignacionesProfesor($idProfesor));
+}

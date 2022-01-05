@@ -149,4 +149,12 @@ class ASIGNACION extends CONEXION{
         $this->close();
         return $resultado;
     }
+
+    public function queryConsultaAsignacionesProfesor($idProfesor){
+        $query="SELECT plan.id_plan as clave_plan, plan.nombre_plan, asig.codigo, asig.nombre as nombre_asignatura, asig.semestre, g.nombre_grupo, asig.creditos, asig.caracter FROM asignacion a, grupos g, asignaturas asig, plandeestudios plan WHERE a.id_grupo_fk=g.id_grupo AND g.id_asignatura_fk= asig.id_asignatura AND asig.id_plan_fk=plan.id_plan AND a.id_usuarioprofesor_fk=".$idProfesor;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;    
+    }
 }
