@@ -144,6 +144,7 @@
 							</div>
 							<div class="job">
 								<input type="text" name="idPlan" id="idPlan" value="<?php echo $_SESSION['idPlan']?>">
+								<input type="text" name="idCarrera" id="idCarrera" value="<?php echo $_SESSION['idCarrera']?>">
 								<div class="form-check" id="rdo-carrera">
 									
 								</div>

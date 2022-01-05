@@ -50,8 +50,9 @@ function updateEstatusEstudia($params){
     $ESTUDIA->setIdPlanFk($params['id_plan_fk']);
     return $ESTUDIA->queryUpdateEstatusEstudia();
 }
-function updatePlanAlumno($idPlan){
+function updatePlanAlumno($idPlan,$idCarrera){
     session_start();
     $_SESSION['idPlan']  = $idPlan;
+    $_SESSION['idCarrera']= $idCarrera;
     return true;
 }

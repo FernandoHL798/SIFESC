@@ -50,6 +50,7 @@ function cambiaPlanAlumno(idPlan,idCarrera){
     .done(function(res){
         console.log(res);
         $("#idPlan").val(idPlan);
+        $("#idCarrera").val(idCarrera);
         document.getElementById('idPlan').style.display = 'block';
     });
         
