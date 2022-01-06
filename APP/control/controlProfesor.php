@@ -22,6 +22,7 @@ function insertProfesor($params){
     include_once "../model/PROFESOR.php";
     include "tools/tools_id_generates.php";
     $claveUsuario = genIdUsuario();
+    $contra= date_format($params['fecha_nacimiento'],"dmY");
     $PROFESOR = new PROFESOR();
 //GENERAMOS AL USUARIO
     $PROFESOR->setIdUsuario($claveUsuario);
@@ -31,21 +32,26 @@ function insertProfesor($params){
     $PROFESOR->setPrimerApellido($params['app']);
     $PROFESOR->setSegundoApellido($params['apm']);
     $PROFESOR->setCorreo($params['correo']);
-    $PROFESOR->setContrasenia(md5($params['fecha_nacimiento']));
+    $PROFESOR->setContrasenia(md5($contra));
     $PROFESOR->setTelefono($params['telefono']);
     $PROFESOR->setFechaNacimiento($params['fecha_nacimiento']);
 //Si el USUARIO se crea correctamente, generamos al profesor
     if($PROFESOR->queryInsertUsuario()){
+      //Nay aparytado de emails
         include_once "enviaMail.php";
         $PROFESOR->setIdUsuarioFk($PROFESOR->getIdUsuario());
         $PROFESOR->setEstatus(1);
         if($PROFESOR->queryInsertProfesor()){
-            return enviaCorreoRegistro($PROFESOR->getCorreo(),$PROFESOR->getNombre(),$PROFESOR->getCuentaProfesor(),"SIFESC");
-        } 
+          //Se tiene que agregar a un departamento
+          include_once "controlProfesordepartamento.php";
+          return insertProfesordepartamento($PROFESOR->getIdUsuario(),$params['idDepartamento']);
+          //Checar correos con Nay porque Fer no supo como hacerlo 
+            //return enviaCorreoRegistro($PROFESOR->getCorreo(),$PROFESOR->getNombre(),$PROFESOR->getCuentaProfesor(),"SIFESC");
+        }
     }
     //Sino, retornamos error
     return false;
-    
+
 }
 
 function deleteProfesor($idUsuario){
