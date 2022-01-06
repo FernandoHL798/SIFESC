@@ -5,6 +5,7 @@ $("#frm-add-profesor").on("submit", function(e){
      var f = $(this);
     var formData = new FormData(document.getElementById("frm-add-profesor"));
     formData.append("dato", "valor");
+    formData.append("idDepartamento", $("#idDepartamento").val());
     $.ajax({
         url: "../webhook/add_profesor.php",
         type: "post",
@@ -20,7 +21,7 @@ $("#frm-add-profesor").on("submit", function(e){
         $("#Asig_Modal_P").modal('hide');
         listaProfesores();
         });
-        
+
     e.preventDefault();
 });
 /**

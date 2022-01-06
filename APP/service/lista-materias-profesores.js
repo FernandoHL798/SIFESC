@@ -1,5 +1,6 @@
 $(document).ready(function(){
     listaMateriasProfesores();
+    cargaPlanEstudios();
 });
 
 function listaMateriasProfesores(){                         /* NOMBRO COMO QUIERA */
@@ -92,4 +93,56 @@ $("#frm_baja_asignatura_inscrip").on("submit", function(e){
         });
         
     e.preventDefault();
+});
+
+
+function cargaPlanEstudios(){
+        $.ajax({
+        url: "../webhook/lista_planestudios.php",
+        type:'POST',
+        data : {},
+        success: function (response){
+            let PLANESESTUDIO =JSON.parse(response);
+            //console.log(PLANESESTUDIO);
+            let template="";
+            PLANESESTUDIO.forEach(planes=>{
+                template += `
+                    <option value="${planes.id_plan}">${planes.id_plan} - ${planes.nombre_plan}</option>
+                `
+            });
+            $("#plan_e_asignacion").html(template);
+        }
+    });
+}
+
+$( "#plan_e_asignacion" ).change(function() {
+    let idPlan= $("#plan_e_asignacion").val();
+    cargaAsignaturasPlan(idPlan);
+});
+
+
+
+function cargaAsignaturasPlan(idPlan){
+//Funcion ajax que traiga las asignaturas por plan de estudios AUN NO FUNCIONA ADECUADAMENTE SIGO EN ELLO 
+    $.ajax({
+        url: "../webhook/lista-asignaturas-plan.php",
+        type:'POST',
+        data : {id_plan:$("#idPlanAsig").val(), clave_asignatura:$("#clave_asignatura_add").val()},
+        success: function (response){
+            let ASIGNATURAS = JSON.parse(response);
+            console.log(ASIGNATURAS);
+            let template="";
+
+            ASIGNATURAS.forEach(asignatura=>{
+                template += `
+                <option value="${asignatura.idAsignatura}">${asignatura.idAsignatura} - ${asignatura.nombre}</option>`
+            });
+            $("#asignatura_asignacion").html(template);   
+        }
+    });
+}
+
+$( "#asignatura_asignacion" ).change(function() {
+    let idAsignatura= $("#asignatura_asignacion").val();
+    cargaAsignaturasPlan(idPlan);
 });
