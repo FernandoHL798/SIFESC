@@ -166,3 +166,12 @@ function cargaGruposAsignatura (idAsignatura){
     });
 }
 
+/*
+
+$("frm-add-movimiento").on("submit", function(e)){
+    var formData = new FormData(document.getElementById("frm-add-movimiento"));
+    console.log();
+    formData.append("dato", "valor");
+}
+
+*/
