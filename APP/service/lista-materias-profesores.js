@@ -21,8 +21,6 @@ function listaMateriasProfesores(){                         /* NOMBRO COMO QUIER
             $("#pa_profe").html(profesor.primer_apellido)
             $("#sa_profe").html(profesor.segundo_apellido);     /* id de la tabla de front */
 
-
-
             cargaAsignaturasProfesor(profesor.usuario_id_fk);
 
         }
@@ -105,6 +103,7 @@ function cargaPlanEstudios(){
             let PLANESESTUDIO =JSON.parse(response);
             //console.log(PLANESESTUDIO);
             let template="";
+            template= ` <option value="">Seleeciones un plan de estudio</option>`;
             PLANESESTUDIO.forEach(planes=>{
                 template += `
                     <option value="${planes.id_plan}">${planes.id_plan} - ${planes.nombre_plan}</option>
@@ -127,16 +126,15 @@ function cargaAsignaturasPlan(idPlan){
     $.ajax({
         url: "../webhook/lista-asignaturas-plan.php",
         type:'POST',
-        data : {id_plan:$("#idPlanAsig").val(), clave_asignatura:$("#clave_asignatura_add").val()},
+        data : {id_plan : idPlan},
         success: function (response){
             let ASIGNATURAS = JSON.parse(response);
-            console.log(ASIGNATURAS);
             let template="";
-
+            template= ` <option value="">Seleeciones una asignatura</option>`;
             ASIGNATURAS.forEach(asignatura=>{
                 template += `
-                <option value="${asignatura.idAsignatura}">${asignatura.idAsignatura} - ${asignatura.nombre}</option>`
-            });
+                <option value="${asignatura.id_asignatura}">${asignatura.codigo} - ${asignatura.nombre}</option>`
+            }); 
             $("#asignatura_asignacion").html(template);   
         }
     });
@@ -144,5 +142,27 @@ function cargaAsignaturasPlan(idPlan){
 
 $( "#asignatura_asignacion" ).change(function() {
     let idAsignatura= $("#asignatura_asignacion").val();
-    cargaAsignaturasPlan(idPlan);
+    cargaGruposAsignatura(idAsignatura);
 });
+
+
+function cargaGruposAsignatura (idAsignatura){
+        $.ajax({
+        url: "../webhook/consulta_grupos_asignatura.php",
+        type:'POST',
+        data : { idAsignatura : idAsignatura},   //izquierda micro servicio deracha función
+        success: function (response){  
+            let GRUPOS = JSON.parse(response);
+            console.log(GRUPOS);
+            let template="";
+
+            GRUPOS.forEach(grupos=>{
+                template += `
+                <option value="${grupos.id_grupo}">${grupos.nombre_grupo}</option>`
+            }); 
+            
+             $("#grupo_asignacion").html(template);   
+        }
+    });
+}
+
