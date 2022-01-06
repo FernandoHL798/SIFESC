@@ -77,3 +77,9 @@ function queryconsultaDatosGrupo($id_plan_fk,$id_asignatura_fk){
     $GRUPOS = new GRUPOS();
     return json_encode($GRUPOS->queryconsultaDatosGrupo($id_plan_fk,$id_asignatura_fk));
 }
+
+function consultaGpoAsignatura($idAsignatura){
+    include_once "../model/GRUPOS.php";
+    $GRUPOS = new GRUPOS();
+    return json_encode($GRUPOS->queryConsultaGpAsignatura($idAsignatura));
+}

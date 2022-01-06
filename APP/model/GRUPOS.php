@@ -188,4 +188,12 @@ class GRUPOS extends CONEXION{
         $this->close();
         return $resultado;
     }
+
+    public function queryConsultaGpAsignatura($idAsignatura){
+        $query= "SELECT * FROM `grupos` WHERE `id_asignatura_fk`=".$idAsignatura;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;   
+    }
 }
