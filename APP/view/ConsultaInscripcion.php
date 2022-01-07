@@ -21,6 +21,7 @@ include "./includes/sidebar2.php";
 				</div>
 				<div>
 					<h3 id="head3" class="text-center">Consulta Inscripción</h3>
+					<h4 id="aviso" class="text-center"></h4>
 				</div>
 				<!-- RELOJ FUNCIONAL Y BONITO ------------------------------------------------------------ -->
 				<div class="widget_clock">
@@ -38,10 +39,10 @@ include "./includes/sidebar2.php";
 				</div>
 			</div>    
 		</div>
-			<div class="container" id="contenido">
+			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
-						<table id="table" class="table table-bordered">
+					<div class="col-8 mx-auto">
+						<table id="table" class="table table-bordered" id="contenido">
 							<thead>
 								<tr class="informacion" id="informacion">
 									<th colspan="2">NÚMERO DE CUENTA:
@@ -105,17 +106,17 @@ include "./includes/sidebar2.php";
 						</table>
 					</div>
 					<div class="mt-4 mb-6">
-                        <p class="text-center mb-5">NOTA: LA VALIDEZ DE ESTE DOCUMENTO QUEDA SUJETA A LA REVISIÓN DEL PLAN DE ESTUDIOS Y COMPROBACIÓN DE TUS ASIGNATURAS EN LA PÁGINA DEL S.I.A.E. EN CASO DE NO COINCIDIR, PASAR A LA VENTANILLA DE TU CARRERA ANTES DEL 17 DE OCTUBRE DE 2021.</p>
+                        <p id="nota" class="text-center mb-5"></p>
                     </div>
 				</div>
 			
-			<div class="mt-4">
+			<div id="tituloIns" class="mt-4">
 					<p class="text-center mb-5">INSTRUCCIONES:</p>
 			</div>
-			<div class="mt-1 mb-2">
-					<p class="mb-4">1. Tu inscripción ha quedado registrada con el folio 404084.</p>
-					<p class="mb-4">2. No es necesario que acudas a Servicios Escolares para confirmar tu inscripción, los movimientos que realizaste en Inscripciones o los que realizaste hoy en Altas y Bajas es tu inscripción definitiva, que tendrás que revisar en la página <a href="https://www.dgae-siae.unam.mx/www_gate.php">www.dgae-siae.unam.mx</a>, cualquier aclaración o duda tendrás que acudir a la ventanilla de tu carrera antes del día 17 de octubre de 2021.</p>
-					<p class="mb-4">3. Si requieres una constancia de inscripción (constancia de estudios), podrás tramitarla a partir del día 22 de septiembre de 2021 en la ventanilla virtual de Servicios Escolares.</p>
+			<div id="instrucciones" class="mt-1 mb-2">
+					<p id="punto1" class="mb-4"></p>
+					<p class="mb-4">2. No es necesario que acudas a Servicios Escolares para confirmar tu inscripción, los movimientos que realizaste en Inscripciones o los que realizaste hoy en Altas y Bajas es tu inscripción definitiva, que tendrás que revisar en la página <a href="https://www.dgae-siae.unam.mx/www_gate.php">www.dgae-siae.unam.mx</a>, cualquier aclaración o duda tendrás que acudir a la ventanilla de tu carrera antes del día <span><a id="punto2"></a></span></p>
+					<p id="punto3" class="mb-4"></p>
 			</div>
 		</div>
 
@@ -125,7 +126,7 @@ include "./includes/sidebar2.php";
 	<!-- LIBRERIA AJAX requeried-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<div class="col-lg-12 mt-4">
-		<div  class="d-grid gap-2 col-11 mx-auto mb-4">
+		<div id="imprime" class="d-grid gap-2 col-11 mx-auto mb-4">
 			<button class="btn btn-primary" type="button" onclick="printData()">IMPRIMIR</button>
 			<!--<button class="btn btn-danger" type="button" class="btn btn-outline-success mt-1">SALIR</button>-->
 		</div>

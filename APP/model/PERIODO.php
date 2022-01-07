@@ -214,8 +214,8 @@ class PERIODO extends CONEXION{
         return $resultado;
     }
     public function queryconsultaExistePeriodo($idPeriodo, $Periodo){
-        $filtroPeriodo= $idPeriodo>0? " id_plantel_fk=".$idPeriodo: "";
-        $query="SELECT `estatus` FROM `periodo` WHERE ".$filtroPeriodo." AND `periodo` = '".$Periodo."'";
+        $filtroPeriodo= $idPeriodo>0? "AND id_plantel_fk=".$idPeriodo: "";
+        $query="SELECT `fecha_inscripcion_fin`, `fecha_altas_bajas_fin`, `estatus` FROM `periodo` WHERE `periodo` = '".$Periodo."'".$filtroPeriodo;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

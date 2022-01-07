@@ -142,7 +142,7 @@ class INSCRIPCION extends CONEXION{
 
     
     public function queryconsultaInscripcion($idPlan,$idUsuario){
-        $query="SELECT a.inscritos, i.id_inscripcion, i.id_periodo_fk, i.fecha_inscripcion, i.hora_inscripcion, i.fecha_altas_bajas, i.hora_altas_bajas, i.estatus, i.updated_at, i.created_at FROM movimiento m, inscripcion i, asignacion a WHERE a.id_periodo_fk=i.id_periodo_fk AND m.id_inscripcion_fk=i.id_inscripcion AND m.id_asignacion_fk=a.id_asignacion AND i.id_claveplan_fk=".$idPlan." AND `id_usuarioalumno_fk`=".$idUsuario;
+        $query="SELECT m.estatus, a.inscritos, i.id_inscripcion, i.id_periodo_fk, i.fecha_inscripcion, i.hora_inscripcion, i.fecha_altas_bajas, i.hora_altas_bajas, i.estatus, i.updated_at, i.created_at FROM movimiento m, inscripcion i, asignacion a, periodo p WHERE p.id_periodo=a.id_periodo_fk AND a.id_periodo_fk=i.id_periodo_fk AND m.id_inscripcion_fk=i.id_inscripcion AND m.id_asignacion_fk=a.id_asignacion AND p.estatus=1 AND i.id_claveplan_fk=".$idPlan." AND `id_usuarioalumno_fk`=".$idUsuario;
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

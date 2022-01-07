@@ -29,6 +29,7 @@ $(document).ready(function(){
         document.getElementById('btnInscripciones2').style.display = 'none';
         document.getElementById('inscripcion').style.display='none';
         document.getElementById('anuncio').style.display = 'block';
+        document.getElementById('finTramite').style.display = 'none';
         $("#anuncio").html("AUN NO HAS SELECCIONADO O NO TIENES ASIGNADO UN PLAN DE ESTUDIOS, REVISA EN MIS CARRERAS PARA CONTINUAR");
     }
 });
@@ -279,7 +280,7 @@ function datosAlumno(id_inscripcion){
                 var hoy = new Date();
                 var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
                 var fecha = hoy.getFullYear()+ '-' + ( ""+hoy.getMonth() + 1 ) + '-' +("0"+hoy.getDate());
-                if(ALUMNO[0].estatusInscripcion==1){
+                if(ALUMNO[0].estatusInscripcion==2){
                     if(ALUMNO[0].fecha_inscripcion==fecha){
                         if(ALUMNO[0].hora_inscripcion<=hora){
                             //Se imprimen los datos de el alumno
@@ -388,24 +389,63 @@ function asignaturas(credito,nombres){
         success: function (response) {
             //Convertimos el string a JSON
             console.log(response);
-            let ASIGNATURAS = JSON.parse(response); 
+            console.log(nombres);
+            let ASIGNATURAS = JSON.parse(response);
+            console.log(ASIGNATURAS);
             let template="";
-            let cont=0;
+            let cont3=0;
             template+=  `<option selected>Selecciona la materia</option>`;
             ASIGNATURAS.forEach(asignatura=>{
-                if(asignatura.semestre==semestre){
-                    if(credito==68){
-                        template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;
-                    }else{
-                        console.log(credito+"-"+asignatura.creditos);
-                        if(asignatura.creditos<=credito || credito==''){
-                            if(ASIGNATURAS[cont].nombre!=nombres[cont].nombre){
-                                cont++;
-                                template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;   
+                if(nombres==""){
+                    
+                }else{
+                    if(asignatura.caracter==1){
+                        console.log("1-9");
+                        if(ASIGNATURAS[cont3].semestre==semestre){
+                            if(credito==68){
+                                template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;
+                            }else{
+                                console.log(credito+"-"+asignatura.creditos);
+                                if(asignatura.creditos<=credito || credito==''){
+                                    for(let cont2=1; cont2<(nombres.length); cont2++){
+                                        if(ASIGNATURAS[cont3].nombre==nombres[cont2]){
+                                            console.log(ASIGNATURAS[cont3].nombre+" - "+nombres[cont2]);
+                                            ASIGNATURAS[cont3]='';
+                                            console.log(ASIGNATURAS[cont3].nombre);
+                                            console.log("igual");
+                                            cont=ASIGNATURAS.length;
+                                            cont2=nombres.length;
+                                        }else{
+                                            console.log(ASIGNATURAS[cont3].nombre+" - "+nombres[cont2]);
+                                            //cont=nombres.length;
+                                            //cont2=ASIGNATURAS.length;
+                                        }
+                                    }
                             }
                         }
+                        console.log(ASIGNATURAS[cont3].nombre);
+                        if(ASIGNATURAS[cont3].nombre==undefined){
+                            cont++;
+                        }else{
+                            $("#saturacionGrupoAsig").html("Las materias que ya diste de alta no se visualizaran aqui, a menos de que la des de baja primero");
+                            template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
+                            console.log("diferente");
+                            cont3++;
+                        }
+                    }else{
+                        cont3++;
                     }
+
+                }else if(asignatura.caracter==2 && semestre>=5 && semestre<=7){
+                    console.log("5-7");
+                    template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
+                    cont3++;
+                }else if(asignatura.caracter==3 && semestre>=8 && semestre<=9){
+                    console.log("8-9");
+                    template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
+                    cont3++;
                 }
+            }
             });
             $("#asig_materia").html(template);
         }
@@ -469,18 +509,25 @@ function listaMovimientos(id_inscripcion){
             let cont=0;
             var credMen=0;
             let c=0;
-            let nombres='';
+            let semes;
+            var nombres=new Array();
             let a=credMaxim;
             MOVIMIENTOS.forEach(movimiento=>{
                 if(MOVIMIENTOS[cont].estatus==1){
                     c++;
+                    if((MOVIMIENTOS[0].semestreAlumno==movimiento.semestreMat) || (movimiento.semestreMat==20 || movimiento.semestreMat==0)){
+                        semes=MOVIMIENTOS[0].semestreAlumno;
+                        console.log(MOVIMIENTOS[0].semestreAlumno);
+                    }else{
+                        semes=movimiento.semestreMat;
+                    }
                     credMen=parseInt(MOVIMIENTOS[cont].creditos); 
                     tblMovimientos += `<tr idMovimiento=${movimiento.id_movimiento}>
                                             <td data-label="No">${c}</td>
                                             <td data-label="Clave">${movimiento.codigo}</td>
                                             <td data-label="Nombre de la Asig">${movimiento.nombre}</td>
                                             <td data-label="Cred">${movimiento.creditos}</td>
-                                            <td data-label="Sem">${movimiento.semestre}</td>
+                                            <td data-label="Sem">${semes}</td>
                                             <td data-label="Gpo">${movimiento.nombre_grupo}</td>
                                             <td data-label="Mov">Alta</td>
                                             <td colspan="2" class="text-center">
@@ -489,7 +536,7 @@ function listaMovimientos(id_inscripcion){
                                         </tr>`;
                     a=parseInt(a)-parseInt(credMen);
                     $("#creditoMaximo").html(parseInt(a));
-                    nombres=MOVIMIENTOS;
+                    nombres[c]=MOVIMIENTOS[cont].nombre;
                     cont++;
                     if(movimiento.maximo_materias==null || movimiento.maximo_materias>=(c)){
                         document.getElementById('btnInscripciones1').style.display = 'block';
@@ -501,7 +548,6 @@ function listaMovimientos(id_inscripcion){
                     if(c==0 && cont==1){
                         a=credMaxim;
                         $("#creditoMaximo").html(parseInt(a));
-                        nombres='';
                     }
                 }
                 if(a<=credMinimo || credMinimo==''){
@@ -527,7 +573,7 @@ function tramiteTerminado(){
     $("#frm_aviso_pregunta_guardada").on("submit", function(e){
         var formData = new FormData(document.getElementById("frm_aviso_pregunta_guardada"));
         formData.append("idInscripcion",$("#idInscripcionAlumno").text());
-        formData.append("estatus", "2");
+        formData.append("estatus", "1");
         $.ajax({
             url: "../webhook/modifica_estatus_inscripcion.php",
             type: 'POST',
