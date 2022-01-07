@@ -1,6 +1,31 @@
 $(document).ready(function(){
     listaMateriasProfesores();
     cargaPlanEstudios();
+    $("#frm-add-asignacion").on("submit", function(e){
+        //alert("Entrando holi");
+            var formData = new FormData(document.getElementById("frm-add-asignacion"));
+    formData.append("dato", "valor");
+    formData.append("idProfesor", $("#idProfesor").val());
+
+    $.ajax({
+        url: "../webhook/add_asignacion.php",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    })
+
+    .done(function(res){
+    console.log(res);
+       $("#frm-add-asignacion").trigger('reset');
+        $("#Add_Asignatura_prof").modal('hide');
+        console.log($("#idProfesor").val());
+        cargaAsignaturasProfesor($("#idProfesor").val());
+    });
+    e.preventDefault();
+});
 });
 
 function listaMateriasProfesores(){                         /* NOMBRO COMO QUIERA */
@@ -166,12 +191,7 @@ function cargaGruposAsignatura (idAsignatura){
     });
 }
 
-/*
 
-$("frm-add-movimiento").on("submit", function(e)){
-    var formData = new FormData(document.getElementById("frm-add-movimiento"));
-    console.log();
-    formData.append("dato", "valor");
-}
 
-*/
+
+
