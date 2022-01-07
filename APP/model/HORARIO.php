@@ -124,7 +124,7 @@ class HORARIO extends CONEXION{
     }
     
     public function queryconsultaHorario($idInscripcion){
-        $query="SELECT asi.nombre, h.dia, h.inicio, h.fin FROM asignaturas asi, asignacion a, inscripcion i, movimiento m, grupos g, horario h WHERE a.id_asignacion=m.id_asignacion_fk AND m.id_inscripcion_fk=i.id_inscripcion AND g.id_grupo=a.id_grupo_fk AND h.id_grupo_fk=g.id_grupo AND asi.id_asignatura=g.id_asignatura_fk AND m.id_inscripcion_fk=".$idInscripcion;
+        $query="SELECT asi.nombre, h.dia, h.inicio, h.fin FROM asignaturas asi, asignacion a, inscripcion i, movimiento m, grupos g, horario h WHERE a.id_asignacion=m.id_asignacion_fk AND m.id_inscripcion_fk=i.id_inscripcion AND g.id_grupo=a.id_grupo_fk AND h.id_grupo_fk=g.id_grupo AND asi.id_asignatura=g.id_asignatura_fk AND m.id_inscripcion_fk=".$idInscripcion." AND m.estatus=1";
         $this->connect();
         $resultado = $this->getData($query);
         $this->close();

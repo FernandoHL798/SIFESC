@@ -154,27 +154,27 @@ function notas(periodo,tipo,id){
                 if(mes=='01'){
                     fecha=(parseInt(dia)+2)+" de Enero del "+año;
                 }if(mes=='02'){
-                    fecha=("0"+parseInt(dia)+2)+" de Febrero del "+año;
+                    fecha=(parseInt(dia)+2)+" de Febrero del "+año;
                 }if(mes=='03'){
-                    fecha=("0"+parseInt(dia)+2)+" de Marzo del "+año;
+                    fecha=(parseInt(dia)+2)+" de Marzo del "+año;
                 }if(mes=='04'){
-                    fecha=("0"+parseInt(dia)+2)+" de Abril del "+año;
+                    fecha=(parseInt(dia)+2)+" de Abril del "+año;
                 }if(mes=='05'){
-                    fecha=("0"+parseInt(dia)+2)+" de Mayo del "+año;
+                    fecha=(parseInt(dia)+2)+" de Mayo del "+año;
                 }if(mes=='06'){
-                    fecha=("0"+parseInt(dia)+2)+" de Junio del "+año;
+                    fecha=(parseInt(dia)+2)+" de Junio del "+año;
                 }if(mes=='07'){
-                    fecha=("0"+parseInt(dia)+2)+" de Julio del "+año;
+                    fecha=(parseInt(dia)+2)+" de Julio del "+año;
                 }if(mes=='08'){
-                    fecha=("0"+parseInt(dia)+2)+" de Agosto del "+año;
+                    fecha=(parseInt(dia)+2)+" de Agosto del "+año;
                 }if(mes=='09'){
-                    fecha=("0"+parseInt(dia)+2)+" de Septiembre del "+año;
+                    fecha=(parseInt(dia)+2)+" de Septiembre del "+año;
                 }if(mes=='10'){
-                    fecha=("0"+parseInt(dia)+2)+" de Octubre del "+año;
+                    fecha=(parseInt(dia)+2)+" de Octubre del "+año;
                 }if(mes=='11'){
-                    fecha=("0"+parseInt(dia)+2)+" de Noviembre del "+año;
+                    fecha=(parseInt(dia)+2)+" de Noviembre del "+año;
                 }if(mes=='12'){
-                    fecha=("0"+parseInt(dia)+2)+" de Diciembre del "+año;
+                    fecha=(parseInt(dia)+2)+" de Diciembre del "+año;
                 }
                 $("#punto3").html("3. Si requieres una constancia de inscripción (constancia de estudios), podrás tramitarla a partir del día "+fecha+" en la ventanilla virtual de Servicios Escolares.");
             }else{

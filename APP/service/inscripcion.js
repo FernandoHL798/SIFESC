@@ -646,7 +646,7 @@ function traslape(id_inscripcion){
                 console.log(TRASLAPAN[cont].dia);
                 if(cont<(tamañoMaterias-1))
                 if(TRASLAPAN[cont].dia==TRASLAPAN[cont+1].dia){
-                    if(((TRASLAPAN[cont+1].inicio==TRASLAPAN[cont].inicio && TRASLAPAN[cont+1].fin==TRASLAPAN[cont].fin) || (TRASLAPAN[cont+1].fin<TRASLAPAN[cont].fin && TRASLAPAN[cont].fin>TRASLAPAN[cont+1].inicio)) || ((TRASLAPAN[cont].inicio==TRASLAPAN[cont+1].inicio && TRASLAPAN[cont].fin==TRASLAPAN[cont+1].fin) || (TRASLAPAN[cont].fin<TRASLAPAN[cont+1].fin && TRASLAPAN[cont].fin>TRASLAPAN[cont+1].inicio))){
+                    if((TRASLAPAN[cont+1].inicio==TRASLAPAN[cont].inicio && TRASLAPAN[cont+1].fin==TRASLAPAN[cont].fin) ||  (TRASLAPAN[cont+1].fin>TRASLAPAN[cont].inicio && TRASLAPAN[cont].inicio>TRASLAPAN[cont+1].inicio)){
                         console.log("inicio"+TRASLAPAN[cont].inicio+"-"+TRASLAPAN[cont+1].inicio);
                         console.log("fin"+TRASLAPAN[cont].fin+"-"+TRASLAPAN[cont+1].fin);
                         if(TRASLAPAN[cont].dia==1){
@@ -674,7 +674,8 @@ function traslape(id_inscripcion){
                             tras=$("#traslapan").text();
                             cont++;
                         }
-                        console.log("mismo dia y misma hora");
+                        console.log(TRASLAPAN[cont+1].nombre+"-"+TRASLAPAN[cont+1].dia+" inicio: "+TRASLAPAN[cont+1].inicio+", fin: "+TRASLAPAN[cont+1].fin);
+                        console.log(TRASLAPAN[cont].nombre+"-"+TRASLAPAN[cont].dia+" inicio: "+TRASLAPAN[cont].inicio+", fin: "+TRASLAPAN[cont].fin);
                     }
                     console.log("solo mismo dia");
                 }else{
