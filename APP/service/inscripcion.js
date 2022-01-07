@@ -81,7 +81,6 @@ function perdisteTramite(id_inscripcion,fechaInscrip,fechaAltasB){
     });
 }
 function bajaInsc(id_inscripcion,inscritos){
-    alert("entre");
     $.ajax({
         url: "../webhook/lista_movimiento.php",
         type: 'POST',
@@ -132,7 +131,6 @@ function bajaInsc(id_inscripcion,inscritos){
 }
 
 function bajaAltasBajas(id_inscripcion,fechaAltasB,fechaInscrip, inscritos){
-    alert("entre bajas");
     $.ajax({
         url: "../webhook/lista_movimiento_altas_bajas.php",
         type: 'POST',
@@ -396,8 +394,32 @@ function asignaturas(credito,nombres){
             let cont3=0;
             template+=  `<option selected>Selecciona la materia</option>`;
             ASIGNATURAS.forEach(asignatura=>{
-                if(nombres==""){
-                    
+                if(nombres==''){
+                    console.log("Entre no nombres");
+                    console.log(asignatura.semestre+" - "+semestre);
+                    if(asignatura.semestre==semestre){
+                        console.log("Entre semestre");
+                        if(credito==68){
+                            console.log("Entre credito 68");
+                            template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;
+                            cont3++;
+                        }else{
+                            console.log("Entre creditos menos");
+                            console.log(credito+"-"+asignatura.creditos);
+                            if(asignatura.creditos<=credito || credito==''){
+                                cont3++;
+                                template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;
+                            }
+                        }
+                    }else if(asignatura.caracter==2 && semestre>=5 && semestre<=7){
+                        console.log("5-7");
+                        template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
+                        cont3++;
+                    }else if(asignatura.caracter==3 && semestre>=8 && semestre<=9){
+                        console.log("8-9");
+                        template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
+                        cont3++;
+                    }
                 }else{
                     if(asignatura.caracter==1){
                         console.log("1-9");
