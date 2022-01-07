@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once "../control/controlProfesor.php";
 $params=[
 
@@ -8,8 +8,9 @@ $params=[
 	"fecha_nacimiento"=>$_POST['fechaNacimiento_ag'],
 	"rfc"=>$_POST['rfc_ag'],
 	"correo"=>$_POST['correo_ag'],
-	"telefono"=>$_POST['telefono_ag']
-	
+	"telefono"=>$_POST['telefono_ag'],
+	"idDepartamento"=>$_POST['idDepartamento']
+
 ];
 $result = insertProfesor($params);
 echo $result;

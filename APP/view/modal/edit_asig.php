@@ -16,19 +16,19 @@
                     <div class="form-group" id="actual-pass-group">
                     <div class="form-group">
                       <label for="clave_asignatura_edit">Clave:</label>
-                      <input type="number" placeholder="Clave:" class="form-control"style="height: 45px" name="clave_asignatura_edit" id="clave_asignatura_edit" onkeydown="verificavacioedit()" onkeyup="verificavacioedit()" onblur="verificavacioedit()" onfocus="verificavacioedit()">
+                      <input type="text" maxlength="4" pattern="[0-9]{4,}" placeholder="Clave:" class="form-control"style="height: 45px" name="clave_asignatura_edit" id="clave_asignatura_edit" onkeydown="verificavacioedit()" onkeyup="verificavacioedit()" onblur="verificavacioedit()" onfocus="verificavacioedit()" title="Debe contener 4 caracteres" title="Puede contener un maximo de 50 caracteres">
                     </div>
                     </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
                         <label for="nom_asignatura_edit">Nombre asignatura:</label>
-                        <input type="text" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura_edit" name="nom_asignatura_edit" onkeydown="verificavacioedit()" onkeyup="verificavacioedit()" onblur="verificavacioedit()" onfocus="verificavacioedit()" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <input type="text" maxlength="50" pattern="[A-ZÀ-ÿ0-9]{1,}" placeholder="Nombre de la asignatura:" class="form-control" style="height: 45px" id="nom_asignatura_edit" name="nom_asignatura_edit" onkeydown="verificavacioedit()" onkeyup="verificavacioedit()" onblur="verificavacioedit()" onfocus="verificavacioedit()" onkeyup="javascript:this.value=this.value.toUpperCase();">
                       </div>
                       <div class="mt-3 mb-2"></div>
                         <div class="form-group" id="">
                         <label for="caracter_edit">Carácter:</label>
                         <div class="form-floating">
-                          <select class="form-select" id="caracter_edit" name="caracter_edit"onkeydown="funcionesEdit()" onkeyup="funcionesEdit()" onblur="funcionesEdit()" onfocus="funcionesEdit()" onselect="funcionesEdit()" onclick="funcionesEdit()">
+                          <select class="form-select" id="caracter_edit" name="caracter_edit" onkeydown="funcionesEdit()" onkeyup="funcionesEdit()" onblur="funcionesEdit()" onfocus="funcionesEdit()" onselect="funcionesEdit()" onclick="funcionesEdit()">
                               <option hidden=""></option>
                               <option id="caracter_edit_1" value="1">Obligatoria</option>
                               <option id="caracter_edit_2"  value="2">Optativa requerida</option>
@@ -42,10 +42,19 @@
                           <label for="semestre_edit">Semestre:</label>
                           <input type="number" min="0" max="20" placeholder="Semestre:" class="form-control"style="height: 45px"id="semestre_edit" name="semestre_edit" onkeydown="verificavacioedit()" onkeyup="verificavacioedit()" onblur="verificavacioedit()" onfocus="verificavacioedit()">
                         </div>
+                        <div class="form-floating">
+                            <select class="form-select" id="semestre_edit_s" name="semestre_edit_s" onkeydown="funcionesEdit()" onkeyup="funcionesEdit()" onblur="funcionesEdit()" onfocus="funcionesEdit()" onselect="funcionesEdit()" onclick="funcionesEdit()" hidden>
+                                <option hidden=""></option>
+                                <option value="0">0</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                                <label for="caracter"><font SIZE=3>Semestre:</font></label>
+                          </div>
                       <div class="mt-3 mb-2"></div>
                       <div class="form-group" id="">
                         <label for="creditos_edit">Creditos:</label>
-                        <input type="number" min="4" max="12" placeholder="Créditos:" class="form-control" style="height: 45px" id="creditos_edit" name="creditos_edit" onkeydown="verificavacioedit()" onkeyup="verificavacioedit()" onblur="verificavacioedit()" onfocus="verificavacioedit()">
+                        <input type="number" min="2" max="12" placeholder="Créditos:" class="form-control" style="height: 45px" id="creditos_edit" name="creditos_edit" onkeydown="verificavacioedit()" onkeyup="verificavacioedit()" onblur="verificavacioedit()" onfocus="verificavacioedit()">
                       </div>  
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

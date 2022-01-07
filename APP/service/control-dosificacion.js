@@ -24,7 +24,8 @@ function getDatosAlumno(){
         url: "../webhook/lista-alumno-dosificacion.php",
         type: 'POST',
         data : {   idUsuario: $("#idUsuario").val(),
-        			idPlan: $("#idPlan").val()     },
+        			idPlan: $("#idPlan").val(),
+                idCarrera: $("#idCarrera").val()     },
         success: function (response) {
             //Convertimos el string a JSON
             console.log(response);

@@ -143,10 +143,18 @@ class ASIGNACION extends CONEXION{
     }
 
     public function queryDeleteAsignacion(){
-        $query="DELETE FROM `asignacion` WHERE `id_asignacion`='".$this->getIdAsignacion()."'";
+        $query="UPDATE `asignacion` SET `id_asignacion` = ".$this->getIdAsignacion()."*-1 WHERE `id_asignacion` = ".$this->getIdAsignacion();
         $this->connect();
         $resultado= $this->executeInstruction($query);
         $this->close();
         return $resultado;
+    }
+
+    public function queryConsultaAsignacionesProfesor($idProfesor){
+        $query="SELECT plan.id_plan as clave_plan, plan.nombre_plan, asig.codigo, asig.nombre as nombre_asignatura, asig.semestre, g.nombre_grupo, asig.creditos, asig.caracter, a.id_asignacion FROM asignacion a, grupos g, asignaturas asig, plandeestudios plan WHERE a.id_grupo_fk=g.id_grupo AND g.id_asignatura_fk= asig.id_asignatura AND asig.id_plan_fk=plan.id_plan AND a.id_asignacion>0 AND a.id_usuarioprofesor_fk=".$idProfesor;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;    
     }
 }

@@ -14,7 +14,7 @@ include_once "./includes/header.php";?>
 <body id="body">
     <?php include "./includes/sidebar2.php";?>
 
-    <!--              AQUI VA EL CONTENIDO                -->
+    <!--              AQUI VA EL CONTENIDO                 -->
     <div class="home_content2">
       <div class="texthome">
         <form class="mb-4">

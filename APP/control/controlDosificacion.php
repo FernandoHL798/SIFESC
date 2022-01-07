@@ -36,7 +36,7 @@ function deleteDosificacion($params){
     return $DOSIFICACION->queryDeleteDosificacion();
 }
 
-function consultaDosificacionPeriodo($idUsuario,$idPeriodo){
+function consultaDosificacionPeriodo($idUsuario,$idPeriodo,$idCarrera){
     include_once "../model/DOSIFICACION.php";
     $DOSIFICACION = new DOSIFICACION();
     //Verificamos que exista la dosificacion con el ultimo periodo
@@ -62,7 +62,13 @@ function consultaDosificacionPeriodo($idUsuario,$idPeriodo){
         //Seteamos el idUsuario de la dosificacion y el periodo
         $DOSIFICACION->setIdUsuarioAlumnoFk($idUsuario);
         $DOSIFICACION->setIdPeriodoFk($idPeriodo);
+        //Obtenemos la fecha del ultimo periodo para poder realizar las fechas por carrera 
+        $fechaDosificacionInicio= $obj_dosificacion[0]['fecha_inscripcion_inicio'];
+        $fechaDosificacionFin= $obj_dosificacion[0]['fecha_inscripcion_fin'];
         //Realizamos el for ya mencionado para comenzar a  aumentar las fechas por carrera
+        foreach($totalCarreras as $carrera){
+
+        }
         for($i=0; $i<$totalCarreras};$i++){
             //creamos las fechas de inscripcion por carrera
             //Se ocupa el id de la carrera que esta estudiando el alumno dependiendo de el plan de estudios que esta metiendo para poder setar su fecha

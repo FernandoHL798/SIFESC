@@ -101,6 +101,11 @@ $(document).ready(function(){
             .done(function(res){
                 console.log(res);
                 alert("Se Guardo con exito");
+                listaGruposAsignatura();
+                listaDatosGrupos();
+                datosPlandeestudios();
+                $("#frm_m_a_grupo").trigger('reset');
+                $("#agrega_grupo").modal('hide');
                     /*if(res!=1){
                         $("#do_exist").prop("disabled", false );
                         $("#do_exist").fadeTo(2000, 500).slideUp(500, function(){
@@ -126,7 +131,14 @@ $(document).ready(function(){
     e.preventDefault();
 });
 
-
+$('input[name=clave_asignatura_edit]').bind('keypress', function(event) {
+var regex = new RegExp("^[0-9A-Z_]+$");
+var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+if (!regex.test(key)) {
+event.preventDefault();
+return false;
+}
+});
 
 
 });
@@ -171,26 +183,6 @@ function listaDatosGrupos(){
                 $("#semestre_Asig_gru").html(grupo.semestre);
                 $("#cr_Asig_gru").html(grupo.creditos);
                 $("#idasignaturagrupo").val(grupo.id_asignatura);
-                if (grupo.caracter=='1'){
-                    caractertx="Obligatoria";
-                }else if (grupo.caracter=='2'){
-                    caractertx="Optativa requerida";
-                }else if (grupo.caracter=='3'){
-                    caractertx="Optativa de elección";
-                }
-                if(grupo.turno=='1'){
-                    turnotx="Matutino";
-                }else if(grupo.turno=='2'){
-                    turnotx="Vespertino";
-                }else{
-                    turnotx="Inactivo";
-                }
-                 if(grupo.tipo=="1"){
-                    tipotx="Ordinario";
-                }else if(grupo.turno=="2"){
-                    tipotx="Extraordinario";
-                }
-                $("#caracter_Asig_gru").html(caractertx);
             });
         }
     });
@@ -240,9 +232,9 @@ function listaGruposAsignatura(){
                 }else{
                 	turnotx="Inactivo";
                 }
-                 if(grupo.tipo=="1"){
+                 if(grupo.tipo=='1'){
                 	tipotx="Ordinario";
-                }else if(grupo.turno=="2"){
+                }else if(grupo.tipo=='2'){
                 	tipotx="Extraordinario";
                 }
                 $("#caracter_Asig_gru").html(caractertx);
@@ -333,11 +325,11 @@ function editarGrupo(idgrupo,nombre,turno,tipo){
     })
         .done(function(res){
             console.log(res);
+            console.log(res);
+            $("#frm_m_e_grupo").trigger('reset');
             listaGruposAsignatura();
             listaDatosGrupos();
             datosPlandeestudios();
-            console.log(res);
-            $("#frm_m_e_grupo").trigger('reset');
             $("#edita_grupo").modal('hide');
         });
         

@@ -21,12 +21,12 @@ function updateProfesordepartamento($params){
     return $PROFESORDEP->queryUpdateEstatusProfesordepartamento();
 }
 
-function insertProfesordepartamento($params){
+function insertProfesordepartamento($idProfesor,$idDepartamento){
     include_once "../model/PROFESORDEPARTAMENTO.php";
     $PROFESORDEP = new PROFESORDEPARTAMENTO();
-    $PROFESORDEP->setIdUsuario($params['id_usuarioprofesor_fk']);
-    $PROFESORDEP->setEstatus($params['estatus']);
-    $PROFESORDEP->setIdDepartamentoFk($params['id_departamento_fk']);
+    $PROFESORDEP->setIdUsuario($idProfesor);
+    $PROFESORDEP->setEstatus(1);
+    $PROFESORDEP->setIdDepartamentoFk($idDepartamento);
     return $PROFESORDEP->queryInsertProfesordepartamento();
 }
 
