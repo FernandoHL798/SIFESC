@@ -46,7 +46,7 @@ function perdisteTramite(id_inscripcion,fechaInscrip,fechaAltasB){
                 var hoy = new Date();
                 var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
                 var fecha = hoy.getFullYear()+ '-' + ( ""+hoy.getMonth() + 1 ) + '-' +("0"+hoy.getDate());
-                if(INSCRIPCION[0].fecha_altas_bajas<fecha && INSCRIPCION[0].estatus==1){
+                if(INSCRIPCION[0].fecha_altas_bajas<fecha && INSCRIPCION[0].estatus==2){
                     document.getElementById('btnInscripciones1').style.display = 'none';
                     document.getElementById('btnInscripciones2').style.display = 'none';
                     document.getElementById('textosInscripcion').style.display = 'none';
@@ -59,7 +59,7 @@ function perdisteTramite(id_inscripcion,fechaInscrip,fechaAltasB){
                     inscritos=INSCRIPCION[0].inscritos;
                     console.log(fechaAltasB);
                     bajaAltasBajas(id_inscripcion,fechaAltasB,fechaInscrip,inscritos);
-                }else if(INSCRIPCION[0].fecha_inscripcion<fecha && INSCRIPCION[0].estatus==1){
+                }else if(INSCRIPCION[0].fecha_inscripcion<fecha && INSCRIPCION[0].estatus==2 && INSCRIPCION[0].fecha_altas_bajas>fecha){
                     document.getElementById('btnInscripciones1').style.display = 'none';
                     document.getElementById('btnInscripciones2').style.display = 'none';
                     document.getElementById('textosInscripcion').style.display = 'none';
@@ -243,6 +243,8 @@ function estatusAlum(id_inscripcion) {
                     $("#anuncio").html("No puedes realizar tu inscripción puesto que te diste de baja definitiva.");
                 }else if(ESTUDIA[0].estatus==5){
                     $("#anuncio").html("No puedes realizar tu inscripción puesto que estás titulado.");
+                }else if(ESTUDIA[0].estatus==6){
+                    $("#anuncio").html("No puedes realizar tu inscripción puesto que ya cumpliste con el 100% de tus creditos.");
                }
            }else{
                 if(ESTUDIA[0].semestre>=2){
@@ -398,25 +400,19 @@ function asignaturas(credito,nombres){
                     console.log("Entre no nombres");
                     console.log(asignatura.semestre+" - "+semestre);
                     if(asignatura.semestre==semestre){
-                        console.log("Entre semestre");
                         if(credito==68){
-                            console.log("Entre credito 68");
                             template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;
                             cont3++;
                         }else{
-                            console.log("Entre creditos menos");
-                            console.log(credito+"-"+asignatura.creditos);
                             if(asignatura.creditos<=credito || credito==''){
                                 cont3++;
                                 template += `<option value="${asignatura.id_asignatura}">${asignatura.nombre}</option>`;
                             }
                         }
-                    }else if(asignatura.caracter==2 && semestre>=5 && semestre<=7){
-                        console.log("5-7");
+                    }else if(asignatura.caracter==2 && semestre>=5 && semestre<=7 || semestre==20){
                         template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
                         cont3++;
-                    }else if(asignatura.caracter==3 && semestre>=8 && semestre<=9){
-                        console.log("8-9");
+                    }else if(asignatura.caracter==3 && semestre>=8 && semestre<=9 || semestre==0){
                         template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
                         cont3++;
                     }
@@ -458,11 +454,11 @@ function asignaturas(credito,nombres){
                         cont3++;
                     }
 
-                }else if(asignatura.caracter==2 && semestre>=5 && semestre<=7){
+                }else if(asignatura.caracter==2 && semestre>=5 && semestre<=7 || semestre==20){
                     console.log("5-7");
                     template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
                     cont3++;
-                }else if(asignatura.caracter==3 && semestre>=8 && semestre<=9){
+                }else if(asignatura.caracter==3 && semestre>=8 && semestre<=9 || semestre==0){
                     console.log("8-9");
                     template += `<option value="${ASIGNATURAS[cont3].id_asignatura}">${ASIGNATURAS[cont3].nombre}</option>`;
                     cont3++;
@@ -650,7 +646,7 @@ function traslape(id_inscripcion){
                 console.log(TRASLAPAN[cont].dia);
                 if(cont<(tamañoMaterias-1))
                 if(TRASLAPAN[cont].dia==TRASLAPAN[cont+1].dia){
-                    if(((TRASLAPAN[cont+1].inicio==TRASLAPAN[cont].inicio && TRASLAPAN[cont+1].fin==TRASLAPAN[cont].fin) || (TRASLAPAN[cont+1].fin<TRASLAPAN[cont].fin && TRASLAPAN[cont+1].fin>TRASLAPAN[cont].inicio)) || ((TRASLAPAN[cont].inicio==TRASLAPAN[cont+1].inicio && TRASLAPAN[cont].fin==TRASLAPAN[cont+1].fin) || (TRASLAPAN[cont].fin<TRASLAPAN[cont+1].fin && TRASLAPAN[cont].fin>TRASLAPAN[cont+1].inicio))){
+                    if(((TRASLAPAN[cont+1].inicio==TRASLAPAN[cont].inicio && TRASLAPAN[cont+1].fin==TRASLAPAN[cont].fin) || (TRASLAPAN[cont+1].fin<TRASLAPAN[cont].fin && TRASLAPAN[cont].fin>TRASLAPAN[cont+1].inicio)) || ((TRASLAPAN[cont].inicio==TRASLAPAN[cont+1].inicio && TRASLAPAN[cont].fin==TRASLAPAN[cont+1].fin) || (TRASLAPAN[cont].fin<TRASLAPAN[cont+1].fin && TRASLAPAN[cont].fin>TRASLAPAN[cont+1].inicio))){
                         console.log("inicio"+TRASLAPAN[cont].inicio+"-"+TRASLAPAN[cont+1].inicio);
                         console.log("fin"+TRASLAPAN[cont].fin+"-"+TRASLAPAN[cont+1].fin);
                         if(TRASLAPAN[cont].dia==1){

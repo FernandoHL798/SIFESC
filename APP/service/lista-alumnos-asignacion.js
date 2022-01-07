@@ -19,15 +19,17 @@ function cargaGrupo(){
             $("#nombreAsig").html(grupo.nombre_asignatura);
             $("#grupo").html(grupo.nombre_grupo);
             $("#semestre").html(grupo.semestre);
+            cargaAlumnosAsignacion(GRUPOS[0].id_plan);
             }
     });
 }
 
-function cargaAlumnosAsignacion(){
+function cargaAlumnosAsignacion(idPlan){
     $.ajax({
         url: "../webhook/lista_Movimientos_Asignacion.php",
         type: 'POST',
-        data : { idAsignacion: $("#idAsignacion").val()},
+        data : { idAsignacion: $("#idAsignacion").val(),
+                 idPlan: idPlan},
         success: function (response) {
             //Convertimos el string a JSON
             let ALUMNOS = JSON.parse(response);

@@ -109,6 +109,14 @@ class ASIGNACION extends CONEXION{
         return $resultado;
     }
 
+    public function queryconsultaInscritosAsignacion($idAsignacion){
+        $query="SELECT inscritos FROM `asignacion` WHERE `id_asignacion`=".$idAsignacion;
+        $this->connect();
+        $resultado = $this->getData($query);
+        $this->close();
+        return $resultado;
+    }
+
     public function queryconsultaAlumnoAsignacion($params){
         $query="SELECT a.cupo, a.inscritos  FROM `asignacion` a, `grupos` g, `asignaturas` asi, `carrera` c, `periodo` per, `plantel_carrera` plc, `plantel` p, `plandeestudios` plan where a.id_grupo_fk=g.id_grupo AND g.id_asignatura_fk=asi.id_asignatura AND plc.id_carrera_fk=c.id_carrera AND per.id_periodo=a.id_periodo_fk AND plc.id_plantel_fk=p.id_plantel AND plan.id_plan=asi.id_plan_fk AND plan.id_carrera_fk=c.id_carrera AND asi.id_plan_fk=".$params['id_plan']." AND g.id_asignatura_fk = ".$params['idAsignatura']." AND per.periodo ='".$params['Periodo']."' AND a.id_asignacion=".$params['idAsignacion'];
         $this->connect();

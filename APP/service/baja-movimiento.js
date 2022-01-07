@@ -20,8 +20,9 @@ $(document).ready(function(){
         .done(function(res){
             console.log(res);
             if(res==1){
+                console.log($("#ins").text());
                 inscritos=parseInt($("#ins").text())-1;
-                console.log($("#ins").val());
+                console.log(inscritos);
                 var formData = new FormData(document.getElementById("frm_baja_asignatura_inscrip"));
                 formData.append("idAsignacion", $("#grupo").val());
                 formData.append("inscritos", inscritos);

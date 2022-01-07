@@ -20,6 +20,7 @@ function datosAlumno(){
                 $("#nombreAlumno").html(ALUMNO[cont].nombre+' '+ALUMNO[cont].primer_apellido+' '+ALUMNO[cont].segundo_apellido);
                 $("#anioEstudia").html(ALUMNO[cont].anio);
                 $("#idCarrera").html(ALUMNO[cont].carrera_clave);
+                console.log(ALUMNO[cont].carrera_clave);
                 $("#Plantel").html(ALUMNO[cont].id_plantel+' - '+ALUMNO[cont].nombre_plantel);
                 $("#Plan").html(ALUMNO[cont].id_plan+' - '+ALUMNO[cont].nombre_plan);
                 $("#idInscripcionAlumno").val(ALUMNO[cont].id_inscripcion);

@@ -41,9 +41,9 @@ function deleteMovimiento($params){
     return $MOVIMIENTO->queryDeleteMovimiento();
 }
 
-function consultaMovimientosAsignacion($idAsignacion){
+function consultaMovimientosAsignacion($idAsignacion,$idPlan){
     include_once "../model/MOVIMIENTO.php";
     $MOVIMIENTO = new MOVIMIENTO();
-    $resultado= $MOVIMIENTO->queryConsultaMovimientosAsignacion($idAsignacion);
+    $resultado= $MOVIMIENTO->queryConsultaMovimientosAsignacion($idAsignacion,$idPlan);
     return json_encode($resultado);
 }

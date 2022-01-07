@@ -5,6 +5,11 @@ function consultaAsignacion($id_plan,$idAsignatura,$Periodo){
  $ASIGNACION = new ASIGNACION();
  return json_encode($ASIGNACION->queryconsultaAsignacion($id_plan,$idAsignatura,$Periodo));
 }
+function consultaInscritosAsignacion($idAsignacion){
+ include_once "../model/ASIGNACION.php";
+ $ASIGNACION = new ASIGNACION();
+ return json_encode($ASIGNACION->queryconsultaInscritosAsignacion($idAsignacion));
+}
 
 function consultaAlumnoAsignacion($params){
  include_once "../model/ASIGNACION.php";
